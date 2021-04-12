@@ -1,0 +1,29 @@
+{
+    "name": "",
+    "courseName": "t3-01",
+    "env": "test",
+    "totalPages": 2,
+    "pathConfig": {
+        "remoteUrl": "",
+        "controllerBundlePath": "",
+        "modelBundlePath": "",
+        "panelBundlePath": "",
+        "resourceBundlePath": "",
+        "controllerName": "controller-model02",
+        "panelName": "formal-panle-model02",
+        "resourceName": "t3-01",
+        "packageName": "t3-01"
+    },
+    "chapters": [
+        {
+            "uiPath": "static-model01-v1-p1",
+            "modelBundle": "static",
+            "prefabName": "static-model01-v1"
+        },
+        {
+            "uiPath": "radioSwitch-model01-v1-p2",
+            "modelBundle": "radioSwitch",
+            "prefabName": "radioSwitch-model01-v1"
+        }
+    ]
+}
