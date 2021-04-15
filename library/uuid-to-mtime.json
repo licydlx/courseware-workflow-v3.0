@@ -500,8 +500,8 @@
     "relativePath": "model\\primitives.fbx"
   },
   "03f8adec-46a1-46e3-8662-c9c5a09f6480": {
-    "asset": 1617954831596,
-    "meta": 1617958918268,
+    "asset": 1618210759379,
+    "meta": 1618278308852,
     "relativePath": "configJson"
   },
   "6af6e015-6b3d-4d11-b46b-b9c5a7bd1d4a": {
@@ -515,19 +515,14 @@
     "relativePath": "entrances\\images"
   },
   "544eb544-9591-426d-a200-d2aab0c3b47b": {
-    "asset": 1617958488255,
-    "meta": 1617958918283,
+    "asset": 1618222526692,
+    "meta": 1618278308857,
     "relativePath": "entrances\\javascripts"
   },
   "4efbcae2-9049-469d-9e66-2a426b52e544": {
     "asset": 1617949512205,
     "meta": 1617958918288,
     "relativePath": "entrances\\javascripts\\lib"
-  },
-  "016ce33d-535f-4327-8d40-7aab0e2fe343": {
-    "asset": 1616039242293,
-    "meta": 1617958918297,
-    "relativePath": "entrances\\javascripts\\lib\\fairygui.d.ts"
   },
   "aa7a3cd5-0c85-42ec-b653-f94dd0fd703f": {
     "asset": 1616041623713,
@@ -550,8 +545,8 @@
     "relativePath": "entrances\\t3-afterSchoolreview.fire"
   },
   "e40c48f6-b759-40c8-97e0-71b7208c2073": {
-    "asset": 1618223330554,
-    "meta": 1618223330564,
+    "asset": 1618485591072,
+    "meta": 1618485591080,
     "relativePath": "entrances\\t3-courseware.fire"
   },
   "8c304970-0040-47f2-aa22-b9f30efdb9c4": {
@@ -650,8 +645,8 @@
     "relativePath": "prefabLibrary\\controllers"
   },
   "0ec6674c-9171-42d3-82ff-51edc983ed6c": {
-    "asset": 1617966109311,
-    "meta": 1618193040023,
+    "asset": 1618305241595,
+    "meta": 1618371337088,
     "relativePath": "prefabLibrary\\models"
   },
   "d82c719b-3de8-41a6-ba87-23e779db683d": {
@@ -669,19 +664,14 @@
     "meta": 1618210203763,
     "relativePath": "prefabLibrary\\models\\radioSwitch\\radioSwitch-model01-v1.prefab"
   },
-  "32ec3c69-3e86-4b43-939c-c977cb1de680": {
-    "asset": 1617960693289,
-    "meta": 1617964470027,
-    "relativePath": "entrances\\javascripts\\GlobalData.js"
-  },
   "336335d4-9693-4cc4-9440-16e7d2725c8e": {
-    "asset": 1618209277986,
-    "meta": 1617966236907,
+    "asset": 1618305284183,
+    "meta": 1618371337186,
     "relativePath": "prefabLibrary\\models\\static"
   },
   "f57ed1f0-3a6e-4e22-a75a-ef59f390c1fb": {
-    "asset": 1617967676585,
-    "meta": 1618193040011,
+    "asset": 1618453918066,
+    "meta": 1618476945736,
     "relativePath": "fairyUis\\t3\\t3-01"
   },
   "cacfc38a-c296-4c92-acd3-fd448803c735": {
@@ -689,59 +679,24 @@
     "meta": 1618209417420,
     "relativePath": "prefabLibrary\\models\\radioSwitch"
   },
-  "e2903434-f027-43b1-bc45-14f9c74d75aa": {
-    "asset": 1618209675744,
-    "meta": 1618210045163,
-    "relativePath": "prefabLibrary\\models\\radioSwitch\\radioSwitch-model01-v1.ts"
-  },
   "f41dd56d-90fc-4251-a102-9e2d8665e594": {
     "asset": 1618209650215,
     "meta": 1618210045180,
     "relativePath": "prefabLibrary\\models\\static\\static-model01-v1.ts"
   },
-  "20860556-a4b3-42fc-bfc6-41340f64fd4b": {
-    "asset": 1618210676027,
-    "meta": 1618210680080,
-    "relativePath": "fairyUis\\t3\\t3-01\\t3-01_atlas0_1.png"
-  },
-  "c8c4df89-40b3-4855-82fb-10e5aa60efbd": {
-    "asset": 1618210676369,
-    "meta": 1618210680095,
-    "relativePath": "fairyUis\\t3\\t3-01\\t3-01_atlas0_2.png"
-  },
-  "e8bc4c5d-316c-4556-8037-f2ba30bb7dff": {
-    "asset": 1618210675763,
-    "meta": 1618210680193,
-    "relativePath": "fairyUis\\t3\\t3-01\\t3-01_atlas0.png"
-  },
-  "0243b25e-50a6-4577-a3e9-80075f6a1ec3": {
-    "asset": 1618210675763,
-    "meta": 1618210680196,
-    "relativePath": "fairyUis\\t3\\t3-01\\t3-01.bin"
-  },
-  "d33459ec-50f9-4d06-95f0-cd47feb2e5d6": {
-    "asset": 1618210676796,
-    "meta": 1618210680203,
-    "relativePath": "fairyUis\\t3\\t3-01\\t3-01_atlas0_3.png"
-  },
-  "8ece8bfc-ce48-4300-8819-63fa61b8f8e1": {
-    "asset": 1618210710770,
-    "meta": 1618210751916,
-    "relativePath": "configJson\\test\\t3-01-test01.json"
-  },
   "43b8c9f2-2415-4960-bf5d-835ba13e7852": {
-    "asset": 1618210725573,
-    "meta": 1618210725576,
+    "asset": 1618210775747,
+    "meta": 1618278308853,
     "relativePath": "configJson\\prod"
   },
   "5292f42b-fb05-491f-b422-c8807272bece": {
-    "asset": 1618210732021,
-    "meta": 1618210732022,
+    "asset": 1618210759379,
+    "meta": 1618278308856,
     "relativePath": "configJson\\test"
   },
   "d7175045-fe20-4b06-b324-b535ebb01c3f": {
-    "asset": 1618210773837,
-    "meta": 1618210773838,
+    "asset": 1618210784169,
+    "meta": 1618278308855,
     "relativePath": "configJson\\prod\\t3"
   },
   "925058af-8538-4a20-bf1e-48eec5b2e89d": {
@@ -794,14 +749,74 @@
     "meta": 1618226190747,
     "relativePath": "entrances\\javascripts\\t3-courseware.ts"
   },
-  "4ec5e68b-0c67-42ba-898e-25df6e9bb907": {
-    "asset": 1618224665129,
-    "meta": 1618226190801,
-    "relativePath": "prefabLibrary\\controllers\\controller-model02\\scripts\\controller-model02.ts"
+  "db751387-b5b7-4550-be8d-7f198517b85e": {
+    "asset": 1618305303936,
+    "meta": 1618305678062,
+    "relativePath": "prefabLibrary\\models\\dragAnswer"
+  },
+  "65793fee-1442-4841-bf26-c4416a623338": {
+    "asset": 1618305303932,
+    "meta": 1618305303936,
+    "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model01-v1.prefab"
+  },
+  "8ece8bfc-ce48-4300-8819-63fa61b8f8e1": {
+    "asset": 1618305601831,
+    "meta": 1618305604423,
+    "relativePath": "configJson\\test\\t3-01-test01.json"
   },
   "440d0ef6-87f0-436b-b48e-0627ecc88593": {
-    "asset": 1618225161801,
-    "meta": 1618226190804,
+    "asset": 1618305569990,
+    "meta": 1618305604458,
     "relativePath": "configJson\\prod\\t3\\t3-01.json"
+  },
+  "4ec5e68b-0c67-42ba-898e-25df6e9bb907": {
+    "asset": 1618374012408,
+    "meta": 1618383052483,
+    "relativePath": "prefabLibrary\\controllers\\controller-model02\\scripts\\controller-model02.ts"
+  },
+  "e2903434-f027-43b1-bc45-14f9c74d75aa": {
+    "asset": 1618382012009,
+    "meta": 1618383052539,
+    "relativePath": "prefabLibrary\\models\\radioSwitch\\radioSwitch-model01-v1.ts"
+  },
+  "016ce33d-535f-4327-8d40-7aab0e2fe343": {
+    "asset": 1618393239197,
+    "meta": 1618393278071,
+    "relativePath": "entrances\\javascripts\\lib\\fairygui.d.ts"
+  },
+  "5e36919d-2dfc-4f97-80af-128276ac37bb": {
+    "asset": 1618479183549,
+    "meta": 1618479187668,
+    "relativePath": "fairyUis\\t3\\t3-01\\t3-01_atlas0_1.png"
+  },
+  "131e2c01-bfb6-47f9-bd49-8245e5b06bda": {
+    "asset": 1618479183891,
+    "meta": 1618479187682,
+    "relativePath": "fairyUis\\t3\\t3-01\\t3-01_atlas0_2.png"
+  },
+  "eb95afe8-f6eb-4550-8c61-e7e4ee381856": {
+    "asset": 1618479183287,
+    "meta": 1618479187776,
+    "relativePath": "fairyUis\\t3\\t3-01\\t3-01_atlas0.png"
+  },
+  "6fdbc4d8-61ba-4172-b214-9e3ff5e9911f": {
+    "asset": 1618479183287,
+    "meta": 1618479187779,
+    "relativePath": "fairyUis\\t3\\t3-01\\t3-01.bin"
+  },
+  "f7392114-4da5-452e-9de7-c6e854b61de0": {
+    "asset": 1618479184320,
+    "meta": 1618479187786,
+    "relativePath": "fairyUis\\t3\\t3-01\\t3-01_atlas0_3.png"
+  },
+  "32ec3c69-3e86-4b43-939c-c977cb1de680": {
+    "asset": 1618483928615,
+    "meta": 1618483929779,
+    "relativePath": "entrances\\javascripts\\GlobalData.js"
+  },
+  "a13c8fde-2151-4b12-9928-a870456082c5": {
+    "asset": 1618485587478,
+    "meta": 1618485589856,
+    "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model01-v1.ts"
   }
 }

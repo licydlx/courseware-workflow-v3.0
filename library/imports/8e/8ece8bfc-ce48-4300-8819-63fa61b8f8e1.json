@@ -7,7 +7,7 @@
     "name": "",
     "courseName": "t3-01",
     "env": "test",
-    "totalPages": 2,
+    "totalPages": 3,
     "pathConfig": {
       "remoteUrl": "",
       "controllerBundlePath": "",
@@ -20,6 +20,11 @@
       "packageName": "t3-01"
     },
     "chapters": [
+      {
+        "uiPath": "dragAnswer-model01-v1-p3",
+        "modelBundle": "dragAnswer",
+        "prefabName": "dragAnswer-model01-v1"
+      },
       {
         "uiPath": "static-model01-v1-p1",
         "modelBundle": "static",

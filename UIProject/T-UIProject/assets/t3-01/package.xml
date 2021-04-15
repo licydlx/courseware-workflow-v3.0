@@ -12,6 +12,10 @@
     <component id="k1ua9" name="triggerBtn.xml" path="/component/"/>
     <component id="d7ptb" name="static-model01-v1-p1.xml" path="/" exported="true"/>
     <image id="qklsc" name="0102.jpg" path="/images/"/>
+    <image id="106c9e" name="0103.png" path="/images/"/>
+    <component id="106c9f" name="dragAnswer-model01-v1-p3.xml" path="/" exported="true"/>
+    <component id="106c9g" name="dragBtn.xml" path="/component/"/>
+    <component id="106c9h" name="btnBox.xml" path="/component/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

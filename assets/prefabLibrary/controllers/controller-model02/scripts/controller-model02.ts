@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-12 18:51:04
+ * @LastEditTime: 2021-04-14 12:17:36
  */
 const { ccclass, property } = cc._decorator;
 
@@ -92,7 +92,6 @@ export default class controller_model02 extends cc.Component {
     async loadResourcePackage(bundle: any, packageName: any) {
         return new Promise((resolve, reject) => {
             fgui.UIPackage.loadPackage(bundle, packageName, () => {
-                console.log("loadResourcePackage")
                 resolve(true);
             });
         })

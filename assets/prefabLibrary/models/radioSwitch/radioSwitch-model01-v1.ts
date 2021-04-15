@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-12 14:41:05
+ * @LastEditTime: 2021-04-14 14:19:39
  */
 
 const { ccclass, property } = cc._decorator;
@@ -34,7 +34,6 @@ export default class radioSwitch_model01_v1 extends cc.Component {
         // 1.切换控制器
         this._radioSwitch1 = this._view.getController("radioSwitch1");
         this._radioSwitch1.on(fgui.Event.STATUS_CHANGED, this.onSwitchChanged, this);
-
 
         // 初始化state
         this._state = {

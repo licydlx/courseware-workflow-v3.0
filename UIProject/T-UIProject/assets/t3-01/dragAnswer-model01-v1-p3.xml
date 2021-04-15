@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n1_106c9" name="n1" xy="0,0" size="1920,1080" type="rect" fillColor="#ff009999"/>
+    <component id="n11_umri" name="btnBox" src="106c9h" fileName="component/btnBox.xml" xy="1400,200">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </component>
+    <component id="n4_106c9" name="dragBtn" src="106c9g" fileName="component/dragBtn.xml" xy="768,765">
+      <Button icon="ui://pozm437j106c9e"/>
+    </component>
+    <image id="n12_umri" name="dragIcon" src="106c9e" fileName="images/0103.png" xy="886,1201"/>
+    <loader id="n13_gd1w" name="test" xy="1111,932" size="100,100" url="ui://pozm437j106c9e" align="center" vAlign="middle"/>
+  </displayList>
+</component>

@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-12 18:51:04
+ * @LastEditTime: 2021-04-14 12:17:36
  */
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var monitorMessage = window['GlobalData'].monitorMessage;
@@ -164,7 +164,6 @@ var controller_model02 = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 return [2 /*return*/, new Promise(function (resolve, reject) {
                         fgui.UIPackage.loadPackage(bundle, packageName, function () {
-                            console.log("loadResourcePackage");
                             resolve(true);
                         });
                     })];
