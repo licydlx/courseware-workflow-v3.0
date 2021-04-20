@@ -5,7 +5,7 @@
  * @Author: ydlx
  * @Date: 2021-01-04 10:34:55
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-15 18:52:04
+ * @LastEditTime: 2021-04-18 20:03:15
  */
 window['GlobalData'] = {
     courseData: {
@@ -267,15 +267,8 @@ window['GlobalData'] = {
         pointBelongArea(type, area, point) {
             switch (type) {
                 case "rectangle": {
-                    console.log(area)
-                    console.log(point)
-
                     let x = point.x - area.x;
                     let y = point.y - area.y;
-                    
-                    console.log(x);
-                    console.log(y);
-
                     if (x >= 0 && area.width >= x && y >= 0 && area.height >= y) {
                         return true;
                     } else {

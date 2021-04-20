@@ -7,7 +7,7 @@
     "name": "",
     "courseName": "t3-01",
     "env": "test",
-    "totalPages": 3,
+    "totalPages": 11,
     "pathConfig": {
       "remoteUrl": "",
       "controllerBundlePath": "",
@@ -21,19 +21,86 @@
     },
     "chapters": [
       {
-        "uiPath": "dragAnswer-model01-v1-p3",
-        "modelBundle": "dragAnswer",
-        "prefabName": "dragAnswer-model01-v1"
-      },
-      {
         "uiPath": "static-model01-v1-p1",
         "modelBundle": "static",
         "prefabName": "static-model01-v1"
       },
       {
-        "uiPath": "radioSwitch-model01-v1-p2",
-        "modelBundle": "radioSwitch",
-        "prefabName": "radioSwitch-model01-v1"
+        "uiPath": "dragAnswer-model01-v1-p3",
+        "modelBundle": "dragAnswer",
+        "prefabName": "dragAnswer-model01-v1",
+        "config": {
+          "answer": 4
+        }
+      },
+      {
+        "uiPath": "dragAnswer-model01-v1-p4",
+        "modelBundle": "dragAnswer",
+        "prefabName": "dragAnswer-model01-v1",
+        "config": {
+          "answer": 6
+        }
+      },
+      {
+        "uiPath": "dragAnswer-model01-v1-p5",
+        "modelBundle": "dragAnswer",
+        "prefabName": "dragAnswer-model01-v1",
+        "config": {
+          "answer": 6
+        }
+      },
+      {
+        "uiPath": "clickAnswer-model01-v1-p6",
+        "modelBundle": "clickAnswer",
+        "prefabName": "clickAnswer-model01-v1",
+        "config": {
+          "answer": 2
+        }
+      },
+      {
+        "uiPath": "clickAnswer-model01-v1-p7",
+        "modelBundle": "clickAnswer",
+        "prefabName": "clickAnswer-model01-v1",
+        "config": {
+          "answer": 4
+        }
+      },
+      {
+        "uiPath": "clickAnswer-model01-v1-p8",
+        "modelBundle": "clickAnswer",
+        "prefabName": "clickAnswer-model01-v1",
+        "config": {
+          "answer": 2
+        }
+      },
+      {
+        "uiPath": "dragAnswer-model01-v1-p9",
+        "modelBundle": "dragAnswer",
+        "prefabName": "dragAnswer-model01-v1",
+        "config": {
+          "answer": 4
+        }
+      },
+      {
+        "uiPath": "dragAnswer-model01-v1-p10",
+        "modelBundle": "dragAnswer",
+        "prefabName": "dragAnswer-model01-v1",
+        "config": {
+          "answer": 6
+        }
+      },
+      {
+        "uiPath": "dragAnswer-model01-v1-p11",
+        "modelBundle": "dragAnswer",
+        "prefabName": "dragAnswer-model01-v1",
+        "config": {
+          "answer": 6
+        }
+      },
+      {
+        "uiPath": "static-model01-v1-p13",
+        "modelBundle": "static",
+        "prefabName": "static-model01-v1"
       }
     ]
   }

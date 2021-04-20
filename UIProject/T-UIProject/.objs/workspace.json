@@ -1,5 +1,5 @@
 {
-  "libview.firstColumnWidth": 217,
+  "libview.firstColumnWidth": 239,
   "libview.iconScale": 0,
   "backgroundColor": 6710886,
   "auxline1": true,
@@ -11,12 +11,12 @@
     "pozm437j",
     "/",
     "pozm437j",
-    "/component/",
-    "pozm437j",
     "/images/"
   ],
   "doc.openedDocs": [
-    "ui://pozm437j106c9f"
+    "ui://pozm437j106c9f",
+    "ui://pozm437jtaz8al",
+    "ui://pozm437jtaz8ak"
   ],
   "snapToGrid": true,
   "gridColor": 80,

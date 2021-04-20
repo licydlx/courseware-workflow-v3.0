@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-15 19:04:14
+ * @LastEditTime: 2021-04-20 22:35:26
  */
 const { pointBelongArea } = window['GlobalData'].utils;
 
@@ -13,16 +13,22 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class dragAnswer_model01_v1 extends cc.Component {
     private _view: fgui.GComponent;
+    private _c1: fgui.Controller;
     private _dragBtn: fgui.GButton;
     private _btnBox: fgui.GButton;
-    private _dragIcon: fgui.GImage;
+    private _submit: fgui.GButton;
+    private _handleGuide01: fgui.GComponent;
+    private _lineBlink01: fgui.GComponent;
+
     private _grids = [];
 
-    private _moveArr = [];
-    private _test:fgui.GLoader;
+    private _cache = {};
+    private _scheduleTime = .3;
+    private _dragging = false;
+    
+    private _answer = 0;
 
-
-    private _state = {}
+    private _state = {};
 
     get state(): any {
         return this._state;
@@ -38,20 +44,23 @@ export default class dragAnswer_model01_v1 extends cc.Component {
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         fgui.GRoot.inst.addChild(this._view);
 
+        this._c1 = this._view.getController("c1");
+
+        this._submit = this._view.getChild("submit").asButton;
+        this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
+
         this._dragBtn = this._view.getChild("dragBtn").asButton;
+        this._cache["dragOrigin"] = this.getOriginValue(this._dragBtn);
+
         this._dragBtn.draggable = true;
         this._dragBtn.on(fgui.Event.DRAG_START, this._onDragStart, this);
         this._dragBtn.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
         this._dragBtn.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
-         
-
 
         this._btnBox = this._view.getChild("btnBox").asButton;
-        this._btnBox.on(fgui.Event.DROP, this._onDragDrop, this);
-        let aGroup = this._btnBox.getChild("grids").asGroup;
+        this._btnBox.on(fgui.Event.CLICK, this._onClick, this);
 
-        this._dragIcon = this._view.getChild("dragIcon").asImage;
-        this._test = this._view.getChild("test").asLoader;
+        let aGroup = this._btnBox.getChild("grids").asGroup;
 
         for (let i = 0; i < this._btnBox.numChildren; i++) {
             if (this._btnBox.getChildAt(i).group == aGroup) {
@@ -60,162 +69,94 @@ export default class dragAnswer_model01_v1 extends cc.Component {
             }
         }
 
-        // this._dragBtn.x = 1400;
-        // this._dragBtn.y = 400;
+        // 初始化state
+        this._state = {
+            drag: "end",
+            dragBtn: {
+                x: this._dragBtn.x,
+                y: this._dragBtn.y
+            },
+            drops: 0,
+            submit: false,
+            answer: false
+        }
 
-        // this._btnBox.x = 1400;
-        // this._btnBox.y = 400;
-
-        let arr = [{"x":0,"y":0},{"x":1001.25,"y":1031.25},{"x":1001.25,"y":1031.25},{"x":1022,"y":1013},{"x":1050,"y":992},{"x":1097,"y":956},{"x":1164,"y":904},{"x":1206,"y":866},{"x":1254,"y":829},{"x":1301,"y":788},{"x":1320,"y":761},{"x":1341,"y":731},{"x":1356,"y":701},{"x":1365,"y":683},{"x":1369,"y":660},{"x":1373,"y":647},{"x":1374,"y":632},{"x":1374,"y":619},{"x":1374,"y":609},{"x":1374,"y":604},{"x":1374,"y":596},{"x":1374,"y":593}]
-        // this._dragBtn.stopDrag();
-        // // console.log(this._grids);
-        // fgui.DragDropManager.inst.startDrag(this._dragBtn, this._dragBtn.icon, this._dragBtn.icon);
-
-        // let tag = 0;
-        // // 以秒为单位的时间间隔
-        // var interval = .5;
-        // // 重复次数
-        // var repeat = arr.length - 1;
-        // // 开始延时
-        // var delay = 1;
-        // this.schedule(()=> {
-        //     // this._dragIcon.x = arr[tag].x;
-        //     // this._dragIcon.y = arr[tag].y;
-        //     // let a = this._dragIcon.localToGlobal(arr[tag].x,arr[tag].y);
-        //     // let b = this._dragIcon.globalToLocal(arr[tag].x,arr[tag].y);
-        //     // console.log("第" + tag)
-        //     // console.log("x:" + arr[tag].x + ";y:" + arr[tag].y)
-        //     // console.log("ToGlobal")
-        //     // console.log("x:" + a.x + ";y:" + a.y)
-        //     // console.log("ToLocal")
-        //     // console.log("x:" + b.x + ";y:" + b.y)
-
-        //     this._dragIcon.x = arr[tag].x;
-        //     this._dragIcon.y = arr[tag].y;
-        //     // console.log("第" + tag)
-        //     // let test:any = globalThis._.cloneDeep(this._dragIcon);
-            
-        //     tag++;
-        // }, interval, repeat, delay);
-
-        // this._dragIcon.x = 1374;
-        // this._dragIcon.y = 593;
-
-        // let btn:fgui.GObject = this._view.getChild("dragBtn");
-        // console.log(btn)
-
-        // let a:cc.Vec2 = btn.localToGlobal(btn.x,btn.y);
-        // console.log(a)
-
-        // let b = btn.globalToLocal(1838,2004)
-        // console.log(b)
-
-        console.log(this._btnBox);
     }
 
     init(data: any) {
-        let { Package, GComponent } = data;
+        // 临时 model component json 配置加载
+        let { Package, GComponent, config } = data;
+        let { answer } = config;
+
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
+        this._handleGuide01 = fgui.UIPackage.createObject(Package, "handleGuide01").asCom;
+        this._lineBlink01 = fgui.UIPackage.createObject(Package, "lineBlink01").asCom;
+
+        if (answer) this._answer = answer;
+    }
+
+    getOriginValue(v: any) {
+        return {
+            x: v.x,
+            y: v.y
+        }
     }
 
     private _onDragStart(evt: fgui.Event): void {
-        let btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
-        // 取消对原目标的拖动，换成一个替代品
-        // btn.stopDrag();
-        // fgui.DragDropManager.inst.startDrag(btn, btn.icon,btn.icon);
-        // this._test.startDrag();
-        // fgui.DragDropManager.inst.startDrag(this._test, this._test.icon, this._test.icon);
-        // if (evt) {
-        //     let btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
-        //     // 取消对原目标的拖动，换成一个替代品
-        //     btn.stopDrag();
-        //     fgui.DragDropManager.inst.startDrag(btn, btn.icon, btn.icon); 
-        // } else {
-        //     let btn:fgui.GObject = this._view.getChild("dragBtn");
-        //     btn.stopDrag();
-        //     fgui.DragDropManager.inst.startDrag(btn, btn.icon, btn.icon); 
-        // }
-
-        // fgui.DragDropManager.inst.dragAgent.on(fgui.Event.TOUCH_END, this._agentTouchEnd, this);
-        // console.dir(fgui.DragDropManager.inst.dragAgent)
-        // fgui.DragDropManager.inst.dragAgent.x = 1374;
-        // fgui.DragDropManager.inst.dragAgent.y = 593;
-        // let a:cc.Vec2 = fgui.DragDropManager.inst.dragAgent.localToGlobal(fgui.DragDropManager.inst.dragAgent.x,fgui.DragDropManager.inst.dragAgent.y);
-        // let b = this._dragIcon.globalToLocal(a.x,a.y);
-        // console.log({x:fgui.DragDropManager.inst.dragAgent.x,y:fgui.DragDropManager.inst.dragAgent.y});
-        // console.log(a);
-        // console.log(b);
-        // this._dragIcon.x = b.x - 98;
-        // this._dragIcon.y = b.y - 72;
-        // console.log(fgui.DragDropManager.inst.dragAgent)
-        // console.log(this._dragBtn)
-        // console.log(this._dragIcon)
+        evt.captureTouch();
+        
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.drag = "start";
+        state.answer = state.drops === this._answer;
+        this.updateState(state);
     }
 
-    private _agentTouchEnd(evt: fgui.Event): void {
-        console.log(JSON.stringify(this._moveArr));
+    private _onDragMove(evt: fgui.Event): void {
+        this._dragging = true;
     }
 
-    private _onDragMove(evt: fgui.Event, pos: any): void {
-        // console.log("x:" + fgui.DragDropManager.inst)
-        
-        // console.log(fgui.DragDropManager.inst.dragging);
-        // let a:cc.Vec2 = fgui.DragDropManager.inst.dragAgent.localToGlobal(fgui.DragDropManager.inst.dragAgent.x,fgui.DragDropManager.inst.dragAgent.y);
-        // this._moveArr.push({x:fgui.DragDropManager.inst.dragAgent.x,y:fgui.DragDropManager.inst.dragAgent.y});
-        
-        // console.log("_onDragMove");
-        // console.log(evt);
-        // let t:any = globalThis._.cloneDeep(evt.pos);
-        // console.log(`{x:${t.x},y:${t.y}}`);
-        // if (evt) {
-        //     console.log(`{x:${fgui.DragDropManager.inst.dragAgent.x},y:${fgui.DragDropManager.inst.dragAgent.y}}`);
-        // } else {
-        //     fgui.DragDropManager.inst.dragAgent.x = pos.x;
-        //     fgui.DragDropManager.inst.dragAgent.y = pos.y; 
+    private _onDragEnd(evt: fgui.Event): void {
+        this._dragging = false;
+        let state: any = globalThis._.cloneDeep(this._state);
+        let test = pointBelongArea("rectangle", this._btnBox, this._dragBtn);
+        if (test) {
+            let icon: fgui.GLoader = this._dragBtn.getChild("icon").asLoader;
+            let grid: fgui.GLoader = this._grids.find(v => v.url === null);
+            if (grid) {
+                grid.url = icon.url;
+                state.drops = state.drops + 1;
+            }
+        }
 
-        //     let test:any = globalThis._.cloneDeep(fgui.DragDropManager.inst.dragAgent);
-        //     console.log(test);
-        // }
-
-        // console.log(evt)
-        // this._dragBtn.x = evt.pos.x;
-        // this._dragBtn.y = evt.pos.y;
-        // fgui.DragDropManager.inst.dragAgent.x = evt.pos.x;
-        // fgui.DragDropManager.inst.dragAgent.y = evt.pos.y;
+        state.dragBtn = {
+            x: this._cache["dragOrigin"].x,
+            y: this._cache["dragOrigin"].y,
+        };
+        state.drag = "end";
+        state.answer = state.drops === this._answer;
+        this.updateState(state);
     }
 
-    private _onDragEnd(evt: fgui.Event): void{
-        console.log("_onDragEnd");
-        console.log(evt.currentTarget);
+    private _onClick(evt: any): void {
+        let state: any = globalThis._.cloneDeep(this._state);
 
-        console.log("this._dragBtn:" + `x:${this._dragBtn.x};y:${this._dragBtn.y}`);
-        
-        let a:cc.Vec2 = this._dragBtn.localToGlobal(this._dragBtn.x,this._dragBtn.y);
-        console.log(a)
+        let index: number = this._grids.findIndex((v: any) => v.url === null);
+        if (index !== 0) {
+            let grid: fgui.GLoader = this._grids[index == -1 ? this._grids.length - 1 : index - 1];
+            grid.url = null;
 
-        let b = this._btnBox.globalToLocal(a.x,a.y)
-        console.log(b)
-        console.log("this._btnBox:" + `x:${this._btnBox.x};y:${this._btnBox.y}`);
-        console.log(this._btnBox.width);
-        console.log(this._btnBox.height);
-        
-        let test = pointBelongArea("rectangle",this._btnBox,this._dragBtn);
-        console.log(test);
+            state.answer = state.drops === this._answer;
+            state.drops = state.drops - 1;
+            this.updateState(state);
+        }
     }
-    
 
-    private _onDragDrop(target: fgui.GComponent, data: any): void {
-        console.log("_onDragDrop")
-        console.log(target)
-        console.log(data)
+    private _clickSubmit(evt: any): void {
+        let state: any = globalThis._.cloneDeep(this._state);
 
-        // console.log(fgui.DragDropManager.inst.dragAgent)
-        // console.log(data);
-        // let grid:any = this._grids.find(v => v.url === null);
-        // console.log(grid);
-        // if (grid) {
-        //     grid.url = data;
-        // } 
+        state.answer = state.drops === this._answer;
+        state.submit = true;
+        this.updateState(state);
     }
 
     // 获取状态
@@ -230,7 +171,92 @@ export default class dragAnswer_model01_v1 extends cc.Component {
     }
 
     // 更新ui层
-    updateUi(state: any) { }
+    updateUi(state: any) {
+        if (state.drag == "start") {
+            if (!state.answer) {
+                this.libraHint();
+            }
+        }
+
+        if (state.drag == "move") {
+            this._dragBtn.x = state.dragBtn.x;
+            this._dragBtn.y = state.dragBtn.y;
+        }
+
+        if (state.drag == "end") {
+            if (this._dragBtn.x !== this._cache["dragOrigin"].x) {
+                this._dragBtn.x = this._cache["dragOrigin"].x;
+                this._dragBtn.y = this._cache["dragOrigin"].y;
+            }
+
+            for (let i = 0; i < this._grids.length; i++) {
+                let grid: fgui.GLoader = this._grids[i];
+                if (state.drops > i) {
+                    if (!grid.url) {
+                        let icon: fgui.GLoader = this._dragBtn.getChild("icon").asLoader;
+                        grid.url = icon.url;
+                    }
+                } else {
+                    if (grid.url) grid.url = null;
+                }
+            }
+
+            this._c1.selectedIndex = state.drops;
+
+            if (state.submit) {
+                if (state.drops) {
+                    if (state.answer) {
+
+                    } else {
+
+                    }
+                } else {
+                    this.handleGuide();
+                }
+            }
+        }
+    }
+
+    // 天枰提示
+    libraHint() {
+        fgui.GRoot.inst.addChild(this._lineBlink01);
+        this._lineBlink01.y = (fgui.GRoot.inst.height - this._lineBlink01.height) / 2;
+
+        let t: fgui.Transition = this._lineBlink01.getTransition("t0");
+        t.play(() => {
+            fgui.GRoot.inst.removeChild(this._lineBlink01);
+        });
+    }
+
+    // 操作提示
+    handleGuide() {
+        let state: any = globalThis._.cloneDeep(this._state);
+
+        fgui.GRoot.inst.addChild(this._handleGuide01);
+        this._handleGuide01.y = (fgui.GRoot.inst.height - this._handleGuide01.height) / 2;
+
+        let t: fgui.Transition = this._handleGuide01.getTransition("t0");
+        t.play(() => {
+            fgui.GRoot.inst.removeChild(this._handleGuide01);
+
+            state.submit = false;
+            this.updateState(state);
+        }, 2);
+    }
+
+    // 临时
+    // 拖拽定时器
+    dragSchedule() {
+        if (this._dragging) {
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.drag = "move";
+            state.dragBtn= {
+                x: this._dragBtn.x,
+                y: this._dragBtn.y,
+            };
+            this.updateState(state);
+        }
+    }
 
     // 注册状态，及获取状态的方法
     registerState() {
@@ -249,6 +275,8 @@ export default class dragAnswer_model01_v1 extends cc.Component {
 
     onEnable() {
         this.registerState();
+
+        this.schedule(this.dragSchedule, this._scheduleTime);
     }
 
     onDisable() {

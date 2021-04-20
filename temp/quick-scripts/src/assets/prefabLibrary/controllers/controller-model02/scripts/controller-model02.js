@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-14 12:17:36
+ * @LastEditTime: 2021-04-20 12:24:38
  */
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var monitorMessage = window['GlobalData'].monitorMessage;
@@ -183,7 +183,7 @@ var controller_model02 = /** @class */ (function (_super) {
                 prefab = this._pagePrefabs[page];
                 node = cc.instantiate(prefab);
                 nodeJs = node.getComponent(cc.Component);
-                nodeJs.init({ Package: this._configJson.pathConfig.packageName, GComponent: chapter.uiPath });
+                nodeJs.init({ Package: this._configJson.pathConfig.packageName, GComponent: chapter.uiPath, config: chapter.config });
                 node.parent = this.node;
                 this._currentPageNode = node;
                 this.resetPanel();

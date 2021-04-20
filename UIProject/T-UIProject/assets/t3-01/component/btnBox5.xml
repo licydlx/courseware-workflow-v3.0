@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="260,200" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n12_lgf1" name="n12" src="lgf19o" fileName="images/dragAnswer-model01-v1/0107.png" xy="-3,146" size="265,88"/>
+    <loader id="n3_106c9" name="grid1" xy="2,128" size="225,169" group="n8_umri" aspect="true" scale="0.4,0.4" url="ui://pozm437j8vqhaz" align="center" vAlign="middle" autoSize="true" clearOnPublish="true"/>
+    <loader id="n5_106c9" name="grid2" xy="88,128" size="225,169" group="n8_umri" scale="0.4,0.4" url="ui://pozm437j8vqhaz" align="center" vAlign="middle" autoSize="true" clearOnPublish="true"/>
+    <loader id="n6_106c9" name="grid3" xy="176,129" size="225,169" group="n8_umri" scale="0.4,0.4" url="ui://pozm437j8vqhaz" align="center" vAlign="middle" autoSize="true" clearOnPublish="true"/>
+    <loader id="n9_umri" name="grid4" xy="2,59" size="225,169" group="n8_umri" scale="0.4,0.4" url="ui://pozm437j8vqhaz" align="center" vAlign="middle" autoSize="true" clearOnPublish="true"/>
+    <loader id="n13_8vqh" name="grid5" xy="89,59" size="225,169" group="n8_umri" scale="0.4,0.4" url="ui://pozm437j8vqhaz" align="center" vAlign="middle" autoSize="true" clearOnPublish="true"/>
+    <loader id="n14_8vqh" name="grid6" xy="177,59" size="225,169" group="n8_umri" scale="0.4,0.4" url="ui://pozm437j8vqhaz" align="center" vAlign="middle" autoSize="true" clearOnPublish="true"/>
+    <group id="n8_umri" name="grids" xy="2,59" size="263,140" advanced="true"/>
+  </displayList>
+  <Button/>
+</component>

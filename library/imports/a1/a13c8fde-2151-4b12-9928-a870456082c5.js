@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-15 19:04:14
+ * @LastEditTime: 2021-04-20 22:35:26
  */
 var pointBelongArea = window['GlobalData'].utils.pointBelongArea;
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -38,7 +38,10 @@ var dragAnswer_model01_v1 = /** @class */ (function (_super) {
     function dragAnswer_model01_v1() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this._grids = [];
-        _this._moveArr = [];
+        _this._cache = {};
+        _this._scheduleTime = .3;
+        _this._dragging = false;
+        _this._answer = 0;
         _this._state = {};
         return _this;
     }
@@ -57,151 +60,98 @@ var dragAnswer_model01_v1 = /** @class */ (function (_super) {
     dragAnswer_model01_v1.prototype.onLoad = function () {
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         fgui.GRoot.inst.addChild(this._view);
+        this._c1 = this._view.getController("c1");
+        this._submit = this._view.getChild("submit").asButton;
+        this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
         this._dragBtn = this._view.getChild("dragBtn").asButton;
+        this._cache["dragOrigin"] = this.getOriginValue(this._dragBtn);
         this._dragBtn.draggable = true;
         this._dragBtn.on(fgui.Event.DRAG_START, this._onDragStart, this);
         this._dragBtn.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
         this._dragBtn.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
         this._btnBox = this._view.getChild("btnBox").asButton;
-        this._btnBox.on(fgui.Event.DROP, this._onDragDrop, this);
+        this._btnBox.on(fgui.Event.CLICK, this._onClick, this);
         var aGroup = this._btnBox.getChild("grids").asGroup;
-        this._dragIcon = this._view.getChild("dragIcon").asImage;
-        this._test = this._view.getChild("test").asLoader;
         for (var i = 0; i < this._btnBox.numChildren; i++) {
             if (this._btnBox.getChildAt(i).group == aGroup) {
                 var grid = this._btnBox.getChildAt(i).asLoader;
                 this._grids.push(grid);
             }
         }
-        // this._dragBtn.x = 1400;
-        // this._dragBtn.y = 400;
-        // this._btnBox.x = 1400;
-        // this._btnBox.y = 400;
-        var arr = [{ "x": 0, "y": 0 }, { "x": 1001.25, "y": 1031.25 }, { "x": 1001.25, "y": 1031.25 }, { "x": 1022, "y": 1013 }, { "x": 1050, "y": 992 }, { "x": 1097, "y": 956 }, { "x": 1164, "y": 904 }, { "x": 1206, "y": 866 }, { "x": 1254, "y": 829 }, { "x": 1301, "y": 788 }, { "x": 1320, "y": 761 }, { "x": 1341, "y": 731 }, { "x": 1356, "y": 701 }, { "x": 1365, "y": 683 }, { "x": 1369, "y": 660 }, { "x": 1373, "y": 647 }, { "x": 1374, "y": 632 }, { "x": 1374, "y": 619 }, { "x": 1374, "y": 609 }, { "x": 1374, "y": 604 }, { "x": 1374, "y": 596 }, { "x": 1374, "y": 593 }];
-        // this._dragBtn.stopDrag();
-        // // console.log(this._grids);
-        // fgui.DragDropManager.inst.startDrag(this._dragBtn, this._dragBtn.icon, this._dragBtn.icon);
-        // let tag = 0;
-        // // 以秒为单位的时间间隔
-        // var interval = .5;
-        // // 重复次数
-        // var repeat = arr.length - 1;
-        // // 开始延时
-        // var delay = 1;
-        // this.schedule(()=> {
-        //     // this._dragIcon.x = arr[tag].x;
-        //     // this._dragIcon.y = arr[tag].y;
-        //     // let a = this._dragIcon.localToGlobal(arr[tag].x,arr[tag].y);
-        //     // let b = this._dragIcon.globalToLocal(arr[tag].x,arr[tag].y);
-        //     // console.log("第" + tag)
-        //     // console.log("x:" + arr[tag].x + ";y:" + arr[tag].y)
-        //     // console.log("ToGlobal")
-        //     // console.log("x:" + a.x + ";y:" + a.y)
-        //     // console.log("ToLocal")
-        //     // console.log("x:" + b.x + ";y:" + b.y)
-        //     this._dragIcon.x = arr[tag].x;
-        //     this._dragIcon.y = arr[tag].y;
-        //     // console.log("第" + tag)
-        //     // let test:any = globalThis._.cloneDeep(this._dragIcon);
-        //     tag++;
-        // }, interval, repeat, delay);
-        // this._dragIcon.x = 1374;
-        // this._dragIcon.y = 593;
-        // let btn:fgui.GObject = this._view.getChild("dragBtn");
-        // console.log(btn)
-        // let a:cc.Vec2 = btn.localToGlobal(btn.x,btn.y);
-        // console.log(a)
-        // let b = btn.globalToLocal(1838,2004)
-        // console.log(b)
-        console.log(this._btnBox);
+        // 初始化state
+        this._state = {
+            drag: "end",
+            dragBtn: {
+                x: this._dragBtn.x,
+                y: this._dragBtn.y
+            },
+            drops: 0,
+            submit: false,
+            answer: false
+        };
     };
     dragAnswer_model01_v1.prototype.init = function (data) {
-        var Package = data.Package, GComponent = data.GComponent;
+        // 临时 model component json 配置加载
+        var Package = data.Package, GComponent = data.GComponent, config = data.config;
+        var answer = config.answer;
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
+        this._handleGuide01 = fgui.UIPackage.createObject(Package, "handleGuide01").asCom;
+        this._lineBlink01 = fgui.UIPackage.createObject(Package, "lineBlink01").asCom;
+        if (answer)
+            this._answer = answer;
+    };
+    dragAnswer_model01_v1.prototype.getOriginValue = function (v) {
+        return {
+            x: v.x,
+            y: v.y
+        };
     };
     dragAnswer_model01_v1.prototype._onDragStart = function (evt) {
-        var btn = fgui.GObject.cast(evt.currentTarget);
-        // 取消对原目标的拖动，换成一个替代品
-        // btn.stopDrag();
-        // fgui.DragDropManager.inst.startDrag(btn, btn.icon,btn.icon);
-        // this._test.startDrag();
-        // fgui.DragDropManager.inst.startDrag(this._test, this._test.icon, this._test.icon);
-        // if (evt) {
-        //     let btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
-        //     // 取消对原目标的拖动，换成一个替代品
-        //     btn.stopDrag();
-        //     fgui.DragDropManager.inst.startDrag(btn, btn.icon, btn.icon); 
-        // } else {
-        //     let btn:fgui.GObject = this._view.getChild("dragBtn");
-        //     btn.stopDrag();
-        //     fgui.DragDropManager.inst.startDrag(btn, btn.icon, btn.icon); 
-        // }
-        // fgui.DragDropManager.inst.dragAgent.on(fgui.Event.TOUCH_END, this._agentTouchEnd, this);
-        // console.dir(fgui.DragDropManager.inst.dragAgent)
-        // fgui.DragDropManager.inst.dragAgent.x = 1374;
-        // fgui.DragDropManager.inst.dragAgent.y = 593;
-        // let a:cc.Vec2 = fgui.DragDropManager.inst.dragAgent.localToGlobal(fgui.DragDropManager.inst.dragAgent.x,fgui.DragDropManager.inst.dragAgent.y);
-        // let b = this._dragIcon.globalToLocal(a.x,a.y);
-        // console.log({x:fgui.DragDropManager.inst.dragAgent.x,y:fgui.DragDropManager.inst.dragAgent.y});
-        // console.log(a);
-        // console.log(b);
-        // this._dragIcon.x = b.x - 98;
-        // this._dragIcon.y = b.y - 72;
-        // console.log(fgui.DragDropManager.inst.dragAgent)
-        // console.log(this._dragBtn)
-        // console.log(this._dragIcon)
+        evt.captureTouch();
+        var state = globalThis._.cloneDeep(this._state);
+        state.drag = "start";
+        state.answer = state.drops === this._answer;
+        this.updateState(state);
     };
-    dragAnswer_model01_v1.prototype._agentTouchEnd = function (evt) {
-        console.log(JSON.stringify(this._moveArr));
-    };
-    dragAnswer_model01_v1.prototype._onDragMove = function (evt, pos) {
-        // console.log("x:" + fgui.DragDropManager.inst)
-        // console.log(fgui.DragDropManager.inst.dragging);
-        // let a:cc.Vec2 = fgui.DragDropManager.inst.dragAgent.localToGlobal(fgui.DragDropManager.inst.dragAgent.x,fgui.DragDropManager.inst.dragAgent.y);
-        // this._moveArr.push({x:fgui.DragDropManager.inst.dragAgent.x,y:fgui.DragDropManager.inst.dragAgent.y});
-        // console.log("_onDragMove");
-        // console.log(evt);
-        // let t:any = globalThis._.cloneDeep(evt.pos);
-        // console.log(`{x:${t.x},y:${t.y}}`);
-        // if (evt) {
-        //     console.log(`{x:${fgui.DragDropManager.inst.dragAgent.x},y:${fgui.DragDropManager.inst.dragAgent.y}}`);
-        // } else {
-        //     fgui.DragDropManager.inst.dragAgent.x = pos.x;
-        //     fgui.DragDropManager.inst.dragAgent.y = pos.y; 
-        //     let test:any = globalThis._.cloneDeep(fgui.DragDropManager.inst.dragAgent);
-        //     console.log(test);
-        // }
-        // console.log(evt)
-        // this._dragBtn.x = evt.pos.x;
-        // this._dragBtn.y = evt.pos.y;
-        // fgui.DragDropManager.inst.dragAgent.x = evt.pos.x;
-        // fgui.DragDropManager.inst.dragAgent.y = evt.pos.y;
+    dragAnswer_model01_v1.prototype._onDragMove = function (evt) {
+        this._dragging = true;
     };
     dragAnswer_model01_v1.prototype._onDragEnd = function (evt) {
-        console.log("_onDragEnd");
-        console.log(evt.currentTarget);
-        console.log("this._dragBtn:" + ("x:" + this._dragBtn.x + ";y:" + this._dragBtn.y));
-        var a = this._dragBtn.localToGlobal(this._dragBtn.x, this._dragBtn.y);
-        console.log(a);
-        var b = this._btnBox.globalToLocal(a.x, a.y);
-        console.log(b);
-        console.log("this._btnBox:" + ("x:" + this._btnBox.x + ";y:" + this._btnBox.y));
-        console.log(this._btnBox.width);
-        console.log(this._btnBox.height);
+        this._dragging = false;
+        var state = globalThis._.cloneDeep(this._state);
         var test = pointBelongArea("rectangle", this._btnBox, this._dragBtn);
-        console.log(test);
+        if (test) {
+            var icon = this._dragBtn.getChild("icon").asLoader;
+            var grid = this._grids.find(function (v) { return v.url === null; });
+            if (grid) {
+                grid.url = icon.url;
+                state.drops = state.drops + 1;
+            }
+        }
+        state.dragBtn = {
+            x: this._cache["dragOrigin"].x,
+            y: this._cache["dragOrigin"].y,
+        };
+        state.drag = "end";
+        state.answer = state.drops === this._answer;
+        this.updateState(state);
     };
-    dragAnswer_model01_v1.prototype._onDragDrop = function (target, data) {
-        console.log("_onDragDrop");
-        console.log(target);
-        console.log(data);
-        // console.log(fgui.DragDropManager.inst.dragAgent)
-        // console.log(data);
-        // let grid:any = this._grids.find(v => v.url === null);
-        // console.log(grid);
-        // if (grid) {
-        //     grid.url = data;
-        // } 
+    dragAnswer_model01_v1.prototype._onClick = function (evt) {
+        var state = globalThis._.cloneDeep(this._state);
+        var index = this._grids.findIndex(function (v) { return v.url === null; });
+        if (index !== 0) {
+            var grid = this._grids[index == -1 ? this._grids.length - 1 : index - 1];
+            grid.url = null;
+            state.answer = state.drops === this._answer;
+            state.drops = state.drops - 1;
+            this.updateState(state);
+        }
+    };
+    dragAnswer_model01_v1.prototype._clickSubmit = function (evt) {
+        var state = globalThis._.cloneDeep(this._state);
+        state.answer = state.drops === this._answer;
+        state.submit = true;
+        this.updateState(state);
     };
     // 获取状态
     dragAnswer_model01_v1.prototype.getState = function (data) {
@@ -214,7 +164,84 @@ var dragAnswer_model01_v1 = /** @class */ (function (_super) {
         this.state = curState;
     };
     // 更新ui层
-    dragAnswer_model01_v1.prototype.updateUi = function (state) { };
+    dragAnswer_model01_v1.prototype.updateUi = function (state) {
+        if (state.drag == "start") {
+            if (!state.answer) {
+                this.libraHint();
+            }
+        }
+        if (state.drag == "move") {
+            this._dragBtn.x = state.dragBtn.x;
+            this._dragBtn.y = state.dragBtn.y;
+        }
+        if (state.drag == "end") {
+            if (this._dragBtn.x !== this._cache["dragOrigin"].x) {
+                this._dragBtn.x = this._cache["dragOrigin"].x;
+                this._dragBtn.y = this._cache["dragOrigin"].y;
+            }
+            for (var i = 0; i < this._grids.length; i++) {
+                var grid = this._grids[i];
+                if (state.drops > i) {
+                    if (!grid.url) {
+                        var icon = this._dragBtn.getChild("icon").asLoader;
+                        grid.url = icon.url;
+                    }
+                }
+                else {
+                    if (grid.url)
+                        grid.url = null;
+                }
+            }
+            this._c1.selectedIndex = state.drops;
+            if (state.submit) {
+                if (state.drops) {
+                    if (state.answer) {
+                    }
+                    else {
+                    }
+                }
+                else {
+                    this.handleGuide();
+                }
+            }
+        }
+    };
+    // 天枰提示
+    dragAnswer_model01_v1.prototype.libraHint = function () {
+        var _this = this;
+        fgui.GRoot.inst.addChild(this._lineBlink01);
+        this._lineBlink01.y = (fgui.GRoot.inst.height - this._lineBlink01.height) / 2;
+        var t = this._lineBlink01.getTransition("t0");
+        t.play(function () {
+            fgui.GRoot.inst.removeChild(_this._lineBlink01);
+        });
+    };
+    // 操作提示
+    dragAnswer_model01_v1.prototype.handleGuide = function () {
+        var _this = this;
+        var state = globalThis._.cloneDeep(this._state);
+        fgui.GRoot.inst.addChild(this._handleGuide01);
+        this._handleGuide01.y = (fgui.GRoot.inst.height - this._handleGuide01.height) / 2;
+        var t = this._handleGuide01.getTransition("t0");
+        t.play(function () {
+            fgui.GRoot.inst.removeChild(_this._handleGuide01);
+            state.submit = false;
+            _this.updateState(state);
+        }, 2);
+    };
+    // 临时
+    // 拖拽定时器
+    dragAnswer_model01_v1.prototype.dragSchedule = function () {
+        if (this._dragging) {
+            var state = globalThis._.cloneDeep(this._state);
+            state.drag = "move";
+            state.dragBtn = {
+                x: this._dragBtn.x,
+                y: this._dragBtn.y,
+            };
+            this.updateState(state);
+        }
+    };
     // 注册状态，及获取状态的方法
     dragAnswer_model01_v1.prototype.registerState = function () {
         if (window['GlobalData'].sample.registerState)
@@ -232,6 +259,7 @@ var dragAnswer_model01_v1 = /** @class */ (function (_super) {
     };
     dragAnswer_model01_v1.prototype.onEnable = function () {
         this.registerState();
+        this.schedule(this.dragSchedule, this._scheduleTime);
     };
     dragAnswer_model01_v1.prototype.onDisable = function () {
         this.relieveState();

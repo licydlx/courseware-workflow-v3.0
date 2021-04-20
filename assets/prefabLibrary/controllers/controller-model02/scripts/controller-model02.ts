@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-14 12:17:36
+ * @LastEditTime: 2021-04-20 12:24:38
  */
 const { ccclass, property } = cc._decorator;
 
@@ -108,7 +108,7 @@ export default class controller_model02 extends cc.Component {
         let prefab: any = this._pagePrefabs[page];
         let node: any = cc.instantiate(prefab);
         let nodeJs = node.getComponent(cc.Component);
-        nodeJs.init({ Package: this._configJson.pathConfig.packageName, GComponent: chapter.uiPath });
+        nodeJs.init({ Package: this._configJson.pathConfig.packageName, GComponent: chapter.uiPath, config: chapter.config });
         node.parent = this.node;
 
         this._currentPageNode = node;
