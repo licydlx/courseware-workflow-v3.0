@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-20 18:48:26
+ * @LastEditTime: 2021-04-21 22:28:42
  */
 var pointBelongArea = window['GlobalData'].utils.pointBelongArea;
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -86,10 +86,18 @@ var clcikAnswer_model01_v1 = /** @class */ (function (_super) {
     clcikAnswer_model01_v1.prototype.init = function (data) {
         // 临时 model component json 配置加载
         var Package = data.Package, GComponent = data.GComponent, config = data.config;
-        var answer = config.answer;
+        var answer = config.answer, ae = config.ae;
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
-        this._handleGuide01 = fgui.UIPackage.createObject(Package, "handleGuide01").asCom;
-        this._lineBlink01 = fgui.UIPackage.createObject(Package, "lineBlink01").asCom;
+        // 动效注册
+        for (var v in ae) {
+            if (ae[v]) {
+                this[v] = {};
+                if (ae[v].component)
+                    this[v].component = fgui.UIPackage.createObject(Package, ae[v].component).asCom;
+                if (ae[v].pos)
+                    this[v].pos = ae[v].pos;
+            }
+        }
         if (answer)
             this._answer = answer;
     };
@@ -152,35 +160,81 @@ var clcikAnswer_model01_v1 = /** @class */ (function (_super) {
         this._c1.selectedIndex = state.drops;
         if (state.submit) {
             if (state.drops) {
-                if (state.answer) {
-                }
-                else {
-                }
+                this.answerFeedback(state.answer);
             }
             else {
-                this.handleGuide();
+                this.onHandleGuide();
+            }
+        }
+        else {
+            if (!state.answer) {
+                this.onLibraHint();
             }
         }
     };
-    // 天枰提示
-    clcikAnswer_model01_v1.prototype.libraHint = function () {
+    clcikAnswer_model01_v1.prototype.answerFeedback = function (bool) {
         var _this = this;
-        fgui.GRoot.inst.addChild(this._lineBlink01);
-        this._lineBlink01.y = (fgui.GRoot.inst.height - this._lineBlink01.height) / 2;
-        var t = this._lineBlink01.getTransition("t0");
+        var state = globalThis._.cloneDeep(this._state);
+        var component;
+        var pos;
+        if (bool) {
+            component = this.rightFeed.component;
+            pos = this.rightFeed.pos;
+        }
+        else {
+            component = this.errorFeed.component;
+            pos = this.errorFeed.pos;
+        }
+        fgui.GRoot.inst.addChild(component);
+        if (pos) {
+            component.x = (fgui.GRoot.inst.width - component.width) / 2 + pos.x;
+            component.y = (fgui.GRoot.inst.height - component.height) / 2 + pos.y;
+        }
+        else {
+            component.y = (fgui.GRoot.inst.height - component.height) / 2;
+        }
+        var t = component.getTransition("t0");
         t.play(function () {
-            fgui.GRoot.inst.removeChild(_this._lineBlink01);
+            fgui.GRoot.inst.removeChild(component);
+            state.submit = false;
+            _this.updateState(state);
+        }, 2);
+    };
+    // 天枰提示
+    clcikAnswer_model01_v1.prototype.onLibraHint = function () {
+        var _this = this;
+        if (!this.lineBlink)
+            return;
+        fgui.GRoot.inst.addChild(this.lineBlink.component);
+        if (this.lineBlink.pos) {
+            this.lineBlink.component.x = (fgui.GRoot.inst.width - this.lineBlink.component.width) / 2 + this.lineBlink.pos.x;
+            this.lineBlink.component.y = (fgui.GRoot.inst.height - this.lineBlink.component.height) / 2 + this.lineBlink.pos.y;
+        }
+        else {
+            this.lineBlink.component.y = (fgui.GRoot.inst.height - this.lineBlink.component.height) / 2;
+        }
+        var t = this.lineBlink.component.getTransition("t0");
+        t.play(function () {
+            fgui.GRoot.inst.removeChild(_this.lineBlink.component);
         });
     };
     // 操作提示
-    clcikAnswer_model01_v1.prototype.handleGuide = function () {
+    clcikAnswer_model01_v1.prototype.onHandleGuide = function () {
         var _this = this;
+        if (!this.handleGuide)
+            return;
         var state = globalThis._.cloneDeep(this._state);
-        fgui.GRoot.inst.addChild(this._handleGuide01);
-        this._handleGuide01.y = (fgui.GRoot.inst.height - this._handleGuide01.height) / 2;
-        var t = this._handleGuide01.getTransition("t0");
+        fgui.GRoot.inst.addChild(this.handleGuide.component);
+        if (this.handleGuide.pos) {
+            this.handleGuide.component.x = (fgui.GRoot.inst.width - this.handleGuide.component.width) / 2 + this.handleGuide.pos.x;
+            this.handleGuide.component.y = (fgui.GRoot.inst.height - this.handleGuide.component.height) / 2 + this.handleGuide.pos.y;
+        }
+        else {
+            this.handleGuide.component.y = (fgui.GRoot.inst.height - this.handleGuide.component.height) / 2;
+        }
+        var t = this.handleGuide.component.getTransition("t0");
         t.play(function () {
-            fgui.GRoot.inst.removeChild(_this._handleGuide01);
+            fgui.GRoot.inst.removeChild(_this.handleGuide.component);
             state.submit = false;
             _this.updateState(state);
         }, 2);

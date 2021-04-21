@@ -13,17 +13,17 @@
     <component id="n31_taz8" name="submit" src="taz89v" fileName="component/submit.xml" xy="1628,713">
       <Button icon="ui://pozm437jtaz89w" sound="ui://pozm437jtaz8ab"/>
     </component>
-    <component id="n36_8vqh" name="title" src="8vqhaw" fileName="component/title.xml" xy="923,70">
-      <Button sound="ui://pozm437jtaz8a1"/>
+    <component id="n36_8vqh" name="title" src="8vqhaw" fileName="component/title.xml" xy="950,68">
+      <Button icon="ui://pozm437jgst0c3" sound="ui://pozm437jtaz8a1"/>
     </component>
     <component id="n26_lgf1" name="uiBtn" src="lgf19t" fileName="component/uiBtn1.xml" xy="1084,346">
       <gearXY controller="c1" pages="2,0,3,4,5,6,7,8,9,10" values="1084,346|1084,342|1084,338|1084,334|1084,330|1084,326|1084,322|1084,318|1084,314|1084,311"/>
-      <Button icon="ui://pozm437j8vqhaq"/>
+      <Button icon="ui://pozm437jgst0c1"/>
     </component>
     <component id="n35_8vqh" name="btnBox" src="8vqhav" fileName="component/btnBox3.xml" xy="1400,75">
       <gearXY controller="c1" pages="2,0,3,4,5,6,7,8,9" values="1400,75|1400,81|1400,84|1400,86|1400,90|1400,94|1400,98|1400,102|1400,106" default="1400,110"/>
     </component>
-    <component id="n4_106c9" name="dragBtn" src="106c9g" fileName="component/dragBtn.xml" xy="877,765">
+    <component id="n4_106c9" name="dragBtn" src="106c9g" fileName="component/dragBtn.xml" xy="895,760" size="130,130">
       <Button icon="ui://pozm437j8vqhap"/>
     </component>
   </displayList>

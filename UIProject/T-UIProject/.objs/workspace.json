@@ -1,22 +1,24 @@
 {
-  "libview.firstColumnWidth": 239,
+  "libview.firstColumnWidth": 229,
   "libview.iconScale": 0,
   "backgroundColor": 6710886,
   "auxline1": true,
   "canvasColor": 10066329,
   "auxline2": true,
-  "doc.activeDoc": "ui://pozm437j106c9f",
+  "doc.activeDoc": "ui://pozm437j8vqhbw",
   "libview.twoColumn": false,
   "libview.expandedNodes": [
     "pozm437j",
     "/",
     "pozm437j",
-    "/images/"
+    "/audios/",
+    "pozm437j",
+    "/images/",
+    "pozm437j",
+    "/images/static-model01-v1/"
   ],
   "doc.openedDocs": [
-    "ui://pozm437j106c9f",
-    "ui://pozm437jtaz8al",
-    "ui://pozm437jtaz8ak"
+    "ui://pozm437j8vqhbw"
   ],
   "snapToGrid": true,
   "gridColor": 80,

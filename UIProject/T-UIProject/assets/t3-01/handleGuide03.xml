@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n1_gst0" name="n1" src="lgf19s" fileName="images/dragAnswer-model01-v1/0111.png" xy="1236,508" scale="0.6,0.6" rotation="4"/>
+    <image id="n0_gst0" name="n0" src="lgf19q" fileName="images/dragAnswer-model01-v1/0109.png" xy="1638,537"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="XY" target="n0_gst0" tween="true" startValue="1638,537" endValue="1515,530" duration="6"/>
+    <item time="6" type="XY" target="n0_gst0" tween="true" startValue="1515,530" endValue="1375,558" duration="6"/>
+    <item time="12" type="XY" target="n0_gst0" tween="true" startValue="1375,558" endValue="1271,631" duration="6"/>
+    <item time="18" type="XY" target="n0_gst0" tween="true" startValue="1271,631" endValue="1212,724" duration="6"/>
+  </transition>
+</component>

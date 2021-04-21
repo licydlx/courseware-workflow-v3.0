@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="c1" pages="2,,3,,4,,5,,6," selected="4"/>
+  <controller name="c1" pages="2,,3,,4,,5,,6," selected="0"/>
   <displayList>
     <image id="n0_8vqh" name="n0" src="8vqhax" fileName="images/clickAnswer-model01-v1/0101.png" xy="0,0" group="n4_8vqh"/>
     <image id="n5_8vqh" name="n5" src="lgf19j" fileName="images/dragAnswer-model01-v1/0102.png" xy="478,795" group="n4_8vqh"/>
@@ -10,15 +10,15 @@
     <component id="n1_8vqh" name="title" src="8vqhaw" fileName="component/title.xml" xy="940,70">
       <Button icon="ui://pozm437j8vqhb9" sound="ui://pozm437jtaz8a3"/>
     </component>
-    <image id="n7_8vqh" name="n7" src="lgf19l" fileName="images/dragAnswer-model01-v1/0104.png" xy="362,764" pivot="0.5,0.2" rotation="4">
+    <image id="n7_8vqh" name="n7" src="lgf19l" fileName="images/dragAnswer-model01-v1/0104.png" xy="362,764" pivot="0.5,0.2" rotation="-4">
       <gearLook controller="c1" pages="2,3,4,5,6" values="1,-4,0,0|1,-2,0,0|1,0,0,0|1,2,0,0|1,4,0,0"/>
     </image>
     <image id="n6_8vqh" name="n6" src="lgf19k" fileName="images/dragAnswer-model01-v1/0103.png" xy="560,763"/>
-    <component id="n10_8vqh" name="uiBtn" src="lgf19t" fileName="component/uiBtn1.xml" xy="370,650">
+    <component id="n10_8vqh" name="uiBtn" src="lgf19t" fileName="component/uiBtn1.xml" xy="370,682">
       <gearXY controller="c1" pages="2,3,4,5,6" values="370,682|370,672|370,664|370,658|370,650"/>
-      <Button icon="ui://pozm437j8vqhb7"/>
+      <Button icon="ui://pozm437jgst0cb"/>
     </component>
-    <component id="n16_8vqh" name="btnBox" src="8vqhbc" fileName="component/btnBox6.xml" xy="680,550">
+    <component id="n16_8vqh" name="btnBox" src="8vqhbc" fileName="component/btnBox6.xml" xy="680,520">
       <gearXY controller="c1" pages="2,3,4,5" values="680,520|680,530|680,534|680,540" default="680,550"/>
     </component>
     <component id="n12_8vqh" name="submit" src="taz89v" fileName="component/submit.xml" xy="1660,829">

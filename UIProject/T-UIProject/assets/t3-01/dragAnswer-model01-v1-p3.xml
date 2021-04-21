@@ -3,27 +3,27 @@
   <controller name="c1" pages="2,,0,,3,,4,,5,,6,,7," selected="0"/>
   <displayList>
     <image id="n15_lgf1" name="n15" src="lgf19i" fileName="images/dragAnswer-model01-v1/0101.png" xy="0,0" group="n16_lgf1"/>
-    <image id="n17_lgf1" name="n17" src="lgf19n" fileName="images/dragAnswer-model01-v1/0106.png" xy="185,258" group="n16_lgf1"/>
     <image id="n21_lgf1" name="n21" src="lgf19j" fileName="images/dragAnswer-model01-v1/0102.png" xy="1199,452" group="n16_lgf1"/>
+    <image id="n34_gst0" name="n34" src="gst0ca" fileName="images/dragAnswer-model01-v1/0140.png" xy="232,248" group="n16_lgf1"/>
     <group id="n16_lgf1" name="UI" xy="0,0" size="1920,1080"/>
     <image id="n20_lgf1" name="n20" src="lgf19l" fileName="images/dragAnswer-model01-v1/0104.png" xy="1084,422" pivot="0.5,0.2" rotation="-4">
       <gearLook controller="c1" pages="2,0,3,4,5,6,7" values="1,-4,0,0|1,-3,0,0|1,-2,0,0|1,-1,0,0|1,0,0,0|1,1,0,0|1,2,0,0"/>
     </image>
     <image id="n22_lgf1" name="n22" src="lgf19k" fileName="images/dragAnswer-model01-v1/0103.png" xy="1282,420"/>
-    <component id="n31_taz8" name="submit" src="taz89v" fileName="component/submit.xml" xy="1628,713">
+    <component id="n31_taz8" name="submit" src="taz89v" fileName="component/submit.xml" xy="1620,705">
       <Button icon="ui://pozm437jtaz89w" sound="ui://pozm437jtaz8ab"/>
     </component>
-    <component id="n32_8vqh" name="title" src="8vqhaw" fileName="component/title.xml" xy="927,72">
-      <Button sound="ui://pozm437jtaz89x"/>
+    <component id="n32_8vqh" name="title" src="8vqhaw" fileName="component/title.xml" xy="950,68">
+      <Button icon="ui://pozm437jgst0c2" sound="ui://pozm437jtaz89x"/>
     </component>
     <component id="n26_lgf1" name="uiBtn" src="lgf19t" fileName="component/uiBtn1.xml" xy="1084,338">
       <gearXY controller="c1" pages="2,0,3,4,5,6,7" values="1084,338|1084,334|1084,330|1084,328|1084,322|1084,320|1084,316"/>
-      <Button icon="ui://pozm437j8vqhan"/>
+      <Button icon="ui://pozm437jgst0c0"/>
     </component>
     <component id="n29_taz8" name="btnBox" src="106c9h" fileName="component/btnBox1.xml" xy="1400,134">
       <gearXY controller="c1" pages="2,0,3,4,5,6,7" values="1400,134|1400,136|1400,140|1400,146|1400,150|1400,154|1400,158"/>
     </component>
-    <component id="n4_106c9" name="dragBtn" src="106c9g" fileName="component/dragBtn.xml" xy="877,765">
+    <component id="n4_106c9" name="dragBtn" src="106c9g" fileName="component/dragBtn.xml" xy="895,760" size="130,130">
       <Button icon="ui://pozm437j8vqhao"/>
     </component>
   </displayList>

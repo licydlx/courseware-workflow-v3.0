@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n2_gst0" name="n2" xy="0,0" size="1920,1080" alpha="0.6" type="rect" fillColor="#ffcccccc"/>
+    <text id="n1_gst0" name="n1" xy="718,452" size="604,129" fontSize="100" color="#006666" align="center" vAlign="middle" text="还未成功哈！"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Rotation" target="n1_gst0" tween="true" startValue="0" endValue="360" duration="24"/>
+    <item time="0" type="Shake" target="n1_gst0" value="3,0.5"/>
+    <item time="0" type="Sound" value="ui://pozm437jtaz8a6,1"/>
+  </transition>
+</component>

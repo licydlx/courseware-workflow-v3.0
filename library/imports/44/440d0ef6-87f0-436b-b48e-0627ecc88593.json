@@ -30,7 +30,25 @@
         "modelBundle": "dragAnswer",
         "prefabName": "dragAnswer-model01-v1",
         "config": {
-          "answer": 4
+          "answer": 4,
+          "ae": {
+            "handleGuide": {
+              "component": "handleGuide01"
+            },
+            "lineBlink": {
+              "component": "lineBlink01",
+              "pos": {
+                "x": 355,
+                "y": -92
+              }
+            },
+            "rightFeed": {
+              "component": "rightFeed"
+            },
+            "errorFeed": {
+              "component": "errorFeed"
+            }
+          }
         }
       },
       {
@@ -38,7 +56,25 @@
         "modelBundle": "dragAnswer",
         "prefabName": "dragAnswer-model01-v1",
         "config": {
-          "answer": 6
+          "answer": 6,
+          "ae": {
+            "handleGuide": {
+              "component": "handleGuide01"
+            },
+            "lineBlink": {
+              "component": "lineBlink01",
+              "pos": {
+                "x": 355,
+                "y": -92
+              }
+            },
+            "rightFeed": {
+              "component": "rightFeed"
+            },
+            "errorFeed": {
+              "component": "errorFeed"
+            }
+          }
         }
       },
       {
@@ -46,7 +82,25 @@
         "modelBundle": "dragAnswer",
         "prefabName": "dragAnswer-model01-v1",
         "config": {
-          "answer": 6
+          "answer": 6,
+          "ae": {
+            "handleGuide": {
+              "component": "handleGuide01"
+            },
+            "lineBlink": {
+              "component": "lineBlink01",
+              "pos": {
+                "x": 355,
+                "y": -92
+              }
+            },
+            "rightFeed": {
+              "component": "rightFeed"
+            },
+            "errorFeed": {
+              "component": "errorFeed"
+            }
+          }
         }
       },
       {
@@ -54,7 +108,25 @@
         "modelBundle": "clickAnswer",
         "prefabName": "clickAnswer-model01-v1",
         "config": {
-          "answer": 2
+          "answer": 2,
+          "ae": {
+            "handleGuide": {
+              "component": "handleGuide02"
+            },
+            "lineBlink": {
+              "component": "lineBlink01",
+              "pos": {
+                "x": -368,
+                "y": 250
+              }
+            },
+            "rightFeed": {
+              "component": "rightFeed"
+            },
+            "errorFeed": {
+              "component": "errorFeed"
+            }
+          }
         }
       },
       {
@@ -62,7 +134,25 @@
         "modelBundle": "clickAnswer",
         "prefabName": "clickAnswer-model01-v1",
         "config": {
-          "answer": 4
+          "answer": 4,
+          "ae": {
+            "handleGuide": {
+              "component": "handleGuide02"
+            },
+            "lineBlink": {
+              "component": "lineBlink01",
+              "pos": {
+                "x": -368,
+                "y": 250
+              }
+            },
+            "rightFeed": {
+              "component": "rightFeed"
+            },
+            "errorFeed": {
+              "component": "errorFeed"
+            }
+          }
         }
       },
       {
@@ -70,7 +160,25 @@
         "modelBundle": "clickAnswer",
         "prefabName": "clickAnswer-model01-v1",
         "config": {
-          "answer": 2
+          "answer": 2,
+          "ae": {
+            "handleGuide": {
+              "component": "handleGuide02"
+            },
+            "lineBlink": {
+              "component": "lineBlink01",
+              "pos": {
+                "x": -368,
+                "y": 250
+              }
+            },
+            "rightFeed": {
+              "component": "rightFeed"
+            },
+            "errorFeed": {
+              "component": "errorFeed"
+            }
+          }
         }
       },
       {
@@ -78,7 +186,25 @@
         "modelBundle": "dragAnswer",
         "prefabName": "dragAnswer-model01-v1",
         "config": {
-          "answer": 4
+          "answer": 4,
+          "ae": {
+            "handleGuide": {
+              "component": "handleGuide03"
+            },
+            "lineBlink": {
+              "component": "lineBlink01",
+              "pos": {
+                "x": 11,
+                "y": 300
+              }
+            },
+            "rightFeed": {
+              "component": "rightFeed"
+            },
+            "errorFeed": {
+              "component": "errorFeed"
+            }
+          }
         }
       },
       {
@@ -86,7 +212,25 @@
         "modelBundle": "dragAnswer",
         "prefabName": "dragAnswer-model01-v1",
         "config": {
-          "answer": 6
+          "answer": 6,
+          "ae": {
+            "handleGuide": {
+              "component": "handleGuide03"
+            },
+            "lineBlink": {
+              "component": "lineBlink01",
+              "pos": {
+                "x": 11,
+                "y": 300
+              }
+            },
+            "rightFeed": {
+              "component": "rightFeed"
+            },
+            "errorFeed": {
+              "component": "errorFeed"
+            }
+          }
         }
       },
       {
@@ -94,7 +238,25 @@
         "modelBundle": "dragAnswer",
         "prefabName": "dragAnswer-model01-v1",
         "config": {
-          "answer": 6
+          "answer": 6,
+          "ae": {
+            "handleGuide": {
+              "component": "handleGuide03"
+            },
+            "lineBlink": {
+              "component": "lineBlink01",
+              "pos": {
+                "x": 11,
+                "y": 300
+              }
+            },
+            "rightFeed": {
+              "component": "rightFeed"
+            },
+            "errorFeed": {
+              "component": "errorFeed"
+            }
+          }
         }
       },
       {

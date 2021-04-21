@@ -104,6 +104,19 @@
     <component id="8vqhbx" name="btnBox8.xml" path="/component/"/>
     <component id="8vqhby" name="dragAnswer-model01-v1-p11.xml" path="/" exported="true"/>
     <component id="8vqhbz" name="static-model01-v1-p13.xml" path="/" exported="true"/>
+    <image id="gst0c0" name="0135.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="gst0c1" name="0136.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="gst0c2" name="0137.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="gst0c3" name="0138.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="gst0c4" name="0139.png" path="/images/dragAnswer-model01-v1/"/>
+    <component id="gst0c8" name="handleGuide02.xml" path="/" exported="true"/>
+    <component id="gst0c9" name="handleGuide03.xml" path="/" exported="true"/>
+    <image id="gst0ca" name="0140.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="gst0cb" name="0141.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="gst0cc" name="0142.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="gst0cd" name="0143.png" path="/images/dragAnswer-model01-v1/"/>
+    <component id="gst0ce" name="rightFeed.xml" path="/" exported="true"/>
+    <component id="gst0cf" name="errorFeed.xml" path="/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

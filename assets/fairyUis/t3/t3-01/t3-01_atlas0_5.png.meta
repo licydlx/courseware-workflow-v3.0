@@ -1,6 +1,6 @@
 {
   "ver": "2.3.5",
-  "uuid": "135c838c-42dd-46e8-8f76-bbb7f092823f",
+  "uuid": "596814a3-81eb-447d-bedd-00e43bf0edd3",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "t3-01_atlas0_5": {
       "ver": "1.0.4",
-      "uuid": "fd5ce780-9895-445e-afb3-df224cd641b6",
-      "rawTextureUuid": "135c838c-42dd-46e8-8f76-bbb7f092823f",
+      "uuid": "e7cd24b4-65dd-42a5-ab55-942baf084c0c",
+      "rawTextureUuid": "596814a3-81eb-447d-bedd-00e43bf0edd3",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

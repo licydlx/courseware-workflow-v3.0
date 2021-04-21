@@ -16,7 +16,7 @@
     <image id="n6_8vqh" name="n6" src="lgf19k" fileName="images/dragAnswer-model01-v1/0103.png" xy="560,763"/>
     <component id="n10_8vqh" name="uiBtn" src="lgf19t" fileName="component/uiBtn1.xml" xy="370,688">
       <gearXY controller="c1" pages="0,1,2,3,4,5,6" values="370,688|370,680|370,672|370,664|370,656|370,650|370,642"/>
-      <Button icon="ui://pozm437j8vqhb0"/>
+      <Button icon="ui://pozm437jgst0cc"/>
     </component>
     <component id="n14_8vqh" name="btnBox" src="8vqhb6" fileName="component/btnBox5.xml" xy="680,510">
       <gearXY controller="c1" pages="0,2,3,4,5,6" values="680,510|680,524|680,534|680,540|680,550|680,558" default="680,520"/>

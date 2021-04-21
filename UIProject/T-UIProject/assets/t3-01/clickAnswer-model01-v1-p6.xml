@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="c1" pages="0,,1,,2,,3,,4," selected="1"/>
+  <controller name="c1" pages="0,,1,,2,,3,,4," selected="0"/>
   <displayList>
     <image id="n0_8vqh" name="n0" src="8vqhax" fileName="images/clickAnswer-model01-v1/0101.png" xy="0,0" group="n4_8vqh"/>
     <image id="n5_8vqh" name="n5" src="lgf19j" fileName="images/dragAnswer-model01-v1/0102.png" xy="478,795" group="n4_8vqh"/>
     <image id="n2_8vqh" name="n2" src="8vqhb1" fileName="images/clickAnswer-model01-v1/0105.png" xy="68,198" group="n4_8vqh"/>
     <group id="n4_8vqh" name="UI" xy="0,0" size="1920,1080"/>
     <image id="n3_8vqh" name="n3" src="8vqhb2" fileName="images/clickAnswer-model01-v1/0106.png" xy="1336,3"/>
-    <component id="n1_8vqh" name="title" src="8vqhaw" fileName="component/title.xml" xy="940,70">
-      <Button icon="ui://pozm437j8vqhb9" sound="ui://pozm437jtaz89y"/>
+    <component id="n1_8vqh" name="title" src="8vqhaw" fileName="component/title.xml" xy="950,68">
+      <Button icon="ui://pozm437jgst0c4" sound="ui://pozm437jtaz89y"/>
     </component>
-    <image id="n7_8vqh" name="n7" src="lgf19l" fileName="images/dragAnswer-model01-v1/0104.png" xy="362,764" pivot="0.5,0.2" rotation="-2">
+    <image id="n7_8vqh" name="n7" src="lgf19l" fileName="images/dragAnswer-model01-v1/0104.png" xy="362,764" pivot="0.5,0.2" rotation="-4">
       <gearLook controller="c1" pages="1,2,3,4" values="1,-2,0,0|1,0,0,0|1,2,0,0|1,4,0,0" default="1,-4,0,0"/>
     </image>
     <image id="n6_8vqh" name="n6" src="lgf19k" fileName="images/dragAnswer-model01-v1/0103.png" xy="560,763"/>
-    <component id="n10_8vqh" name="uiBtn" src="lgf19t" fileName="component/uiBtn1.xml" xy="370,674">
+    <component id="n10_8vqh" name="uiBtn" src="lgf19t" fileName="component/uiBtn1.xml" xy="370,682">
       <gearXY controller="c1" pages="1,2,3,4" values="370,674|370,666|370,658|370,650" default="370,682"/>
-      <Button icon="ui://pozm437j8vqhb0"/>
+      <Button icon="ui://pozm437jgst0cd"/>
     </component>
-    <component id="n11_8vqh" name="btnBox" src="8vqhb4" fileName="component/btnBox4.xml" xy="680,528">
+    <component id="n11_8vqh" name="btnBox" src="8vqhb4" fileName="component/btnBox4.xml" xy="680,520">
       <gearXY controller="c1" pages="1,2,3,4" values="680,528|680,534|680,542|680,550" default="680,520"/>
     </component>
-    <component id="n12_8vqh" name="submit" src="taz89v" fileName="component/submit.xml" xy="1660,829">
-      <Button icon="ui://pozm437jtaz89w"/>
+    <component id="n12_8vqh" name="submit" src="taz89v" fileName="component/submit.xml" xy="1660,830">
+      <Button icon="ui://pozm437jtaz89w" sound="ui://pozm437jtaz8ab"/>
     </component>
     <component id="n13_8vqh" name="triggerBtn" src="k1ua9" fileName="component/triggerBtn.xml" xy="1238,761"/>
   </displayList>
