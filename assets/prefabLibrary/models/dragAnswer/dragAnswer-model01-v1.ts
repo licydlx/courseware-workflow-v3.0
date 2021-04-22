@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-21 22:24:13
+ * @LastEditTime: 2021-04-22 21:22:10
  */
 const { pointBelongArea } = window['GlobalData'].utils;
 
@@ -181,12 +181,6 @@ export default class dragAnswer_model01_v1 extends cc.Component {
 
     // 更新ui层
     updateUi(state: any) {
-        if (state.drag == "start") {
-            if (!state.answer) {
-                this.onLibraHint();
-            }
-        }
-
         if (state.drag == "move") {
             this._dragBtn.x = state.dragBtn.x;
             this._dragBtn.y = state.dragBtn.y;
@@ -210,6 +204,10 @@ export default class dragAnswer_model01_v1 extends cc.Component {
 
             this._c1.selectedIndex = state.drops;
 
+            if (!state.answer) {
+                this.onLibraHint();
+            }
+            
             if (state.submit) {
                 if (state.drops) {
                     this.answerFeedback(state.answer);

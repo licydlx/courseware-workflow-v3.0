@@ -15,12 +15,12 @@
     <component id="106c9g" name="dragBtn.xml" path="/component/"/>
     <component id="106c9h" name="btnBox1.xml" path="/component/"/>
     <image id="lgf19i" name="0101.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="lgf19j" name="0102.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="lgf19k" name="0103.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="lgf19l" name="0104.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="lgf19j" name="0102.png" path="/images/libra/"/>
+    <image id="lgf19k" name="0103.png" path="/images/libra/"/>
+    <image id="lgf19l" name="0104.png" path="/images/libra/"/>
     <image id="lgf19m" name="0105.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="lgf19n" name="0106.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="lgf19o" name="0107.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="lgf19o" name="0107.png" path="/images/libra/"/>
     <image id="lgf19p" name="0108.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="lgf19q" name="0109.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="lgf19r" name="0110.png" path="/images/dragAnswer-model01-v1/"/>
@@ -28,7 +28,7 @@
     <component id="lgf19t" name="uiBtn1.xml" path="/component/"/>
     <image id="taz89u" name="0101.png" path="/images/static-model01-v1/"/>
     <component id="taz89v" name="submit.xml" path="/component/"/>
-    <image id="taz89w" name="0112.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="taz89w" name="0112.png" path="/images/common/"/>
     <sound id="taz89x" name="T3-例题1.mp3" path="/audios/"/>
     <sound id="taz89y" name="T3-例题2.mp3" path="/audios/"/>
     <sound id="taz89z" name="T3-例题3.mp3" path="/audios/"/>
@@ -117,6 +117,30 @@
     <image id="gst0cd" name="0143.png" path="/images/dragAnswer-model01-v1/"/>
     <component id="gst0ce" name="rightFeed.xml" path="/" exported="true"/>
     <component id="gst0cf" name="errorFeed.xml" path="/" exported="true"/>
+    <image id="sqatch" name="0101.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatci" name="0102.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatcj" name="0103.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatck" name="0104.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatcl" name="0105.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatcm" name="0106.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatcn" name="0107.png" path="/images/inputChoose-model01-v1/"/>
+    <component id="sqatcz" name="inputChoose-model01-v1-p12.xml" path="/" exported="true"/>
+    <image id="sqatd0" name="0110.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatd1" name="0111.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatd2" name="0112.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatd3" name="0113.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatd4" name="0114.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatd5" name="0115.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatd6" name="0116.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatd7" name="0117.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatd8" name="0118.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatd9" name="0119.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatda" name="0109.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="sqatdb" name="0108.png" path="/images/inputChoose-model01-v1/"/>
+    <component id="sqatdc" name="numBtn.xml" path="/component/"/>
+    <component id="sqatdd" name="numInput.xml" path="/component/"/>
+    <component id="sqatde" name="clearBtn.xml" path="/component/"/>
+    <component id="sqatdf" name="chooseBox.xml" path="/component/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

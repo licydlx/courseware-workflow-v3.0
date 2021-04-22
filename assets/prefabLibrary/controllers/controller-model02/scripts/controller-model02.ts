@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-20 12:24:38
+ * @LastEditTime: 2021-04-22 20:56:39
  */
 const { ccclass, property } = cc._decorator;
 

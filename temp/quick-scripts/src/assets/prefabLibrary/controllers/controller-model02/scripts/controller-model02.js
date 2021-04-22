@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-20 12:24:38
+ * @LastEditTime: 2021-04-22 20:56:39
  */
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var monitorMessage = window['GlobalData'].monitorMessage;

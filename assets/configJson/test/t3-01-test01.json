@@ -2,7 +2,7 @@
     "name": "",
     "courseName": "t3-01",
     "env": "test",
-    "totalPages": 11,
+    "totalPages": 12,
     "pathConfig": {
         "remoteUrl": "",
         "controllerBundlePath": "",
@@ -15,6 +15,57 @@
         "packageName": "t3-01"
     },
     "chapters": [
+        {
+            "uiPath": "dragAnswer-model01-v1-p3",
+            "modelBundle": "dragAnswer",
+            "prefabName": "dragAnswer-model01-v1",
+            "config": {
+                "answer": 4,
+                "ae": {
+                    "handleGuide": {
+                        "component": "handleGuide01"
+                    },
+                    "lineBlink": {
+                        "component": "lineBlink01",
+                        "pos": {
+                            "x": 355,
+                            "y": -92
+                        }
+                    },
+                    "rightFeed":{
+                        "component": "rightFeed"
+                    },
+                    "errorFeed":{
+                        "component": "errorFeed"
+                    }
+                }
+            }
+        },
+
+        
+        {
+            "uiPath": "inputChoose-model01-v1-p12",
+            "modelBundle": "inputChoose",
+            "prefabName": "inputChoose-model01-v1",
+            "config": {
+                "answer": 6,
+                "ae": {
+                    "handleGuide": {
+                        "component": "handleGuide02",
+                        "pos":{
+                            "x":-220,
+                            "y":-140
+                        }
+                    },
+                    "rightFeed":{
+                        "component": "rightFeed"
+                    },
+                    "errorFeed":{
+                        "component": "errorFeed"
+                    }
+                }
+            }
+        },
 
         {
             "uiPath": "dragAnswer-model01-v1-p9",
@@ -49,32 +100,6 @@
             "prefabName": "static-model01-v1"
         },
 
-        {
-            "uiPath": "dragAnswer-model01-v1-p3",
-            "modelBundle": "dragAnswer",
-            "prefabName": "dragAnswer-model01-v1",
-            "config": {
-                "answer": 4,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide01"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": 355,
-                            "y": -92
-                        }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
-                    }
-                }
-            }
-        },
         {
             "uiPath": "dragAnswer-model01-v1-p4",
             "modelBundle": "dragAnswer",

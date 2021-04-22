@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 226,
+                "height": 250.140625,
                 "type": "panel",
-                "width": 221
+                "width": 204
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 706.5,
+                "height": 682.359375,
                 "type": "panel",
-                "width": 221
+                "width": 204
               }
             ],
             "height": 935.5,
             "type": "dock-v",
-            "width": 221
+            "width": 204
           },
           {
             "active": 0,
@@ -43,7 +43,7 @@
             ],
             "height": 935.5,
             "type": "panel",
-            "width": 1326.984375
+            "width": 1406
           },
           {
             "active": 0,
@@ -53,7 +53,7 @@
             ],
             "height": 935.5,
             "type": "panel",
-            "width": 366
+            "width": 304
           }
         ],
         "type": "dock-h"
@@ -91,6 +91,12 @@
       "y": 290,
       "width": 316,
       "height": 465
+    },
+    "console": {
+      "x": 752,
+      "y": 340,
+      "width": 420,
+      "height": 339
     }
   },
   "panelLabelWidth": {

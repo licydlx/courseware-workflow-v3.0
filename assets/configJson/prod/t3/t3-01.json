@@ -2,7 +2,7 @@
     "name": "数理思维",
     "courseName": "t3-01",
     "env": "test",
-    "totalPages": 11,
+    "totalPages": 12,
     "pathConfig": {
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
         "controllerBundlePath": "T-series/prefabLibrary/",
@@ -260,7 +260,30 @@
             }
         },
 
-        
+        {
+            "uiPath": "inputChoose-model01-v1-p12",
+            "modelBundle": "inputChoose",
+            "prefabName": "inputChoose-model01-v1",
+            "config": {
+                "answer": 6,
+                "ae": {
+                    "handleGuide": {
+                        "component": "handleGuide02",
+                        "pos":{
+                            "x":-220,
+                            "y":-140
+                        }
+                    },
+                    "rightFeed":{
+                        "component": "rightFeed"
+                    },
+                    "errorFeed":{
+                        "component": "errorFeed"
+                    }
+                }
+            }
+        },
+
         {
             "uiPath": "static-model01-v1-p13",
             "modelBundle": "static",

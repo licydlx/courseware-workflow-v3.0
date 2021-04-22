@@ -4,5 +4,5 @@
   <displayList>
     <loader id="n3_taz8" name="icon" xy="0,0" size="215,215" autoSize="true"/>
   </displayList>
-  <Button/>
+  <Button downEffect="dark" downEffectValue=".8"/>
 </component>
