@@ -3,7 +3,7 @@
   <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
   <displayList>
     <image id="n14_sqat" name="n14" src="sqatdb" fileName="images/inputChoose-model01-v1/0108.png" xy="0,0"/>
-    <component id="n3_sqat" name="0" src="sqatdc" fileName="component/numBtn.xml" xy="31,388" size="90,90" group="n13_sqat">
+    <component id="n3_sqat" name="0" src="sqatdc" fileName="component/numBtn.xml" xy="144,388" size="90,90" group="n13_sqat">
       <Button icon="ui://pozm437jsqatd0" sound="ui://pozm437jtaz8ab"/>
     </component>
     <component id="n4_sqat" name="1" src="sqatdc" fileName="component/numBtn.xml" xy="31,272" size="90,90" group="n13_sqat">
@@ -34,7 +34,10 @@
       <Button icon="ui://pozm437jsqatd9" sound="ui://pozm437jtaz8ab"/>
     </component>
     <group id="n13_sqat" name="numBox" xy="31,40" size="311,438" advanced="true"/>
-    <component id="n15_sqat" name="clearBtn" src="sqatde" fileName="component/clearBtn.xml" xy="136,384">
+    <component id="n16_itxh" name="deleteBtn" src="itxhdp" fileName="component/deleteBtn.xml" xy="31,380">
+      <Button sound="ui://pozm437jtaz8ab"/>
+    </component>
+    <component id="n17_itxh" name="finishBtn" src="itxhdq" fileName="component/finishBtn.xml" xy="252,380">
       <Button sound="ui://pozm437jtaz8ab"/>
     </component>
   </displayList>

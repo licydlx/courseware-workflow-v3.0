@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2020-11-19 18:05:09
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-12 17:57:27
+ * @LastEditTime: 2021-04-26 14:22:17
  */
 const { ccclass, property } = cc._decorator;
 
@@ -32,6 +32,7 @@ export default class formal_panle_model02 extends cc.Component {
         show: false,
         signalingModel: 1,
         monitored: null,
+        monitoredName:null,
         launch: null,
         studentList: [],
         ranking: [],
@@ -65,6 +66,7 @@ export default class formal_panle_model02 extends cc.Component {
         state.signalingModel = 1;
         state.snapshoot = {};
         state.monitored = null;
+        state.monitoredName = null;
         state.launch = null;
         state.ranking = [];
 
@@ -110,12 +112,14 @@ export default class formal_panle_model02 extends cc.Component {
 
         if (ced == 1) {
             state.monitored = null;
+            state.monitoredName = null;
             state.launch = null;
             state.ranking = [];
         } else if (ced == 2) {
             state.launch = null;
         } else if (ced == 3) {
             state.monitored = null;
+            state.monitoredName = null;
         }
 
         let prevState = globalThis._.cloneDeep(window['GlobalData'].stateProxy["state"]);
@@ -147,10 +151,11 @@ export default class formal_panle_model02 extends cc.Component {
 
         if (state.monitored == monitored) {
             state.monitored = null;
+            state.monitoredName = null;
             curState = window['GlobalData'].courseData.stateShoot;
         } else {
             state.monitored = monitored;
-
+            state.monitoredName = monitoredName;
             // 兼容
             // 安卓ipad 部分账户 无法获取userid 用name替代
             if (state.snapshoot[monitored]) {
@@ -257,7 +262,7 @@ export default class formal_panle_model02 extends cc.Component {
         window['GlobalData'].courseData.signalingModel = state.signalingModel;
         // 监控模式 监控谁
         window['GlobalData'].courseData.monitored = state.monitored;
-
+        window['GlobalData'].courseData.monitoredName = state.monitoredName;
     }
 
     userCreate(users: any) {

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_bkhu" name="n0" src="bkhued" fileName="images/static-model01-v1/0102.jpg" xy="0,0"/>
+    <loader id="n3_bkhu" name="mask" xy="0,0" size="100,100" aspect="true" scale="19.2,10.8" url="ui://pozm437jbkhuef" align="center"/>
+    <image id="n1_bkhu" name="n1" src="bkhue0" fileName="images/static-model01-v1/0103.png" xy="112,243"/>
+  </displayList>
+</component>

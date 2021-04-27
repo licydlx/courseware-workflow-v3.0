@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="pozm437j">
   <resources>
-    <component id="ns9y0" name="radioSwitch-model01-v1-p2.xml" path="/" exported="true"/>
-    <image id="k1ua1" name="0101.jpg" path="/images/radioSwitch-model01-v1/"/>
-    <image id="k1ua2" name="0102.jpg" path="/images/radioSwitch-model01-v1/"/>
-    <image id="k1ua3" name="0103.jpg" path="/images/radioSwitch-model01-v1/"/>
-    <image id="k1ua4" name="0104.jpg" path="/images/radioSwitch-model01-v1/"/>
-    <image id="k1ua5" name="0201.png" path="/images/radioSwitch-model01-v1/"/>
-    <image id="k1ua6" name="0202.png" path="/images/radioSwitch-model01-v1/"/>
-    <image id="k1ua7" name="0203.png" path="/images/radioSwitch-model01-v1/"/>
     <component id="k1ua9" name="triggerBtn.xml" path="/component/"/>
     <component id="d7ptb" name="static-model01-v1-p1.xml" path="/" exported="true"/>
     <component id="106c9f" name="dragAnswer-model01-v1-p4.xml" path="/" exported="true"/>
     <component id="106c9g" name="dragBtn.xml" path="/component/"/>
     <component id="106c9h" name="btnBox1.xml" path="/component/"/>
-    <image id="lgf19i" name="0101.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="lgf19j" name="0102.png" path="/images/libra/"/>
     <image id="lgf19k" name="0103.png" path="/images/libra/"/>
     <image id="lgf19l" name="0104.png" path="/images/libra/"/>
     <image id="lgf19m" name="0105.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="lgf19n" name="0106.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="lgf19o" name="0107.png" path="/images/libra/"/>
-    <image id="lgf19p" name="0108.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="lgf19q" name="0109.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="lgf19q" name="0109.png" path="/images/common/"/>
     <image id="lgf19r" name="0110.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="lgf19s" name="0111.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="lgf19s" name="0111.png" path="/images/common/"/>
     <component id="lgf19t" name="uiBtn1.xml" path="/component/"/>
     <image id="taz89u" name="0101.png" path="/images/static-model01-v1/"/>
     <component id="taz89v" name="submit.xml" path="/component/"/>
@@ -54,7 +44,7 @@
     <sound id="taz8aj" name="课后练习7.mp3" path="/audios/"/>
     <component id="taz8ak" name="handleGuide01.xml" path="/" exported="true"/>
     <component id="taz8al" name="lineBlink01.xml" path="/" exported="true"/>
-    <image id="taz8am" name="0113.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="taz8am" name="0113.png" path="/images/libra/"/>
     <image id="8vqhan" name="0114.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhao" name="0115.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhap" name="0116.png" path="/images/dragAnswer-model01-v1/"/>
@@ -66,7 +56,6 @@
     <component id="8vqhav" name="btnBox3.xml" path="/component/"/>
     <component id="8vqhaw" name="title.xml" path="/component/"/>
     <image id="8vqhax" name="0101.png" path="/images/clickAnswer-model01-v1/"/>
-    <image id="8vqhay" name="0102.png" path="/images/clickAnswer-model01-v1/"/>
     <image id="8vqhaz" name="0103.png" path="/images/clickAnswer-model01-v1/"/>
     <image id="8vqhb0" name="0104.png" path="/images/clickAnswer-model01-v1/"/>
     <image id="8vqhb1" name="0105.png" path="/images/clickAnswer-model01-v1/"/>
@@ -84,20 +73,13 @@
     <image id="8vqhbd" name="0119.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhbe" name="0120.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhbf" name="0121.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="8vqhbg" name="0122.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhbh" name="0123.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="8vqhbi" name="0124.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhbj" name="0125.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="8vqhbk" name="0102.png" path="/images/static-model01-v1/"/>
     <component id="8vqhbl" name="dragAnswer-model01-v1-p9.xml" path="/" exported="true"/>
     <component id="8vqhbm" name="btnBox7.xml" path="/component/"/>
     <image id="8vqhbn" name="0126.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="8vqhbo" name="0127.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="8vqhbp" name="0128.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhbq" name="0129.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="8vqhbr" name="0130.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhbs" name="0131.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="8vqhbt" name="0132.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhbu" name="0133.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="8vqhbv" name="0134.png" path="/images/dragAnswer-model01-v1/"/>
     <component id="8vqhbw" name="dragAnswer-model01-v1-p10.xml" path="/" exported="true"/>
@@ -106,17 +88,12 @@
     <component id="8vqhbz" name="static-model01-v1-p13.xml" path="/" exported="true"/>
     <image id="gst0c0" name="0135.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="gst0c1" name="0136.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="gst0c2" name="0137.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="gst0c3" name="0138.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="gst0c4" name="0139.png" path="/images/dragAnswer-model01-v1/"/>
     <component id="gst0c8" name="handleGuide02.xml" path="/" exported="true"/>
     <component id="gst0c9" name="handleGuide03.xml" path="/" exported="true"/>
     <image id="gst0ca" name="0140.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="gst0cb" name="0141.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="gst0cc" name="0142.png" path="/images/dragAnswer-model01-v1/"/>
     <image id="gst0cd" name="0143.png" path="/images/dragAnswer-model01-v1/"/>
-    <component id="gst0ce" name="rightFeed.xml" path="/" exported="true"/>
-    <component id="gst0cf" name="errorFeed.xml" path="/" exported="true"/>
     <image id="sqatch" name="0101.png" path="/images/inputChoose-model01-v1/"/>
     <image id="sqatci" name="0102.png" path="/images/inputChoose-model01-v1/"/>
     <image id="sqatcj" name="0103.png" path="/images/inputChoose-model01-v1/"/>
@@ -141,6 +118,51 @@
     <component id="sqatdd" name="numInput.xml" path="/component/"/>
     <component id="sqatde" name="clearBtn.xml" path="/component/"/>
     <component id="sqatdf" name="chooseBox.xml" path="/component/"/>
+    <image id="itxhdh" name="0102.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="itxhdi" name="0111.png" path="/images/clickAnswer-model01-v1/"/>
+    <image id="itxhdj" name="0112.png" path="/images/clickAnswer-model01-v1/"/>
+    <image id="itxhdk" name="0113.png" path="/images/clickAnswer-model01-v1/"/>
+    <image id="itxhdl" name="0114.png" path="/images/clickAnswer-model01-v1/"/>
+    <image id="itxhdm" name="0115.png" path="/images/clickAnswer-model01-v1/"/>
+    <image id="itxhdn" name="0120.png" path="/images/inputChoose-model01-v1/"/>
+    <image id="itxhdo" name="0121.png" path="/images/inputChoose-model01-v1/"/>
+    <component id="itxhdp" name="deleteBtn.xml" path="/component/"/>
+    <component id="itxhdq" name="finishBtn.xml" path="/component/"/>
+    <image id="uu84dr" name="0103.png" path="/images/common/"/>
+    <component id="uu84ds" name="launchBtn.xml" path="/component/"/>
+    <component id="uu84dt" name="catchStone1.xml" path="/" exported="true"/>
+    <image id="uu84du" name="效果-3.png" path="/images/design/"/>
+    <component id="uu84dv" name="catchStone2.xml" path="/" exported="true"/>
+    <image id="bkhue0" name="0103.png" path="/images/static-model01-v1/"/>
+    <image id="bkhue1" name="例子@2x.png" path="/images/common/"/>
+    <image id="bkhue2" name="气泡@2x (1).png" path="/images/common/"/>
+    <image id="bkhue3" name="气泡@2x (2).png" path="/images/common/"/>
+    <image id="bkhue4" name="气泡@2x (3).png" path="/images/common/"/>
+    <image id="bkhue5" name="气泡@2x (4).png" path="/images/common/"/>
+    <image id="bkhue6" name="气泡@2x (5).png" path="/images/common/"/>
+    <image id="bkhue7" name="气泡@2x (6).png" path="/images/common/"/>
+    <image id="bkhue8" name="气泡@2x (7).png" path="/images/common/"/>
+    <image id="bkhue9" name="气泡@2x (8).png" path="/images/common/"/>
+    <image id="bkhuea" name="气泡@2x.png" path="/images/common/"/>
+    <image id="bkhueb" name="0101.jpg" path="/images/dragAnswer-model01-v1/"/>
+    <image id="bkhuec" name="0144.png" path="/images/dragAnswer-model01-v1/"/>
+    <image id="bkhued" name="0102.jpg" path="/images/static-model01-v1/"/>
+    <component id="bkhuee" name="static-model01-v1-p14.xml" path="/" exported="true"/>
+    <image id="bkhuef" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
+    <component id="gco1ek" name="titleTrigger.xml" path="/component/"/>
+    <image id="gco1el" name="laba_ex-idle_0.png" path="/images/laba/"/>
+    <image id="gco1em" name="laba_ex-play_00.png" path="/images/laba/"/>
+    <image id="gco1en" name="laba_ex-play_01.png" path="/images/laba/"/>
+    <image id="gco1eo" name="laba_ex-play_02.png" path="/images/laba/"/>
+    <image id="gco1ep" name="laba_ex-play_03.png" path="/images/laba/"/>
+    <image id="gco1eq" name="laba_ex-play_04.png" path="/images/laba/"/>
+    <image id="gco1er" name="laba_ex-play_05.png" path="/images/laba/"/>
+    <image id="gco1es" name="laba_ex-play_06.png" path="/images/laba/"/>
+    <image id="gco1et" name="laba_ex-play_07.png" path="/images/laba/"/>
+    <image id="gco1eu" name="laba_ex-play_08.png" path="/images/laba/"/>
+    <image id="gco1ev" name="laba_ex-play_09.png" path="/images/laba/"/>
+    <image id="gco1ew" name="laba_ex-play_10.png" path="/images/laba/"/>
+    <movieclip id="gco1ex" name="laba.jta" path="/animations/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

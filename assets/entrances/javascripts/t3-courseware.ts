@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-12 14:47:18
+ * @LastEditTime: 2021-04-27 11:32:03
  */
 const gameData = window['GlobalData'].gameData;
 const { loadBundle, loadPrefab, ajax } = window['GlobalData'].sample;
@@ -42,7 +42,6 @@ export default class t3_courseware extends cc.Component {
             let json: any = await ajax("GET", `${gameData.apiOrigin}/getConfigJson?courseName=${courseName ? courseName.toLowerCase() : ''}&env=${env}`);
             configJson = JSON.parse(json);
         }
-
         // 生成控制器
         let contrllerPath: any = `${configJson.pathConfig.remoteUrl}${configJson.pathConfig.controllerBundlePath}${configJson.pathConfig.controllerName}`;
         let contrllerBundle: any = await loadBundle(contrllerPath);

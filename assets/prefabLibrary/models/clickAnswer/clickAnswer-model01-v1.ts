@@ -4,24 +4,34 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-21 22:28:42
+ * @LastEditTime: 2021-04-27 22:44:29
  */
-const { pointBelongArea } = window['GlobalData'].utils;
+const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
 const { ccclass, property } = cc._decorator;
-
 @ccclass
 export default class clcikAnswer_model01_v1 extends cc.Component {
+    private _worldRoot: cc.Node;
     private _view: fgui.GComponent;
     private _c1: fgui.Controller;
+    private _c2: fgui.Controller;
+
     private _btnBox: fgui.GButton;
     private _submit: fgui.GButton;
-    private _trigger: fgui.GButton;
-    
+    private _launchBtn: fgui.GButton;
+    private _imgObj: fgui.GLoader;
+
+    private _title: fgui.GButton;
+    private _titleTrigger: fgui.GLoader;
+
+    // fairygui 组件
+    // 动效
     private handleGuide: any;
     private lineBlink: any;
-    private rightFeed: any;
-    private errorFeed: any;
+    private catchObj: any;
+
+    // 远程动态组件
+    private feedback: any;
 
     private _grids = [];
     private _answer = 0;
@@ -33,29 +43,39 @@ export default class clcikAnswer_model01_v1 extends cc.Component {
     }
 
     set state(v: any) {
+        this.updateUi(this._state, v);
         this._state = v;
-        this.updateUi(this._state);
         this.mergeState();
     }
 
     onLoad() {
+        this._worldRoot = cc.find("Canvas").parent;
+
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         fgui.GRoot.inst.addChild(this._view);
 
         // 控制器
         this._c1 = this._view.getController("c1");
+        this._c2 = this._view.getController("c2");
 
-        // submit 提交按钮
         this._submit = this._view.getChild("submit").asButton;
-        this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
+        if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
 
-        // trigger 触发器按钮
-        this._trigger = this._view.getChild("triggerBtn").asButton;
-        this._trigger.on(fgui.Event.CLICK, this._clickTrigger, this);
+        this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
+        if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
+
+        this._title = this._view.getChild("title").asButton;
+
+        // launch 触发器按钮
+        this._launchBtn = this._view.getChild("launchBtn").asButton;
+        this._launchBtn.on(fgui.Event.CLICK, this._clickLaunch, this);
 
         // 容器天枰
         this._btnBox = this._view.getChild("btnBox").asButton;
         this._btnBox.on(fgui.Event.CLICK, this._clickLibra, this);
+
+        this._imgObj = this._view.getChild("imgObj").asLoader;
+        this.catchObj = this._view.getChild("catchStone").asCom;
 
         // 天枰 子栏
         let aGroup = this._btnBox.getChild("grids").asGroup;
@@ -70,15 +90,21 @@ export default class clcikAnswer_model01_v1 extends cc.Component {
         this._state = {
             drops: 0,
             submit: false,
-            answer: false
+            answer: false,
+            catch: false,
+            title: false,
         }
 
+        // 临时 禁止操作期间 切页
+        this.disableForbidHandle();
     }
 
-    init(data: any) {
+    async init(data: any) {
         // 临时 model component json 配置加载
-        let { Package, GComponent, config } = data;
-        let { answer, ae } = config;
+        let { pathConfig, model, components } = data;
+        let Package = pathConfig.packageName;
+        let GComponent = model.uiPath;
+        let { answer, ae } = model.config;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
 
@@ -90,8 +116,23 @@ export default class clcikAnswer_model01_v1 extends cc.Component {
                 if (ae[v].pos) this[v].pos = ae[v].pos;
             }
         }
-        
+
         if (answer) this._answer = answer;
+
+        if (components) {
+            for (const key in components) {
+                let componentPath: any = `${pathConfig.remoteUrl}${pathConfig.componentBundlePath}${components[key].bundleName}`;
+                let componentBundle: any = await loadBundle(componentPath);
+                let componentPrefab: any = await loadPrefab(componentBundle, components[key].prefabName);
+                this[key] = componentPrefab;
+            }
+        }
+    }
+
+    private _clickTitle(evt: any) {
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.title = true;
+        this.updateState(state);
     }
 
     // 点击天枰 消除一个
@@ -110,17 +151,9 @@ export default class clcikAnswer_model01_v1 extends cc.Component {
     }
 
     // 触发器点击
-    private _clickTrigger(evt: any): void {
-
+    private _clickLaunch(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
-        let icon: fgui.GLoader = this._trigger.getChild("icon").asLoader;
-        let grid: fgui.GLoader = this._grids.find(v => v.url === null);
-        if (grid) {
-            grid.url = icon.url;
-            state.drops = state.drops + 1;
-        }
-
-        state.answer = state.drops === this._answer;
+        state.catch = true;
         this.updateState(state);
     }
 
@@ -145,61 +178,105 @@ export default class clcikAnswer_model01_v1 extends cc.Component {
     }
 
     // 更新ui层
-    updateUi(state: any) {
-        for (let i = 0; i < this._grids.length; i++) {
-            let grid: fgui.GLoader = this._grids[i];
-            if (state.drops > i) {
-                if (!grid.url) {
-                    let icon: fgui.GLoader = this._trigger.getChild("icon").asLoader;
-                    grid.url = icon.url;
-                }
-            } else {
-                if (grid.url) grid.url = null;
-            }
-        }
-
-        this._c1.selectedIndex = state.drops;
-        
-        if (state.submit) {
-            if (state.drops) {
-                this.answerFeedback(state.answer);
-            } else {
-                this.onHandleGuide();
-            }
+    updateUi(oldState: any, state: any) {
+        if (state.catch) {
+            this.onCatchObj();
         } else {
-            if (!state.answer) {
-                this.onLibraHint();
+            if (!globalThis._.isEqual(oldState.drops, state.drops)) {
+                for (let i = 0; i < this._grids.length; i++) {
+                    let grid: fgui.GLoader = this._grids[i];
+                    if (state.drops > i) {
+                        if (!grid.url) {
+                            grid.url = this._imgObj.url;
+                        }
+                    } else {
+                        if (grid.url) grid.url = null;
+                    }
+                }
+                this._c1.selectedIndex = state.drops;
+
+                if (!state.answer) this.onLibraHint();
+            }
+
+            if (!globalThis._.isEqual(oldState.title, state.title)) {
+                // title
+                this.playTitle(state.title);
+            }
+
+            if (!globalThis._.isEqual(oldState.submit, state.submit)) {
+                if (state.submit) {
+                    if (state.drops) {
+                        this.answerFeedback(state.answer);
+                    } else {
+                        this.onHandleGuide();
+                    }
+                }
             }
         }
     }
 
-    answerFeedback(bool:boolean){
-        let state: any = globalThis._.cloneDeep(this._state);
-        let component:any;
-        let pos:any;
+    async playTitle(bool: boolean) {
+        this._c2.selectedIndex = bool ? 1 : 0;
+
         if (bool) {
-            component = this.rightFeed.component;
-            pos = this.rightFeed.pos;
+            cc.audioEngine.stopAll();
+            this.forbidHandle();
+            let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
+            let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
+            let audioId = cc.audioEngine.play(audio, false, 1);
+            cc.audioEngine.setFinishCallback(audioId, () => {
+                let state: any = globalThis._.cloneDeep(this._state);
+                state.title = false;
+                this.updateState(state);
+            });
         } else {
-            component = this.errorFeed.component;
-            pos = this.errorFeed.pos; 
+            this.disableForbidHandle();
         }
+    }
 
-        fgui.GRoot.inst.addChild(component);
-        if (pos) {
-            component.x = (fgui.GRoot.inst.width - component.width) / 2 + pos.x;
-            component.y = (fgui.GRoot.inst.height - component.height) / 2 + pos.y;
-        } else {
-            component.y = (fgui.GRoot.inst.height - component.height) / 2;
-        }
+    // 答案反馈
+    answerFeedback(bool: boolean) {
+        // let component: any;
+        // let pos: any;
+        // if (bool) {
+        //     component = this.rightFeed.component;
+        //     pos = this.rightFeed.pos;
+        // } else {
+        //     component = this.errorFeed.component;
+        //     pos = this.errorFeed.pos;
+        // }
 
-        let t: fgui.Transition = component.getTransition("t0");
-        t.play(() => {
-            fgui.GRoot.inst.removeChild(component);
+        // fgui.GRoot.inst.addChild(component);
 
+        // console.log(component);
+        // if (pos) {
+        //     component.x = (fgui.GRoot.inst.width - component.width) / 2 + pos.x;
+        //     component.y = (fgui.GRoot.inst.height - component.height) / 2 + pos.y;
+        // } else {
+        //     component.y = (fgui.GRoot.inst.height - component.height) / 2;
+        // }
+
+        // let t: fgui.Transition = component.getTransition("t0");
+        // t.play(() => {
+        //     fgui.GRoot.inst.removeChild(component);
+
+        //     state.submit = false;
+        //     this.updateState(state);
+        // }, 2);
+        if (!this.feedback) return;
+        let state: any = globalThis._.cloneDeep(this._state);
+        let feedback: any = cc.instantiate(this.feedback);
+        feedback.x = 960;
+        feedback.y = 540;
+        let feedbackJs: any = feedback.getComponent(cc.Component);
+        feedbackJs.init(bool);
+        feedback.parent = cc.find("Canvas").parent;
+
+        setTimeout(() => {
+            feedback.destroy();
             state.submit = false;
             this.updateState(state);
-        }, 2);
+        }, 2000);
     }
 
     // 天枰提示
@@ -240,6 +317,47 @@ export default class clcikAnswer_model01_v1 extends cc.Component {
         }, 2);
     }
 
+    // 抓取某物
+    onCatchObj() {
+        // if (!this.catchObj) return;
+        let t0: fgui.Transition = this.catchObj.getTransition("t0");
+        t0.play(() => {
+
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.catch = false;
+
+            let grid: fgui.GLoader = this._grids.find(v => v.url === null);
+            if (grid) {
+                state.drops = state.drops + 1;
+            }
+            
+            state.answer = state.drops === this._answer;
+            this.updateState(state);
+
+            let t1: fgui.Transition = this.catchObj.getTransition("t1");
+            t1.play();
+        }, 1);
+    }
+
+    // 运行时 禁止操作
+    forbidHandle() {
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (!handleMask) {
+            let handleMask = new cc.Node('handleMask');
+            handleMask.addComponent(cc.BlockInputEvents);
+            handleMask.parent = this._worldRoot;
+            handleMask.width = 1920;
+            handleMask.height = 1080;
+            handleMask.x = 960;
+            handleMask.y = 540;
+        }
+    }
+
+    // 消除禁止
+    disableForbidHandle() {
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (handleMask) handleMask.destroy();
+    }
 
     // 注册状态，及获取状态的方法
     registerState() {
@@ -262,6 +380,7 @@ export default class clcikAnswer_model01_v1 extends cc.Component {
 
     onDisable() {
         this.relieveState();
+        cc.audioEngine.stopAll();
     }
 
 }

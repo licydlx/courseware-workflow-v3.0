@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2020-11-19 18:05:09
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-12 17:57:27
+ * @LastEditTime: 2021-04-26 14:22:17
  */
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var formal_panle_model02 = /** @class */ (function (_super) {
@@ -79,6 +79,7 @@ var formal_panle_model02 = /** @class */ (function (_super) {
             show: false,
             signalingModel: 1,
             monitored: null,
+            monitoredName: null,
             launch: null,
             studentList: [],
             ranking: [],
@@ -115,6 +116,7 @@ var formal_panle_model02 = /** @class */ (function (_super) {
         state.signalingModel = 1;
         state.snapshoot = {};
         state.monitored = null;
+        state.monitoredName = null;
         state.launch = null;
         state.ranking = [];
         this.state = state;
@@ -156,6 +158,7 @@ var formal_panle_model02 = /** @class */ (function (_super) {
         state.signalingModel = parseInt(ced);
         if (ced == 1) {
             state.monitored = null;
+            state.monitoredName = null;
             state.launch = null;
             state.ranking = [];
         }
@@ -164,6 +167,7 @@ var formal_panle_model02 = /** @class */ (function (_super) {
         }
         else if (ced == 3) {
             state.monitored = null;
+            state.monitoredName = null;
         }
         var prevState = globalThis._.cloneDeep(window['GlobalData'].stateProxy["state"]);
         var curState = window['GlobalData'].courseData.stateShoot;
@@ -188,10 +192,12 @@ var formal_panle_model02 = /** @class */ (function (_super) {
         var curState;
         if (state.monitored == monitored) {
             state.monitored = null;
+            state.monitoredName = null;
             curState = window['GlobalData'].courseData.stateShoot;
         }
         else {
             state.monitored = monitored;
+            state.monitoredName = monitoredName;
             // 兼容
             // 安卓ipad 部分账户 无法获取userid 用name替代
             if (state.snapshoot[monitored]) {
@@ -288,6 +294,7 @@ var formal_panle_model02 = /** @class */ (function (_super) {
         window['GlobalData'].courseData.signalingModel = state.signalingModel;
         // 监控模式 监控谁
         window['GlobalData'].courseData.monitored = state.monitored;
+        window['GlobalData'].courseData.monitoredName = state.monitoredName;
     };
     formal_panle_model02.prototype.userCreate = function (users) {
         return users.filter(function (v) { return v.role == 2; });

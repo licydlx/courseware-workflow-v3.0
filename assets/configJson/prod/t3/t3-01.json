@@ -2,292 +2,335 @@
     "name": "数理思维",
     "courseName": "t3-01",
     "env": "test",
-    "totalPages": 12,
+    "totalPages": 13,
     "pathConfig": {
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
-        "controllerBundlePath": "T-series/prefabLibrary/",
-        "modelBundlePath": "T-series/prefabLibrary/",
-        "panelBundlePath": "T-series/prefabLibrary/",
-        "resourceBundlePath": "T-series/fairyUis/t3/",
+        "controllerBundlePath": "T-series/prefabLibrary/controllers/",
         "controllerName": "controller-model02",
-        "panelName": "formal-panle-model02",
+        "resourceBundlePath": "T-series/fairyUis/t3/",
         "resourceName": "t3-01",
+        "panelBundlePath": "T-series/prefabLibrary/components/",
+        "panelName": "formal-panle-model02",
+        "modelBundlePath": "T-series/prefabLibrary/models/",
+        "componentBundlePath": "T-series/prefabLibrary/components/",
         "packageName": "t3-01"
     },
     "chapters": [
         {
-            "uiPath": "static-model01-v1-p1",
-            "modelBundle": "static",
-            "prefabName": "static-model01-v1"
-        },
-
-        {
-            "uiPath": "dragAnswer-model01-v1-p3",
-            "modelBundle": "dragAnswer",
-            "prefabName": "dragAnswer-model01-v1",
-            "config": {
-                "answer": 4,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide01"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": 355,
-                            "y": -92
-                        }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
-                    }
-                }
-            }
-        },
-        {
-            "uiPath": "dragAnswer-model01-v1-p4",
-            "modelBundle": "dragAnswer",
-            "prefabName": "dragAnswer-model01-v1",
-            "config": {
-                "answer": 6,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide01"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": 355,
-                            "y": -92
-                        }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
-                    }
-                }
-            }
-        },
-        {
-            "uiPath": "dragAnswer-model01-v1-p5",
-            "modelBundle": "dragAnswer",
-            "prefabName": "dragAnswer-model01-v1",
-            "config": {
-                "answer": 6,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide01"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": 355,
-                            "y": -92
-                        }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
-                    }
-                }
+            "model":{
+                "uiPath": "static-model01-v1-p1",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
             }
         },
 
-
         {
-            "uiPath": "clickAnswer-model01-v1-p6",
-            "modelBundle": "clickAnswer",
-            "prefabName": "clickAnswer-model01-v1",
-            "config": {
-                "answer": 2,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide02"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": -368,
-                            "y": 250
+            "model": {
+                "uiPath": "dragAnswer-model01-v1-p3",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v1",
+                "config": {
+                    "answer": 4,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide01",
+                            "pos": {
+                                "x": 30,
+                                "y": 108
+                            }
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": 470,
+                                "y": 30
+                            }
                         }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
                     }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
                 }
             }
         },
         {
-            "uiPath": "clickAnswer-model01-v1-p7",
-            "modelBundle": "clickAnswer",
-            "prefabName": "clickAnswer-model01-v1",
-            "config": {
-                "answer": 4,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide02"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": -368,
-                            "y": 250
+            "model": {
+                "uiPath": "dragAnswer-model01-v1-p4",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v1",
+                "config": {
+                    "answer": 6,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide01",
+                            "pos": {
+                                "x": 30,
+                                "y": 108
+                            }
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": 470,
+                                "y": 30
+                            }
                         }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
                     }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
                 }
             }
         },
         {
-            "uiPath": "clickAnswer-model01-v1-p8",
-            "modelBundle": "clickAnswer",
-            "prefabName": "clickAnswer-model01-v1",
-            "config": {
-                "answer": 2,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide02"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": -368,
-                            "y": 250
+            "model": {
+                "uiPath": "dragAnswer-model01-v1-p5",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v1",
+                "config": {
+                    "answer": 6,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide01",
+                            "pos": {
+                                "x": 30,
+                                "y": 108
+                            }
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": 470,
+                                "y": 30
+                            }
                         }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
                     }
                 }
-            }
-        },
-
-
-        {
-            "uiPath": "dragAnswer-model01-v1-p9",
-            "modelBundle": "dragAnswer",
-            "prefabName": "dragAnswer-model01-v1",
-            "config": {
-                "answer": 4,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide03"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": 11,
-                            "y": 300
-                        }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
-                    }
-                }
-            }
-        },
-        {
-            "uiPath": "dragAnswer-model01-v1-p10",
-            "modelBundle": "dragAnswer",
-            "prefabName": "dragAnswer-model01-v1",
-            "config": {
-                "answer": 6,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide03"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": 11,
-                            "y": 300
-                        }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
-                    }
-                }
-            }
-        },
-        {
-            "uiPath": "dragAnswer-model01-v1-p11",
-            "modelBundle": "dragAnswer",
-            "prefabName": "dragAnswer-model01-v1",
-            "config": {
-                "answer": 6,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide03"
-                    },
-                    "lineBlink": {
-                        "component": "lineBlink01",
-                        "pos": {
-                            "x": 11,
-                            "y": 300
-                        }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
-                    }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
                 }
             }
         },
 
         {
-            "uiPath": "inputChoose-model01-v1-p12",
-            "modelBundle": "inputChoose",
-            "prefabName": "inputChoose-model01-v1",
-            "config": {
-                "answer": 6,
-                "ae": {
-                    "handleGuide": {
-                        "component": "handleGuide02",
-                        "pos":{
-                            "x":-220,
-                            "y":-140
+            "model": {
+                "uiPath": "clickAnswer-model01-v1-p6",
+                "bundleName": "clickAnswer",
+                "prefabName": "clickAnswer-model01-v1",
+                "config": {
+                    "answer": 2,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02"
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": -368,
+                                "y": 250
+                            }
                         }
-                    },
-                    "rightFeed":{
-                        "component": "rightFeed"
-                    },
-                    "errorFeed":{
-                        "component": "errorFeed"
                     }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "clickAnswer-model01-v1-p7",
+                "bundleName": "clickAnswer",
+                "prefabName": "clickAnswer-model01-v1",
+                "config": {
+                    "answer": 3,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02"
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": -368,
+                                "y": 250
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "clickAnswer-model01-v1-p8",
+                "bundleName": "clickAnswer",
+                "prefabName": "clickAnswer-model01-v1",
+                "config": {
+                    "answer": 2,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02"
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": -368,
+                                "y": 250
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
                 }
             }
         },
 
         {
-            "uiPath": "static-model01-v1-p13",
-            "modelBundle": "static",
-            "prefabName": "static-model01-v1"
+            "model": {
+                "uiPath": "dragAnswer-model01-v1-p9",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v1",
+                "config": {
+                    "answer": 4,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide03"
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": 11,
+                                "y": 300
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "dragAnswer-model01-v1-p10",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v1",
+                "config": {
+                    "answer": 6,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide03"
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": 11,
+                                "y": 300
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "dragAnswer-model01-v1-p11",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v1",
+                "config": {
+                    "answer": 6,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide03"
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": 11,
+                                "y": 300
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "inputChoose-model01-v1-p12",
+                "bundleName": "inputChoose",
+                "prefabName": "inputChoose-model01-v1",
+                "config": {
+                    "answer": 6,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -640,
+                                "y": 50
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p13",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
+            }
+        },
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p14",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
+            }
         }
+
     ]
 }

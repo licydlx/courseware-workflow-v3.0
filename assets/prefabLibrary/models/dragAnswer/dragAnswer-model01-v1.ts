@@ -4,24 +4,32 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-22 21:22:10
+ * @LastEditTime: 2021-04-27 22:44:36
  */
+const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { pointBelongArea } = window['GlobalData'].utils;
 
 const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class dragAnswer_model01_v1 extends cc.Component {
+    private _worldRoot: cc.Node;
     private _view: fgui.GComponent;
     private _c1: fgui.Controller;
+    private _c2: fgui.Controller;
+
     private _dragBtn: fgui.GButton;
     private _btnBox: fgui.GButton;
     private _submit: fgui.GButton;
+    private _title: fgui.GButton;
+    private _titleTrigger: fgui.GLoader;
 
+    // fairygui 组件
     private handleGuide: any;
     private lineBlink: any;
-    private rightFeed: any;
-    private errorFeed: any;
+
+    // 远程动态组件
+    private feedback: any;
 
     private _grids = [];
 
@@ -38,30 +46,38 @@ export default class dragAnswer_model01_v1 extends cc.Component {
     }
 
     set state(v: any) {
+        this.updateUi(this._state, v);
         this._state = v;
-        this.updateUi(this._state);
         this.mergeState();
     }
 
     onLoad() {
+        this._worldRoot = cc.find("Canvas").parent;
+
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         fgui.GRoot.inst.addChild(this._view);
 
         this._c1 = this._view.getController("c1");
-
+        this._c2 = this._view.getController("c2");
+        
         this._submit = this._view.getChild("submit").asButton;
-        this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
+        if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
+
+        this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
+        if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
+
+        this._title = this._view.getChild("title").asButton;
 
         this._dragBtn = this._view.getChild("dragBtn").asButton;
         this._cache["dragOrigin"] = this.getOriginValue(this._dragBtn);
 
         this._dragBtn.draggable = true;
-        this._dragBtn.on(fgui.Event.DRAG_START, this._onDragStart, this);
+        this._dragBtn.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
         this._dragBtn.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
         this._dragBtn.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
 
         this._btnBox = this._view.getChild("btnBox").asButton;
-        this._btnBox.on(fgui.Event.CLICK, this._onClick, this);
+        if (this._btnBox) this._btnBox.on(fgui.Event.CLICK, this._clickRemove, this);
 
         let aGroup = this._btnBox.getChild("grids").asGroup;
 
@@ -79,16 +95,22 @@ export default class dragAnswer_model01_v1 extends cc.Component {
                 x: this._dragBtn.x,
                 y: this._dragBtn.y
             },
+            title: false,
             drops: 0,
             submit: false,
             answer: false
         }
+
+        // 临时 禁止操作期间 切页
+        this.disableForbidHandle();
     }
 
-    init(data: any) {
+    async init(data: any) {
         // 临时 model component json 配置加载
-        let { Package, GComponent, config } = data;
-        let { answer, ae } = config;
+        let { pathConfig, model, components } = data;
+        let Package = pathConfig.packageName;
+        let GComponent = model.uiPath;
+        let { answer, ae } = model.config;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
 
@@ -102,6 +124,14 @@ export default class dragAnswer_model01_v1 extends cc.Component {
         }
 
         if (answer) this._answer = answer;
+        if (components) {
+            for (const key in components) {
+                let componentPath: any = `${pathConfig.remoteUrl}${pathConfig.componentBundlePath}${components[key].bundleName}`;
+                let componentBundle: any = await loadBundle(componentPath);
+                let componentPrefab: any = await loadPrefab(componentBundle, components[key].prefabName);
+                this[key] = componentPrefab;
+            }
+        }
     }
 
     getOriginValue(v: any) {
@@ -146,7 +176,7 @@ export default class dragAnswer_model01_v1 extends cc.Component {
         this.updateState(state);
     }
 
-    private _onClick(evt: any): void {
+    private _clickRemove(evt: any): void {
         let state: any = globalThis._.cloneDeep(this._state);
 
         let index: number = this._grids.findIndex((v: any) => v.url === null);
@@ -154,15 +184,20 @@ export default class dragAnswer_model01_v1 extends cc.Component {
             let grid: fgui.GLoader = this._grids[index == -1 ? this._grids.length - 1 : index - 1];
             grid.url = null;
 
-            state.answer = state.drops === this._answer;
             state.drops = state.drops - 1;
+            state.answer = state.drops === this._answer;
             this.updateState(state);
         }
     }
 
-    private _clickSubmit(evt: any): void {
+    private _clickTitle(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
+        state.title = true;
+        this.updateState(state);
+    }
 
+    private async _clickSubmit(evt: any) {
+        let state: any = globalThis._.cloneDeep(this._state);
         state.answer = state.drops === this._answer;
         state.submit = true;
         this.updateState(state);
@@ -180,71 +215,98 @@ export default class dragAnswer_model01_v1 extends cc.Component {
     }
 
     // 更新ui层
-    updateUi(state: any) {
+    updateUi(oldState: any, state: any) {
+        // this._state = {
+        //     drag: "end",
+        //     dragBtn: {
+        //         x: this._dragBtn.x,
+        //         y: this._dragBtn.y
+        //     },
+        //     title: false,
+        //     drops: 0,
+        //     submit: false,
+        //     answer: false
+        // }
+
         if (state.drag == "move") {
             this._dragBtn.x = state.dragBtn.x;
             this._dragBtn.y = state.dragBtn.y;
         }
 
         if (state.drag == "end") {
-            this._dragBtn.x = this._cache["dragOrigin"].x;
-            this._dragBtn.y = this._cache["dragOrigin"].y;
+            if (!globalThis._.isEqual(oldState.dragBtn, state.dragBtn)) {
+                this._dragBtn.x = this._cache["dragOrigin"].x;
+                this._dragBtn.y = this._cache["dragOrigin"].y;
+            }
 
-            for (let i = 0; i < this._grids.length; i++) {
-                let grid: fgui.GLoader = this._grids[i];
-                if (state.drops > i) {
-                    if (!grid.url) {
-                        let icon: fgui.GLoader = this._dragBtn.getChild("icon").asLoader;
-                        grid.url = icon.url;
+            if (!globalThis._.isEqual(oldState.drops, state.drops)) {
+                for (let i = 0; i < this._grids.length; i++) {
+                    let grid: fgui.GLoader = this._grids[i];
+                    if (state.drops > i) {
+                        if (!grid.url) {
+                            let icon: fgui.GLoader = this._dragBtn.getChild("icon").asLoader;
+                            grid.url = icon.url;
+                        }
+                    } else {
+                        if (grid.url) grid.url = null;
                     }
-                } else {
-                    if (grid.url) grid.url = null;
+                }
+                this._c1.selectedIndex = state.drops;
+
+               if (!state.answer) this.onLibraHint();
+            }
+
+            if (!globalThis._.isEqual(oldState.submit, state.submit)) {
+                if (state.submit) {
+                    if (state.drops) {
+                        this.answerFeedback(state.answer);
+                    } else {
+                        this.onHandleGuide();
+                    }
                 }
             }
 
-            this._c1.selectedIndex = state.drops;
+            if (!globalThis._.isEqual(oldState.title, state.title)) {
+                this.playTitle(state.title);
+            }
 
-            if (!state.answer) {
-                this.onLibraHint();
-            }
-            
-            if (state.submit) {
-                if (state.drops) {
-                    this.answerFeedback(state.answer);
-                } else {
-                    this.onHandleGuide();
-                }
-            }
         }
     }
 
-    answerFeedback(bool:boolean){
-        let state: any = globalThis._.cloneDeep(this._state);
-        let component:any;
-        let pos:any;
+    async playTitle(bool: boolean) {
+        this._c2.selectedIndex = bool ? 1 : 0;
+
         if (bool) {
-            component = this.rightFeed.component;
-            pos = this.rightFeed.pos;
+            cc.audioEngine.stopAll();
+            this.forbidHandle();
+            let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
+            let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
+            let audioId = cc.audioEngine.play(audio, false, 1);
+            cc.audioEngine.setFinishCallback(audioId, () => {
+                let state: any = globalThis._.cloneDeep(this._state);
+                state.title = false;
+                this.updateState(state);
+            });
         } else {
-            component = this.errorFeed.component;
-            pos = this.errorFeed.pos; 
+            this.disableForbidHandle();
         }
+    }
 
-        fgui.GRoot.inst.addChild(component);
-        if (pos) {
-            component.x = (fgui.GRoot.inst.width - component.width) / 2 + pos.x;
-            component.y = (fgui.GRoot.inst.height - component.height) / 2 + pos.y;
-        } else {
-            component.y = (fgui.GRoot.inst.height - component.height) / 2;
-        }
+    answerFeedback(bool: boolean) {
+        if (!this.feedback) return;
+        let state: any = globalThis._.cloneDeep(this._state);
+        let feedback: any = cc.instantiate(this.feedback);
+        feedback.x = 960;
+        feedback.y = 540;
+        let feedbackJs: any = feedback.getComponent(cc.Component);
+        feedbackJs.init(bool);
+        feedback.parent = cc.find("Canvas").parent;
 
-        let t: fgui.Transition = component.getTransition("t0");
-        t.play(() => {
-            fgui.GRoot.inst.removeChild(component);
-
+        setTimeout(() => {
+            feedback.destroy();
             state.submit = false;
             this.updateState(state);
-        }, 2);
+        }, 2000);
     }
 
     // 天枰提示
@@ -279,10 +341,29 @@ export default class dragAnswer_model01_v1 extends cc.Component {
         let t: fgui.Transition = this.handleGuide.component.getTransition("t0");
         t.play(() => {
             fgui.GRoot.inst.removeChild(this.handleGuide.component);
-
             state.submit = false;
             this.updateState(state);
         }, 2);
+    }
+
+    // 运行时 禁止操作
+    forbidHandle() {
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (!handleMask) {
+            let handleMask = new cc.Node('handleMask');
+            handleMask.addComponent(cc.BlockInputEvents);
+            handleMask.parent = this._worldRoot;
+            handleMask.width = 1920;
+            handleMask.height = 1080;
+            handleMask.x = 960;
+            handleMask.y = 540;
+        }
+    }
+
+    // 消除禁止
+    disableForbidHandle() {
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (handleMask) handleMask.destroy();
     }
 
     // 临时
@@ -316,11 +397,11 @@ export default class dragAnswer_model01_v1 extends cc.Component {
 
     onEnable() {
         this.registerState();
-
         this.schedule(this.dragSchedule, this._scheduleTime);
     }
 
     onDisable() {
         this.relieveState();
+        cc.audioEngine.stopAll();
     }
 }

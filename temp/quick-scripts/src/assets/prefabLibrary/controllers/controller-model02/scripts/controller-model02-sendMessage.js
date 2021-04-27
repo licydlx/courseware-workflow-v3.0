@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '0ce63p0zkxIho9b/0pkRj3M', 'controller-model02-sendMessage');
-// prefabLibrary/controller/controller-model02/scripts/controller-model02-sendMessage.ts
+// prefabLibrary/controllers/controller-model02/scripts/controller-model02-sendMessage.ts
 
 "use strict";
 /*

@@ -4,12 +4,12 @@
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-22 20:56:39
+ * @LastEditTime: 2021-04-27 19:13:49
  */
 const { ccclass, property } = cc._decorator;
 
-const { monitorMessage } = window['GlobalData'];
-const { loadPrefab, loadBundle } = window['GlobalData'].sample;
+const { gameData, monitorMessage } = window['GlobalData'];
+const { loadPrefab, loadBundle, loadResource } = window['GlobalData'].sample;
 
 import { sendMessage } from "./controller-model02-sendMessage";
 import { getMessage } from "./controller-model02-getMessage";
@@ -18,7 +18,7 @@ import { getMessage } from "./controller-model02-getMessage";
 export default class controller_model02 extends cc.Component {
     private _configJson: any;         // 配置json
     private _panel: any;              // 面板
-    private _resourceBundle: any;     // fairygui 素材资源
+    private _resourceBundle: any;     // fairygui 远程bundle
     private _pagePrefabs = []         // 题型预制体集合
     private _currentPageNode: any;    // 当前题型节点
 
@@ -74,25 +74,26 @@ export default class controller_model02 extends cc.Component {
 
         // 加载 所有题型预制件
         for (let i = 0; i < data.chapters.length; i++) {
-            let modelPath: any = `${data.pathConfig.remoteUrl}${data.pathConfig.modelBundlePath}${data.chapters[i].modelBundle}`;
+            let modelPath: any = `${data.pathConfig.remoteUrl}${data.pathConfig.modelBundlePath}${data.chapters[i].model.bundleName}`;
             let modelBundle: any = await loadBundle(modelPath);
-            let modelPrefab: any = await loadPrefab(modelBundle, data.chapters[i].prefabName);
+            let modelPrefab: any = await loadPrefab(modelBundle, data.chapters[i].model.prefabName);
             this._pagePrefabs[i] = modelPrefab;
         }
 
         // 加载ui 资源包
         let resourcePath: any = `${data.pathConfig.remoteUrl}${data.pathConfig.resourceBundlePath}${data.pathConfig.resourceName}`;
         this._resourceBundle = await loadBundle(resourcePath);
-        await this.loadResourcePackage(this._resourceBundle, data.pathConfig.packageName);
+        gameData.resourceBundle = await this.loadResourcePackage(this._resourceBundle, data.pathConfig.packageName);
 
         // 拓课云 初始化
         this.platformConfig(this._configJson.totalPages);
     }
 
+    // 加载 fairygui 资源包
     async loadResourcePackage(bundle: any, packageName: any) {
         return new Promise((resolve, reject) => {
-            fgui.UIPackage.loadPackage(bundle, packageName, () => {
-                resolve(true);
+            fgui.UIPackage.loadPackage(bundle, packageName, (error, UIPackage:any) => {
+                resolve(UIPackage._bundle);
             });
         })
     }
@@ -108,7 +109,7 @@ export default class controller_model02 extends cc.Component {
         let prefab: any = this._pagePrefabs[page];
         let node: any = cc.instantiate(prefab);
         let nodeJs = node.getComponent(cc.Component);
-        nodeJs.init({ Package: this._configJson.pathConfig.packageName, GComponent: chapter.uiPath, config: chapter.config });
+        nodeJs.init({ pathConfig: this._configJson.pathConfig, model: chapter.model, components: chapter.components });
         node.parent = this.node;
 
         this._currentPageNode = node;
@@ -179,7 +180,7 @@ export default class controller_model02 extends cc.Component {
                     let prevState = globalThis._.cloneDeep(window['GlobalData'].stateProxy["state"]);
 
                     Object.keys(prevState).forEach((v) => {
-                        if (!(globalThis._.isEqual(prevState[v], signalingDB.state[v]))) {
+                        if (prevState[v] && signalingDB.state[v] && !(globalThis._.isEqual(prevState[v], signalingDB.state[v]))) {
                             // state 流转 临时
                             window['GlobalData'].stateProxy[v] = "";
                             window['GlobalData'].pubSub.emit(signalingDB.state[v], v);

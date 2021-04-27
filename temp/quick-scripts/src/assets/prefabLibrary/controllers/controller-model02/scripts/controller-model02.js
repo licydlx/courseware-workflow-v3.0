@@ -65,11 +65,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-22 20:56:39
+ * @LastEditTime: 2021-04-27 19:13:49
  */
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var monitorMessage = window['GlobalData'].monitorMessage;
-var _b = window['GlobalData'].sample, loadPrefab = _b.loadPrefab, loadBundle = _b.loadBundle;
+var _b = window['GlobalData'], gameData = _b.gameData, monitorMessage = _b.monitorMessage;
+var _c = window['GlobalData'].sample, loadPrefab = _c.loadPrefab, loadBundle = _c.loadBundle, loadResource = _c.loadResource;
 var controller_model02_sendMessage_1 = require("./controller-model02-sendMessage");
 var controller_model02_getMessage_1 = require("./controller-model02-getMessage");
 var controller_model02 = /** @class */ (function (_super) {
@@ -83,9 +83,9 @@ var controller_model02 = /** @class */ (function (_super) {
     controller_model02.prototype.onLoad = function () { };
     controller_model02.prototype.init = function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var panelPath, panelBundle, panelPrefab, panelNode, i, modelPath, modelBundle, modelPrefab, resourcePath, _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var panelPath, panelBundle, panelPrefab, panelNode, i, modelPath, modelBundle, modelPrefab, resourcePath, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         // 素材资源
                         if (!data.pathConfig.resourceName) {
@@ -107,10 +107,10 @@ var controller_model02 = /** @class */ (function (_super) {
                         panelPath = "" + data.pathConfig.remoteUrl + data.pathConfig.panelBundlePath + data.pathConfig.panelName;
                         return [4 /*yield*/, loadBundle(panelPath)];
                     case 1:
-                        panelBundle = _b.sent();
+                        panelBundle = _c.sent();
                         return [4 /*yield*/, loadPrefab(panelBundle, panelBundle.name)];
                     case 2:
-                        panelPrefab = _b.sent();
+                        panelPrefab = _c.sent();
                         panelNode = cc.instantiate(panelPrefab);
                         panelNode.parent = cc.find("Canvas").parent;
                         panelNode.x = 960;
@@ -128,18 +128,18 @@ var controller_model02 = /** @class */ (function (_super) {
                             window['GlobalData'].sample.registerSendMessage(controller_model02_sendMessage_1.sendMessage.bind(this));
                         }
                         i = 0;
-                        _b.label = 3;
+                        _c.label = 3;
                     case 3:
                         if (!(i < data.chapters.length)) return [3 /*break*/, 7];
-                        modelPath = "" + data.pathConfig.remoteUrl + data.pathConfig.modelBundlePath + data.chapters[i].modelBundle;
+                        modelPath = "" + data.pathConfig.remoteUrl + data.pathConfig.modelBundlePath + data.chapters[i].model.bundleName;
                         return [4 /*yield*/, loadBundle(modelPath)];
                     case 4:
-                        modelBundle = _b.sent();
-                        return [4 /*yield*/, loadPrefab(modelBundle, data.chapters[i].prefabName)];
+                        modelBundle = _c.sent();
+                        return [4 /*yield*/, loadPrefab(modelBundle, data.chapters[i].model.prefabName)];
                     case 5:
-                        modelPrefab = _b.sent();
+                        modelPrefab = _c.sent();
                         this._pagePrefabs[i] = modelPrefab;
-                        _b.label = 6;
+                        _c.label = 6;
                     case 6:
                         i++;
                         return [3 /*break*/, 3];
@@ -148,10 +148,11 @@ var controller_model02 = /** @class */ (function (_super) {
                         _a = this;
                         return [4 /*yield*/, loadBundle(resourcePath)];
                     case 8:
-                        _a._resourceBundle = _b.sent();
+                        _a._resourceBundle = _c.sent();
+                        _b = gameData;
                         return [4 /*yield*/, this.loadResourcePackage(this._resourceBundle, data.pathConfig.packageName)];
                     case 9:
-                        _b.sent();
+                        _b.resourceBundle = _c.sent();
                         // 拓课云 初始化
                         this.platformConfig(this._configJson.totalPages);
                         return [2 /*return*/];
@@ -159,12 +160,13 @@ var controller_model02 = /** @class */ (function (_super) {
             });
         });
     };
+    // 加载 fairygui 资源包
     controller_model02.prototype.loadResourcePackage = function (bundle, packageName) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 return [2 /*return*/, new Promise(function (resolve, reject) {
-                        fgui.UIPackage.loadPackage(bundle, packageName, function () {
-                            resolve(true);
+                        fgui.UIPackage.loadPackage(bundle, packageName, function (error, UIPackage) {
+                            resolve(UIPackage._bundle);
                         });
                     })];
             });
@@ -183,7 +185,7 @@ var controller_model02 = /** @class */ (function (_super) {
                 prefab = this._pagePrefabs[page];
                 node = cc.instantiate(prefab);
                 nodeJs = node.getComponent(cc.Component);
-                nodeJs.init({ Package: this._configJson.pathConfig.packageName, GComponent: chapter.uiPath, config: chapter.config });
+                nodeJs.init({ pathConfig: this._configJson.pathConfig, model: chapter.model, components: chapter.components });
                 node.parent = this.node;
                 this._currentPageNode = node;
                 this.resetPanel();
@@ -245,7 +247,7 @@ var controller_model02 = /** @class */ (function (_super) {
                     window['GlobalData'].courseData.timestamp = signalingDB_1.timestamp;
                     var prevState_1 = globalThis._.cloneDeep(window['GlobalData'].stateProxy["state"]);
                     Object.keys(prevState_1).forEach(function (v) {
-                        if (!(globalThis._.isEqual(prevState_1[v], signalingDB_1.state[v]))) {
+                        if (prevState_1[v] && signalingDB_1.state[v] && !(globalThis._.isEqual(prevState_1[v], signalingDB_1.state[v]))) {
                             // state 流转 临时
                             window['GlobalData'].stateProxy[v] = "";
                             window['GlobalData'].pubSub.emit(signalingDB_1.state[v], v);

@@ -9,7 +9,7 @@ cc._RF.push(module, '38cf7npfWtCAJkVDqM7GA1y', 'controller-model02-getMessage');
  * @Author: ydlx
  * @Date: 2021-02-07 11:39:43
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-12 17:48:58
+ * @LastEditTime: 2021-04-26 14:41:39
  */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -51,7 +51,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getMessage = void 0;
 function getMessage(data) {
     return __awaiter(this, void 0, void 0, function () {
-        var message, _a, name, userid, role, signalingModel, monitored, user, curState_1, prevState_1, toUser, panleState, user, user, user, panelJs;
+        var message, _a, name, userid, role, signalingModel, monitored, monitoredName, user, curState_1, prevState_1, toUser, panleState, user, user, user, panelJs;
         var _this = this;
         return __generator(this, function (_b) {
             console.log('getMessage');
@@ -69,7 +69,7 @@ function getMessage(data) {
                     if (data.handleData.action == "EVENT_UPDATE_STATE") {
                         if (!window['GlobalData'].stateProxy)
                             return [2 /*return*/];
-                        _a = window['GlobalData'].courseData, name = _a.name, userid = _a.userid, role = _a.role, signalingModel = _a.signalingModel, monitored = _a.monitored;
+                        _a = window['GlobalData'].courseData, name = _a.name, userid = _a.userid, role = _a.role, signalingModel = _a.signalingModel, monitored = _a.monitored, monitoredName = _a.monitoredName;
                         user = data.handleData.user;
                         curState_1 = data.handleData.handleData;
                         prevState_1 = globalThis._.cloneDeep(window['GlobalData'].stateProxy["state"]);
@@ -108,7 +108,13 @@ function getMessage(data) {
                                         panleState.snapshoot[user.userid] = curState_1;
                                         window['GlobalData'].stateProxy[this._panel.name] = "";
                                         window['GlobalData'].pubSub.emit(panleState, this._panel.name);
-                                        if (monitored && (user.userid == monitored || user.name == monitored)) {
+                                        // 临时 拓客云 sdk版本不同，账号不同，参数不同
+                                        // 1.在直播间 通过url进入课件，课件身份唯一根据url的参数 userid role name 确定
+                                        // 2.由于各种原因 如果url参数缺失，以name 当做userid
+                                        // 3.假如，学生进入课堂，参数缺失 进行2；但是 老师监听有人进入房间-获取的学生信息会有userid 从而导致同一个学生userid不一致
+                                        // 临时解决：先对比userid，如果userid不一致 对比 name
+                                        // 遗留问题：2个学生userid缺失，且名字相同 从而 身份无法识别
+                                        if (monitored && (user.userid == monitored || (user.userid != monitored && user.name == monitoredName))) {
                                             Object.keys(prevState_1).forEach(function (v) {
                                                 if (!(globalThis._.isEqual(prevState_1[v], curState_1[v])) && v != _this._panel.name) {
                                                     // state 流转 临时

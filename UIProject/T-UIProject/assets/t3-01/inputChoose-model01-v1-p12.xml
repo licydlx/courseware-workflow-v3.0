@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <controller name="c1" pages="0,,1," selected="0"/>
+  <controller name="c2" pages="0,,1," selected="1"/>
   <displayList>
     <image id="n0_sqat" name="n0" src="sqatch" fileName="images/inputChoose-model01-v1/0101.png" xy="0,0" group="n1_sqat"/>
-    <image id="n3_sqat" name="n3" src="sqatcj" fileName="images/inputChoose-model01-v1/0103.png" xy="80,480" group="n1_sqat"/>
-    <image id="n4_sqat" name="n4" src="sqatck" fileName="images/inputChoose-model01-v1/0104.png" xy="80,180" group="n1_sqat"/>
+    <image id="n3_sqat" name="n3" src="sqatcj" fileName="images/inputChoose-model01-v1/0103.png" xy="546,0" group="n1_sqat"/>
     <group id="n1_sqat" name="UI" xy="0,0" size="1920,1080"/>
     <image id="n5_sqat" name="n5" src="lgf19j" fileName="images/libra/0102.png" xy="881,817" group="n6_sqat"/>
     <image id="n8_sqat" name="n8" src="lgf19l" fileName="images/libra/0104.png" xy="763,787" group="n6_sqat"/>
@@ -17,12 +17,16 @@
     <component id="n20_sqat" name="numInput" src="sqatdd" fileName="component/numInput.xml" xy="1069,603">
       <Button sound="ui://pozm437jtaz8ab"/>
     </component>
-    <component id="n21_sqat" name="submit" src="taz89v" fileName="component/submit.xml" xy="1685,845">
+    <component id="n21_sqat" name="submit" src="taz89v" fileName="component/submit.xml" xy="1640,800">
       <Button icon="ui://pozm437jtaz89w" sound="ui://pozm437jtaz8ab"/>
     </component>
-    <component id="n32_sqat" name="title" src="8vqhaw" fileName="component/title.xml" xy="950,68">
-      <Button icon="ui://pozm437jsqatci" sound="ui://pozm437jtaz8aa"/>
-    </component>
     <component id="n35_sqat" name="chooseBox" src="sqatdf" fileName="component/chooseBox.xml" xy="1443,407"/>
+    <component id="n38_gco1" name="title" src="8vqhaw" fileName="component/title.xml" xy="1000,100" touchable="false">
+      <gearLook controller="c2" pages="1" values="1,0,0,0" default="0,0,0,0"/>
+      <Button icon="ui://pozm437jbkhue9" sound="ui://pozm437jtaz8aa" volume="0"/>
+    </component>
+    <loader id="n39_gco1" name="titleTrigger" xy="70,70" size="228,171" scale="0.8,0.8" url="ui://pozm437jgco1ex" autoSize="true" frame="12">
+      <gearAni controller="c2" pages="1" values="12,p" default="0,s"/>
+    </loader>
   </displayList>
 </component>

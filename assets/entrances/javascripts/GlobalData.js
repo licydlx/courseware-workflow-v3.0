@@ -5,7 +5,7 @@
  * @Author: ydlx
  * @Date: 2021-01-04 10:34:55
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-18 20:03:15
+ * @LastEditTime: 2021-04-25 21:43:15
  */
 window['GlobalData'] = {
     courseData: {
@@ -16,6 +16,7 @@ window['GlobalData'] = {
         timestamp: '',
         signalingModel: 1,
         monitored: null,
+        monitoredName:null,
         stateShoot: null,
         firstLoad: true,
     },
