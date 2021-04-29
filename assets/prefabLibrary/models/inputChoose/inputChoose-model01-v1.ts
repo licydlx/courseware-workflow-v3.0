@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-27 22:44:07
+ * @LastEditTime: 2021-04-29 17:39:12
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
@@ -54,7 +54,13 @@ export default class inputChoose_model01_v1 extends cc.Component {
 
         this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");
-
+        // 臨時
+        // bug 初始设置不播放不生效
+        if (this._c2) {
+            this._c2.selectedIndex = 1;
+            this._c2.selectedIndex = 0;
+        }
+    
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
 

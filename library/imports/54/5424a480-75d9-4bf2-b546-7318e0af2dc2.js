@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-27 22:44:29
+ * @LastEditTime: 2021-04-29 16:51:02
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -97,6 +97,12 @@ var clcikAnswer_model01_v1 = /** @class */ (function (_super) {
         // 控制器
         this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");
+        // 臨時
+        // bug 初始设置不播放不生效
+        if (this._c2) {
+            this._c2.selectedIndex = 1;
+            this._c2.selectedIndex = 0;
+        }
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit)
             this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
@@ -114,7 +120,7 @@ var clcikAnswer_model01_v1 = /** @class */ (function (_super) {
         this.catchObj = this._view.getChild("catchStone").asCom;
         // 天枰 子栏
         var aGroup = this._btnBox.getChild("grids").asGroup;
-        for (var i = 0; i < this._btnBox.numChildren; i++) {
+        for (var i = this._btnBox.numChildren - 1; i > -1; i--) {
             if (this._btnBox.getChildAt(i).group == aGroup) {
                 var grid = this._btnBox.getChildAt(i).asLoader;
                 this._grids.push(grid);

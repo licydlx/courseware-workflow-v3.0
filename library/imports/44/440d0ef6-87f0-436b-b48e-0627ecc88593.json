@@ -138,7 +138,7 @@
               "lineBlink": {
                 "component": "lineBlink01",
                 "pos": {
-                  "x": -368,
+                  "x": -372,
                   "y": 250
                 }
               }
@@ -166,7 +166,7 @@
               "lineBlink": {
                 "component": "lineBlink01",
                 "pos": {
-                  "x": -368,
+                  "x": -372,
                   "y": 250
                 }
               }
@@ -194,7 +194,7 @@
               "lineBlink": {
                 "component": "lineBlink01",
                 "pos": {
-                  "x": -368,
+                  "x": -372,
                   "y": 250
                 }
               }
@@ -217,13 +217,17 @@
             "answer": 4,
             "ae": {
               "handleGuide": {
-                "component": "handleGuide03"
+                "component": "handleGuide03",
+                "pos": {
+                  "x": 20,
+                  "y": -94
+                }
               },
               "lineBlink": {
                 "component": "lineBlink01",
                 "pos": {
-                  "x": 11,
-                  "y": 300
+                  "x": 0,
+                  "y": 180
                 }
               }
             }
@@ -245,13 +249,17 @@
             "answer": 6,
             "ae": {
               "handleGuide": {
-                "component": "handleGuide03"
+                "component": "handleGuide03",
+                "pos": {
+                  "x": 20,
+                  "y": -94
+                }
               },
               "lineBlink": {
                 "component": "lineBlink01",
                 "pos": {
-                  "x": 11,
-                  "y": 300
+                  "x": 0,
+                  "y": 180
                 }
               }
             }
@@ -273,13 +281,17 @@
             "answer": 6,
             "ae": {
               "handleGuide": {
-                "component": "handleGuide03"
+                "component": "handleGuide03",
+                "pos": {
+                  "x": 20,
+                  "y": -94
+                }
               },
               "lineBlink": {
                 "component": "lineBlink01",
                 "pos": {
-                  "x": 11,
-                  "y": 300
+                  "x": 0,
+                  "y": 180
                 }
               }
             }
@@ -304,7 +316,7 @@
                 "component": "handleGuide02",
                 "pos": {
                   "x": -640,
-                  "y": 50
+                  "y": -80
                 }
               }
             }

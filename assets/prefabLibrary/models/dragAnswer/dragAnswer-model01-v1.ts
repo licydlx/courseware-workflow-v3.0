@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-27 22:44:36
+ * @LastEditTime: 2021-04-29 17:39:06
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { pointBelongArea } = window['GlobalData'].utils;
@@ -59,7 +59,13 @@ export default class dragAnswer_model01_v1 extends cc.Component {
 
         this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");
-        
+        // 臨時
+        // bug 初始设置不播放不生效
+        if (this._c2) {
+            this._c2.selectedIndex = 1;
+            this._c2.selectedIndex = 0;
+        }
+
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
 
@@ -81,12 +87,21 @@ export default class dragAnswer_model01_v1 extends cc.Component {
 
         let aGroup = this._btnBox.getChild("grids").asGroup;
 
-        for (let i = 0; i < this._btnBox.numChildren; i++) {
+        // for (let i = 0; i < this._btnBox.numChildren; i++) {
+        //     if (this._btnBox.getChildAt(i).group == aGroup) {
+        //         let grid: fgui.GLoader = this._btnBox.getChildAt(i).asLoader;
+        //         this._grids.push(grid);
+        //     }
+        // }
+
+        for (let i = this._btnBox.numChildren - 1; i > -1; i--) {
             if (this._btnBox.getChildAt(i).group == aGroup) {
                 let grid: fgui.GLoader = this._btnBox.getChildAt(i).asLoader;
                 this._grids.push(grid);
             }
         }
+
+    
 
         // 初始化state
         this._state = {
@@ -156,13 +171,14 @@ export default class dragAnswer_model01_v1 extends cc.Component {
 
     private _onDragEnd(evt: fgui.Event): void {
         this._dragging = false;
+
         let state: any = globalThis._.cloneDeep(this._state);
-        let test = pointBelongArea("rectangle", this._btnBox, this._dragBtn);
-        if (test) {
+        let bool:boolean = pointBelongArea("rectangle", this._btnBox, this._dragBtn);
+        if (bool) {
             let icon: fgui.GLoader = this._dragBtn.getChild("icon").asLoader;
             let grid: fgui.GLoader = this._grids.find(v => v.url === null);
             if (grid) {
-                grid.url = icon.url;
+                //grid.url = icon.url;
                 state.drops = state.drops + 1;
             }
         }
@@ -181,8 +197,8 @@ export default class dragAnswer_model01_v1 extends cc.Component {
 
         let index: number = this._grids.findIndex((v: any) => v.url === null);
         if (index !== 0) {
-            let grid: fgui.GLoader = this._grids[index == -1 ? this._grids.length - 1 : index - 1];
-            grid.url = null;
+            // let grid: fgui.GLoader = this._grids[index == -1 ? this._grids.length - 1 : index - 1];
+            // grid.url = null;
 
             state.drops = state.drops - 1;
             state.answer = state.drops === this._answer;
@@ -216,28 +232,14 @@ export default class dragAnswer_model01_v1 extends cc.Component {
 
     // 更新ui层
     updateUi(oldState: any, state: any) {
-        // this._state = {
-        //     drag: "end",
-        //     dragBtn: {
-        //         x: this._dragBtn.x,
-        //         y: this._dragBtn.y
-        //     },
-        //     title: false,
-        //     drops: 0,
-        //     submit: false,
-        //     answer: false
-        // }
-
         if (state.drag == "move") {
             this._dragBtn.x = state.dragBtn.x;
             this._dragBtn.y = state.dragBtn.y;
         }
 
         if (state.drag == "end") {
-            if (!globalThis._.isEqual(oldState.dragBtn, state.dragBtn)) {
-                this._dragBtn.x = this._cache["dragOrigin"].x;
-                this._dragBtn.y = this._cache["dragOrigin"].y;
-            }
+            this._dragBtn.x = this._cache["dragOrigin"].x;
+            this._dragBtn.y = this._cache["dragOrigin"].y;
 
             if (!globalThis._.isEqual(oldState.drops, state.drops)) {
                 for (let i = 0; i < this._grids.length; i++) {
@@ -253,7 +255,7 @@ export default class dragAnswer_model01_v1 extends cc.Component {
                 }
                 this._c1.selectedIndex = state.drops;
 
-               if (!state.answer) this.onLibraHint();
+                if (!state.answer) this.onLibraHint();
             }
 
             if (!globalThis._.isEqual(oldState.submit, state.submit)) {

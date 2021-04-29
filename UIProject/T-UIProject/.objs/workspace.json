@@ -1,24 +1,32 @@
 {
-  "libview.firstColumnWidth": 207,
+  "libview.firstColumnWidth": 257,
   "libview.iconScale": 0,
   "backgroundColor": 6710886,
+  "packageGroup.mine": [],
+  "libview.syncEditor": 0,
   "auxline1": true,
   "canvasColor": 10066329,
   "auxline2": true,
-  "doc.activeDoc": "ui://pozm437jbkhuej",
+  "doc.activeDoc": "ui://pozm437j8vqhas",
   "libview.twoColumn": false,
   "libview.expandedNodes": [
+    "5mq4z6h4",
+    "/",
+    "5mq4z6h4",
+    "/animations/",
     "pozm437j",
     "/",
     "pozm437j",
-    "/audios/",
+    "/animations/",
     "pozm437j",
-    "/images/",
-    "pozm437j",
-    "/spines/"
+    "/images/"
   ],
   "doc.openedDocs": [
-    "ui://pozm437jbkhuej"
+    "ui://pozm437j8vqhbw",
+    "ui://pozm437j8vqhby",
+    "ui://pozm437jsqatcz",
+    "ui://pozm437j8vqhas",
+    "ui://pozm437jsqatdd"
   ],
   "snapToGrid": true,
   "gridColor": 80,

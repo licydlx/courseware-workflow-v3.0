@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-27 22:44:36
+ * @LastEditTime: 2021-04-29 17:39:06
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var pointBelongArea = window['GlobalData'].utils.pointBelongArea;
@@ -100,6 +100,12 @@ var dragAnswer_model01_v1 = /** @class */ (function (_super) {
         fgui.GRoot.inst.addChild(this._view);
         this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");
+        // 臨時
+        // bug 初始设置不播放不生效
+        if (this._c2) {
+            this._c2.selectedIndex = 1;
+            this._c2.selectedIndex = 0;
+        }
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit)
             this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
@@ -117,7 +123,13 @@ var dragAnswer_model01_v1 = /** @class */ (function (_super) {
         if (this._btnBox)
             this._btnBox.on(fgui.Event.CLICK, this._clickRemove, this);
         var aGroup = this._btnBox.getChild("grids").asGroup;
-        for (var i = 0; i < this._btnBox.numChildren; i++) {
+        // for (let i = 0; i < this._btnBox.numChildren; i++) {
+        //     if (this._btnBox.getChildAt(i).group == aGroup) {
+        //         let grid: fgui.GLoader = this._btnBox.getChildAt(i).asLoader;
+        //         this._grids.push(grid);
+        //     }
+        // }
+        for (var i = this._btnBox.numChildren - 1; i > -1; i--) {
             if (this._btnBox.getChildAt(i).group == aGroup) {
                 var grid = this._btnBox.getChildAt(i).asLoader;
                 this._grids.push(grid);
@@ -206,12 +218,12 @@ var dragAnswer_model01_v1 = /** @class */ (function (_super) {
     dragAnswer_model01_v1.prototype._onDragEnd = function (evt) {
         this._dragging = false;
         var state = globalThis._.cloneDeep(this._state);
-        var test = pointBelongArea("rectangle", this._btnBox, this._dragBtn);
-        if (test) {
+        var bool = pointBelongArea("rectangle", this._btnBox, this._dragBtn);
+        if (bool) {
             var icon = this._dragBtn.getChild("icon").asLoader;
             var grid = this._grids.find(function (v) { return v.url === null; });
             if (grid) {
-                grid.url = icon.url;
+                //grid.url = icon.url;
                 state.drops = state.drops + 1;
             }
         }
@@ -227,8 +239,8 @@ var dragAnswer_model01_v1 = /** @class */ (function (_super) {
         var state = globalThis._.cloneDeep(this._state);
         var index = this._grids.findIndex(function (v) { return v.url === null; });
         if (index !== 0) {
-            var grid = this._grids[index == -1 ? this._grids.length - 1 : index - 1];
-            grid.url = null;
+            // let grid: fgui.GLoader = this._grids[index == -1 ? this._grids.length - 1 : index - 1];
+            // grid.url = null;
             state.drops = state.drops - 1;
             state.answer = state.drops === this._answer;
             this.updateState(state);
@@ -263,26 +275,13 @@ var dragAnswer_model01_v1 = /** @class */ (function (_super) {
     };
     // 更新ui层
     dragAnswer_model01_v1.prototype.updateUi = function (oldState, state) {
-        // this._state = {
-        //     drag: "end",
-        //     dragBtn: {
-        //         x: this._dragBtn.x,
-        //         y: this._dragBtn.y
-        //     },
-        //     title: false,
-        //     drops: 0,
-        //     submit: false,
-        //     answer: false
-        // }
         if (state.drag == "move") {
             this._dragBtn.x = state.dragBtn.x;
             this._dragBtn.y = state.dragBtn.y;
         }
         if (state.drag == "end") {
-            if (!globalThis._.isEqual(oldState.dragBtn, state.dragBtn)) {
-                this._dragBtn.x = this._cache["dragOrigin"].x;
-                this._dragBtn.y = this._cache["dragOrigin"].y;
-            }
+            this._dragBtn.x = this._cache["dragOrigin"].x;
+            this._dragBtn.y = this._cache["dragOrigin"].y;
             if (!globalThis._.isEqual(oldState.drops, state.drops)) {
                 for (var i = 0; i < this._grids.length; i++) {
                     var grid = this._grids[i];

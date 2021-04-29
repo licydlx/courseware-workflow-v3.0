@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-27 22:44:07
+ * @LastEditTime: 2021-04-29 17:39:12
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -96,6 +96,12 @@ var inputChoose_model01_v1 = /** @class */ (function (_super) {
         fgui.GRoot.inst.addChild(this._view);
         this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");
+        // 臨時
+        // bug 初始设置不播放不生效
+        if (this._c2) {
+            this._c2.selectedIndex = 1;
+            this._c2.selectedIndex = 0;
+        }
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit)
             this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);

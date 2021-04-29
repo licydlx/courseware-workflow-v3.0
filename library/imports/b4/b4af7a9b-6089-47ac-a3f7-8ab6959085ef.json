@@ -59,7 +59,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "autoReleaseAssets": false,
-    "_id": "e40c48f6-b759-40c8-97e0-71b7208c2073"
+    "_id": "b4af7a9b-6089-47ac-a3f7-8ab6959085ef"
   },
   {
     "__type__": "cc.Node",
@@ -283,6 +283,8 @@
       "__id__": 2
     },
     "_enabled": true,
+    "test": false,
+    "configJson": null,
     "_id": "42xPsb+q9CAbXn9IGsj/Pj"
   }
 ]

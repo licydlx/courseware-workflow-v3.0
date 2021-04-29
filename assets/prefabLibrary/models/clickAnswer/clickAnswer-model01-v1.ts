@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-27 22:44:29
+ * @LastEditTime: 2021-04-29 16:51:02
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
@@ -57,7 +57,13 @@ export default class clcikAnswer_model01_v1 extends cc.Component {
         // 控制器
         this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");
-
+        // 臨時
+        // bug 初始设置不播放不生效
+        if (this._c2) {
+            this._c2.selectedIndex = 1;
+            this._c2.selectedIndex = 0;
+        }
+        
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
 
@@ -79,7 +85,8 @@ export default class clcikAnswer_model01_v1 extends cc.Component {
 
         // 天枰 子栏
         let aGroup = this._btnBox.getChild("grids").asGroup;
-        for (let i = 0; i < this._btnBox.numChildren; i++) {
+
+        for (let i = this._btnBox.numChildren - 1; i > -1; i--) {
             if (this._btnBox.getChildAt(i).group == aGroup) {
                 let grid: fgui.GLoader = this._btnBox.getChildAt(i).asLoader;
                 this._grids.push(grid);

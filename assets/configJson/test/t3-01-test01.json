@@ -19,95 +19,6 @@
     "chapters": [
         {
             "model": {
-                "uiPath": "dragAnswer-model01-v1-p3",
-                "bundleName": "dragAnswer",
-                "prefabName": "dragAnswer-model01-v1",
-                "config": {
-                    "answer": 4,
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide01",
-                            "pos": {
-                                "x": 30,
-                                "y": 108
-                            }
-                        },
-                        "lineBlink": {
-                            "component": "lineBlink01",
-                            "pos": {
-                                "x": 470,
-                                "y": 30
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-        {
-            "model": {
-                "uiPath": "inputChoose-model01-v1-p12",
-                "bundleName": "inputChoose",
-                "prefabName": "inputChoose-model01-v1",
-                "config": {
-                    "answer": 6,
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide02",
-                            "pos": {
-                                "x": -640,
-                                "y": 50
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-
-        {
-            "model": {
-                "uiPath": "clickAnswer-model01-v1-p6",
-                "bundleName": "clickAnswer",
-                "prefabName": "clickAnswer-model01-v1",
-                "config": {
-                    "answer": 2,
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide02"
-                        },
-                        "lineBlink": {
-                            "component": "lineBlink01",
-                            "pos": {
-                                "x": -368,
-                                "y": 250
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-
-
-
-        {
-            "model": {
                 "uiPath": "dragAnswer-model01-v1-p4",
                 "bundleName": "dragAnswer",
                 "prefabName": "dragAnswer-model01-v1",
@@ -139,24 +50,26 @@
             }
         },
 
-
-
         {
             "model": {
-                "uiPath": "dragAnswer-model01-v1-p11",
+                "uiPath": "dragAnswer-model01-v1-p3",
                 "bundleName": "dragAnswer",
                 "prefabName": "dragAnswer-model01-v1",
                 "config": {
-                    "answer": 6,
+                    "answer": 4,
                     "ae": {
                         "handleGuide": {
-                            "component": "handleGuide03"
+                            "component": "handleGuide01",
+                            "pos": {
+                                "x": 30,
+                                "y": 108
+                            }
                         },
                         "lineBlink": {
                             "component": "lineBlink01",
                             "pos": {
-                                "x": 11,
-                                "y": 300
+                                "x": 470,
+                                "y": 30
                             }
                         }
                     }
@@ -213,63 +126,7 @@
 
         {
             "model": {
-                "uiPath": "dragAnswer-model01-v1-p10",
-                "bundleName": "dragAnswer",
-                "prefabName": "dragAnswer-model01-v1",
-                "config": {
-                    "answer": 6,
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide03"
-                        },
-                        "lineBlink": {
-                            "component": "lineBlink01",
-                            "pos": {
-                                "x": 11,
-                                "y": 300
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-        {
-            "model": {
-                "uiPath": "dragAnswer-model01-v1-p9",
-                "bundleName": "dragAnswer",
-                "prefabName": "dragAnswer-model01-v1",
-                "config": {
-                    "answer": 4,
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide03"
-                        },
-                        "lineBlink": {
-                            "component": "lineBlink01",
-                            "pos": {
-                                "x": 11,
-                                "y": 300
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-        {
-            "model": {
-                "uiPath": "clickAnswer-model01-v1-p8",
+                "uiPath": "clickAnswer-model01-v1-p6",
                 "bundleName": "clickAnswer",
                 "prefabName": "clickAnswer-model01-v1",
                 "config": {
@@ -281,7 +138,7 @@
                         "lineBlink": {
                             "component": "lineBlink01",
                             "pos": {
-                                "x": -368,
+                                "x": -372,
                                 "y": 250
                             }
                         }
@@ -309,7 +166,35 @@
                         "lineBlink": {
                             "component": "lineBlink01",
                             "pos": {
-                                "x": -368,
+                                "x": -372,
+                                "y": 250
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "clickAnswer-model01-v1-p8",
+                "bundleName": "clickAnswer",
+                "prefabName": "clickAnswer-model01-v1",
+                "config": {
+                    "answer": 2,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02"
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": -372,
                                 "y": 250
                             }
                         }
@@ -324,7 +209,128 @@
             }
         },
 
+        {
+            "model": {
+                "uiPath": "dragAnswer-model01-v1-p9",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v1",
+                "config": {
+                    "answer": 4,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide03",
+                            "pos": {
+                                "x": 20,
+                                "y": -94
+                            }
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": 0,
+                                "y": 180
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "dragAnswer-model01-v1-p10",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v1",
+                "config": {
+                    "answer": 6,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide03",
+                            "pos": {
+                                "x": 20,
+                                "y": -94
+                            }
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": 0,
+                                "y": 180
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "dragAnswer-model01-v1-p11",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v1",
+                "config": {
+                    "answer": 6,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide03",
+                            "pos": {
+                                "x": 20,
+                                "y": -94
+                            }
+                        },
+                        "lineBlink": {
+                            "component": "lineBlink01",
+                            "pos": {
+                                "x": 0,
+                                "y": 180
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
 
+        {
+            "model": {
+                "uiPath": "inputChoose-model01-v1-p12",
+                "bundleName": "inputChoose",
+                "prefabName": "inputChoose-model01-v1",
+                "config": {
+                    "answer": 6,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -640,
+                                "y": -80
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
 
         {
             "model": {
@@ -333,7 +339,6 @@
                 "prefabName": "static-model01-v1"
             }
         },
-
         {
             "model": {
                 "uiPath": "static-model01-v1-p14",
