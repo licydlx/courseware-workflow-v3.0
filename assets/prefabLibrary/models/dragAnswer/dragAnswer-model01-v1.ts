@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-29 17:39:06
+ * @LastEditTime: 2021-04-29 18:30:35
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { pointBelongArea } = window['GlobalData'].utils;
@@ -100,8 +100,6 @@ export default class dragAnswer_model01_v1 extends cc.Component {
                 this._grids.push(grid);
             }
         }
-
-    
 
         // 初始化state
         this._state = {

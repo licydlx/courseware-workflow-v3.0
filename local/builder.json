@@ -5,7 +5,7 @@
   "buildPath": "./build",
   "debug": false,
   "sourceMaps": false,
-  "embedWebDebugger": true,
+  "embedWebDebugger": false,
   "previewWidth": "1280",
   "previewHeight": "720",
   "useDebugKeystore": true,
