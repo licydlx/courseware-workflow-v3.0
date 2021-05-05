@@ -1,0 +1,35 @@
+{
+    "name": "",
+    "courseName": "t2-trialClass-01",
+    "env": "test",
+    "totalPages": 1,
+    "pathConfig": {
+        "remoteUrl": "",
+        "controllerBundlePath": "",
+        "panelBundlePath": "",
+        "resourceBundlePath": "",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "controllerName": "controller-model02",
+        "panelName": "formal-panle-model02",
+        "resourceName": "t2-trialClass-01",
+        "packageName": "t2-trialClass-01"
+    },
+
+    "chapters": [
+        {
+            "model": {
+                "uiPath": "dragAnswer-model02-v1-p5",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model02-v1"
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        }
+
+    ]
+}

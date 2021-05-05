@@ -699,8 +699,10 @@
       "__id__": 2
     },
     "_enabled": true,
-    "test": false,
-    "configJson": null,
+    "test": true,
+    "configJson": {
+      "__uuid__": "f2cfed46-d065-44ea-b245-a6750831d2a2"
+    },
     "_id": "42xPsb+q9CAbXn9IGsj/Pj"
   },
   {

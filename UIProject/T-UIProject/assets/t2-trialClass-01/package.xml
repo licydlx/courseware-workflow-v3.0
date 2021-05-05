@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="ik5aab9i">
   <resources>
-    <image id="rbpx0" name="1@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpx1" name="1框@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpx2" name="2@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpx3" name="2框@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpx4" name="3@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpx5" name="4@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpx6" name="4框@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpx7" name="5@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpx8" name="5框@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpx9" name="背景@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpxa" name="对称线2@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpxb" name="机器人1@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpxc" name="气泡@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <image id="rbpxd" name="拖板@2x.png" path="/images/dragAnswer-model01-v1/"/>
-    <component id="rbpxe" name="dragAnswer-model-v1-p5.xml" path="/"/>
+    <image id="rbpx0" name="1@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx1" name="1框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx2" name="2@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx3" name="2框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx4" name="3@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx5" name="4@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx6" name="4框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx7" name="5@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx8" name="5框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx9" name="背景@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpxa" name="对称线2@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpxb" name="机器人1@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpxc" name="气泡@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpxd" name="拖板@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <component id="rbpxe" name="dragAnswer-model02-v1-p5.xml" path="/" exported="true"/>
+    <component id="dbj2f" name="dragBtn.xml" path="/buttons/"/>
   </resources>
   <publish name=""/>
 </packageDescription>
