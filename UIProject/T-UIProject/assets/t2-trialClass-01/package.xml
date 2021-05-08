@@ -2,21 +2,112 @@
 <packageDescription id="ik5aab9i">
   <resources>
     <image id="rbpx0" name="1@2x.png" path="/images/dragAnswer-model02-v1/"/>
-    <image id="rbpx1" name="1框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx1" name="k02.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpx2" name="2@2x.png" path="/images/dragAnswer-model02-v1/"/>
-    <image id="rbpx3" name="2框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx3" name="k03.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpx4" name="3@2x.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpx5" name="4@2x.png" path="/images/dragAnswer-model02-v1/"/>
-    <image id="rbpx6" name="4框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx6" name="k05.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpx7" name="5@2x.png" path="/images/dragAnswer-model02-v1/"/>
-    <image id="rbpx8" name="5框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="rbpx8" name="k06.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpx9" name="背景@2x.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpxa" name="对称线2@2x.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpxb" name="机器人1@2x.png" path="/images/dragAnswer-model02-v1/"/>
-    <image id="rbpxc" name="气泡@2x.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpxd" name="拖板@2x.png" path="/images/dragAnswer-model02-v1/"/>
     <component id="rbpxe" name="dragAnswer-model02-v1-p5.xml" path="/" exported="true"/>
     <component id="dbj2f" name="dragBtn.xml" path="/buttons/"/>
+    <image id="qxt0g" name="气泡@2x.png" path="/images/title/"/>
+    <component id="qxt0h" name="title.xml" path="/buttons/"/>
+    <image id="qxt0i" name="气泡@2x (3).png" path="/images/common/"/>
+    <movieclip id="qxt0k" name="laba.jta" path="/animations/laba/"/>
+    <image id="qxt0l" name="k01.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0m" name="k04.png" path="/images/dragAnswer-model02-v1/"/>
+    <component id="qxt0o" name="dragAnswer-model02-v1-p6.xml" path="/" exported="true"/>
+    <image id="qxt0p" name="0201.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0q" name="0202.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0r" name="0203.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0s" name="0204.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0t" name="0205.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0u" name="k07.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0v" name="k08.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0w" name="0301.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0x" name="0302.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0y" name="0303.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt0z" name="0304.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt010" name="k09.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt011" name="k10.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt012" name="k11.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="qxt013" name="k12.png" path="/images/dragAnswer-model02-v1/"/>
+    <component id="qxt014" name="dragAnswer-model02-v1-p7.xml" path="/" exported="true"/>
+    <image id="qxt015" name="0305.png" path="/images/dragAnswer-model02-v1/"/>
+    <sound id="qxt016" name="例题1、练习1-1、1-2.mp3" path="/audios/"/>
+    <sound id="qxt017" name="例题2、练习2-1、练习2-2.mp3" path="/audios/"/>
+    <sound id="qxt018" name="例题3、练习3-1、练习3-2.mp3" path="/audios/"/>
+    <sound id="qxt019" name="拓展提升.mp3" path="/audios/"/>
+    <image id="qxt01b" name="0102.png" path="/images/static/"/>
+    <image id="qxt01c" name="0103.png" path="/images/static/"/>
+    <image id="qxt01d" name="0104.png" path="/images/static/"/>
+    <component id="qxt01e" name="static-model01-v1-p1.xml" path="/" exported="true"/>
+    <component id="qxt01f" name="static-model01-v1-p11.xml" path="/" exported="true"/>
+    <image id="qxt01g" name="0101.png" path="/images/common/"/>
+    <image id="qxt01h" name="0105.png" path="/images/static/"/>
+    <image id="qe6i1p" name="0101.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="qe6i1q" name="0102.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="qe6i1r" name="0103.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="qe6i1s" name="0104.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="qe6i1t" name="0105.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="qe6i1u" name="0106.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="qe6i1v" name="0107.png" path="/images/dragAnswer-model01-v2/"/>
+    <component id="qe6i1w" name="dragAnswer-model01-v2-p8.xml" path="/" exported="true"/>
+    <image id="qe6i1x" name="0108.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="qe6i1y" name="0109.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="qe6i1z" name="0112.png" path="/images/common/"/>
+    <component id="qe6i20" name="submit.xml" path="/buttons/"/>
+    <component id="qe6i21" name="handleGuide01.xml" path="/components/" exported="true"/>
+    <image id="qe6i22" name="0111.png" path="/components/images/"/>
+    <image id="qe6i23" name="0109.png" path="/components/images/"/>
+    <sound id="ht4324" name="点击音效.mp3" path="/audios/"/>
+    <image id="ht4325" name="0110.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="ht4326" name="0111.png" path="/images/dragAnswer-model01-v2/"/>
+    <component id="ht4327" name="dragAnswer-model01-v2-p9.xml" path="/" exported="true"/>
+    <component id="ht4328" name="handleGuide04.xml" path="/components/" exported="true"/>
+    <image id="ht4329" name="0112.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="ht432a" name="0113.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="ht432b" name="0114.png" path="/images/dragAnswer-model01-v2/"/>
+    <component id="ht432d" name="dragAnswer-model01-v2-p10.xml" path="/" exported="true"/>
+    <component id="ht432e" name="choose-model01-v1-p11.xml" path="/" exported="true"/>
+    <image id="ht432f" name="0101.png" path="/images/choose-model01-v1/"/>
+    <image id="ht432g" name="0102.png" path="/images/choose-model01-v1/"/>
+    <image id="ht432h" name="0103.png" path="/images/choose-model01-v1/"/>
+    <image id="ht432i" name="0104.png" path="/images/choose-model01-v1/"/>
+    <image id="ht432j" name="0105.png" path="/images/choose-model01-v1/"/>
+    <component id="ht432k" name="chooseBtn.xml" path="/buttons/"/>
+    <component id="ht432l" name="handleGuide02.xml" path="/components/" exported="true"/>
+    <image id="ht432m" name="0109.png" path="/components/images/common/"/>
+    <component id="ht432n" name="refer.xml" path="/buttons/"/>
+    <component id="akgh2p" name="choose-model02-v1-p2.xml" path="/" exported="true"/>
+    <image id="akgh3a" name="0101.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3b" name="0102.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3c" name="0103.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3d" name="0104.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3e" name="0105.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3f" name="0106.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3g" name="0107.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3h" name="0108.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3i" name="0109.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3j" name="0110.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3k" name="0111.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3l" name="0112.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3m" name="0113.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3n" name="0114.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3o" name="0115.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3p" name="0116.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3q" name="0117.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3r" name="0118.png" path="/images/choose-model02-v1/"/>
+    <image id="akgh3s" name="0119.png" path="/images/common/"/>
+    <component id="akgh3u" name="choose-option.xml" path="/" exported="true"/>
+    <component id="akgh3v" name="choose-model02-v1-p3.xml" path="/" exported="true"/>
+    <component id="akgh3w" name="choose-model02-v1-p4.xml" path="/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

@@ -14,6 +14,14 @@
     <image id="odopl" name="laba_ex-play_09.png" path="/animations/laba/"/>
     <image id="odopm" name="laba_ex-play_10.png" path="/animations/laba/"/>
     <movieclip id="odopn" name="laba.jta" path="/animations/laba/"/>
+    <image id="qe6io" name="0112.png" path="/images/"/>
+    <component id="qe6ip" name="submit.xml" path="/components/"/>
+    <component id="qe6iq" name="handleGuide01.xml" path="/components/" exported="true"/>
+    <image id="qe6ir" name="0111.png" path="/components/images/"/>
+    <image id="qe6is" name="0109.png" path="/components/images/"/>
+    <sound id="ht43t" name="点击音效.mp3" path="/audios/"/>
+    <component id="ht43u" name="handleGuide02.xml" path="/components/" exported="true"/>
+    <image id="ht43v" name="0109.png" path="/components/images/common/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

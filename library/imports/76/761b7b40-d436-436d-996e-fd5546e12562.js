@@ -65,16 +65,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-29 18:30:35
+ * @LastEditTime: 2021-05-07 14:44:46
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
-var pointBelongArea = window['GlobalData'].utils.pointBelongArea;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
 var dragAnswer_model02_v1 = /** @class */ (function (_super) {
     __extends(dragAnswer_model02_v1, _super);
     function dragAnswer_model02_v1() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this._grids = [];
         _this._colliderBox = [];
         _this._collideredBox = [];
         _this._cache = {};
@@ -108,7 +106,10 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             this._c2.selectedIndex = 1;
             this._c2.selectedIndex = 0;
         }
-        // this._title = this._view.getChild("title").asButton;
+        this._title = this._view.getChild("title").asButton;
+        this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
+        if (this._titleTrigger)
+            this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
         var colliderGroup = this._view.getChild("colliderBox").asGroup;
         var collideredGroup = this._view.getChild("collideredBox").asGroup;
         this._cache["colliderBox"] = [];
@@ -134,22 +135,65 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             drag: "end",
             title: false,
             collider: this._cache["colliderBox"].map(function (v) { return v; }),
-            index: null,
-            answer: false
+            colliderIndex: null,
+            answer: false,
+            submit: false,
         };
         // 临时 禁止操作期间 切页
         this.disableForbidHandle();
     };
     dragAnswer_model02_v1.prototype.init = function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var pathConfig, model, components, Package, GComponent;
-            return __generator(this, function (_a) {
-                pathConfig = data.pathConfig, model = data.model, components = data.components;
-                Package = pathConfig.packageName;
-                GComponent = model.uiPath;
-                // let { answer, ae } = model.config;
-                this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
-                return [2 /*return*/];
+            var pathConfig, model, components, Package, GComponent, _a, answer, ae, v, _b, _c, _i, key, componentPath, componentBundle, componentPrefab;
+            return __generator(this, function (_d) {
+                switch (_d.label) {
+                    case 0:
+                        pathConfig = data.pathConfig, model = data.model, components = data.components;
+                        Package = pathConfig.packageName;
+                        if (model.uiPath) {
+                            GComponent = model.uiPath;
+                            this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
+                        }
+                        if (model.config) {
+                            _a = model.config, answer = _a.answer, ae = _a.ae;
+                            if (answer)
+                                this._answer = answer;
+                            // 动效注册
+                            if (ae) {
+                                for (v in ae) {
+                                    if (ae[v]) {
+                                        this[v] = {};
+                                        if (ae[v].component)
+                                            this[v].component = fgui.UIPackage.createObject(Package, ae[v].component).asCom;
+                                        if (ae[v].pos)
+                                            this[v].pos = ae[v].pos;
+                                    }
+                                }
+                            }
+                        }
+                        if (!components) return [3 /*break*/, 5];
+                        _b = [];
+                        for (_c in components)
+                            _b.push(_c);
+                        _i = 0;
+                        _d.label = 1;
+                    case 1:
+                        if (!(_i < _b.length)) return [3 /*break*/, 5];
+                        key = _b[_i];
+                        componentPath = "" + pathConfig.remoteUrl + pathConfig.componentBundlePath + components[key].bundleName;
+                        return [4 /*yield*/, loadBundle(componentPath)];
+                    case 2:
+                        componentBundle = _d.sent();
+                        return [4 /*yield*/, loadPrefab(componentBundle, components[key].prefabName)];
+                    case 3:
+                        componentPrefab = _d.sent();
+                        this[key] = componentPrefab;
+                        _d.label = 4;
+                    case 4:
+                        _i++;
+                        return [3 /*break*/, 1];
+                    case 5: return [2 /*return*/];
+                }
             });
         });
     };
@@ -169,13 +213,14 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
                 index = i;
             }
         }
-        state.index = index;
+        state.colliderIndex = index;
         this.updateState(state);
     };
     dragAnswer_model02_v1.prototype._onDragMove = function (evt) {
         this._dragging = true;
     };
     dragAnswer_model02_v1.prototype._onDragEnd = function (evt) {
+        var _this = this;
         var index;
         var target = fgui.GObject.cast(evt.currentTarget);
         for (var i = 0; i < this._colliderBox.length; i++) {
@@ -186,7 +231,6 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
         var obj = this._adsorb(target, index);
         this._dragging = false;
         var state = globalThis._.cloneDeep(this._state);
-        // console.log(obj);
         if (obj.bool) {
             state.collider[index] = {
                 x: obj.pos.x,
@@ -204,10 +248,16 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             }
         }
         state.drag = "end";
-        state.index = index;
-        state.answer = false;
+        state.colliderIndex = index;
+        var answerBool = state.collider.every(function (v, i) { return !globalThis._.isEqual(v, _this._cache["colliderBox"][i]); });
+        state.answer = answerBool;
+        if (answerBool) {
+            state.submit = true;
+        }
         this.updateState(state);
     };
+    // 临时
+    // 区域所属判断
     dragAnswer_model02_v1.prototype._adsorb = function (obj, index) {
         var a;
         var b;
@@ -236,33 +286,10 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             }
         };
     };
-    dragAnswer_model02_v1.prototype._clickRemove = function (evt) {
-        var state = globalThis._.cloneDeep(this._state);
-        var index = this._grids.findIndex(function (v) { return v.url === null; });
-        if (index !== 0) {
-            // let grid: fgui.GLoader = this._grids[index == -1 ? this._grids.length - 1 : index - 1];
-            // grid.url = null;
-            state.drops = state.drops - 1;
-            state.answer = state.drops === this._answer;
-            this.updateState(state);
-        }
-    };
     dragAnswer_model02_v1.prototype._clickTitle = function (evt) {
         var state = globalThis._.cloneDeep(this._state);
         state.title = true;
         this.updateState(state);
-    };
-    dragAnswer_model02_v1.prototype._clickSubmit = function (evt) {
-        return __awaiter(this, void 0, void 0, function () {
-            var state;
-            return __generator(this, function (_a) {
-                state = globalThis._.cloneDeep(this._state);
-                state.answer = state.drops === this._answer;
-                state.submit = true;
-                this.updateState(state);
-                return [2 /*return*/];
-            });
-        });
     };
     // 获取状态
     dragAnswer_model02_v1.prototype.getState = function (data) {
@@ -277,8 +304,8 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
     // 更新ui层
     dragAnswer_model02_v1.prototype.updateUi = function (oldState, state) {
         if (state.drag == "move") {
-            this._colliderBox[state.index].x = state.collider[state.index].x;
-            this._colliderBox[state.index].y = state.collider[state.index].y;
+            this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
+            this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
         }
         if (state.drag == "end") {
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
@@ -289,6 +316,11 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             }
             if (!globalThis._.isEqual(oldState.title, state.title)) {
                 this.playTitle(state.title);
+            }
+            if (!globalThis._.isEqual(oldState.answer, state.answer)) {
+                if (state.answer) {
+                    this.transfer(state.answer);
+                }
             }
         }
     };
@@ -322,6 +354,14 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             });
         });
     };
+    // 临时
+    dragAnswer_model02_v1.prototype.transfer = function (answer) {
+        var _this = this;
+        this.forbidHandle();
+        setTimeout(function () {
+            _this.answerFeedback(answer);
+        }, 1000);
+    };
     dragAnswer_model02_v1.prototype.answerFeedback = function (bool) {
         var _this = this;
         if (!this.feedback)
@@ -334,6 +374,8 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
         feedbackJs.init(bool);
         feedback.parent = cc.find("Canvas").parent;
         setTimeout(function () {
+            // 临时
+            _this.disableForbidHandle();
             feedback.destroy();
             state.submit = false;
             _this.updateState(state);
@@ -403,9 +445,9 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
         if (this._dragging) {
             var state = globalThis._.cloneDeep(this._state);
             state.drag = "move";
-            state.collider[state.index] = {
-                x: this._colliderBox[state.index].x,
-                y: this._colliderBox[state.index].y,
+            state.collider[state.colliderIndex] = {
+                x: this._colliderBox[state.colliderIndex].x,
+                y: this._colliderBox[state.colliderIndex].y,
             };
             this.updateState(state);
         }
