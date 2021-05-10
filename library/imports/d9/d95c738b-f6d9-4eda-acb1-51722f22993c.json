@@ -7,7 +7,7 @@
     "name": "数理思维",
     "courseName": "t2-trialclass-01",
     "env": "test",
-    "totalPages": 12,
+    "totalPages": 13,
     "pathConfig": {
       "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
       "controllerBundlePath": "T-series/prefabLibrary/controllers/",
@@ -34,7 +34,7 @@
           "bundleName": "choose",
           "prefabName": "choose-model02-v1",
           "config": {
-            "answer": 2,
+            "answer": 1,
             "ae": {
               "handleGuide": {
                 "component": "handleGuide02",
@@ -59,7 +59,7 @@
           "bundleName": "choose",
           "prefabName": "choose-model02-v1",
           "config": {
-            "answer": 3,
+            "answer": 2,
             "ae": {
               "handleGuide": {
                 "component": "handleGuide02",
@@ -84,7 +84,7 @@
           "bundleName": "choose",
           "prefabName": "choose-model02-v1",
           "config": {
-            "answer": 1,
+            "answer": 0,
             "ae": {
               "handleGuide": {
                 "component": "handleGuide02",
@@ -236,7 +236,14 @@
       },
       {
         "model": {
-          "uiPath": "static-model01-v1-p11",
+          "uiPath": "static-model01-v1-p12",
+          "bundleName": "static",
+          "prefabName": "static-model01-v1"
+        }
+      },
+      {
+        "model": {
+          "uiPath": "static-model01-v1-p13",
           "bundleName": "static",
           "prefabName": "static-model01-v1"
         }

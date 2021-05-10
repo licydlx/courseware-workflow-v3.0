@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-10 15:20:25
+ * @LastEditTime: 2021-05-11 00:07:29
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
@@ -15,7 +15,7 @@ export default class choose_model02_v1 extends cc.Component {
     private _view: fgui.GComponent;
     private _c1: fgui.Controller;
     private _c2: fgui.Controller;
-    
+
     private _submit: fgui.GButton;
     private _title: fgui.GButton;
     private _titleTrigger: fgui.GLoader;
@@ -60,7 +60,7 @@ export default class choose_model02_v1 extends cc.Component {
 
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
-        
+
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
 
@@ -77,10 +77,10 @@ export default class choose_model02_v1 extends cc.Component {
 
         // 初始化state
         this._state = {
-            option:0,
+            option: [],
             title: false,
             submit: false,
-            checkAnswer:false,
+            checkAnswer: false,
             answer: false
         }
 
@@ -123,37 +123,21 @@ export default class choose_model02_v1 extends cc.Component {
         this.updateState(state);
     }
 
-    private _clickOption(evt: any){
+    private _clickOption(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
         let option: any = fgui.GObject.cast(evt.currentTarget);
-        let optionIndex:number = this._options.findIndex((v:any) => v == option);
-        console.log(optionIndex)
-        state.option = optionIndex + 1;
-
-        // let optionGroup = this._view.getChild("optionBox").asGroup;
-        // for (let i = 0; i < this._view.numChildren; i++) {
-        //     if (this._view.getChildAt(i).group == optionGroup) {
-        //         let btn: fgui.GButton = this._view.getChildAt(i).asButton;
-        //         btn.on(fgui.Event.CLICK, this._clickOption, this);
-        //         this._options.push(btn);
-        //     }
-        // }
-
-        // let test:fgui.GComponent = option.asCom
-        console.log(option)
-        let t: fgui.Transition = option.getTransition("t0");
-        console.log(t)
-        t.play(() => {
-            console.log("动画执行！")
-        }, 1);
-
-        this.updateState(state); 
+        let optionIndex: number = this._options.findIndex((v: any) => v == option);
+        if (state.option.includes(optionIndex)) {
+            state.option = state.option.filter((v:any) => v != optionIndex )
+        } else {
+            state.option.push(optionIndex);
+        }
+        this.updateState(state);
     }
 
     private _clickSubmit(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
-
-        state.answer = state.option == this._answer;
+        state.answer = state.option.join("") == this._answer;
         state.submit = true;
         this.updateState(state);
     }
@@ -171,26 +155,35 @@ export default class choose_model02_v1 extends cc.Component {
 
     // 更新ui层
     updateUi(oldState: any, state: any) {
-        // if (!globalThis._.isEqual(oldState.option, state.option)) {
-        //     this._c1.selectedIndex = state.option;
-        // }
-        
+        if (!globalThis._.isEqual(oldState.option, state.option)) {
+            let index:any;
+            let tName:any;
+            if (state.option.length > oldState.option.length) {
+                index = state.option.find((v:any) => oldState.option.includes(v) == false);
+                tName = "t0";
+            } else if(oldState.option.length > state.option.length) {
+                index = oldState.option.find((v:any) => state.option.includes(v) == false);
+                tName = "t1";
+            }
+            let t: fgui.Transition = this._options[index].getTransition(tName);
+            t.play();
+        }
+
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
         }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
-           if (state.submit) {
-               state.option ? this.afterSubmit() : this.onHandleGuide();
-           }
+            if (state.submit) {
+                state.option.length > 0 ? this.afterSubmit() : this.onHandleGuide();
+            }
         }
 
         if (!globalThis._.isEqual(oldState.checkAnswer, state.checkAnswer)) {
             if (state.checkAnswer) {
-               this.answerFeedback(state.answer);
+                this.answerFeedback(state.answer);
             }
         }
-
     }
 
     async playTitle(bool: boolean) {
@@ -232,20 +225,12 @@ export default class choose_model02_v1 extends cc.Component {
     }
 
     // 提交后 动画
-    afterSubmit(){
+    afterSubmit() {
         let state: any = globalThis._.cloneDeep(this._state);
-        state.answer = state.option == this._answer;
+        state.answer = state.option.join("") == this._answer;
         state.submit = false;
         state.checkAnswer = true;
         this.updateState(state);
-        // let t: fgui.Transition = this._view.getTransition("t1");
-        // t.play(() => {
-            
-        //     state.answer = state.option == this._answer;
-        //     state.submit = false;
-        //     state.checkAnswer = true;
-        //     this.updateState(state);
-        // }, 1);
     }
 
     // 操作提示

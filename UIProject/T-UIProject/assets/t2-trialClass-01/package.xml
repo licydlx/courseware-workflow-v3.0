@@ -48,7 +48,7 @@
     <image id="qxt01c" name="0103.png" path="/images/static/"/>
     <image id="qxt01d" name="0104.png" path="/images/static/"/>
     <component id="qxt01e" name="static-model01-v1-p1.xml" path="/" exported="true"/>
-    <component id="qxt01f" name="static-model01-v1-p11.xml" path="/" exported="true"/>
+    <component id="qxt01f" name="static-model01-v1-p12.xml" path="/" exported="true"/>
     <image id="qxt01g" name="0101.png" path="/images/common/"/>
     <image id="qxt01h" name="0105.png" path="/images/static/"/>
     <image id="qe6i1p" name="0101.png" path="/images/dragAnswer-model01-v2/"/>
@@ -91,23 +91,82 @@
     <image id="akgh3c" name="0103.png" path="/images/choose-model02-v1/"/>
     <image id="akgh3d" name="0104.png" path="/images/choose-model02-v1/"/>
     <image id="akgh3e" name="0105.png" path="/images/choose-model02-v1/"/>
-    <image id="akgh3f" name="0106.png" path="/images/choose-model02-v1/"/>
-    <image id="akgh3g" name="0107.png" path="/images/choose-model02-v1/"/>
-    <image id="akgh3h" name="0108.png" path="/images/choose-model02-v1/"/>
-    <image id="akgh3i" name="0109.png" path="/images/choose-model02-v1/"/>
-    <image id="akgh3j" name="0110.png" path="/images/choose-model02-v1/"/>
-    <image id="akgh3k" name="0111.png" path="/images/choose-model02-v1/"/>
-    <image id="akgh3l" name="0112.png" path="/images/choose-model02-v1/"/>
-    <image id="akgh3m" name="0113.png" path="/images/choose-model02-v1/"/>
-    <image id="akgh3n" name="0114.png" path="/images/choose-model02-v1/"/>
     <image id="akgh3o" name="0115.png" path="/images/choose-model02-v1/"/>
     <image id="akgh3p" name="0116.png" path="/images/choose-model02-v1/"/>
     <image id="akgh3q" name="0117.png" path="/images/choose-model02-v1/"/>
     <image id="akgh3r" name="0118.png" path="/images/choose-model02-v1/"/>
     <image id="akgh3s" name="0119.png" path="/images/common/"/>
-    <component id="akgh3u" name="choose-option.xml" path="/" exported="true"/>
+    <component id="akgh3u" name="choose-option1.xml" path="/choose-option/" exported="true"/>
     <component id="akgh3v" name="choose-model02-v1-p3.xml" path="/" exported="true"/>
     <component id="akgh3w" name="choose-model02-v1-p4.xml" path="/" exported="true"/>
+    <image id="xm0v3x" name="0119.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v3y" name="0120.png" path="/images/choose-model02-v1/"/>
+    <component id="xm0v3z" name="choose-option2.xml" path="/choose-option/" exported="true"/>
+    <image id="xm0v40" name="0121.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v41" name="0122.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v42" name="0123.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v43" name="0124.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v44" name="0125.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v45" name="0126.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v46" name="0127.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v47" name="0128.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v48" name="0129.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v49" name="0130.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v4a" name="0131.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v4b" name="0132.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v4c" name="0133.png" path="/images/choose-model02-v1/"/>
+    <image id="xm0v4d" name="0134.png" path="/images/choose-model02-v1/"/>
+    <component id="or2y4e" name="choose-option3.xml" path="/choose-option/" exported="true"/>
+    <component id="or2y4f" name="choose-option4.xml" path="/choose-option/" exported="true"/>
+    <image id="or2y4g" name="0135.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4h" name="0136.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4i" name="0137.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4j" name="0138.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4k" name="0139.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4l" name="0140.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4m" name="0141.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4n" name="0142.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4o" name="0143.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4p" name="0144.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4q" name="0145.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4r" name="0146.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4s" name="0147.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4t" name="0148.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4u" name="0149.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4v" name="0150.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4w" name="0151.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4x" name="0152.png" path="/images/choose-model02-v1/"/>
+    <image id="or2y4y" name="0153.png" path="/images/choose-model02-v1/"/>
+    <component id="or2y4z" name="choose-option5.xml" path="/choose-option/" exported="true"/>
+    <component id="or2y50" name="choose-option6.xml" path="/choose-option/" exported="true"/>
+    <component id="or2y51" name="choose-option7.xml" path="/choose-option/" exported="true"/>
+    <component id="nqb552" name="choose-option8.xml" path="/choose-option/" exported="true"/>
+    <component id="nqb553" name="choose-option9.xml" path="/choose-option/" exported="true"/>
+    <image id="nqb554" name="0154.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb555" name="0155.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb556" name="0156.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb557" name="0157.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb558" name="0158.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb559" name="0159.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55a" name="0160.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55b" name="0161.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55c" name="0162.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55d" name="0163.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55e" name="0164.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55f" name="0165.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55g" name="0166.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55h" name="0167.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55i" name="0168.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55j" name="0169.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55k" name="0170.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55l" name="0171.png" path="/images/choose-model02-v1/"/>
+    <image id="nqb55m" name="0172.png" path="/images/choose-model02-v1/"/>
+    <component id="nqb55n" name="choose-option10.xml" path="/choose-option/" exported="true"/>
+    <component id="nqb55o" name="choose-option11.xml" path="/choose-option/" exported="true"/>
+    <component id="nqb55p" name="choose-option12.xml" path="/choose-option/" exported="true"/>
+    <component id="nqb55q" name="static-model01-v1-p13.xml" path="/" exported="true"/>
+    <image id="nqb55r" name="ewm.png" path="/images/common/"/>
+    <image id="nqb55s" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
   </resources>
   <publish name=""/>
 </packageDescription>

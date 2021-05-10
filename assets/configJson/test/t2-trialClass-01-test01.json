@@ -22,7 +22,7 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model02-v1",
                 "config": {
-                    "answer": 2,
+                    "answer": 1,
                     "ae": {
                         "handleGuide": {
                             "component": "handleGuide02",
@@ -41,14 +41,13 @@
                 }
             }
         },
-        
         {
             "model": {
                 "uiPath": "choose-model01-v1-p11",
                 "bundleName": "choose",
                 "prefabName": "choose-model01-v1",
                 "config": {
-                    "answer": 3,
+                    "answer": 2,
                     "ae": {
                         "handleGuide": {
                             "component": "handleGuide02"
@@ -88,8 +87,6 @@
                 }
             }
         },
-
-
         {
             "model": {
                 "uiPath": "choose-model02-v1-p4",
@@ -115,10 +112,6 @@
                 }
             }
         },
-
-
-
-
         {
             "model": {
                 "uiPath": "dragAnswer-model01-v2-p10",

@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 226,
+                "height": 236.875,
                 "type": "panel",
-                "width": 204
+                "width": 235
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 706.5,
+                "height": 695.609375,
                 "type": "panel",
-                "width": 204
+                "width": 235
               }
             ],
             "height": 935.5,
             "type": "dock-v",
-            "width": 204
+            "width": 235
           },
           {
             "active": 0,
@@ -43,10 +43,10 @@
             ],
             "height": 935.5,
             "type": "panel",
-            "width": 1406
+            "width": 1375
           },
           {
-            "active": 0,
+            "active": 1,
             "children": [
               "inspector",
               "cocos-services"

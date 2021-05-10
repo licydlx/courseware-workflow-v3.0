@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="275,320">
+  <displayList>
+    <image id="n0_akgh" name="n0" src="akgh3c" fileName="images/choose-model02-v1/0103.png" xy="0,0"/>
+    <image id="n1_akgh" name="n1" src="akgh3b" fileName="images/choose-model02-v1/0102.png" xy="0,0" alpha="0"/>
+    <image id="n5_akgh" name="n5" src="akgh3d" fileName="images/choose-model02-v1/0104.png" xy="135,26"/>
+    <image id="n6_akgh" name="n6" src="akgh3e" fileName="images/choose-model02-v1/0105.png" xy="70,-50" alpha="0"/>
+    <loader id="n13_xm0v" name="shade" xy="42,100" size="98,109" alpha="0" url="ui://ik5aab9inqb559" autoSize="true"/>
+    <loader id="n12_akgh" name="dashed" xy="42,100" size="98,109" alpha="0" url="ui://ik5aab9inqb558" autoSize="true"/>
+    <loader id="n10_akgh" name="left" xy="42,100" size="98,109" url="ui://ik5aab9inqb55b" autoSize="true"/>
+    <loader id="n11_akgh" name="right" xy="140,100" size="98,109" url="ui://ik5aab9inqb55a" autoSize="true"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Alpha" target="n1_akgh" value="1"/>
+    <item time="0" type="Alpha" target="n6_akgh" value="1"/>
+    <item time="0" type="Icon" target="n10_akgh" value="ui://ik5aab9inqb55c"/>
+    <item time="0" type="XY" target="n10_akgh" tween="true" startValue="42,100" endValue="140,100" duration="12"/>
+    <item time="12" type="Alpha" target="n12_akgh" tween="true" startValue="1" endValue="0.5" duration="4"/>
+    <item time="12" type="Alpha" target="n13_xm0v" tween="true" startValue="1" endValue="0.5" duration="4"/>
+    <item time="12" type="Alpha" target="n6_akgh" value="0"/>
+    <item time="16" type="Alpha" target="n12_akgh" tween="true" startValue="0.5" endValue="1" duration="4"/>
+    <item time="16" type="Alpha" target="n13_xm0v" tween="true" startValue="0.5" endValue="1" duration="4"/>
+    <item time="20" type="Alpha" target="n12_akgh" tween="true" startValue="1" endValue="0.5" duration="4"/>
+    <item time="20" type="Alpha" target="n13_xm0v" tween="true" startValue="1" endValue="0.5" duration="4"/>
+    <item time="24" type="Alpha" target="n12_akgh" tween="true" startValue="0.5" endValue="1" duration="3"/>
+    <item time="24" type="Alpha" target="n13_xm0v" tween="true" startValue="0.5" endValue="1" duration="3"/>
+  </transition>
+  <transition name="t1">
+    <item time="0" type="Alpha" target="n12_akgh" value="0"/>
+    <item time="0" type="Alpha" target="n13_xm0v" value="0"/>
+    <item time="0" type="Alpha" target="n1_akgh" value="0"/>
+    <item time="0" type="Icon" target="n10_akgh" value="ui://ik5aab9inqb55b"/>
+    <item time="0" type="XY" target="n10_akgh" value="42,100"/>
+  </transition>
+</component>

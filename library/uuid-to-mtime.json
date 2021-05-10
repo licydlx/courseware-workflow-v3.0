@@ -970,8 +970,8 @@
     "relativePath": "fairyUis\\t3\\t3-01\\t3-01_taz8ab.mp3"
   },
   "5cfad614-2c12-471c-8d80-0b7c6c1f265a": {
-    "asset": 1620488376107,
-    "meta": 1620611893930,
+    "asset": 1620658826187,
+    "meta": 1620660703026,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01"
   },
   "d92ed730-e4a7-4e99-9f3f-5bb71b6b1103": {
@@ -1039,69 +1039,74 @@
     "meta": 1620485188495,
     "relativePath": "entrances\\javascripts\\lib\\fairygui.d.ts"
   },
-  "d95c738b-f6d9-4eda-acb1-51722f22993c": {
-    "asset": 1620488635298,
-    "meta": 1620488964339,
-    "relativePath": "configJson\\prod\\t2\\t2-trialClass-01.json"
-  },
-  "e40c48f6-b759-40c8-97e0-71b7208c2073": {
-    "asset": 1620631289676,
-    "meta": 1620631289683,
-    "relativePath": "entrances\\t3-courseware.fire"
-  },
   "aa7a3cd5-0c85-42ec-b653-f94dd0fd703f": {
     "asset": 1620616860179,
     "meta": 1620616861055,
     "relativePath": "entrances\\javascripts\\lib\\fairygui.js"
   },
+  "e40c48f6-b759-40c8-97e0-71b7208c2073": {
+    "asset": 1620663691525,
+    "meta": 1620663691536,
+    "relativePath": "entrances\\t3-courseware.fire"
+  },
   "f2cfed46-d065-44ea-b245-a6750831d2a2": {
-    "asset": 1620629736865,
-    "meta": 1620629738313,
+    "asset": 1620661449656,
+    "meta": 1620662805326,
     "relativePath": "configJson\\test\\t2-trialClass-01-test01.json"
   },
   "41ef57a3-45a8-47af-9686-784f6af654e2": {
-    "asset": 1620631272194,
-    "meta": 1620631274305,
+    "asset": 1620662916201,
+    "meta": 1620662917267,
     "relativePath": "prefabLibrary\\models\\choose\\choose-model02-v1.ts"
   },
-  "e536b61a-a24e-4e2d-a4a4-2dcd7a41ff85": {
-    "asset": 1620631283717,
-    "meta": 1620631288803,
+  "d95c738b-f6d9-4eda-acb1-51722f22993c": {
+    "asset": 1620663689903,
+    "meta": 1620663690369,
+    "relativePath": "configJson\\prod\\t2\\t2-trialClass-01.json"
+  },
+  "732d8000-4d42-44fa-a349-6766837bb471": {
+    "asset": 1620663660063,
+    "meta": 1620663690393,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_1.png"
   },
-  "5a4d65cc-2fcd-4e0d-9562-0e6eb51c66e1": {
-    "asset": 1620631283906,
-    "meta": 1620631288810,
+  "7011fb86-041d-4c04-9934-1ef1ad0945f2": {
+    "asset": 1620663660112,
+    "meta": 1620663690449,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_2.png"
   },
-  "1e6c079a-f7ba-4ca7-a222-f33a24e15418": {
-    "asset": 1620631283451,
-    "meta": 1620631288917,
+  "03f6f962-7225-478d-ac87-fc694e653fc1": {
+    "asset": 1620663660308,
+    "meta": 1620663690476,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_3.png"
+  },
+  "4f46c755-ba4b-42b2-b068-6f9d281f273b": {
+    "asset": 1620663659752,
+    "meta": 1620663690549,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0.png"
   },
-  "94c9944c-91ae-4a5b-bc88-6806be703922": {
-    "asset": 1620631284144,
-    "meta": 1620631289354,
+  "c26b1e43-d97b-4d07-8188-23a3ac3a98c7": {
+    "asset": 1620663660549,
+    "meta": 1620663691004,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt016.mp3"
   },
-  "163ceb18-1859-4443-a30a-265b66b4f404": {
-    "asset": 1620631284143,
-    "meta": 1620631289357,
+  "86a9e33e-e377-4a9a-aa91-0ba77720c629": {
+    "asset": 1620663660548,
+    "meta": 1620663691006,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_ht4324.mp3"
   },
-  "f5fe8bc2-1f71-4957-a11d-775676312967": {
-    "asset": 1620631284145,
-    "meta": 1620631289362,
+  "283c350c-b8d0-4df9-b556-f22d306773ad": {
+    "asset": 1620663660551,
+    "meta": 1620663691012,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt017.mp3"
   },
-  "a46e2a8f-6318-4519-ae34-fa14c5e6d6f8": {
-    "asset": 1620631283450,
-    "meta": 1620631289364,
+  "12ee8e41-4ddb-4554-8f79-baa9a8f47ba5": {
+    "asset": 1620663659752,
+    "meta": 1620663691016,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01.bin"
   },
-  "113dc53c-1444-419e-9d2c-17ef3276110f": {
-    "asset": 1620631284146,
-    "meta": 1620631289368,
+  "052c34fc-a224-409d-880e-740acb9e60f8": {
+    "asset": 1620663660552,
+    "meta": 1620663691018,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt019.mp3"
   }
 }
