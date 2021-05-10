@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="c1" pages="0,,1,,2,,3," selected="0"/>
+  <controller name="c1" pages="0,,1,,2,,3," selected="2"/>
   <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n0_ht43" name="n0" src="qxt01g" fileName="images/common/0101.png" xy="0,0" group="n1_ht43"/>
@@ -11,7 +11,7 @@
       <gearXY controller="c1" pages="1" values="967,326" default="330,670" tween="true"/>
       <Button icon="ui://ik5aab9iht432f"/>
     </component>
-    <component id="n12_ht43" name="n12" src="ht432k" fileName="buttons/chooseBtn.xml" xy="830,670" size="265,265" group="n11_ht43">
+    <component id="n12_ht43" name="n12" src="ht432k" fileName="buttons/chooseBtn.xml" xy="967,326" size="265,265" group="n11_ht43">
       <gearXY controller="c1" pages="2" values="967,326" default="830,670" tween="true"/>
       <Button icon="ui://ik5aab9iht432g"/>
     </component>
@@ -36,13 +36,13 @@
   </displayList>
   <transition name="t0"/>
   <transition name="t1">
+    <item time="0" type="Icon" target="n20_ht43" value="ui://ik5aab9iht432h"/>
     <item time="0" type="XY" target="n20_ht43" tween="true" startValue="965,594" endValue="1235,594" duration="12"/>
-    <item time="12" type="Alpha" target="n20_ht43" tween="true" startValue="1" endValue="0.5" duration="12"/>
-    <item time="12" type="Icon" target="n20_ht43" value="ui://ik5aab9iht432h"/>
-    <item time="24" type="Shake" target="n20_ht43" value="3,0.5"/>
-    <item time="30" type="Icon" target="n20_ht43" value="ui://ik5aab9iht432i"/>
+    <item time="12" type="Alpha" target="n20_ht43" tween="true" startValue="1" endValue="0.4" duration="6"/>
+    <item time="18" type="Shake" target="n20_ht43" value="3,0.5"/>
+    <item time="30" type="Alpha" target="n20_ht43" tween="true" startValue="0.4" endValue="1" duration="6"/>
     <item time="30" type="Shake" target="n20_ht43" value="3,0.5"/>
-    <item time="30" type="XY" target="n20_ht43" tween="true" startValue="1235,594" endValue="965,594" duration="6"/>
-    <item time="36" type="Alpha" target="n20_ht43" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="36" type="XY" target="n20_ht43" tween="true" startValue="1235,594" endValue="965,594" duration="6"/>
+    <item time="42" type="Icon" target="n20_ht43" value="ui://ik5aab9iht432i"/>
   </transition>
 </component>

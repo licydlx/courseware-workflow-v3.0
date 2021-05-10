@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-08 23:27:27
+ * @LastEditTime: 2021-05-10 15:20:25
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
@@ -129,6 +129,24 @@ export default class choose_model02_v1 extends cc.Component {
         let optionIndex:number = this._options.findIndex((v:any) => v == option);
         console.log(optionIndex)
         state.option = optionIndex + 1;
+
+        // let optionGroup = this._view.getChild("optionBox").asGroup;
+        // for (let i = 0; i < this._view.numChildren; i++) {
+        //     if (this._view.getChildAt(i).group == optionGroup) {
+        //         let btn: fgui.GButton = this._view.getChildAt(i).asButton;
+        //         btn.on(fgui.Event.CLICK, this._clickOption, this);
+        //         this._options.push(btn);
+        //     }
+        // }
+
+        // let test:fgui.GComponent = option.asCom
+        console.log(option)
+        let t: fgui.Transition = option.getTransition("t0");
+        console.log(t)
+        t.play(() => {
+            console.log("动画执行！")
+        }, 1);
+
         this.updateState(state); 
     }
 

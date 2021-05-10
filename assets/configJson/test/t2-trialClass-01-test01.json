@@ -41,7 +41,28 @@
                 }
             }
         },
-
+        
+        {
+            "model": {
+                "uiPath": "choose-model01-v1-p11",
+                "bundleName": "choose",
+                "prefabName": "choose-model01-v1",
+                "config": {
+                    "answer": 3,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
         {
             "model": {
                 "uiPath": "choose-model02-v1-p3",
@@ -96,27 +117,7 @@
         },
 
 
-        {
-            "model": {
-                "uiPath": "choose-model01-v1-p11",
-                "bundleName": "choose",
-                "prefabName": "choose-model01-v1",
-                "config": {
-                    "answer": 3,
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide02"
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
+
 
         {
             "model": {

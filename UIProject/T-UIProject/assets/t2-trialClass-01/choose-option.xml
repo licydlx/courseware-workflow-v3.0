@@ -5,9 +5,11 @@
     <image id="n1_akgh" name="n1" src="akgh3b" fileName="images/choose-model02-v1/0102.png" xy="0,0" alpha="0"/>
     <image id="n5_akgh" name="n5" src="akgh3d" fileName="images/choose-model02-v1/0104.png" xy="135,26"/>
     <image id="n6_akgh" name="n6" src="akgh3e" fileName="images/choose-model02-v1/0105.png" xy="68,-64" alpha="0"/>
-    <loader id="n10_akgh" name="left" xy="76,80" size="61,129" url="ui://ik5aab9iakgh3g" autoSize="true"/>
-    <loader id="n11_akgh" name="right" xy="140,80" size="61,129" url="ui://ik5aab9iakgh3h" autoSize="true"/>
-    <loader id="n12_akgh" name="dashed" xy="76,79" size="61,129" alpha="0"/>
+    <loader id="n10_akgh" name="left" xy="97,162" pivot="0.5,0.5" anchor="true" size="84,164" url="ui://ik5aab9iakgh3p" autoSize="true"/>
+    <loader id="n11_akgh" name="right" xy="140,80" size="84,164" url="ui://ik5aab9iakgh3q" autoSize="true"/>
+    <loader id="n12_akgh" name="dashed" xy="55,80" size="84,164" url="ui://ik5aab9iakgh3o" autoSize="true"/>
   </displayList>
-  <transition name="t0" autoPlay="true"/>
+  <transition name="t0">
+    <item time="0" type="XY" target="n10_akgh" tween="true" startValue="55,80" endValue="55,-100" duration="17"/>
+  </transition>
 </component>
