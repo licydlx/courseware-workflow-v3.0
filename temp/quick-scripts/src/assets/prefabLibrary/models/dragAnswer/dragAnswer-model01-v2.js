@@ -65,18 +65,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-05-07 14:34:26
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-08 11:18:14
- */
-/*
- * @Descripttion:
- * @version:
- * @Author: ydlx
- * @Date: 2021-03-26 18:05:12
- * @LastEditors: ydlx
- * @LastEditTime: 2021-05-07 17:44:44
+ * @LastEditTime: 2021-05-11 21:07:19
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
-var pointBelongArea = window['GlobalData'].utils.pointBelongArea;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
 var dragAnswer_model01_v2 = /** @class */ (function (_super) {
     __extends(dragAnswer_model01_v2, _super);
@@ -235,7 +226,24 @@ var dragAnswer_model01_v2 = /** @class */ (function (_super) {
         this._dragging = false;
         var collider = fgui.GObject.cast(evt.currentTarget);
         var colliderIndex = this._colliderBox.findIndex(function (v) { return v == collider; });
-        var collideredIndex = this._collideredBox.findIndex(function (collidered) { return _this._belongArea(collider, collidered, 84) == true; });
+        var arr = [];
+        var collidered;
+        this._collideredBox.forEach(function (v, i) {
+            if (_this._belongArea(collider, v, 110) == true)
+                arr.push(v);
+        });
+        arr.forEach(function (v, i) {
+            if (i == 0) {
+                collidered = v;
+            }
+            else {
+                var pd = _this._getDistance(collider, arr[i - 1]);
+                var cd = _this._getDistance(collider, v);
+                if (cd < pd)
+                    collidered = v;
+            }
+        });
+        var collideredIndex = this._collideredBox.findIndex(function (v) { return v == collidered; });
         var state = globalThis._.cloneDeep(this._state);
         if (collideredIndex == -1) {
             state.collider[colliderIndex] = {
@@ -247,7 +255,7 @@ var dragAnswer_model01_v2 = /** @class */ (function (_super) {
         else {
             var x_1 = this._collideredBox[collideredIndex].x + this._collideredBox[collideredIndex].width / 2 - this._colliderBox[colliderIndex].width / 2;
             var y_1 = this._collideredBox[collideredIndex].y + this._collideredBox[collideredIndex].height / 2 - this._colliderBox[colliderIndex].height / 2;
-            var bool = state.collider.find(function (v) { return v.x == x_1 && Math.abs(v.y - y_1) < 42; });
+            var bool = state.collider.find(function (v) { return v.x == x_1 && Math.abs(v.y - y_1) < 55; });
             state.collider[colliderIndex] = {
                 x: bool ? this._cache["colliderBox"][colliderIndex].x : x_1,
                 y: bool ? this._cache["colliderBox"][colliderIndex].y : y_1,
@@ -343,6 +351,19 @@ var dragAnswer_model01_v2 = /** @class */ (function (_super) {
         });
     };
     /**
+     * @name: 获取距离
+     * @msg:
+     * @param {any} self
+     * @param {any} area
+     * @return {*}
+     */
+    dragAnswer_model01_v2.prototype._getDistance = function (self, area) {
+        var width = (self.x + self.width / 2) - (area.x + area.width / 2);
+        var height = (self.y + self.height / 2) - (area.y + area.height / 2);
+        var distance = Math.sqrt(width * width + height * height);
+        return distance;
+    };
+    /**
      * @name: 区域所属判断
      * @msg:
      * @param {any} self
@@ -352,18 +373,10 @@ var dragAnswer_model01_v2 = /** @class */ (function (_super) {
      */
     dragAnswer_model01_v2.prototype._belongArea = function (self, area, gap) {
         if (gap === void 0) { gap = 10; }
-        var width = self.x - (area.x + area.width / 2);
-        var height = self.y - (area.y + area.height / 2);
+        var width = (self.x + self.width / 2) - (area.x + area.width / 2);
+        var height = (self.y + self.height / 2) - (area.y + area.height / 2);
         var distance = Math.sqrt(width * width + height * height);
         return distance < gap;
-    };
-    // 临时
-    dragAnswer_model01_v2.prototype.transfer = function (answer) {
-        var _this = this;
-        this.forbidHandle();
-        setTimeout(function () {
-            _this.answerFeedback(answer);
-        }, 1000);
     };
     dragAnswer_model01_v2.prototype.answerFeedback = function (bool) {
         var _this = this;

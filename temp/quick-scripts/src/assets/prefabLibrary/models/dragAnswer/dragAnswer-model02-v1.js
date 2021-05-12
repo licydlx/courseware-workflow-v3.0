@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-07 14:44:46
+ * @LastEditTime: 2021-05-12 10:28:29
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -206,14 +206,9 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
     dragAnswer_model02_v1.prototype._onDragStart = function (evt) {
         evt.captureTouch();
         var state = globalThis._.cloneDeep(this._state);
-        var index;
-        var target = fgui.GObject.cast(evt.currentTarget);
-        for (var i = 0; i < this._colliderBox.length; i++) {
-            if (target == this._colliderBox[i]) {
-                index = i;
-            }
-        }
-        state.colliderIndex = index;
+        var collider = fgui.GObject.cast(evt.currentTarget);
+        var colliderIndex = this._colliderBox.findIndex(function (v) { return v == collider; });
+        state.colliderIndex = colliderIndex;
         this.updateState(state);
     };
     dragAnswer_model02_v1.prototype._onDragMove = function (evt) {
@@ -221,26 +216,23 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
     };
     dragAnswer_model02_v1.prototype._onDragEnd = function (evt) {
         var _this = this;
-        var index;
-        var target = fgui.GObject.cast(evt.currentTarget);
-        for (var i = 0; i < this._colliderBox.length; i++) {
-            if (target == this._colliderBox[i]) {
-                index = i;
-            }
-        }
-        var obj = this._adsorb(target, index);
+        if (!this._dragging)
+            return;
         this._dragging = false;
+        var collider = fgui.GObject.cast(evt.currentTarget);
+        var colliderIndex = this._colliderBox.findIndex(function (v) { return v == collider; });
+        var obj = this._adsorb(collider, colliderIndex);
         var state = globalThis._.cloneDeep(this._state);
         if (obj.bool) {
-            state.collider[index] = {
+            state.collider[colliderIndex] = {
                 x: obj.pos.x,
                 y: obj.pos.y
             };
         }
         else {
             for (var i = 0; i < this._colliderBox.length; i++) {
-                if (target == this._colliderBox[i]) {
-                    state.collider[index] = {
+                if (collider == this._colliderBox[i]) {
+                    state.collider[colliderIndex] = {
                         x: this._cache["colliderBox"][i].x,
                         y: this._cache["colliderBox"][i].y
                     };
@@ -248,7 +240,7 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             }
         }
         state.drag = "end";
-        state.colliderIndex = index;
+        state.colliderIndex = colliderIndex;
         var answerBool = state.collider.every(function (v, i) { return !globalThis._.isEqual(v, _this._cache["colliderBox"][i]); });
         state.answer = answerBool;
         if (answerBool) {
@@ -306,6 +298,10 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
+            // let collider: any = this._colliderBox[state.colliderIndex];
+            // let collideredIndex: number = this._collideredBox.findIndex((collidered: any) => this._belongArea(collider, collidered, 100) == true);
+            // console.log(collideredIndex);
+            // console.log(this._collideredBox[collideredIndex]);
         }
         if (state.drag == "end") {
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {

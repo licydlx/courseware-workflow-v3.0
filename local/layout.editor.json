@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 236.875,
+                "height": 247.125,
                 "type": "panel",
-                "width": 235
+                "width": 206
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 695.609375,
+                "height": 685.375,
                 "type": "panel",
-                "width": 235
+                "width": 206
               }
             ],
             "height": 935.5,
             "type": "dock-v",
-            "width": 235
+            "width": 206
           },
           {
             "active": 0,
@@ -43,7 +43,7 @@
             ],
             "height": 935.5,
             "type": "panel",
-            "width": 1375
+            "width": 1381
           },
           {
             "active": 1,
@@ -53,7 +53,7 @@
             ],
             "height": 935.5,
             "type": "panel",
-            "width": 304
+            "width": 327
           }
         ],
         "type": "dock-h"

@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-07 14:44:46
+ * @LastEditTime: 2021-05-12 10:28:29
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
@@ -151,16 +151,12 @@ export default class dragAnswer_model02_v1 extends cc.Component {
 
     private _onDragStart(evt: fgui.Event): void {
         evt.captureTouch();
-
         let state: any = globalThis._.cloneDeep(this._state);
-        let index: any;
-        let target = fgui.GObject.cast(evt.currentTarget);
-        for (let i = 0; i < this._colliderBox.length; i++) {
-            if (target == this._colliderBox[i]) {
-                index = i;
-            }
-        }
-        state.colliderIndex = index;
+
+        let collider: any = fgui.GObject.cast(evt.currentTarget);
+        let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
+        state.colliderIndex = colliderIndex;
+
         this.updateState(state);
     }
 
@@ -169,28 +165,24 @@ export default class dragAnswer_model02_v1 extends cc.Component {
     }
 
     private _onDragEnd(evt: fgui.Event): void {
-        let index: any;
-        let target = fgui.GObject.cast(evt.currentTarget);
-        for (let i = 0; i < this._colliderBox.length; i++) {
-            if (target == this._colliderBox[i]) {
-                index = i;
-            }
-        }
-
-        let obj: any = this._adsorb(target, index);
-
+        if (!this._dragging) return;
         this._dragging = false;
+
+        let collider: any = fgui.GObject.cast(evt.currentTarget);
+        let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
+        
+        let obj: any = this._adsorb(collider, colliderIndex);
         let state: any = globalThis._.cloneDeep(this._state);
 
         if (obj.bool) {
-            state.collider[index] = {
+            state.collider[colliderIndex] = {
                 x: obj.pos.x,
                 y: obj.pos.y
             }
         } else {
             for (let i = 0; i < this._colliderBox.length; i++) {
-                if (target == this._colliderBox[i]) {
-                    state.collider[index] = {
+                if (collider == this._colliderBox[i]) {
+                    state.collider[colliderIndex] = {
                         x: this._cache["colliderBox"][i].x,
                         y: this._cache["colliderBox"][i].y
                     }
@@ -199,7 +191,7 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         }
 
         state.drag = "end";
-        state.colliderIndex = index;
+        state.colliderIndex = colliderIndex;
 
         let answerBool: boolean = state.collider.every((v: any, i: any) => !globalThis._.isEqual(v, this._cache["colliderBox"][i]));
         state.answer = answerBool;
@@ -259,9 +251,15 @@ export default class dragAnswer_model02_v1 extends cc.Component {
 
     // 更新ui层
     updateUi(oldState: any, state: any) {
+        
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
+            
+            // let collider: any = this._colliderBox[state.colliderIndex];
+            // let collideredIndex: number = this._collideredBox.findIndex((collidered: any) => this._belongArea(collider, collidered, 100) == true);
+            // console.log(collideredIndex);
+            // console.log(this._collideredBox[collideredIndex]);
         }
 
         if (state.drag == "end") {
@@ -282,6 +280,7 @@ export default class dragAnswer_model02_v1 extends cc.Component {
                 }
             }
         }
+        
     }
 
     async playTitle(bool: boolean) {

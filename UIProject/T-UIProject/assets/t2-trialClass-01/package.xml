@@ -167,6 +167,7 @@
     <component id="nqb55q" name="static-model01-v1-p13.xml" path="/" exported="true"/>
     <image id="nqb55r" name="ewm.png" path="/images/common/"/>
     <image id="nqb55s" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
+    <image id="gygb5t" name="0115.png" path="/images/dragAnswer-model01-v2/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

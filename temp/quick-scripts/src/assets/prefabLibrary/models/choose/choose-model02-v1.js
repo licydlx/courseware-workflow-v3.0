@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-11 00:07:29
+ * @LastEditTime: 2021-05-11 21:34:36
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -121,7 +121,7 @@ var choose_model02_v1 = /** @class */ (function (_super) {
         }
         // 初始化state
         this._state = {
-            option: [],
+            option: null,
             title: false,
             submit: false,
             checkAnswer: false,
@@ -188,17 +188,18 @@ var choose_model02_v1 = /** @class */ (function (_super) {
         var state = globalThis._.cloneDeep(this._state);
         var option = fgui.GObject.cast(evt.currentTarget);
         var optionIndex = this._options.findIndex(function (v) { return v == option; });
-        if (state.option.includes(optionIndex)) {
-            state.option = state.option.filter(function (v) { return v != optionIndex; });
-        }
-        else {
-            state.option.push(optionIndex);
-        }
+        // if (state.option.includes(optionIndex)) {
+        //     state.option = state.option.filter((v:any) => v != optionIndex )
+        // } else {
+        //     state.option.push(optionIndex);
+        // }
+        state.option = state.option === optionIndex ? null : optionIndex;
         this.updateState(state);
     };
     choose_model02_v1.prototype._clickSubmit = function (evt) {
         var state = globalThis._.cloneDeep(this._state);
-        state.answer = state.option.join("") == this._answer;
+        // state.answer = state.option.join("") == this._answer;
+        state.answer = state.option == this._answer;
         state.submit = true;
         this.updateState(state);
     };
@@ -215,25 +216,36 @@ var choose_model02_v1 = /** @class */ (function (_super) {
     // 更新ui层
     choose_model02_v1.prototype.updateUi = function (oldState, state) {
         if (!globalThis._.isEqual(oldState.option, state.option)) {
-            var index = void 0;
-            var tName = void 0;
-            if (state.option.length > oldState.option.length) {
-                index = state.option.find(function (v) { return oldState.option.includes(v) == false; });
-                tName = "t0";
+            // let index:any;
+            // let tName:any;
+            // if (state.option.length > oldState.option.length) {
+            //     index = state.option.find((v:any) => oldState.option.includes(v) == false);
+            //     tName = "t0";
+            // } else if(oldState.option.length > state.option.length) {
+            //     index = oldState.option.find((v:any) => state.option.includes(v) == false);
+            //     tName = "t1";
+            // }
+            // let t: fgui.Transition = this._options[index].getTransition(tName);
+            // t.play();
+            if (state.option || state.option === 0) {
+                if (oldState.option || oldState.option === 0) {
+                    var t1 = this._options[oldState.option].getTransition("t1");
+                    t1.play();
+                }
+                var t0 = this._options[state.option].getTransition("t0");
+                t0.play();
             }
-            else if (oldState.option.length > state.option.length) {
-                index = oldState.option.find(function (v) { return state.option.includes(v) == false; });
-                tName = "t1";
+            if (state.option === null) {
+                var t1 = this._options[oldState.option].getTransition("t1");
+                t1.play();
             }
-            var t = this._options[index].getTransition(tName);
-            t.play();
         }
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
         }
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
             if (state.submit) {
-                state.option.length > 0 ? this.afterSubmit() : this.onHandleGuide();
+                state.option || state.option === 0 ? this.afterSubmit() : this.onHandleGuide();
             }
         }
         if (!globalThis._.isEqual(oldState.checkAnswer, state.checkAnswer)) {
@@ -293,7 +305,8 @@ var choose_model02_v1 = /** @class */ (function (_super) {
     // 提交后 动画
     choose_model02_v1.prototype.afterSubmit = function () {
         var state = globalThis._.cloneDeep(this._state);
-        state.answer = state.option.join("") == this._answer;
+        // state.answer = state.option.join("") == this._answer;
+        state.answer = state.option == this._answer;
         state.submit = false;
         state.checkAnswer = true;
         this.updateState(state);

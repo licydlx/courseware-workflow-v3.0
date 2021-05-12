@@ -4,18 +4,9 @@
  * @Author: ydlx
  * @Date: 2021-05-07 14:34:26
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-08 11:18:14
- */
-/*
- * @Descripttion: 
- * @version: 
- * @Author: ydlx
- * @Date: 2021-03-26 18:05:12
- * @LastEditors: ydlx
- * @LastEditTime: 2021-05-07 17:44:44
+ * @LastEditTime: 2021-05-11 21:07:19
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
-const { pointBelongArea } = window['GlobalData'].utils;
 
 const { ccclass, property } = cc._decorator;
 
@@ -185,7 +176,24 @@ export default class dragAnswer_model01_v2 extends cc.Component {
 
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
-        let collideredIndex: number = this._collideredBox.findIndex((collidered: any) => this._belongArea(collider, collidered, 84) == true);
+
+        let arr: any = [];
+        let collidered: any;
+        this._collideredBox.forEach((v: any, i: any) => {
+            if (this._belongArea(collider, v, 110) == true) arr.push(v);
+        });
+
+        arr.forEach((v: any, i: any) => {
+            if (i == 0) {
+                collidered = v;
+            } else {
+                let pd = this._getDistance(collider, arr[i - 1]);
+                let cd = this._getDistance(collider, v);
+                if (cd < pd) collidered = v;
+            }
+        });
+
+        let collideredIndex: number = this._collideredBox.findIndex((v: any) => v == collidered);
 
         let state: any = globalThis._.cloneDeep(this._state);
         if (collideredIndex == -1) {
@@ -197,7 +205,7 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         } else {
             let x: number = this._collideredBox[collideredIndex].x + this._collideredBox[collideredIndex].width / 2 - this._colliderBox[colliderIndex].width / 2;
             let y: number = this._collideredBox[collideredIndex].y + this._collideredBox[collideredIndex].height / 2 - this._colliderBox[colliderIndex].height / 2;
-            let bool: boolean = state.collider.find((v: any) => v.x == x && Math.abs(v.y - y) < 42);
+            let bool: boolean = state.collider.find((v: any) => v.x == x && Math.abs(v.y - y) < 55);
 
             state.collider[colliderIndex] = {
                 x: bool ? this._cache["colliderBox"][colliderIndex].x : x,
@@ -264,8 +272,8 @@ export default class dragAnswer_model01_v2 extends cc.Component {
             if (!globalThis._.isEqual(oldState.submit, state.submit)) {
                 if (state.submit) {
                     // 根据collider 初始位置 判断 是否被操作过
-                    let nv:any = this._colliderBox.map((v: any) => {return {"x":v.x,"y":v.y}});
-                    let bool:boolean = this._cache["colliderBox"].every((v: any,i:any) => v.x == nv[i].x && v.y == nv[i].y);
+                    let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
+                    let bool: boolean = this._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
                     bool ? this.onHandleGuide() : this.onFlicker(state.answer);
                 }
             }
@@ -292,6 +300,20 @@ export default class dragAnswer_model01_v2 extends cc.Component {
     }
 
     /**
+     * @name: 获取距离
+     * @msg: 
+     * @param {any} self
+     * @param {any} area
+     * @return {*}
+     */
+    private _getDistance(self: any, area: any) {
+        let width = (self.x + self.width / 2) - (area.x + area.width / 2);
+        let height = (self.y + self.height / 2) - (area.y + area.height / 2);
+        let distance = Math.sqrt(width * width + height * height);
+        return distance;
+    }
+
+    /**
      * @name: 区域所属判断
      * @msg: 
      * @param {any} self
@@ -300,18 +322,10 @@ export default class dragAnswer_model01_v2 extends cc.Component {
      * @return {*}
      */
     private _belongArea(self: any, area: any, gap: number = 10) {
-        let width = self.x - (area.x + area.width / 2);
-        let height = self.y - (area.y + area.height / 2);
+        let width = (self.x + self.width / 2) - (area.x + area.width / 2);
+        let height = (self.y + self.height / 2) - (area.y + area.height / 2);
         let distance = Math.sqrt(width * width + height * height);
         return distance < gap;
-    }
-
-    // 临时
-    transfer(answer: any) {
-        this.forbidHandle();
-        setTimeout(() => {
-            this.answerFeedback(answer);
-        }, 1000);
     }
 
     answerFeedback(bool: boolean) {
@@ -334,7 +348,7 @@ export default class dragAnswer_model01_v2 extends cc.Component {
     }
 
     // 格子闪烁 提示
-    onFlicker(answer:any) {
+    onFlicker(answer: any) {
         let t: fgui.Transition = this._view.getTransition("t0");
         t.play(() => {
             this.answerFeedback(answer);
@@ -419,5 +433,4 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         this.relieveState();
         cc.audioEngine.stopAll();
     }
-
 }
