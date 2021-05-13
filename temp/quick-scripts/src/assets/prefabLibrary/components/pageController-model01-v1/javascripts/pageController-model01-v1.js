@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 14:31:12
+ * @LastEditTime: 2021-05-13 21:29:35
  */
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var pageController_model01_v1 = /** @class */ (function (_super) {
@@ -40,6 +40,26 @@ var pageController_model01_v1 = /** @class */ (function (_super) {
     pageController_model01_v1.prototype.onLoad = function () {
         var controller = this.node.parent.getChildByName("controller-model01");
         this._controllerJs = controller.getComponent(cc.Component);
+    };
+    pageController_model01_v1.prototype.init = function (data) {
+        var prev = this.node.getChildByName("prev");
+        var next = this.node.getChildByName("next");
+        switch (data) {
+            case "start":
+                prev.active = false;
+                next.active = true;
+                break;
+            case "end":
+                prev.active = true;
+                next.active = false;
+                break;
+            case "normal":
+                prev.active = true;
+                next.active = true;
+                break;
+            default:
+                break;
+        }
     };
     pageController_model01_v1.prototype.goPrev = function (e, ced) {
         if (!this._controllerJs)

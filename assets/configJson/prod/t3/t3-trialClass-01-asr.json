@@ -2,7 +2,7 @@
     "name": "",
     "courseName": "t3-trialclass-01-asr",
     "env": "test",
-    "totalPages": 9,
+    "totalPages": 10,
     "pathConfig": {
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
         "modelBundlePath": "T-series/prefabLibrary/models/",
@@ -280,6 +280,31 @@
                             "pos": {
                                 "x": 0,
                                 "y": 180
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "inputChoose-model01-v1-p12",
+                "bundleName": "inputChoose",
+                "prefabName": "inputChoose-model01-v1",
+                "config": {
+                    "answer": 6,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -640,
+                                "y": -80
                             }
                         }
                     }

@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:08:54
+ * @LastEditTime: 2021-05-13 21:26:06
  */
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var _b = window['GlobalData'], gameData = _b.gameData, monitorMessage = _b.monitorMessage;
@@ -76,12 +76,13 @@ var controller_model01 = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this._pagePrefabs = []; // 题型预制体集合
         _this._cPage = null; // 当前页码
+        _this._panelNode = null; // 面板
         return _this;
     }
     controller_model01.prototype.onLoad = function () { };
     controller_model01.prototype.init = function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var panelPath, panelBundle, panelPrefab, panelNode, i, modelPath, modelBundle, modelPrefab, resourcePath, _a, _b;
+            var panelPath, panelBundle, panelPrefab, i, modelPath, modelBundle, modelPrefab, resourcePath, _a, _b;
             return __generator(this, function (_c) {
                 switch (_c.label) {
                     case 0:
@@ -105,10 +106,10 @@ var controller_model01 = /** @class */ (function (_super) {
                         return [4 /*yield*/, loadPrefab(panelBundle, panelBundle.name)];
                     case 2:
                         panelPrefab = _c.sent();
-                        panelNode = cc.instantiate(panelPrefab);
-                        panelNode.parent = cc.find("Canvas").parent;
-                        panelNode.x = cc.find("Canvas").x;
-                        panelNode.y = cc.find("Canvas").y;
+                        this._panelNode = cc.instantiate(panelPrefab);
+                        this._panelNode.parent = cc.find("Canvas").parent;
+                        this._panelNode.x = cc.find("Canvas").x;
+                        this._panelNode.y = cc.find("Canvas").y;
                         i = 0;
                         _c.label = 3;
                     case 3:
@@ -158,10 +159,12 @@ var controller_model01 = /** @class */ (function (_super) {
     // 页面跳转 配置
     controller_model01.prototype.onJumpConfig = function (toPage) {
         return __awaiter(this, void 0, void 0, function () {
-            var page, chapter, prefab, node, nodeJs;
+            var page, chapter, panelJs, prefab, node, nodeJs;
             return __generator(this, function (_a) {
                 page = toPage - 1;
                 chapter = this._configJson.chapters[page];
+                panelJs = this._panelNode.getComponent(cc.Component);
+                panelJs.init(page === 0 ? "start" : this._configJson.chapters.length - 1 === page ? "end" : "normal");
                 if (!chapter)
                     return [2 /*return*/];
                 fgui.GRoot.inst.removeChildren(0, -1, true);

@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:08:54
+ * @LastEditTime: 2021-05-13 21:26:06
  */
 const { ccclass, property } = cc._decorator;
 
@@ -19,8 +19,8 @@ export default class controller_model01 extends cc.Component {
     private _pagePrefabs = []         // 题型预制体集合
     private _currentPageNode: any;    // 当前题型节点
 
-    public _cPage = null;             // 当前页码
-
+    private _cPage = null;             // 当前页码
+    private _panelNode = null;         // 面板
     onLoad() { }
 
     async init(data: any) {
@@ -45,11 +45,11 @@ export default class controller_model01 extends cc.Component {
         let panelPath: any = `${data.pathConfig.remoteUrl}${data.pathConfig.panelBundlePath}${data.pathConfig.panelName}`;
         let panelBundle: any = await loadBundle(panelPath);
         let panelPrefab: any = await loadPrefab(panelBundle, panelBundle.name);
-        let panelNode: any = cc.instantiate(panelPrefab);
-        panelNode.parent = cc.find("Canvas").parent;
-        panelNode.x = cc.find("Canvas").x;
-        panelNode.y = cc.find("Canvas").y;
-    
+        this._panelNode = cc.instantiate(panelPrefab);
+        this._panelNode.parent = cc.find("Canvas").parent;
+        this._panelNode.x = cc.find("Canvas").x;
+        this._panelNode.y = cc.find("Canvas").y;
+
         // 加载 所有题型预制件
         for (let i = 0; i < data.chapters.length; i++) {
             let modelPath: any = `${data.pathConfig.remoteUrl}${data.pathConfig.modelBundlePath}${data.chapters[i].model.bundleName}`;
@@ -78,6 +78,10 @@ export default class controller_model01 extends cc.Component {
     async onJumpConfig(toPage: any) {
         let page: number = toPage - 1;
         let chapter: any = this._configJson.chapters[page];
+
+        // 第一页 隐藏左箭头 最后一页 隐藏右箭头
+        let panelJs: any = this._panelNode.getComponent(cc.Component);
+        panelJs.init(page === 0 ? "start" : this._configJson.chapters.length - 1 === page ? "end" : "normal");
         if (!chapter) return;
 
         fgui.GRoot.inst.removeChildren(0, -1, true);
