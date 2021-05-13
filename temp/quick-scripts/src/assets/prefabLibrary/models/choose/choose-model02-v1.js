@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-11 21:34:36
+ * @LastEditTime: 2021-05-12 16:23:53
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -95,6 +95,7 @@ var choose_model02_v1 = /** @class */ (function (_super) {
     choose_model02_v1.prototype.onLoad = function () {
         this._worldRoot = cc.find("Canvas").parent;
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
+        this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
         fgui.GRoot.inst.addChild(this._view);
         this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");

@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-05-07 14:34:26
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-11 21:07:19
+ * @LastEditTime: 2021-05-12 16:22:53
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -97,6 +97,7 @@ var dragAnswer_model01_v2 = /** @class */ (function (_super) {
     dragAnswer_model01_v2.prototype.onLoad = function () {
         this._worldRoot = cc.find("Canvas").parent;
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
+        this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
         fgui.GRoot.inst.addChild(this._view);
         this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");

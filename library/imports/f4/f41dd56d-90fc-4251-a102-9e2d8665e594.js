@@ -9,7 +9,7 @@ cc._RF.push(module, 'f41ddVtkPxCUaECni2GZeWU', 'static-model01-v1');
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-26 11:31:53
+ * @LastEditTime: 2021-05-12 16:23:14
  */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -89,6 +89,7 @@ var static_model01_v1 = /** @class */ (function (_super) {
     });
     static_model01_v1.prototype.onLoad = function () {
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
+        this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
         fgui.GRoot.inst.addChild(this._view);
     };
     static_model01_v1.prototype.init = function (data) {

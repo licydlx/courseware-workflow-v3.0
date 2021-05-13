@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-29 16:51:02
+ * @LastEditTime: 2021-05-12 16:23:35
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -93,6 +93,7 @@ var clcikAnswer_model01_v1 = /** @class */ (function (_super) {
     clcikAnswer_model01_v1.prototype.onLoad = function () {
         this._worldRoot = cc.find("Canvas").parent;
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
+        this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
         fgui.GRoot.inst.addChild(this._view);
         // 控制器
         this._c1 = this._view.getController("c1");

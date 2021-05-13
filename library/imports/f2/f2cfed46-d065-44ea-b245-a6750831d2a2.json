@@ -1,13 +1,13 @@
 {
   "__type__": "cc.JsonAsset",
-  "_name": "t2-trialClass-01-test01",
+  "_name": "t3-trialClass-01-asr-test01",
   "_objFlags": 0,
   "_native": "",
   "json": {
     "name": "",
-    "courseName": "t2-trialclass-01",
+    "courseName": "t3-afterSchoolreview-01",
     "env": "test",
-    "totalPages": 1,
+    "totalPages": 9,
     "pathConfig": {
       "remoteUrl": "",
       "controllerBundlePath": "",
@@ -15,63 +15,32 @@
       "resourceBundlePath": "",
       "modelBundlePath": "",
       "componentBundlePath": "",
-      "controllerName": "controller-model02",
-      "panelName": "formal-panle-model02",
-      "resourceName": "t2-trialClass-01",
-      "packageName": "t2-trialClass-01"
+      "controllerName": "controller-model01",
+      "panelName": "pageController-model01-v1",
+      "resourceName": "t3-01",
+      "packageName": "t3-01"
     },
     "chapters": [
       {
         "model": {
-          "uiPath": "dragAnswer-model02-v1-p5",
+          "uiPath": "dragAnswer-model01-v1-p3",
           "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model02-v1"
-        },
-        "components": {
-          "feedback": {
-            "bundleName": "feedback",
-            "prefabName": "feedback-model01-v1"
-          }
-        }
-      },
-      {
-        "model": {
-          "uiPath": "choose-model02-v1-p2",
-          "bundleName": "choose",
-          "prefabName": "choose-model02-v1",
+          "prefabName": "dragAnswer-model01-v1",
           "config": {
-            "answer": 1,
-            "ae": {
-              "handleGuide": {
-                "component": "handleGuide02",
-                "pos": {
-                  "x": 0,
-                  "y": -260
-                }
-              }
-            }
-          }
-        },
-        "components": {
-          "feedback": {
-            "bundleName": "feedback",
-            "prefabName": "feedback-model01-v1"
-          }
-        }
-      },
-      {
-        "model": {
-          "uiPath": "dragAnswer-model01-v2-p8",
-          "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model01-v2",
-          "config": {
-            "answer": 15,
+            "answer": 4,
             "ae": {
               "handleGuide": {
                 "component": "handleGuide01",
                 "pos": {
-                  "x": -232,
-                  "y": 78
+                  "x": 30,
+                  "y": 108
+                }
+              },
+              "lineBlink": {
+                "component": "lineBlink01",
+                "pos": {
+                  "x": 470,
+                  "y": 30
                 }
               }
             }
@@ -86,14 +55,25 @@
       },
       {
         "model": {
-          "uiPath": "dragAnswer-model01-v2-p9",
+          "uiPath": "dragAnswer-model01-v1-p4",
           "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model01-v2",
+          "prefabName": "dragAnswer-model01-v1",
           "config": {
-            "answer": 1,
+            "answer": 6,
             "ae": {
               "handleGuide": {
-                "component": "handleGuide04"
+                "component": "handleGuide01",
+                "pos": {
+                  "x": 30,
+                  "y": 108
+                }
+              },
+              "lineBlink": {
+                "component": "lineBlink01",
+                "pos": {
+                  "x": 470,
+                  "y": 30
+                }
               }
             }
           }
@@ -107,14 +87,53 @@
       },
       {
         "model": {
-          "uiPath": "choose-model01-v1-p11",
-          "bundleName": "choose",
-          "prefabName": "choose-model01-v1",
+          "uiPath": "dragAnswer-model01-v1-p5",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model01-v1",
+          "config": {
+            "answer": 6,
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide01",
+                "pos": {
+                  "x": 30,
+                  "y": 108
+                }
+              },
+              "lineBlink": {
+                "component": "lineBlink01",
+                "pos": {
+                  "x": 470,
+                  "y": 30
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+      {
+        "model": {
+          "uiPath": "clickAnswer-model01-v1-p6",
+          "bundleName": "clickAnswer",
+          "prefabName": "clickAnswer-model01-v1",
           "config": {
             "answer": 2,
             "ae": {
               "handleGuide": {
                 "component": "handleGuide02"
+              },
+              "lineBlink": {
+                "component": "lineBlink01",
+                "pos": {
+                  "x": -372,
+                  "y": 250
+                }
               }
             }
           }
@@ -128,17 +147,20 @@
       },
       {
         "model": {
-          "uiPath": "choose-model02-v1-p3",
-          "bundleName": "choose",
-          "prefabName": "choose-model02-v1",
+          "uiPath": "clickAnswer-model01-v1-p7",
+          "bundleName": "clickAnswer",
+          "prefabName": "clickAnswer-model01-v1",
           "config": {
             "answer": 3,
             "ae": {
               "handleGuide": {
-                "component": "handleGuide02",
+                "component": "handleGuide02"
+              },
+              "lineBlink": {
+                "component": "lineBlink01",
                 "pos": {
-                  "x": 0,
-                  "y": -260
+                  "x": -372,
+                  "y": 250
                 }
               }
             }
@@ -153,17 +175,20 @@
       },
       {
         "model": {
-          "uiPath": "choose-model02-v1-p4",
-          "bundleName": "choose",
-          "prefabName": "choose-model02-v1",
+          "uiPath": "clickAnswer-model01-v1-p8",
+          "bundleName": "clickAnswer",
+          "prefabName": "clickAnswer-model01-v1",
           "config": {
-            "answer": 1,
+            "answer": 2,
             "ae": {
               "handleGuide": {
-                "component": "handleGuide02",
+                "component": "handleGuide02"
+              },
+              "lineBlink": {
+                "component": "lineBlink01",
                 "pos": {
-                  "x": 0,
-                  "y": -260
+                  "x": -372,
+                  "y": 250
                 }
               }
             }
@@ -178,17 +203,24 @@
       },
       {
         "model": {
-          "uiPath": "dragAnswer-model01-v2-p10",
+          "uiPath": "dragAnswer-model01-v1-p9",
           "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model01-v2",
+          "prefabName": "dragAnswer-model01-v1",
           "config": {
-            "answer": 23,
+            "answer": 4,
             "ae": {
               "handleGuide": {
-                "component": "handleGuide01",
+                "component": "handleGuide03",
                 "pos": {
-                  "x": -232,
-                  "y": 78
+                  "x": 20,
+                  "y": -94
+                }
+              },
+              "lineBlink": {
+                "component": "lineBlink01",
+                "pos": {
+                  "x": 0,
+                  "y": 180
                 }
               }
             }
@@ -203,9 +235,28 @@
       },
       {
         "model": {
-          "uiPath": "dragAnswer-model02-v1-p7",
+          "uiPath": "dragAnswer-model01-v1-p10",
           "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model02-v1"
+          "prefabName": "dragAnswer-model01-v1",
+          "config": {
+            "answer": 6,
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide03",
+                "pos": {
+                  "x": 20,
+                  "y": -94
+                }
+              },
+              "lineBlink": {
+                "component": "lineBlink01",
+                "pos": {
+                  "x": 0,
+                  "y": 180
+                }
+              }
+            }
+          }
         },
         "components": {
           "feedback": {
@@ -216,9 +267,28 @@
       },
       {
         "model": {
-          "uiPath": "dragAnswer-model02-v1-p6",
+          "uiPath": "dragAnswer-model01-v1-p11",
           "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model02-v1"
+          "prefabName": "dragAnswer-model01-v1",
+          "config": {
+            "answer": 6,
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide03",
+                "pos": {
+                  "x": 20,
+                  "y": -94
+                }
+              },
+              "lineBlink": {
+                "component": "lineBlink01",
+                "pos": {
+                  "x": 0,
+                  "y": 180
+                }
+              }
+            }
+          }
         },
         "components": {
           "feedback": {

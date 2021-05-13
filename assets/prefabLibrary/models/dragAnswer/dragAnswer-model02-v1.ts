@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 10:28:29
+ * @LastEditTime: 2021-05-12 16:23:03
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
@@ -52,6 +52,7 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         this._worldRoot = cc.find("Canvas").parent;
 
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
+        this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
         fgui.GRoot.inst.addChild(this._view);
 
         this._c1 = this._view.getController("c1");
