@@ -101,7 +101,6 @@
     <component id="akgh3w" name="choose-model02-v1-p4.xml" path="/" exported="true"/>
     <image id="xm0v3x" name="0119.png" path="/images/choose-model02-v1/"/>
     <image id="xm0v3y" name="0120.png" path="/images/choose-model02-v1/"/>
-    <component id="xm0v3z" name="choose-option2.xml" path="/choose-option/" exported="true"/>
     <image id="xm0v40" name="0121.png" path="/images/choose-model02-v1/"/>
     <image id="xm0v41" name="0122.png" path="/images/choose-model02-v1/"/>
     <image id="xm0v42" name="0123.png" path="/images/choose-model02-v1/"/>
@@ -116,8 +115,6 @@
     <image id="xm0v4b" name="0132.png" path="/images/choose-model02-v1/"/>
     <image id="xm0v4c" name="0133.png" path="/images/choose-model02-v1/"/>
     <image id="xm0v4d" name="0134.png" path="/images/choose-model02-v1/"/>
-    <component id="or2y4e" name="choose-option3.xml" path="/choose-option/" exported="true"/>
-    <component id="or2y4f" name="choose-option4.xml" path="/choose-option/" exported="true"/>
     <image id="or2y4g" name="0135.png" path="/images/choose-model02-v1/"/>
     <image id="or2y4h" name="0136.png" path="/images/choose-model02-v1/"/>
     <image id="or2y4i" name="0137.png" path="/images/choose-model02-v1/"/>
@@ -137,11 +134,6 @@
     <image id="or2y4w" name="0151.png" path="/images/choose-model02-v1/"/>
     <image id="or2y4x" name="0152.png" path="/images/choose-model02-v1/"/>
     <image id="or2y4y" name="0153.png" path="/images/choose-model02-v1/"/>
-    <component id="or2y4z" name="choose-option5.xml" path="/choose-option/" exported="true"/>
-    <component id="or2y50" name="choose-option6.xml" path="/choose-option/" exported="true"/>
-    <component id="or2y51" name="choose-option7.xml" path="/choose-option/" exported="true"/>
-    <component id="nqb552" name="choose-option8.xml" path="/choose-option/" exported="true"/>
-    <component id="nqb553" name="choose-option9.xml" path="/choose-option/" exported="true"/>
     <image id="nqb554" name="0154.png" path="/images/choose-model02-v1/"/>
     <image id="nqb555" name="0155.png" path="/images/choose-model02-v1/"/>
     <image id="nqb556" name="0156.png" path="/images/choose-model02-v1/"/>
@@ -161,13 +153,31 @@
     <image id="nqb55k" name="0170.png" path="/images/choose-model02-v1/"/>
     <image id="nqb55l" name="0171.png" path="/images/choose-model02-v1/"/>
     <image id="nqb55m" name="0172.png" path="/images/choose-model02-v1/"/>
-    <component id="nqb55n" name="choose-option10.xml" path="/choose-option/" exported="true"/>
-    <component id="nqb55o" name="choose-option11.xml" path="/choose-option/" exported="true"/>
-    <component id="nqb55p" name="choose-option12.xml" path="/choose-option/" exported="true"/>
     <component id="nqb55q" name="static-model01-v1-p13.xml" path="/" exported="true"/>
     <image id="nqb55r" name="ewm.png" path="/images/common/"/>
     <image id="nqb55s" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
     <image id="gygb5t" name="0115.png" path="/images/dragAnswer-model01-v2/"/>
+    <misc id="lmz960" name="icon_ani.atlas" path="/spines/01/"/>
+    <image id="lmz962" name="icon_ani.png" path="/spines/01/"/>
+    <spine id="lmz961" name="icon_ani.json" path="/spines/01/" exported="true" width="100" height="100" require="lmz960,lmz962" atlasNames="icon_ani" anchor="100,100"/>
+    <component id="lmz963" name="choose-option2.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz964" name="choose-option3.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz965" name="choose-option4.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz966" name="choose-option5.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz967" name="choose-option6.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz968" name="choose-option7.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz969" name="choose-option8.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz96a" name="choose-option9.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz96b" name="choose-option10.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz96c" name="choose-option11.xml" path="/choose-option/" exported="true"/>
+    <component id="lmz96d" name="choose-option12.xml" path="/choose-option/" exported="true"/>
+    <component id="q2426f" name="collidered01.xml" path="/components/"/>
+    <component id="q2426g" name="collidered02.xml" path="/components/"/>
+    <movieclip id="q2426h" name="MovieClip1.jta" path="/movieClips/"/>
+    <component id="q2426j" name="collidered03.xml" path="/components/"/>
+    <component id="q2426k" name="collidered04.xml" path="/"/>
+    <movieclip id="q2426l" name="MovieClip2.jta" path="/movieClips/"/>
+    <movieclip id="q2426m" name="MovieClip3.jta" path="/movieClips/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

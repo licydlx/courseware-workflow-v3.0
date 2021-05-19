@@ -6,11 +6,11 @@
     <image id="n5_rbpx" name="n5" src="rbpxb" fileName="images/dragAnswer-model02-v1/机器人1@2x.png" xy="840,278" group="n4_rbpx"/>
     <image id="n6_rbpx" name="n6" src="rbpxd" fileName="images/dragAnswer-model02-v1/拖板@2x.png" xy="261,744" group="n4_rbpx"/>
     <group id="n4_rbpx" name="UI" xy="0,0" size="1920,1080"/>
-    <image id="n16_rbpx" name="n16" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="989,264"/>
-    <image id="n12_rbpx" name="n12" src="rbpx1" fileName="images/dragAnswer-model02-v1/k02.png" xy="990,331" group="n18_dbj2"/>
-    <image id="n13_rbpx" name="n13" src="rbpx3" fileName="images/dragAnswer-model02-v1/k03.png" xy="990,272" group="n18_dbj2"/>
-    <image id="n15_rbpx" name="n15" src="rbpx8" fileName="images/dragAnswer-model02-v1/k06.png" xy="990,441" group="n18_dbj2"/>
-    <image id="n14_rbpx" name="n14" src="rbpx6" fileName="images/dragAnswer-model02-v1/k05.png" xy="1051,441" pivot="0,0.05" group="n18_dbj2"/>
+    <image id="n16_rbpx" name="wire" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="989,264"/>
+    <component id="n12_rbpx" name="n12" src="q2426f" fileName="components/collidered01.xml" xy="990,331" group="n18_dbj2"/>
+    <component id="n13_rbpx" name="n13" src="q2426g" fileName="components/collidered02.xml" xy="990,272" group="n18_dbj2"/>
+    <component id="n15_rbpx" name="n15" src="q2426j" fileName="components/collidered03.xml" xy="990,441" group="n18_dbj2"/>
+    <component id="n14_rbpx" name="n14" src="q2426k" fileName="collidered04.xml" xy="1051,441" group="n18_dbj2"/>
     <image id="n17_rbpx" name="n17" src="rbpx8" fileName="images/dragAnswer-model02-v1/k06.png" xy="990,581" group="n18_dbj2"/>
     <group id="n18_dbj2" name="collideredBox" xy="990,272" size="148,456" advanced="true"/>
     <component id="n20_dbj2" name="n20" src="dbj2f" fileName="buttons/dragBtn.xml" xy="442,836" size="100,100" group="n19_dbj2" aspect="true">

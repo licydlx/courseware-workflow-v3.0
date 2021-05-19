@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:23:53
+ * @LastEditTime: 2021-05-19 11:59:24
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
@@ -48,6 +48,7 @@ export default class choose_model02_v1 extends cc.Component {
 
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
+
         fgui.GRoot.inst.addChild(this._view);
 
         this._c1 = this._view.getController("c1");
@@ -128,18 +129,12 @@ export default class choose_model02_v1 extends cc.Component {
         let state: any = globalThis._.cloneDeep(this._state);
         let option: any = fgui.GObject.cast(evt.currentTarget);
         let optionIndex: number = this._options.findIndex((v: any) => v == option);
-        // if (state.option.includes(optionIndex)) {
-        //     state.option = state.option.filter((v:any) => v != optionIndex )
-        // } else {
-        //     state.option.push(optionIndex);
-        // }
         state.option = state.option === optionIndex ? null : optionIndex;
         this.updateState(state);
     }
 
     private _clickSubmit(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
-        // state.answer = state.option.join("") == this._answer;
         state.answer = state.option == this._answer;
         state.submit = true;
         this.updateState(state);
@@ -159,30 +154,20 @@ export default class choose_model02_v1 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
         if (!globalThis._.isEqual(oldState.option, state.option)) {
-            // let index:any;
-            // let tName:any;
-            // if (state.option.length > oldState.option.length) {
-            //     index = state.option.find((v:any) => oldState.option.includes(v) == false);
-            //     tName = "t0";
-            // } else if(oldState.option.length > state.option.length) {
-            //     index = oldState.option.find((v:any) => state.option.includes(v) == false);
-            //     tName = "t1";
-            // }
-            // let t: fgui.Transition = this._options[index].getTransition(tName);
-            // t.play();
+
             if (state.option || state.option === 0) {
                 if (oldState.option || oldState.option === 0) {
-                    let t1: fgui.Transition = this._options[oldState.option].getTransition("t1");
-                    t1.play();
+                    this.selectEffect(false,oldState.option);
                 }
-                let t0: fgui.Transition = this._options[state.option].getTransition("t0");
-                t0.play();
+                this.selectEffect(true,state.option);
             }
 
             if (state.option === null) {
-                let t1: fgui.Transition = this._options[oldState.option].getTransition("t1");
-                t1.play(); 
+                if (oldState.option || oldState.option === 0) {
+                    this.selectEffect(false,oldState.option);
+                }
             }
+            
         }
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {
@@ -202,9 +187,32 @@ export default class choose_model02_v1 extends cc.Component {
         }
     }
 
+    /**
+     * @name: 选择效果
+     * @msg: 
+     * @param {boolean} active
+     * @param {number} option
+     * @return {*}
+     */
+    selectEffect(active:boolean,option:number){
+        let curOption:fgui.GComponent = this._options[option];
+        let border:any = curOption.getChild("border");
+        let arrow:any = curOption.getChild("arrow");
+        let spine:any = curOption.getChild("spine");
+        
+        if (active) {
+            border.alpha = 1;
+            arrow.alpha = 1;
+            spine.animationName = spine.animationName.slice(0, -1) + 2;
+        } else {
+            border.alpha = 0;
+            arrow.alpha = 0;
+            spine.animationName = spine.animationName.slice(0, -1) + 1;
+        }
+    }
+    
     async playTitle(bool: boolean) {
         this._c2.selectedIndex = bool ? 1 : 0;
-
         if (bool) {
             cc.audioEngine.stopAll();
             this.forbidHandle();

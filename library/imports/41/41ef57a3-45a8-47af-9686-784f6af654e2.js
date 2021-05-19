@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:23:53
+ * @LastEditTime: 2021-05-19 11:59:24
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -189,17 +189,11 @@ var choose_model02_v1 = /** @class */ (function (_super) {
         var state = globalThis._.cloneDeep(this._state);
         var option = fgui.GObject.cast(evt.currentTarget);
         var optionIndex = this._options.findIndex(function (v) { return v == option; });
-        // if (state.option.includes(optionIndex)) {
-        //     state.option = state.option.filter((v:any) => v != optionIndex )
-        // } else {
-        //     state.option.push(optionIndex);
-        // }
         state.option = state.option === optionIndex ? null : optionIndex;
         this.updateState(state);
     };
     choose_model02_v1.prototype._clickSubmit = function (evt) {
         var state = globalThis._.cloneDeep(this._state);
-        // state.answer = state.option.join("") == this._answer;
         state.answer = state.option == this._answer;
         state.submit = true;
         this.updateState(state);
@@ -217,28 +211,16 @@ var choose_model02_v1 = /** @class */ (function (_super) {
     // 更新ui层
     choose_model02_v1.prototype.updateUi = function (oldState, state) {
         if (!globalThis._.isEqual(oldState.option, state.option)) {
-            // let index:any;
-            // let tName:any;
-            // if (state.option.length > oldState.option.length) {
-            //     index = state.option.find((v:any) => oldState.option.includes(v) == false);
-            //     tName = "t0";
-            // } else if(oldState.option.length > state.option.length) {
-            //     index = oldState.option.find((v:any) => state.option.includes(v) == false);
-            //     tName = "t1";
-            // }
-            // let t: fgui.Transition = this._options[index].getTransition(tName);
-            // t.play();
             if (state.option || state.option === 0) {
                 if (oldState.option || oldState.option === 0) {
-                    var t1 = this._options[oldState.option].getTransition("t1");
-                    t1.play();
+                    this.selectEffect(false, oldState.option);
                 }
-                var t0 = this._options[state.option].getTransition("t0");
-                t0.play();
+                this.selectEffect(true, state.option);
             }
             if (state.option === null) {
-                var t1 = this._options[oldState.option].getTransition("t1");
-                t1.play();
+                if (oldState.option || oldState.option === 0) {
+                    this.selectEffect(false, oldState.option);
+                }
             }
         }
         if (!globalThis._.isEqual(oldState.title, state.title)) {
@@ -253,6 +235,29 @@ var choose_model02_v1 = /** @class */ (function (_super) {
             if (state.checkAnswer) {
                 this.answerFeedback(state.answer);
             }
+        }
+    };
+    /**
+     * @name: 选择效果
+     * @msg:
+     * @param {boolean} active
+     * @param {number} option
+     * @return {*}
+     */
+    choose_model02_v1.prototype.selectEffect = function (active, option) {
+        var curOption = this._options[option];
+        var border = curOption.getChild("border");
+        var arrow = curOption.getChild("arrow");
+        var spine = curOption.getChild("spine");
+        if (active) {
+            border.alpha = 1;
+            arrow.alpha = 1;
+            spine.animationName = spine.animationName.slice(0, -1) + 2;
+        }
+        else {
+            border.alpha = 0;
+            arrow.alpha = 0;
+            spine.animationName = spine.animationName.slice(0, -1) + 1;
         }
     };
     choose_model02_v1.prototype.playTitle = function (bool) {

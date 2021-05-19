@@ -3,10 +3,11 @@
   <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
     <loader id="n2_rbpx" name="background" xy="0,0" size="1920,1080" group="n4_rbpx" url="ui://ik5aab9iqxt01g" autoSize="true"/>
-    <image id="n39_qxt0" name="n39" src="qxt015" fileName="images/dragAnswer-model02-v1/0305.png" xy="849,250" group="n4_rbpx"/>
-    <image id="n16_rbpx" name="n16" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="989,230" group="n4_rbpx"/>
     <image id="n6_rbpx" name="n6" src="rbpxd" fileName="images/dragAnswer-model02-v1/拖板@2x.png" xy="261,744" group="n4_rbpx"/>
     <group id="n4_rbpx" name="UI" xy="0,0" size="1920,1080"/>
+    <image id="n39_qxt0" name="n39" src="qxt015" fileName="images/dragAnswer-model02-v1/0305.png" xy="849,250" group="n43_q242"/>
+    <image id="n16_rbpx" name="n16" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="989,230" group="n43_q242"/>
+    <group id="n43_q242" name="dyUI" xy="849,230" size="145,471" advanced="true"/>
     <image id="n41_qxt0" name="n41" src="qxt010" fileName="images/dragAnswer-model02-v1/k09.png" xy="990,548" group="n18_dbj2"/>
     <image id="n37_qxt0" name="n37" src="qxt011" fileName="images/dragAnswer-model02-v1/k10.png" xy="990,359" group="n18_dbj2"/>
     <image id="n36_qxt0" name="n36" src="qxt012" fileName="images/dragAnswer-model02-v1/k11.png" xy="1078,359" group="n18_dbj2"/>
@@ -32,5 +33,6 @@
     <loader id="n26_qxt0" name="titleTrigger" xy="70,70" size="228,171" scale="0.8,0.8" url="ui://ik5aab9iqxt0k" autoSize="true" playing="false">
       <gearAni controller="c2" pages="1" values="12,p" default="0,s"/>
     </loader>
+    <loader id="n42_q242" name="robot" xy="691,87" size="750,750" scale="0.8,0.8" visible="false" url="ui://ik5aab9iq2426m" autoSize="true" playing="false"/>
   </displayList>
 </component>

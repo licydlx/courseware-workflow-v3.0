@@ -119,20 +119,10 @@
     "meta": 1620963336110,
     "relativePath": "entrances\\javascripts\\lib\\fairygui.d.ts"
   },
-  "aa7a3cd5-0c85-42ec-b653-f94dd0fd703f": {
-    "asset": 1620963334084,
-    "meta": 1620963336128,
-    "relativePath": "entrances\\javascripts\\lib\\fairygui.js"
-  },
   "ec58e846-d41f-414a-a5c7-dd6dda1339e3": {
     "asset": 1620634530635,
     "meta": 1620963336129,
     "relativePath": "entrances\\javascripts\\lodash.min.js"
-  },
-  "a1894816-1aa8-4db9-9e7f-f72464009898": {
-    "asset": 1620879031283,
-    "meta": 1620963336154,
-    "relativePath": "entrances\\javascripts\\t3-afterSchoolreview.ts"
   },
   "e9bb79fd-2194-4bd7-8cb8-15be7f7b7c20": {
     "asset": 1620634530626,
@@ -154,21 +144,6 @@
     "meta": 1620963336196,
     "relativePath": "entrances\\spines\\01\\bear.atlas"
   },
-  "b4af7a9b-6089-47ac-a3f7-8ab6959085ef": {
-    "asset": 1620961304201,
-    "meta": 1620963336199,
-    "relativePath": "entrances\\t3-afterSchoolreview.fire"
-  },
-  "e40c48f6-b759-40c8-97e0-71b7208c2073": {
-    "asset": 1621407551043,
-    "meta": 1621407551055,
-    "relativePath": "entrances\\t3-courseware.fire"
-  },
-  "d9e74695-e785-4b40-bcdc-fcb0aa490f14": {
-    "asset": 1620634530640,
-    "meta": 1620963336211,
-    "relativePath": "entrances\\t3-homework.fire"
-  },
   "8c304970-0040-47f2-aa22-b9f30efdb9c4": {
     "asset": 1620977478220,
     "meta": 1621219105138,
@@ -189,55 +164,10 @@
     "meta": 1620963336233,
     "relativePath": "entrances\\spines\\01\\bear.png"
   },
-  "4b436093-43c1-4e76-8778-9181472ea310": {
-    "asset": 1620879031294,
-    "meta": 1620963336263,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_1.png"
-  },
-  "b154149a-a8b1-41ec-b824-3996082c1f49": {
-    "asset": 1620879031297,
-    "meta": 1620963336327,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_2.png"
-  },
-  "908d8452-24fd-4cff-b3f1-3d9899079616": {
-    "asset": 1620879031301,
-    "meta": 1620963336351,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_3.png"
-  },
-  "512c44ea-536a-4a42-bb0f-4d966804efa4": {
-    "asset": 1620879031292,
-    "meta": 1620963336431,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0.png"
-  },
-  "8839d260-1635-4a84-a787-21d0056cdeb5": {
-    "asset": 1620635294406,
-    "meta": 1620963337860,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_ht4324.mp3"
-  },
   "94b407c2-d029-45c5-8df1-11b8b273a1ff": {
     "asset": 1620634530637,
     "meta": 1620963339438,
     "relativePath": "entrances\\spines\\01\\bear.json"
-  },
-  "0fb7ea8a-cb12-49e7-abc1-911e78d4fd4b": {
-    "asset": 1620635294407,
-    "meta": 1620963337861,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt016.mp3"
-  },
-  "b6019d79-58e6-479f-8909-afedeb6ec920": {
-    "asset": 1620635294407,
-    "meta": 1620963337881,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt017.mp3"
-  },
-  "ee21a04c-d8b0-41a1-8c94-87939fcf2501": {
-    "asset": 1620879031302,
-    "meta": 1620963337924,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt018.mp3"
-  },
-  "bcd639e5-b5a0-436c-a914-3b5be343593d": {
-    "asset": 1620879031284,
-    "meta": 1620963337946,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01.bin"
   },
   "b91b55a8-06b0-423a-8d42-15dcf746c259": {
     "asset": 1620961304273,
@@ -248,11 +178,6 @@
     "asset": 1620961304304,
     "meta": 1620963337948,
     "relativePath": "fairyUis\\t3\\t3-01"
-  },
-  "641d5a95-9690-4ee6-8a22-1b82f8c881b4": {
-    "asset": 1620635294407,
-    "meta": 1620963337953,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt019.mp3"
   },
   "2d9f1416-8769-479d-ab08-879545c0c62c": {
     "asset": 1620634530667,
@@ -559,20 +484,10 @@
     "meta": 1620963338837,
     "relativePath": "prefabLibrary\\controllers\\controller-model02\\controller-model02.prefab"
   },
-  "cd059d7d-7014-4331-ba40-72653c89fda1": {
-    "asset": 1620879031307,
-    "meta": 1620963338895,
-    "relativePath": "prefabLibrary\\models\\choose\\choose-model01-v1.ts"
-  },
   "502108c1-7487-4d6d-bf1c-ac5b32f5dd47": {
     "asset": 1620634530717,
     "meta": 1620963338898,
     "relativePath": "prefabLibrary\\models\\choose\\choose-model01-v1.prefab"
-  },
-  "41ef57a3-45a8-47af-9686-784f6af654e2": {
-    "asset": 1620879031308,
-    "meta": 1620963338952,
-    "relativePath": "prefabLibrary\\models\\choose\\choose-model02-v1.ts"
   },
   "1886beec-f749-41e1-a331-debe1659242d": {
     "asset": 1620961304323,
@@ -613,11 +528,6 @@
     "asset": 1620634530722,
     "meta": 1620963339208,
     "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model01-v2.prefab"
-  },
-  "761b7b40-d436-436d-996e-fd5546e12562": {
-    "asset": 1620879031309,
-    "meta": 1620963339299,
-    "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model02-v1.ts"
   },
   "180ec9fd-432b-41b3-860c-809dd98b123f": {
     "asset": 1620961304327,
@@ -1234,14 +1144,134 @@
     "meta": 1621407084078,
     "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model03-v1.ts"
   },
-  "aa72a253-0982-4986-8e36-f4aa5f27e691": {
-    "asset": 1621408696972,
-    "meta": 1621408724728,
-    "relativePath": "entrances\\javascripts\\t3-courseware.ts"
-  },
   "a13c8fde-2151-4b12-9928-a870456082c5": {
     "asset": 1621408694463,
     "meta": 1621408724833,
     "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model01-v1.ts"
+  },
+  "3096fc1d-3e8a-4bd2-a951-dd0515581941": {
+    "asset": 1621408923125,
+    "meta": 1621409339851,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_1.png"
+  },
+  "9a752a1e-a02f-467e-9c77-17adf79979c8": {
+    "asset": 1621408923126,
+    "meta": 1621409339873,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_2.png"
+  },
+  "aa7a3cd5-0c85-42ec-b653-f94dd0fd703f": {
+    "asset": 1621408923113,
+    "meta": 1621409339908,
+    "relativePath": "entrances\\javascripts\\lib\\fairygui.js"
+  },
+  "f642b52d-9f30-411a-8d09-9a1a31f98d0a": {
+    "asset": 1621408923131,
+    "meta": 1621409339960,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_3.png"
+  },
+  "77f22df0-3500-4ffc-8052-73ca13c80c83": {
+    "asset": 1621408923122,
+    "meta": 1621409340034,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0.png"
+  },
+  "29209bb6-8fd6-40d1-b183-9115f4a8b720": {
+    "asset": 1620635294406,
+    "meta": 1621409340461,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_ht4324.mp3"
+  },
+  "9dfd482a-0a98-4903-8cf7-5859211fe0ab": {
+    "asset": 1620635294407,
+    "meta": 1621409340464,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt016.mp3"
+  },
+  "bfb7d5c4-be75-4415-b61e-da365a129f54": {
+    "asset": 1620635294407,
+    "meta": 1621409340484,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt017.mp3"
+  },
+  "c8cc08d3-9ecc-4212-8f36-2dde6e72433c": {
+    "asset": 1620879031302,
+    "meta": 1621409340492,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt018.mp3"
+  },
+  "a3ec01ee-43f7-471d-8dc5-5f56aeaee562": {
+    "asset": 1621408923118,
+    "meta": 1621409340497,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01.bin"
+  },
+  "cd059d7d-7014-4331-ba40-72653c89fda1": {
+    "asset": 1621408923160,
+    "meta": 1621409340566,
+    "relativePath": "prefabLibrary\\models\\choose\\choose-model01-v1.ts"
+  },
+  "41ef57a3-45a8-47af-9686-784f6af654e2": {
+    "asset": 1621408923160,
+    "meta": 1621409340647,
+    "relativePath": "prefabLibrary\\models\\choose\\choose-model02-v1.ts"
+  },
+  "761b7b40-d436-436d-996e-fd5546e12562": {
+    "asset": 1621408923161,
+    "meta": 1621409340734,
+    "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model02-v1.ts"
+  },
+  "320f319d-07de-4ed4-bd59-a679e2a27083": {
+    "asset": 1621408923106,
+    "meta": 1621409340737,
+    "relativePath": "configJson\\test\\t2-trialClass-01-test01.json"
+  },
+  "b4af7a9b-6089-47ac-a3f7-8ab6959085ef": {
+    "asset": 1621408924158,
+    "meta": 1621409340740,
+    "relativePath": "entrances\\afterSchoolreview.fire"
+  },
+  "94c3dec3-4015-4f46-be11-90f278007682": {
+    "asset": 1620635294407,
+    "meta": 1621409340741,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt019.mp3"
+  },
+  "e40c48f6-b759-40c8-97e0-71b7208c2073": {
+    "asset": 1621409044828,
+    "meta": 1621409340745,
+    "relativePath": "entrances\\courseware.fire"
+  },
+  "a1894816-1aa8-4db9-9e7f-f72464009898": {
+    "asset": 1621408924086,
+    "meta": 1621409340768,
+    "relativePath": "entrances\\javascripts\\afterSchoolreview.ts"
+  },
+  "aa72a253-0982-4986-8e36-f4aa5f27e691": {
+    "asset": 1621408924080,
+    "meta": 1621409340786,
+    "relativePath": "entrances\\javascripts\\courseware.ts"
+  },
+  "d9e74695-e785-4b40-bcdc-fcb0aa490f14": {
+    "asset": 1621408923107,
+    "meta": 1621409340788,
+    "relativePath": "entrances\\homework.fire"
+  },
+  "37495cc1-e810-413e-8723-4aaa33bc70a8": {
+    "asset": 1621408923114,
+    "meta": 1621409340801,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\icon_ani.atlas"
+  },
+  "20ea8d16-d780-42ae-b35c-32d3c3ff9ca0": {
+    "asset": 1621408923117,
+    "meta": 1621409340824,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\icon_ani.png"
+  },
+  "b58a75db-459f-47af-b3f1-2214737e79b1": {
+    "asset": 1621408924070,
+    "meta": 1621409340882,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_4.png"
+  },
+  "5096c8cd-ca8e-41c5-b3cb-dca3b0bff244": {
+    "asset": 1621408924061,
+    "meta": 1621409340905,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_5.png"
+  },
+  "528ffe83-f4e1-4a02-925c-17382e132663": {
+    "asset": 1621408923114,
+    "meta": 1621409340925,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\icon_ani.json"
   }
 }

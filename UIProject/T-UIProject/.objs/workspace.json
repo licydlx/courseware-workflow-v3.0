@@ -1,12 +1,15 @@
 {
-  "libview.firstColumnWidth": 268,
+  "libview.firstColumnWidth": 219,
   "libview.iconScale": 0,
-  "doc.openedDocs": [],
+  "doc.openedDocs": [
+    "ui://ik5aab9iakgh3w"
+  ],
   "packageGroup.mine": [],
   "libview.syncEditor": 0,
   "auxline1": true,
   "canvasColor": 10066329,
   "auxline2": true,
+  "doc.activeDoc": "ui://ik5aab9iakgh3w",
   "libview.twoColumn": false,
   "libview.expandedNodes": [
     "5mq4z6h4",
@@ -17,10 +20,8 @@
     "/images/",
     "rokozlzw",
     "/",
-    "rokozlzw",
-    "/components/",
-    "rokozlzw",
-    "/components/common/"
+    "ik5aab9i",
+    "/choose-option/"
   ],
   "snapToGrid": true,
   "backgroundColor": 6710886,

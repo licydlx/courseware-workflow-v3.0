@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:23:03
+ * @LastEditTime: 2021-05-19 14:33:21
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
@@ -19,6 +19,11 @@ export default class dragAnswer_model02_v1 extends cc.Component {
 
     private _title: fgui.GButton;
     private _titleTrigger: fgui.GLoader;
+
+    private _robot:fgui.GLoader;
+    private _dyUI:fgui.GGroup;
+    private _colliderGroup:fgui.GGroup;
+    private _collideredGroup:fgui.GGroup;
 
     // fairygui 组件
     private handleGuide: any;
@@ -70,12 +75,18 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
 
-        let colliderGroup = this._view.getChild("colliderBox").asGroup;
-        let collideredGroup = this._view.getChild("collideredBox").asGroup;
+        this._robot = this._view.getChild("robot").asLoader;
+
+        this._dyUI = this._view.getChild("dyUI").asGroup;
+        this._colliderGroup = this._view.getChild("colliderBox").asGroup;
+        this._collideredGroup = this._view.getChild("collideredBox").asGroup;
+
+        // colliderGroup.visible = false 
+        // collideredGroup.visible = false;
 
         this._cache["colliderBox"] = [];
         for (let i = 0; i < this._view.numChildren; i++) {
-            if (this._view.getChildAt(i).group == colliderGroup) {
+            if (this._view.getChildAt(i).group == this._colliderGroup) {
                 let btn: fgui.GButton = this._view.getChildAt(i).asButton;
                 this._cache["colliderBox"].push({ x: btn.x, y: btn.y });
                 btn.draggable = true;
@@ -87,7 +98,7 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         }
 
         for (let i = 0; i < this._view.numChildren; i++) {
-            if (this._view.getChildAt(i).group == collideredGroup) {
+            if (this._view.getChildAt(i).group == this._collideredGroup) {
                 let btn: fgui.GButton = this._view.getChildAt(i).asButton;
                 this._collideredBox.push(btn);
             }
@@ -252,11 +263,9 @@ export default class dragAnswer_model02_v1 extends cc.Component {
 
     // 更新ui层
     updateUi(oldState: any, state: any) {
-        
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
-            
             // let collider: any = this._colliderBox[state.colliderIndex];
             // let collideredIndex: number = this._collideredBox.findIndex((collidered: any) => this._belongArea(collider, collidered, 100) == true);
             // console.log(collideredIndex);
@@ -270,18 +279,15 @@ export default class dragAnswer_model02_v1 extends cc.Component {
                     this._colliderBox[i].y = state.collider[i].y;
                 }
             }
-
             if (!globalThis._.isEqual(oldState.title, state.title)) {
                 this.playTitle(state.title);
             }
-
             if (!globalThis._.isEqual(oldState.answer, state.answer)) {
                 if (state.answer) {
                     this.transfer(state.answer);
                 }
             }
         }
-        
     }
 
     async playTitle(bool: boolean) {
@@ -305,9 +311,22 @@ export default class dragAnswer_model02_v1 extends cc.Component {
     // 临时
     transfer(answer: any) {
         this.forbidHandle();
+        this._dyUI.visible = false;
+        this._colliderGroup.visible = false 
+        this._collideredGroup.visible = false;
+        this._robot.visible = true;
+        this._robot.playing = true;
+
+            
         setTimeout(() => {
+            this._dyUI.visible = true;
+            this._colliderGroup.visible = true 
+            this._collideredGroup.visible = true;
+            this._robot.visible = false;
+            this._robot.playing = false; 
+
             this.answerFeedback(answer);
-        }, 1000);
+        }, 3000);
     }
 
     answerFeedback(bool: boolean) {

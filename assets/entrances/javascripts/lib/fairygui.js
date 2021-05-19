@@ -7849,10 +7849,13 @@ window.__extends = (this && this.__extends) || (function () {
                 console.warn(err);
             if (!this._contentItem.asset)
                 return;
+
             if (this._contentItem.type == fgui.PackageItemType.Spine)
                 this.setSpine(this._contentItem.asset, this._contentItem.skeletonAnchor);
+            
             else if (this._contentItem.type == fgui.PackageItemType.DragonBones)
-                this.setDragonBones(this._contentItem.asset, this._contentItem.atlasAsset, this._contentItem.skeletonAnchor);
+                console.log("龙骨代码已注释--");
+            // this.setDragonBones(this._contentItem.asset, this._contentItem.atlasAsset, this._contentItem.skeletonAnchor);
         };
         GLoader3D.prototype.setSpine = function (asset, anchor, pma) {
             this.url = null;
@@ -7886,7 +7889,7 @@ window.__extends = (this && this.__extends) || (function () {
         };
         GLoader3D.prototype.onChange = function () {
             this.onChangeSpine();
-            this.onChangeDragonBones();
+            // this.onChangeDragonBones();
         };
         GLoader3D.prototype.onChangeSpine = function () {
             if (!(this._content instanceof sp.Skeleton))

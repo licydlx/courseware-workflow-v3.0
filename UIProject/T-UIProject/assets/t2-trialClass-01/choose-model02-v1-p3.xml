@@ -6,10 +6,10 @@
     <image id="n0_ht43" name="n0" src="qxt01g" fileName="images/common/0101.png" xy="0,0" group="n1_ht43"/>
     <image id="n2_ht43" name="bar" src="qe6i1x" fileName="images/dragAnswer-model01-v2/0108.png" xy="60,180" group="n1_ht43"/>
     <group id="n1_ht43" name="UI" xy="0,0" size="1920,1080"/>
-    <component id="n32_or2y" name="n32" src="or2y4z" fileName="choose-option/choose-option5.xml" xy="230,330" group="n33_or2y"/>
-    <component id="n34_or2y" name="n34" src="or2y50" fileName="choose-option/choose-option6.xml" xy="620,330" group="n33_or2y"/>
-    <component id="n35_or2y" name="n35" src="or2y51" fileName="choose-option/choose-option7.xml" xy="1010,330" group="n33_or2y"/>
-    <component id="n36_nqb5" name="n36" src="nqb552" fileName="choose-option/choose-option8.xml" xy="1400,330" group="n33_or2y"/>
+    <component id="n37_lmz9" name="n37" src="lmz966" fileName="choose-option/choose-option5.xml" xy="230,330" group="n33_or2y"/>
+    <component id="n38_lmz9" name="n38" src="lmz967" fileName="choose-option/choose-option6.xml" xy="620,330" group="n33_or2y"/>
+    <component id="n39_lmz9" name="n39" src="lmz968" fileName="choose-option/choose-option7.xml" xy="1010,330" group="n33_or2y"/>
+    <component id="n40_lmz9" name="n40" src="lmz969" fileName="choose-option/choose-option8.xml" xy="1400,330" group="n33_or2y"/>
     <group id="n33_or2y" name="optionBox" xy="230,330" size="1445,320" advanced="true"/>
     <component id="n17_ht43" name="title" src="qxt0h" fileName="buttons/title.xml" xy="900,100" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
