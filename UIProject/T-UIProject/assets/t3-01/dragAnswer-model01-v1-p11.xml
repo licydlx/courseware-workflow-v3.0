@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="c1" pages="2,,0,,3,,4,,5,,6,,7,,8,,9,,10," selected="9"/>
+  <controller name="c1" pages="2,,0,,3,,4,,5,,6,,7,,8,,9,,10," selected="0"/>
   <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n44_bkhu" name="n44" src="bkhueb" fileName="images/dragAnswer-model01-v1/0101.jpg" xy="0,0" group="n16_lgf1"/>
@@ -8,16 +8,16 @@
     <image id="n43_8vqh" name="n43" src="8vqhbs" fileName="images/dragAnswer-model01-v1/0131.png" xy="546,0" group="n16_lgf1"/>
     <group id="n16_lgf1" name="UI" xy="0,0" size="1920,1080"/>
     <image id="n45_bkhu" name="n45" src="bkhuec" fileName="images/dragAnswer-model01-v1/0144.png" xy="760,931" group="n37_8vqh"/>
-    <image id="n20_lgf1" name="n20" src="lgf19l" fileName="images/libra/0104.png" xy="730,696" pivot="0.5,0.2" group="n37_8vqh" scale="1.2,1.2" rotation="6">
+    <image id="n20_lgf1" name="n20" src="lgf19l" fileName="images/libra/0104.png" xy="730,696" pivot="0.5,0.2" group="n37_8vqh" scale="1.2,1.2" rotation="-12">
       <gearLook controller="c1" pages="2,0,3,4,5,6,7,8,9,10" values="1,-12,0,0|1,-10,0,0|1,-8,0,0|1,-6,0,0|1,-4,0,0|1,-2,0,0|1,0,0,0|1,2,0,0|1,4,0,0|1,6,0,0" tween="true" duration=".2"/>
     </image>
     <image id="n21_lgf1" name="n21" src="lgf19j" fileName="images/libra/0102.png" xy="820,745" group="n37_8vqh" scale="1.2,1.2"/>
     <image id="n22_lgf1" name="n22" src="lgf19k" fileName="images/libra/0103.png" xy="920,687" group="n37_8vqh" scale="1.2,1.2"/>
-    <component id="n26_lgf1" name="uiBtn" src="lgf19t" fileName="buttons/uiBtn1.xml" xy="690,546" group="n37_8vqh" scale="1.2,1.2">
+    <component id="n26_lgf1" name="uiBtn" src="lgf19t" fileName="buttons/uiBtn1.xml" xy="690,628" group="n37_8vqh" scale="1.2,1.2">
       <gearXY controller="c1" pages="2,0,3,4,5,6,7,8,9,10" values="690,628|690,620|690,612|690,604|690,594|690,586|690,576|690,566|690,556|690,546" tween="true" duration=".2"/>
       <Button icon="ui://pozm437j8vqhbn"/>
     </component>
-    <component id="n41_8vqh" name="btnBox" src="8vqhbx" fileName="buttons/btnBox8.xml" xy="1060,334" group="n37_8vqh" scale="1.2,1.2">
+    <component id="n41_8vqh" name="btnBox" src="8vqhbx" fileName="buttons/btnBox8.xml" xy="1060,252" group="n37_8vqh" scale="1.2,1.2">
       <gearXY controller="c1" pages="2,0,3,4,5,6,7,8,9,10" values="1060,252|1060,260|1060,268|1060,278|1060,288|1060,298|1060,308|1060,318|1060,326|1060,334" tween="true" duration=".2"/>
     </component>
     <group id="n37_8vqh" name="libra" xy="590,334" size="730,690"/>

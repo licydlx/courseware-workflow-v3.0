@@ -8,15 +8,15 @@ cc._RF.push(module, '0ce63p0zkxIho9b/0pkRj3M', 'controller-model02-sendMessage')
  * @version:
  * @Author: ydlx
  * @Date: 2021-02-07 11:39:43
- * @LastEditors: ydlx
- * @LastEditTime: 2021-03-16 19:08:46
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-05-17 14:53:59
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendMessage = void 0;
 function sendMessage(data, toUser) {
-    console.log('sendMessage');
+    // console.log('sendMessage')
     var message = globalThis._.cloneDeep(data);
-    console.log(message);
+    // console.log(message)
     var _a = window['GlobalData'].courseData, name = _a.name, userid = _a.userid, role = _a.role, signalingModel = _a.signalingModel;
     var action = window['GlobalData'].gameMsg.EVENT_UPDATE_STATE;
     window['GlobalData'].sendMessage({

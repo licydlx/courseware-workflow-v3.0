@@ -3,14 +3,14 @@
  * @version: 
  * @Author: ydlx
  * @Date: 2021-02-07 11:39:43
- * @LastEditors: ydlx
- * @LastEditTime: 2021-03-16 19:08:46
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-05-17 14:53:59
  */
 
 export function sendMessage(data: any, toUser: any) {
-    console.log('sendMessage')
+    // console.log('sendMessage')
     let message = globalThis._.cloneDeep(data);
-    console.log(message)
+    // console.log(message)
 
     let { name, userid, role, signalingModel } = window['GlobalData'].courseData;
     let action = window['GlobalData'].gameMsg.EVENT_UPDATE_STATE;

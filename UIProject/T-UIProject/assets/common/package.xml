@@ -13,7 +13,6 @@
     <image id="odopk" name="laba_ex-play_08.png" path="/animations/laba/"/>
     <image id="odopl" name="laba_ex-play_09.png" path="/animations/laba/"/>
     <image id="odopm" name="laba_ex-play_10.png" path="/animations/laba/"/>
-    <movieclip id="odopn" name="laba.jta" path="/animations/laba/"/>
     <image id="qe6io" name="0112.png" path="/images/"/>
     <component id="qe6ip" name="submit.xml" path="/components/"/>
     <component id="qe6iq" name="handleGuide01.xml" path="/components/" exported="true"/>

@@ -8,8 +8,8 @@ cc._RF.push(module, 'f41ddVtkPxCUaECni2GZeWU', 'static-model01-v1');
  * @version:
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
- * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:23:14
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-05-17 15:25:51
  */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {

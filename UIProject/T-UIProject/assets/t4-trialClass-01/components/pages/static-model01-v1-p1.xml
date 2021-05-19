@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_msxw" name="n0" src="msxwl" fileName="images/page01/bg.png" xy="0,0"/>
+  </displayList>
+</component>

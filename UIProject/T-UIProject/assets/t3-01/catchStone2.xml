@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="1920,1080" designImage="ui://pozm437juu84du">
+<component size="1920,1080">
   <displayList>
     <image id="n0_uu84" name="n0" src="8vqhb2" fileName="images/clickAnswer-model01-v1/0106.png" xy="1351,-400" group="n9_uu84"/>
     <image id="n5_uu84" name="n5" src="itxhdj" fileName="images/clickAnswer-model01-v1/0112.png" xy="1379,300" group="n9_uu84"/>

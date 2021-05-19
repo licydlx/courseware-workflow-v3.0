@@ -1,0 +1,60 @@
+{
+    "name": "",
+    "courseName": "t4-01",
+    "env": "test",
+    "totalPages": 13,
+    "pathConfig": {
+        "remoteUrl": "",
+        "controllerBundlePath": "",
+        "panelBundlePath": "",
+        "resourceBundlePath": "",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "controllerName": "controller-model02",
+        "panelName": "formal-panle-model02",
+        "resourceName": "t4-trialClass-01",
+        "packageName": "t4-trialClass-01"
+    },
+    "chapters": [
+        
+        {
+            "model": {
+                "uiPath": "Page02",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v1",
+                "config": {
+                    "answer": 6,
+                    "dragIcon": [
+                        {
+                            "name": "icon_1",
+                            "x": 115,
+                            "y": 140,
+                            "footNum": 2
+                        },
+                        {
+                            "name": "icon_2",
+                            "x": 400,
+                            "y": 55,
+                            "footNum": 4
+                        }
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p1",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
+            }
+        }
+
+    ]
+}

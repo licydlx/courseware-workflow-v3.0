@@ -54,9 +54,8 @@ function getMessage(data) {
         var message, _a, name, userid, role, signalingModel, monitored, monitoredName, user, curState_1, prevState_1, toUser, panleState, user, user, user, panelJs;
         var _this = this;
         return __generator(this, function (_b) {
-            console.log('getMessage');
             message = globalThis._.cloneDeep(data);
-            console.log(message);
+            // console.log(message)
             switch (data.method) {
                 case "onJumpPage": {
                     this.onJumpConfig(data.toPage);

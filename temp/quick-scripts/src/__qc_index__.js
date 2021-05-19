@@ -13,8 +13,11 @@ require('./assets/prefabLibrary/controllers/controller-model02/scripts/controlle
 require('./assets/prefabLibrary/models/choose/choose-model01-v1');
 require('./assets/prefabLibrary/models/choose/choose-model02-v1');
 require('./assets/prefabLibrary/models/clickAnswer/clickAnswer-model01-v1');
+require('./assets/prefabLibrary/models/dragAnswer/DragAnswerModel03Base');
+require('./assets/prefabLibrary/models/dragAnswer/IDragAnswerModel03Base');
 require('./assets/prefabLibrary/models/dragAnswer/dragAnswer-model01-v1');
 require('./assets/prefabLibrary/models/dragAnswer/dragAnswer-model01-v2');
 require('./assets/prefabLibrary/models/dragAnswer/dragAnswer-model02-v1');
+require('./assets/prefabLibrary/models/dragAnswer/dragAnswer-model03-v1');
 require('./assets/prefabLibrary/models/inputChoose/inputChoose-model01-v1');
 require('./assets/prefabLibrary/models/static/static-model01-v1');
