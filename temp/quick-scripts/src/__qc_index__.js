@@ -1,7 +1,7 @@
 
 require('./assets/cloud/cloud');
-require('./assets/entrances/javascripts/t3-afterSchoolreview');
-require('./assets/entrances/javascripts/t3-courseware');
+require('./assets/entrances/javascripts/afterSchoolreview');
+require('./assets/entrances/javascripts/courseware');
 require('./assets/prefabLibrary/components/feedback/javascripts/feedback-model01-v1');
 require('./assets/prefabLibrary/components/formal-panle-model02/javascripts/formal-panle-model02-studentList');
 require('./assets/prefabLibrary/components/formal-panle-model02/javascripts/formal-panle-model02');

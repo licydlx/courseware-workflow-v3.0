@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "t3-courseware",
+    "_name": "courseware",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -702,7 +702,7 @@
     "_enabled": true,
     "test": true,
     "configJson": {
-      "__uuid__": "f2cfed46-d065-44ea-b245-a6750831d2a2"
+      "__uuid__": "320f319d-07de-4ed4-bd59-a679e2a27083"
     },
     "_id": "42xPsb+q9CAbXn9IGsj/Pj"
   },

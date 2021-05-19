@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:23:03
+ * @LastEditTime: 2021-05-19 14:33:21
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -111,11 +111,15 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger)
             this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
-        var colliderGroup = this._view.getChild("colliderBox").asGroup;
-        var collideredGroup = this._view.getChild("collideredBox").asGroup;
+        this._robot = this._view.getChild("robot").asLoader;
+        this._dyUI = this._view.getChild("dyUI").asGroup;
+        this._colliderGroup = this._view.getChild("colliderBox").asGroup;
+        this._collideredGroup = this._view.getChild("collideredBox").asGroup;
+        // colliderGroup.visible = false 
+        // collideredGroup.visible = false;
         this._cache["colliderBox"] = [];
         for (var i = 0; i < this._view.numChildren; i++) {
-            if (this._view.getChildAt(i).group == colliderGroup) {
+            if (this._view.getChildAt(i).group == this._colliderGroup) {
                 var btn = this._view.getChildAt(i).asButton;
                 this._cache["colliderBox"].push({ x: btn.x, y: btn.y });
                 btn.draggable = true;
@@ -126,7 +130,7 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             }
         }
         for (var i = 0; i < this._view.numChildren; i++) {
-            if (this._view.getChildAt(i).group == collideredGroup) {
+            if (this._view.getChildAt(i).group == this._collideredGroup) {
                 var btn = this._view.getChildAt(i).asButton;
                 this._collideredBox.push(btn);
             }
@@ -355,9 +359,19 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
     dragAnswer_model02_v1.prototype.transfer = function (answer) {
         var _this = this;
         this.forbidHandle();
+        this._dyUI.visible = false;
+        this._colliderGroup.visible = false;
+        this._collideredGroup.visible = false;
+        this._robot.visible = true;
+        this._robot.playing = true;
         setTimeout(function () {
+            _this._dyUI.visible = true;
+            _this._colliderGroup.visible = true;
+            _this._collideredGroup.visible = true;
+            _this._robot.visible = false;
+            _this._robot.playing = false;
             _this.answerFeedback(answer);
-        }, 1000);
+        }, 3000);
     };
     dragAnswer_model02_v1.prototype.answerFeedback = function (bool) {
         var _this = this;

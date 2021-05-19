@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:23:45
+ * @LastEditTime: 2021-05-17 21:33:18
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var pointBelongArea = window['GlobalData'].utils.pointBelongArea;
