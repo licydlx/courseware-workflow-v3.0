@@ -23,50 +23,12 @@
     "chapters": [
       {
         "model": {
-          "uiPath": "dragAnswer-model02-v1-p7",
-          "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model02-v1"
-        },
-        "components": {
-          "feedback": {
-            "bundleName": "feedback",
-            "prefabName": "feedback-model01-v1"
-          }
-        }
-      },
-      {
-        "model": {
-          "uiPath": "dragAnswer-model02-v1-p6",
-          "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model02-v1"
-        },
-        "components": {
-          "feedback": {
-            "bundleName": "feedback",
-            "prefabName": "feedback-model01-v1"
-          }
-        }
-      },
-      {
-        "model": {
-          "uiPath": "dragAnswer-model02-v1-p5",
-          "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model02-v1"
-        },
-        "components": {
-          "feedback": {
-            "bundleName": "feedback",
-            "prefabName": "feedback-model01-v1"
-          }
-        }
-      },
-      {
-        "model": {
           "uiPath": "choose-model02-v1-p3",
           "bundleName": "choose",
           "prefabName": "choose-model02-v1",
           "config": {
             "answer": 2,
+            "type": "01",
             "ae": {
               "handleGuide": {
                 "component": "handleGuide02",
@@ -112,11 +74,25 @@
       },
       {
         "model": {
+          "uiPath": "dragAnswer-model02-v1-p5",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model02-v1"
+        },
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+      {
+        "model": {
           "uiPath": "choose-model02-v1-p4",
           "bundleName": "choose",
           "prefabName": "choose-model02-v1",
           "config": {
             "answer": 0,
+            "type": "01",
             "ae": {
               "handleGuide": {
                 "component": "handleGuide02",
@@ -127,6 +103,32 @@
               }
             }
           }
+        },
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+      {
+        "model": {
+          "uiPath": "dragAnswer-model02-v1-p7",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model02-v1"
+        },
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+      {
+        "model": {
+          "uiPath": "dragAnswer-model02-v1-p6",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model02-v1"
         },
         "components": {
           "feedback": {

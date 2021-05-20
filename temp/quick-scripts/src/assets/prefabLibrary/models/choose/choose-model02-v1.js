@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-19 11:59:24
+ * @LastEditTime: 2021-05-20 18:25:39
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -128,19 +128,24 @@ var choose_model02_v1 = /** @class */ (function (_super) {
             checkAnswer: false,
             answer: false
         };
-        // 临时 禁止操作期间 切页
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        var feedback = this._worldRoot.getChildByName("feedback");
+        if (feedback)
+            feedback.destroy();
     };
     choose_model02_v1.prototype.init = function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var pathConfig, model, components, Package, GComponent, _a, answer, ae, v, _b, _c, _i, key, componentPath, componentBundle, componentPrefab;
+            var pathConfig, model, components, Package, GComponent, _a, answer, type, ae, v, _b, _c, _i, key, componentPath, componentBundle, componentPrefab;
             return __generator(this, function (_d) {
                 switch (_d.label) {
                     case 0:
                         pathConfig = data.pathConfig, model = data.model, components = data.components;
                         Package = pathConfig.packageName;
                         GComponent = model.uiPath;
-                        _a = model.config, answer = _a.answer, ae = _a.ae;
+                        _a = model.config, answer = _a.answer, type = _a.type, ae = _a.ae;
                         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
                         // 动效注册
                         for (v in ae) {
@@ -154,6 +159,8 @@ var choose_model02_v1 = /** @class */ (function (_super) {
                         }
                         if (answer)
                             this._answer = answer;
+                        if (type)
+                            this._type = type;
                         if (!components) return [3 /*break*/, 5];
                         _b = [];
                         for (_c in components)
@@ -249,15 +256,31 @@ var choose_model02_v1 = /** @class */ (function (_super) {
         var border = curOption.getChild("border");
         var arrow = curOption.getChild("arrow");
         var spine = curOption.getChild("spine");
+        // 临时 赶上线
         if (active) {
             border.alpha = 1;
             arrow.alpha = 1;
-            spine.animationName = spine.animationName.slice(0, -1) + 2;
+            if (!this._type) {
+                spine.animationName = spine.animationName.slice(0, -1) + 2;
+            }
+            if (this._type == "01") {
+                spine.animationName = spine.animationName.slice(0, -1) + 4;
+                // 危险的临时操作
+                // 寻找spine动画 播放完毕的回调函数
+                setTimeout(function () {
+                    spine.animationName = spine.animationName.slice(0, -1) + 1;
+                    arrow.alpha = 0;
+                }, 5000);
+            }
         }
         else {
             border.alpha = 0;
             arrow.alpha = 0;
-            spine.animationName = spine.animationName.slice(0, -1) + 1;
+            if (!this._type) {
+                if (spine.animationName.slice(spine.animationName.length - 1, spine.animationName.length)) {
+                    spine.animationName = spine.animationName.slice(0, -1) + 3;
+                }
+            }
         }
     };
     choose_model02_v1.prototype.playTitle = function (bool) {

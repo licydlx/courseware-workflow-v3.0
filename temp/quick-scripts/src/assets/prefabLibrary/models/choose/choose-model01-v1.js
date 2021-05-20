@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-17 21:33:18
+ * @LastEditTime: 2021-05-20 18:25:49
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var pointBelongArea = window['GlobalData'].utils.pointBelongArea;
@@ -129,8 +129,13 @@ var choose_model01_v1 = /** @class */ (function (_super) {
             checkAnswer: false,
             answer: false
         };
-        // 临时 禁止操作期间 切页
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        var feedback = this._worldRoot.getChildByName("feedback");
+        if (feedback)
+            feedback.destroy();
     };
     choose_model01_v1.prototype.init = function (data) {
         return __awaiter(this, void 0, void 0, function () {

@@ -31,7 +31,7 @@
       <gearAni controller="c2" pages="1" values="12,p" default="0,s"/>
     </loader>
     <component id="n19_ht43" name="submit" src="qe6i20" fileName="buttons/submit.xml" xy="1526,714">
-      <Button icon="ui://ik5aab9iqe6i1z"/>
+      <Button icon="ui://ik5aab9iqe6i1z" sound="ui://ik5aab9iht4324"/>
     </component>
   </displayList>
   <transition name="t0"/>

@@ -175,9 +175,18 @@
     <component id="q2426g" name="collidered02.xml" path="/components/"/>
     <movieclip id="q2426h" name="MovieClip1.jta" path="/movieClips/"/>
     <component id="q2426j" name="collidered03.xml" path="/components/"/>
-    <component id="q2426k" name="collidered04.xml" path="/"/>
+    <component id="q2426k" name="collidered04.xml" path="/components/"/>
     <movieclip id="q2426l" name="MovieClip2.jta" path="/movieClips/"/>
     <movieclip id="q2426m" name="MovieClip3.jta" path="/movieClips/"/>
+    <component id="q2426n" name="collidered05.xml" path="/components/"/>
+    <component id="q2426o" name="collidered06.xml" path="/components/"/>
+    <component id="q2426p" name="collidered07.xml" path="/components/"/>
+    <component id="q2426q" name="collidered08.xml" path="/components/"/>
+    <component id="q2426r" name="collidered09.xml" path="/components/"/>
+    <component id="q2426s" name="collidered10.xml" path="/components/"/>
+    <component id="q2426t" name="collidered11.xml" path="/components/"/>
+    <component id="q2426u" name="collidered12.xml" path="/components/"/>
+    <component id="q2426v" name="collidered13.xml" path="/components/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

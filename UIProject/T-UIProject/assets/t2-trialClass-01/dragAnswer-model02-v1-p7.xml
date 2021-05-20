@@ -8,10 +8,10 @@
     <image id="n39_qxt0" name="n39" src="qxt015" fileName="images/dragAnswer-model02-v1/0305.png" xy="849,250" group="n43_q242"/>
     <image id="n16_rbpx" name="n16" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="989,230" group="n43_q242"/>
     <group id="n43_q242" name="dyUI" xy="849,230" size="145,471" advanced="true"/>
-    <image id="n41_qxt0" name="n41" src="qxt010" fileName="images/dragAnswer-model02-v1/k09.png" xy="990,548" group="n18_dbj2"/>
-    <image id="n37_qxt0" name="n37" src="qxt011" fileName="images/dragAnswer-model02-v1/k10.png" xy="990,359" group="n18_dbj2"/>
-    <image id="n36_qxt0" name="n36" src="qxt012" fileName="images/dragAnswer-model02-v1/k11.png" xy="1078,359" group="n18_dbj2"/>
-    <image id="n40_qxt0" name="n40" src="rbpx1" fileName="images/dragAnswer-model02-v1/k02.png" xy="990,250" group="n18_dbj2"/>
+    <component id="n41_qxt0" name="n41" src="q2426s" fileName="components/collidered10.xml" xy="990,548" group="n18_dbj2" alpha="0"/>
+    <component id="n37_qxt0" name="n37" src="q2426t" fileName="components/collidered11.xml" xy="990,359" group="n18_dbj2" alpha="0"/>
+    <component id="n36_qxt0" name="n36" src="q2426u" fileName="components/collidered12.xml" xy="1078,359" group="n18_dbj2" alpha="0"/>
+    <component id="n40_qxt0" name="n40" src="q2426v" fileName="components/collidered13.xml" xy="990,250" group="n18_dbj2" alpha="0"/>
     <group id="n18_dbj2" name="collideredBox" xy="990,250" size="148,425" advanced="true"/>
     <component id="n21_dbj2" name="n21" src="dbj2f" fileName="buttons/dragBtn.xml" xy="444,864" pivot="0,0.27" anchor="true" size="80,170" group="n19_dbj2">
       <Button icon="ui://ik5aab9iqxt0x"/>

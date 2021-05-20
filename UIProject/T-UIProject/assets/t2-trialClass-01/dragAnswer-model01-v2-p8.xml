@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="c2" pages="0,,1," selected="1"/>
+  <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
     <loader id="n2_rbpx" name="background" xy="0,0" size="1920,1080" group="n4_rbpx" url="ui://ik5aab9iqxt01g" autoSize="true"/>
     <image id="n53_qe6i" name="n53" src="qe6i1x" fileName="images/dragAnswer-model01-v2/0108.png" xy="60,180" group="n4_rbpx"/>
@@ -24,13 +24,13 @@
     </component>
     <group id="n50_qe6i" name="colliderBox" xy="650,790" size="550,120" advanced="true"/>
     <component id="n56_qe6i" name="submit" src="qe6i20" fileName="buttons/submit.xml" xy="1522,710">
-      <Button icon="ui://ik5aab9iqe6i1z" sound="ui://ik5aab9iht4324" volume="0"/>
+      <Button icon="ui://ik5aab9iqe6i1z" sound="ui://ik5aab9iht4324"/>
     </component>
-    <component id="n25_qxt0" name="title" src="qxt0h" fileName="buttons/title.xml" xy="900,100" touchable="false">
+    <component id="n25_qxt0" name="title" src="qxt0h" fileName="buttons/title.xml" xy="900,100" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://ik5aab9igygb5t" sound="ui://ik5aab9iqxt018" volume="0"/>
     </component>
-    <loader id="n26_qxt0" name="titleTrigger" xy="60,50" size="228,171" scale="0.8,0.8" url="ui://ik5aab9iqxt0k" autoSize="true" frame="12">
+    <loader id="n26_qxt0" name="titleTrigger" xy="60,50" size="228,171" scale="0.8,0.8" url="ui://ik5aab9iqxt0k" autoSize="true" playing="false">
       <gearAni controller="c2" pages="1" values="12,p" default="0,s"/>
     </loader>
   </displayList>

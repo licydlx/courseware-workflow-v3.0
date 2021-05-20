@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-05-07 14:34:26
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:22:53
+ * @LastEditTime: 2021-05-20 18:26:20
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -143,8 +143,13 @@ var dragAnswer_model01_v2 = /** @class */ (function (_super) {
             submit: false,
             answer: false
         };
-        // 临时 禁止操作期间 切页
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        var feedback = this._worldRoot.getChildByName("feedback");
+        if (feedback)
+            feedback.destroy();
     };
     dragAnswer_model01_v2.prototype.init = function (data) {
         return __awaiter(this, void 0, void 0, function () {
@@ -318,6 +323,9 @@ var dragAnswer_model01_v2 = /** @class */ (function (_super) {
                     var bool = this._cache["colliderBox"].every(function (v, i) { return v.x == nv_1[i].x && v.y == nv_1[i].y; });
                     bool ? this.onHandleGuide() : this.onFlicker(state.answer);
                 }
+                else {
+                    this.disableForbidHandle();
+                }
             }
         }
     };
@@ -391,7 +399,6 @@ var dragAnswer_model01_v2 = /** @class */ (function (_super) {
         feedbackJs.init(bool);
         feedback.parent = cc.find("Canvas").parent;
         setTimeout(function () {
-            _this.disableForbidHandle();
             feedback.destroy();
             state.submit = false;
             _this.updateState(state);

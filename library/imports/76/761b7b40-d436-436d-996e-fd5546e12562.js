@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-19 14:33:21
+ * @LastEditTime: 2021-05-20 18:25:04
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -144,8 +144,13 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             answer: false,
             submit: false,
         };
-        // 临时 禁止操作期间 切页
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        var feedback = this._worldRoot.getChildByName("feedback");
+        if (feedback)
+            feedback.destroy();
     };
     dragAnswer_model02_v1.prototype.init = function (data) {
         return __awaiter(this, void 0, void 0, function () {
@@ -278,8 +283,8 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             bool: c < 65 && index == s,
             s: s,
             pos: {
-                x: this._collideredBox[s].x,
-                y: this._collideredBox[s].y,
+                x: this._collideredBox[s].x + this._collideredBox[s].getChild("anchor").x,
+                y: this._collideredBox[s].y + this._collideredBox[s].getChild("anchor").y,
             }
         };
     };
@@ -303,10 +308,15 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
-            // let collider: any = this._colliderBox[state.colliderIndex];
-            // let collideredIndex: number = this._collideredBox.findIndex((collidered: any) => this._belongArea(collider, collidered, 100) == true);
-            // console.log(collideredIndex);
-            // console.log(this._collideredBox[collideredIndex]);
+            var obj = this._adsorb(this._colliderBox[state.colliderIndex], state.colliderIndex);
+            for (var i = 0; i < this._collideredBox.length; i++) {
+                if (i == obj.s) {
+                    this._collideredBox[i].alpha = 1;
+                }
+                else {
+                    this._collideredBox[i].alpha = 0;
+                }
+            }
         }
         if (state.drag == "end") {
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
@@ -322,6 +332,12 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
                 if (state.answer) {
                     this.transfer(state.answer);
                 }
+            }
+            if (!state.submit) {
+                this.disableForbidHandle();
+            }
+            for (var i = 0; i < this._collideredBox.length; i++) {
+                this._collideredBox[i].alpha = 0;
             }
         }
     };
@@ -355,22 +371,25 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             });
         });
     };
-    // 临时
+    // 临时 
+    // 异步 需要调整
     dragAnswer_model02_v1.prototype.transfer = function (answer) {
         var _this = this;
         this.forbidHandle();
-        this._dyUI.visible = false;
-        this._colliderGroup.visible = false;
-        this._collideredGroup.visible = false;
-        this._robot.visible = true;
-        this._robot.playing = true;
         setTimeout(function () {
-            _this._dyUI.visible = true;
-            _this._colliderGroup.visible = true;
-            _this._collideredGroup.visible = true;
-            _this._robot.visible = false;
-            _this._robot.playing = false;
-            _this.answerFeedback(answer);
+            _this._dyUI.visible = false;
+            _this._colliderGroup.visible = false;
+            _this._collideredGroup.visible = false;
+            _this._robot.visible = true;
+            _this._robot.playing = true;
+            setTimeout(function () {
+                _this._dyUI.visible = true;
+                _this._colliderGroup.visible = true;
+                _this._collideredGroup.visible = true;
+                _this._robot.visible = false;
+                _this._robot.playing = false;
+                _this.answerFeedback(answer);
+            }, 2000);
         }, 3000);
     };
     dragAnswer_model02_v1.prototype.answerFeedback = function (bool) {
@@ -384,9 +403,8 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
         var feedbackJs = feedback.getComponent(cc.Component);
         feedbackJs.init(bool);
         feedback.parent = cc.find("Canvas").parent;
+        // 临时
         setTimeout(function () {
-            // 临时
-            _this.disableForbidHandle();
             feedback.destroy();
             state.submit = false;
             _this.updateState(state);

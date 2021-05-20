@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-19 11:59:24
+ * @LastEditTime: 2021-05-20 18:25:39
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
@@ -22,14 +22,14 @@ export default class choose_model02_v1 extends cc.Component {
 
     // fairygui 组件
     private handleGuide: any;
-
     // 远程动态组件
     private feedback: any;
-
     // 选项集合
     private _options = [];
     private _cache = {};
     private _answer = 0;
+
+    private _type:any;  // 临时
 
     private _state = {};
 
@@ -85,9 +85,13 @@ export default class choose_model02_v1 extends cc.Component {
             checkAnswer: false,
             answer: false
         }
-
-        // 临时 禁止操作期间 切页
+        
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        let feedback:any = this._worldRoot.getChildByName("feedback");
+        if (feedback) feedback.destroy();
     }
 
     async init(data: any) {
@@ -95,7 +99,7 @@ export default class choose_model02_v1 extends cc.Component {
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
         let GComponent = model.uiPath;
-        let { answer, ae } = model.config;
+        let { answer, type, ae } = model.config;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
 
@@ -109,6 +113,8 @@ export default class choose_model02_v1 extends cc.Component {
         }
 
         if (answer) this._answer = answer;
+        if (type) this._type = type;
+
         if (components) {
             for (const key in components) {
                 let componentPath: any = `${pathConfig.remoteUrl}${pathConfig.componentBundlePath}${components[key].bundleName}`;
@@ -199,16 +205,35 @@ export default class choose_model02_v1 extends cc.Component {
         let border:any = curOption.getChild("border");
         let arrow:any = curOption.getChild("arrow");
         let spine:any = curOption.getChild("spine");
-        
+  
+        // 临时 赶上线
         if (active) {
             border.alpha = 1;
             arrow.alpha = 1;
-            spine.animationName = spine.animationName.slice(0, -1) + 2;
+
+            if (!this._type) {
+                spine.animationName = spine.animationName.slice(0, -1) + 2;
+            }
+
+            if (this._type == "01") {
+                spine.animationName = spine.animationName.slice(0, -1) + 4;
+                // 危险的临时操作
+                // 寻找spine动画 播放完毕的回调函数
+                setTimeout(() => {
+                    spine.animationName = spine.animationName.slice(0, -1) + 1;
+                    arrow.alpha = 0;
+                }, 5000);
+            }
         } else {
             border.alpha = 0;
             arrow.alpha = 0;
-            spine.animationName = spine.animationName.slice(0, -1) + 1;
+            if (!this._type){
+                if (spine.animationName.slice(spine.animationName.length - 1, spine.animationName.length)) {
+                    spine.animationName = spine.animationName.slice(0, -1) + 3;
+                }
+            }
         }
+        
     }
     
     async playTitle(bool: boolean) {
@@ -241,7 +266,6 @@ export default class choose_model02_v1 extends cc.Component {
 
         setTimeout(() => {
             feedback.destroy();
-
             state.submit = false;
             state.checkAnswer = false;
             this.updateState(state);

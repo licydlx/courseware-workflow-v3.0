@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-17 21:33:18
+ * @LastEditTime: 2021-05-20 18:25:49
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { pointBelongArea } = window['GlobalData'].utils;
@@ -87,8 +87,12 @@ export default class choose_model01_v1 extends cc.Component {
             answer: false
         }
         
-        // 临时 禁止操作期间 切页
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        let feedback:any = this._worldRoot.getChildByName("feedback");
+        if (feedback) feedback.destroy();
     }
 
     async init(data: any) {
@@ -208,7 +212,6 @@ export default class choose_model01_v1 extends cc.Component {
 
         setTimeout(() => {
             feedback.destroy();
-
             state.submit = false;
             state.checkAnswer = false;
             this.updateState(state);

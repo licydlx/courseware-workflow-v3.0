@@ -55,6 +55,7 @@
                 "prefabName": "choose-model02-v1",
                 "config": {
                     "answer": 2,
+                    "type":"01",
                     "ae": {
                         "handleGuide": {
                             "component": "handleGuide02",
@@ -81,6 +82,7 @@
                 "prefabName": "choose-model02-v1",
                 "config": {
                     "answer": 0,
+                    "type":"01",
                     "ae": {
                         "handleGuide": {
                             "component": "handleGuide02",

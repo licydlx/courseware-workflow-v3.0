@@ -1,11 +1,11 @@
 {
   "__type__": "cc.JsonAsset",
-  "_name": "t3-trialClass-01-asr",
+  "_name": "t3-01-trialclass-review",
   "_objFlags": 0,
   "_native": "",
   "json": {
     "name": "",
-    "courseName": "t3-trialclass-01-asr",
+    "courseName": "t3-01-trialclass-review",
     "env": "test",
     "totalPages": 10,
     "pathConfig": {
