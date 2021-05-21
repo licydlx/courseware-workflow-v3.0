@@ -1,0 +1,261 @@
+{
+    "name": "数理思维",
+    "courseName": "t2-trialclass-01",
+    "env": "test",
+    "totalPages": 13,
+    "pathConfig": {
+        "remoteUrl": "",
+        "controllerBundlePath": "",
+        "controllerName": "controller-model02",
+        "resourceBundlePath": "",
+        "resourceName": "t2-trialClass-01",
+        "panelBundlePath": "",
+        "panelName": "formal-panle-model02",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "packageName": "t2-trialClass-01"
+    },
+
+    "chapters": [
+        {
+            "model": {
+                "uiPath": "dragAnswer-model02-v1-p7",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model02-v1"
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        
+        {
+            "model": {
+                "uiPath": "dragAnswer-model02-v1-p5",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model02-v1"
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "dragAnswer-model01-v2-p10",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v2",
+                "config": {
+                    "answer": 23,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide01",
+                            "pos": {
+                                "x": -232,
+                                "y": 78
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "dragAnswer-model01-v2-p9",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v2",
+                "config": {
+                    "answer": 1,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide04"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "dragAnswer-model01-v2-p8",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model01-v2",
+                "config": {
+                    "answer": 15,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide01",
+                            "pos": {
+                                "x": -232,
+                                "y": 78
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "choose-model01-v1-p11",
+                "bundleName": "choose",
+                "prefabName": "choose-model01-v1",
+                "config": {
+                    "answer": 3,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "choose-model02-v1-p3",
+                "bundleName": "choose",
+                "prefabName": "choose-model02-v1",
+                "config": {
+                    "answer": 2,
+                    "type":"01",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": 0,
+                                "y": -260
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        
+        {
+            "model": {
+                "uiPath": "choose-model02-v1-p2",
+                "bundleName": "choose",
+                "prefabName": "choose-model02-v1",
+                "config": {
+                    "answer": 1,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": 0,
+                                "y": -260
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "choose-model02-v1-p4",
+                "bundleName": "choose",
+                "prefabName": "choose-model02-v1",
+                "config": {
+                    "answer": 0,
+                    "type":"01",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": 0,
+                                "y": -260
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "dragAnswer-model02-v1-p6",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model02-v1"
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p1",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p12",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
+            }
+        },
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p13",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
+            }
+        }
+    ]
+}

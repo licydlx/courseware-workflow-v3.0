@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="5mq4z6h4">
+  <resources>
+    <image id="odopb" name="laba_ex-idle_0.png" path="/animations/laba/"/>
+    <image id="odopc" name="laba_ex-play_00.png" path="/animations/laba/"/>
+    <image id="odopd" name="laba_ex-play_01.png" path="/animations/laba/"/>
+    <image id="odope" name="laba_ex-play_02.png" path="/animations/laba/"/>
+    <image id="odopf" name="laba_ex-play_03.png" path="/animations/laba/"/>
+    <image id="odopg" name="laba_ex-play_04.png" path="/animations/laba/"/>
+    <image id="odoph" name="laba_ex-play_05.png" path="/animations/laba/"/>
+    <image id="odopi" name="laba_ex-play_06.png" path="/animations/laba/"/>
+    <image id="odopj" name="laba_ex-play_07.png" path="/animations/laba/"/>
+    <image id="odopk" name="laba_ex-play_08.png" path="/animations/laba/"/>
+    <image id="odopl" name="laba_ex-play_09.png" path="/animations/laba/"/>
+    <image id="odopm" name="laba_ex-play_10.png" path="/animations/laba/"/>
+    <image id="qe6io" name="0112.png" path="/images/"/>
+    <component id="qe6ip" name="submit.xml" path="/components/"/>
+    <component id="qe6iq" name="handleGuide01.xml" path="/components/" exported="true"/>
+    <image id="qe6ir" name="0111.png" path="/components/images/"/>
+    <image id="qe6is" name="0109.png" path="/components/images/"/>
+    <sound id="ht43t" name="点击音效.mp3" path="/audios/"/>
+    <component id="ht43u" name="handleGuide02.xml" path="/components/" exported="true"/>
+    <image id="ht43v" name="0109.png" path="/components/images/common/"/>
+    <image id="nqb5w" name="0103.png" path="/images/"/>
+    <image id="nqb5x" name="0113.png" path="/images/" scale="tile" scale9grid="25,25,50,50"/>
+    <component id="mzaoy" name="static-model01-v1-p14.xml" path="/components/" exported="true"/>
+    <image id="mzaoz" name="0102.jpg" path="/components/images/static-model01-v1/"/>
+    <image id="mzao10" name="0113.png" path="/components/images/common/" scale="tile" scale9grid="25,25,50,50"/>
+    <image id="mzao11" name="0103.png" path="/components/images/static-model01-v1/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

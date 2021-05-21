@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n0_msxw" name="n0" src="mzao1e" fileName="images/question2/bg.png" xy="0,0"/>
+    <image id="n12_kxox" name="n12" src="mzao1f" fileName="images/question2/box.png" xy="39,34" size="1841,1011"/>
+    <image id="n44_mzao" name="n44" src="mzao2e" fileName="images/question4/ques.png" xy="462,137"/>
+    <component id="n6_kxox" name="title" src="kxoxw" fileName="buttons/title.xml" xy="931,98" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://rokozlzwmzao2d" sound="ui://rokozlzwku3e34" volume="0"/>
+    </component>
+    <loader id="n7_kxox" name="titleTrigger" xy="98,52" size="228,171" scale="0.8,0.8" url="ui://rokozlzwkxoxv" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0" values="0,s" default="0,p"/>
+    </loader>
+    <component id="n8_kxox" name="submit" src="kxoxz" fileName="buttons/submit.xml" xy="1562,722">
+      <Button icon="ui://rokozlzwkxox10" sound="ui://rokozlzwkxox11"/>
+    </component>
+    <component id="n27_mzao" name="dropBox1_0" src="mzao1p" fileName="components/common/DropBox1.xml" xy="435,544" pivot="0.5,0.5" anchor="true" size="203,203" group="n26_kxox" scale="0.85,0.85"/>
+    <component id="n28_mzao" name="dropBox1_1" src="mzao1p" fileName="components/common/DropBox1.xml" xy="658,544" pivot="0.5,0.5" anchor="true" size="203,203" group="n26_kxox" scale="0.85,0.85"/>
+    <component id="n29_mzao" name="dropBox1_2" src="mzao1p" fileName="components/common/DropBox1.xml" xy="881,544" pivot="0.5,0.5" anchor="true" size="203,203" group="n26_kxox" scale="0.85,0.85"/>
+    <component id="n30_mzao" name="dropBox1_3" src="mzao1p" fileName="components/common/DropBox1.xml" xy="1104,544" pivot="0.5,0.5" anchor="true" size="203,203" group="n26_kxox" scale="0.85,0.85"/>
+    <component id="n42_mzao" name="dropBox1_4" src="mzao1p" fileName="components/common/DropBox1.xml" xy="1327,544" pivot="0.5,0.5" anchor="true" size="203,203" group="n26_kxox" scale="0.85,0.85"/>
+    <component id="n31_mzao" name="dropBox2_0" src="mzao1q" fileName="components/common/DropBox2.xml" xy="435,711" pivot="0.5,0.5" anchor="true" size="203,143" group="n26_kxox" scale="0.85,0.85"/>
+    <component id="n32_mzao" name="dropBox2_1" src="mzao1q" fileName="components/common/DropBox2.xml" xy="658,711" pivot="0.5,0.5" anchor="true" size="203,143" group="n26_kxox" scale="0.85,0.85"/>
+    <component id="n33_mzao" name="dropBox2_2" src="mzao1q" fileName="components/common/DropBox2.xml" xy="881,711" pivot="0.5,0.5" anchor="true" size="203,143" group="n26_kxox" scale="0.85,0.85"/>
+    <component id="n34_mzao" name="dropBox2_3" src="mzao1q" fileName="components/common/DropBox2.xml" xy="1104,711" pivot="0.5,0.5" anchor="true" size="203,143" group="n26_kxox" scale="0.85,0.85"/>
+    <component id="n43_mzao" name="dropBox2_4" src="mzao1q" fileName="components/common/DropBox2.xml" xy="1327,711" pivot="0.5,0.5" anchor="true" size="203,143" group="n26_kxox" scale="0.85,0.85"/>
+    <group id="n26_kxox" name="collideredBox" xy="334,443" size="1095,340" advanced="true"/>
+    <component id="n9_kxox" name="role1_head_0" src="kxox13" fileName="components/common/DragBtn.xml" xy="1543,637" pivot="0.5,0.5" anchor="true" size="141,141" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao25"/>
+    </component>
+    <component id="n14_kxox" name="role1_head_1" src="kxox13" fileName="components/common/DragBtn.xml" xy="1543,637" pivot="0.5,0.5" anchor="true" size="141,141" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao25"/>
+    </component>
+    <component id="n15_kxox" name="role1_head_2" src="kxox13" fileName="components/common/DragBtn.xml" xy="1543,637" pivot="0.5,0.5" anchor="true" size="141,141" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao25"/>
+    </component>
+    <component id="n16_kxox" name="role1_head_3" src="kxox13" fileName="components/common/DragBtn.xml" xy="1543,637" pivot="0.5,0.5" anchor="true" size="141,141" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao25"/>
+    </component>
+    <component id="n41_mzao" name="role1_head_4" src="kxox13" fileName="components/common/DragBtn.xml" xy="1543,637" pivot="0.5,0.5" anchor="true" size="141,141" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao25"/>
+    </component>
+    <component id="n10_kxox" name="role1_foot_0" src="kxox13" fileName="components/common/DragBtn.xml" xy="602,881" pivot="0.5,0.5" anchor="true" size="143,83" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao23"/>
+    </component>
+    <component id="n19_kxox" name="role1_foot_1" src="kxox13" fileName="components/common/DragBtn.xml" xy="602,881" pivot="0.5,0.5" anchor="true" size="143,83" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao23"/>
+    </component>
+    <component id="n20_kxox" name="role1_foot_2" src="kxox13" fileName="components/common/DragBtn.xml" xy="602,881" pivot="0.5,0.5" anchor="true" size="143,83" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao23"/>
+    </component>
+    <component id="n21_kxox" name="role1_foot_3" src="kxox13" fileName="components/common/DragBtn.xml" xy="602,881" pivot="0.5,0.5" anchor="true" size="143,83" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao23"/>
+    </component>
+    <component id="n40_mzao" name="role1_foot_4" src="kxox13" fileName="components/common/DragBtn.xml" xy="602,881" pivot="0.5,0.5" anchor="true" size="143,83" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao23"/>
+    </component>
+    <component id="n22_kxox" name="role2_foot_0" src="kxox13" fileName="components/common/DragBtn.xml" xy="982,882" pivot="0.5,0.5" anchor="true" size="152,85" group="n24_kxox" customData="role2">
+      <Button icon="ui://rokozlzwmzao24"/>
+    </component>
+    <component id="n23_kxox" name="role2_foot_1" src="kxox13" fileName="components/common/DragBtn.xml" xy="982,882" pivot="0.5,0.5" anchor="true" size="152,85" group="n24_kxox" customData="role2">
+      <Button icon="ui://rokozlzwmzao24"/>
+    </component>
+    <component id="n37_mzao" name="role2_foot_2" src="kxox13" fileName="components/common/DragBtn.xml" xy="982,882" pivot="0.5,0.5" anchor="true" size="152,85" group="n24_kxox" customData="role2">
+      <Button icon="ui://rokozlzwmzao24"/>
+    </component>
+    <component id="n38_mzao" name="role2_foot_3" src="kxox13" fileName="components/common/DragBtn.xml" xy="982,882" pivot="0.5,0.5" anchor="true" size="152,85" group="n24_kxox" customData="role2">
+      <Button icon="ui://rokozlzwmzao24"/>
+    </component>
+    <component id="n39_mzao" name="role2_foot_4" src="kxox13" fileName="components/common/DragBtn.xml" xy="982,882" pivot="0.5,0.5" anchor="true" size="152,85" group="n24_kxox" customData="role2">
+      <Button icon="ui://rokozlzwmzao24"/>
+    </component>
+    <group id="n24_kxox" name="colliderBox" xy="530,566" size="1083,358" advanced="true"/>
+  </displayList>
+</component>

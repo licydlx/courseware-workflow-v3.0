@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="147,127">
+  <displayList>
+    <image id="n41_qxt0" name="n41" src="qxt010" fileName="images/dragAnswer-model02-v1/k09.png" xy="0,0"/>
+    <loader id="n42_q242" name="anchor" xy="0,-56" size="111,225" scale="0.8,0.8" url="ui://ik5aab9iqxt0x" autoSize="true" clearOnPublish="true"/>
+  </displayList>
+</component>

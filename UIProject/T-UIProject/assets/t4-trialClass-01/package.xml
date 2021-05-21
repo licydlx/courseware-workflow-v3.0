@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="rokozlzw">
+  <resources>
+    <component id="msxw8" name="static-model01-v1-p1.xml" path="/components/pages/" exported="true"/>
+    <image id="msxwa" name="bg.png" path="/images/question1/"/>
+    <image id="msxwb" name="box.png" path="/images/question1/" scale="9grid" scale9grid="295,113,590,226"/>
+    <image id="msxwc" name="icon_1.png" path="/images/question1/"/>
+    <image id="msxwd" name="icon_2.png" path="/images/question1/"/>
+    <image id="msxwe" name="submit.png" path="/images/question1/"/>
+    <component id="msxwf" name="SubmitBtn.xml" path="/components/common/" exported="true"/>
+    <component id="msxwg" name="Question1Page01.xml" path="/components/pages/" exported="true"/>
+    <component id="msxwh" name="TitleCom.xml" path="/components/common/" exported="true"/>
+    <movieclip id="odopn" name="laba.jta" path="/animations/"/>
+    <image id="msxwi" name="title_2.png" path="/images/question1/"/>
+    <image id="msxwj" name="title_4.png" path="/images/question1/"/>
+    <image id="msxwk" name="title_3.png" path="/images/question1/"/>
+    <image id="msxwl" name="bg.png" path="/images/static/"/>
+    <component id="kxoxp" name="TypeDropBox1.xml" path="/components/Type1/"/>
+    <component id="kxoxq" name="TypeDragBox1.xml" path="/components/Type1/"/>
+    <image id="kxoxr" name="icon_4.png" path="/images/question1/"/>
+    <image id="kxoxs" name="icon_3.png" path="/images/question1/"/>
+    <image id="kxoxt" name="icon_5.png" path="/images/question1/"/>
+    <image id="kxoxu" name="icon_6.png" path="/images/question1/"/>
+    <movieclip id="kxoxv" name="laba.jta" path="/animations/laba/"/>
+    <component id="kxoxw" name="title.xml" path="/buttons/"/>
+    <image id="kxoxx" name="气泡@2x (7).png" path="/images/common/"/>
+    <component id="kxoxz" name="submit.xml" path="/buttons/"/>
+    <image id="kxox10" name="0112.png" path="/images/common/"/>
+    <sound id="kxox11" name="click.mp3" path="/audios/" exported="true"/>
+    <component id="kxox13" name="DragBtn.xml" path="/components/common/"/>
+    <image id="kxox14" name="title_1.png" path="/images/question1/"/>
+    <component id="mzao15" name="Question1Page04.xml" path="/components/pages/" exported="true"/>
+    <component id="mzao16" name="Question1Page03.xml" path="/components/pages/" exported="true"/>
+    <component id="mzao17" name="Question1Page02.xml" path="/components/pages/" exported="true"/>
+    <image id="mzao18" name="title_2.png" path="/images/question2/"/>
+    <image id="mzao19" name="title_3.png" path="/images/question2/"/>
+    <image id="mzao1a" name="title_4.png" path="/images/question2/"/>
+    <image id="mzao1b" name="title_1.png" path="/images/question2/"/>
+    <component id="mzao1c" name="Question2Page01.xml" path="/components/pages/" exported="true"/>
+    <image id="mzao1d" name="line_dash_4.png" path="/images/question2/"/>
+    <image id="mzao1e" name="bg.png" path="/images/question2/"/>
+    <image id="mzao1f" name="box.png" path="/images/question2/"/>
+    <image id="mzao1g" name="icon_1.png" path="/images/question2/"/>
+    <image id="mzao1h" name="icon_2.png" path="/images/question2/"/>
+    <image id="mzao1i" name="icon_3.png" path="/images/question2/"/>
+    <image id="mzao1j" name="icon_4.png" path="/images/question2/"/>
+    <image id="mzao1k" name="line_dash_1.png" path="/images/question2/"/>
+    <image id="mzao1l" name="line_dash_2.png" path="/images/question2/"/>
+    <image id="mzao1m" name="line_dash_3.png" path="/images/question2/"/>
+    <component id="mzao1p" name="DropBox1.xml" path="/components/common/"/>
+    <component id="mzao1q" name="DropBox2.xml" path="/components/common/"/>
+    <component id="mzao1r" name="Question2Page02.xml" path="/components/pages/" exported="true"/>
+    <component id="mzao1s" name="Question2Page03.xml" path="/components/pages/" exported="true"/>
+    <image id="mzao1t" name="icon_8.png" path="/images/question2/"/>
+    <image id="mzao1u" name="icon_5.png" path="/images/question2/"/>
+    <image id="mzao1v" name="icon_6.png" path="/images/question2/"/>
+    <image id="mzao1w" name="icon_7.png" path="/images/question2/"/>
+    <component id="mzao1x" name="Question2Page04.xml" path="/components/pages/" exported="true"/>
+    <component id="mzao1y" name="Question3Page01.xml" path="/components/pages/" exported="true"/>
+    <image id="mzao1z" name="title_2.png" path="/images/question3/"/>
+    <image id="mzao20" name="title_3.png" path="/images/question3/"/>
+    <image id="mzao21" name="title_4.png" path="/images/question3/"/>
+    <image id="mzao22" name="title_1.png" path="/images/question3/"/>
+    <image id="mzao23" name="icon_1.png" path="/images/question3/"/>
+    <image id="mzao24" name="icon_2.png" path="/images/question3/"/>
+    <image id="mzao25" name="icon_3.png" path="/images/question3/"/>
+    <image id="mzao26" name="line_dash_1.png" path="/images/question3/"/>
+    <image id="mzao27" name="line_dash_2.png" path="/images/question3/"/>
+    <image id="mzao28" name="line_dash_3.png" path="/images/question3/"/>
+    <image id="mzao29" name="line_dash_4.png" path="/images/question3/"/>
+    <component id="mzao2a" name="Question3Page02.xml" path="/components/pages/" exported="true"/>
+    <component id="mzao2b" name="Question3Page03.xml" path="/components/pages/" exported="true"/>
+    <component id="mzao2c" name="Question3Page04.xml" path="/components/pages/" exported="true"/>
+    <image id="mzao2d" name="title_1.png" path="/images/question4/"/>
+    <image id="mzao2e" name="ques.png" path="/images/question4/"/>
+    <component id="mzao2f" name="Question4Page01.xml" path="/components/pages/" exported="true"/>
+    <image id="mzao2h" name="bg2.png" path="/images/static/"/>
+    <component id="mzao2i" name="static-model01-v1-p3.xml" path="/components/pages/" exported="true"/>
+    <image id="mzao2k" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
+    <image id="mzao2l" name="0103.png" path="/images/common/"/>
+    <component id="mzao2m" name="static-model01-v1-p2.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3e2n" name="role_2_0.png" path="/images/question4/" exported="true"/>
+    <image id="ku3e2o" name="role_2_1.png" path="/images/question4/" exported="true"/>
+    <image id="ku3e2p" name="role_1_0.png" path="/images/question4/" exported="true"/>
+    <image id="ku3e2q" name="role_1_1.png" path="/images/question4/" exported="true"/>
+    <image id="ku3e2r" name="role_0_0.png" path="/images/question4/" exported="true"/>
+    <image id="ku3e2s" name="role_0_1.png" path="/images/question4/" exported="true"/>
+    <sound id="ku3e2t" name="drop.mp3" path="/audios/" exported="true"/>
+    <sound id="ku3e2u" name="question1_title_3.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e2v" name="question1_title_4.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e2w" name="question2_title_1.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e2x" name="question2_title_2.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e2y" name="question2_title_3.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e2z" name="question2_title_4.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e30" name="question3_title_1.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e31" name="question3_title_2.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e32" name="question3_title_3.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e33" name="question3_title_4.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e34" name="question4_title_1.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e35" name="question1_title_1.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e36" name="question1_title_2.mp3" path="/audios/ttile/"/>
+  </resources>
+  <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4\t4-trialClass-01" packageCount="2" codePath="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4"/>
+</packageDescription>

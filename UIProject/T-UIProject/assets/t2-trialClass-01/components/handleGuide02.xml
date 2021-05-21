@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_gst0" name="n0" src="ht432m" fileName="components/images/common/0109.png" xy="431,764"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Shake" target="n0_gst0" value="3,0.5"/>
+  </transition>
+</component>
