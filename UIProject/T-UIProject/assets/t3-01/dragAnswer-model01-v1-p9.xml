@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="2,,0,,3,,4,,5,,6,,7," selected="0"/>
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n39_bkhu" name="n39" src="bkhueb" fileName="images/dragAnswer-model01-v1/0101.jpg" xy="0,0" group="n16_lgf1"/>
+    <image id="n33_8vqh" name="n33" src="8vqhbh" fileName="images/dragAnswer-model01-v1/0123.png" xy="546,0" group="n16_lgf1"/>
+    <image id="n36_8vqh" name="n36" src="8vqhbj" fileName="images/dragAnswer-model01-v1/0125.png" xy="1570,400" group="n16_lgf1"/>
+    <group id="n16_lgf1" name="UI" xy="0,0" size="1920,1080"/>
+    <image id="n40_bkhu" name="n40" src="bkhuec" fileName="images/dragAnswer-model01-v1/0144.png" xy="760,931" group="n37_8vqh"/>
+    <image id="n20_lgf1" name="n20" src="lgf19l" fileName="images/libra/0104.png" xy="730,696" pivot="0.5,0.2" group="n37_8vqh" scale="1.2,1.2" rotation="-8">
+      <gearLook controller="c1" pages="2,0,3,4,5,6,7" values="1,-8,0,0|1,-6,0,0|1,-4,0,0|1,-2,0,0|1,0,0,0|1,2,0,0|1,4,0,0" tween="true" duration=".2"/>
+    </image>
+    <image id="n21_lgf1" name="n21" src="lgf19j" fileName="images/libra/0102.png" xy="820,745" group="n37_8vqh" scale="1.2,1.2"/>
+    <image id="n22_lgf1" name="n22" src="lgf19k" fileName="images/libra/0103.png" xy="920,687" group="n37_8vqh" scale="1.2,1.2"/>
+    <component id="n26_lgf1" name="uiBtn" src="lgf19t" fileName="buttons/uiBtn1.xml" xy="690,610" group="n37_8vqh" scale="1.2,1.2">
+      <gearXY controller="c1" pages="2,0,3,4,5,6,7" values="690,610|690,602|690,594|690,584|690,574|690,566|690,556" tween="true" duration=".2"/>
+      <Button icon="ui://pozm437j8vqhbe"/>
+    </component>
+    <component id="n38_8vqh" name="btnBox" src="8vqhbm" fileName="buttons/btnBox7.xml" xy="1060,328" group="n37_8vqh" scale="1.2,1.2">
+      <gearXY controller="c1" pages="2,0,3,4,5,6,7" values="1060,328|1060,336|1060,344|1060,354|1060,364|1060,372|1060,380" tween="true" duration=".2"/>
+    </component>
+    <group id="n37_8vqh" name="libra" xy="590,328" size="730,696"/>
+    <component id="n31_taz8" name="submit" src="taz89v" fileName="buttons/submit.xml" xy="1612,811">
+      <Button icon="ui://pozm437jtaz89w" sound="ui://pozm437jtaz8ab"/>
+    </component>
+    <component id="n4_106c9" name="dragBtn" src="106c9g" fileName="buttons/dragBtn.xml" xy="1640,458" size="150,176">
+      <Button icon="ui://pozm437j8vqhbf"/>
+    </component>
+    <component id="n43_gco1" name="title" src="8vqhaw" fileName="buttons/title.xml" xy="1000,100" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="1" values="1,0,0,0" default="0,0,0,0"/>
+      <Button icon="ui://pozm437jbkhue6" sound="ui://pozm437jtaz89z" volume="0"/>
+    </component>
+    <loader id="n44_gco1" name="titleTrigger" xy="70,70" size="228,171" scale="0.8,0.8" url="ui://pozm437jgco1ex" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="1" values="12,p" default="0,s"/>
+    </loader>
+  </displayList>
+</component>

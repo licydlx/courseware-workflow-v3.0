@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_taz8" name="n0" src="qe6i22" fileName="components/images/0111.png" xy="871,662" scale="0.5,0.5" rotation="-20"/>
+    <image id="n1_taz8" name="n1" src="qe6i23" fileName="components/images/0109.png" xy="922,835"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="XY" target="n1_taz8" tween="true" startValue="918,826" endValue="995,642" duration="12"/>
+    <item time="12" type="XY" target="n1_taz8" tween="true" startValue="995,642" endValue="1184,544" duration="12"/>
+  </transition>
+</component>
