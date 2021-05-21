@@ -1,0 +1,5810 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "icon_ani",
+  "_objFlags": 0,
+  "_native": "",
+  "_skeletonJson": {
+    "skeleton": {
+      "hash": "4qihDlXfTGwBmUIdNcSYYeCZLvg",
+      "spine": "3.8.99"
+    },
+    "bones": [
+      {
+        "name": "root"
+      },
+      {
+        "name": "骨骼",
+        "parent": "root",
+        "scaleX": 0.5,
+        "scaleY": 0.5
+      },
+      {
+        "name": "right",
+        "parent": "骨骼",
+        "length": 150
+      },
+      {
+        "name": "left",
+        "parent": "骨骼",
+        "length": 150,
+        "rotation": 180
+      },
+      {
+        "name": "left_x",
+        "parent": "骨骼",
+        "length": 150,
+        "rotation": 180
+      }
+    ],
+    "slots": [
+      {
+        "name": "right",
+        "bone": "right"
+      },
+      {
+        "name": "left",
+        "bone": "left"
+      },
+      {
+        "name": "left_x",
+        "bone": "left_x"
+      }
+    ],
+    "skins": [
+      {
+        "name": "default",
+        "attachments": {
+          "left": {
+            "images/1-1/圣诞树左@2x": {
+              "x": 60,
+              "rotation": 180,
+              "width": 122,
+              "height": 424
+            },
+            "images/1-1/茶壶左@2x": {
+              "x": 108.5,
+              "rotation": 180,
+              "width": 218,
+              "height": 266
+            },
+            "images/1-1/衣服左@2x": {
+              "x": 103,
+              "rotation": 180,
+              "width": 206,
+              "height": 322
+            },
+            "images/1-1/飞机左@2x": {
+              "x": 83,
+              "rotation": 180,
+              "width": 170,
+              "height": 354
+            },
+            "images/1-2/心左@2x": {
+              "x": 64,
+              "rotation": 180,
+              "width": 130,
+              "height": 198
+            },
+            "images/1-2/火箭左@2x": {
+              "x": 65,
+              "rotation": 180,
+              "width": 132,
+              "height": 416
+            },
+            "images/1-2/蝴蝶左@2x": {
+              "x": 97,
+              "rotation": 180,
+              "width": 196,
+              "height": 218
+            },
+            "images/1-2/蝴蝶结左@2x": {
+              "x": 102,
+              "rotation": 180,
+              "width": 206,
+              "height": 388
+            },
+            "images/例题1/枫叶左@2x": {
+              "x": 65,
+              "rotation": 180,
+              "width": 132,
+              "height": 280
+            },
+            "images/例题1/相机左@2x": {
+              "x": 93,
+              "y": 2,
+              "rotation": 180,
+              "width": 186,
+              "height": 250
+            },
+            "images/例题1/苹果左@2x": {
+              "x": 70.65,
+              "rotation": 180,
+              "width": 144,
+              "height": 322
+            },
+            "images/例题1/雪人左@2x": {
+              "x": 92,
+              "rotation": 180,
+              "width": 184,
+              "height": 356
+            },
+            "images/练习1/橙2@2x": {
+              "x": 87,
+              "y": -1.97,
+              "rotation": 180,
+              "width": 174,
+              "height": 420
+            },
+            "images/练习1/芒果2@2x": {
+              "x": 68,
+              "rotation": 180,
+              "width": 136,
+              "height": 432
+            },
+            "images/练习1/苹果2@2x": {
+              "x": 98.75,
+              "rotation": 180,
+              "width": 200,
+              "height": 440
+            },
+            "images/练习1/雪梨2@2x": {
+              "x": 71,
+              "rotation": 180,
+              "width": 144,
+              "height": 406
+            },
+            "images/练习2/企鹅2@2x": {
+              "x": 78,
+              "rotation": 180,
+              "width": 158,
+              "height": 422
+            },
+            "images/练习2/猪2@2x": {
+              "x": 91,
+              "rotation": 180,
+              "width": 182,
+              "height": 432
+            },
+            "images/练习2/猫头鹰2@2x": {
+              "x": 81,
+              "rotation": 180,
+              "width": 166,
+              "height": 422
+            },
+            "images/练习2/老虎2@2x": {
+              "x": 127.5,
+              "rotation": 180,
+              "width": 258,
+              "height": 404
+            },
+            "images/练习3/蝴蝶@2x": {
+              "x": 113,
+              "rotation": 180,
+              "width": 226,
+              "height": 272
+            },
+            "images/练习4/圣诞老人@2x": {
+              "x": 85,
+              "rotation": 180,
+              "width": 170,
+              "height": 420
+            }
+          },
+          "left_x": {
+            "images/1-1/圣诞树虚线@2x": {
+              "x": 60,
+              "rotation": 180,
+              "width": 122,
+              "height": 424
+            },
+            "images/1-1/茶壶虚线@2x": {
+              "x": 108.5,
+              "rotation": 180,
+              "width": 218,
+              "height": 266
+            },
+            "images/1-1/衣服虚线@2x": {
+              "x": 103,
+              "rotation": 180,
+              "width": 206,
+              "height": 322
+            },
+            "images/1-1/飞机虚线@2x": {
+              "x": 83,
+              "rotation": 180,
+              "width": 170,
+              "height": 354
+            },
+            "images/1-2/心左虚线@2x": {
+              "x": 64,
+              "rotation": 180,
+              "width": 130,
+              "height": 198
+            },
+            "images/1-2/火箭虚线@2x": {
+              "x": 65,
+              "rotation": 180,
+              "width": 132,
+              "height": 416
+            },
+            "images/1-2/蝴蝶结虚线@2x": {
+              "x": 102,
+              "rotation": 180,
+              "width": 206,
+              "height": 388
+            },
+            "images/1-2/蝴蝶虚线@2x": {
+              "x": 98.44,
+              "y": -1.28,
+              "scaleX": 1.03,
+              "scaleY": 1.03,
+              "rotation": 180,
+              "width": 196,
+              "height": 218
+            },
+            "images/例题1/枫叶虚线@2x": {
+              "x": 67.23,
+              "rotation": 180,
+              "width": 132,
+              "height": 280
+            },
+            "images/例题1/相机虚线@2x": {
+              "x": 93,
+              "y": 2,
+              "rotation": 180,
+              "width": 186,
+              "height": 250
+            },
+            "images/例题1/苹果虚线@2x": {
+              "x": 70.65,
+              "y": 4,
+              "rotation": 180,
+              "width": 148,
+              "height": 312
+            },
+            "images/例题1/雪人虚线@2x": {
+              "x": 92,
+              "rotation": 180,
+              "width": 184,
+              "height": 356
+            },
+            "images/练习1/橙2虚线@2x": {
+              "x": 88.55,
+              "y": -3.19,
+              "scaleX": 1.09,
+              "scaleY": 1.09,
+              "rotation": 180,
+              "width": 160,
+              "height": 388
+            },
+            "images/练习1/芒果虚线@2x": {
+              "x": 68,
+              "scaleX": 1.1,
+              "scaleY": 1.1,
+              "rotation": 180,
+              "width": 124,
+              "height": 400
+            },
+            "images/练习1/苹果2虚线@2x": {
+              "x": 100,
+              "y": -0.52,
+              "scaleX": 1.09,
+              "scaleY": 1.09,
+              "rotation": 180,
+              "width": 184,
+              "height": 406
+            },
+            "images/练习1/雪梨2虚线@2x": {
+              "x": 71,
+              "y": -1.03,
+              "scaleX": 1.09,
+              "scaleY": 1.09,
+              "rotation": 180,
+              "width": 132,
+              "height": 376
+            },
+            "images/练习2/企鹅2虚线@2x": {
+              "x": 78.46,
+              "y": 0.46,
+              "scaleX": 1.09,
+              "scaleY": 1.09,
+              "rotation": 180,
+              "width": 144,
+              "height": 390
+            },
+            "images/练习2/猪2虚线@2x": {
+              "x": 91,
+              "y": -1.38,
+              "scaleX": 1.08,
+              "scaleY": 1.08,
+              "rotation": 180,
+              "width": 168,
+              "height": 400
+            },
+            "images/练习2/猫头鹰2虚线@2x": {
+              "x": 83.28,
+              "y": 1.38,
+              "scaleX": 1.09,
+              "scaleY": 1.09,
+              "rotation": 180,
+              "width": 152,
+              "height": 390
+            },
+            "images/练习2/老虎2虚线@2x": {
+              "x": 129.87,
+              "scaleX": 1.09,
+              "scaleY": 1.09,
+              "rotation": 180,
+              "width": 238,
+              "height": 374
+            },
+            "images/练习3/蝴蝶虚线@2x": {
+              "x": 113,
+              "rotation": 180,
+              "width": 226,
+              "height": 272
+            },
+            "images/练习4/圣诞老人虚线@2x": {
+              "x": 85,
+              "rotation": 180,
+              "width": 170,
+              "height": 420
+            }
+          },
+          "right": {
+            "images/1-1/圣诞树右@2x": {
+              "x": 60,
+              "width": 120,
+              "height": 424
+            },
+            "images/1-1/茶壶右@2x": {
+              "x": 108.5,
+              "width": 218,
+              "height": 266
+            },
+            "images/1-1/衣服右@2x": {
+              "x": 103,
+              "width": 208,
+              "height": 322
+            },
+            "images/1-1/飞机右@2x": {
+              "x": 83,
+              "width": 170,
+              "height": 354
+            },
+            "images/1-2/心右@2x": {
+              "x": 64,
+              "width": 132,
+              "height": 198
+            },
+            "images/1-2/火箭右@2x": {
+              "x": 65,
+              "width": 132,
+              "height": 416
+            },
+            "images/1-2/蝴蝶右@2x": {
+              "x": 97,
+              "width": 196,
+              "height": 218
+            },
+            "images/1-2/蝴蝶结右@2x": {
+              "x": 102,
+              "width": 204,
+              "height": 388
+            },
+            "images/例题1/枫叶右@2x": {
+              "x": 65,
+              "width": 134,
+              "height": 280
+            },
+            "images/例题1/相机右@2x": {
+              "x": 93,
+              "width": 186,
+              "height": 250
+            },
+            "images/例题1/苹果右 @2x": {
+              "x": 70.65,
+              "width": 146,
+              "height": 322
+            },
+            "images/例题1/雪人右@2x": {
+              "x": 92,
+              "width": 184,
+              "height": 356
+            },
+            "images/练习1/橙@2x": {
+              "x": 87,
+              "width": 174,
+              "height": 420
+            },
+            "images/练习1/芒果@2x": {
+              "x": 68,
+              "width": 136,
+              "height": 432
+            },
+            "images/练习1/苹果@2x": {
+              "x": 98.75,
+              "y": -0.59,
+              "scaleX": 1.0725,
+              "scaleY": 1.0725,
+              "width": 184,
+              "height": 406
+            },
+            "images/练习1/雪梨@2x": {
+              "x": 71,
+              "width": 144,
+              "height": 406
+            },
+            "images/练习2/企鹅@2x": {
+              "x": 78,
+              "width": 156,
+              "height": 422
+            },
+            "images/练习2/猪@2x": {
+              "x": 91,
+              "width": 182,
+              "height": 432
+            },
+            "images/练习2/猫头鹰@2x": {
+              "x": 81,
+              "width": 164,
+              "height": 422
+            },
+            "images/练习2/老虎@2x": {
+              "x": 127.5,
+              "y": -1.54,
+              "width": 258,
+              "height": 404
+            },
+            "images/练习3/蝴蝶1@2x": {
+              "x": 113,
+              "width": 226,
+              "height": 272
+            },
+            "images/练习4/圣诞老人1@2x": {
+              "x": 85,
+              "width": 170,
+              "height": 420
+            }
+          }
+        }
+      }
+    ],
+    "animations": {
+      "1-1_01_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/1-1/茶壶左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-1/茶壶右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "1-1_01_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/茶壶左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/1-1/茶壶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/茶壶右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "1-1_01_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/1-1/茶壶左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/茶壶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-1/茶壶右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "1-1_01_ani4": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 1,
+                "color": "ffffff00",
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "color": "ffffff00"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/茶壶左@2x"
+              },
+              {
+                "time": 1,
+                "name": null
+              },
+              {
+                "time": 4,
+                "name": "images/1-1/茶壶左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffff00"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 3,
+                "color": "ffffff00"
+              },
+              {
+                "time": 3.6667,
+                "color": "ffffffff",
+                "curve": "stepped"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 5,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 0.3333,
+                "name": "images/1-1/茶壶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1,
+                "color": "979797ff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/茶壶右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          }
+        }
+      },
+      "1-1_02_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/1-1/圣诞树左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-1/圣诞树右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "1-1_02_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/圣诞树左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/1-1/圣诞树虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/圣诞树右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "1-1_02_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/1-1/圣诞树左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/圣诞树虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-1/圣诞树右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "1-1_02_ani4": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 1,
+                "color": "ffffff00",
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "color": "ffffff00"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/圣诞树左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffff00"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 3,
+                "color": "ffffff00"
+              },
+              {
+                "time": 3.6667,
+                "color": "ffffffff",
+                "curve": "stepped"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 5,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 0.3333,
+                "name": "images/1-1/圣诞树虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1,
+                "color": "979797ff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/圣诞树右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          }
+        }
+      },
+      "1-1_03_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/1-1/飞机左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-1/飞机右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "1-1_03_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/飞机左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/1-1/飞机虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/飞机右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "1-1_03_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/1-1/飞机左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/飞机虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-1/飞机右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "1-1_03_ani4": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 1,
+                "color": "ffffff00",
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "color": "ffffff00"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/飞机左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffff00"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 3,
+                "color": "ffffff00"
+              },
+              {
+                "time": 3.6667,
+                "color": "ffffffff",
+                "curve": "stepped"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 5,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 0.3333,
+                "name": "images/1-1/飞机虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1,
+                "color": "979797ff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/飞机右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          },
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          }
+        }
+      },
+      "1-1_04_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/1-1/衣服左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-1/衣服右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "1-1_04_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/衣服左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/1-1/衣服虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/衣服右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "1-1_04_ani3": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffff00"
+              },
+              {
+                "time": 0.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/1-1/衣服左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/衣服虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-1/衣服右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "1-1_04_ani4": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 1,
+                "color": "ffffff00",
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "color": "ffffff00"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/衣服左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffff00"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 3,
+                "color": "ffffff00"
+              },
+              {
+                "time": 3.6667,
+                "color": "ffffffff",
+                "curve": "stepped"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 5,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 0.3333,
+                "name": "images/1-1/衣服虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1,
+                "color": "979797ff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-1/衣服右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          },
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          }
+        }
+      },
+      "1-2_01_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/1-2/火箭左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-2/火箭右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "1-2_01_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/火箭左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/1-2/火箭虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/火箭右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "1-2_01_ani3": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffff00"
+              },
+              {
+                "time": 0.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/1-2/火箭左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/火箭虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-2/火箭右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "1-2_01_ani4": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 1,
+                "color": "ffffff00",
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "color": "ffffff00"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/火箭左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffff00"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 3,
+                "color": "ffffff00"
+              },
+              {
+                "time": 3.6667,
+                "color": "ffffffff",
+                "curve": "stepped"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 5,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 0.3333,
+                "name": "images/1-2/火箭虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1,
+                "color": "979797ff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/火箭右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          },
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          }
+        }
+      },
+      "1-2_02_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "1-2_02_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/1-2/蝴蝶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "1-2_02_ani3": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffff00"
+              },
+              {
+                "time": 0.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/1-2/蝴蝶左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "1-2_02_ani4": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 1,
+                "color": "ffffff00",
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "color": "ffffff00"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffff00"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 3,
+                "color": "ffffff00"
+              },
+              {
+                "time": 3.6667,
+                "color": "ffffffff",
+                "curve": "stepped"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 5,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 0.3333,
+                "name": "images/1-2/蝴蝶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1,
+                "color": "979797ff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          },
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          }
+        }
+      },
+      "1-2_03_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/1-2/心左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-2/心右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "1-2_03_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/心左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/1-2/心左虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/心右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "1-2_03_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/1-2/心左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/心左虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-2/心右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "1-2_03_ani4": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 1,
+                "color": "ffffff00",
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "color": "ffffff00"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/心左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffff00"
+              },
+              {
+                "time": 2.3333,
+                "color": "ff0000ff"
+              },
+              {
+                "time": 3,
+                "color": "ffffff00"
+              },
+              {
+                "time": 3.6667,
+                "color": "ff0000ff"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 5,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 0.3333,
+                "name": "images/1-2/心左虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1,
+                "color": "979797ff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/心右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          },
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          }
+        }
+      },
+      "1-2_04_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶结左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶结右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "1-2_04_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶结左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/1-2/蝴蝶结虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶结右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "1-2_04_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/1-2/蝴蝶结左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶结虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶结右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "1-2_04_ani4": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 0.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 1,
+                "color": "ffffff00",
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "color": "ffffff00"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶结左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffff00"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 3,
+                "color": "ffffff00"
+              },
+              {
+                "time": 3.6667,
+                "color": "ffffffff",
+                "curve": "stepped"
+              },
+              {
+                "time": 4.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 5,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "time": 0.3333,
+                "name": "images/1-2/蝴蝶结虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.3333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1,
+                "color": "979797ff"
+              },
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/1-2/蝴蝶结右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          },
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.3333,
+                "x": 0
+              },
+              {
+                "time": 1,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 4,
+                "x": -1
+              },
+              {
+                "time": 4.3333,
+                "x": 0
+              },
+              {
+                "time": 5
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_01_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习1/橙2@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习1/橙@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_01_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/橙2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习1/橙2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/橙@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_01_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习1/橙2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/橙2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习1/橙@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_02_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习1/苹果2@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习1/苹果@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_02_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/苹果2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习1/苹果2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/苹果@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_02_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/练习1/苹果2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/苹果2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习1/苹果@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_03_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习1/雪梨2@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习1/雪梨@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_03_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/雪梨2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习1/雪梨2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/雪梨@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_03_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/练习1/雪梨2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/雪梨2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习1/雪梨@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_04_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习1/芒果2@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习1/芒果@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_04_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/芒果2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习1/芒果虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/芒果@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi1_04_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/练习1/芒果2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习1/芒果虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习1/芒果@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_01_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习2/老虎2@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习2/老虎@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_01_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/老虎2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习2/老虎2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/老虎@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_01_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/练习2/老虎2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/老虎2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习2/老虎@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_02_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习2/猪2@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习2/猪@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_02_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/猪2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习2/猪2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/猪@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_02_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/练习2/猪2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/猪2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习2/猪@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_03_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习2/企鹅2@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习2/企鹅@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_03_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/企鹅2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习2/企鹅2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/企鹅@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_03_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/练习2/企鹅2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/企鹅2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习2/企鹅@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_04_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习2/猫头鹰2@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习2/猫头鹰@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_04_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/猫头鹰2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习2/猫头鹰2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/猫头鹰@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi2_04_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/练习2/猫头鹰2@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习2/猫头鹰2虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习2/猫头鹰@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "lianxi3_01_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习3/蝴蝶@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习3/蝴蝶1@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi3_01_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习3/蝴蝶@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习3/蝴蝶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习3/蝴蝶1@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi3_01_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/练习3/蝴蝶@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习3/蝴蝶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习3/蝴蝶1@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "lianxi4_01_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/练习4/圣诞老人@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习4/圣诞老人1@2x"
+              }
+            ]
+          }
+        }
+      },
+      "lianxi4_01_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习4/圣诞老人@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/练习4/圣诞老人虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习4/圣诞老人1@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "lianxi4_01_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/练习4/圣诞老人@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/练习4/圣诞老人虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/练习4/圣诞老人1@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "liti1_01_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/例题1/雪人左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/例题1/雪人右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "liti1_01_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/雪人左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/例题1/雪人虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/雪人右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "liti1_01_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/例题1/雪人左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/雪人虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/例题1/雪人右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "liti1_02_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/例题1/枫叶左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/例题1/枫叶右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "liti1_02_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/枫叶左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/例题1/枫叶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/枫叶右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "liti1_02_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/例题1/枫叶左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/枫叶虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/例题1/枫叶右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "liti1_03_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/例题1/相机左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/例题1/相机右@2x"
+              }
+            ]
+          }
+        }
+      },
+      "liti1_03_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/相机左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/例题1/相机虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/相机右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "liti1_03_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/例题1/相机左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/相机虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/例题1/相机右@2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      },
+      "liti1_04_ani1": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "name": "images/例题1/苹果左@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/例题1/苹果右 @2x"
+              }
+            ]
+          }
+        }
+      },
+      "liti1_04_ani2": {
+        "slots": {
+          "left": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff",
+                "curve": 0.25,
+                "c3": 0.75
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/苹果左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "attachment": [
+              {
+                "time": 0.8333,
+                "name": "images/例题1/苹果虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "color": [
+              {
+                "time": 0.8333,
+                "color": "ffffffff"
+              },
+              {
+                "time": 1.3333,
+                "color": "979797ff",
+                "curve": "stepped"
+              },
+              {
+                "time": 1.6667,
+                "color": "979797ff"
+              },
+              {
+                "time": 2.1667,
+                "color": "ffffffff"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/苹果右 @2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {},
+              {
+                "time": 0.8333,
+                "x": 0
+              },
+              {
+                "time": 2.1667,
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 3,
+                "x": -1
+              }
+            ]
+          }
+        }
+      },
+      "liti1_04_ani3": {
+        "slots": {
+          "left": {
+            "attachment": [
+              {
+                "time": 1,
+                "name": "images/例题1/苹果左@2x"
+              }
+            ]
+          },
+          "left_x": {
+            "color": [
+              {
+                "time": 1.6667,
+                "color": "ffffffff"
+              },
+              {
+                "time": 2.3333,
+                "color": "ffffff00"
+              }
+            ],
+            "attachment": [
+              {
+                "name": "images/例题1/苹果虚线@2x"
+              }
+            ]
+          },
+          "right": {
+            "attachment": [
+              {
+                "name": "images/例题1/苹果右 @2x"
+              }
+            ]
+          }
+        },
+        "bones": {
+          "left": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667
+              }
+            ]
+          },
+          "left_x": {
+            "scale": [
+              {
+                "x": -1,
+                "curve": "stepped"
+              },
+              {
+                "time": 0.3333,
+                "x": -1
+              },
+              {
+                "time": 1,
+                "x": 0
+              },
+              {
+                "time": 1.6667,
+                "curve": "stepped"
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "_atlasText": "\nicon_ani.png\nsize: 1967,554\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nimages/1-1/圣诞树右@2x\n  rotate: false\n  xy: 251, 126\n  size: 60, 212\n  orig: 60, 212\n  offset: 0, 0\n  index: -1\nimages/1-1/圣诞树左@2x\n  rotate: false\n  xy: 188, 122\n  size: 61, 212\n  orig: 61, 212\n  offset: 0, 0\n  index: -1\nimages/1-1/圣诞树虚线@2x\n  rotate: false\n  xy: 244, 340\n  size: 61, 212\n  orig: 61, 212\n  offset: 0, 0\n  index: -1\nimages/1-1/茶壶右@2x\n  rotate: false\n  xy: 789, 4\n  size: 109, 133\n  orig: 109, 133\n  offset: 0, 0\n  index: -1\nimages/1-1/茶壶左@2x\n  rotate: false\n  xy: 1856, 256\n  size: 109, 133\n  orig: 109, 133\n  offset: 0, 0\n  index: -1\nimages/1-1/茶壶虚线@2x\n  rotate: false\n  xy: 1856, 121\n  size: 109, 133\n  orig: 109, 133\n  offset: 0, 0\n  index: -1\nimages/1-1/衣服右@2x\n  rotate: false\n  xy: 1684, 212\n  size: 104, 161\n  orig: 104, 161\n  offset: 0, 0\n  index: -1\nimages/1-1/衣服左@2x\n  rotate: false\n  xy: 1756, 391\n  size: 103, 161\n  orig: 103, 161\n  offset: 0, 0\n  index: -1\nimages/1-1/衣服虚线@2x\n  rotate: false\n  xy: 1861, 391\n  size: 103, 161\n  orig: 103, 161\n  offset: 0, 0\n  index: -1\nimages/1-1/飞机右@2x\n  rotate: false\n  xy: 1597, 195\n  size: 85, 177\n  orig: 85, 177\n  offset: 0, 0\n  index: -1\nimages/1-1/飞机左@2x\n  rotate: false\n  xy: 1669, 375\n  size: 85, 177\n  orig: 85, 177\n  offset: 0, 0\n  index: -1\nimages/1-1/飞机虚线@2x\n  rotate: false\n  xy: 1620, 16\n  size: 85, 177\n  orig: 85, 177\n  offset: 0, 0\n  index: -1\nimages/1-2/心右@2x\n  rotate: false\n  xy: 302, 25\n  size: 66, 99\n  orig: 66, 99\n  offset: 0, 0\n  index: -1\nimages/1-2/心左@2x\n  rotate: false\n  xy: 370, 27\n  size: 65, 99\n  orig: 65, 99\n  offset: 0, 0\n  index: -1\nimages/1-2/心左虚线@2x\n  rotate: false\n  xy: 437, 27\n  size: 65, 99\n  orig: 65, 99\n  offset: 0, 0\n  index: -1\nimages/1-2/火箭右@2x\n  rotate: false\n  xy: 653, 132\n  size: 66, 208\n  orig: 66, 208\n  offset: 0, 0\n  index: -1\nimages/1-2/火箭左@2x\n  rotate: false\n  xy: 721, 132\n  size: 66, 208\n  orig: 66, 208\n  offset: 0, 0\n  index: -1\nimages/1-2/火箭虚线@2x\n  rotate: false\n  xy: 736, 344\n  size: 66, 208\n  orig: 66, 208\n  offset: 0, 0\n  index: -1\nimages/1-2/蝴蝶右@2x\n  rotate: false\n  xy: 2, 3\n  size: 98, 109\n  orig: 98, 109\n  offset: 0, 0\n  index: -1\nimages/1-2/蝴蝶左@2x\n  rotate: false\n  xy: 102, 3\n  size: 98, 109\n  orig: 98, 109\n  offset: 0, 0\n  index: -1\nimages/1-2/蝴蝶结右@2x\n  rotate: false\n  xy: 1350, 358\n  size: 102, 194\n  orig: 102, 194\n  offset: 0, 0\n  index: -1\nimages/1-2/蝴蝶结左@2x\n  rotate: false\n  xy: 1245, 358\n  size: 103, 194\n  orig: 103, 194\n  offset: 0, 0\n  index: -1\nimages/1-2/蝴蝶结虚线@2x\n  rotate: false\n  xy: 1248, 162\n  size: 103, 194\n  orig: 103, 194\n  offset: 0, 0\n  index: -1\nimages/1-2/蝴蝶虚线@2x\n  rotate: false\n  xy: 202, 11\n  size: 98, 109\n  orig: 98, 109\n  offset: 0, 0\n  index: -1\nimages/例题1/枫叶右@2x\n  rotate: false\n  xy: 900, 2\n  size: 67, 140\n  orig: 67, 140\n  offset: 0, 0\n  index: -1\nimages/例题1/枫叶左@2x\n  rotate: false\n  xy: 969, 3\n  size: 66, 140\n  orig: 66, 140\n  offset: 0, 0\n  index: -1\nimages/例题1/枫叶虚线@2x\n  rotate: false\n  xy: 1037, 3\n  size: 66, 140\n  orig: 66, 140\n  offset: 0, 0\n  index: -1\nimages/例题1/相机右@2x\n  rotate: false\n  xy: 504, 3\n  size: 93, 125\n  orig: 93, 125\n  offset: 0, 0\n  index: -1\nimages/例题1/相机左@2x\n  rotate: false\n  xy: 599, 3\n  size: 93, 125\n  orig: 93, 125\n  offset: 0, 0\n  index: -1\nimages/例题1/相机虚线@2x\n  rotate: false\n  xy: 694, 5\n  size: 93, 125\n  orig: 93, 125\n  offset: 0, 0\n  index: -1\nimages/例题1/苹果右 @2x\n  rotate: false\n  xy: 1707, 49\n  size: 73, 161\n  orig: 73, 161\n  offset: 0, 0\n  index: -1\nimages/例题1/苹果左@2x\n  rotate: false\n  xy: 1782, 49\n  size: 72, 161\n  orig: 72, 161\n  offset: 0, 0\n  index: -1\nimages/例题1/苹果虚线@2x\n  rotate: false\n  xy: 1220, 2\n  size: 74, 156\n  orig: 74, 156\n  offset: 0, 0\n  index: -1\nimages/例题1/雪人右@2x\n  rotate: false\n  xy: 1503, 185\n  size: 92, 178\n  orig: 92, 178\n  offset: 0, 0\n  index: -1\nimages/例题1/雪人左@2x\n  rotate: false\n  xy: 1526, 5\n  size: 92, 178\n  orig: 92, 178\n  offset: 0, 0\n  index: -1\nimages/例题1/雪人虚线@2x\n  rotate: false\n  xy: 1575, 374\n  size: 92, 178\n  orig: 92, 178\n  offset: 0, 0\n  index: -1\nimages/练习1/橙2@2x\n  rotate: false\n  xy: 473, 342\n  size: 87, 210\n  orig: 87, 210\n  offset: 0, 0\n  index: -1\nimages/练习1/橙2虚线@2x\n  rotate: false\n  xy: 1353, 162\n  size: 80, 194\n  orig: 80, 194\n  offset: 0, 0\n  index: -1\nimages/练习1/橙@2x\n  rotate: false\n  xy: 477, 130\n  size: 87, 210\n  orig: 87, 210\n  offset: 0, 0\n  index: -1\nimages/练习1/芒果2@2x\n  rotate: false\n  xy: 104, 336\n  size: 68, 216\n  orig: 68, 216\n  offset: 0, 0\n  index: -1\nimages/练习1/芒果@2x\n  rotate: false\n  xy: 174, 336\n  size: 68, 216\n  orig: 68, 216\n  offset: 0, 0\n  index: -1\nimages/练习1/芒果虚线@2x\n  rotate: false\n  xy: 1103, 352\n  size: 62, 200\n  orig: 62, 200\n  offset: 0, 0\n  index: -1\nimages/练习1/苹果2@2x\n  rotate: false\n  xy: 2, 332\n  size: 100, 220\n  orig: 100, 220\n  offset: 0, 0\n  index: -1\nimages/练习1/苹果2虚线@2x\n  rotate: false\n  xy: 789, 139\n  size: 92, 203\n  orig: 92, 203\n  offset: 0, 0\n  index: -1\nimages/练习1/苹果@2x\n  rotate: false\n  xy: 804, 349\n  size: 92, 203\n  orig: 92, 203\n  offset: 0, 0\n  index: -1\nimages/练习1/雪梨2@2x\n  rotate: false\n  xy: 883, 144\n  size: 72, 203\n  orig: 72, 203\n  offset: 0, 0\n  index: -1\nimages/练习1/雪梨2虚线@2x\n  rotate: false\n  xy: 1435, 168\n  size: 66, 188\n  orig: 66, 188\n  offset: 0, 0\n  index: -1\nimages/练习1/雪梨@2x\n  rotate: false\n  xy: 898, 349\n  size: 72, 203\n  orig: 72, 203\n  offset: 0, 0\n  index: -1\nimages/练习2/企鹅2@2x\n  rotate: false\n  xy: 392, 341\n  size: 79, 211\n  orig: 79, 211\n  offset: 0, 0\n  index: -1\nimages/练习2/企鹅2虚线@2x\n  rotate: false\n  xy: 1174, 160\n  size: 72, 195\n  orig: 72, 195\n  offset: 0, 0\n  index: -1\nimages/练习2/企鹅@2x\n  rotate: false\n  xy: 397, 128\n  size: 78, 211\n  orig: 78, 211\n  offset: 0, 0\n  index: -1\nimages/练习2/猪2@2x\n  rotate: false\n  xy: 2, 114\n  size: 91, 216\n  orig: 91, 216\n  offset: 0, 0\n  index: -1\nimages/练习2/猪2虚线@2x\n  rotate: false\n  xy: 1088, 148\n  size: 84, 200\n  orig: 84, 200\n  offset: 0, 0\n  index: -1\nimages/练习2/猪@2x\n  rotate: false\n  xy: 95, 114\n  size: 91, 216\n  orig: 91, 216\n  offset: 0, 0\n  index: -1\nimages/练习2/猫头鹰2@2x\n  rotate: false\n  xy: 307, 341\n  size: 83, 211\n  orig: 83, 211\n  offset: 0, 0\n  index: -1\nimages/练习2/猫头鹰2虚线@2x\n  rotate: false\n  xy: 1167, 357\n  size: 76, 195\n  orig: 76, 195\n  offset: 0, 0\n  index: -1\nimages/练习2/猫头鹰@2x\n  rotate: false\n  xy: 313, 128\n  size: 82, 211\n  orig: 82, 211\n  offset: 0, 0\n  index: -1\nimages/练习2/老虎2@2x\n  rotate: false\n  xy: 957, 145\n  size: 129, 202\n  orig: 129, 202\n  offset: 0, 0\n  index: -1\nimages/练习2/老虎2虚线@2x\n  rotate: false\n  xy: 1454, 365\n  size: 119, 187\n  orig: 119, 187\n  offset: 0, 0\n  index: -1\nimages/练习2/老虎@2x\n  rotate: false\n  xy: 972, 350\n  size: 129, 202\n  orig: 129, 202\n  offset: 0, 0\n  index: -1\nimages/练习3/蝴蝶1@2x\n  rotate: false\n  xy: 1296, 24\n  size: 113, 136\n  orig: 113, 136\n  offset: 0, 0\n  index: -1\nimages/练习3/蝴蝶@2x\n  rotate: false\n  xy: 1411, 24\n  size: 113, 136\n  orig: 113, 136\n  offset: 0, 0\n  index: -1\nimages/练习3/蝴蝶虚线@2x\n  rotate: false\n  xy: 1105, 10\n  size: 113, 136\n  orig: 113, 136\n  offset: 0, 0\n  index: -1\nimages/练习4/圣诞老人1@2x\n  rotate: false\n  xy: 562, 342\n  size: 85, 210\n  orig: 85, 210\n  offset: 0, 0\n  index: -1\nimages/练习4/圣诞老人@2x\n  rotate: false\n  xy: 566, 130\n  size: 85, 210\n  orig: 85, 210\n  offset: 0, 0\n  index: -1\nimages/练习4/圣诞老人虚线@2x\n  rotate: false\n  xy: 649, 342\n  size: 85, 210\n  orig: 85, 210\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "d5b068d1-d9c6-4496-8498-dc2def7293d9"
+    }
+  ],
+  "textureNames": [
+    "icon_ani.png"
+  ],
+  "scale": 1
+}

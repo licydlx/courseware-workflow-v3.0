@@ -945,8 +945,8 @@
     "relativePath": "fairyUis\\t3\\t3-01\\t3-01_taz8ab.mp3"
   },
   "5cfad614-2c12-471c-8d80-0b7c6c1f265a": {
-    "asset": 1621439385648,
-    "meta": 1621478556403,
+    "asset": 1621505811173,
+    "meta": 1621564517619,
     "relativePath": "fairyUis\\t2\\t2-trialClass-01"
   },
   "d92ed730-e4a7-4e99-9f3f-5bb71b6b1103": {
@@ -1090,114 +1090,14 @@
     "relativePath": "configJson\\prod\\t3\\t3-01-trialclass-review.json"
   },
   "e40c48f6-b759-40c8-97e0-71b7208c2073": {
-    "asset": 1621506406880,
-    "meta": 1621506406886,
+    "asset": 1621569428134,
+    "meta": 1621569428141,
     "relativePath": "entrances\\courseware.fire"
   },
   "016ce33d-535f-4327-8d40-7aab0e2fe343": {
     "asset": 1621492850933,
     "meta": 1621501548303,
     "relativePath": "entrances\\javascripts\\lib\\fairygui.d.ts"
-  },
-  "d95c738b-f6d9-4eda-acb1-51722f22993c": {
-    "asset": 1621503148366,
-    "meta": 1621504394044,
-    "relativePath": "configJson\\prod\\t2\\t2-trialClass-01.json"
-  },
-  "320f319d-07de-4ed4-bd59-a679e2a27083": {
-    "asset": 1621505306206,
-    "meta": 1621505307333,
-    "relativePath": "configJson\\test\\t2-trialClass-01-test01.json"
-  },
-  "6558f839-8487-4550-a66e-d68aaf576995": {
-    "asset": 1621499800000,
-    "meta": 1621505811196,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\icon_ani.atlas"
-  },
-  "ec80efb1-6027-4bdd-a7c9-84804b308561": {
-    "asset": 1621499824000,
-    "meta": 1621505811216,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\icon_ani.png"
-  },
-  "28965309-839b-45d1-a990-f91fa61a479c": {
-    "asset": 1621505807124,
-    "meta": 1621505811274,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_1.png"
-  },
-  "e51cfd0b-d6d6-4204-b5ab-f63742f3d673": {
-    "asset": 1621505807353,
-    "meta": 1621505811293,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_2.png"
-  },
-  "1aaaafb4-0144-4f72-96ed-7611da1d0882": {
-    "asset": 1621505807577,
-    "meta": 1621505811358,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_3.png"
-  },
-  "201b3d15-56b6-4235-ba52-ba58f1e5526a": {
-    "asset": 1621505807807,
-    "meta": 1621505811377,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_4.png"
-  },
-  "2359e970-1136-45af-978c-2291edd824a0": {
-    "asset": 1621505808043,
-    "meta": 1621505811440,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_5.png"
-  },
-  "91c87e8b-63f5-4762-9258-ca748f373c15": {
-    "asset": 1621505808287,
-    "meta": 1621505811464,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_6.png"
-  },
-  "8e16269e-6e75-4e03-8a51-4c405168d227": {
-    "asset": 1621505808509,
-    "meta": 1621505811525,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_7.png"
-  },
-  "fab009bf-d5b8-4a4d-8471-cb2d8cb18add": {
-    "asset": 1621505808712,
-    "meta": 1621505811548,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_8.png"
-  },
-  "e204e8af-67f6-4098-ada7-626bc05dcdef": {
-    "asset": 1621505806868,
-    "meta": 1621505811626,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0.png"
-  },
-  "46d2f82e-01d4-440f-9903-8b7756b5cb7c": {
-    "asset": 1621505808948,
-    "meta": 1621505812019,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_ht4324.mp3"
-  },
-  "eff9d395-5164-469b-943c-5fa97b5bb82e": {
-    "asset": 1621505808949,
-    "meta": 1621505812021,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt016.mp3"
-  },
-  "ad602892-88fc-4263-b25d-8ff5b24dac84": {
-    "asset": 1621505808950,
-    "meta": 1621505812026,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt017.mp3"
-  },
-  "18593e4c-b9a7-46ed-b2a7-e4dfbcbcf328": {
-    "asset": 1621505808951,
-    "meta": 1621505812030,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt018.mp3"
-  },
-  "f2f1d8dc-4346-4744-8443-315633b338de": {
-    "asset": 1621505806866,
-    "meta": 1621505812033,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01.bin"
-  },
-  "4266e3ef-e5be-4231-b0b5-9dd998dc606e": {
-    "asset": 1621505808952,
-    "meta": 1621505812037,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt019.mp3"
-  },
-  "a64a50de-4d8d-47ae-8b08-6fceb2755aa4": {
-    "asset": 1621499798000,
-    "meta": 1621505812056,
-    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\icon_ani.json"
   },
   "cd059d7d-7014-4331-ba40-72653c89fda1": {
     "asset": 1621506350597,
@@ -1214,14 +1114,114 @@
     "meta": 1621506404625,
     "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model01-v1.ts"
   },
-  "8f908065-d4f9-4669-b434-a16c422d5a93": {
-    "asset": 1621506390062,
-    "meta": 1621506404706,
-    "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model01-v2.ts"
-  },
   "761b7b40-d436-436d-996e-fd5546e12562": {
     "asset": 1621506403127,
     "meta": 1621506404775,
     "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model02-v1.ts"
+  },
+  "1050fa75-e56d-434c-9ce5-519cab1a1fa3": {
+    "asset": 1621499800000,
+    "meta": 1621569167578,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\icon_ani.atlas"
+  },
+  "d5b068d1-d9c6-4496-8498-dc2def7293d9": {
+    "asset": 1621499824000,
+    "meta": 1621569167605,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\icon_ani.png"
+  },
+  "0699e1b9-d319-4311-9408-f9c7cd06bb33": {
+    "asset": 1621569164403,
+    "meta": 1621569167672,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_1.png"
+  },
+  "9502f1a8-2dfb-461d-ba96-7279a38af647": {
+    "asset": 1621569164631,
+    "meta": 1621569167702,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_2.png"
+  },
+  "a26966b0-12f9-439a-ab59-64f76291f32c": {
+    "asset": 1621569164860,
+    "meta": 1621569167770,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_3.png"
+  },
+  "5503a7b2-8c72-407e-81f9-300f6df3c880": {
+    "asset": 1621569165086,
+    "meta": 1621569167786,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_4.png"
+  },
+  "5c2dfea8-c9fd-411f-9c1c-cc82920cc977": {
+    "asset": 1621569165320,
+    "meta": 1621569167871,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_5.png"
+  },
+  "ffc2eb47-fa0f-4d6b-aad1-333c636fed47": {
+    "asset": 1621569165535,
+    "meta": 1621569167878,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_6.png"
+  },
+  "1d4b24b0-b3d7-45f3-9388-2fb25ef8507b": {
+    "asset": 1621569165763,
+    "meta": 1621569167969,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_7.png"
+  },
+  "7aca8cd6-09e4-43af-902c-e10123be7c20": {
+    "asset": 1621569165969,
+    "meta": 1621569167975,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0_8.png"
+  },
+  "9cb87bd2-4688-410a-ace6-0766bb4d6138": {
+    "asset": 1621569164136,
+    "meta": 1621569168116,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_atlas0.png"
+  },
+  "3a53ed95-c6db-452e-9cb3-06cd7abfee6b": {
+    "asset": 1621569166201,
+    "meta": 1621569168552,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_ht4324.mp3"
+  },
+  "1f32ba34-78cc-4223-a48c-ff4b0ade03dd": {
+    "asset": 1621569166202,
+    "meta": 1621569168554,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt016.mp3"
+  },
+  "ebe92b98-7a7a-4900-805f-889a5c00c76e": {
+    "asset": 1621569166202,
+    "meta": 1621569168560,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt017.mp3"
+  },
+  "639b36fc-fefe-423a-8c09-80ae35afe41e": {
+    "asset": 1621569166203,
+    "meta": 1621569168564,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt018.mp3"
+  },
+  "f12ccd71-7074-4029-8d81-bb286a31d60d": {
+    "asset": 1621569164134,
+    "meta": 1621569168566,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01.bin"
+  },
+  "7ab70870-7471-429b-84db-376e9dba7ba7": {
+    "asset": 1621569166204,
+    "meta": 1621569168570,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\t2-trialClass-01_qxt019.mp3"
+  },
+  "d72783b4-2af4-4cf8-8cd1-0f8b530ef8bf": {
+    "asset": 1621499798000,
+    "meta": 1621569168589,
+    "relativePath": "fairyUis\\t2\\t2-trialClass-01\\icon_ani.json"
+  },
+  "d95c738b-f6d9-4eda-acb1-51722f22993c": {
+    "asset": 1621569413477,
+    "meta": 1621569426919,
+    "relativePath": "configJson\\prod\\t2\\t2-trialClass-01.json"
+  },
+  "8f908065-d4f9-4669-b434-a16c422d5a93": {
+    "asset": 1621569425741,
+    "meta": 1621569427073,
+    "relativePath": "prefabLibrary\\models\\dragAnswer\\dragAnswer-model01-v2.ts"
+  },
+  "320f319d-07de-4ed4-bd59-a679e2a27083": {
+    "asset": 1621569415043,
+    "meta": 1621569427077,
+    "relativePath": "configJson\\test\\t2-trialClass-01-test01.json"
   }
 }

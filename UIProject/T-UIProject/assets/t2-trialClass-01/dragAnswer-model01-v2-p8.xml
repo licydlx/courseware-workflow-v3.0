@@ -6,15 +6,20 @@
     <image id="n53_qe6i" name="n53" src="qe6i1x" fileName="images/dragAnswer-model01-v2/0108.png" xy="60,180" group="n4_rbpx"/>
     <image id="n55_qe6i" name="n55" src="qe6i1y" fileName="images/dragAnswer-model01-v2/0109.png" xy="456,359" group="n4_rbpx"/>
     <group id="n4_rbpx" name="UI" xy="0,0" size="1920,1080"/>
+    <image id="n57_j7u6" name="n57" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="779,362" group="n18_dbj2">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
     <image id="n42_qe6i" name="n42" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="941,362" group="n18_dbj2">
       <relation target="" sidePair="center-center,middle-middle"/>
     </image>
     <image id="n43_qe6i" name="n43" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1100,362" group="n18_dbj2"/>
     <image id="n44_qe6i" name="n44" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1260,362" group="n18_dbj2"/>
+    <image id="n58_j7u6" name="n58" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="615,523" group="n18_dbj2"/>
+    <image id="n59_j7u6" name="n59" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="779,523" group="n18_dbj2"/>
     <image id="n45_qe6i" name="n45" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="941,523" group="n18_dbj2"/>
     <image id="n46_qe6i" name="n46" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1100,523" group="n18_dbj2"/>
     <image id="n47_qe6i" name="n47" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1260,523" group="n18_dbj2"/>
-    <group id="n18_dbj2" name="collideredBox" xy="941,362" size="480,322" advanced="true"/>
+    <group id="n18_dbj2" name="collideredBox" xy="615,362" size="806,322" advanced="true"/>
     <image id="n54_qe6i" name="wire" src="qe6i1p" fileName="images/dragAnswer-model01-v2/0101.png" xy="937,298"/>
     <component id="n51_qe6i" name="n51" src="dbj2f" fileName="buttons/dragBtn.xml" xy="650,790" size="120,120" group="n50_qe6i">
       <Button icon="ui://ik5aab9iqe6i1r"/>
@@ -35,13 +40,54 @@
     </loader>
   </displayList>
   <transition name="t0">
-    <item time="0" type="Alpha" target="n43_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
-    <item time="0" type="Alpha" target="n47_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
-    <item time="6" type="Alpha" target="n43_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
-    <item time="6" type="Alpha" target="n47_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
-    <item time="12" type="Alpha" target="n43_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
-    <item time="12" type="Alpha" target="n47_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
-    <item time="18" type="Alpha" target="n43_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
-    <item time="18" type="Alpha" target="n47_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="0" type="Alpha" target="n42_qe6i" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n42_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="0" type="Alpha" target="n45_qe6i" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n45_qe6i" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n46_qe6i" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n46_qe6i" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n46_qe6i" value="1"/>
+    <item time="0" type="Alpha" target="n57_j7u6" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n57_j7u6" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="0" type="Alpha" target="n58_j7u6" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n58_j7u6" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n59_j7u6" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n59_j7u6" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="6" type="Alpha" target="n42_qe6i" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="6" type="Alpha" target="n42_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="6" type="Alpha" target="n45_qe6i" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="6" type="Alpha" target="n45_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="6" type="Alpha" target="n46_qe6i" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="6" type="Alpha" target="n46_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="6" type="Alpha" target="n57_j7u6" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="6" type="Alpha" target="n57_j7u6" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="6" type="Alpha" target="n58_j7u6" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="6" type="Alpha" target="n58_j7u6" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="6" type="Alpha" target="n59_j7u6" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="6" type="Alpha" target="n59_j7u6" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="12" type="Alpha" target="n42_qe6i" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="12" type="Alpha" target="n42_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="12" type="Alpha" target="n45_qe6i" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="12" type="Alpha" target="n45_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="12" type="Alpha" target="n46_qe6i" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="12" type="Alpha" target="n46_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="12" type="Alpha" target="n57_j7u6" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="12" type="Alpha" target="n57_j7u6" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="12" type="Alpha" target="n58_j7u6" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="12" type="Alpha" target="n58_j7u6" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="12" type="Alpha" target="n59_j7u6" tween="true" startValue="1" endValue="1" duration="0"/>
+    <item time="12" type="Alpha" target="n59_j7u6" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="18" type="Alpha" target="n42_qe6i" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="18" type="Alpha" target="n42_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="18" type="Alpha" target="n45_qe6i" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="18" type="Alpha" target="n45_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="18" type="Alpha" target="n46_qe6i" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="18" type="Alpha" target="n46_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="18" type="Alpha" target="n57_j7u6" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="18" type="Alpha" target="n57_j7u6" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="18" type="Alpha" target="n58_j7u6" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="18" type="Alpha" target="n58_j7u6" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="18" type="Alpha" target="n59_j7u6" tween="true" startValue="0.5" endValue="0.5" duration="0"/>
+    <item time="18" type="Alpha" target="n59_j7u6" tween="true" startValue="0.5" endValue="1" duration="6"/>
   </transition>
 </component>

@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-05-07 14:34:26
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-20 18:26:20
+ * @LastEditTime: 2021-05-21 11:57:00
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
@@ -354,10 +354,14 @@ export default class dragAnswer_model01_v2 extends cc.Component {
 
     // 格子闪烁 提示
     onFlicker(answer: any) {
-        let t: fgui.Transition = this._view.getTransition("t0");
-        t.play(() => {
+        if (answer) {
+            let t: fgui.Transition = this._view.getTransition("t0");
+            t.play(() => {
+                this.answerFeedback(answer);
+            });
+        } else {
             this.answerFeedback(answer);
-        });
+        }
     }
 
     // 操作提示

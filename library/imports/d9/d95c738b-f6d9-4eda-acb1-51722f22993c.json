@@ -150,7 +150,7 @@
           "bundleName": "dragAnswer",
           "prefabName": "dragAnswer-model01-v2",
           "config": {
-            "answer": 15,
+            "answer": 28,
             "ae": {
               "handleGuide": {
                 "component": "handleGuide01",
@@ -175,7 +175,7 @@
           "bundleName": "dragAnswer",
           "prefabName": "dragAnswer-model01-v2",
           "config": {
-            "answer": 1,
+            "answer": 2,
             "ae": {
               "handleGuide": {
                 "component": "handleGuide04"
@@ -196,7 +196,7 @@
           "bundleName": "dragAnswer",
           "prefabName": "dragAnswer-model01-v2",
           "config": {
-            "answer": 23,
+            "answer": 45,
             "ae": {
               "handleGuide": {
                 "component": "handleGuide01",

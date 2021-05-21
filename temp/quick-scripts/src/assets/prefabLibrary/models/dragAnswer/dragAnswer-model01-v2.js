@@ -65,7 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-05-07 14:34:26
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-20 18:26:20
+ * @LastEditTime: 2021-05-21 11:57:00
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
@@ -407,10 +407,15 @@ var dragAnswer_model01_v2 = /** @class */ (function (_super) {
     // 格子闪烁 提示
     dragAnswer_model01_v2.prototype.onFlicker = function (answer) {
         var _this = this;
-        var t = this._view.getTransition("t0");
-        t.play(function () {
-            _this.answerFeedback(answer);
-        });
+        if (answer) {
+            var t = this._view.getTransition("t0");
+            t.play(function () {
+                _this.answerFeedback(answer);
+            });
+        }
+        else {
+            this.answerFeedback(answer);
+        }
     };
     // 操作提示
     dragAnswer_model01_v2.prototype.onHandleGuide = function () {
