@@ -23,6 +23,10 @@
     <image id="ht43v" name="0109.png" path="/components/images/common/"/>
     <image id="nqb5w" name="0103.png" path="/images/"/>
     <image id="nqb5x" name="0113.png" path="/images/" scale="tile" scale9grid="25,25,50,50"/>
+    <component id="mzaoy" name="static-model01-v1-p14.xml" path="/components/" exported="true"/>
+    <image id="mzaoz" name="0102.jpg" path="/components/images/static-model01-v1/"/>
+    <image id="mzao10" name="0113.png" path="/components/images/common/" scale="tile" scale9grid="25,25,50,50"/>
+    <image id="mzao11" name="0103.png" path="/components/images/static-model01-v1/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

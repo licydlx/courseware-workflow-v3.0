@@ -19,5 +19,6 @@ require('./assets/prefabLibrary/models/dragAnswer/dragAnswer-model01-v1');
 require('./assets/prefabLibrary/models/dragAnswer/dragAnswer-model01-v2');
 require('./assets/prefabLibrary/models/dragAnswer/dragAnswer-model02-v1');
 require('./assets/prefabLibrary/models/dragAnswer/dragAnswer-model03-v1');
+require('./assets/prefabLibrary/models/dragAnswer/dragAnswer-model03-v2');
 require('./assets/prefabLibrary/models/inputChoose/inputChoose-model01-v1');
 require('./assets/prefabLibrary/models/static/static-model01-v1');

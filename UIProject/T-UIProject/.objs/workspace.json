@@ -1,15 +1,22 @@
 {
-  "libview.firstColumnWidth": 219,
+  "libview.firstColumnWidth": 371,
   "libview.iconScale": 0,
   "doc.openedDocs": [
-    "ui://ik5aab9iakgh3w"
+    "ui://rokozlzwmsxwg",
+    "ui://rokozlzwmzao17",
+    "ui://rokozlzwmzao16",
+    "ui://rokozlzwmzao15",
+    "ui://rokozlzwmzao2f",
+    "ui://pozm437jbkhuee",
+    "ui://rokozlzwmzao2i",
+    "ui://rokozlzwmzao2m"
   ],
   "packageGroup.mine": [],
   "libview.syncEditor": 0,
   "auxline1": true,
   "canvasColor": 10066329,
   "auxline2": true,
-  "doc.activeDoc": "ui://ik5aab9iakgh3w",
+  "doc.activeDoc": "ui://rokozlzwmzao15",
   "libview.twoColumn": false,
   "libview.expandedNodes": [
     "5mq4z6h4",
@@ -17,11 +24,17 @@
     "5mq4z6h4",
     "/animations/",
     "5mq4z6h4",
+    "/components/",
+    "5mq4z6h4",
+    "/components/images/",
+    "5mq4z6h4",
     "/images/",
     "rokozlzw",
     "/",
-    "ik5aab9i",
-    "/choose-option/"
+    "rokozlzw",
+    "/components/",
+    "rokozlzw",
+    "/components/pages/"
   ],
   "snapToGrid": true,
   "backgroundColor": 6710886,

@@ -84,17 +84,11 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         s.createUI();
         s.addEvent();
 
-        /* let dragIconsPosArr = [];
-        s.pageData.model.config.dragIcon.foreach(v => {
-            dragIconsPosArr.push({ x: v.x, y: v.y });
-        }) */
         // 初始化state
         this._state = {
             drag: "end",
-            /* dragIconArr: s._dragIconArr.map(v => v),
-            dragIconIndex: null, */
             getDropArr: [],
-            collider: this._cache["colliderBox"].map((v: any) => v),//拖拽物的位置数组
+            collider: s._cache["colliderBox"].map((v: any) => v),//拖拽物的位置数组
             colliderIndex: null,//当前拖拽物在数组内的索引
             collidered: this._cache["collideredBox"].map((v: any) => v),//二维数组，存放每个放置区对应的被放置元素
             dropArr: [],
@@ -131,7 +125,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
                 btn.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
                 btn.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
                 this._colliderBox.push(btn);
-
             }
         }
         // console.log('this._colliderBox', this._colliderBox);
@@ -261,6 +254,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     // private _offsetPos: cc.Vec2 = new cc.Vec2();
     private _onDragStart(evt: fgui.Event): void {
         let s = this;
+        s.playSound('ui://rokozlzwkxox11');
         // evt.captureTouch();
         /* s._curDragIcon = evt.currentTarget;
         console.log('_onDragStart');
@@ -308,6 +302,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     // private dropArr = [];
     private _onDragEnd(evt: fgui.Event): void {
         let s = this;
+        s.playSound('ui://rokozlzwku3e2t');
         if (!this._dragging) return;
         this._dragging = false;
 
@@ -364,8 +359,8 @@ export default class dragAnswer_model03_v1 extends cc.Component {
                 dropArr.splice(dropArrIndex, 1);
             }
             state.collider[colliderIndex] = {
-                x: this._cache["colliderBox"][colliderIndex].x,
-                y: this._cache["colliderBox"][colliderIndex].y
+                x: s._cache["colliderBox"][colliderIndex].x,
+                y: s._cache["colliderBox"][colliderIndex].y
             }
             if (collider.collideredIndex > -1) {
                 collideredIndex = collider.collideredIndex;
@@ -388,15 +383,15 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             // let itemIndex = s._colliderBox.indexOf(item);//状态池中的index
             let itemIndex = s._colliderBox.findIndex(v => v.name == item.name);//状态池中的index
             let pos: cc.Vec2 = new cc.Vec2();
+            let collideredBox = s._collideredBox[collideredIndex];
+            let curCollider = s._view.getChild(item.name)
             if (item.name.indexOf('left') > -1) {
-                pos.x = s._collideredBox[collideredIndex].x + 150 + 200 * i;
-                pos.y = s._collideredBox[collideredIndex].y + 200 + 85;
                 footNum += s._footNum[0];
             } else if (item.name.indexOf('right') > -1) {
-                pos.x = s._collideredBox[collideredIndex].x + 150 + 200 * i;
-                pos.y = s._collideredBox[collideredIndex].y + 200;
                 footNum += s._footNum[1];
             }
+            pos.x = collideredBox.x + 150 + 200 * i;
+            pos.y = collideredBox.y + collideredBox.height - curCollider.height;
             state.collider[itemIndex] = {
                 x: pos.x,
                 y: pos.y,
@@ -467,7 +462,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         this.updateState(state);
     }
 
-
     // 获取状态
     getState(data: any) {
         this.updateState(data);
@@ -475,25 +469,17 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     // 更新状态层
     updateState(curState: any) {
-        // console.log('old = ', this._state);
-        // console.log('new = ', curState);
-        // console.log('updateState ', globalThis._.isEqual(this._state, curState));
         if (globalThis._.isEqual(this._state, curState)) return;
         this.state = curState;
     }
 
-
     // 更新ui层
     updateUi(oldState: any, state: any) {
         let s = this;
-        // console.log('updateUi = ', state);
 
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
-
-            // state.curDragIcon.x = state.curDragIconsPos.x;
-            // state.curDragIcon.y = state.curDragIconsPos.y;
         }
 
         if (state.drag == "end") {
@@ -525,7 +511,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
                 if (state.submit) {
                     // 根据collider 初始位置 判断 是否被操作过
                     let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
-                    let bool: boolean = this._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
+                    let bool: boolean = s._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
                     bool ? this.onHandleGuide() : this.onFlicker(state.answer);
                 }
             } */
@@ -543,6 +529,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
             let audioId = cc.audioEngine.play(audio, false, 1);
             cc.audioEngine.setFinishCallback(audioId, () => {
+                this._c2.selectedIndex = 0;
                 let state: any = globalThis._.cloneDeep(this._state);
                 state.title = false;
                 this.updateState(state);
@@ -550,6 +537,14 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         } else {
             this.disableForbidHandle();
         }
+    }
+
+    playSound(url: string) {
+        let s = this;
+        let item = fgui.UIPackage.getItemByURL(url);
+        loadResource(item.file, cc.AudioClip).then((audio) => {
+            cc.audioEngine.play(audio, false, 1);
+        });
     }
 
     answerFeedback(bool: boolean) {
@@ -568,23 +563,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             this.updateState(state);
         }, 2000);
     }
-
-    // 天枰提示
-    /* onLibraHint() {
-        if (!this.lineBlink) return;
-        fgui.GRoot.inst.addChild(this.lineBlink.component);
-        if (this.lineBlink.pos) {
-            this.lineBlink.component.x = (fgui.GRoot.inst.width - this.lineBlink.component.width) / 2 + this.lineBlink.pos.x;
-            this.lineBlink.component.y = (fgui.GRoot.inst.height - this.lineBlink.component.height) / 2 + this.lineBlink.pos.y;
-        } else {
-            this.lineBlink.component.y = (fgui.GRoot.inst.height - this.lineBlink.component.height) / 2;
-        }
-
-        let t: fgui.Transition = this.lineBlink.component.getTransition("t0");
-        t.play(() => {
-            fgui.GRoot.inst.removeChild(this.lineBlink.component);
-        });
-    } */
 
     // 操作提示
     onHandleGuide() {

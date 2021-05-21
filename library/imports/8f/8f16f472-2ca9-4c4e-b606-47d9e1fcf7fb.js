@@ -113,17 +113,11 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
         }
         s.createUI();
         s.addEvent();
-        /* let dragIconsPosArr = [];
-        s.pageData.model.config.dragIcon.foreach(v => {
-            dragIconsPosArr.push({ x: v.x, y: v.y });
-        }) */
         // 初始化state
         this._state = {
             drag: "end",
-            /* dragIconArr: s._dragIconArr.map(v => v),
-            dragIconIndex: null, */
             getDropArr: [],
-            collider: this._cache["colliderBox"].map(function (v) { return v; }),
+            collider: s._cache["colliderBox"].map(function (v) { return v; }),
             colliderIndex: null,
             collidered: this._cache["collideredBox"].map(function (v) { return v; }),
             dropArr: [],
@@ -388,8 +382,8 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
                 dropArr.splice(dropArrIndex, 1);
             }
             state.collider[colliderIndex] = {
-                x: this._cache["colliderBox"][colliderIndex].x,
-                y: this._cache["colliderBox"][colliderIndex].y
+                x: s._cache["colliderBox"][colliderIndex].x,
+                y: s._cache["colliderBox"][colliderIndex].y
             };
             if (collider.collideredIndex > -1) {
                 collideredIndex = collider.collideredIndex;
@@ -413,16 +407,16 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
             // let itemIndex = s._colliderBox.indexOf(item);//状态池中的index
             var itemIndex = s._colliderBox.findIndex(function (v) { return v.name == item.name; }); //状态池中的index
             var pos = new cc.Vec2();
+            var collideredBox = s._collideredBox[collideredIndex];
+            var curCollider = s._view.getChild(item.name);
             if (item.name.indexOf('left') > -1) {
-                pos.x = s._collideredBox[collideredIndex].x + 150 + 200 * i;
-                pos.y = s._collideredBox[collideredIndex].y + 200 + 85;
                 footNum += s._footNum[0];
             }
             else if (item.name.indexOf('right') > -1) {
-                pos.x = s._collideredBox[collideredIndex].x + 150 + 200 * i;
-                pos.y = s._collideredBox[collideredIndex].y + 200;
                 footNum += s._footNum[1];
             }
+            pos.x = collideredBox.x + 150 + 200 * i;
+            pos.y = collideredBox.y + collideredBox.height - curCollider.height;
             state.collider[itemIndex] = {
                 x: pos.x,
                 y: pos.y,
@@ -502,9 +496,6 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
     };
     // 更新状态层
     dragAnswer_model03_v1.prototype.updateState = function (curState) {
-        // console.log('old = ', this._state);
-        // console.log('new = ', curState);
-        // console.log('updateState ', globalThis._.isEqual(this._state, curState));
         if (globalThis._.isEqual(this._state, curState))
             return;
         this.state = curState;
@@ -512,12 +503,9 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
     // 更新ui层
     dragAnswer_model03_v1.prototype.updateUi = function (oldState, state) {
         var s = this;
-        // console.log('updateUi = ', state);
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
-            // state.curDragIcon.x = state.curDragIconsPos.x;
-            // state.curDragIcon.y = state.curDragIconsPos.y;
         }
         if (state.drag == "end") {
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
@@ -544,7 +532,7 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
                 if (state.submit) {
                     // 根据collider 初始位置 判断 是否被操作过
                     let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
-                    let bool: boolean = this._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
+                    let bool: boolean = s._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
                     bool ? this.onHandleGuide() : this.onFlicker(state.answer);
                 }
             } */
@@ -567,6 +555,7 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
                         audio = _a.sent();
                         audioId = cc.audioEngine.play(audio, false, 1);
                         cc.audioEngine.setFinishCallback(audioId, function () {
+                            _this._c2.selectedIndex = 0;
                             var state = globalThis._.cloneDeep(_this._state);
                             state.title = false;
                             _this.updateState(state);
@@ -597,22 +586,6 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
             _this.updateState(state);
         }, 2000);
     };
-    // 天枰提示
-    /* onLibraHint() {
-        if (!this.lineBlink) return;
-        fgui.GRoot.inst.addChild(this.lineBlink.component);
-        if (this.lineBlink.pos) {
-            this.lineBlink.component.x = (fgui.GRoot.inst.width - this.lineBlink.component.width) / 2 + this.lineBlink.pos.x;
-            this.lineBlink.component.y = (fgui.GRoot.inst.height - this.lineBlink.component.height) / 2 + this.lineBlink.pos.y;
-        } else {
-            this.lineBlink.component.y = (fgui.GRoot.inst.height - this.lineBlink.component.height) / 2;
-        }
-
-        let t: fgui.Transition = this.lineBlink.component.getTransition("t0");
-        t.play(() => {
-            fgui.GRoot.inst.removeChild(this.lineBlink.component);
-        });
-    } */
     // 操作提示
     dragAnswer_model03_v1.prototype.onHandleGuide = function () {
         var _this = this;
