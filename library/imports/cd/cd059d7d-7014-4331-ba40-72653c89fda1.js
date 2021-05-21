@@ -65,10 +65,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-20 18:25:49
+ * @LastEditTime: 2021-05-21 16:56:45
  */
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
-var pointBelongArea = window['GlobalData'].utils.pointBelongArea;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
 var choose_model01_v1 = /** @class */ (function (_super) {
     __extends(choose_model01_v1, _super);
@@ -285,13 +284,20 @@ var choose_model01_v1 = /** @class */ (function (_super) {
     choose_model01_v1.prototype.afterSubmit = function () {
         var _this = this;
         var state = globalThis._.cloneDeep(this._state);
-        var t = this._view.getTransition("t1");
-        t.play(function () {
-            state.answer = state.option == _this._answer;
+        state.answer = state.option == this._answer;
+        if (state.answer) {
+            var t = this._view.getTransition("t0");
+            t.play(function () {
+                state.submit = false;
+                state.checkAnswer = true;
+                _this.updateState(state);
+            }, 1);
+        }
+        else {
             state.submit = false;
             state.checkAnswer = true;
-            _this.updateState(state);
-        }, 1);
+            this.updateState(state);
+        }
     };
     // 操作提示
     choose_model01_v1.prototype.onHandleGuide = function () {

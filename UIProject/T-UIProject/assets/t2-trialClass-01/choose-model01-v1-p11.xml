@@ -23,6 +23,13 @@
     <component id="n20_ht43" name="refer" src="ht432n" fileName="buttons/refer.xml" xy="965,594" pivot="1,1" anchor="true" size="268,268">
       <Button icon="ui://ik5aab9iht432i"/>
     </component>
+    <image id="n24_o46u" name="n24" src="qe6i1t" fileName="images/dragAnswer-model01-v2/0105.png" xy="878,328" group="n26_o46u" scale="0.53,0.53" alpha="0"/>
+    <image id="n21_o46u" name="n21" src="qe6i1t" fileName="images/dragAnswer-model01-v2/0105.png" xy="969,328" group="n26_o46u" scale="0.53,0.53" alpha="0"/>
+    <image id="n25_o46u" name="n25" src="qe6i1u" fileName="images/dragAnswer-model01-v2/0106.png" xy="788,417" group="n26_o46u" scale="0.53,0.53" alpha="0"/>
+    <image id="n27_o46u" name="n27" src="qe6i1u" fileName="images/dragAnswer-model01-v2/0106.png" xy="969,417" group="n26_o46u" scale="0.53,0.53" alpha="0"/>
+    <image id="n28_o46u" name="n28" src="qe6i1u" fileName="images/dragAnswer-model01-v2/0106.png" xy="878,417" group="n26_o46u" scale="0.53,0.53" alpha="0"/>
+    <image id="n29_o46u" name="n29" src="qe6i1u" fileName="images/dragAnswer-model01-v2/0106.png" xy="1058,417" group="n26_o46u" scale="0.53,0.53" alpha="0"/>
+    <group id="n26_o46u" name="gap" xy="788,328" size="430,250" advanced="true"/>
     <component id="n17_ht43" name="title" src="qxt0h" fileName="buttons/title.xml" xy="900,100" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://ik5aab9iqe6i1q" sound="ui://ik5aab9iqxt019" volume="0"/>
@@ -34,15 +41,10 @@
       <Button icon="ui://ik5aab9iqe6i1z" sound="ui://ik5aab9iht4324"/>
     </component>
   </displayList>
-  <transition name="t0"/>
-  <transition name="t1">
-    <item time="0" type="Icon" target="n20_ht43" value="ui://ik5aab9iht432h"/>
-    <item time="0" type="XY" target="n20_ht43" tween="true" startValue="965,594" endValue="1235,594" duration="12"/>
-    <item time="12" type="Alpha" target="n20_ht43" tween="true" startValue="1" endValue="0.4" duration="6"/>
-    <item time="18" type="Shake" target="n20_ht43" value="3,0.5"/>
-    <item time="30" type="Alpha" target="n20_ht43" tween="true" startValue="0.4" endValue="1" duration="6"/>
-    <item time="30" type="Shake" target="n20_ht43" value="3,0.5"/>
-    <item time="36" type="XY" target="n20_ht43" tween="true" startValue="1235,594" endValue="965,594" duration="6"/>
-    <item time="42" type="Icon" target="n20_ht43" value="ui://ik5aab9iht432i"/>
+  <transition name="t0">
+    <item time="0" type="Alpha" target="n26_o46u" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="6" type="Alpha" target="n26_o46u" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="12" type="Alpha" target="n26_o46u" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="18" type="Alpha" target="n26_o46u" tween="true" startValue="0.5" endValue="0" duration="6"/>
   </transition>
 </component>

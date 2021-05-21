@@ -4,13 +4,10 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-20 18:25:49
+ * @LastEditTime: 2021-05-21 16:56:45
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
-const { pointBelongArea } = window['GlobalData'].utils;
-
 const { ccclass, property } = cc._decorator;
-
 @ccclass
 export default class choose_model01_v1 extends cc.Component {
     private _worldRoot: cc.Node;
@@ -221,14 +218,19 @@ export default class choose_model01_v1 extends cc.Component {
     // 提交后 动画
     afterSubmit(){
         let state: any = globalThis._.cloneDeep(this._state);
-        let t: fgui.Transition = this._view.getTransition("t1");
-        t.play(() => {
-            
-            state.answer = state.option == this._answer;
+        state.answer = state.option == this._answer;
+        if (state.answer) {
+            let t: fgui.Transition = this._view.getTransition("t0");
+            t.play(() => {
+                state.submit = false;
+                state.checkAnswer = true;
+                this.updateState(state);
+            }, 1);
+        } else {
             state.submit = false;
             state.checkAnswer = true;
             this.updateState(state);
-        }, 1);
+        }
     }
 
     // 操作提示

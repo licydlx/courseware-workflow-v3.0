@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_ani",
+    "texture": "d6873aa1-3f16-4fba-8b27-0e24b58eb65e",
+    "atlas": "",
+    "rect": [
+      2,
+      2,
+      1963,
+      550
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1967,
+      554
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
