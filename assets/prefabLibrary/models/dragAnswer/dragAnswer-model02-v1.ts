@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-19 14:33:21
+ * @LastEditTime: 2021-05-20 18:25:04
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
@@ -114,8 +114,12 @@ export default class dragAnswer_model02_v1 extends cc.Component {
             submit: false,
         }
 
-        // 临时 禁止操作期间 切页
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        let feedback:any = this._worldRoot.getChildByName("feedback");
+        if (feedback) feedback.destroy();
     }
 
     async init(data: any) {
@@ -238,8 +242,8 @@ export default class dragAnswer_model02_v1 extends cc.Component {
             bool: c < 65 && index == s,
             s: s,
             pos: {
-                x: this._collideredBox[s].x,
-                y: this._collideredBox[s].y,
+                x: this._collideredBox[s].x + this._collideredBox[s].getChild("anchor").x,
+                y: this._collideredBox[s].y + this._collideredBox[s].getChild("anchor").y,
             }
         };
     }
@@ -266,10 +270,15 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
-            // let collider: any = this._colliderBox[state.colliderIndex];
-            // let collideredIndex: number = this._collideredBox.findIndex((collidered: any) => this._belongArea(collider, collidered, 100) == true);
-            // console.log(collideredIndex);
-            // console.log(this._collideredBox[collideredIndex]);
+
+            let obj: any = this._adsorb(this._colliderBox[state.colliderIndex], state.colliderIndex);
+            for (let i = 0; i < this._collideredBox.length; i++) {
+                if (i == obj.s) {
+                    this._collideredBox[i].alpha = 1;
+                } else {
+                    this._collideredBox[i].alpha = 0;
+                }
+            }
         }
 
         if (state.drag == "end") {
@@ -286,6 +295,14 @@ export default class dragAnswer_model02_v1 extends cc.Component {
                 if (state.answer) {
                     this.transfer(state.answer);
                 }
+            }
+
+            if (!state.submit) {
+                this.disableForbidHandle();
+            }
+            
+            for (let i = 0; i < this._collideredBox.length; i++) {
+                this._collideredBox[i].alpha = 0;
             }
         }
     }
@@ -308,24 +325,25 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         }
     }
 
-    // 临时
+    // 临时 
+    // 异步 需要调整
     transfer(answer: any) {
         this.forbidHandle();
-        this._dyUI.visible = false;
-        this._colliderGroup.visible = false 
-        this._collideredGroup.visible = false;
-        this._robot.visible = true;
-        this._robot.playing = true;
-
-            
         setTimeout(() => {
-            this._dyUI.visible = true;
-            this._colliderGroup.visible = true 
-            this._collideredGroup.visible = true;
-            this._robot.visible = false;
-            this._robot.playing = false; 
-
-            this.answerFeedback(answer);
+            this._dyUI.visible = false;
+            this._colliderGroup.visible = false 
+            this._collideredGroup.visible = false;
+            this._robot.visible = true;
+            this._robot.playing = true;
+            setTimeout(() => {
+                this._dyUI.visible = true;
+                this._colliderGroup.visible = true 
+                this._collideredGroup.visible = true;
+                this._robot.visible = false;
+                this._robot.playing = false; 
+    
+                this.answerFeedback(answer);
+            }, 2000);
         }, 3000);
     }
 
@@ -339,10 +357,8 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         feedbackJs.init(bool);
         feedback.parent = cc.find("Canvas").parent;
 
+        // 临时
         setTimeout(() => {
-            // 临时
-            this.disableForbidHandle();
-
             feedback.destroy();
             state.submit = false;
             this.updateState(state);
@@ -443,5 +459,6 @@ export default class dragAnswer_model02_v1 extends cc.Component {
     onDisable() {
         this.relieveState();
         cc.audioEngine.stopAll();
+
     }
 }

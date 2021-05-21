@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-05-07 14:34:26
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:22:53
+ * @LastEditTime: 2021-05-21 11:57:00
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
@@ -108,8 +108,12 @@ export default class dragAnswer_model01_v2 extends cc.Component {
             answer: false
         }
 
-        // 临时 禁止操作期间 切页
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        let feedback:any = this._worldRoot.getChildByName("feedback");
+        if (feedback) feedback.destroy();
     }
 
     async init(data: any) {
@@ -276,6 +280,8 @@ export default class dragAnswer_model01_v2 extends cc.Component {
                     let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
                     let bool: boolean = this._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
                     bool ? this.onHandleGuide() : this.onFlicker(state.answer);
+                } else {
+                    this.disableForbidHandle();
                 }
             }
         }
@@ -340,8 +346,6 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         feedback.parent = cc.find("Canvas").parent;
 
         setTimeout(() => {
-            this.disableForbidHandle();
-
             feedback.destroy();
             state.submit = false;
             this.updateState(state);
@@ -350,10 +354,14 @@ export default class dragAnswer_model01_v2 extends cc.Component {
 
     // 格子闪烁 提示
     onFlicker(answer: any) {
-        let t: fgui.Transition = this._view.getTransition("t0");
-        t.play(() => {
+        if (answer) {
+            let t: fgui.Transition = this._view.getTransition("t0");
+            t.play(() => {
+                this.answerFeedback(answer);
+            });
+        } else {
             this.answerFeedback(answer);
-        });
+        }
     }
 
     // 操作提示
