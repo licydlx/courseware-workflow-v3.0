@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<component size="64,147">
-  <displayList>
-    <image id="n15_rbpx" name="n15" src="rbpx8" fileName="images/dragAnswer-model02-v1/k06.png" xy="0,0"/>
-    <loader id="n17_q242" name="anchor" xy="0,0" size="64,141" url="ui://ik5aab9irbpx4" autoSize="true" clearOnPublish="true"/>
-  </displayList>
-</component>

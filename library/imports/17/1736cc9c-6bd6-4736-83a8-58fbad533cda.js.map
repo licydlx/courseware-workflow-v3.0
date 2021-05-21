@@ -1,1 +1,0 @@
-{"version":3,"sources":["assets\\prefabLibrary\\models\\dragAnswer\\IDragAnswerModel03Base.ts"],"names":[],"mappings":"","file":"","sourceRoot":"/","sourcesContent":["export default interface IDragAnswerModel03Base {\r\n    updateUi(),\r\n    mergeState(),\r\n    onLoad(),\r\n}"]}

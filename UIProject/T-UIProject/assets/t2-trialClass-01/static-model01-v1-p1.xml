@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<component size="1920,1080">
-  <displayList>
-    <image id="n1_qxt0" name="n1" src="qxt01g" fileName="images/common/0101.png" xy="0,0"/>
-    <image id="n2_qxt0" name="n2" src="qxt01b" fileName="images/static/0102.png" xy="262,320"/>
-    <image id="n3_qxt0" name="n3" src="qxt01c" fileName="images/static/0103.png" xy="1383,315"/>
-    <image id="n4_qxt0" name="n4" src="qxt01d" fileName="images/static/0104.png" xy="97,279"/>
-  </displayList>
-</component>
