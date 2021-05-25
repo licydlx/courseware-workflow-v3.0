@@ -99,6 +99,14 @@
     <sound id="ku3e34" name="question4_title_1.mp3" path="/audios/ttile/"/>
     <sound id="ku3e35" name="question1_title_1.mp3" path="/audios/ttile/"/>
     <sound id="ku3e36" name="question1_title_2.mp3" path="/audios/ttile/"/>
+    <image id="ku3e38" name="role_1.png" path="/images/question2/" exported="true"/>
+    <image id="ku3e39" name="role_2.png" path="/images/question2/" exported="true"/>
+    <image id="ku3e3a" name="role_3.png" path="/images/question2/" exported="true"/>
+    <image id="ku3e3b" name="role_4.png" path="/images/question2/" exported="true"/>
+    <image id="ku3e3c" name="light_0.png" path="/images/question2/" exported="true"/>
+    <image id="ku3e3d" name="light_1.png" path="/images/question2/" exported="true"/>
+    <component id="ku3e3e" name="Combination.xml" path="/components/common/" exported="true"/>
+    <image id="ku3e3f" name="0109.png" path="/images/common/" exported="true"/>
   </resources>
   <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4\t4-trialClass-01" packageCount="2" codePath="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4"/>
 </packageDescription>

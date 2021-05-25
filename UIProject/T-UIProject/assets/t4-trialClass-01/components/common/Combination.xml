@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="300,300">
+  <displayList>
+    <image id="n0_ku3e" name="n0" src="ku3e3c" fileName="images/question2/light_0.png" xy="150,150" pivot="0.5,0.5" anchor="true"/>
+    <image id="n1_ku3e" name="n1" src="ku3e3d" fileName="images/question2/light_1.png" xy="1,9"/>
+    <loader id="n2_ku3e" name="n2" xy="125,125" size="50,50" url="ui://rokozlzwku3e3b" align="center" vAlign="middle" clearOnPublish="true"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Alpha" target="n1_ku3e" tween="true" startValue="1" endValue="0" duration="25" ease="Linear"/>
+    <item time="25" type="Alpha" target="n1_ku3e" tween="true" startValue="0" endValue="1" duration="23" ease="Linear"/>
+    <item time="48" type="Alpha" target="n1_ku3e" value="1"/>
+  </transition>
+</component>

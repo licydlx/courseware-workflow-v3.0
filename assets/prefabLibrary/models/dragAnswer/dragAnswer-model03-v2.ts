@@ -31,6 +31,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
     protected _view: fgui.GComponent;
 
+    private _packName: string;
     // fairygui 组件
     private handleGuide: any;
     private lineBlink: any;
@@ -96,7 +97,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             colliderIndex: null,//当前拖拽物在数组内的索引
             collidered: this._cache["collideredBox"].map((v: any) => v),//二维数组，存放每个放置区对应的被放置元素
             dropArr: [],
-            // dragIconsPosArr: dragIconsPosArr,
             title: false,
             submit: false,
             answer: false
@@ -155,13 +155,13 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         let s = this;
         s.pageData = data;
         let { pathConfig, model, components } = data;
-        let Package = pathConfig.packageName;
+        s._packName = pathConfig.packageName;
         let GComponent = model.uiPath;
         let { answer, roleUrl, ae, gameType, roleCount } = model.config;
 
         if (model.uiPath) {
             GComponent = model.uiPath;
-            this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
+            this._view = fgui.UIPackage.createObject(s._packName, GComponent).asCom;
         }
 
         /* s._readTitleBtn = fgui.UIPackage.createObject('t4-trialClass-01', 'TitleCom').asCom;
@@ -187,7 +187,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 for (let v in ae) {
                     if (ae[v]) {
                         this[v] = {};
-                        if (ae[v].component) this[v].component = fgui.UIPackage.createObject(Package, ae[v].component).asCom;
+                        if (ae[v].component) this[v].component = fgui.UIPackage.createObject(s._packName, ae[v].component).asCom;
                         if (ae[v].pos) this[v].pos = ae[v].pos;
                     }
                 }
@@ -218,7 +218,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         evt.captureTouch();
         s.playSound('ui://rokozlzwkxox11');
         let collider = fgui.GObject.cast(evt.currentTarget);
-        s._view.setChildIndex(collider, s._view.numChildren - 1);
+        s._view.setChildIndex(collider, s._view.numChildren - 2);
         let colliderIndex = s._colliderBox.findIndex(v => v == collider);
 
         let state: any = globalThis._.cloneDeep(s._state);
@@ -274,15 +274,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
 
         let state: any = globalThis._.cloneDeep(this._state);
-        // let sss: any = globalThis._.cloneDeep(state);
-        // let state = JSON.parse(JSON.stringify(this._state))
-        // console.log('origin state = ', this._state.dropArr);// right
-        // console.log('clone state = ', state.dropArr);//rihgt
-        // console.log('sss = ', sss.dropArr);//wrong
 
-        // dropArr = state.collidered[collideredIndex].map(v => v);
-        // console.warn('state.dropArr[0] = ', state.dropArr);
-        // let dropArr = JSON.parse(JSON.stringify(state.dropArr));
         let dropArr = state.collidered[collideredIndex];
         // console.error('s.dropArr11111111111111 = ', dropArr);
 
@@ -293,6 +285,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             console.log('collideredName = ', collideredName);
             // 如果头和脚放置位置不匹配则重置位置 head dropBox1 || foot dropBox2
             let matchFlag = colliderName.indexOf('head') > -1 && collideredName.indexOf('dropBox1') > - 1 || colliderName.indexOf('foot') > -1 && collideredName.indexOf('dropBox2') > - 1;
+            console.log('matchFlag ', matchFlag);
 
             // 1.拿到当前放置区对应的放置区 2.获取对应放置区内的元素 3.判断元素的namee是否为相同role
             let matchCollideredIndex;
@@ -303,12 +296,18 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             }
             let matchCollinderArr = state.collidered[matchCollideredIndex];
 
-            if (!matchFlag || matchCollinderArr.length > 0 && !(matchCollinderArr[0].roleType == collider.data)) {
-                collideredIndex = -1;
+            if (s._gameType == 1) {
+
+                if (!matchFlag || matchCollinderArr.length > 0 && !(matchCollinderArr[0].roleType == collider.data)) {
+                    collideredIndex = -1;
+                }
+            } else if (s._gameType == 2) {
+                if (!matchFlag) {
+                    collideredIndex = -1;
+                }
             }
         }
         collider['collideredIndex'] = collideredIndex;
-
 
         // let dropArrIndex = dropArr.indexOf(data);//放置区是否已包含当前拖拽元素
         // let dropArrIndex = dropArr.findIndex(v => v.name == colliderName);//放置区是否已包含当前拖拽元素
@@ -321,21 +320,14 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         // 2.放入放置区
         if (collideredIndex == -1) {
             // reset
-            // console.log('reset');
-            /* if (dropArrIndex > -1) {
-                dropArr.splice(dropArrIndex, 1);
-            } */
+            console.log('reset');
+
             state.collider[colliderIndex] = {
                 x: s._cache["colliderBox"][colliderIndex].x,
                 y: s._cache["colliderBox"][colliderIndex].y,
                 collideredIndex: -1,
                 roleType: state.collider[colliderIndex].roleType
             }
-            /* if (collider.collideredIndex > -1) {
-                collideredIndex = collider.collideredIndex;
-            } else {
-                collideredIndex = 0
-            } */
         } else {
             if (dropArr.length == 1) {
                 // 移除原有的元素
@@ -367,9 +359,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         state.drag = "end";
         state.submit = false;
         state.colliderIndex = colliderIndex;
-        console.log('给state赋值前的', dropArr);
         // state.dropArr = dropArr;
-        console.warn('赋值后的', state.dropArr);
 
         // state.answer = footNum == s._answer ? true : false;
         s.updateState(state);
@@ -476,7 +466,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         state.submit = true;
         this.updateState(state);
 
-        
+
     }
 
     private showEndAnim(callbackFun: Function = null, callbackThis: any = null): void {
@@ -492,26 +482,49 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 let bottomCollidered = s.state.collidered[i + s._roleCount];
                 let roleUrl = s._roleUrl[bottomCollidered[0].roleType];
                 console.log(roleUrl);
-                let role = fgui.UIPackage.createObjectFromURL(roleUrl);
-                role.setPivot(0.5, 0.5, true);
-                if (s.pageData.model.uiPath == 'Question4Page01') {
-                    role.scaleX = role.scaleY = 0.7;
-                }
-                role.x = s._collideredBox[i].x;
-                role.y = s._collideredBox[i].y + 100;
-                role.alpha = 0;
-                s._view.addChild(role);
 
-                let offsetY = s.pageData.model.uiPath == 'Question4Page01' ? 220 : 350;
-                cc.tween(role).to(1, {
-                    alpha: 1
-                }).delay(0.5).to(1.5, {
-                    y: role.y + offsetY
-                }).call(() => {
-                    if (callbackFun) {
-                        callbackFun.call(callbackThis);
+
+                if (s._gameType === 1) {
+                    let role = fgui.UIPackage.createObject(s._packName, 'Combination').asCom;
+                    (role.getChild('n2') as fgui.GLoader).url = roleUrl;
+                    role.setPivot(0.5, 0.5, true);
+                    role.x = s._collideredBox[i].x + s._collideredBox[i].width / 2;
+                    role.y = s._collideredBox[i].y + 200;
+
+                    role.alpha = 0;
+                    let mask = s._view.getChild('mask');
+                    mask.visible = true;
+
+                    s._view.addChild(role);
+
+                    cc.tween(role).to(1, {
+                        alpha: 1
+                    }).call(() => {
+                        if (callbackFun) {
+                            callbackFun.call(callbackThis);
+                        }
+                    }).start();
+                } else if (s._gameType === 2) {
+                    let role = fgui.UIPackage.createObjectFromURL(roleUrl);
+                    role.setPivot(0.5, 0.5, true);
+                    role.x = s._collideredBox[i].x;
+                    role.y = s._collideredBox[i].y + 100;
+                    s._view.addChild(role);
+                    if (s.pageData.model.uiPath == 'Question4Page01') {
+                        role.scaleX = role.scaleY = 0.7;
                     }
-                }).start();
+                    let offsetY = s.pageData.model.uiPath == 'Question4Page01' ? 220 : 350;
+                    cc.tween(role).to(1, {
+                        alpha: 1
+                    }).delay(0.5).to(1.5, {
+                        y: role.y + offsetY
+                    }).call(() => {
+                        if (callbackFun) {
+                            callbackFun.call(callbackThis);
+                        }
+                    }).start();
+                }
+
             }
         });
     }
@@ -523,7 +536,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
     // 更新状态层
     updateState(curState: any) {
-        if (globalThis._.isEqual(this._state, curState)) return;
+        // if (globalThis._.isEqual(this._state, curState)) return
         this.state = curState;
     }
 
@@ -534,6 +547,9 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         // console.log('updateUi = ', state);
 
         if (state.drag == "move") {
+            if (s._view.getChildIndex(this._colliderBox[state.colliderIndex]) != s._view.numChildren - 2) {
+                s._view.setChildIndex(this._colliderBox[state.colliderIndex], s._view.numChildren - 2);
+            }
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
 
@@ -541,30 +557,34 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             // state.curDragIcon.y = state.curDragIconsPos.y;
         }
 
+        console.log('state.drag ', state.drag);
         if (state.drag == "end") {
-            if (!globalThis._.isEqual(oldState.collider, state.collider)) {
-                console.log('endddddddddd update ui', state);
+            // if (!globalThis._.isEqual(oldState.collider, state.collider)) {
+            // console.log('endddddddddd update ui', state);
 
-                for (let i = 0; i < state.collider.length; i++) {
-                    this._colliderBox[i].x = state.collider[i].x;
-                    this._colliderBox[i].y = state.collider[i].y;
-                }
+            for (let i = 0; i < state.collider.length; i++) {
+                this._colliderBox[i].x = state.collider[i].x;
+                this._colliderBox[i].y = state.collider[i].y;
             }
+            // }
             if (!globalThis._.isEqual(oldState.submit, state.submit)) {
-                console.log('submittttttt');
+                // console.log('submittttttt');
 
                 if (state.submit) {
-                    if (s._gameType == 2 && state.answer) {
+                    // 根据collider 初始位置 判断 是否被操作过
+                    let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
+                    let bool: boolean = s._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
+                    if (bool) {
+                        s.handTips1(s._colliderBox[0], s._collideredBox[0], s._gameType === 1);
+                        return;
+                    }
+                    if (state.answer) {
                         s.showEndAnim(() => {
                             this.answerFeedback(state.answer);
                         });
                     } else {
                         this.answerFeedback(state.answer);
                     }
-                    // if (state.drops) {
-                    // } else {
-                    //     this.onHandleGuide();
-                    // }
                 }
             }
 
@@ -590,7 +610,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         if (bool) {
             cc.audioEngine.stopAll();
             this.forbidHandle();
-            console.log('this._title["_sound"]', this._title["_sound"]);
 
             let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
             let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
@@ -649,6 +668,51 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             state.submit = false;
             this.updateState(state);
         }, 2);
+    }
+
+    handTips1(fromObj: fgui.GObject, toObj: fgui.GObject, center: boolean = true) {
+        let s = this;
+        let hand = fgui.UIPackage.createObjectFromURL('ui://rokozlzwku3e3f');
+        s._view.addChild(hand);
+        hand.x = fromObj.x + (center ? fromObj.width / 2 : 0);
+        hand.y = fromObj.y + (center ? fromObj.height / 2 : 0);
+        cc.tween(hand).to(2, {
+            x: toObj.x + (center ? toObj.width / 2 : 0),
+            y: toObj.y + (center ? toObj.height / 2 : 0)
+        }).call(() => {
+            s._view.removeChild(hand);
+            hand = null;
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.submit = false;
+            this.updateState(state)
+        }).start();
+    }
+
+    // TS
+    drawLineOfDashes(g: cc.Graphics, from: cc.Vec2, to: cc.Vec2, stroke: boolean = true, length: number = 8, interval: number = 4): void {
+        if (g) {
+            let off = to.sub(from);
+            let dir = off.normalize();
+            let dis = off.mag();
+            let delta = dir.mul(length + interval);
+            let delta1 = dir.mul(length);
+            let n = Math.floor(dis / (length + interval));
+            for (let i = 0; i < n; ++i) {
+                let start = from.add(delta.mul(i));
+                g.moveTo(start.x, start.y);
+                let end = start.add(delta1);
+                g.lineTo(end.x, end.y);
+            }
+            let start1 = from.add(delta.mul(n));
+            g.moveTo(start1.x, start1.y);
+            if (length < dis - (length + interval) * n) {
+                let end = start1.add(delta1);
+                g.lineTo(end.x, end.y);
+            } else {
+                g.lineTo(to.x, to.y);
+            }
+            if (stroke) g.stroke();
+        }
     }
 
     // 运行时 禁止操作

@@ -139,46 +139,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             }
         }
         // console.log('this._collideredBox', this._collideredBox);
-
-
-        /* s.dropBox = fgui.UIPackage.createObject('t4-trialClass-01', 'TypeDropBox1').asCom;
-        s.dropBox.x = 368;
-        s.dropBox.y = 600;
-        s._view.addChild(s.dropBox);
-
-        s.dragBox = fgui.UIPackage.createObject('t4-trialClass-01', 'TypeDragBox1').asCom;
-        s.dragBox.x = 610;
-        s.dragBox.y = 250;
-        s._view.addChild(s.dragBox); */
-        // s.dropBox = s._view.getChild('dropBox').asCom;
-        // s.dragBox = s._view.getChild('dragBox').asCom;
-
-        // let dragIcon = s.pageData.model.config.dragIcon;
-        /* for (let key in dragIcon) {
-            let dragIconData = dragIcon[key];
-            let icon = new fgui.GComponent();
-            let iconImg = fgui.UIPackage.createObject('t4-trialClass-01', dragIconData.name).asImage;
-            icon.addChild(iconImg);
-            icon.setSize(iconImg.width, iconImg.height);
-            // icon.setPivot(0.5,0.5,true);
-            icon.opaque = true;
-            icon.x = dragIconData.x;
-            icon.y = dragIconData.y;
-            icon['dragOrigin'] = this.getOriginValue(icon);
-            console.log('icon = ', icon['dragOrigin']);
-
-            // icon.touchable = true;
-            icon.draggable = true;
-
-            icon.on(fgui.Event.TOUCH_BEGIN, s._onDragStart, s);
-            icon.on(fgui.Event.TOUCH_MOVE, s._onDragMove, s);
-            icon.on(fgui.Event.TOUCH_END, s._onDragEnd, s);
-
-            // icon.on(cc.Node.EventType.TOUCH_START, s._onDragStart, s);
-
-            s.dragBox.addChild(icon);
-            s._dragIconArr.push(icon);
-        } */
     }
 
     addEvent() {
@@ -255,19 +215,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     private _onDragStart(evt: fgui.Event): void {
         let s = this;
         s.playSound('ui://rokozlzwkxox11');
-        // evt.captureTouch();
-        /* s._curDragIcon = evt.currentTarget;
-        console.log('_onDragStart');
-        console.log(s._curDragIcon);
-        console.log(s._curDragIcon.y);
-
-        let pos = s._curDragIcon.parent.convertToNodeSpaceAR(evt.getLocation());
-        s._offsetPos.x = pos.x - s._curDragIcon.x;
-        s._offsetPos.y = pos.y - s._curDragIcon.y;
-
-        s._view.on(cc.Node.EventType.TOUCH_MOVE, s._onDragMove, s);
-        s._curDragIcon.once(cc.Node.EventType.TOUCH_END, s._onDragEnd, s); */
-        // s._curDragIcon.draggable = true;
+        evt.captureTouch();
 
         let collider = fgui.GObject.cast(evt.currentTarget);
         s._view.setChildIndex(collider, s._view.numChildren - 1);
@@ -276,35 +224,19 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         let state: any = globalThis._.cloneDeep(s._state);
         state.colliderIndex = colliderIndex;
         s.updateState(state);
-        // state.drag = "start";
-        // state.curDragIcon = s._curDragIcon;
-        /* state.curDragIconsPos = {
-            x: s._curDragIcon['$gobj']["dragOrigin"].x,
-            y: s._curDragIcon['$gobj']["dragOrigin"].y,
-        }; */
-        // state.answer = state.drops === s._answer;
     }
 
     private _onDragMove(evt: fgui.Event): void {
         let s = this;
-        // console.log('_onDragMove');
-        // if (!s._curDragIcon) return;
         s._dragging = true;
-
-
-        // let pos = s._curDragIcon.parent.convertToNodeSpaceAR(evt.getLocation());
-        // s._curDragIcon.x = pos.x - s._offsetPos.x;
-        // s._curDragIcon.y = pos.y - s._offsetPos.y;
-
-        // console.log(s._curDragIcon.x + ' - ' + s._curDragIcon.y);
     }
 
     // private dropArr = [];
     private _onDragEnd(evt: fgui.Event): void {
         let s = this;
-        s.playSound('ui://rokozlzwku3e2t');
         if (!this._dragging) return;
         this._dragging = false;
+        s.playSound('ui://rokozlzwku3e2t');
 
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
@@ -331,19 +263,11 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
 
         let state: any = globalThis._.cloneDeep(this._state);
-        let sss: any = globalThis._.cloneDeep(state);
-        // let state = JSON.parse(JSON.stringify(this._state))
         console.log('origin state = ', this._state.dropArr);// right
         console.log('clone state = ', state.dropArr);//rihgt
-        console.log('sss = ', sss.dropArr);//wrong
 
-        // dropArr = state.collidered[collideredIndex].map(v => v);
-        // console.warn('state.dropArr[0] = ', state.dropArr);
-        // let dropArr = JSON.parse(JSON.stringify(state.dropArr));
         let dropArr = state.dropArr;
         // console.error('s.dropArr11111111111111 = ', dropArr);
-
-
 
         let name = collider.name;
         // let dropArrIndex = dropArr.indexOf(data);//放置区是否已包含当前拖拽元素
@@ -469,7 +393,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     // 更新状态层
     updateState(curState: any) {
-        if (globalThis._.isEqual(this._state, curState)) return;
+        // if (globalThis._.isEqual(this._state, curState)) return;
         this.state = curState;
     }
 
@@ -478,43 +402,36 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         let s = this;
 
         if (state.drag == "move") {
+            if (s._view.getChildIndex(this._colliderBox[state.colliderIndex]) != s._view.numChildren - 1) {
+                s._view.setChildIndex(this._colliderBox[state.colliderIndex], s._view.numChildren - 1);
+            }
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
         }
 
         if (state.drag == "end") {
-            if (!globalThis._.isEqual(oldState.collider, state.collider)) {
-                console.log('endddddddddd update ui', state);
-
+            // if (!globalThis._.isEqual(oldState.collider, state.collider)) {
                 for (let i = 0; i < state.collider.length; i++) {
                     this._colliderBox[i].x = state.collider[i].x;
                     this._colliderBox[i].y = state.collider[i].y;
                 }
-            }
+            // }
             if (!globalThis._.isEqual(oldState.submit, state.submit)) {
-                console.log('submittttttt');
-
                 if (state.submit) {
-                    // if (state.drops) {
+                    // 根据collider 初始位置 判断 是否被操作过
+                    let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
+                    let bool: boolean = s._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
+                    if (bool) {
+                        s.handTips1(s._colliderBox[0], s._collideredBox[0]);
+                        return;
+                    }
                     this.answerFeedback(state.answer);
-                    // } else {
-                    //     this.onHandleGuide();
-                    // }
                 }
             }
 
             if (!globalThis._.isEqual(oldState.title, state.title)) {
                 this.playTitle(state.title);
             }
-
-            /* if (!globalThis._.isEqual(oldState.submit, state.submit)) {
-                if (state.submit) {
-                    // 根据collider 初始位置 判断 是否被操作过
-                    let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
-                    let bool: boolean = s._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
-                    bool ? this.onHandleGuide() : this.onFlicker(state.answer);
-                }
-            } */
 
         }
     }
@@ -584,6 +501,24 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }, 2);
     }
 
+    handTips1(fromObj: fgui.GObject, toObj: fgui.GObject, center: boolean = true) {
+        let s = this;
+        let hand = fgui.UIPackage.createObjectFromURL('ui://rokozlzwku3e3f');
+        s._view.addChild(hand);
+        hand.x = fromObj.x + (center ? fromObj.width / 2 : 0);
+        hand.y = fromObj.y + (center ? fromObj.height / 2 : 0);
+        cc.tween(hand).to(2, {
+            x: toObj.x + (center ? toObj.width / 2 : 0),
+            y: toObj.y + (center ? toObj.height / 2 : 0)
+        }).call(() => {
+            s._view.removeChild(hand);
+            hand = null;
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.submit = false;
+            this.updateState(state)
+        }).start();
+    }
+
     // 运行时 禁止操作
     forbidHandle() {
         let handleMask = this._worldRoot.getChildByName('handleMask');
@@ -613,7 +548,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             state.drag = "move";
             state.collider[state.colliderIndex] = {
                 x: this._colliderBox[state.colliderIndex].x,
-                y: this._colliderBox[state.colliderIndex].y,
+                y: this._colliderBox[state.colliderIndex].y
             };
             s.updateState(state);
 
