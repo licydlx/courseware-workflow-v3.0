@@ -9,7 +9,7 @@
       <Button icon="ui://rokozlzwmzao22" sound="ui://rokozlzwku3e30" volume="0"/>
     </component>
     <loader id="n7_kxox" name="titleTrigger" xy="98,52" size="228,171" scale="0.8,0.8" url="ui://rokozlzwkxoxv" autoSize="true" playing="false">
-      <gearAni controller="c2" pages="0" values="0,s" default="0,p"/>
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
     <component id="n8_kxox" name="submit" src="kxoxz" fileName="buttons/submit.xml" xy="1562,722">
       <Button icon="ui://rokozlzwkxox10" sound="ui://rokozlzwkxox11"/>
@@ -40,6 +40,9 @@
     <component id="n41_mzao" name="role1_head_4" src="kxox13" fileName="components/common/DragBtn.xml" xy="1627,434" pivot="0.5,0.5" anchor="true" size="141,141" group="n24_kxox" customData="role1">
       <Button icon="ui://rokozlzwmzao25"/>
     </component>
+    <component id="n44_ku3e" name="role1_head_5" src="kxox13" fileName="components/common/DragBtn.xml" xy="1627,434" pivot="0.5,0.5" anchor="true" size="141,141" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao25"/>
+    </component>
     <component id="n10_kxox" name="role1_foot_0" src="kxox13" fileName="components/common/DragBtn.xml" xy="741,771" pivot="0.5,0.5" anchor="true" size="143,83" group="n24_kxox" customData="role1">
       <Button icon="ui://rokozlzwmzao23"/>
     </component>
@@ -53,6 +56,9 @@
       <Button icon="ui://rokozlzwmzao23"/>
     </component>
     <component id="n40_mzao" name="role1_foot_4" src="kxox13" fileName="components/common/DragBtn.xml" xy="741,771" pivot="0.5,0.5" anchor="true" size="143,83" group="n24_kxox" customData="role1">
+      <Button icon="ui://rokozlzwmzao23"/>
+    </component>
+    <component id="n45_ku3e" name="role1_foot_5" src="kxox13" fileName="components/common/DragBtn.xml" xy="741,771" pivot="0.5,0.5" anchor="true" size="143,83" group="n24_kxox" customData="role1">
       <Button icon="ui://rokozlzwmzao23"/>
     </component>
     <component id="n22_kxox" name="role2_foot_0" src="kxox13" fileName="components/common/DragBtn.xml" xy="1121,772" pivot="0.5,0.5" anchor="true" size="152,85" group="n24_kxox" customData="role2">
@@ -70,6 +76,9 @@
     <component id="n39_mzao" name="role2_foot_4" src="kxox13" fileName="components/common/DragBtn.xml" xy="1121,772" pivot="0.5,0.5" anchor="true" size="152,85" group="n24_kxox" customData="role2">
       <Button icon="ui://rokozlzwmzao24"/>
     </component>
-    <group id="n24_kxox" name="colliderBox" xy="670,364" size="1028,451" advanced="true"/>
+    <component id="n46_ku3e" name="role2_foot_5" src="kxox13" fileName="components/common/DragBtn.xml" xy="1121,772" pivot="0.5,0.5" anchor="true" size="152,85" group="n24_kxox" customData="role2">
+      <Button icon="ui://rokozlzwmzao24"/>
+    </component>
+    <group id="n24_kxox" name="colliderBox" xy="669,363" size="1028,451" advanced="true"/>
   </displayList>
 </component>

@@ -8,9 +8,9 @@
  */
 
 export async function getMessage(data: any) {
-    // console.log('getMessage')
+    console.log('getMessage')
     let message = globalThis._.cloneDeep(data);
-    // console.log(message)
+    console.log(message)
     
     switch (data.method) {
         case "onJumpPage": {
