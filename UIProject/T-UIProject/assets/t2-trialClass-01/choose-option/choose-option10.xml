@@ -4,7 +4,7 @@
     <image id="n0_akgh" name="n0" src="akgh3c" fileName="images/choose-model02-v1/0103.png" xy="0,0"/>
     <image id="n1_akgh" name="border" src="akgh3b" fileName="images/choose-model02-v1/0102.png" xy="0,0" alpha="0"/>
     <image id="n6_akgh" name="arrow" src="akgh3e" fileName="images/choose-model02-v1/0105.png" xy="70,-50" alpha="0"/>
-    <loader3D id="n14_lmz9" name="spine" xy="39,64" size="100,100" url="ui://ik5aab9ilmz961" autoSize="true" animation="1-2_02_ani1" skin=""/>
+    <loader3D id="n14_lmz9" name="spine" xy="40,64" size="100,100" url="ui://ik5aab9ilmz961" autoSize="true" animation="1-2_02_ani1" skin=""/>
     <image id="n5_akgh" name="n5" src="akgh3d" fileName="images/choose-model02-v1/0104.png" xy="135,26"/>
   </displayList>
 </component>

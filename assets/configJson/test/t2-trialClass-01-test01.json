@@ -19,7 +19,7 @@
     "chapters": [
         {
             "model": {
-                "uiPath": "dragAnswer-model02-v1-p7",
+                "uiPath": "dragAnswer-model02-v1-p5",
                 "bundleName": "dragAnswer",
                 "prefabName": "dragAnswer-model02-v1"
             },
@@ -33,7 +33,21 @@
         
         {
             "model": {
-                "uiPath": "dragAnswer-model02-v1-p5",
+                "uiPath": "dragAnswer-model02-v1-p6",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model02-v1"
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "dragAnswer-model02-v1-p7",
                 "bundleName": "dragAnswer",
                 "prefabName": "dragAnswer-model02-v1"
             },
@@ -212,20 +226,6 @@
                         }
                     }
                 }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-
-        {
-            "model": {
-                "uiPath": "dragAnswer-model02-v1-p6",
-                "bundleName": "dragAnswer",
-                "prefabName": "dragAnswer-model02-v1"
             },
             "components": {
                 "feedback": {

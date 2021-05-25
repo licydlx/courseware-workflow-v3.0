@@ -4,6 +4,7 @@
   <displayList>
     <loader id="n2_rbpx" name="background" xy="0,0" size="1920,1080" group="n4_rbpx" url="ui://ik5aab9iqxt01g" autoSize="true"/>
     <image id="n53_qe6i" name="n53" src="qe6i1x" fileName="images/dragAnswer-model01-v2/0108.png" xy="60,180" group="n4_rbpx"/>
+    <image id="n67_azf5" name="n67" src="azf572" fileName="images/dragAnswer-model01-v2/0116.png" xy="401,310" group="n4_rbpx"/>
     <image id="n57_j7u6" name="n57" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="779,362" group="n4_rbpx">
       <relation target="" sidePair="center-center,middle-middle"/>
     </image>
