@@ -5,13 +5,12 @@
     <loader id="n2_rbpx" name="background" xy="0,0" size="1920,1080" group="n4_rbpx" url="ui://ik5aab9iqxt01g" autoSize="true"/>
     <image id="n6_rbpx" name="n6" src="rbpxd" fileName="images/dragAnswer-model02-v1/拖板@2x.png" xy="261,744" group="n4_rbpx"/>
     <group id="n4_rbpx" name="UI" xy="0,0" size="1920,1080"/>
-    <image id="n39_qxt0" name="n39" src="qxt015" fileName="images/dragAnswer-model02-v1/0305.png" xy="849,250" group="n43_q242"/>
-    <image id="n16_rbpx" name="n16" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="989,230" group="n43_q242"/>
-    <group id="n43_q242" name="dyUI" xy="849,230" size="145,471" advanced="true"/>
-    <component id="n37_qxt0" name="n37" src="q2426t" fileName="components/collidered11.xml" xy="990,359" group="n18_dbj2" alpha="0"/>
-    <component id="n41_qxt0" name="n41" src="q2426s" fileName="components/collidered10.xml" xy="990,493" group="n18_dbj2" alpha="0"/>
-    <component id="n36_qxt0" name="n36" src="q2426u" fileName="components/collidered12.xml" xy="1078,359" group="n18_dbj2" alpha="0"/>
-    <component id="n40_qxt0" name="n40" src="q2426v" fileName="components/collidered13.xml" xy="990,250" group="n18_dbj2" alpha="0"/>
+    <image id="n39_qxt0" name="n39" src="qxt015" fileName="images/dragAnswer-model02-v1/0305.png" xy="848,250" group="n43_q242"/>
+    <group id="n43_q242" name="dyUI" xy="848,250" size="142,422" advanced="true"/>
+    <component id="n37_qxt0" name="n37" src="q2426t" fileName="components/collidered11.xml" xy="990,359" group="n18_dbj2"/>
+    <component id="n41_qxt0" name="n41" src="q2426s" fileName="components/collidered10.xml" xy="990,493" group="n18_dbj2"/>
+    <component id="n36_qxt0" name="n36" src="q2426u" fileName="components/collidered12.xml" xy="1078,359" group="n18_dbj2"/>
+    <component id="n40_qxt0" name="n40" src="q2426v" fileName="components/collidered13.xml" xy="990,250" group="n18_dbj2"/>
     <group id="n18_dbj2" name="collideredBox" xy="990,250" size="148,423" advanced="true"/>
     <component id="n20_dbj2" name="n20" src="dbj2f" fileName="buttons/dragBtn.xml" xy="457,840" size="110,170" group="n19_dbj2" scale="0.8,0.8">
       <Button icon="ui://ik5aab9iqxt0w"/>
@@ -26,6 +25,7 @@
       <Button icon="ui://ik5aab9iqxt0z"/>
     </component>
     <group id="n19_dbj2" name="colliderBox" xy="457,794" size="1140,230" advanced="true"/>
+    <image id="n16_rbpx" name="wire" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="988,230"/>
     <component id="n25_qxt0" name="title" src="qxt0h" fileName="buttons/title.xml" xy="1000,100" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://ik5aab9iqxt0g" sound="ui://ik5aab9iqxt017" volume="0"/>
