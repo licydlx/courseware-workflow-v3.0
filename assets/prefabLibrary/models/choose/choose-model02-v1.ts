@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-20 18:25:39
+ * @LastEditTime: 2021-05-26 17:18:07
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
@@ -160,7 +160,8 @@ export default class choose_model02_v1 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
         if (!globalThis._.isEqual(oldState.option, state.option)) {
-
+            this.playClick();
+            
             if (state.option || state.option === 0) {
                 if (oldState.option || oldState.option === 0) {
                     this.selectEffect(false,oldState.option);
@@ -190,6 +191,16 @@ export default class choose_model02_v1 extends cc.Component {
             if (state.checkAnswer) {
                 this.answerFeedback(state.answer);
             }
+        }
+    }
+    
+    // 播放 點擊声效
+    async playClick(){
+        let click = this._view.getChild("click").asButton;
+        if (click) {
+            let item = fgui.UIPackage.getItemByURL(click["_sound"]);
+            let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
+            cc.audioEngine.play(audio, false, 1);
         }
     }
 

@@ -195,6 +195,9 @@
     <image id="azf571" name="1000.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="azf572" name="0116.png" path="/images/dragAnswer-model01-v2/"/>
     <image id="azf573" name="0117.png" path="/images/dragAnswer-model01-v2/"/>
+    <sound id="98t374" name="错误反馈1.mp3" path="/audios/"/>
+    <sound id="98t375" name="拖动放置.mp3" path="/audios/"/>
+    <component id="98t376" name="audios.xml" path="/buttons/"/>
   </resources>
   <publish name=""/>
 </packageDescription>
