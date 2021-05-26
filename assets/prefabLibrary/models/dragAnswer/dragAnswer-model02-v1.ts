@@ -271,14 +271,15 @@ export default class dragAnswer_model02_v1 extends cc.Component {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
 
-            let obj: any = this._adsorb(this._colliderBox[state.colliderIndex], state.colliderIndex);
+            /* let obj: any = this._adsorb(this._colliderBox[state.colliderIndex], state.colliderIndex);
             for (let i = 0; i < this._collideredBox.length; i++) {
                 if (i == obj.s) {
                     this._collideredBox[i].alpha = 1;
                 } else {
                     this._collideredBox[i].alpha = 0;
                 }
-            }
+            } */
+            this._view.getChild('shadow').visible = true;
         }
 
         if (state.drag == "end") {
@@ -301,9 +302,10 @@ export default class dragAnswer_model02_v1 extends cc.Component {
                 this.disableForbidHandle();
             }
             
-            for (let i = 0; i < this._collideredBox.length; i++) {
+            /* for (let i = 0; i < this._collideredBox.length; i++) {
                 this._collideredBox[i].alpha = 0;
-            }
+            } */
+            this._view.getChild('shadow').visible = false;
         }
     }
 
@@ -331,12 +333,14 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         this.forbidHandle();
         setTimeout(() => {
             this._dyUI.visible = false;
+            this._view.getChild('wire').visible = false;
             this._colliderGroup.visible = false 
             this._collideredGroup.visible = false;
             this._robot.visible = true;
             this._robot.playing = true;
             setTimeout(() => {
                 this._dyUI.visible = true;
+                this._view.getChild('wire').visible = true;
                 this._colliderGroup.visible = true 
                 this._collideredGroup.visible = true;
                 this._robot.visible = false;

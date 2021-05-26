@@ -195,6 +195,43 @@
     <image id="azf571" name="1000.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="azf572" name="0116.png" path="/images/dragAnswer-model01-v2/"/>
     <image id="azf573" name="0117.png" path="/images/dragAnswer-model01-v2/"/>
+    <component id="ikyr74" name="dragAnswer-model02-v1-p5-new.xml" path="/" exported="true"/>
+    <image id="ikyr75" name="icon_4_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr76" name="box.png" path="/images/dragAnswer-model02-v1-new/"/>
+    <image id="ikyr77" name="icon_0_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr78" name="icon_0_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr79" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7a" name="icon_1_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7b" name="icon_2_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7c" name="icon_2_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7d" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7e" name="icon_3_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7f" name="icon_4_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7g" name="robot.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <component id="ikyr7h" name="dragAnswer-model02-v1-p6-new.xml" path="/" exported="true"/>
+    <image id="ikyr7i" name="shadow.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7j" name="robot.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7k" name="icon_0_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7l" name="icon_0_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7m" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7n" name="icon_1_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7o" name="icon_2_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7p" name="icon_2_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7q" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7r" name="icon_3_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7s" name="n30.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7t" name="shadow.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <component id="ikyr7u" name="dragAnswer-model02-v1-p7-new.xml" path="/" exported="true"/>
+    <image id="ikyr7v" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr7w" name="icon_1_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr7x" name="icon_2_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr7y" name="icon_2_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr7z" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr80" name="icon_3_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr81" name="shadow.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr82" name="icon_0_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr83" name="icon_0_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr85" name="robot.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
   </resources>
-  <publish name=""/>
+  <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t2\t2-trialClass-01" packageCount="2"/>
 </packageDescription>

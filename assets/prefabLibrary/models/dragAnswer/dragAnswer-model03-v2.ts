@@ -359,11 +359,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         state.drag = "end";
         state.submit = false;
         state.colliderIndex = colliderIndex;
-        // state.dropArr = dropArr;
 
-        // state.answer = footNum == s._answer ? true : false;
         s.updateState(state);
-        // s._curDragIcon = null;
         console.log('------------------------------------------------');
 
     }
@@ -481,7 +478,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             if (i < (s.state.collidered.length / 2) >> 0 && v.length > 0) {
                 let bottomCollidered = s.state.collidered[i + s._roleCount];
                 let roleUrl = s._roleUrl[bottomCollidered[0].roleType];
-                console.log(roleUrl);
 
 
                 if (s._gameType === 1) {
@@ -490,12 +486,11 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                     role.setPivot(0.5, 0.5, true);
                     role.x = s._collideredBox[i].x + s._collideredBox[i].width / 2;
                     role.y = s._collideredBox[i].y + 200;
-
                     role.alpha = 0;
-                    let mask = s._view.getChild('mask');
-                    mask.visible = true;
-
                     s._view.addChild(role);
+
+                    let mask = s._view.getChild('mask');
+                    mask.visible = true;            
 
                     cc.tween(role).to(1, {
                         alpha: 1
@@ -511,7 +506,9 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                     role.setPivot(0.5, 0.5, true);
                     role.x = s._collideredBox[i].x;
                     role.y = s._collideredBox[i].y + 100;
+                    role.alpha = 0;
                     s._view.addChild(role);
+
                     if (s.pageData.model.uiPath == 'Question4Page01') {
                         role.scaleX = role.scaleY = 0.7;
                     }

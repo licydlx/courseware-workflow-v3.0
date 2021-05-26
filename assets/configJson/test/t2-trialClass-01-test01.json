@@ -19,7 +19,7 @@
     "chapters": [
         {
             "model": {
-                "uiPath": "dragAnswer-model02-v1-p5",
+                "uiPath": "dragAnswer-model02-v1-p5-new",
                 "bundleName": "dragAnswer",
                 "prefabName": "dragAnswer-model02-v1"
             },
@@ -33,7 +33,7 @@
         
         {
             "model": {
-                "uiPath": "dragAnswer-model02-v1-p6",
+                "uiPath": "dragAnswer-model02-v1-p6-new",
                 "bundleName": "dragAnswer",
                 "prefabName": "dragAnswer-model02-v1"
             },
@@ -47,7 +47,7 @@
 
         {
             "model": {
-                "uiPath": "dragAnswer-model02-v1-p7",
+                "uiPath": "dragAnswer-model02-v1-p7-new",
                 "bundleName": "dragAnswer",
                 "prefabName": "dragAnswer-model02-v1"
             },
