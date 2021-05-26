@@ -27,6 +27,8 @@
     <image id="mzaoz" name="0102.jpg" path="/components/images/static-model01-v1/"/>
     <image id="mzao10" name="0113.png" path="/components/images/common/" scale="tile" scale9grid="25,25,50,50"/>
     <image id="mzao11" name="0103.png" path="/components/images/static-model01-v1/"/>
+    <sound id="98t312" name="拖动放置.mp3" path="/audios/"/>
+    <sound id="98t313" name="错误反馈1.mp3" path="/audios/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

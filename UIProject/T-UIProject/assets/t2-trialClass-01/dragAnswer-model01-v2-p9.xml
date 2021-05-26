@@ -34,6 +34,10 @@
     <loader id="n26_qxt0" name="titleTrigger" xy="60,50" size="228,171" scale="0.8,0.8" url="ui://ik5aab9iqxt0k" autoSize="true" playing="false">
       <gearAni controller="c2" pages="1" values="12,p" default="0,s"/>
     </loader>
+    <component id="n63_98t3" name="place" src="98t376" fileName="buttons/audios.xml" xy="749,2436" group="n64_98t3">
+      <Button sound="ui://ik5aab9i98t375" volume="0"/>
+    </component>
+    <group id="n64_98t3" name="audios" xy="749,2436" size="0,0"/>
   </displayList>
   <transition name="t0">
     <item time="0" type="Alpha" target="n60_o46u" tween="true" startValue="1" endValue="0.5" duration="6"/>

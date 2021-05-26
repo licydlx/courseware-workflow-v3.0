@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-05-07 14:34:26
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-21 11:57:00
+ * @LastEditTime: 2021-05-26 16:23:56
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
@@ -265,6 +265,10 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         if (state.drag == "end") {
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
                 for (let i = 0; i < state.collider.length; i++) {
+                    // 放置声
+                    if (state.collider[i].x != this._colliderBox[i].x && this._colliderBox[i].y != state.collider[i].y) {
+                        this.playPlace();
+                    }
                     this._colliderBox[i].x = state.collider[i].x;
                     this._colliderBox[i].y = state.collider[i].y;
                 }
@@ -287,9 +291,19 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         }
     }
 
+    // 播放 放置声效
+    async playPlace(){
+        cc.audioEngine.stopAll();
+        let place = this._view.getChild("place").asButton;
+        if (place) {
+            let item = fgui.UIPackage.getItemByURL(place["_sound"]);
+            let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
+            cc.audioEngine.play(audio, false, 1);
+        }
+    }
+
     async playTitle(bool: boolean) {
         this._c2.selectedIndex = bool ? 1 : 0;
-
         if (bool) {
             cc.audioEngine.stopAll();
             this.forbidHandle();

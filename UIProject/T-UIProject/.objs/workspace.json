@@ -5,19 +5,22 @@
     "ui://5w4y4dqwku3e2s",
     "ui://5w4y4dqwku3e3e",
     "ui://5w4y4dqwku3e3f",
-    "ui://ik5aab9irbpxe"
+    "ui://ik5aab9iht432d"
   ],
   "packageGroup.mine": [],
   "libview.syncEditor": 0,
   "auxline1": true,
   "canvasColor": 10066329,
   "auxline2": true,
-  "doc.activeDoc": "ui://ik5aab9irbpxe",
+  "doc.activeDoc": "ui://ik5aab9iht432d",
   "libview.twoColumn": false,
-  "libview.expandedNodes": [],
+  "libview.expandedNodes": [
+    "ik5aab9i",
+    "/"
+  ],
   "snapToGrid": true,
   "backgroundColor": 6710886,
-  "libview.currentGroup": "t4",
+  "libview.currentGroup": "t2",
   "gridSize": 30,
   "gridColor": 80
 }
