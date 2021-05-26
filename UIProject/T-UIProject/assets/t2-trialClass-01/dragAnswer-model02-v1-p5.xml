@@ -6,14 +6,13 @@
     <image id="n6_rbpx" name="n6" src="rbpxd" fileName="images/dragAnswer-model02-v1/拖板@2x.png" xy="261,744" group="n4_rbpx"/>
     <group id="n4_rbpx" name="UI" xy="0,0" size="1920,1080"/>
     <image id="n5_rbpx" name="n5" src="rbpxb" fileName="images/dragAnswer-model02-v1/机器人1@2x.png" xy="840,278" group="n27_q242"/>
-    <image id="n16_rbpx" name="wire" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="989,264" group="n27_q242"/>
-    <group id="n27_q242" name="dyUI" xy="840,264" size="297,471" advanced="true"/>
+    <group id="n27_q242" name="dyUI" xy="840,278" size="297,449" advanced="true"/>
     <component id="n12_rbpx" name="n12" src="q2426f" fileName="components/collidered01.xml" xy="990,331" group="n18_dbj2" alpha="0"/>
-    <component id="n13_rbpx" name="n13" src="q2426g" fileName="components/collidered02.xml" xy="990,272" group="n18_dbj2" alpha="0"/>
+    <component id="n13_rbpx" name="n13" src="q2426g" fileName="components/collidered02.xml" xy="989,272" group="n18_dbj2" alpha="0"/>
     <component id="n15_rbpx" name="n15" src="q2426j" fileName="components/collidered03.xml" xy="990,441" group="n18_dbj2" alpha="0"/>
     <component id="n14_rbpx" name="n14" src="q2426k" fileName="components/collidered04.xml" xy="1051,441" group="n18_dbj2" alpha="0"/>
     <component id="n17_rbpx" name="n17" src="q2426n" fileName="components/collidered05.xml" xy="990,581" group="n18_dbj2" alpha="0"/>
-    <group id="n18_dbj2" name="collideredBox" xy="990,272" size="148,456" advanced="true"/>
+    <group id="n18_dbj2" name="collideredBox" xy="989,272" size="149,456" advanced="true"/>
     <component id="n20_dbj2" name="n20" src="dbj2f" fileName="buttons/dragBtn.xml" xy="438,840" size="100,100" group="n19_dbj2" aspect="true">
       <Button icon="ui://ik5aab9irbpx0"/>
     </component>
@@ -30,6 +29,7 @@
       <Button icon="ui://ik5aab9irbpx7"/>
     </component>
     <group id="n19_dbj2" name="colliderBox" xy="438,826" size="1147,160" advanced="true"/>
+    <image id="n16_rbpx" name="wire" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="988,264"/>
     <component id="n25_qxt0" name="title" src="qxt0h" fileName="buttons/title.xml" xy="1000,100" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://ik5aab9iqxt0g" sound="ui://ik5aab9iqxt017" volume="0"/>

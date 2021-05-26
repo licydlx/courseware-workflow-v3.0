@@ -1,6 +1,6 @@
 {
     "name": "数理思维",
-    "courseName": "t3-01",
+    "courseName": "t3-trialclass-01",
     "env": "prod",
     "totalPages": 13,
     "pathConfig": {
@@ -8,12 +8,12 @@
         "controllerBundlePath": "T-series/prefabLibrary/controllers/",
         "controllerName": "controller-model02",
         "resourceBundlePath": "T-series/fairyUis/t3/",
-        "resourceName": "t3-01",
+        "resourceName": "t3-trialClass-01",
         "panelBundlePath": "T-series/prefabLibrary/components/",
         "panelName": "formal-panle-model02",
         "modelBundlePath": "T-series/prefabLibrary/models/",
         "componentBundlePath": "T-series/prefabLibrary/components/",
-        "packageName": "t3-01"
+        "packageName": "t3-trialClass-01"
     },
     "chapters": [
         

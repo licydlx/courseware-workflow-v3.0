@@ -1,6 +1,6 @@
 {
     "name": "",
-    "courseName": "t3-01",
+    "courseName": "t3-trialclass-01",
     "env": "test",
     "totalPages": 13,
     "pathConfig": {
@@ -12,8 +12,8 @@
         "componentBundlePath": "",
         "controllerName": "controller-model02",
         "panelName": "formal-panle-model02",
-        "resourceName": "t3-01",
-        "packageName": "t3-01"
+        "resourceName": "t3-trialClass-01",
+        "packageName": "t3-trialClass-01"
     },
 
     "chapters": [
