@@ -104,6 +104,16 @@
     <image id="ku3e3d" name="light_1.png" path="/images/question2/" exported="true"/>
     <component id="ku3e3e" name="Combination.xml" path="/components/common/" exported="true"/>
     <image id="ku3e3f" name="0109.png" path="/images/common/" exported="true"/>
+    <image id="qscd3g" name="icon_1_5.png" path="/images/question2/"/>
+    <image id="qscd3h" name="icon_1_6.png" path="/images/question2/"/>
+    <image id="qscd3i" name="icon_1_7.png" path="/images/question2/"/>
+    <image id="qscd3j" name="icon_1_8.png" path="/images/question2/"/>
+    <image id="qscd3k" name="icon_1_9.png" path="/images/question2/"/>
+    <image id="qscd3l" name="icon_1_10.png" path="/images/question2/"/>
+    <image id="qscd3m" name="icon_1_1.png" path="/images/question2/"/>
+    <image id="qscd3n" name="icon_1_2.png" path="/images/question2/"/>
+    <image id="qscd3o" name="icon_1_3.png" path="/images/question2/"/>
+    <image id="qscd3p" name="icon_1_4.png" path="/images/question2/"/>
   </resources>
   <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4\t4-trialClass-01" packageCount="2" codePath="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4"/>
 </packageDescription>

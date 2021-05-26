@@ -500,8 +500,10 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                     cc.tween(role).to(1, {
                         alpha: 1
                     }).call(() => {
-                        if (callbackFun) {
+                        if (callbackFun) {                            
                             callbackFun.call(callbackThis);
+                            callbackFun = null;
+                            callbackThis = null;
                         }
                     }).start();
                 } else if (s._gameType === 2) {
@@ -521,6 +523,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                     }).call(() => {
                         if (callbackFun) {
                             callbackFun.call(callbackThis);
+                            callbackFun = null;
+                            callbackThis = null;
                         }
                     }).start();
                 }

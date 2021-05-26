@@ -26,7 +26,7 @@
     <group id="n33_ku3e" name="colliderBox" xy="1240,104" size="580,591" advanced="true"/>
     <component id="n6_kxox" name="title" src="ku3em" fileName="components/common/buttons/title.xml" xy="931,82" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://5w4y4dqwku3e1c" sound="ui://5w4y4dqwku3ed" volume="0"/>
+      <Button icon="ui://5w4y4dqwku3e1c" sound="ui://5w4y4dqwqscd3k" volume="0"/>
     </component>
   </displayList>
 </component>

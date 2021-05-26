@@ -10,7 +10,7 @@
     <component id="n8_kxox" name="submit" src="ku3eq" fileName="components/common/buttons/submit.xml" xy="1653,813">
       <Button icon="ui://5w4y4dqwku3ex" sound="ui://rokozlzwkxox11"/>
     </component>
-    <image id="n30_ku3e" name="n30" src="ku3e1g" fileName="images/question2/ques.png" xy="253,89" group="n40_ku3e"/>
+    <image id="n30_ku3e" name="n30" src="ku3e1g" fileName="images/question2/ques_0.png" xy="253,89" group="n40_ku3e"/>
     <group id="n40_ku3e" name="question" xy="253,89" size="592,910"/>
     <image id="n29_ku3e" name="drop_0" src="ku3e1a" fileName="images/question1/line_dash.png" xy="907,154" pivot="0.5,0.5" anchor="true" group="n26_kxox"/>
     <image id="n35_ku3e" name="drop_1" src="ku3e1a" fileName="images/question1/line_dash.png" xy="280,852" pivot="0.5,0.5" anchor="true" group="n26_kxox"/>
@@ -23,7 +23,7 @@
     <group id="n33_ku3e" name="colliderBox" xy="1240,104" size="580,591" advanced="true"/>
     <component id="n6_kxox" name="title" src="ku3em" fileName="components/common/buttons/title.xml" xy="931,82" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://5w4y4dqwku3e1h" sound="ui://5w4y4dqwku3ed" volume="0"/>
+      <Button icon="ui://5w4y4dqwku3e1h" sound="ui://5w4y4dqwqscd3i" volume="0"/>
     </component>
   </displayList>
 </component>

@@ -10,8 +10,8 @@
     <component id="n8_kxox" name="submit" src="ku3eq" fileName="components/common/buttons/submit.xml" xy="1653,813">
       <Button icon="ui://5w4y4dqwku3ex" sound="ui://rokozlzwkxox11"/>
     </component>
-    <image id="n30_ku3e" name="n30" src="ku3e2f" fileName="images/question3/ques_1.png" xy="113,18" group="n40_ku3e"/>
-    <group id="n40_ku3e" name="question" xy="113,18" size="1141,1066"/>
+    <image id="n30_ku3e" name="n30" src="ku3e2f" fileName="images/question3/ques_1.png" xy="103,18" group="n40_ku3e"/>
+    <group id="n40_ku3e" name="question" xy="103,18" size="1141,1066"/>
     <image id="n29_ku3e" name="drop_0" src="ku3e28" fileName="images/question3/line_dash.png" xy="675,561" pivot="0.5,0.5" anchor="true" group="n26_kxox"/>
     <group id="n26_kxox" name="collideredBox" xy="525,392" size="300,338" advanced="true"/>
     <loader id="n32_ku3e" name="drag_0" xy="1404,242" pivot="0.5,0.5" anchor="true" size="130,243" group="n33_ku3e" url="ui://5w4y4dqwku3e2c" align="center" vAlign="middle" autoSize="true"/>
@@ -21,7 +21,7 @@
     <group id="n33_ku3e" name="colliderBox" xy="1307,116" size="478,513" advanced="true"/>
     <component id="n6_kxox" name="title" src="ku3em" fileName="components/common/buttons/title.xml" xy="931,82" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://5w4y4dqwku3e2a" sound="ui://5w4y4dqwku3ed" volume="0"/>
+      <Button icon="ui://5w4y4dqwku3e2a" sound="ui://5w4y4dqwqscd3j" volume="0"/>
     </component>
   </displayList>
 </component>

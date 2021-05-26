@@ -55,9 +55,9 @@
     <component id="n23_kxox" name="right5" src="kxox13" fileName="components/common/DragBtn.xml" xy="1049,756" size="162,248" group="n24_kxox">
       <Button icon="ui://rokozlzwmsxwd"/>
     </component>
-    <component id="n28_ku3e" name="right6" src="kxox13" fileName="components/common/DragBtn.xml" xy="1049,759" size="162,248" group="n24_kxox">
+    <component id="n28_ku3e" name="right6" src="kxox13" fileName="components/common/DragBtn.xml" xy="1049,756" size="162,248" group="n24_kxox">
       <Button icon="ui://rokozlzwmsxwd"/>
     </component>
-    <group id="n24_kxox" name="colliderBox" xy="682,756" size="529,251" advanced="true"/>
+    <group id="n24_kxox" name="colliderBox" xy="682,756" size="529,248" advanced="true"/>
   </displayList>
 </component>

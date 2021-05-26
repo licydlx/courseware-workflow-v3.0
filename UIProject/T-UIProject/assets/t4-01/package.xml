@@ -3,19 +3,6 @@
   <resources>
     <movieclip id="ku3e0" name="laba.jta" path="/animations/laba/"/>
     <movieclip id="ku3e1" name="laba.jta" path="/animations/"/>
-    <sound id="ku3e2" name="question1_title_3.mp3" path="/audios/ttile/"/>
-    <sound id="ku3e3" name="question1_title_4.mp3" path="/audios/ttile/"/>
-    <sound id="ku3e4" name="question2_title_1.mp3" path="/audios/ttile/"/>
-    <sound id="ku3e5" name="question2_title_2.mp3" path="/audios/ttile/"/>
-    <sound id="ku3e6" name="question2_title_3.mp3" path="/audios/ttile/"/>
-    <sound id="ku3e7" name="question2_title_4.mp3" path="/audios/ttile/"/>
-    <sound id="ku3e8" name="question3_title_1.mp3" path="/audios/ttile/"/>
-    <sound id="ku3e9" name="question3_title_2.mp3" path="/audios/ttile/"/>
-    <sound id="ku3ea" name="question3_title_3.mp3" path="/audios/ttile/"/>
-    <sound id="ku3eb" name="question3_title_4.mp3" path="/audios/ttile/"/>
-    <sound id="ku3ec" name="question4_title_1.mp3" path="/audios/ttile/"/>
-    <sound id="ku3ed" name="question1_title_1.mp3" path="/audios/ttile/"/>
-    <sound id="ku3ee" name="question1_title_2.mp3" path="/audios/ttile/"/>
     <sound id="ku3ef" name="click.mp3" path="/audios/" exported="true"/>
     <sound id="ku3eg" name="drop.mp3" path="/audios/" exported="true"/>
     <image id="ku3ej" name="bg.png" path="/images/static/"/>
@@ -113,6 +100,13 @@
     <image id="ku3e3d" name="title_3.png" path="/images/question1/choose3/"/>
     <component id="ku3e3e" name="Question1Page03.xml" path="/components/pages/" exported="true"/>
     <component id="ku3e3f" name="Question1Page04.xml" path="/components/pages/" exported="true"/>
+    <sound id="qscd3g" name="question1_2.mp3" path="/audios/ttile/"/>
+    <sound id="qscd3h" name="question1_3.mp3" path="/audios/ttile/"/>
+    <sound id="qscd3i" name="question2.mp3" path="/audios/ttile/"/>
+    <sound id="qscd3j" name="question3.mp3" path="/audios/ttile/"/>
+    <sound id="qscd3k" name="question1.mp3" path="/audios/ttile/"/>
+    <sound id="qscd3l" name="question1_1.mp3" path="/audios/ttile/"/>
+    <component id="qscd3m" name="Component1.xml" path="/components/pages/"/>
   </resources>
-  <publish name=""/>
+  <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4\t4-01" packageCount="2"/>
 </packageDescription>
