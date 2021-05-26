@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="405,385">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n1_ku3e" name="n1" src="ku3e2v" fileName="images/question1/choose/btn_0_normal.png" xy="0,0">
+      <gearDisplay controller="c1" pages="0,1"/>
+    </image>
+    <image id="n2_ku3e" name="n2" src="ku3e2w" fileName="images/question1/choose/btn_0_select.png" xy="19,19">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+    <loader id="n0_ku3e" name="n0" xy="177,167" size="50,50" url="ui://5w4y4dqwku3e2x" align="center" vAlign="middle" clearOnPublish="true"/>
+  </displayList>
+</component>

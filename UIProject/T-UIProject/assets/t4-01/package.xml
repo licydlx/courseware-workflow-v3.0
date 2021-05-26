@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="5w4y4dqw">
+  <resources>
+    <movieclip id="ku3e0" name="laba.jta" path="/animations/laba/"/>
+    <movieclip id="ku3e1" name="laba.jta" path="/animations/"/>
+    <sound id="ku3e2" name="question1_title_3.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e3" name="question1_title_4.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e4" name="question2_title_1.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e5" name="question2_title_2.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e6" name="question2_title_3.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e7" name="question2_title_4.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e8" name="question3_title_1.mp3" path="/audios/ttile/"/>
+    <sound id="ku3e9" name="question3_title_2.mp3" path="/audios/ttile/"/>
+    <sound id="ku3ea" name="question3_title_3.mp3" path="/audios/ttile/"/>
+    <sound id="ku3eb" name="question3_title_4.mp3" path="/audios/ttile/"/>
+    <sound id="ku3ec" name="question4_title_1.mp3" path="/audios/ttile/"/>
+    <sound id="ku3ed" name="question1_title_1.mp3" path="/audios/ttile/"/>
+    <sound id="ku3ee" name="question1_title_2.mp3" path="/audios/ttile/"/>
+    <sound id="ku3ef" name="click.mp3" path="/audios/" exported="true"/>
+    <sound id="ku3eg" name="drop.mp3" path="/audios/" exported="true"/>
+    <image id="ku3ej" name="bg.png" path="/images/static/"/>
+    <component id="ku3ek" name="Question1Page01.xml" path="/components/pages/" exported="true"/>
+    <component id="ku3em" name="title.xml" path="/components/common/buttons/"/>
+    <component id="ku3eq" name="submit.xml" path="/components/common/buttons/"/>
+    <component id="ku3ew" name="static-model01-v1-p1.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3ex" name="0112.png" path="/images/common/"/>
+    <image id="ku3ey" name="0103.png" path="/images/common/"/>
+    <image id="ku3ez" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
+    <image id="ku3e10" name="hand.png" path="/images/common/" exported="true"/>
+    <image id="ku3e11" name="bg.png" path="/images/question1/"/>
+    <image id="ku3e12" name="box.png" path="/images/question1/"/>
+    <image id="ku3e13" name="dire_0.png" path="/images/question1/"/>
+    <image id="ku3e14" name="dire_1.png" path="/images/question1/"/>
+    <image id="ku3e15" name="dire_2.png" path="/images/question1/"/>
+    <image id="ku3e16" name="icon_1.png" path="/images/question1/"/>
+    <image id="ku3e17" name="icon_2.png" path="/images/question1/"/>
+    <image id="ku3e18" name="icon_3.png" path="/images/question1/"/>
+    <image id="ku3e19" name="icon_4.png" path="/images/question1/"/>
+    <image id="ku3e1a" name="line_dash.png" path="/images/question1/"/>
+    <image id="ku3e1b" name="ques.png" path="/images/question1/"/>
+    <image id="ku3e1c" name="title_1.png" path="/images/question1/"/>
+    <component id="ku3e1d" name="ChooseBtn.xml" path="/components/common/"/>
+    <component id="ku3e1e" name="Question2Page01.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3e1f" name="line_dash.png" path="/images/question2/"/>
+    <image id="ku3e1g" name="ques_0.png" path="/images/question2/"/>
+    <image id="ku3e1h" name="title_1.png" path="/images/question2/"/>
+    <image id="ku3e1i" name="bg.png" path="/images/question2/"/>
+    <image id="ku3e1j" name="box.png" path="/images/question2/"/>
+    <image id="ku3e1k" name="icon_0_0.png" path="/images/question2/"/>
+    <image id="ku3e1l" name="icon_0_1.png" path="/images/question2/"/>
+    <image id="ku3e1m" name="icon_0_2.png" path="/images/question2/"/>
+    <image id="ku3e1n" name="icon_0_3.png" path="/images/question2/"/>
+    <image id="ku3e1o" name="icon_1_2.png" path="/images/question2/"/>
+    <image id="ku3e1p" name="ques_1.png" path="/images/question2/"/>
+    <image id="ku3e1q" name="icon_1_0.png" path="/images/question2/"/>
+    <image id="ku3e1r" name="icon_1_1.png" path="/images/question2/"/>
+    <component id="ku3e1s" name="Question2Page02.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3e1t" name="ques_2.png" path="/images/question2/"/>
+    <image id="ku3e1u" name="icon_2_0.png" path="/images/question2/"/>
+    <component id="ku3e1v" name="Question2Page03.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3e1w" name="icon_3_2.png" path="/images/question2/"/>
+    <image id="ku3e1x" name="icon_3_3.png" path="/images/question2/"/>
+    <image id="ku3e1y" name="ques_3.png" path="/images/question2/"/>
+    <image id="ku3e1z" name="icon_3_0.png" path="/images/question2/"/>
+    <image id="ku3e20" name="icon_3_1.png" path="/images/question2/"/>
+    <component id="ku3e21" name="Question2Page04.xml" path="/components/pages/" exported="true"/>
+    <component id="ku3e22" name="Question3Page01.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3e23" name="box.png" path="/images/question3/"/>
+    <image id="ku3e24" name="icon_0_0.png" path="/images/question3/"/>
+    <image id="ku3e25" name="icon_0_1.png" path="/images/question3/"/>
+    <image id="ku3e26" name="icon_0_2.png" path="/images/question3/"/>
+    <image id="ku3e27" name="icon_0_3.png" path="/images/question3/"/>
+    <image id="ku3e28" name="line_dash.png" path="/images/question3/"/>
+    <image id="ku3e29" name="ques_0.png" path="/images/question3/"/>
+    <image id="ku3e2a" name="title_1.png" path="/images/question3/"/>
+    <image id="ku3e2b" name="bg.png" path="/images/question3/"/>
+    <image id="ku3e2c" name="icon_1_0.png" path="/images/question3/"/>
+    <image id="ku3e2d" name="icon_1_2.png" path="/images/question3/"/>
+    <image id="ku3e2e" name="icon_1_3.png" path="/images/question3/"/>
+    <image id="ku3e2f" name="ques_1.png" path="/images/question3/"/>
+    <component id="ku3e2g" name="Question3Page02.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3e2h" name="ques_2.png" path="/images/question3/"/>
+    <image id="ku3e2i" name="icon_2_3.png" path="/images/question3/"/>
+    <component id="ku3e2j" name="Question3Page03.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3e2k" name="ques_3.png" path="/images/question3/"/>
+    <component id="ku3e2l" name="Question3Page04.xml" path="/components/pages/" exported="true"/>
+    <component id="ku3e2n" name="Question4Page01.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3e2o" name="icon_0_1.png" path="/images/question4/"/>
+    <image id="ku3e2p" name="icon_0_2.png" path="/images/question4/"/>
+    <image id="ku3e2q" name="ques_0.png" path="/images/question4/"/>
+    <image id="ku3e2r" name="icon_0_0.png" path="/images/question4/"/>
+    <component id="ku3e2s" name="Question1Page02.xml" path="/components/pages/" exported="true"/>
+    <image id="ku3e2t" name="title_2.png" path="/images/question1/choose1/"/>
+    <image id="ku3e2u" name="box_0.png" path="/images/question1/choose1/"/>
+    <image id="ku3e2v" name="btn_0_normal.png" path="/images/question1/choose1/"/>
+    <image id="ku3e2w" name="btn_0_select.png" path="/images/question1/choose1/"/>
+    <image id="ku3e2x" name="icon_0.png" path="/images/question1/choose1/" exported="true"/>
+    <image id="ku3e2y" name="icon_1.png" path="/images/question1/choose1/" exported="true"/>
+    <image id="ku3e2z" name="icon_2.png" path="/images/question1/choose1/" exported="true"/>
+    <image id="ku3e30" name="icon_3.png" path="/images/question1/choose1/" exported="true"/>
+    <image id="ku3e31" name="ques_1.png" path="/images/question1/choose1/"/>
+    <image id="ku3e32" name="icon_2.png" path="/images/question1/choose2/" exported="true"/>
+    <image id="ku3e33" name="icon_3.png" path="/images/question1/choose2/" exported="true"/>
+    <image id="ku3e34" name="ques_2.png" path="/images/question1/choose2/"/>
+    <image id="ku3e35" name="title_2.png" path="/images/question1/choose2/"/>
+    <image id="ku3e36" name="icon_0.png" path="/images/question1/choose2/" exported="true"/>
+    <image id="ku3e37" name="icon_1.png" path="/images/question1/choose2/" exported="true"/>
+    <image id="ku3e38" name="icon_0.png" path="/images/question1/choose3/" exported="true"/>
+    <image id="ku3e39" name="icon_1.png" path="/images/question1/choose3/" exported="true"/>
+    <image id="ku3e3a" name="icon_2.png" path="/images/question1/choose3/" exported="true"/>
+    <image id="ku3e3b" name="icon_3.png" path="/images/question1/choose3/" exported="true"/>
+    <image id="ku3e3c" name="ques_3.png" path="/images/question1/choose3/"/>
+    <image id="ku3e3d" name="title_3.png" path="/images/question1/choose3/"/>
+    <component id="ku3e3e" name="Question1Page03.xml" path="/components/pages/" exported="true"/>
+    <component id="ku3e3f" name="Question1Page04.xml" path="/components/pages/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n0_msxw" name="n0" src="ku3e1i" fileName="images/question2/bg.png" xy="0,0"/>
+    <image id="n34_ku3e" name="n34" src="ku3e1j" fileName="images/question2/box.png" xy="1156,41"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="98,52" size="228,171" scale="0.8,0.8" url="ui://5w4y4dqwku3e1" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n8_kxox" name="submit" src="ku3eq" fileName="components/common/buttons/submit.xml" xy="1653,813">
+      <Button icon="ui://5w4y4dqwku3ex" sound="ui://rokozlzwkxox11"/>
+    </component>
+    <image id="n30_ku3e" name="n30" src="ku3e1p" fileName="images/question2/ques_1.png" xy="253,89" group="n40_ku3e"/>
+    <group id="n40_ku3e" name="question" xy="253,89" size="625,910"/>
+    <image id="n29_ku3e" name="drop_0" src="ku3e1a" fileName="images/question1/line_dash.png" xy="907,154" pivot="0.5,0.5" anchor="true" group="n26_kxox"/>
+    <image id="n35_ku3e" name="drop_1" src="ku3e1a" fileName="images/question1/line_dash.png" xy="280,852" pivot="0.5,0.5" anchor="true" group="n26_kxox"/>
+    <image id="n36_ku3e" name="drop_2" src="ku3e1a" fileName="images/question1/line_dash.png" xy="996,921" pivot="0.5,0.5" anchor="true" group="n26_kxox"/>
+    <group id="n26_kxox" name="collideredBox" xy="150,27" size="976,1022" advanced="true"/>
+    <loader id="n32_ku3e" name="drag_0" xy="1380,242" pivot="0.5,0.5" anchor="true" size="281,277" group="n33_ku3e" url="ui://5w4y4dqwku3e1q" align="center" vAlign="middle" autoSize="true"/>
+    <loader id="n41_ku3e" name="drag_1" xy="1679,242" pivot="0.5,0.5" anchor="true" size="281,277" group="n33_ku3e" url="ui://5w4y4dqwku3e1q" align="center" vAlign="middle" autoSize="true"/>
+    <loader id="n42_ku3e" name="drag_2" xy="1380,557" pivot="0.5,0.5" anchor="true" size="281,277" group="n33_ku3e" url="ui://5w4y4dqwku3e1r" align="center" vAlign="middle" autoSize="true"/>
+    <loader id="n43_ku3e" name="drag_3" xy="1679,557" pivot="0.5,0.5" anchor="true" size="281,277" group="n33_ku3e" url="ui://5w4y4dqwku3e1o" align="center" vAlign="middle" autoSize="true"/>
+    <group id="n33_ku3e" name="colliderBox" xy="1239,103" size="580,592" advanced="true"/>
+    <component id="n6_kxox" name="title" src="ku3em" fileName="components/common/buttons/title.xml" xy="931,82" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://5w4y4dqwku3e1h" sound="ui://5w4y4dqwku3ed" volume="0"/>
+    </component>
+  </displayList>
+</component>

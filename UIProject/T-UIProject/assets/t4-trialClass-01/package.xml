@@ -15,17 +15,14 @@
     <image id="msxwj" name="title_4.png" path="/images/question1/"/>
     <image id="msxwk" name="title_3.png" path="/images/question1/"/>
     <image id="msxwl" name="bg.png" path="/images/static/"/>
-    <component id="kxoxp" name="TypeDropBox1.xml" path="/components/Type1/"/>
-    <component id="kxoxq" name="TypeDragBox1.xml" path="/components/Type1/"/>
     <image id="kxoxr" name="icon_4.png" path="/images/question1/"/>
     <image id="kxoxs" name="icon_3.png" path="/images/question1/"/>
     <image id="kxoxt" name="icon_5.png" path="/images/question1/"/>
     <image id="kxoxu" name="icon_6.png" path="/images/question1/"/>
     <movieclip id="kxoxv" name="laba.jta" path="/animations/laba/"/>
     <component id="kxoxw" name="title.xml" path="/buttons/"/>
-    <image id="kxoxx" name="气泡@2x (7).png" path="/images/common/"/>
     <component id="kxoxz" name="submit.xml" path="/buttons/"/>
-    <image id="kxox10" name="0112.png" path="/images/common/"/>
+    <image id="kxox10" name="0112.png" path="/images/common/" exported="true"/>
     <sound id="kxox11" name="click.mp3" path="/audios/" exported="true"/>
     <component id="kxox13" name="DragBtn.xml" path="/components/common/"/>
     <image id="kxox14" name="title_1.png" path="/images/question1/"/>

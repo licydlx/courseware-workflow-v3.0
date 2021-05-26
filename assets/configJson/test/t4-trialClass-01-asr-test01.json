@@ -1,7 +1,7 @@
 {
     "name": "",
     "courseName": "t4-trialclass-01-asr-test01",
-    "env": "test",
+    "env": "prod",
     "pathConfig": {
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
         "controllerBundlePath": "T-series/personalTest/guhl/controllers/",
