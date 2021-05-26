@@ -187,6 +187,14 @@
     <component id="q2426t" name="collidered11.xml" path="/components/"/>
     <component id="q2426u" name="collidered12.xml" path="/components/"/>
     <component id="q2426v" name="collidered13.xml" path="/components/"/>
+    <image id="azf56w" name="1框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf56x" name="2框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf56y" name="3框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf56z" name="4框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf570" name="零件 拷贝 3@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf571" name="1000.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf572" name="0116.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="azf573" name="0117.png" path="/images/dragAnswer-model01-v2/"/>
   </resources>
   <publish name=""/>
 </packageDescription>
