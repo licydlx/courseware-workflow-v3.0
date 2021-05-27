@@ -215,8 +215,8 @@ export default class choose_model02_v1 extends cc.Component {
         let curOption:fgui.GComponent = this._options[option];
         let border:any = curOption.getChild("border");
         let arrow:any = curOption.getChild("arrow");
-        let spine:any = curOption.getChild("spine");
-  
+        let spine:fgui.GLoader3D = curOption.getChild("spine");
+        
         // 临时 赶上线
         if (active) {
             border.alpha = 1;
@@ -233,7 +233,7 @@ export default class choose_model02_v1 extends cc.Component {
                 setTimeout(() => {
                     spine.animationName = spine.animationName.slice(0, -1) + 1;
                     arrow.alpha = 0;
-                }, 5000);
+                }, 3100);
             }
         } else {
             border.alpha = 0;

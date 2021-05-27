@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="117,167">
   <displayList>
-    <image id="n39_azf5" name="n39" src="ikyr83" fileName="images/dragAnswer-model02-v1-new/p7/icon_0_1.png" xy="0,0" size="117,167" visible="false"/>
-    <loader id="n41_ikyr" name="anchor" xy="0,0" size="117,167" url="ui://ik5aab9iikyr82"/>
+    <image id="n39_azf5" name="n39" src="ikyr83" fileName="images/dragAnswer-model02-v1-new/p7/icon_0_1.png" xy="0,0" size="117,167"/>
+    <loader id="n41_ikyr" name="anchor" xy="0,0" size="117,167" url="ui://ik5aab9iikyr82" clearOnPublish="true"/>
   </displayList>
 </component>

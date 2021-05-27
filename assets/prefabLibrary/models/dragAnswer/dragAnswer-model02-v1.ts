@@ -20,10 +20,10 @@ export default class dragAnswer_model02_v1 extends cc.Component {
     private _title: fgui.GButton;
     private _titleTrigger: fgui.GLoader;
 
-    private _robot:fgui.GLoader;
-    private _dyUI:fgui.GGroup;
-    private _colliderGroup:fgui.GGroup;
-    private _collideredGroup:fgui.GGroup;
+    private _robot: fgui.GLoader;
+    private _dyUI: fgui.GGroup;
+    private _colliderGroup: fgui.GGroup;
+    private _collideredGroup: fgui.GGroup;
 
     // fairygui 组件
     private handleGuide: any;
@@ -118,7 +118,7 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         // 禁止操作期间 切页
         this.disableForbidHandle();
         // 销毁反馈
-        let feedback:any = this._worldRoot.getChildByName("feedback");
+        let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
     }
 
@@ -167,11 +167,13 @@ export default class dragAnswer_model02_v1 extends cc.Component {
 
     private _onDragStart(evt: fgui.Event): void {
         evt.captureTouch();
+
         let state: any = globalThis._.cloneDeep(this._state);
 
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
         state.colliderIndex = colliderIndex;
+        state.drag = 'start';
 
         this.updateState(state);
     }
@@ -186,16 +188,17 @@ export default class dragAnswer_model02_v1 extends cc.Component {
 
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
-        
+
         let obj: any = this._adsorb(collider, colliderIndex);
         let state: any = globalThis._.cloneDeep(this._state);
-
+        this.playSound('ui://ik5aab9i98t375');
         if (obj.bool) {
             state.collider[colliderIndex] = {
                 x: obj.pos.x,
                 y: obj.pos.y
-            }
+            }            
         } else {
+            // this.playSound(obj.s == -1 ? 'ui://ik5aab9i98t375' : 'ui://ik5aab9i98t374');
             for (let i = 0; i < this._colliderBox.length; i++) {
                 if (collider == this._colliderBox[i]) {
                     state.collider[colliderIndex] = {
@@ -267,19 +270,26 @@ export default class dragAnswer_model02_v1 extends cc.Component {
 
     // 更新ui层
     updateUi(oldState: any, state: any) {
+        if (state.drag == "start") {
+            this.playSound('ui://ik5aab9iht4324');
+            // this._view.getChild('shadow').visible = true;
+        }
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
 
-            /* let obj: any = this._adsorb(this._colliderBox[state.colliderIndex], state.colliderIndex);
+            let obj: any = this._adsorb(this._colliderBox[state.colliderIndex], state.colliderIndex);
             for (let i = 0; i < this._collideredBox.length; i++) {
                 if (i == obj.s) {
                     this._collideredBox[i].alpha = 1;
                 } else {
                     this._collideredBox[i].alpha = 0;
                 }
-            } */
-            this._view.getChild('shadow').visible = true;
+            }
+            // if (obj.s == -1)
+            //     this._view.getChild('shadow').visible = true;
+            // else 
+            //     this._view.getChild('shadow').visible = false;
         }
 
         if (state.drag == "end") {
@@ -301,12 +311,20 @@ export default class dragAnswer_model02_v1 extends cc.Component {
             if (!state.submit) {
                 this.disableForbidHandle();
             }
-            
-            /* for (let i = 0; i < this._collideredBox.length; i++) {
+
+            for (let i = 0; i < this._collideredBox.length; i++) {
                 this._collideredBox[i].alpha = 0;
-            } */
-            this._view.getChild('shadow').visible = false;
+            }
+            // this._view.getChild('shadow').visible = false;
         }
+    }
+
+    playSound(url: string) {
+        let s = this;
+        let item = fgui.UIPackage.getItemByURL(url);
+        loadResource(item.file, cc.AudioClip).then((audio: cc.AudioClip) => {
+            cc.audioEngine.play(audio, false, 1);
+        });
     }
 
     async playTitle(bool: boolean) {
@@ -334,18 +352,18 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         setTimeout(() => {
             this._dyUI.visible = false;
             this._view.getChild('wire').visible = false;
-            this._colliderGroup.visible = false 
+            this._colliderGroup.visible = false
             this._collideredGroup.visible = false;
             this._robot.visible = true;
             this._robot.playing = true;
             setTimeout(() => {
                 this._dyUI.visible = true;
                 this._view.getChild('wire').visible = true;
-                this._colliderGroup.visible = true 
+                this._colliderGroup.visible = true
                 this._collideredGroup.visible = true;
                 this._robot.visible = false;
-                this._robot.playing = false; 
-    
+                this._robot.playing = false;
+
                 this.answerFeedback(answer);
             }, 2000);
         }, 3000);

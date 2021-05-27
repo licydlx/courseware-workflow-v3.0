@@ -161,7 +161,7 @@ export default class dragAnswer_model01_v2 extends cc.Component {
 
     private _onDragStart(evt: fgui.Event): void {
         evt.captureTouch();
-
+        this.playSound('ui://ik5aab9iht4324');
         let state: any = globalThis._.cloneDeep(this._state);
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
@@ -289,6 +289,14 @@ export default class dragAnswer_model01_v2 extends cc.Component {
                 }
             }
         }
+    }
+
+    playSound(url: string) {
+        let s = this;
+        let item = fgui.UIPackage.getItemByURL(url);
+        loadResource(item.file, cc.AudioClip).then((audio: cc.AudioClip) => {
+            cc.audioEngine.play(audio, false, 1);
+        });
     }
 
     // 播放 放置声效

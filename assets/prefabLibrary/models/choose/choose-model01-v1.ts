@@ -128,6 +128,7 @@ export default class choose_model01_v1 extends cc.Component {
     }
 
     private _clickOption(evt: any){
+        this.playSound('ui://ik5aab9iht4324');
         let state: any = globalThis._.cloneDeep(this._state);
         let option: any = fgui.GObject.cast(evt.currentTarget);
         let optionIndex:number = this._options.findIndex((v:any) => v == option);
@@ -143,6 +144,14 @@ export default class choose_model01_v1 extends cc.Component {
         this.updateState(state);
     }
 
+    playSound(url: string) {
+        let s = this;
+        let item = fgui.UIPackage.getItemByURL(url);
+        loadResource(item.file, cc.AudioClip).then((audio: cc.AudioClip) => {
+            cc.audioEngine.play(audio, false, 1);
+        });
+    }
+    
     // 获取状态
     getState(data: any) {
         this.updateState(data);

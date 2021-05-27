@@ -2,6 +2,6 @@
 <component size="187,110">
   <displayList>
     <image id="n30_qxt0" name="n30" src="ikyr7l" fileName="images/dragAnswer-model02-v1-new/p6/icon_0_1.png" xy="0,0"/>
-    <loader id="n31_q242" name="anchor" xy="0,0" size="187,110" url="ui://ik5aab9iikyr7k" autoSize="true" clearOnPublish="true"/>
+    <loader id="n31_q242" name="anchor" xy="0,0" size="187,110" url="ui://ik5aab9iikyr7k" clearOnPublish="true"/>
   </displayList>
 </component>

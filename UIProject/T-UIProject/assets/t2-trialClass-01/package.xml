@@ -63,7 +63,7 @@
     <component id="qe6i21" name="handleGuide01.xml" path="/components/" exported="true"/>
     <image id="qe6i22" name="0111.png" path="/components/images/"/>
     <image id="qe6i23" name="0109.png" path="/components/images/"/>
-    <sound id="ht4324" name="点击音效.mp3" path="/audios/"/>
+    <sound id="ht4324" name="点击音效.mp3" path="/audios/" exported="true"/>
     <image id="ht4325" name="0110.png" path="/images/dragAnswer-model01-v2/"/>
     <image id="ht4326" name="0111.png" path="/images/dragAnswer-model01-v2/"/>
     <component id="ht4327" name="dragAnswer-model01-v2-p9.xml" path="/" exported="true"/>
@@ -204,34 +204,35 @@
     <image id="ikyr7d" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
     <image id="ikyr7e" name="icon_3_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
     <image id="ikyr7f" name="icon_4_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
-    <image id="ikyr7g" name="robot.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7g" name="robot.png" path="/images/dragAnswer-model02-v1-new/p5/" scale9grid="50,148,100,296"/>
     <component id="ikyr7h" name="dragAnswer-model02-v1-p6.xml" path="/" exported="true"/>
     <image id="ikyr7i" name="shadow.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
-    <image id="ikyr7j" name="robot.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
-    <image id="ikyr7k" name="icon_0_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7k" name="icon_0_0.png" path="/images/dragAnswer-model02-v1-new/p6/" scale="9grid" scale9grid="14,10,13,6"/>
     <image id="ikyr7l" name="icon_0_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
-    <image id="ikyr7m" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
     <image id="ikyr7n" name="icon_1_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
     <image id="ikyr7o" name="icon_2_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
     <image id="ikyr7p" name="icon_2_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
-    <image id="ikyr7q" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
     <image id="ikyr7r" name="icon_3_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
-    <image id="ikyr7s" name="n30.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
     <image id="ikyr7t" name="shadow.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
     <component id="ikyr7u" name="dragAnswer-model02-v1-p7.xml" path="/" exported="true"/>
     <image id="ikyr7v" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
     <image id="ikyr7w" name="icon_1_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
     <image id="ikyr7x" name="icon_2_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
     <image id="ikyr7y" name="icon_2_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
-    <image id="ikyr7z" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
     <image id="ikyr80" name="icon_3_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
     <image id="ikyr81" name="shadow.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
     <image id="ikyr82" name="icon_0_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
     <image id="ikyr83" name="icon_0_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
-    <image id="ikyr85" name="robot.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
-    <sound id="98t374" name="错误反馈1.mp3" path="/audios/"/>
-    <sound id="98t375" name="拖动放置.mp3" path="/audios/"/>
+    <sound id="98t374" name="错误反馈1.mp3" path="/audios/" exported="true"/>
+    <sound id="98t375" name="拖动放置.mp3" path="/audios/" exported="true"/>
     <component id="98t376" name="audios.xml" path="/buttons/"/>
+    <image id="jrdo86" name="机器人左.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="jrdo88" name="robot.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="jrdo89" name="0104.png" path="/images/common/"/>
+    <image id="jrdo8d" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="jrdo8e" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="jrdo8f" name="robot.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="jrdo8g" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
   </resources>
   <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t2\t2-trialClass-01" packageCount="2"/>
 </packageDescription>
