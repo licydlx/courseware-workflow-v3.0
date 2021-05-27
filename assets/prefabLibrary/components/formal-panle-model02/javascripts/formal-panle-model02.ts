@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2020-11-19 18:05:09
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-26 14:22:17
+ * @LastEditTime: 2021-05-27 14:31:28
  */
 const { ccclass, property } = cc._decorator;
 
@@ -233,8 +233,10 @@ export default class formal_panle_model02 extends cc.Component {
 
     // 更新状态层
     updateState(curState: any) {
-        if (globalThis._.isEqual(this._state, curState)) return;
-        this.state = curState;
+        // 临时代码
+        // 某些情况下 全局面板state = ""， 新赋值的面板curState == this._state，导致全局面板 state = ""
+        if (!window['GlobalData'].stateProxy["formal-panle-model02"]) this.state = curState;
+        if (!globalThis._.isEqual(this._state, curState)) this.state = curState;
     }
 
     // ui层
