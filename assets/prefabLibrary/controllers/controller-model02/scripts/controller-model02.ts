@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2020-12-22 11:02:45
  * @LastEditors: ydlx
- * @LastEditTime: 2021-04-27 19:13:49
+ * @LastEditTime: 2021-05-27 14:31:44
  */
 const { ccclass, property } = cc._decorator;
 
@@ -168,6 +168,7 @@ export default class controller_model02 extends cc.Component {
     recoverState() {
         if (window['GlobalData'].courseData.firstLoad) {
             let db: any = cc.sys.localStorage.getItem('COURSE_SIGNALING_DB');
+            window['GlobalData'].courseData.firstLoad = false;
             if (!db) return;
             let signalingDB = JSON.parse(db);
             // 老师 数据缓存
@@ -188,7 +189,7 @@ export default class controller_model02 extends cc.Component {
                     });
                 }
             }
-            window['GlobalData'].courseData.firstLoad = false;
+            
         }
     }
 
