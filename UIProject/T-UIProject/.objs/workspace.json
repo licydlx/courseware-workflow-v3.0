@@ -2,21 +2,26 @@
   "libview.firstColumnWidth": 301,
   "libview.iconScale": 0,
   "doc.openedDocs": [
-    "ui://5w4y4dqwku3e2s",
-    "ui://5w4y4dqwku3e3e",
-    "ui://5w4y4dqwku3e3f",
-    "ui://ik5aab9iht432d"
+    "ui://ik5aab9iht4327",
+    "ui://ik5aab9iqe6i1w",
+    "ui://ik5aab9iikyr74",
+    "ui://ik5aab9iikyr7u",
+    "ui://ik5aab9iikyr7h"
   ],
   "packageGroup.mine": [],
   "libview.syncEditor": 0,
   "auxline1": true,
   "canvasColor": 10066329,
   "auxline2": true,
-  "doc.activeDoc": "ui://ik5aab9iht432d",
+  "doc.activeDoc": "ui://ik5aab9iikyr74",
   "libview.twoColumn": false,
   "libview.expandedNodes": [
     "ik5aab9i",
-    "/"
+    "/",
+    "ik5aab9i",
+    "/images/",
+    "ik5aab9i",
+    "/images/common/"
   ],
   "snapToGrid": true,
   "backgroundColor": 6710886,

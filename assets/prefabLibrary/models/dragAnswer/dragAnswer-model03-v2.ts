@@ -112,6 +112,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
 
         this._title = this._view.getChild("title").asButton;
+        this._title.alpha = 1;
+
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
 
@@ -276,9 +278,11 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         let state: any = globalThis._.cloneDeep(this._state);
 
         let dropArr = state.collidered[collideredIndex];
-        // console.error('s.dropArr11111111111111 = ', dropArr);
 
         let colliderName: string = collider.name;
+        let matchCollideredIndex = -1;
+        let matchCollinderArr = [];
+
         if (collideredIndex != -1) {
             let collideredName: string = collidered.name;
             console.log('colliderName = ', colliderName);
@@ -288,17 +292,20 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             console.log('matchFlag ', matchFlag);
 
             // 1.拿到当前放置区对应的放置区 2.获取对应放置区内的元素 3.判断元素的namee是否为相同role
-            let matchCollideredIndex;
             if (collideredIndex < s._roleCount) {
                 matchCollideredIndex = collideredIndex + s._roleCount;
             } else {
                 matchCollideredIndex = collideredIndex - s._roleCount;
             }
-            let matchCollinderArr = state.collidered[matchCollideredIndex];
+            matchCollinderArr = state.collidered[matchCollideredIndex];
 
             if (s._gameType == 1) {
-
-                if (!matchFlag || matchCollinderArr.length > 0 && !(matchCollinderArr[0].roleType == collider.data)) {
+                // 修改需求，已组合好的可以替换
+                /* if ((!matchFlag || dropArr.length == 0) && (!matchFlag || (matchCollinderArr.length > 0 && !(matchCollinderArr[0].roleType == collider.data)))) {
+                    collideredIndex = -1;
+                } */
+                // dropArr.length> 0 && 
+                if ((!matchFlag || (dropArr.length == 0 && matchCollinderArr.length > 0 && !(matchCollinderArr[0].roleType == collider.data)))) {
                     collideredIndex = -1;
                 }
             } else if (s._gameType == 2) {
@@ -309,14 +316,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         }
         collider['collideredIndex'] = collideredIndex;
 
-        // let dropArrIndex = dropArr.indexOf(data);//放置区是否已包含当前拖拽元素
-        // let dropArrIndex = dropArr.findIndex(v => v.name == colliderName);//放置区是否已包含当前拖拽元素
-        // console.warn('dropArrIndex = ', dropArrIndex);
-
         // 1.重置位置 
         // collideredIndex == -1 || 头和脚放置位置不匹配 || 头和脚无法组合 -> 重置回初始位置
-        // collideredIndex != -1 
-        // dropArr.length == 1 && 
         // 2.放入放置区
         if (collideredIndex == -1) {
             // reset
@@ -329,6 +330,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 roleType: state.collider[colliderIndex].roleType
             }
         } else {
+            // 如果放置区已有元素
             if (dropArr.length == 1) {
                 // 移除原有的元素
                 let existColliderData = dropArr.splice(0, 1);
@@ -341,12 +343,26 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                     collideredIndex: -1,
                     roleType: state.collider[existColliderIndex].roleType
                 }
+
+                // 修改需求：可以替换已组合好的元素
+                if (matchCollinderArr.length > 0) {
+                    let matchExistColliderIndex = this._colliderBox.findIndex((v: any, i: number) => v.name == matchCollinderArr[0].name);
+                    state.collidered[state.collider[matchExistColliderIndex].collideredIndex] = [];
+                    state.collider[matchExistColliderIndex] = {
+                        x: s._cache["colliderBox"][matchExistColliderIndex].x,
+                        y: s._cache["colliderBox"][matchExistColliderIndex].y,
+                        collideredIndex: -1,
+                        roleType: state.collider[matchExistColliderIndex].roleType
+                    }
+                }
             }
             dropArr.push({
                 'name': colliderName,
                 roleType: collider.data,
                 collideredIndex: collideredIndex
             });
+            console.log('pushhh', dropArr);
+
             state.collider[colliderIndex] = {
                 x: s._collideredBox[collideredIndex].x,
                 y: s._collideredBox[collideredIndex].y,
@@ -355,6 +371,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             }
             state.collidered[collideredIndex] = dropArr;
         }
+        console.log('state.collidered = ', state.collidered);
+
 
         state.drag = "end";
         state.submit = false;
@@ -469,9 +487,9 @@ export default class dragAnswer_model03_v2 extends cc.Component {
     private showEndAnim(callbackFun: Function = null, callbackThis: any = null): void {
         let s = this;
         s.state.collider.forEach((v, i) => {
-            if (v['collideredIndex'] == -1) {
-                s._colliderBox[i].visible = false;
-            }
+            // if (v['collideredIndex'] == -1) {
+            s._colliderBox[i].visible = false;
+            // }
         });
         s._view.touchable = false;
         s.state.collidered.forEach((v, i) => {
@@ -480,28 +498,34 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 let roleUrl = s._roleUrl[bottomCollidered[0].roleType];
 
 
+                // if (s._gameType === 1) {
+                let role = fgui.UIPackage.createObject(s._packName, 'Combination').asCom;
+                (role.getChild('n2') as fgui.GLoader).url = roleUrl;
+                role.setPivot(0.5, 0.5, true);
                 if (s._gameType === 1) {
-                    let role = fgui.UIPackage.createObject(s._packName, 'Combination').asCom;
-                    (role.getChild('n2') as fgui.GLoader).url = roleUrl;
-                    role.setPivot(0.5, 0.5, true);
+
                     role.x = s._collideredBox[i].x + s._collideredBox[i].width / 2;
                     role.y = s._collideredBox[i].y + 200;
-                    role.alpha = 0;
-                    s._view.addChild(role);
-
-                    let mask = s._view.getChild('mask');
-                    mask.visible = true;            
-
-                    cc.tween(role).to(1, {
-                        alpha: 1
-                    }).call(() => {
-                        if (callbackFun) {                            
-                            callbackFun.call(callbackThis);
-                            callbackFun = null;
-                            callbackThis = null;
-                        }
-                    }).start();
                 } else if (s._gameType === 2) {
+                    role.x = s._collideredBox[i].x;
+                    role.y = s._collideredBox[i].y + 100;
+                }
+                role.alpha = 0;
+                s._view.addChild(role);
+
+                let mask = s._view.getChild('mask');
+                mask.visible = true;
+
+                cc.tween(role).to(1.5, {
+                    alpha: 1
+                }).call(() => {
+                    if (callbackFun) {
+                        callbackFun.call(callbackThis);
+                        callbackFun = null;
+                        callbackThis = null;
+                    }
+                }).start();
+                /* } else if (s._gameType === 2) {
                     let role = fgui.UIPackage.createObjectFromURL(roleUrl);
                     role.setPivot(0.5, 0.5, true);
                     role.x = s._collideredBox[i].x;
@@ -524,7 +548,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                             callbackThis = null;
                         }
                     }).start();
-                }
+                } */
 
             }
         });
@@ -558,7 +582,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             // state.curDragIcon.y = state.curDragIconsPos.y;
         }
 
-        console.log('state.drag ', state.drag);
         if (state.drag == "end") {
             // if (!globalThis._.isEqual(oldState.collider, state.collider)) {
             // console.log('endddddddddd update ui', state);
@@ -607,6 +630,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
     async playTitle(bool: boolean) {
         this._c2.selectedIndex = bool ? 1 : 0;
+        this._title.alpha = 1;
 
         if (bool) {
             cc.audioEngine.stopAll();

@@ -8,9 +8,9 @@
  */
 
 export function sendMessage(data: any, toUser: any) {
-    console.log('sendMessage')
+    // console.log('sendMessage')
     let message = globalThis._.cloneDeep(data);
-    console.log(message)
+    // console.log(message)
 
     let { name, userid, role, signalingModel } = window['GlobalData'].courseData;
     let action = window['GlobalData'].gameMsg.EVENT_UPDATE_STATE;

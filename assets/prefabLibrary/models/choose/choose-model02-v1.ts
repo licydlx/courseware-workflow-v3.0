@@ -215,7 +215,7 @@ export default class choose_model02_v1 extends cc.Component {
         let curOption:fgui.GComponent = this._options[option];
         let border:any = curOption.getChild("border");
         let arrow:any = curOption.getChild("arrow");
-        let spine:fgui.GLoader3D = curOption.getChild("spine");
+        let spine:any = curOption.getChild("spine");
         
         // 临时 赶上线
         if (active) {

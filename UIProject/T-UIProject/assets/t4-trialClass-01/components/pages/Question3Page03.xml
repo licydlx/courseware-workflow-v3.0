@@ -80,5 +80,6 @@
       <Button icon="ui://rokozlzwmzao24"/>
     </component>
     <group id="n24_kxox" name="colliderBox" xy="669,363" size="1028,451" advanced="true"/>
+    <loader id="n47_jrdo" name="mask" xy="0,0" size="100,100" aspect="true" scale="19.2,10.8" visible="false" url="ui://rokozlzwmzao2k" align="center" playing="false"/>
   </displayList>
 </component>

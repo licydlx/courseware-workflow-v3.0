@@ -60,7 +60,7 @@ export default class t3_courseware extends cc.Component {
     }
 
     onKeyDown(event: cc.Event.EventKeyboard) {
-
+        if (!this.test) return;
         switch (event.keyCode) {
             case cc.macro.KEY.left:
                 console.log('Press left key');
@@ -69,7 +69,7 @@ export default class t3_courseware extends cc.Component {
                 break;
             case cc.macro.KEY.right:
                 console.log('Press right key');
-                if (this._controllerJs._toPage >= 15) return;
+                if (this._controllerJs._toPage >= this.configJson.json.totalPages) return;
                 this._controllerJs.onJumpConfig(++this._controllerJs._toPage);
                 break;
             default: break ;

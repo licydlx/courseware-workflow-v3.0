@@ -72,7 +72,7 @@ export default class savingTheCave_model01_v1 extends cc.Component {
 
         // 初始化state
         this._state = {
-            option: 0,
+            option: -1,
             title: false,
             submit: false,
             checkAnswer: false,
@@ -155,7 +155,6 @@ export default class savingTheCave_model01_v1 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
         if (!globalThis._.isEqual(oldState.option, state.option)) {
-            // this._c1.selectedIndex = state.option;
             this._options.forEach((v, i) => {
                 if (i === state.option) {
                     v.getController('c1').selectedIndex = 1;
@@ -171,7 +170,7 @@ export default class savingTheCave_model01_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
             if (state.submit) {
-                if (state.option) {
+                if (state.option != -1) {
                     this.answerFeedback(state.answer)
                 } else {
                     this.handTips2(this._options[0]);

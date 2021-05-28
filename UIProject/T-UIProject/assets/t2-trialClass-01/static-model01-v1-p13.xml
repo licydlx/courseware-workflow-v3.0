@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <image id="n2_qxt0" name="n2" src="qxt01g" fileName="images/common/0101.png" xy="0,0"/>
-    <image id="n1_qxt0" name="n1" src="qxt01h" fileName="images/static/0105.png" xy="0,60"/>
-    <loader id="n4_nqb5" name="mask" xy="0,0" size="100,100" scale="19.2,11" url="ui://ik5aab9inqb55s" autoSize="true"/>
+    <image id="n1_qxt0" name="n1" src="qxt01h" fileName="images/static/0105.png" xy="0,0"/>
+    <loader id="n4_nqb5" name="mask" xy="0,0" size="100,100" scale="19.2,10.8" url="ui://ik5aab9inqb55s" autoSize="true"/>
     <image id="n3_nqb5" name="n3" src="nqb55r" fileName="images/common/ewm.png" xy="170,120"/>
   </displayList>
 </component>
