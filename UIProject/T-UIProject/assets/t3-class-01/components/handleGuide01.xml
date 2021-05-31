@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_taz8" name="n0" src="jmn01eo" fileName="components/images/0111.png" xy="229,497" size="557,333" rotation="-8"/>
+    <image id="n1_taz8" name="n1" src="jmn01ep" fileName="components/images/0109.png" xy="794,424"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="XY" target="n1_taz8" tween="true" startValue="794,424" endValue="618.25,453.813" duration="3"/>
+    <item time="3" type="XY" target="n1_taz8" tween="true" startValue="618.25,453.813" endValue="472.25,495.813" duration="3"/>
+    <item time="6" type="XY" target="n1_taz8" tween="true" startValue="472.25,495.813" endValue="399.25,565.813" duration="3"/>
+    <item time="9" type="XY" target="n1_taz8" tween="true" startValue="399.25,565.813" endValue="330,632" duration="3"/>
+    <item time="12" type="XY" target="n1_taz8" tween="true" startValue="330,632" endValue="270,809" duration="12"/>
+  </transition>
+</component>

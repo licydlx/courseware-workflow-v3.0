@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n21_yvac" name="bg1" src="yvac96" fileName="images/0110.png" xy="0,0" group="n7_dpbr"/>
+    <image id="n59_tvw9" name="bg2" src="yvac94" fileName="images/0108.png" xy="0,0" group="n7_dpbr" visible="false"/>
+    <image id="n60_tvw9" name="bg3" src="yvac95" fileName="images/0109.png" xy="0,0" group="n7_dpbr" visible="false"/>
+    <group id="n7_dpbr" name="bg" xy="0,0" size="1920,1080" advanced="true"/>
+    <image id="n22_yvac" name="left" src="yvacbl" fileName="images/0138.png" xy="111,641" group="n10_dpbr"/>
+    <image id="n23_yvac" name="right" src="yvacbl" fileName="images/0138.png" xy="1162,641" group="n10_dpbr"/>
+    <group id="n10_dpbr" name="collideredBox" xy="111,641" size="1705,407" advanced="true"/>
+    <component id="n25_yvac" name="submit" src="yvacdb" fileName="components/submit.xml" xy="829,517">
+      <Button sound="ui://1io1z8o5xmwddu"/>
+    </component>
+    <component id="n42_yvac" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="410,190" pivot="0.5,0.5" anchor="true" size="148,148" group="n50_yvac" customData="big1">
+      <Button icon="ui://1io1z8o5yvacbv"/>
+    </component>
+    <component id="n43_yvac" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="1241,221" pivot="0.5,0.5" anchor="true" size="148,148" group="n50_yvac">
+      <Button icon="ui://1io1z8o5yvacbv"/>
+    </component>
+    <component id="n44_yvac" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="679,268" pivot="0.5,0.5" anchor="true" size="101,101" group="n50_yvac">
+      <Button icon="ui://1io1z8o5yvaca2" sound=""/>
+    </component>
+    <component id="n45_yvac" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="1501,211" pivot="0.5,0.5" anchor="true" size="101,101" group="n50_yvac" customData="1111111">
+      <Button icon="ui://1io1z8o5yvaca2"/>
+    </component>
+    <component id="n46_yvac" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="344,439" pivot="0.5,0.5" anchor="true" size="163,163" group="n50_yvac">
+      <Button icon="ui://1io1z8o5yvaca1"/>
+    </component>
+    <component id="n47_yvac" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1299,463" pivot="0.5,0.5" anchor="true" size="163,163" group="n50_yvac">
+      <Button icon="ui://1io1z8o5yvaca1"/>
+    </component>
+    <component id="n48_yvac" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1581,440" pivot="0.5,0.5" anchor="true" size="110,110" group="n50_yvac">
+      <Button icon="ui://1io1z8o5yvacbw"/>
+    </component>
+    <component id="n49_yvac" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="633,483" pivot="0.5,0.5" anchor="true" size="110,110" group="n50_yvac">
+      <Button icon="ui://1io1z8o5yvacbw"/>
+    </component>
+    <group id="n50_yvac" name="colliderBox" xy="263,116" size="1373,429" advanced="true"/>
+    <component id="n61_xmwd" name="title" src="xmwddd" fileName="buttons/title.xml" xy="899,95" alpha="0" touchable="false">
+      <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
+      <Button icon="ui://1io1z8o5yvac8x" sound="ui://1io1z8o5xmwddh" volume="0"/>
+    </component>
+    <loader id="n62_xmwd" name="titleTrigger" xy="59,45" size="228,171" scale="0.8,0.8" url="ui://1io1z8o5xmwddg" autoSize="true" playing="false">
+      <gearAni controller="c1" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n64_xmwd" name="dragSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-142,226">
+      <Button sound="ui://1io1z8o5xmwddv"/>
+    </component>
+    <component id="n65_xmwd" name="clickSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-142,276">
+      <Button sound="ui://1io1z8o5xmwddu"/>
+    </component>
+  </displayList>
+</component>

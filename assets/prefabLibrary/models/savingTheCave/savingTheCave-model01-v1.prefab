@@ -89,7 +89,11 @@
       "__id__": 1
     },
     "asset": {
+<<<<<<< HEAD:library/imports/65/65793fee-1442-4841-bf26-c4416a623338.json
+      "__uuid__": "65793fee-1442-4841-bf26-c4416a623338"
+=======
       "__uuid__": "c13c5c62-2e59-455b-8eaa-fa90454e194c"
+>>>>>>> 75be5407ee29599c51450f098e194bab7c313567:assets/prefabLibrary/models/savingTheCave/savingTheCave-model01-v1.prefab
     },
     "fileId": "",
     "sync": false
