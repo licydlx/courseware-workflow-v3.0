@@ -276,6 +276,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
 
         let state: any = globalThis._.cloneDeep(this._state);
+        console.log('this state = ', this._state);
+        console.log('clone state = ', state);
 
         let dropArr = state.collidered[collideredIndex];
 
@@ -345,7 +347,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 }
 
                 // 修改需求：可以替换已组合好的元素
-                if (matchCollinderArr.length > 0) {
+                if (s._gameType == 1 && matchCollinderArr.length > 0) {
                     let matchExistColliderIndex = this._colliderBox.findIndex((v: any, i: number) => v.name == matchCollinderArr[0].name);
                     state.collidered[state.collider[matchExistColliderIndex].collideredIndex] = [];
                     state.collider[matchExistColliderIndex] = {
@@ -501,6 +503,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 // if (s._gameType === 1) {
                 let role = fgui.UIPackage.createObject(s._packName, 'Combination').asCom;
                 (role.getChild('n2') as fgui.GLoader).url = roleUrl;
+                (role.getChild('smoke') as fgui.GLoader3D).animationName = 'smoke_ani';
                 role.setPivot(0.5, 0.5, true);
                 if (s._gameType === 1) {
 

@@ -262,7 +262,7 @@ export default class savingTheCave_model01_v1 extends cc.Component {
         }, 2);
     }
 
-    handTips1(fromObj: fgui.GObject, toObj: fgui.GObject, center: boolean = true) {
+    handTips1(fromObj: fgui.GObject, toObj: fgui.GObject) {
         let s = this;
         let hand = fgui.UIPackage.createObject(s._packName, 'hand');
         s._view.addChild(hand);

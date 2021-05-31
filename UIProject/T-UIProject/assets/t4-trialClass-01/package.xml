@@ -115,6 +115,9 @@
     <image id="qscd3o" name="icon_1_3.png" path="/images/question2/"/>
     <image id="qscd3p" name="icon_1_4.png" path="/images/question2/"/>
     <component id="jrdo3q" name="DragCom1.xml" path="/components/common/"/>
+    <misc id="axzx44" name="smoke.atlas" path="/images/skeleton/"/>
+    <image id="axzx45" name="smoke.png" path="/images/skeleton/"/>
+    <spine id="axzx43" name="smoke.json" path="/images/skeleton/" width="100" height="100" require="axzx44,axzx45" atlasNames="smoke" anchor="100,100"/>
   </resources>
   <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4\t4-trialClass-01" packageCount="2" codePath="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4"/>
 </packageDescription>
