@@ -14,7 +14,6 @@
     <image id="rbpxa" name="对称线2@2x.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpxb" name="机器人1@2x.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="rbpxd" name="拖板@2x.png" path="/images/dragAnswer-model02-v1/"/>
-    <component id="rbpxe" name="dragAnswer-model02-v1-p5.xml" path="/" exported="true"/>
     <component id="dbj2f" name="dragBtn.xml" path="/buttons/"/>
     <image id="qxt0g" name="气泡@2x.png" path="/images/title/"/>
     <component id="qxt0h" name="title.xml" path="/buttons/"/>
@@ -22,7 +21,6 @@
     <movieclip id="qxt0k" name="laba.jta" path="/animations/laba/"/>
     <image id="qxt0l" name="k01.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="qxt0m" name="k04.png" path="/images/dragAnswer-model02-v1/"/>
-    <component id="qxt0o" name="dragAnswer-model02-v1-p6.xml" path="/" exported="true"/>
     <image id="qxt0p" name="0201.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="qxt0q" name="0202.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="qxt0r" name="0203.png" path="/images/dragAnswer-model02-v1/"/>
@@ -38,7 +36,6 @@
     <image id="qxt011" name="k10.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="qxt012" name="k11.png" path="/images/dragAnswer-model02-v1/"/>
     <image id="qxt013" name="k12.png" path="/images/dragAnswer-model02-v1/"/>
-    <component id="qxt014" name="dragAnswer-model02-v1-p7.xml" path="/" exported="true"/>
     <image id="qxt015" name="0305.png" path="/images/dragAnswer-model02-v1/"/>
     <sound id="qxt016" name="例题1、练习1-1、1-2.mp3" path="/audios/"/>
     <sound id="qxt017" name="例题2、练习2-1、练习2-2.mp3" path="/audios/"/>
@@ -66,7 +63,7 @@
     <component id="qe6i21" name="handleGuide01.xml" path="/components/" exported="true"/>
     <image id="qe6i22" name="0111.png" path="/components/images/"/>
     <image id="qe6i23" name="0109.png" path="/components/images/"/>
-    <sound id="ht4324" name="点击音效.mp3" path="/audios/"/>
+    <sound id="ht4324" name="点击音效.mp3" path="/audios/" exported="true"/>
     <image id="ht4325" name="0110.png" path="/images/dragAnswer-model01-v2/"/>
     <image id="ht4326" name="0111.png" path="/images/dragAnswer-model01-v2/"/>
     <component id="ht4327" name="dragAnswer-model01-v2-p9.xml" path="/" exported="true"/>
@@ -175,9 +172,67 @@
     <component id="q2426g" name="collidered02.xml" path="/components/"/>
     <movieclip id="q2426h" name="MovieClip1.jta" path="/movieClips/"/>
     <component id="q2426j" name="collidered03.xml" path="/components/"/>
-    <component id="q2426k" name="collidered04.xml" path="/"/>
+    <component id="q2426k" name="collidered04.xml" path="/components/"/>
     <movieclip id="q2426l" name="MovieClip2.jta" path="/movieClips/"/>
     <movieclip id="q2426m" name="MovieClip3.jta" path="/movieClips/"/>
+    <component id="q2426n" name="collidered05.xml" path="/components/"/>
+    <component id="q2426o" name="collidered06.xml" path="/components/"/>
+    <component id="q2426p" name="collidered07.xml" path="/components/"/>
+    <component id="q2426q" name="collidered08.xml" path="/components/"/>
+    <component id="q2426r" name="collidered09.xml" path="/components/"/>
+    <component id="q2426s" name="collidered10.xml" path="/components/"/>
+    <component id="q2426t" name="collidered11.xml" path="/components/"/>
+    <component id="q2426u" name="collidered12.xml" path="/components/"/>
+    <component id="q2426v" name="collidered13.xml" path="/components/"/>
+    <image id="azf56w" name="1框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf56x" name="2框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf56y" name="3框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf56z" name="4框@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf570" name="零件 拷贝 3@2x.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf571" name="1000.png" path="/images/dragAnswer-model02-v1/"/>
+    <image id="azf572" name="0116.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="azf573" name="0117.png" path="/images/dragAnswer-model01-v2/"/>
+    <component id="ikyr74" name="dragAnswer-model02-v1-p5.xml" path="/" exported="true"/>
+    <image id="ikyr75" name="icon_4_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr76" name="box.png" path="/images/dragAnswer-model02-v1-new/"/>
+    <image id="ikyr77" name="icon_0_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr78" name="icon_0_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr79" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7a" name="icon_1_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7b" name="icon_2_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7c" name="icon_2_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7d" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7e" name="icon_3_1.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7f" name="icon_4_0.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="ikyr7g" name="robot.png" path="/images/dragAnswer-model02-v1-new/p5/" scale9grid="50,148,100,296"/>
+    <component id="ikyr7h" name="dragAnswer-model02-v1-p6.xml" path="/" exported="true"/>
+    <image id="ikyr7i" name="shadow.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7k" name="icon_0_0.png" path="/images/dragAnswer-model02-v1-new/p6/" scale="9grid" scale9grid="14,10,13,6"/>
+    <image id="ikyr7l" name="icon_0_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7n" name="icon_1_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7o" name="icon_2_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7p" name="icon_2_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7r" name="icon_3_1.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="ikyr7t" name="shadow.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <component id="ikyr7u" name="dragAnswer-model02-v1-p7.xml" path="/" exported="true"/>
+    <image id="ikyr7v" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr7w" name="icon_1_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr7x" name="icon_2_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr7y" name="icon_2_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr80" name="icon_3_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr81" name="shadow.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr82" name="icon_0_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="ikyr83" name="icon_0_1.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <sound id="98t374" name="错误反馈1.mp3" path="/audios/" exported="true"/>
+    <sound id="98t375" name="拖动放置.mp3" path="/audios/" exported="true"/>
+    <component id="98t376" name="audios.xml" path="/buttons/"/>
+    <image id="jrdo86" name="机器人左.png" path="/images/dragAnswer-model02-v1-new/p5/"/>
+    <image id="jrdo88" name="robot.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="jrdo89" name="0104.png" path="/images/common/"/>
+    <image id="jrdo8d" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="jrdo8e" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="jrdo8f" name="robot.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
+    <image id="jrdo8g" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
   </resources>
-  <publish name=""/>
+  <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t2\t2-trialClass-01" packageCount="2"/>
 </packageDescription>

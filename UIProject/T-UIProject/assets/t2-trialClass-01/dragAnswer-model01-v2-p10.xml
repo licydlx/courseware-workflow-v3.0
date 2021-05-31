@@ -1,47 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="c2" pages="0,,1," selected="1"/>
+  <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
     <loader id="n2_rbpx" name="background" xy="0,0" size="1920,1080" group="n4_rbpx" url="ui://ik5aab9iqxt01g" autoSize="true"/>
     <image id="n53_qe6i" name="n53" src="qe6i1x" fileName="images/dragAnswer-model01-v2/0108.png" xy="60,180" group="n4_rbpx"/>
+    <image id="n65_azf5" name="n65" src="azf572" fileName="images/dragAnswer-model01-v2/0116.png" xy="400,309" group="n4_rbpx"/>
     <image id="n57_ht43" name="n57" src="ht432b" fileName="images/dragAnswer-model01-v2/0114.png" xy="456,359" group="n4_rbpx"/>
-    <group id="n4_rbpx" name="UI" xy="0,0" size="1920,1080"/>
-    <image id="n42_qe6i" name="n42" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="941,362" group="n18_dbj2">
+    <image id="n59_j7u6" name="n59" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="778,362" group="n4_rbpx">
       <relation target="" sidePair="center-center,middle-middle"/>
     </image>
+    <image id="n58_j7u6" name="n58" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="617,362" group="n4_rbpx">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
+    <group id="n4_rbpx" name="UI" xy="0,0" size="1920,1080"/>
+    <image id="n42_qe6i" name="n42" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="939,362" group="n18_dbj2"/>
     <image id="n43_qe6i" name="n43" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1100,362" group="n18_dbj2"/>
-    <image id="n44_qe6i" name="n44" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1260,362" group="n18_dbj2"/>
-    <image id="n45_qe6i" name="n45" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="941,523" group="n18_dbj2"/>
+    <image id="n44_qe6i" name="n44" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1261,362" group="n18_dbj2"/>
+    <image id="n45_qe6i" name="n45" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="939,523" group="n18_dbj2"/>
     <image id="n46_qe6i" name="n46" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1100,523" group="n18_dbj2"/>
-    <image id="n47_qe6i" name="n47" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1260,523" group="n18_dbj2"/>
-    <group id="n18_dbj2" name="collideredBox" xy="941,362" size="480,322" advanced="true"/>
+    <image id="n47_qe6i" name="n47" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1261,523" group="n18_dbj2"/>
+    <group id="n18_dbj2" name="collideredBox" xy="939,362" size="483,322" advanced="true"/>
     <image id="n54_qe6i" name="wire" src="qe6i1p" fileName="images/dragAnswer-model01-v2/0101.png" xy="937,298"/>
-    <component id="n51_qe6i" name="n51" src="dbj2f" fileName="buttons/dragBtn.xml" xy="650,790" size="120,110" group="n50_qe6i">
+    <component id="n51_qe6i" name="n51" src="dbj2f" fileName="buttons/dragBtn.xml" xy="650,790" size="126,109" group="n50_qe6i">
       <Button icon="ui://ik5aab9iht4329"/>
     </component>
-    <component id="n52_qe6i" name="n52" src="dbj2f" fileName="buttons/dragBtn.xml" xy="1080,810" size="120,90" group="n50_qe6i">
+    <component id="n52_qe6i" name="n52" src="dbj2f" fileName="buttons/dragBtn.xml" xy="1080,810" size="122,94" group="n50_qe6i">
       <Button icon="ui://ik5aab9iht432a"/>
     </component>
-    <group id="n50_qe6i" name="colliderBox" xy="650,790" size="550,110" advanced="true"/>
+    <group id="n50_qe6i" name="colliderBox" xy="650,790" size="552,114" advanced="true"/>
+    <image id="n60_o46u" name="n60" src="qe6i1t" fileName="images/dragAnswer-model01-v2/0105.png" xy="618,362" group="n61_o46u" alpha="0"/>
+    <image id="n62_o46u" name="n62" src="qe6i1t" fileName="images/dragAnswer-model01-v2/0105.png" xy="778,362" group="n61_o46u" alpha="0"/>
+    <image id="n63_o46u" name="n63" src="qe6i1t" fileName="images/dragAnswer-model01-v2/0105.png" xy="939,362" group="n61_o46u" alpha="0"/>
+    <image id="n64_o46u" name="n64" src="qe6i1t" fileName="images/dragAnswer-model01-v2/0105.png" xy="1100,362" group="n61_o46u" alpha="0"/>
+    <group id="n61_o46u" name="gap" xy="618,362" size="643,161" advanced="true"/>
     <component id="n56_qe6i" name="submit" src="qe6i20" fileName="buttons/submit.xml" xy="1522,710">
-      <Button icon="ui://ik5aab9iqe6i1z" sound="ui://ik5aab9iht4324" volume="0"/>
+      <Button icon="ui://ik5aab9iqe6i1z" sound="ui://ik5aab9iht4324"/>
     </component>
-    <component id="n25_qxt0" name="title" src="qxt0h" fileName="buttons/title.xml" xy="900,100" touchable="false">
+    <component id="n25_qxt0" name="title" src="qxt0h" fileName="buttons/title.xml" xy="900,100" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://ik5aab9igygb5t" sound="ui://ik5aab9iqxt018" volume="0"/>
     </component>
-    <loader id="n26_qxt0" name="titleTrigger" xy="60,50" size="228,171" scale="0.8,0.8" url="ui://ik5aab9iqxt0k" autoSize="true" frame="12">
+    <loader id="n26_qxt0" name="titleTrigger" xy="60,50" size="228,171" scale="0.8,0.8" url="ui://ik5aab9iqxt0k" autoSize="true" playing="false">
       <gearAni controller="c2" pages="1" values="12,p" default="0,s"/>
     </loader>
+    <component id="n66_98t3" name="place" src="98t376" fileName="buttons/audios.xml" xy="749,2436" group="n67_98t3">
+      <Button sound="ui://ik5aab9i98t375" volume="0"/>
+    </component>
+    <group id="n67_98t3" name="audios" xy="749,2436" size="0,0"/>
   </displayList>
   <transition name="t0">
-    <item time="0" type="Alpha" target="n44_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
-    <item time="0" type="Alpha" target="n45_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
-    <item time="6" type="Alpha" target="n44_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
-    <item time="6" type="Alpha" target="n45_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
-    <item time="12" type="Alpha" target="n44_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
-    <item time="12" type="Alpha" target="n45_qe6i" tween="true" startValue="1" endValue="0.5" duration="6"/>
-    <item time="18" type="Alpha" target="n44_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
-    <item time="18" type="Alpha" target="n45_qe6i" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="0" type="Alpha" target="n61_o46u" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="6" type="Alpha" target="n61_o46u" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="12" type="Alpha" target="n61_o46u" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="18" type="Alpha" target="n61_o46u" tween="true" startValue="0.5" endValue="0" duration="6"/>
   </transition>
 </component>

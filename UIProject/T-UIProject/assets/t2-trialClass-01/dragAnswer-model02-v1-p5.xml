@@ -3,32 +3,34 @@
   <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
     <loader id="n2_rbpx" name="background" xy="0,0" size="1920,1080" group="n4_rbpx" url="ui://ik5aab9iqxt01g" autoSize="true"/>
-    <image id="n5_rbpx" name="n5" src="rbpxb" fileName="images/dragAnswer-model02-v1/机器人1@2x.png" xy="840,278" group="n4_rbpx"/>
-    <image id="n6_rbpx" name="n6" src="rbpxd" fileName="images/dragAnswer-model02-v1/拖板@2x.png" xy="261,744" group="n4_rbpx"/>
+    <image id="n6_rbpx" name="n6" src="ikyr76" fileName="images/dragAnswer-model02-v1-new/box.png" xy="261,759" group="n4_rbpx"/>
     <group id="n4_rbpx" name="UI" xy="0,0" size="1920,1080"/>
-    <image id="n16_rbpx" name="wire" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="989,264"/>
-    <component id="n12_rbpx" name="n12" src="q2426f" fileName="components/collidered01.xml" xy="990,331" group="n18_dbj2"/>
-    <component id="n13_rbpx" name="n13" src="q2426g" fileName="components/collidered02.xml" xy="990,272" group="n18_dbj2"/>
-    <component id="n15_rbpx" name="n15" src="q2426j" fileName="components/collidered03.xml" xy="990,441" group="n18_dbj2"/>
-    <component id="n14_rbpx" name="n14" src="q2426k" fileName="collidered04.xml" xy="1051,441" group="n18_dbj2"/>
-    <image id="n17_rbpx" name="n17" src="rbpx8" fileName="images/dragAnswer-model02-v1/k06.png" xy="990,581" group="n18_dbj2"/>
-    <group id="n18_dbj2" name="collideredBox" xy="990,272" size="148,456" advanced="true"/>
-    <component id="n20_dbj2" name="n20" src="dbj2f" fileName="buttons/dragBtn.xml" xy="442,836" size="100,100" group="n19_dbj2" aspect="true">
-      <Button icon="ui://ik5aab9irbpx0"/>
+    <image id="n5_rbpx" name="n5" src="jrdo86" fileName="images/dragAnswer-model02-v1-new/p5/机器人左.png" xy="793,91" group="n27_q242"/>
+    <image id="n30_ikyr" name="shadow" src="ikyr7t" fileName="images/dragAnswer-model02-v1-new/p5/shadow.png" xy="990,88" group="n27_q242" visible="false"/>
+    <group id="n27_q242" name="dyUI" xy="793,88" size="396,595" advanced="true"/>
+    <component id="n12_rbpx" name="n12" src="q2426f" fileName="components/collidered01.xml" xy="989,163" group="n18_dbj2" alpha="0"/>
+    <component id="n13_rbpx" name="n13" src="q2426g" fileName="components/collidered02.xml" xy="988,88" group="n18_dbj2" alpha="0"/>
+    <component id="n15_rbpx" name="n15" src="q2426j" fileName="components/collidered03.xml" xy="989,307" group="n18_dbj2" alpha="0"/>
+    <component id="n14_rbpx" name="n14" src="q2426k" fileName="components/collidered04.xml" xy="1071,306" group="n18_dbj2" alpha="0"/>
+    <component id="n17_rbpx" name="n17" src="q2426n" fileName="components/collidered05.xml" xy="989,490" group="n18_dbj2" alpha="0"/>
+    <group id="n18_dbj2" name="collideredBox" xy="988,88" size="200,595" advanced="true"/>
+    <component id="n20_dbj2" name="n20" src="dbj2f" fileName="buttons/dragBtn.xml" xy="438,856" size="199,144" group="n19_dbj2">
+      <Button icon="ui://ik5aab9iikyr77"/>
     </component>
-    <component id="n21_dbj2" name="n21" src="dbj2f" fileName="buttons/dragBtn.xml" xy="708,866" size="80,80" group="n19_dbj2" aspect="true">
-      <Button icon="ui://ik5aab9irbpx2"/>
+    <component id="n21_dbj2" name="n21" src="dbj2f" fileName="buttons/dragBtn.xml" xy="705,890" size="199,75" group="n19_dbj2">
+      <Button icon="ui://ik5aab9iikyr79"/>
     </component>
-    <component id="n22_dbj2" name="n22" src="dbj2f" fileName="buttons/dragBtn.xml" xy="1006,826" size="70,140" group="n19_dbj2">
-      <Button icon="ui://ik5aab9irbpx4"/>
+    <component id="n22_dbj2" name="n22" src="dbj2f" fileName="buttons/dragBtn.xml" xy="1006,836" size="83,183" group="n19_dbj2">
+      <Button icon="ui://ik5aab9iikyr7b"/>
     </component>
-    <component id="n23_dbj2" name="n23" src="dbj2f" fileName="buttons/dragBtn.xml" xy="1280,826" size="90,160" group="n19_dbj2">
-      <Button icon="ui://ik5aab9irbpx5"/>
+    <component id="n23_dbj2" name="n23" src="dbj2f" fileName="buttons/dragBtn.xml" xy="1280,807" size="116,242" group="n19_dbj2">
+      <Button icon="ui://ik5aab9iikyr7d"/>
     </component>
-    <component id="n24_dbj2" name="n24" src="dbj2f" fileName="buttons/dragBtn.xml" xy="1535,826" size="50,150" group="n19_dbj2">
-      <Button icon="ui://ik5aab9irbpx7"/>
+    <component id="n24_dbj2" name="n24" src="dbj2f" fileName="buttons/dragBtn.xml" xy="1535,831" size="83,193" group="n19_dbj2">
+      <Button icon="ui://ik5aab9iikyr7f"/>
     </component>
-    <group id="n19_dbj2" name="colliderBox" xy="442,826" size="1143,160" advanced="true"/>
+    <group id="n19_dbj2" name="colliderBox" xy="438,807" size="1180,242" advanced="true"/>
+    <image id="n16_rbpx" name="wire" src="rbpxa" fileName="images/dragAnswer-model02-v1/对称线2@2x.png" xy="987,50" size="5,660"/>
     <component id="n25_qxt0" name="title" src="qxt0h" fileName="buttons/title.xml" xy="1000,100" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://ik5aab9iqxt0g" sound="ui://ik5aab9iqxt017" volume="0"/>
@@ -36,5 +38,6 @@
     <loader id="n26_qxt0" name="titleTrigger" xy="70,70" size="228,171" scale="0.8,0.8" url="ui://ik5aab9iqxt0k" autoSize="true" playing="false">
       <gearAni controller="c2" pages="1" values="12,p" default="0,s"/>
     </loader>
+    <loader id="n29_q242" name="robot" xy="667,47" size="650,650" visible="false" url="ui://ik5aab9iq2426h" autoSize="true" playing="false"/>
   </displayList>
 </component>

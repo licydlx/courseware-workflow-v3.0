@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n0_msxw" name="n0" src="ku3e11" fileName="images/question1/bg.png" xy="0,0"/>
+    <image id="n44_ku3e" name="n44" src="ku3e2u" fileName="images/question1/choose1/box_0.png" xy="197,26" group="n40_ku3e"/>
+    <image id="n30_ku3e" name="n30" src="ku3e3c" fileName="images/question1/choose3/ques_3.png" xy="678,102" group="n40_ku3e"/>
+    <component id="n8_kxox" name="submit" src="ku3eq" fileName="components/common/buttons/submit.xml" xy="1611,460" group="n40_ku3e">
+      <Button icon="ui://5w4y4dqwku3ex" sound="ui://rokozlzwkxox11"/>
+    </component>
+    <group id="n40_ku3e" name="question" xy="197,26" size="1654,674"/>
+    <component id="n45_ku3e" name="option_0" src="ku3e1d" fileName="components/common/ChooseBtn.xml" xy="352,882" pivot="0.5,0.5" anchor="true" group="n49_ku3e"/>
+    <component id="n46_ku3e" name="option_1" src="ku3e1d" fileName="components/common/ChooseBtn.xml" xy="756,882" pivot="0.5,0.5" anchor="true" group="n49_ku3e"/>
+    <component id="n47_ku3e" name="option_2" src="ku3e1d" fileName="components/common/ChooseBtn.xml" xy="1161,882" pivot="0.5,0.5" anchor="true" group="n49_ku3e"/>
+    <component id="n48_ku3e" name="option_3" src="ku3e1d" fileName="components/common/ChooseBtn.xml" xy="1566,882" pivot="0.5,0.5" anchor="true" group="n49_ku3e"/>
+    <group id="n49_ku3e" name="optionBox" xy="150,690" size="1619,385" advanced="true"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="98,52" size="228,171" scale="0.8,0.8" url="ui://5w4y4dqwku3e1" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n6_kxox" name="title" src="ku3em" fileName="components/common/buttons/title.xml" xy="931,82" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://5w4y4dqwku3e3d" sound="ui://5w4y4dqwqscd3h" volume="0"/>
+    </component>
+  </displayList>
+</component>

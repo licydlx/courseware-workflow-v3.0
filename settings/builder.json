@@ -1,10 +1,10 @@
 {
   "title": "fairy-cocos-courseware",
   "packageName": "org.cocos2d.demo",
-  "startScene": "e40c48f6-b759-40c8-97e0-71b7208c2073",
+  "startScene": "b4af7a9b-6089-47ac-a3f7-8ab6959085ef",
   "excludeScenes": [
     "d9e74695-e785-4b40-bcdc-fcb0aa490f14",
-    "b4af7a9b-6089-47ac-a3f7-8ab6959085ef"
+    "e40c48f6-b759-40c8-97e0-71b7208c2073"
   ],
   "orientation": {
     "landscapeLeft": true,
@@ -13,7 +13,7 @@
     "upsideDown": false
   },
   "webOrientation": "auto",
-  "inlineSpriteFrames": true,
+  "inlineSpriteFrames": false,
   "inlineSpriteFrames_native": true,
   "mainCompressionType": "default",
   "mainIsRemote": false,

@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2021-05-07 14:34:26
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:22:53
+ * @LastEditTime: 2021-05-26 16:23:56
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
@@ -109,8 +109,12 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         }
         
 
-        // 临时 禁止操作期间 切页
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        let feedback:any = this._worldRoot.getChildByName("feedback");
+        if (feedback) feedback.destroy();
     }
 
     async init(data: any) {
@@ -158,7 +162,7 @@ export default class dragAnswer_model01_v2 extends cc.Component {
 
     private _onDragStart(evt: fgui.Event): void {
         evt.captureTouch();
-
+        this.playSound('ui://ik5aab9iht4324');
         let state: any = globalThis._.cloneDeep(this._state);
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
@@ -263,6 +267,10 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         if (state.drag == "end") {
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
                 for (let i = 0; i < state.collider.length; i++) {
+                    // 放置声
+                    if (state.collider[i].x != this._colliderBox[i].x && this._colliderBox[i].y != state.collider[i].y) {
+                        this.playPlace();
+                    }
                     this._colliderBox[i].x = state.collider[i].x;
                     this._colliderBox[i].y = state.collider[i].y;
                 }
@@ -278,14 +286,34 @@ export default class dragAnswer_model01_v2 extends cc.Component {
                     let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
                     let bool: boolean = this._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
                     bool ? this.onHandleGuide() : this.onFlicker(state.answer);
+                } else {
+                    this.disableForbidHandle();
                 }
             }
         }
     }
 
+    playSound(url: string) {
+        let s = this;
+        let item = fgui.UIPackage.getItemByURL(url);
+        loadResource(item.file, cc.AudioClip).then((audio: cc.AudioClip) => {
+            cc.audioEngine.play(audio, false, 1);
+        });
+    }
+
+    // 播放 放置声效
+    async playPlace(){
+        cc.audioEngine.stopAll();
+        let place = this._view.getChild("place").asButton;
+        if (place) {
+            let item = fgui.UIPackage.getItemByURL(place["_sound"]);
+            let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
+            cc.audioEngine.play(audio, false, 1);
+        }
+    }
+
     async playTitle(bool: boolean) {
         this._c2.selectedIndex = bool ? 1 : 0;
-
         if (bool) {
             cc.audioEngine.stopAll();
             this.forbidHandle();
@@ -342,8 +370,6 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         feedback.parent = cc.find("Canvas").parent;
 
         setTimeout(() => {
-            this.disableForbidHandle();
-
             feedback.destroy();
             state.submit = false;
             this.updateState(state);
@@ -352,10 +378,14 @@ export default class dragAnswer_model01_v2 extends cc.Component {
 
     // 格子闪烁 提示
     onFlicker(answer: any) {
-        let t: fgui.Transition = this._view.getTransition("t0");
-        t.play(() => {
+        if (answer) {
+            let t: fgui.Transition = this._view.getTransition("t0");
+            t.play(() => {
+                this.answerFeedback(answer);
+            });
+        } else {
             this.answerFeedback(answer);
-        });
+        }
     }
 
     // 操作提示

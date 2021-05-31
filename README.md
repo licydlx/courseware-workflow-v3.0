@@ -1,40 +1,112 @@
+<!--
+ * @Descripttion:
+ * @version:
+ * @Author: ydlx
+ * @Date: 2021-04-06 16:02:41
+ * @LastEditors: ydlx
+ * @LastEditTime: 2021-05-27 23:18:01
+-->
+
 # fairy-cocos-courseware
 
-#### 介绍
-fairygui            搭建ui
-cocos creator  组装逻辑
-腾讯云            部署
-课件制作工作流
+#### 项目介绍
 
-#### 软件架构
-软件架构说明
+     使用fairygui制作ui,cocos creator编写逻辑的课件制作工作流
 
+#### 项目目标
 
-#### 安装教程
+     核心目标：提高课件制作效率
+     功能目标：1.沉淀fairygui课件制作经验，建立ui统一制作规范，
+                提高ui制作效率及将ui制作工作流转移至教研，产品或ui人员。
+              2.沉淀题型制作经验，建立题型统一制作规范，为题型池的创立及发展做准备。
+			  (题型池的建立具有决定性，所有的课件可以纳入一个体系)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### 项目目录
 
-#### 使用说明
+    configJson|--|--prod:正式环境json配置
+              |  |
+    		  |  |--test:本地或测试环境json配置
+              |
+    entrances |--|--courseware:课件入口场景
+    		  |  |
+    		  |  |--afterSchoolreview:课后复习入口场景
+    		  |  |
+              |  |--homework:课后练习入口场景
+    		  |
+    fairyUis  |--|--t2:t2 fairygui资源文件夹
+    		  |  |
+    		  |  |--t3:t3 fairygui资源文件夹
+    		  |  |
+              |  |--t4:t4 fairygui资源文件夹
+    		  |
+     library  |--|--components: 组件
+    		  |  |
+    		  |  |--controllers: 控制器
+    		  |  |
+              |  |--models: 题型model
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### 项目架构
+	1.分层(3层)
+	入口层：场景入口
+		  职责：区别正，测试环境；动态获取配置json等
+	控制层：控制器
+		  职责：初始化第三方环境；初始化全局组件(面板组件)；
+               根据配置json动态加载ui资源，题型model,组件，并进行初始化；
+		       预加载资源；控制页面切换，信令收发等
+	资源层：fairygui资源，组件资源，题型资源
+	
+	2.工作流
+	一：使用fairygui构建ui，导出ui资源至相关目录
+	二：匹配或制作与ui题型相关的题型model或组件
+	三：制作对应的配置json
+	四：本地调试
+	
+	3.部署
+	登录腾讯云-云存储 T-series/ -- 更新对应目录的ui资源，题型model及组件；
+	腾讯云-数据库 configJson/   -- 更新对应配置json
+	
+	4.打包课件zip包
+	(一个html配置相关参数，打包成zip包，上传到拓客云课堂)(找相关人员获取html)
+	
+#### 项目现状
+	0到1雏形阶段
+	
+#### 题型基本模式
+	1.数据驱动
+	定义state数据结构
+	各种操作修改state
+	通过state驱动ui变化及业务逻辑
+	2.单向数据流
+	3.状态同步
+	
+#### 项目问题
+     1.重要但短期内无法解决的问题
+	 	一：题型制作统一规范，建立题型池
+		二：ui制作统一规范，ui工作流转移至教研，产品等
+		三：随着业务迭代，各种隐藏问题暴露，导致许多临时方案
+		等
+	 2.重要但短期内能解决的问题
+	 	一：建立可视化的题型管理(web端 题型列表 信息介绍：
+            作者是谁 功能是什么 版本迭代信息等等)
+		二：建立数据管理器：集中管理数据处理，
+           让其它开发人员按一定规范--脱离数据通信操作
+		三：每个开发开发风格不一致--制定必要的统一规范
+		四：部署环境，无正式，测试的区分
+		等
+	 3.一般性问题
+	 	1.题型model与组件怎么组装更好
+		2.各种命名规范与统一
+		3.配置json数据结构怎么定义更好
+		等等
+	
+#### 项目迭代解决方案
+	版本规划
+	有计划有阶段的版本迭代，逐个解决重要问题
+	(非常重要) 凡事预则立
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+#### 其它说明
+    无论你想干什么，请先熟悉下业务及现实环境
+	 
+	
+	
+	

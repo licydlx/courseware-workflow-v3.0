@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_uu84" name="n0" src="8vqhb2" fileName="images/clickAnswer-model01-v1/0106.png" xy="1351,-400" group="n9_uu84"/>
+    <image id="n5_uu84" name="n5" src="itxhdj" fileName="images/clickAnswer-model01-v1/0112.png" xy="1379,300" group="n9_uu84"/>
+    <image id="n3_uu84" name="n3" src="itxhdm" fileName="images/clickAnswer-model01-v1/0115.png" xy="1247,300" group="n9_uu84"/>
+    <image id="n2_uu84" name="n2" src="itxhdi" fileName="images/clickAnswer-model01-v1/0111.png" xy="1318,246" group="n9_uu84"/>
+    <image id="n6_uu84" name="n6" src="itxhdk" fileName="images/clickAnswer-model01-v1/0113.png" xy="1445,352" group="n9_uu84"/>
+    <image id="n4_uu84" name="n4" src="itxhdl" fileName="images/clickAnswer-model01-v1/0114.png" xy="1275,351" pivot="1,0" anchor="true" group="n9_uu84"/>
+    <group id="n9_uu84" name="body" xy="1209,-400" size="302,857" group="n1_uu84" advanced="true"/>
+    <group id="n1_uu84" name="catchStone" xy="1209,-400" size="302,857" advanced="true"/>
+    <loader id="n10_uu84" name="obj" xy="1280,760" size="165,139" url="ui://pozm437j8vqhb8" align="center" vAlign="middle" autoSize="true"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Alpha" target="n10_uu84" value="1"/>
+    <item time="0" type="XY" target="n10_uu84" value="1280,760"/>
+    <item time="0" type="XY" target="n9_uu84" tween="true" startValue="1209,-400" endValue="1209,0" duration="6"/>
+    <item time="6" type="Rotation" target="n4_uu84" tween="true" startValue="0" endValue="-10" duration="6"/>
+    <item time="6" type="Rotation" target="n6_uu84" tween="true" startValue="0" endValue="10" duration="6"/>
+    <item time="6" type="XY" target="n9_uu84" tween="true" startValue="1209,0" endValue="1209,0" duration="6"/>
+    <item time="12" type="XY" target="n10_uu84" tween="true" startValue="1280,760" endValue="1280,360" duration="6"/>
+    <item time="12" type="XY" target="n9_uu84" tween="true" startValue="1209,0" endValue="1209,-400" duration="6"/>
+    <item time="18" type="XY" target="n10_uu84" tween="true" startValue="1280,360" endValue="760,360" duration="6"/>
+    <item time="18" type="XY" target="n9_uu84" tween="true" startValue="1209,-400" endValue="680,-400" duration="6"/>
+    <item time="24" type="Rotation" target="n4_uu84" tween="true" startValue="-10" endValue="0" duration="6"/>
+    <item time="24" type="Rotation" target="n6_uu84" tween="true" startValue="10" endValue="0" duration="6"/>
+    <item time="30" type="Alpha" target="n10_uu84" tween="true" startValue="1" endValue="0" duration="6"/>
+    <item time="30" type="XY" target="n10_uu84" tween="true" startValue="760,360" endValue="760,530" duration="6"/>
+  </transition>
+  <transition name="t1">
+    <item time="0" type="XY" target="n9_uu84" tween="true" startValue="1209,-400" endValue="1209,-400" duration="6"/>
+  </transition>
+</component>

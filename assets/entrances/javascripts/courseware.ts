@@ -53,6 +53,26 @@ export default class t3_courseware extends cc.Component {
 
         if (this.test) {
             this._controllerJs.onJumpConfig(1);
+        }      
+	    cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+        // cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+        this._controllerJs._toPage = 1;
+    }
+
+    onKeyDown(event: cc.Event.EventKeyboard) {
+
+        switch (event.keyCode) {
+            case cc.macro.KEY.left:
+                console.log('Press left key');
+                if (this._controllerJs._toPage <= 1) return;
+                this._controllerJs.onJumpConfig(--this._controllerJs._toPage);
+                break;
+            case cc.macro.KEY.right:
+                console.log('Press right key');
+                if (this._controllerJs._toPage >= 15) return;
+                this._controllerJs.onJumpConfig(++this._controllerJs._toPage);
+                break;
+            default: break ;
         }
     }
 

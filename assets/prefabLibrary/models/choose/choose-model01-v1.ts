@@ -4,13 +4,10 @@
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-17 21:33:18
+ * @LastEditTime: 2021-05-21 16:56:45
  */
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
-const { pointBelongArea } = window['GlobalData'].utils;
-
 const { ccclass, property } = cc._decorator;
-
 @ccclass
 export default class choose_model01_v1 extends cc.Component {
     private _worldRoot: cc.Node;
@@ -87,8 +84,12 @@ export default class choose_model01_v1 extends cc.Component {
             answer: false
         }
         
-        // 临时 禁止操作期间 切页
+        // 临时 
+        // 禁止操作期间 切页
         this.disableForbidHandle();
+        // 销毁反馈
+        let feedback:any = this._worldRoot.getChildByName("feedback");
+        if (feedback) feedback.destroy();
     }
 
     async init(data: any) {
@@ -127,6 +128,7 @@ export default class choose_model01_v1 extends cc.Component {
     }
 
     private _clickOption(evt: any){
+        this.playSound('ui://ik5aab9iht4324');
         let state: any = globalThis._.cloneDeep(this._state);
         let option: any = fgui.GObject.cast(evt.currentTarget);
         let optionIndex:number = this._options.findIndex((v:any) => v == option);
@@ -142,6 +144,14 @@ export default class choose_model01_v1 extends cc.Component {
         this.updateState(state);
     }
 
+    playSound(url: string) {
+        let s = this;
+        let item = fgui.UIPackage.getItemByURL(url);
+        loadResource(item.file, cc.AudioClip).then((audio: cc.AudioClip) => {
+            cc.audioEngine.play(audio, false, 1);
+        });
+    }
+    
     // 获取状态
     getState(data: any) {
         this.updateState(data);
@@ -208,7 +218,6 @@ export default class choose_model01_v1 extends cc.Component {
 
         setTimeout(() => {
             feedback.destroy();
-
             state.submit = false;
             state.checkAnswer = false;
             this.updateState(state);
@@ -218,14 +227,19 @@ export default class choose_model01_v1 extends cc.Component {
     // 提交后 动画
     afterSubmit(){
         let state: any = globalThis._.cloneDeep(this._state);
-        let t: fgui.Transition = this._view.getTransition("t1");
-        t.play(() => {
-            
-            state.answer = state.option == this._answer;
+        state.answer = state.option == this._answer;
+        if (state.answer) {
+            let t: fgui.Transition = this._view.getTransition("t0");
+            t.play(() => {
+                state.submit = false;
+                state.checkAnswer = true;
+                this.updateState(state);
+            }, 1);
+        } else {
             state.submit = false;
             state.checkAnswer = true;
             this.updateState(state);
-        }, 1);
+        }
     }
 
     // 操作提示

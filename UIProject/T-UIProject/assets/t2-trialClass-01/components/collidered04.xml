@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="116,376">
+  <displayList>
+    <image id="n14_rbpx" name="n14" src="ikyr7e" fileName="images/dragAnswer-model02-v1-new/icon_3_1.png" xy="0,0" pivot="0,0.05" size="116,376"/>
+    <loader id="n16_q242" name="anchor" xy="0,0" size="116,242" url="ui://ik5aab9iikyr7d" autoSize="true" clearOnPublish="true"/>
+  </displayList>
+</component>

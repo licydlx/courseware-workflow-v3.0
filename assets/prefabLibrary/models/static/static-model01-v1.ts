@@ -3,8 +3,8 @@
  * @version: 
  * @Author: ydlx
  * @Date: 2021-03-26 18:05:12
- * @LastEditors: ydlx
- * @LastEditTime: 2021-05-12 16:23:14
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-05-17 15:25:51
  */
 
 const { ccclass, property } = cc._decorator;

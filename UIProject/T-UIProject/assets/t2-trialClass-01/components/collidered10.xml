@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="111,224">
+  <displayList>
+    <image id="n48_azf5" name="n48" src="ikyr7w" fileName="images/dragAnswer-model02-v1-new/p7/icon_1_1.png" xy="0,0" size="111,224"/>
+    <loader id="n49_ikyr" name="anchor" xy="0,0" size="111,224" url="ui://ik5aab9iikyr7v" clearOnPublish="true"/>
+  </displayList>
+</component>

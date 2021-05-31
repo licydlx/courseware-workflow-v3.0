@@ -1,0 +1,348 @@
+{
+    "name": "",
+    "courseName": "t4-trialclass-01-asr-test01",
+    "env": "prod",
+    "pathConfig": {
+        "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
+        "controllerBundlePath": "T-series/personalTest/guhl/controllers/",
+        "controllerName": "controller-model01",
+        "resourceBundlePath": "T-series/fairyUis/t4/",
+        "resourceName": "t4-trialClass-01",
+        "panelBundlePath": "T-series/personalTest/guhl/components/",
+        "panelName": "pageController-model01-v1",
+        "modelBundlePath": "T-series/personalTest/guhl/models/",
+        "componentBundlePath": "T-series/personalTest/guhl/components/",
+        "packageName": "t4-trialClass-01"
+    },
+    "chapters": [
+        {
+            "model": {
+                "uiPath": "Question1Page01",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v1",
+                "config": {
+                    "answer": 6,
+                    "dragIcon": [
+                        {
+                            "name": "icon_1",
+                            "footNum": 2
+                        },
+                        {
+                            "name": "icon_2",
+                            "footNum": 4
+                        }
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question1Page02",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v1",
+                "config": {
+                    "answer": 8,
+                    "dragIcon": [
+                        {
+                            "name": "icon_3",
+                            "footNum": 2
+                        },
+                        {
+                            "name": "icon_4",
+                            "footNum": 4
+                        }
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question1Page03",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v1",
+                "config": {
+                    "answer": 10,
+                    "dragIcon": [
+                        {
+                            "name": "icon_3",
+                            "footNum": 2
+                        },
+                        {
+                            "name": "icon_4",
+                            "footNum": 4
+                        }
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question1Page04",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v1",
+                "config": {
+                    "answer": 12,
+                    "dragIcon": [
+                        {
+                            "name": "icon_3",
+                            "footNum": 2
+                        },
+                        {
+                            "name": "icon_4",
+                            "footNum": 4
+                        }
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question2Page01",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v2",
+                "config": {
+                    "answer": {
+                        "role1": 2,
+                        "role2": 2
+                    },
+                    "roleUrl": {
+                        "role1": "ui://rokozlzwku3e38",
+                        "role2": "ui://rokozlzwku3e39"
+                    },
+                    "gameType": 1,
+                    "roleCount": 4
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question2Page02",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v2",
+                "config": {
+                    "answer": {
+                        "role1": 2,
+                        "role2": 1
+                    },
+                    "roleUrl": {
+                        "role1": "ui://rokozlzwku3e38",
+                        "role2": "ui://rokozlzwku3e39"
+                    },
+                    "gameType": 1,
+                    "roleCount": 4
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question2Page03",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v2",
+                "config": {
+                    "answer": {
+                        "role1": 1,
+                        "role2": 2
+                    },
+                    "roleUrl": {
+                        "role1": "ui://rokozlzwku3e3a",
+                        "role2": "ui://rokozlzwku3e3b"
+                    },
+                    "gameType": 1,
+                    "roleCount": 4
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question2Page04",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v2",
+                "config": {
+                    "answer": {
+                        "role1": 3,
+                        "role2": 1
+                    },
+                    "roleUrl": {
+                        "role1": "ui://rokozlzwku3e3a",
+                        "role2": "ui://rokozlzwku3e3b"
+                    },
+                    "gameType": 1,
+                    "roleCount": 4
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question3Page01",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v2",
+                "config": {
+                    "answer": {
+                        "role1": 1,
+                        "role2": 3
+                    },
+                    "roleUrl": {
+                        "role1": "ui://rokozlzwku3e2r",
+                        "role2": "ui://rokozlzwku3e2s"
+                    },
+                    "gameType": 2,
+                    "roleCount": 5
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question3Page02",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v2",
+                "config": {
+                    "answer": {
+                        "role1": 1,
+                        "role2": 2
+                    },
+                    "roleUrl": {
+                        "role1": "ui://rokozlzwku3e2r",
+                        "role2": "ui://rokozlzwku3e2s"
+                    },
+                    "gameType": 2,
+                    "roleCount": 5
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question3Page03",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v2",
+                "config": {
+                    "answer": {
+                        "role1": 2,
+                        "role2": 2
+                    },
+                    "roleUrl": {
+                        "role1": "ui://rokozlzwku3e2p",
+                        "role2": "ui://rokozlzwku3e2q"
+                    },
+                    "gameType": 2,
+                    "roleCount": 5
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question3Page04",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v2",
+                "config": {
+                    "answer": {
+                        "role1": 4,
+                        "role2": 1
+                    },
+                    "roleUrl": {
+                        "role1": "ui://rokozlzwku3e2n",
+                        "role2": "ui://rokozlzwku3e2o"
+                    },
+                    "gameType": 2,
+                    "roleCount": 5
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question4Page01",
+                "bundleName": "dragAnswer",
+                "prefabName": "dragAnswer-model03-v2",
+                "config": {
+                    "answer": {
+                        "role1": 2,
+                        "role2": 2
+                    },
+                    "roleUrl": {
+                        "role1": "ui://rokozlzwku3e2r",
+                        "role2": "ui://rokozlzwku3e2s"
+                    },
+                    "gameType": 2,
+                    "roleCount": 5
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        }
+    ]
+}

@@ -38,7 +38,7 @@ export default class t3_afterSchoolreview extends cc.Component {
             if (!courseName) {
                 return;
             }
-            let env: any = window.location.href.includes('test') ? 'test' : 'prod';
+            let env: any = window.location.href.includes('/test/') ? 'test' : 'prod';
             let json: any = await ajax("GET", `${gameData.apiOrigin}/getConfigJson?courseName=${courseName ? courseName.toLowerCase() : ''}&env=${env}`);
             configJson = JSON.parse(json);
         }
