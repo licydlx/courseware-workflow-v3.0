@@ -21,5 +21,6 @@
     <component id="n19_ht43" name="submit" src="qe6i20" fileName="buttons/submit.xml" xy="1522,711">
       <Button icon="ui://ik5aab9iqe6i1z" sound="ui://ik5aab9iht4324"/>
     </component>
+    <component id="n40_jmn0" name="n40" src="ht4328" fileName="components/handleGuide04.xml" xy="13,11"/>
   </displayList>
 </component>

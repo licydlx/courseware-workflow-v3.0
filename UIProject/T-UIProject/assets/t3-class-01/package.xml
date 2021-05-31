@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="1io1z8o5">
+  <resources>
+    <component id="dpbr8t" name="dragAnswer-model03-v1-p2.xml" path="/" exported="true"/>
+    <image id="yvac8x" name="0101.png" path="/images/"/>
+    <image id="yvac8y" name="0102.png" path="/images/"/>
+    <image id="yvac8z" name="0103.png" path="/images/"/>
+    <image id="yvac90" name="0104.png" path="/images/"/>
+    <image id="yvac91" name="0105.png" path="/images/"/>
+    <image id="yvac92" name="0106.png" path="/images/"/>
+    <image id="yvac93" name="0107.png" path="/images/"/>
+    <image id="yvac94" name="0108.png" path="/images/"/>
+    <image id="yvac95" name="0109.png" path="/images/"/>
+    <image id="yvac96" name="0110.png" path="/images/"/>
+    <image id="yvac97" name="01100.png" path="/images/"/>
+    <image id="yvac98" name="01101.png" path="/images/"/>
+    <image id="yvac99" name="01102.png" path="/images/"/>
+    <image id="yvac9a" name="01103.png" path="/images/"/>
+    <image id="yvac9b" name="01104.png" path="/images/"/>
+    <image id="yvac9c" name="01105.png" path="/images/"/>
+    <image id="yvac9d" name="01106.png" path="/images/"/>
+    <image id="yvac9e" name="01107.png" path="/images/"/>
+    <image id="yvac9f" name="01108.png" path="/images/"/>
+    <image id="yvac9g" name="01109.png" path="/images/"/>
+    <image id="yvac9h" name="0111.png" path="/images/"/>
+    <image id="yvac9j" name="01111.png" path="/images/"/>
+    <image id="yvac9k" name="01112.png" path="/images/"/>
+    <image id="yvac9l" name="01113.png" path="/images/"/>
+    <image id="yvac9m" name="01114.png" path="/images/"/>
+    <image id="yvac9n" name="01115.png" path="/images/"/>
+    <image id="yvac9o" name="01116.png" path="/images/"/>
+    <image id="yvac9p" name="01117.png" path="/images/"/>
+    <image id="yvac9q" name="01118.png" path="/images/"/>
+    <image id="yvac9r" name="01119.png" path="/images/"/>
+    <image id="yvac9s" name="0112.png" path="/images/"/>
+    <image id="yvac9t" name="01120.png" path="/images/"/>
+    <image id="yvac9u" name="01121.png" path="/images/"/>
+    <image id="yvac9v" name="01122.png" path="/images/"/>
+    <image id="yvac9w" name="01123.png" path="/images/"/>
+    <image id="yvac9x" name="01124.png" path="/images/"/>
+    <image id="yvac9z" name="01126.png" path="/images/"/>
+    <image id="yvaca0" name="01127.png" path="/images/"/>
+    <image id="yvaca1" name="01128.png" path="/images/"/>
+    <image id="yvaca2" name="01129.png" path="/images/"/>
+    <image id="yvaca3" name="0113.png" path="/images/"/>
+    <image id="yvaca4" name="01130.png" path="/images/"/>
+    <image id="yvaca5" name="01131.png" path="/images/"/>
+    <image id="yvaca6" name="01132.png" path="/images/"/>
+    <image id="yvaca7" name="01133.png" path="/images/"/>
+    <image id="yvaca8" name="01134.png" path="/images/"/>
+    <image id="yvaca9" name="01135.png" path="/images/"/>
+    <image id="yvacaa" name="01136.png" path="/images/"/>
+    <image id="yvacab" name="01137.png" path="/images/"/>
+    <image id="yvacac" name="01138.png" path="/images/"/>
+    <image id="yvacae" name="0114.png" path="/images/"/>
+    <image id="yvacag" name="01141.png" path="/images/"/>
+    <image id="yvacah" name="01142.png" path="/images/"/>
+    <image id="yvacai" name="01143.png" path="/images/"/>
+    <image id="yvacaj" name="01144.png" path="/images/"/>
+    <image id="yvacak" name="01145.png" path="/images/"/>
+    <image id="yvacal" name="01146.png" path="/images/"/>
+    <image id="yvacam" name="01147.png" path="/images/"/>
+    <image id="yvacan" name="01148.png" path="/images/"/>
+    <image id="yvacao" name="01149.png" path="/images/"/>
+    <image id="yvacap" name="0115.png" path="/images/"/>
+    <image id="yvacaq" name="01150.png" path="/images/"/>
+    <image id="yvacar" name="01151.png" path="/images/"/>
+    <image id="yvacas" name="01152.png" path="/images/"/>
+    <image id="yvacav" name="01155.png" path="/images/"/>
+    <image id="yvacaw" name="01156.png" path="/images/"/>
+    <image id="yvacax" name="01157.png" path="/images/"/>
+    <image id="yvacay" name="01158.png" path="/images/"/>
+    <image id="yvacaz" name="0116.png" path="/images/"/>
+    <image id="yvacb0" name="0117.png" path="/images/"/>
+    <image id="yvacb1" name="0118.png" path="/images/"/>
+    <image id="yvacb2" name="0119.png" path="/images/"/>
+    <image id="yvacb3" name="0120.png" path="/images/"/>
+    <image id="yvacb4" name="0121.png" path="/images/"/>
+    <image id="yvacb5" name="0122.png" path="/images/"/>
+    <image id="yvacb6" name="0123.png" path="/images/"/>
+    <image id="yvacb7" name="0124.png" path="/images/"/>
+    <image id="yvacb8" name="0125.png" path="/images/"/>
+    <image id="yvacb9" name="0126.png" path="/images/"/>
+    <image id="yvacba" name="0127.png" path="/images/"/>
+    <image id="yvacbc" name="0129.png" path="/images/"/>
+    <image id="yvacbe" name="0131.png" path="/images/"/>
+    <image id="yvacbg" name="0133.png" path="/images/"/>
+    <image id="yvacbi" name="0135.png" path="/images/"/>
+    <image id="yvacbj" name="0136.png" path="/images/"/>
+    <image id="yvacbk" name="0137.png" path="/images/"/>
+    <image id="yvacbl" name="0138.png" path="/images/"/>
+    <image id="yvacbm" name="0139.png" path="/images/"/>
+    <image id="yvacbn" name="0140.png" path="/images/"/>
+    <image id="yvacbo" name="0141.png" path="/images/"/>
+    <image id="yvacbp" name="0142.png" path="/images/"/>
+    <image id="yvacbq" name="0143.png" path="/images/"/>
+    <image id="yvacbr" name="0144.png" path="/images/"/>
+    <image id="yvacbs" name="0145.png" path="/images/"/>
+    <image id="yvacbt" name="0146.png" path="/images/"/>
+    <image id="yvacbu" name="0147.png" path="/images/"/>
+    <image id="yvacbv" name="0148.png" path="/images/"/>
+    <image id="yvacbw" name="0149.png" path="/images/"/>
+    <image id="yvacbx" name="0150.png" path="/images/"/>
+    <image id="yvacby" name="0151.png" path="/images/"/>
+    <image id="yvacbz" name="0152.png" path="/images/"/>
+    <image id="yvacc0" name="0153.png" path="/images/"/>
+    <image id="yvacc1" name="0154.png" path="/images/"/>
+    <image id="yvacc2" name="0155.png" path="/images/"/>
+    <image id="yvacc3" name="0156.png" path="/images/"/>
+    <image id="yvacc4" name="0157.png" path="/images/"/>
+    <image id="yvacc5" name="0158.png" path="/images/"/>
+    <image id="yvacc6" name="0159.png" path="/images/"/>
+    <image id="yvacc7" name="0160.png" path="/images/"/>
+    <image id="yvacc8" name="0161.png" path="/images/"/>
+    <image id="yvacc9" name="0162.png" path="/images/"/>
+    <image id="yvacca" name="0163.png" path="/images/"/>
+    <image id="yvaccb" name="0164.png" path="/images/"/>
+    <image id="yvaccc" name="0165.png" path="/images/"/>
+    <image id="yvaccd" name="0166.png" path="/images/"/>
+    <image id="yvacce" name="0167.png" path="/images/"/>
+    <image id="yvaccf" name="0168.png" path="/images/"/>
+    <image id="yvaccg" name="0169.png" path="/images/"/>
+    <image id="yvacch" name="0170.png" path="/images/"/>
+    <image id="yvacci" name="0171.png" path="/images/"/>
+    <image id="yvaccj" name="0172.png" path="/images/"/>
+    <image id="yvaccl" name="0174.png" path="/images/"/>
+    <image id="yvaccm" name="0175.png" path="/images/"/>
+    <image id="yvaccn" name="0176.png" path="/images/"/>
+    <image id="yvacco" name="0177.png" path="/images/"/>
+    <image id="yvaccp" name="0178.png" path="/images/"/>
+    <image id="yvaccq" name="0179.png" path="/images/"/>
+    <image id="yvaccs" name="0181.png" path="/images/"/>
+    <image id="yvaccu" name="0183.png" path="/images/"/>
+    <image id="yvaccv" name="0184.png" path="/images/"/>
+    <image id="yvaccw" name="0185.png" path="/images/"/>
+    <image id="yvaccx" name="0186.png" path="/images/"/>
+    <image id="yvaccy" name="0187.png" path="/images/"/>
+    <image id="yvaccz" name="0188.png" path="/images/"/>
+    <image id="yvacd0" name="0189.png" path="/images/"/>
+    <image id="yvacd1" name="0190.png" path="/images/"/>
+    <image id="yvacd2" name="0191.png" path="/images/"/>
+    <image id="yvacd3" name="0192.png" path="/images/"/>
+    <image id="yvacd4" name="0193.png" path="/images/"/>
+    <image id="yvacd5" name="0194.png" path="/images/"/>
+    <image id="yvacd6" name="0195.png" path="/images/"/>
+    <image id="yvacd7" name="0196.png" path="/images/"/>
+    <image id="yvacd8" name="0197.png" path="/images/"/>
+    <image id="yvacd9" name="0198.png" path="/images/"/>
+    <image id="yvacda" name="0199.png" path="/images/"/>
+    <component id="yvacdb" name="submit.xml" path="/components/"/>
+    <component id="yvacdc" name="dragbutton.xml" path="/components/"/>
+    <component id="xmwddd" name="title.xml" path="/buttons/"/>
+    <image id="xmwdde" name="0102.png" path="/images/dragAnswer-model01-v2/"/>
+    <movieclip id="xmwddg" name="laba.jta" path="/animations/laba/"/>
+    <sound id="xmwddh" name="example1_exercise1-1.mp3" path="/audios/"/>
+    <sound id="xmwddi" name="example2_exercise2-1_2-2.mp3" path="/audios/"/>
+    <sound id="xmwddj" name="example3_exercise3-1.mp3" path="/audios/"/>
+    <sound id="xmwddk" name="exercise1-2.mp3" path="/audios/"/>
+    <sound id="xmwddl" name="exercise1.mp3" path="/audios/"/>
+    <sound id="xmwddm" name="exercise2.mp3" path="/audios/"/>
+    <sound id="xmwddn" name="exercise3-2.mp3" path="/audios/"/>
+    <sound id="xmwddo" name="exercise3.mp3" path="/audios/"/>
+    <sound id="xmwddp" name="exercise4.mp3" path="/audios/"/>
+    <sound id="xmwddq" name="exercise5.mp3" path="/audios/"/>
+    <sound id="xmwddr" name="exercise6.mp3" path="/audios/"/>
+    <sound id="xmwdds" name="exercise7.mp3" path="/audios/"/>
+    <sound id="xmwddt" name="expand.mp3" path="/audios/"/>
+    <sound id="xmwddu" name="click.mp3" path="/audios/"/>
+    <sound id="xmwddv" name="drag.mp3" path="/audios/"/>
+    <component id="xmwddw" name="soundbutton.xml" path="/components/"/>
+    <component id="cp1hdz" name="dragAnswer-model03-v1-p4.xml" path="/" exported="true"/>
+    <component id="cp1he0" name="dragAnswer-model03-v1-p3.xml" path="/" exported="true"/>
+    <component id="cp1he1" name="dragAnswer-model03-v2-p5.xml" path="/" exported="true"/>
+    <image id="cp1he2" name="01159.png" path="/images/"/>
+    <component id="cp1he3" name="submit2.xml" path="/components/"/>
+    <image id="11bm1e4" name="例题2 -操作.png" path="/images/"/>
+    <component id="11bm1e5" name="dragAnswer-model03-v2-p6.xml" path="/" exported="true"/>
+    <component id="11bm1e6" name="dragAnswer-model03-v2-p7.xml" path="/" exported="true"/>
+    <component id="11bm1e7" name="dragAnswer-model03-v3-p8.xml" path="/" exported="true"/>
+    <image id="11bm1e8" name="例题3 -操作.png" path="/images/"/>
+    <component id="jmn01e9" name="dragAnswer-model03-v3-p9.xml" path="/" exported="true"/>
+    <component id="jmn01ea" name="dragAnswer-model03-v4-p11.xml" path="/" exported="true"/>
+    <image id="jmn01eb" name="拓展提升.png" path="/images/"/>
+    <image id="jmn01ec" name="拓展提升-操作.png" path="/images/"/>
+    <component id="jmn01ed" name="static-model01-v1-p1.xml" path="/" exported="true"/>
+    <image id="jmn01ee" name="01bg.png" path="/images/"/>
+    <component id="jmn01en" name="handleGuide01.xml" path="/components/" exported="true"/>
+    <image id="jmn01eo" name="0111.png" path="/components/images/"/>
+    <image id="jmn01ep" name="0109.png" path="/components/images/"/>
+    <component id="jmn01eq" name="handleGuide02.xml" path="/components/" exported="true"/>
+    <component id="e9oy1er" name="dragAnswer-model03-v3-p10.xml" path="/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

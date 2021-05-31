@@ -89,7 +89,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "32da79b0-9a88-42a2-a7ad-28dab4538c8b"
     },
     "fileId": "",
     "sync": false

@@ -53,7 +53,7 @@
     <image id="qxt01h" name="0105.png" path="/images/static/"/>
     <image id="qe6i1p" name="0101.png" path="/images/dragAnswer-model01-v2/"/>
     <image id="qe6i1q" name="0102.png" path="/images/dragAnswer-model01-v2/"/>
-    <image id="qe6i1r" name="0103.png" path="/images/dragAnswer-model01-v2/"/>
+    <image id="qe6i1r" name="0103.png" path="/images/dragAnswer-model01-v2/" exported="true"/>
     <image id="qe6i1s" name="0104.png" path="/images/dragAnswer-model01-v2/"/>
     <image id="qe6i1t" name="0105.png" path="/images/dragAnswer-model01-v2/"/>
     <image id="qe6i1u" name="0106.png" path="/images/dragAnswer-model01-v2/"/>

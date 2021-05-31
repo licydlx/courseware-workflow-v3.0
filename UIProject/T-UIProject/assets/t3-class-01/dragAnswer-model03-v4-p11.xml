@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n0_cp1h" name="n0" src="yvac9h" fileName="images/0111.png" xy="0,0" group="n21_cp1h"/>
+    <image id="n34_jmn0" name="n34" src="yvac9x" fileName="images/01124.png" xy="106,43" group="n21_cp1h">
+      <gearDisplay controller="c2" pages="0"/>
+    </image>
+    <image id="n40_jmn0" name="bgL" src="yvacbq" fileName="images/0143.png" xy="10,160" group="n21_cp1h">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <image id="n41_jmn0" name="bgM" src="yvacbq" fileName="images/0143.png" xy="637,160" group="n21_cp1h">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <image id="n42_jmn0" name="bgR" src="yvacbq" fileName="images/0143.png" xy="1258,160" group="n21_cp1h">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <group id="n21_cp1h" name="bg" xy="0,0" size="1920,1080" advanced="true"/>
+    <image id="n38_jmn0" name="rightBg" src="yvacbo" fileName="images/0141.png" xy="1265,630" group="n20_cp1h">
+      <gearDisplay controller="c2" pages="0"/>
+    </image>
+    <image id="n36_jmn0" name="leftBg" src="yvacbo" fileName="images/0141.png" xy="23,630" group="n20_cp1h">
+      <gearDisplay controller="c2" pages="0"/>
+    </image>
+    <image id="n37_jmn0" name="midBg" src="yvacbo" fileName="images/0141.png" xy="643,630" group="n20_cp1h">
+      <gearDisplay controller="c2" pages="0"/>
+    </image>
+    <image id="n43_jmn0" name="typebg1" src="yvacbk" fileName="images/0137.png" xy="20,683" group="n20_cp1h">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <image id="n44_jmn0" name="typebg2" src="yvacbk" fileName="images/0137.png" xy="337,677" group="n20_cp1h">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <image id="n45_jmn0" name="typebg3" src="yvacbk" fileName="images/0137.png" xy="651,674" group="n20_cp1h">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <image id="n47_jmn0" name="typebg5" src="yvacbk" fileName="images/0137.png" xy="1286,677" group="n20_cp1h">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <image id="n48_jmn0" name="typebg6" src="yvacbk" fileName="images/0137.png" xy="1601,682" group="n20_cp1h">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <image id="n46_jmn0" name="typebg4" src="yvacbk" fileName="images/0137.png" xy="960,675" group="n20_cp1h">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <group id="n20_cp1h" name="collideredBox" xy="20,630" size="1894,434" advanced="true"/>
+    <component id="n11_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="378,232" pivot="0.5,0.5" anchor="true" size="138,139" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvacam"/>
+    </component>
+    <component id="n12_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="1373,226" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvacak"/>
+    </component>
+    <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="359,478" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvacak"/>
+    </component>
+    <component id="n14_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="588,428" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvacah"/>
+    </component>
+    <component id="n16_cp1h" name="32" src="yvacdc" fileName="components/dragbutton.xml" xy="888,214" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvac9j"/>
+    </component>
+    <component id="n15_cp1h" name="31" src="yvacdc" fileName="components/dragbutton.xml" xy="825,416" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvac9g"/>
+    </component>
+    <component id="n17_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="611,244" pivot="0.5,0.5" anchor="true" size="138,138" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvacan"/>
+    </component>
+    <component id="n18_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1058,438" pivot="0.5,0.5" anchor="true" size="138,139" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvacan"/>
+    </component>
+    <component id="n73_jmn0" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1296,422" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvacah"/>
+    </component>
+    <component id="n74_jmn0" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="1122,215" pivot="0.5,0.5" anchor="true" size="138,139" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvacam"/>
+    </component>
+    <component id="n75_jmn0" name="32" src="yvacdc" fileName="components/dragbutton.xml" xy="1534,411" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvac9j"/>
+    </component>
+    <component id="n88_jmn0" name="31" src="yvacdc" fileName="components/dragbutton.xml" xy="1579,220" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
+      <Button icon="ui://1io1z8o5yvac9g"/>
+    </component>
+    <group id="n19_cp1h" name="colliderBox" xy="289,142" size="1371,382" advanced="true"/>
+    <component id="n6_cp1h" name="submit" src="cp1he3" fileName="components/submit2.xml" xy="1676,4" size="240,240">
+      <Button icon="ui://1io1z8o5cp1he2" sound="ui://1io1z8o5xmwddu"/>
+    </component>
+    <component id="n22_cp1h" name="dragSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-193,376" size="100,15">
+      <Button sound="ui://1io1z8o5xmwddv"/>
+    </component>
+    <component id="n23_cp1h" name="clickSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-193,465" size="100,41">
+      <Button sound="ui://1io1z8o5xmwddu"/>
+    </component>
+    <component id="n89_jmn0" name="title" src="xmwddd" fileName="buttons/title.xml" xy="903,89" alpha="0" touchable="false">
+      <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
+      <Button icon="ui://1io1z8o5yvac8z" sound="ui://1io1z8o5xmwddt" volume="0"/>
+    </component>
+    <loader id="n90_jmn0" name="titleTrigger" xy="70,70" size="228,171" scale="0.8,0.8" url="ui://1io1z8o5xmwddg" autoSize="true" playing="false">
+      <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
+    </loader>
+  </displayList>
+</component>

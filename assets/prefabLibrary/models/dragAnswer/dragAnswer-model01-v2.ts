@@ -107,6 +107,7 @@ export default class dragAnswer_model01_v2 extends cc.Component {
             submit: false,
             answer: false
         }
+        
 
         // 临时 禁止操作期间 切页
         this.disableForbidHandle();
@@ -220,6 +221,7 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         // if (answerBool) {
         //     state.submit = true;
         // }
+        
         state.submit = false;
         state.drag = "end";
         state.colliderIndex = colliderIndex;

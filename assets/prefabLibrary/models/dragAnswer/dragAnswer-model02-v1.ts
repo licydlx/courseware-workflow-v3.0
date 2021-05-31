@@ -81,7 +81,7 @@ export default class dragAnswer_model02_v1 extends cc.Component {
         this._colliderGroup = this._view.getChild("colliderBox").asGroup;
         this._collideredGroup = this._view.getChild("collideredBox").asGroup;
 
-        // colliderGroup.visible = false 
+        // colliderGroup.visible = false; 
         // collideredGroup.visible = false;
 
         this._cache["colliderBox"] = [];
@@ -114,7 +114,7 @@ export default class dragAnswer_model02_v1 extends cc.Component {
             submit: false,
         }
 
-        // 临时 禁止操作期间 切页
+        // 临时禁止操作期间切页
         this.disableForbidHandle();
     }
 

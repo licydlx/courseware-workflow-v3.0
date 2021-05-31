@@ -115,7 +115,7 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
         this._dyUI = this._view.getChild("dyUI").asGroup;
         this._colliderGroup = this._view.getChild("colliderBox").asGroup;
         this._collideredGroup = this._view.getChild("collideredBox").asGroup;
-        // colliderGroup.visible = false 
+        // colliderGroup.visible = false; 
         // collideredGroup.visible = false;
         this._cache["colliderBox"] = [];
         for (var i = 0; i < this._view.numChildren; i++) {
@@ -144,7 +144,7 @@ var dragAnswer_model02_v1 = /** @class */ (function (_super) {
             answer: false,
             submit: false,
         };
-        // 临时 禁止操作期间 切页
+        // 临时禁止操作期间切页
         this.disableForbidHandle();
     };
     dragAnswer_model02_v1.prototype.init = function (data) {
