@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="1io1z8o5">
   <resources>
-    <component id="dpbr8t" name="dragAnswer-model03-v1-p2.xml" path="/" exported="true"/>
+    <component id="dpbr8t" name="dragAnswer-model04-v1-p2.xml" path="/" exported="true"/>
     <image id="yvac8x" name="0101.png" path="/images/"/>
     <image id="yvac8y" name="0102.png" path="/images/"/>
     <image id="yvac8z" name="0103.png" path="/images/"/>
@@ -168,18 +168,18 @@
     <sound id="xmwddu" name="click.mp3" path="/audios/"/>
     <sound id="xmwddv" name="drag.mp3" path="/audios/"/>
     <component id="xmwddw" name="soundbutton.xml" path="/components/"/>
-    <component id="cp1hdz" name="dragAnswer-model03-v1-p4.xml" path="/" exported="true"/>
-    <component id="cp1he0" name="dragAnswer-model03-v1-p3.xml" path="/" exported="true"/>
-    <component id="cp1he1" name="dragAnswer-model03-v2-p5.xml" path="/" exported="true"/>
+    <component id="cp1hdz" name="dragAnswer-model04-v1-p4.xml" path="/" exported="true"/>
+    <component id="cp1he0" name="dragAnswer-model04-v1-p3.xml" path="/" exported="true"/>
+    <component id="cp1he1" name="dragAnswer-model04-v2-p5.xml" path="/" exported="true"/>
     <image id="cp1he2" name="01159.png" path="/images/"/>
     <component id="cp1he3" name="submit2.xml" path="/components/"/>
     <image id="11bm1e4" name="例题2 -操作.png" path="/images/"/>
-    <component id="11bm1e5" name="dragAnswer-model03-v2-p6.xml" path="/" exported="true"/>
-    <component id="11bm1e6" name="dragAnswer-model03-v2-p7.xml" path="/" exported="true"/>
-    <component id="11bm1e7" name="dragAnswer-model03-v3-p8.xml" path="/" exported="true"/>
+    <component id="11bm1e5" name="dragAnswer-model04-v2-p6.xml" path="/" exported="true"/>
+    <component id="11bm1e6" name="dragAnswer-model04-v2-p7.xml" path="/" exported="true"/>
+    <component id="11bm1e7" name="dragAnswer-model04-v3-p8.xml" path="/" exported="true"/>
     <image id="11bm1e8" name="例题3 -操作.png" path="/images/"/>
-    <component id="jmn01e9" name="dragAnswer-model03-v3-p9.xml" path="/" exported="true"/>
-    <component id="jmn01ea" name="dragAnswer-model03-v4-p11.xml" path="/" exported="true"/>
+    <component id="jmn01e9" name="dragAnswer-model04-v3-p9.xml" path="/" exported="true"/>
+    <component id="jmn01ea" name="dragAnswer-model04-v4-p11.xml" path="/" exported="true"/>
     <image id="jmn01eb" name="拓展提升.png" path="/images/"/>
     <image id="jmn01ec" name="拓展提升-操作.png" path="/images/"/>
     <component id="jmn01ed" name="static-model01-v1-p1.xml" path="/" exported="true"/>
@@ -188,7 +188,7 @@
     <image id="jmn01eo" name="0111.png" path="/components/images/"/>
     <image id="jmn01ep" name="0109.png" path="/components/images/"/>
     <component id="jmn01eq" name="handleGuide02.xml" path="/components/" exported="true"/>
-    <component id="e9oy1er" name="dragAnswer-model03-v3-p10.xml" path="/" exported="true"/>
+    <component id="e9oy1er" name="dragAnswer-model04-v3-p10.xml" path="/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

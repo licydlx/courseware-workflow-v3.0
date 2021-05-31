@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": -39,
-      "y": 10,
+      "x": -32,
+      "y": 13,
       "width": 1760,
       "height": 867,
       "layout": {
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 242.375,
+                "height": 242,
                 "type": "panel",
                 "width": 385
               },
@@ -27,7 +27,7 @@
                 "children": [
                   "assets"
                 ],
-                "height": 503.609375,
+                "height": 504,
                 "type": "panel",
                 "width": 385
               }
@@ -86,8 +86,7 @@
         "timeline",
         "game-window"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "builder": {

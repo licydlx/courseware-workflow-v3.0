@@ -1,18 +1,18 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "t3-class-01_atlas0_6",
-    "texture": "cd765307-ede0-4f24-bced-bde6811c7b45",
+    "name": "t3-class-01_atlas0_3",
+    "texture": "64e03bed-8425-4baa-90fb-db2df46dbde0",
     "atlas": "",
     "rect": [
       0,
       0,
       1920,
-      1080
+      1665
     ],
     "offset": [
       -64,
-      484
+      191.5
     ],
     "originalSize": [
       2048,

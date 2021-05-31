@@ -1,15 +1,15 @@
 "use strict";
-cc._RF.push(module, '62658Jy40BOwY4Id6Em9IPy', 'dragAnswer-model03-v3');
-// prefabLibrary/models/dragAnswer/dragAnswer-model03-v3.ts
+cc._RF.push(module, '1796boudv9ORZBvtCDbiKQb', 'dragAnswer-model04-v2');
+// prefabLibrary/models/dragAnswer/dragAnswer-model04-v2.ts
 
 "use strict";
 /*
  * @Descripttion:
  * @version:
  * @Author: ruzhuan
- * @Date: 2021-5-27 19:47:00
+ * @Date: 2021-5-26 16:00:00
  * @LastEditors: ruzhuan
- * @LastEditTime: 2021-5-27 19:47:00
+ * @LastEditTime: 2021-5-27 12:00:00
  */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -70,26 +70,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var _a = window['GlobalData'].sample, loadBundle = _a.loadBundle, loadPrefab = _a.loadPrefab, loadResource = _a.loadResource;
 var pointBelongArea = window['GlobalData'].utils.pointBelongArea;
 var _b = cc._decorator, ccclass = _b.ccclass, property = _b.property;
-var dragAnswer_model03_v3 = /** @class */ (function (_super) {
-    __extends(dragAnswer_model03_v3, _super);
-    function dragAnswer_model03_v3() {
+var dragAnswer_model03_v2 = /** @class */ (function (_super) {
+    __extends(dragAnswer_model03_v2, _super);
+    function dragAnswer_model03_v2() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this._colliderBox = [];
-        _this._leftPositon = [{ x: 300, y: 770 }, { x: 580, y: 770 }, { x: 300, y: 925 }, { x: 580, y: 925 }];
-        _this._rightPositon = [{ x: 1355, y: 770 }, { x: 1640, y: 770 }, { x: 1355, y: 925 }, { x: 1640, y: 925 }];
-        _this._typeBoxPos1 = [{ x: 155, y: 865 }, { x: 355, y: 865 }];
-        _this._typeBoxPos2 = [{ x: 635, y: 865 }, { x: 805, y: 865 }];
-        _this._typeBoxPos3 = [{ x: 1110, y: 865 }, { x: 1280, y: 865 }];
-        _this._typeBoxPos4 = [{ x: 1570, y: 865 }, { x: 1750, y: 865 }];
+        _this._leftPositon = [{ x: 200, y: 890 }, { x: 355, y: 890 }, { x: 515, y: 890 }, { x: 680, y: 890 }];
+        _this._rightPositon = [{ x: 1255, y: 890 }, { x: 1410, y: 890 }, { x: 1560, y: 890 }, { x: 1715, y: 890 }];
+        _this._typeBoxPos1 = [{ x: 170, y: 877 }, { x: 322, y: 877 }];
+        _this._typeBoxPos2 = [{ x: 634, y: 877 }, { x: 800, y: 877 }];
+        _this._typeBoxPos3 = [{ x: 1136, y: 877 }, { x: 1297, y: 877 }];
+        _this._typeBoxPos4 = [{ x: 1584, y: 877 }, { x: 1751, y: 877 }];
         _this._colliderCacheSecond = [
-            { pos: { x: 345, y: 325 }, index: 0 },
-            { pos: { x: 635, y: 325 }, index: 0 },
-            { pos: { x: 345, y: 480 }, index: 0 },
-            { pos: { x: 635, y: 480 }, index: 0 },
-            { pos: { x: 1300, y: 325 }, index: 0 },
-            { pos: { x: 1545, y: 325 }, index: 0 },
-            { pos: { x: 1300, y: 480 }, index: 0 },
-            { pos: { x: 1545, y: 480 }, index: 0 }
+            { pos: { x: 245, y: 470 }, index: 5 },
+            { pos: { x: 400, y: 470 }, index: 3 },
+            { pos: { x: 560, y: 470 }, index: 0 },
+            { pos: { x: 710, y: 470 }, index: 7 },
+            { pos: { x: 1200, y: 470 }, index: 4 },
+            { pos: { x: 1360, y: 470 }, index: 6 },
+            { pos: { x: 1510, y: 470 }, index: 1 },
+            { pos: { x: 1660, y: 470 }, index: 2 }
         ];
         _this._leftContain = [];
         _this._rightContain = [];
@@ -102,14 +102,13 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         _this._colliderCache = [];
         _this._dragging = false;
         _this.answerType = cc.Enum({
-            Size: 1,
-            Shap: 2 // 正方形---长方形  三角形---平行四边形
+            Recyclable: '1'
         });
         _this._answer = []; // 0：没答题时 1：答对第一种选择时 2： 答对第二种选择时
         _this._state = {};
         return _this;
     }
-    Object.defineProperty(dragAnswer_model03_v3.prototype, "state", {
+    Object.defineProperty(dragAnswer_model03_v2.prototype, "state", {
         get: function () {
             return this._state;
         },
@@ -121,7 +120,7 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
-    dragAnswer_model03_v3.prototype.onLoad = function () {
+    dragAnswer_model03_v2.prototype.onLoad = function () {
         this._worldRoot = cc.find("Canvas").parent;
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
@@ -189,7 +188,7 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         this.disableForbidHandle();
     };
     // 运行时 禁止操作
-    dragAnswer_model03_v3.prototype.forbidHandle = function () {
+    dragAnswer_model03_v2.prototype.forbidHandle = function () {
         var handleMask = this._worldRoot.getChildByName('handleMask');
         if (!handleMask) {
             var handleMask_1 = new cc.Node('handleMask');
@@ -202,7 +201,7 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         }
     };
     // 操作提示
-    dragAnswer_model03_v3.prototype.onHandleGuide = function (handleGuide) {
+    dragAnswer_model03_v2.prototype.onHandleGuide = function (handleGuide) {
         var _this = this;
         if (!handleGuide)
             return;
@@ -223,14 +222,14 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         }, 2);
     };
     // 消除禁止
-    dragAnswer_model03_v3.prototype.disableForbidHandle = function () {
+    dragAnswer_model03_v2.prototype.disableForbidHandle = function () {
         var handleMask = this._worldRoot.getChildByName('handleMask');
         if (handleMask)
             handleMask.destroy();
     };
     // 临时
     // 拖拽定时器
-    dragAnswer_model03_v3.prototype.dragSchedule = function () {
+    dragAnswer_model03_v2.prototype.dragSchedule = function () {
         if (this._dragging) {
             var state = globalThis._.cloneDeep(this._state);
             state.drag = "move";
@@ -241,7 +240,7 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
             this.updateState(state);
         }
     };
-    dragAnswer_model03_v3.prototype.init = function (data) {
+    dragAnswer_model03_v2.prototype.init = function (data) {
         return __awaiter(this, void 0, void 0, function () {
             var pathConfig, model, components, Package, GComponent, _a, answer, ae, v, _b, _c, _i, key, componentPath, componentBundle, componentPrefab, dragBut, item, _d, clickBut, _e;
             return __generator(this, function (_f) {
@@ -311,13 +310,13 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
             });
         });
     };
-    dragAnswer_model03_v3.prototype.getOriginValue = function (v) {
+    dragAnswer_model03_v2.prototype.getOriginValue = function (v) {
         return {
             x: v.x,
             y: v.y
         };
     };
-    dragAnswer_model03_v3.prototype._onDragStart = function (evt) {
+    dragAnswer_model03_v2.prototype._onDragStart = function (evt) {
         evt.captureTouch();
         var btn = fgui.GObject.cast(evt.currentTarget);
         var state = globalThis._.cloneDeep(this._state);
@@ -330,9 +329,9 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         cc.audioEngine.play(this._clickSound, false, 1);
         this.updateState(state);
     };
-    dragAnswer_model03_v3.prototype._onDragMove = function (evt) {
+    dragAnswer_model03_v2.prototype._onDragMove = function (evt) {
     };
-    dragAnswer_model03_v3.prototype._onDragEnd = function (evt) {
+    dragAnswer_model03_v2.prototype._onDragEnd = function (evt) {
         cc.audioEngine.play(this._dragSound, false, 1);
         if (this._answer.length === 0) {
             // 第一次答题时
@@ -343,15 +342,15 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
             this.dragEndScendDeal(evt);
         }
     };
-    dragAnswer_model03_v3.prototype.dragEndFirstDeal = function (evt) {
+    dragAnswer_model03_v2.prototype.dragEndFirstDeal = function (evt) {
         var state = globalThis._.cloneDeep(this._state);
         var btn = fgui.GObject.cast(evt.currentTarget);
         var tarPos = new cc.Vec2(btn.x, btn.y);
         var isContainerLeft = false;
-        var isContainerright = false;
+        var isContainerRight = false;
         isContainerLeft = this.judgeDragObjInBox(this._leftContain, btn, state.leftContain);
-        isContainerright = this.judgeDragObjInBox(this._rightContain, btn, state.rightContain);
-        if (isContainerLeft || isContainerright) {
+        isContainerRight = this.judgeDragObjInBox(this._rightContain, btn, state.rightContain);
+        if (isContainerLeft || isContainerRight) {
             // 恢复原位
             var temp = {
                 pos: {
@@ -388,7 +387,7 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         }
         this.updateState(state);
     };
-    dragAnswer_model03_v3.prototype.dragEndScendDeal = function (evt) {
+    dragAnswer_model03_v2.prototype.dragEndScendDeal = function (evt) {
         var state = globalThis._.cloneDeep(this._state);
         var btn = fgui.GObject.cast(evt.currentTarget);
         var tarPos = new cc.Vec2(btn.x, btn.y);
@@ -459,7 +458,7 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         }
         this.updateState(state);
     };
-    dragAnswer_model03_v3.prototype.judgeDragObjInBox = function (_box, curBut, stateBox) {
+    dragAnswer_model03_v2.prototype.judgeDragObjInBox = function (_box, curBut, stateBox) {
         var isContainer = false;
         for (var i = 0; i < _box.length; i++) {
             if (_box[i] === curBut) {
@@ -476,13 +475,13 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         }
         return isContainer;
     };
-    dragAnswer_model03_v3.prototype.refreshBoxPos = function (stateBox, posArr) {
+    dragAnswer_model03_v2.prototype.refreshBoxPos = function (stateBox, posArr) {
         for (var i = 0; i < stateBox.length; i++) {
             stateBox[i].pos.x = posArr[i].x;
             stateBox[i].pos.y = posArr[i].y;
         }
     };
-    dragAnswer_model03_v3.prototype.refreshFirstWrongData = function (state) {
+    dragAnswer_model03_v2.prototype.refreshFirstWrongData = function (state) {
         state.colliderBox = [];
         for (var i = 0; i < this._colliderBox.length; i++) {
             var temp = {
@@ -499,7 +498,7 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         state.leftContain = [];
         state.rightContain = [];
     };
-    dragAnswer_model03_v3.prototype.refreshSecondWrongData = function (state) {
+    dragAnswer_model03_v2.prototype.refreshSecondWrongData = function (state) {
         state.colliderBox = [];
         for (var i = 0; i < this._colliderBox.length; i++) {
             var temp = {
@@ -520,13 +519,13 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         state.box3Contain = [];
         state.box4Contain = [];
     };
-    dragAnswer_model03_v3.prototype._clickTitle = function (evt) {
+    dragAnswer_model03_v2.prototype._clickTitle = function (evt) {
         cc.audioEngine.play(this._clickSound, false, 1);
         var state = globalThis._.cloneDeep(this._state);
         state.title = true;
         this.updateState(state);
     };
-    dragAnswer_model03_v3.prototype.playTitle = function (bool) {
+    dragAnswer_model03_v2.prototype.playTitle = function (bool) {
         return __awaiter(this, void 0, void 0, function () {
             var item, audio, audioId;
             var _this = this;
@@ -556,7 +555,7 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
             });
         });
     };
-    dragAnswer_model03_v3.prototype._clickSubmit = function (evt) {
+    dragAnswer_model03_v2.prototype._clickSubmit = function (evt) {
         return __awaiter(this, void 0, void 0, function () {
             var state;
             return __generator(this, function (_a) {
@@ -584,24 +583,14 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
                         this.answerFeedback(false);
                         return [2 /*return*/];
                     }
-                    console.log('======= leftContain length ===== ' + this._leftContain.length);
-                    console.log('======= rightContain length ===== ' + this._rightContain.length);
-                    if (this._leftContain[0].name[0] === this._leftContain[1].name[0] &&
-                        this._leftContain[0].name[0] === this._leftContain[2].name[0] &&
-                        this._leftContain[0].name[0] === this._leftContain[3].name[0]) {
-                        console.log('=== 第一次回答正确  按照大小分 ===');
+                    if (this._leftContain[0].name[0] === this.answerType.Recyclable &&
+                        this._leftContain[1].name[0] === this.answerType.Recyclable &&
+                        this._leftContain[2].name[0] === this.answerType.Recyclable &&
+                        this._leftContain[3].name[0] === this.answerType.Recyclable) {
+                        console.log('=== 第一次回答正确 ===');
                         // 第一次答案正确
                         this.answerFeedback(true);
-                        this._answer.push(this.answerType.Size);
-                        state.answer = this._answer;
-                        this.refreshFirstRightData(state);
-                    }
-                    else if (this._leftContain[0].name[1] === this._leftContain[1].name[1] &&
-                        this._leftContain[0].name[1] === this._leftContain[2].name[1] &&
-                        this._leftContain[0].name[1] === this._leftContain[3].name[1]) {
-                        console.log('=== 第一次回答正确 按照形状分===');
-                        this.answerFeedback(true);
-                        this._answer.push(this.answerType.Shap);
+                        this._answer.push(true);
                         state.answer = this._answer;
                         this.refreshFirstRightData(state);
                     }
@@ -623,34 +612,18 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
                         this.answerFeedback(false);
                         return [2 /*return*/];
                     }
-                    // 大小 在前
-                    if (this._answer[this._answer.length - 1] === this.answerType.Size) {
-                        if (this._box1Contain[0].name[1] === this._box1Contain[1].name[1] &&
-                            this._box3Contain[0].name[1] === this._box3Contain[1].name[1]) {
-                            console.log('=== 第二次答案正确 形状===');
-                            this.answerFeedback(true);
-                            this._answer.push(this.answerType.Shap);
-                            state.answer = this._answer;
-                        }
-                        else {
-                            console.log('=== 第二次答案错误 形状===');
-                            this.answerFeedback(false);
-                            // this.refreshSecondWrongData(state);
-                        }
+                    if (this._box1Contain[0].name[1] === this._box1Contain[1].name[1] &&
+                        this._box3Contain[0].name[1] === this._box3Contain[1].name[1]) {
+                        // 第一个分类正确
+                        console.log('=== 第二次答案正确 ===');
+                        this.answerFeedback(true);
+                        this._answer.push(true);
+                        state.answer = this._answer;
                     }
-                    else if (this._answer[this._answer.length - 1] === this.answerType.Shap) {
-                        if (this._box1Contain[0].name[0] === this._box1Contain[1].name[0] &&
-                            this._box3Contain[0].name[0] === this._box3Contain[1].name[0]) {
-                            console.log('=== 第二次答案正确 颜色和大小===');
-                            this.answerFeedback(true);
-                            this._answer.push(this.answerType.Size);
-                            state.answer = this._answer;
-                        }
-                        else {
-                            console.log('=== 第二次答案错误 颜色和大小===');
-                            this.answerFeedback(false);
-                            // this.refreshSecondWrongData(state);
-                        }
+                    else {
+                        console.log('=== 第二次答案错误 ===');
+                        this.answerFeedback(false);
+                        // this.refreshSecondWrongData(state);
                     }
                 }
                 this.updateState(state);
@@ -658,39 +631,22 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
             });
         });
     };
-    dragAnswer_model03_v3.prototype.refreshFirstRightData = function (state) {
+    dragAnswer_model03_v2.prototype.refreshFirstRightData = function (state) {
         state.colliderBox = [];
         // 第二次做题时初始化按钮全部位置
-        for (var i = 0; i < this._colliderCacheSecond.length; i++) {
-            if (i < this._containerTotal) {
-                var temp = {
-                    pos: {
-                        x: this._colliderCacheSecond[i].pos.x,
-                        y: this._colliderCacheSecond[i].pos.y
-                    },
-                    index: state.leftContain[i].index
-                };
-                state.colliderBox.push(temp);
-                this._colliderCacheSecond[i].index = state.leftContain[i].index;
-            }
-            else {
-                var temp = {
-                    pos: {
-                        x: this._colliderCacheSecond[i].pos.x,
-                        y: this._colliderCacheSecond[i].pos.y
-                    },
-                    index: state.rightContain[i - this._containerTotal].index
-                };
-                state.colliderBox.push(temp);
-                this._colliderCacheSecond[i].index = state.rightContain[i - this._containerTotal].index;
-            }
-        }
         for (var i = 0; i < this._colliderBox.length; i++) {
             for (var j = 0; j < this._colliderCacheSecond.length; j++) {
                 if (this._colliderBox[i].data.index === this._colliderCacheSecond[j].index) {
                     this._colliderBox[i].data.x = this._colliderCacheSecond[j].pos.x;
                     this._colliderBox[i].data.y = this._colliderCacheSecond[j].pos.y;
-                    break;
+                    var temp = {
+                        pos: {
+                            x: this._colliderBox[i].data.x,
+                            y: this._colliderBox[i].data.y
+                        },
+                        index: this._colliderBox[i].data.index
+                    };
+                    state.colliderBox.push(temp);
                 }
             }
         }
@@ -700,17 +656,17 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         state.rightContain = [];
     };
     // 获取状态
-    dragAnswer_model03_v3.prototype.getState = function (data) {
+    dragAnswer_model03_v2.prototype.getState = function (data) {
         this.updateState(data);
     };
     // 更新状态层
-    dragAnswer_model03_v3.prototype.updateState = function (curState) {
+    dragAnswer_model03_v2.prototype.updateState = function (curState) {
         if (globalThis._.isEqual(this._state, curState))
             return;
         this.state = curState;
     };
     // 更新ui层
-    dragAnswer_model03_v3.prototype.updateUi = function (oldState, state) {
+    dragAnswer_model03_v2.prototype.updateUi = function (oldState, state) {
         if (!globalThis._.isEqual(oldState.answer, state.answer)) {
             if (state.answer.length === 1) {
                 // 显示第二种答题界面
@@ -775,7 +731,7 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
             this.playTitle(state.title);
         }
     };
-    dragAnswer_model03_v3.prototype.answerFeedback = function (bool) {
+    dragAnswer_model03_v2.prototype.answerFeedback = function (bool) {
         if (!this.feedback)
             return;
         var feedback = cc.instantiate(this.feedback);
@@ -789,33 +745,33 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         }, 1000);
     };
     // 注册状态，及获取状态的方法
-    dragAnswer_model03_v3.prototype.registerState = function () {
+    dragAnswer_model03_v2.prototype.registerState = function () {
         if (window['GlobalData'].sample.registerState)
             window['GlobalData'].sample.registerState.call(this);
     };
     // 解除状态，及获取状态的方法
-    dragAnswer_model03_v3.prototype.relieveState = function () {
+    dragAnswer_model03_v2.prototype.relieveState = function () {
         if (window['GlobalData'].sample.relieveState)
             window['GlobalData'].sample.relieveState.call(this);
     };
     // 本组件状态合并到全局
-    dragAnswer_model03_v3.prototype.mergeState = function () {
+    dragAnswer_model03_v2.prototype.mergeState = function () {
         if (window['GlobalData'].sample.mergeState)
             window['GlobalData'].sample.mergeState.call(this);
     };
-    dragAnswer_model03_v3.prototype.onEnable = function () {
+    dragAnswer_model03_v2.prototype.onEnable = function () {
         this.registerState();
         // this.schedule(this.dragSchedule, this._scheduleTime);
     };
-    dragAnswer_model03_v3.prototype.onDisable = function () {
+    dragAnswer_model03_v2.prototype.onDisable = function () {
         this.relieveState();
         cc.audioEngine.stopAll();
     };
-    dragAnswer_model03_v3 = __decorate([
+    dragAnswer_model03_v2 = __decorate([
         ccclass
-    ], dragAnswer_model03_v3);
-    return dragAnswer_model03_v3;
+    ], dragAnswer_model03_v2);
+    return dragAnswer_model03_v2;
 }(cc.Component));
-exports.default = dragAnswer_model03_v3;
+exports.default = dragAnswer_model03_v2;
 
 cc._RF.pop();

@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '1796boudv9ORZBvtCDbiKQb', 'dragAnswer-model03-v2');
-// prefabLibrary/models/dragAnswer/dragAnswer-model03-v2.ts
+cc._RF.push(module, '1796boudv9ORZBvtCDbiKQb', 'dragAnswer-model04-v2');
+// prefabLibrary/models/dragAnswer/dragAnswer-model04-v2.ts
 
 "use strict";
 /*
