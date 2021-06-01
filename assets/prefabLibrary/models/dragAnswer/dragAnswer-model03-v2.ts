@@ -1,5 +1,3 @@
-import DragAnswerModel03Base from "./DragAnswerModel03Base";
-
 /*
  * @Descripttion: 
  * @version: 
@@ -92,7 +90,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         // 初始化state
         this._state = {
             drag: "end",
-            getDropArr: [],
             collider: s._cache["colliderBox"].map((v: any) => v),//拖拽物的位置数组
             colliderIndex: null,//当前拖拽物在数组内的索引
             collidered: this._cache["collideredBox"].map((v: any) => v),//二维数组，存放每个放置区对应的被放置元素
@@ -503,7 +500,50 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 // if (s._gameType === 1) {
                 let role = fgui.UIPackage.createObject(s._packName, 'Combination').asCom;
                 (role.getChild('n2') as fgui.GLoader).url = roleUrl;
-                (role.getChild('smoke') as fgui.GLoader3D).animationName = 'smoke_ani';
+
+                if (s._gameType == 1) {
+                    role.getController('c1').selectedIndex = 1;
+                } else if (s._gameType == 2) {
+                    
+                    // let asset = fgui.UIPackage.getItemByURL('ui://rokozlzwaxzx43').asset as sp.SkeletonData;
+                    // console.log('asset',asset);
+                    
+                    /* loadResource(asset, cc.Asset).then((spineData) => {
+                        console.log('spine data', spineData);
+                        smoke.skeletonData = spineData;
+                        role.node.addChild(spineNode);
+                    }); */
+                    
+                    /* let spineNode = new cc.Node;
+                    let smoke = spineNode.addComponent(sp.Skeleton);
+                    let item = fgui.UIPackage.getItemByURL('ui://rokozlzwaxzx43');
+                    console.log(item);
+                    
+                    loadResource(item.asset, sp.SkeletonData).then((data)=>{
+                        console.log('spine data', data);
+                        smoke.skeletonData = data;
+                        role.node.addChild(spineNode);
+                    }); */
+
+                    let smoke = (role.getChild('smoke') as fgui.GLoader3D);
+                    smoke.animationName = 'smoke_ani';                    
+                    setTimeout(() => {
+                        smoke.playing = false;
+                        role.getController('c1').selectedIndex = 1;
+                    }, 500);
+                    /* let smoke = (role.getChild('smoke') as fgui.GLoader3D);
+                    setTimeout(() => {
+                        let spine: sp.Skeleton = smoke.content as sp.Skeleton;
+                        console.log(spine);
+                        
+                        spine.setAnimation(0, 'smoke_ani', false);
+                        spine.setCompleteListener(() => {
+                            spine.paused = true;
+                            role.getController('c1').selectedIndex = 1;
+                        });
+                    }, 1); */
+                }
+
                 role.setPivot(0.5, 0.5, true);
                 if (s._gameType === 1) {
 
@@ -573,6 +613,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
     updateUi(oldState: any, state: any) {
         let s = this;
         // console.log('updateUi = ', state);
+        // s._state = state;
+        // console.log('update ui state', s._state);
 
         if (state.drag == "move") {
             if (s._view.getChildIndex(this._colliderBox[state.colliderIndex]) != s._view.numChildren - 2) {
@@ -618,15 +660,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             if (!globalThis._.isEqual(oldState.title, state.title)) {
                 this.playTitle(state.title);
             }
-
-            /* if (!globalThis._.isEqual(oldState.submit, state.submit)) {
-                if (state.submit) {
-                    // 根据collider 初始位置 判断 是否被操作过
-                    let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
-                    let bool: boolean = s._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
-                    bool ? this.onHandleGuide() : this.onFlicker(state.answer);
-                }
-            } */
 
         }
     }
