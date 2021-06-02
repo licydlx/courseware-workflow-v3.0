@@ -1184,45 +1184,43 @@ export default class dragAnswer_model03_v4 extends cc.Component {
     }
 
     private async _clickSubmit(evt: any) {
-        if (this._answer.length >= 2) {
+
+        let state: any = globalThis._.cloneDeep(this._state);
+
+        console.log('===== _answer L ====' + this._answer.length);
+
+        if (this._answer.length === 0) {
+            if (this._leftContain.length === 0 && this._rightContain.length === 0 && this._midContain.length === 0) {
+
+                state.submit = true;
+                this.updateState(state);
+                return;
+            }
+        } else if (this._answer.length === 1) {
+
+            if (this._box1Contain.length === 0 && this._box2Contain.length === 0 && this._box3Contain.length === 0 && this._box4Contain.length === 0 && this._box5Contain.length === 0 && this._box6Contain.length === 0) {
+
+                state.submit = true;
+                this.updateState(state);
+                return;
+            }
+
+        } else if (this._answer.length >= 2) {
 
             return;
         }
-        let state: any = globalThis._.cloneDeep(this._state);
 
-        if (this._answer.length === 0) {
-
-            if (this._leftContain.length === 0 ||
-                this._rightContain.length === 0 ||
-                this._midContain.length === 0 ||
-                (this._leftContain.length !== this._rightContain.length) ||
-                (this._leftContain.length !== this._midContain.length)) {
-                state.submit = true;
-                this.updateState(state);
-                return;
-            }
-        }
-
-        if (this._answer.length === 1) {
-
-            if (this._box1Contain.length === 0 ||
-                this._box2Contain.length === 0 ||
-                this._box3Contain.length === 0 ||
-                this._box4Contain.length === 0 ||
-                this._box5Contain.length === 0 ||
-                this._box6Contain.length === 0 ||
-                (this._box1Contain.length !== this._box2Contain.length) ||
-                (this._box1Contain.length !== this._box3Contain.length) ||
-                (this._box1Contain.length !== this._box4Contain.length) ||
-                (this._box1Contain.length !== this._box4Contain.length)) {
-                state.submit = true;
-                this.updateState(state);
-                return;
-            }
-        }
+        console.log('===== _answer L ====' + this._answer.length);
 
         // 前：1 后：2
         if (this._answer.length === 0) {
+
+            if (this._leftContain.length < this._containerTotal || this._rightContain.length < this._containerTotal || this._midContain.length < this._containerTotal) {
+
+                this.answerFeedback(false);
+                return;
+            }
+
 
             if ((this._leftContain[0].name[0] === this._leftContain[1].name[0] &&
                 this._leftContain[0].name[0] === this._leftContain[2].name[0] &&
@@ -1260,6 +1258,17 @@ export default class dragAnswer_model03_v4 extends cc.Component {
             }
 
         } else if (this._answer.length === 1) {
+
+            if (this._box1Contain.length < this._containerTotalSecond ||
+                this._box2Contain.length < this._containerTotalSecond ||
+                this._box3Contain.length < this._containerTotalSecond ||
+                this._box4Contain.length < this._containerTotalSecond ||
+                this._box5Contain.length < this._containerTotalSecond ||
+                this._box6Contain.length < this._containerTotalSecond) {
+
+                this.answerFeedback(false);
+                return;
+            }
 
             // 颜色分
             if (this._box1Contain[0].name[1] === this._box1Contain[1].name[1] &&
@@ -1373,7 +1382,15 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.answer, state.answer)) {
 
-            if (state.answer.length === 1) {
+            if (state.answer.length === 0) {
+                // 显示初始答题界面
+                this._c2.selectedIndex = 0;
+
+                for (let i = 0; i < this._colliderBox.length; i++) {
+                    this._colliderBox[i].draggable = true;
+                }
+
+            } else if (state.answer.length === 1) {
                 // 显示第二种答题界面
                 this._c2.selectedIndex = 1;
 
@@ -1403,6 +1420,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
                 this._colliderBox[state.colliderBox[i].index].y = state.colliderBox[i].pos.y;
                 this._colliderBox[state.colliderBox[i].index].data.posIndex = -1;
                 this._colliderBox[state.colliderBox[i].index].sortingOrder = 1;
+                this._colliderBox[state.colliderBox[i].index].draggable = true;
             }
         }
 

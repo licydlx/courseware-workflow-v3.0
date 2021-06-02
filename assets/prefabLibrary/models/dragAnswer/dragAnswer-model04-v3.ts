@@ -27,9 +27,9 @@ export default class dragAnswer_model03_v3 extends cc.Component {
     private _rightPositon: any = [{ x: 1355, y: 770 }, { x: 1640, y: 770 }, { x: 1355, y: 925 }, { x: 1640, y: 925 }];
 
     private _typeBoxPos1: any = [{ x: 155, y: 865 }, { x: 355, y: 865 }];
-    private _typeBoxPos2: any = [{ x: 635, y: 865 }, { x: 805, y: 865 }];
-    private _typeBoxPos3: any = [{ x: 1110, y: 865 }, { x: 1280, y: 865 }];
-    private _typeBoxPos4: any = [{ x: 1570, y: 865 }, { x: 1750, y: 865 }];
+    private _typeBoxPos2: any = [{ x: 630, y: 865 }, { x: 810, y: 865 }];
+    private _typeBoxPos3: any = [{ x: 1110, y: 865 }, { x: 1295, y: 865 }];
+    private _typeBoxPos4: any = [{ x: 1570, y: 865 }, { x: 1755, y: 865 }];
 
     private _colliderCacheSecond: any = [
         { pos: { x: 345, y: 325 }, index: 0 },
@@ -1158,7 +1158,13 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.answer, state.answer)) {
 
-            if (state.answer.length === 1) {
+            if (state.answer.length === 0) {
+                // 显示初始答题界面
+                this._c2.selectedIndex = 0;
+                this._submit.x = 842;
+                this._submit.y = 724;
+
+            } else if (state.answer.length === 1) {
                 // 显示第二种答题界面
                 this._c2.selectedIndex = 1;
 

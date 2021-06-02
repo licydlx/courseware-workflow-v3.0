@@ -1096,7 +1096,13 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.answer, state.answer)) {
 
-            if (state.answer.length === 1) {
+            if (state.answer.length === 0) {
+                // 显示初始答题界面
+                this._c2.selectedIndex = 0;
+                this._submit.x = 842;
+                this._submit.y = 724;
+
+            } else if (state.answer.length === 1) {
                 // 显示第二种答题界面
                 this._c2.selectedIndex = 1;
 
@@ -1130,6 +1136,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 this._colliderBox[state.colliderBox[i].index].y = state.colliderBox[i].pos.y;
                 this._colliderBox[state.colliderBox[i].index].data.posIndex = -1;
                 this._colliderBox[state.colliderBox[i].index].sortingOrder = 1;
+                this._colliderBox[state.colliderBox[i].index].draggable = true;
             }
         }
 
