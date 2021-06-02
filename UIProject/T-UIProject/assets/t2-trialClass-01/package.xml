@@ -46,7 +46,6 @@
     <image id="qxt01d" name="0104.png" path="/images/static/"/>
     <component id="qxt01e" name="static-model01-v1-p1.xml" path="/" exported="true"/>
     <component id="qxt01f" name="static-model01-v1-p12.xml" path="/" exported="true"/>
-    <image id="qxt01g" name="0101.png" path="/images/common/"/>
     <image id="qxt01h" name="0105.png" path="/images/static/"/>
     <image id="qe6i1p" name="0101.png" path="/images/dragAnswer-model01-v2/"/>
     <image id="qe6i1q" name="0102.png" path="/images/dragAnswer-model01-v2/"/>
@@ -233,6 +232,8 @@
     <image id="jrdo8e" name="icon_1_0.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
     <image id="jrdo8f" name="robot.png" path="/images/dragAnswer-model02-v1-new/p6/"/>
     <image id="jrdo8g" name="icon_3_0.png" path="/images/dragAnswer-model02-v1-new/p7/"/>
+    <image id="jrdo8h" name="0101.png" path="/images/common/"/>
+    <image id="jrdo8i" name="0102.png" path="/images/common/"/>
   </resources>
   <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t2\t2-trialClass-01" packageCount="2"/>
 </packageDescription>

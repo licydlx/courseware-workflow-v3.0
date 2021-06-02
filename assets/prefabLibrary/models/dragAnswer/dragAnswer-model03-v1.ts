@@ -108,6 +108,8 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
 
         this._title = this._view.getChild("title").asButton;
+        this._title.alpha = 1;
+
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
 
@@ -438,6 +440,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     async playTitle(bool: boolean) {
         this._c2.selectedIndex = bool ? 1 : 0;
+        this._title.alpha = 1;
 
         if (bool) {
             cc.audioEngine.stopAll();

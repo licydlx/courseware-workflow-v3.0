@@ -1,7 +1,7 @@
 {
     "name": "数理思维",
     "courseName": "t2-trialclass-01",
-    "env": "test",
+    "env": "prod",
     "totalPages": 13,
     "pathConfig": {
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",

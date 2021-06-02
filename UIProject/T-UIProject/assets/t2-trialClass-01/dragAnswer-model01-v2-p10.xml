@@ -2,7 +2,7 @@
 <component size="1920,1080">
   <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
-    <loader id="n2_rbpx" name="background" xy="0,0" size="1920,1080" group="n4_rbpx" url="ui://ik5aab9iqxt01g" autoSize="true"/>
+    <loader id="n2_rbpx" name="background" xy="0,0" size="1920,1080" group="n4_rbpx" url="ui://ik5aab9ijrdo8i" autoSize="true"/>
     <image id="n53_qe6i" name="n53" src="qe6i1x" fileName="images/dragAnswer-model01-v2/0108.png" xy="60,180" group="n4_rbpx"/>
     <image id="n65_azf5" name="n65" src="azf572" fileName="images/dragAnswer-model01-v2/0116.png" xy="400,309" group="n4_rbpx"/>
     <image id="n57_ht43" name="n57" src="ht432b" fileName="images/dragAnswer-model01-v2/0114.png" xy="456,359" group="n4_rbpx"/>
@@ -13,13 +13,13 @@
       <relation target="" sidePair="center-center,middle-middle"/>
     </image>
     <group id="n4_rbpx" name="UI" xy="0,0" size="1920,1080"/>
-    <image id="n42_qe6i" name="n42" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="939,362" group="n18_dbj2"/>
-    <image id="n43_qe6i" name="n43" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1100,362" group="n18_dbj2"/>
-    <image id="n44_qe6i" name="n44" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1261,362" group="n18_dbj2"/>
-    <image id="n45_qe6i" name="n45" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="939,523" group="n18_dbj2"/>
-    <image id="n46_qe6i" name="n46" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1100,523" group="n18_dbj2"/>
-    <image id="n47_qe6i" name="n47" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1261,523" group="n18_dbj2"/>
-    <group id="n18_dbj2" name="collideredBox" xy="939,362" size="483,322" advanced="true"/>
+    <image id="n42_qe6i" name="n42" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="939,360" group="n18_dbj2"/>
+    <image id="n43_qe6i" name="n43" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1100,360" group="n18_dbj2"/>
+    <image id="n44_qe6i" name="n44" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1261,360" group="n18_dbj2"/>
+    <image id="n45_qe6i" name="n45" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="939,521" group="n18_dbj2"/>
+    <image id="n46_qe6i" name="n46" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1100,521" group="n18_dbj2"/>
+    <image id="n47_qe6i" name="n47" src="qe6i1v" fileName="images/dragAnswer-model01-v2/0107.png" xy="1261,521" group="n18_dbj2"/>
+    <group id="n18_dbj2" name="collideredBox" xy="939,360" size="483,322" advanced="true"/>
     <image id="n54_qe6i" name="wire" src="qe6i1p" fileName="images/dragAnswer-model01-v2/0101.png" xy="937,298"/>
     <component id="n51_qe6i" name="n51" src="dbj2f" fileName="buttons/dragBtn.xml" xy="650,790" size="126,109" group="n50_qe6i">
       <Button icon="ui://ik5aab9iht4329"/>
