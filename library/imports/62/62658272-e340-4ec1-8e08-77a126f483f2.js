@@ -122,6 +122,14 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         configurable: true
     });
     dragAnswer_model03_v3.prototype.onLoad = function () {
+        this._answer = [];
+        this._leftContain = [];
+        this._rightContain = [];
+        this._box1Contain = [];
+        this._box2Contain = [];
+        this._box3Contain = [];
+        this._box4Contain = [];
+        this._colliderBox = [];
         this._worldRoot = cc.find("Canvas").parent;
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
@@ -137,13 +145,14 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
                 node.data = {
                     index: this._colliderBox.length,
                     x: node.x,
-                    y: node.y
+                    y: node.y,
+                    posIndex: -1
                 };
                 node.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
                 node.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
                 node.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
                 this._colliderBox.push(node);
-                var colliderData = { pos: { x: node.data.x, y: node.data.y }, index: node.data.index };
+                var colliderData = { pos: { x: node.data.x, y: node.data.y }, index: node.data.index, posIndex: node.data.posIndex };
                 this._colliderCache.push(colliderData);
             }
         }
@@ -319,7 +328,9 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
     };
     dragAnswer_model03_v3.prototype._onDragStart = function (evt) {
         evt.captureTouch();
+        this._lastPos = evt.pos;
         var btn = fgui.GObject.cast(evt.currentTarget);
+        btn.sortingOrder = 99;
         var state = globalThis._.cloneDeep(this._state);
         for (var i = 0; i < state.colliderBox.length; i++) {
             if (btn.data.index === state.colliderBox[i].index) {
@@ -345,125 +356,349 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
     };
     dragAnswer_model03_v3.prototype.dragEndFirstDeal = function (evt) {
         var state = globalThis._.cloneDeep(this._state);
+        var moveIsMin = Math.abs(evt.pos.x - this._lastPos.x) < 70 && Math.abs(evt.pos.y - this._lastPos.y) < 70;
         var btn = fgui.GObject.cast(evt.currentTarget);
         var tarPos = new cc.Vec2(btn.x, btn.y);
         var isContainerLeft = false;
-        var isContainerright = false;
-        isContainerLeft = this.judgeDragObjInBox(this._leftContain, btn, state.leftContain);
-        isContainerright = this.judgeDragObjInBox(this._rightContain, btn, state.rightContain);
-        if (isContainerLeft || isContainerright) {
-            // 恢复原位
-            var temp = {
-                pos: {
-                    x: btn.data.x,
-                    y: btn.data.y
-                },
-                index: btn.data.index
-            };
-            state.colliderBox.push(temp);
-            this.refreshBoxPos(state.leftContain, this._leftPositon);
-            this.refreshBoxPos(state.rightContain, this._rightPositon);
-            this.updateState(state);
-            return;
-        }
+        var isContainerRight = false;
+        isContainerLeft = this.judgeDragObjInBox(this._leftContain, btn);
+        isContainerRight = this.judgeDragObjInBox(this._rightContain, btn);
         // 左
-        if (this._leftRect.contains(tarPos) && this._leftContain.length < this._containerTotal) {
+        if (this._leftRect.contains(tarPos)) {
             console.log('==== 左 ====');
-            this._leftContain.push(btn);
-            var temp = { pos: { x: this._leftPositon[state.leftContain.length].x,
-                    y: this._leftPositon[state.leftContain.length].y },
-                index: btn.data.index };
-            state.leftContain.push(temp);
+            if (isContainerLeft) {
+                if (moveIsMin || this._leftContain.length < 2) {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                    //删除左边包含的；刷新
+                    this.deleteCurDragObjInBox(this._leftContain, btn, state.leftContain);
+                    this.refreshBoxPos(state.leftContain, this._leftPositon);
+                }
+                else {
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.leftContain, this._leftPositon, btn, this._leftContain, state.colliderBox);
+                }
+            }
+            else {
+                this.dealAllContainIn(false, true, false, false, false, false, state, btn);
+                if (this._leftContain.length < this._containerTotal) {
+                    this._leftContain.push(btn);
+                    var temp = {
+                        pos: {
+                            x: this._leftPositon[state.leftContain.length].x,
+                            y: this._leftPositon[state.leftContain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.leftContain.length
+                    };
+                    state.leftContain.push(temp);
+                }
+                else {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                }
+            }
         }
-        else if (this._rightRect.contains(tarPos) && this._rightContain.length < this._containerTotal) {
-            this._rightContain.push(btn);
-            var temp = { pos: { x: this._rightPositon[state.rightContain.length].x,
-                    y: this._rightPositon[state.rightContain.length].y },
-                index: btn.data.index };
-            state.rightContain.push(temp);
+        else if (this._rightRect.contains(tarPos)) {
+            if (isContainerRight) {
+                if (moveIsMin || this._rightContain.length < 2) {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                    //删除左边包含的；刷新
+                    this.deleteCurDragObjInBox(this._rightContain, btn, state.rightContain);
+                    this.refreshBoxPos(state.rightContain, this._rightPositon);
+                }
+                else {
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.rightContain, this._rightPositon, btn, this._rightContain, state.colliderBox);
+                }
+            }
+            else {
+                this.dealAllContainIn(true, false, false, false, false, false, state, btn);
+                if (this._rightContain.length < this._containerTotal) {
+                    this._rightContain.push(btn);
+                    var temp = {
+                        pos: {
+                            x: this._rightPositon[state.rightContain.length].x,
+                            y: this._rightPositon[state.rightContain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.rightContain.length
+                    };
+                    state.rightContain.push(temp);
+                }
+                else {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                }
+            }
         }
         else {
-            var temp = { pos: { x: btn.data.x, y: btn.data.y }, index: btn.data.index };
-            state.colliderBox.push(temp);
+            this.dealAllContainIn(true, true, false, false, false, false, state, btn);
+            // 恢复原位
+            this.resetButtonInitPos(state.colliderBox, btn);
         }
         this.updateState(state);
     };
     dragAnswer_model03_v3.prototype.dragEndScendDeal = function (evt) {
         var state = globalThis._.cloneDeep(this._state);
+        var moveIsMin = Math.abs(evt.pos.x - this._lastPos.x) < 70 && Math.abs(evt.pos.y - this._lastPos.y) < 70;
         var btn = fgui.GObject.cast(evt.currentTarget);
         var tarPos = new cc.Vec2(btn.x, btn.y);
         var isContainer1 = false;
         var isContainer2 = false;
         var isContainer3 = false;
         var isContainer4 = false;
-        isContainer1 = this.judgeDragObjInBox(this._box1Contain, btn, state.box1Contain);
-        isContainer2 = this.judgeDragObjInBox(this._box2Contain, btn, state.box2Contain);
-        isContainer3 = this.judgeDragObjInBox(this._box3Contain, btn, state.box3Contain);
-        isContainer4 = this.judgeDragObjInBox(this._box4Contain, btn, state.box4Contain);
-        if (isContainer1 || isContainer2 || isContainer3 || isContainer4) {
-            // 恢复原位
-            var temp = {
-                pos: {
-                    x: btn.data.x,
-                    y: btn.data.y
-                },
-                index: btn.data.index
-            };
-            state.colliderBox.push(temp);
-            // 重新拍下位置
-            this.refreshBoxPos(state.box1Contain, this._typeBoxPos1);
-            this.refreshBoxPos(state.box2Contain, this._typeBoxPos2);
-            this.refreshBoxPos(state.box3Contain, this._typeBoxPos3);
-            this.refreshBoxPos(state.box4Contain, this._typeBoxPos4);
-            this.updateState(state);
-            return;
-        }
+        isContainer1 = this.judgeDragObjInBox(this._box1Contain, btn);
+        isContainer2 = this.judgeDragObjInBox(this._box2Contain, btn);
+        isContainer3 = this.judgeDragObjInBox(this._box3Contain, btn);
+        isContainer4 = this.judgeDragObjInBox(this._box4Contain, btn);
         // 左
-        if (this._boxRect1.contains(tarPos) && this._box1Contain.length < this._containerTotalSecond) {
-            this._box1Contain.push(btn);
-            var temp = { pos: { x: this._typeBoxPos1[state.box1Contain.length].x,
-                    y: this._typeBoxPos1[state.box1Contain.length].y },
-                index: btn.data.index };
-            state.box1Contain.push(temp);
-            console.log('==== box1    ====' + state.box1Contain.length);
-            console.log('==== box1 x  ====' + temp.pos.x);
-            console.log('==== box1 y  ====' + temp.pos.y);
+        if (this._boxRect1.contains(tarPos)) {
+            console.log('==== 框1 ====');
+            if (isContainer1) {
+                if (moveIsMin || this._box1Contain.length < 2) {
+                    console.log('==== 恢复原位 XXXX ==== ' + Math.abs(evt.pos.x - this._lastPos.x));
+                    console.log('==== 恢复原位 YYYY ==== ' + Math.abs(evt.pos.y - this._lastPos.y));
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                    //删除左边包含的；刷新
+                    this.deleteCurDragObjInBox(this._box1Contain, btn, state.box1Contain);
+                    this.refreshBoxPos(state.box1Contain, this._typeBoxPos1);
+                }
+                else {
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.box1Contain, this._typeBoxPos1, btn, this._box1Contain, state.colliderBox);
+                }
+            }
+            else {
+                this.dealAllContainIn(false, false, false, true, true, true, state, btn);
+                if (this._box1Contain.length < this._containerTotalSecond) {
+                    this._box1Contain.push(btn);
+                    var temp = {
+                        pos: {
+                            x: this._typeBoxPos1[state.box1Contain.length].x,
+                            y: this._typeBoxPos1[state.box1Contain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.box1Contain.length
+                    };
+                    state.box1Contain.push(temp);
+                }
+                else {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                }
+            }
         }
-        else if (this._boxRect2.contains(tarPos) && this._box2Contain.length < this._containerTotalSecond) {
-            console.log('==== box2 ====');
-            this._box2Contain.push(btn);
-            var temp = { pos: { x: this._typeBoxPos2[state.box2Contain.length].x,
-                    y: this._typeBoxPos2[state.box2Contain.length].y },
-                index: btn.data.index };
-            state.box2Contain.push(temp);
+        else if (this._boxRect2.contains(tarPos)) {
+            console.log('==== 框2 ====');
+            if (isContainer2) {
+                if (moveIsMin || this._box2Contain.length < 2) {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                    //删除左边包含的；刷新
+                    this.deleteCurDragObjInBox(this._box2Contain, btn, state.box2Contain);
+                    this.refreshBoxPos(state.box2Contain, this._typeBoxPos2);
+                }
+                else {
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.box2Contain, this._typeBoxPos2, btn, this._box2Contain, state.colliderBox);
+                }
+            }
+            else {
+                this.dealAllContainIn(false, false, true, false, true, true, state, btn);
+                if (this._box2Contain.length < this._containerTotalSecond) {
+                    this._box2Contain.push(btn);
+                    var temp = {
+                        pos: {
+                            x: this._typeBoxPos2[state.box2Contain.length].x,
+                            y: this._typeBoxPos2[state.box2Contain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.box2Contain.length
+                    };
+                    state.box2Contain.push(temp);
+                }
+                else {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                }
+            }
         }
-        else if (this._boxRect3.contains(tarPos) && this._box3Contain.length < this._containerTotalSecond) {
-            console.log('==== box3 ====');
-            this._box3Contain.push(btn);
-            var temp = { pos: { x: this._typeBoxPos3[state.box3Contain.length].x,
-                    y: this._typeBoxPos3[state.box3Contain.length].y },
-                index: btn.data.index };
-            state.box3Contain.push(temp);
+        else if (this._boxRect3.contains(tarPos)) {
+            console.log('==== 框3 ====');
+            if (isContainer3) {
+                if (moveIsMin || this._box3Contain.length < 2) {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                    //删除左边包含的；刷新
+                    this.deleteCurDragObjInBox(this._box3Contain, btn, state.box3Contain);
+                    this.refreshBoxPos(state.box3Contain, this._typeBoxPos3);
+                }
+                else {
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.box3Contain, this._typeBoxPos3, btn, this._box3Contain, state.colliderBox);
+                }
+            }
+            else {
+                this.dealAllContainIn(false, false, true, true, false, true, state, btn);
+                if (this._box3Contain.length < this._containerTotalSecond) {
+                    this._box3Contain.push(btn);
+                    var temp = {
+                        pos: {
+                            x: this._typeBoxPos3[state.box3Contain.length].x,
+                            y: this._typeBoxPos3[state.box3Contain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.box3Contain.length
+                    };
+                    state.box3Contain.push(temp);
+                }
+                else {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                }
+            }
         }
-        else if (this._boxRect4.contains(tarPos) && this._box4Contain.length < this._containerTotalSecond) {
-            console.log('==== box4 ====');
-            this._box4Contain.push(btn);
-            var temp = { pos: { x: this._typeBoxPos4[state.box4Contain.length].x,
-                    y: this._typeBoxPos4[state.box4Contain.length].y },
-                index: btn.data.index };
-            state.box4Contain.push(temp);
+        else if (this._boxRect4.contains(tarPos)) {
+            console.log('==== 框4 ====');
+            if (isContainer4) {
+                if (moveIsMin || this._box4Contain.length < 2) {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                    //删除左边包含的；刷新
+                    this.deleteCurDragObjInBox(this._box4Contain, btn, state.box4Contain);
+                    this.refreshBoxPos(state.box4Contain, this._typeBoxPos4);
+                }
+                else {
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.box4Contain, this._typeBoxPos4, btn, this._box4Contain, state.colliderBox);
+                }
+            }
+            else {
+                this.dealAllContainIn(false, false, true, true, true, false, state, btn);
+                if (this._box4Contain.length < this._containerTotalSecond) {
+                    this._box4Contain.push(btn);
+                    var temp = {
+                        pos: {
+                            x: this._typeBoxPos4[state.box4Contain.length].x,
+                            y: this._typeBoxPos4[state.box4Contain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.box4Contain.length
+                    };
+                    state.box4Contain.push(temp);
+                }
+                else {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                }
+            }
         }
         else {
-            var temp = { pos: { x: btn.data.x, y: btn.data.y }, index: btn.data.index };
-            state.colliderBox.push(temp);
+            this.dealAllContainIn(false, false, true, true, true, true, state, btn);
+            // 恢复原位
+            this.resetButtonInitPos(state.colliderBox, btn);
         }
         this.updateState(state);
     };
-    dragAnswer_model03_v3.prototype.judgeDragObjInBox = function (_box, curBut, stateBox) {
-        var isContainer = false;
+    dragAnswer_model03_v3.prototype.dealAllContainIn = function (isContainerLeft, isContainerRight, isContainer1, isContainer2, isContainer3, isContainer4, state, btn) {
+        if (isContainerLeft) {
+            this.deleteCurDragObjInBox(this._leftContain, btn, state.leftContain);
+            this.refreshBoxPos(state.leftContain, this._leftPositon);
+        }
+        if (isContainerRight) {
+            this.deleteCurDragObjInBox(this._rightContain, btn, state.rightContain);
+            this.refreshBoxPos(state.rightContain, this._rightPositon);
+        }
+        if (isContainer1) {
+            this.deleteCurDragObjInBox(this._box1Contain, btn, state.box1Contain);
+            this.refreshBoxPos(state.box1Contain, this._typeBoxPos1);
+        }
+        if (isContainer2) {
+            this.deleteCurDragObjInBox(this._box2Contain, btn, state.box2Contain);
+            this.refreshBoxPos(state.box2Contain, this._typeBoxPos2);
+        }
+        if (isContainer3) {
+            this.deleteCurDragObjInBox(this._box3Contain, btn, state.box3Contain);
+            this.refreshBoxPos(state.box3Contain, this._typeBoxPos3);
+        }
+        if (isContainer4) {
+            this.deleteCurDragObjInBox(this._box4Contain, btn, state.box4Contain);
+            this.refreshBoxPos(state.box4Contain, this._typeBoxPos4);
+        }
+    };
+    dragAnswer_model03_v3.prototype.judgeChangePosInBox = function (curPos, stateContain, posArr, btn, boxContain, stateColliderBox) {
+        var changeIndex = -1;
+        var clickIndex = btn.data.posIndex;
+        console.log('交换 点击的Index ========' + btn.data.posIndex);
+        if (curPos.x - this._lastPos.x > 110 && Math.abs(curPos.y - this._lastPos.y) < 50) {
+            console.log('交换 右 ========');
+            //右
+            changeIndex = clickIndex + 1;
+        }
+        else if (curPos.x - this._lastPos.x < -110 && Math.abs(curPos.y - this._lastPos.y) < 50) {
+            //左
+            console.log('交换 左 ========');
+            changeIndex = clickIndex - 1;
+        }
+        else if (curPos.y - this._lastPos.y > 110 && Math.abs(curPos.x - this._lastPos.x) < 50) {
+            // 下
+            console.log('交换 下 ========');
+            changeIndex = clickIndex + 2;
+        }
+        else if (curPos.y - this._lastPos.y < -110 && Math.abs(curPos.x - this._lastPos.x) < 50) {
+            // 上
+            console.log('交换 上 ========');
+            changeIndex = clickIndex - 2;
+        }
+        else if (curPos.x - this._lastPos.x > 110 && curPos.y - this._lastPos.y > 110) {
+            // 右下
+            console.log('交换 右下 ========');
+            changeIndex = clickIndex + 3;
+        }
+        else if (Math.abs(curPos.x - this._lastPos.x) > 50 && curPos.x - this._lastPos.x < 110 && curPos.y - this._lastPos.y > 110) {
+            // 左下
+            console.log('交换 左下 ========');
+            changeIndex = clickIndex + 1;
+        }
+        else if (curPos.x - this._lastPos.x > 110 && curPos.y - this._lastPos.y < 110 && Math.abs(curPos.y - this._lastPos.y) > 50) {
+            // 右上
+            console.log('交换 右上 ========');
+            changeIndex = clickIndex - 1;
+        }
+        else if (curPos.x - this._lastPos.x < 110 && curPos.y - this._lastPos.y < 110 && Math.abs(curPos.x - this._lastPos.x) > 50 && Math.abs(curPos.y - this._lastPos.y) > 50) {
+            // 左上
+            console.log('交换 左上 ========');
+            changeIndex = clickIndex - 3;
+        }
+        else {
+            console.log('交换 YYYYY ========' + (curPos.y - this._lastPos.y));
+            // 恢复原位
+            this.resetButtonInitPos(stateColliderBox, btn);
+            //删除左边包含的；刷新
+            this.deleteCurDragObjInBox(boxContain, btn, stateContain);
+            this.refreshBoxPos(stateContain, posArr);
+            return;
+        }
+        console.log('交换ing clickIndex ========  ' + clickIndex);
+        console.log('交换ing changeIndex ========  ' + changeIndex);
+        if (changeIndex < 0 || changeIndex > stateContain.length - 1) {
+            //删除左边包含的；归位到原来的位置
+            this.resetButtonInitPos(stateColliderBox, btn);
+            this.deleteCurDragObjInBox(boxContain, btn, stateContain);
+            this.refreshBoxPos(stateContain, posArr);
+            return;
+        }
+        var tempClickIndex = stateContain[clickIndex].index;
+        var tempChangeIndex = stateContain[changeIndex].index;
+        stateContain[clickIndex].index = tempChangeIndex;
+        stateContain[changeIndex].index = tempClickIndex;
+    };
+    dragAnswer_model03_v3.prototype.deleteCurDragObjInBox = function (_box, curBut, stateBox) {
         for (var i = 0; i < _box.length; i++) {
             if (_box[i] === curBut) {
-                isContainer = true;
                 _box.splice(i, 1);
                 for (var i_1 = 0; i_1 < stateBox.length; i_1++) {
                     if (stateBox[i_1].index === curBut.data.index) {
@@ -474,12 +709,34 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
                 break;
             }
         }
+    };
+    dragAnswer_model03_v3.prototype.resetButtonInitPos = function (stateColliderBox, btn) {
+        // 恢复原位
+        var temp = {
+            pos: {
+                x: btn.data.x,
+                y: btn.data.y
+            },
+            index: btn.data.index,
+            posIndex: -1
+        };
+        stateColliderBox.push(temp);
+    };
+    dragAnswer_model03_v3.prototype.judgeDragObjInBox = function (_box, curBut) {
+        var isContainer = false;
+        for (var i = 0; i < _box.length; i++) {
+            if (_box[i] === curBut) {
+                isContainer = true;
+                break;
+            }
+        }
         return isContainer;
     };
     dragAnswer_model03_v3.prototype.refreshBoxPos = function (stateBox, posArr) {
         for (var i = 0; i < stateBox.length; i++) {
             stateBox[i].pos.x = posArr[i].x;
             stateBox[i].pos.y = posArr[i].y;
+            stateBox[i].posIndex = i;
         }
     };
     dragAnswer_model03_v3.prototype.refreshFirstWrongData = function (state) {
@@ -718,6 +975,9 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
                 this._submit.x = 1667;
                 this._submit.y = 0;
             }
+            else if (state.answer.length === 2) {
+                this.offButDrag();
+            }
         }
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
             if (state.submit) {
@@ -733,42 +993,56 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
             for (var i = 0; i < state.colliderBox.length; i++) {
                 this._colliderBox[state.colliderBox[i].index].x = state.colliderBox[i].pos.x;
                 this._colliderBox[state.colliderBox[i].index].y = state.colliderBox[i].pos.y;
+                this._colliderBox[state.colliderBox[i].index].data.posIndex = -1;
+                this._colliderBox[state.colliderBox[i].index].sortingOrder = 1;
             }
         }
         if (!globalThis._.isEqual(oldState.leftContain, state.leftContain)) {
             for (var i = 0; i < state.leftContain.length; i++) {
                 this._colliderBox[state.leftContain[i].index].x = state.leftContain[i].pos.x;
                 this._colliderBox[state.leftContain[i].index].y = state.leftContain[i].pos.y;
+                this._colliderBox[state.leftContain[i].index].data.posIndex = state.leftContain[i].posIndex;
+                this._colliderBox[state.leftContain[i].index].sortingOrder = 1;
             }
         }
         if (!globalThis._.isEqual(oldState.rightContain, state.rightContain)) {
             for (var i = 0; i < state.rightContain.length; i++) {
                 this._colliderBox[state.rightContain[i].index].x = state.rightContain[i].pos.x;
                 this._colliderBox[state.rightContain[i].index].y = state.rightContain[i].pos.y;
+                this._colliderBox[state.rightContain[i].index].data.posIndex = state.rightContain[i].posIndex;
+                this._colliderBox[state.rightContain[i].index].sortingOrder = 1;
             }
         }
         if (!globalThis._.isEqual(oldState.box1Contain, state.box1Contain)) {
             for (var i = 0; i < state.box1Contain.length; i++) {
                 this._colliderBox[state.box1Contain[i].index].x = state.box1Contain[i].pos.x;
                 this._colliderBox[state.box1Contain[i].index].y = state.box1Contain[i].pos.y;
+                this._colliderBox[state.box1Contain[i].index].data.posIndex = state.box1Contain[i].posIndex;
+                this._colliderBox[state.box1Contain[i].index].sortingOrder = 1;
             }
         }
         if (!globalThis._.isEqual(oldState.box2Contain, state.box2Contain)) {
             for (var i = 0; i < state.box2Contain.length; i++) {
                 this._colliderBox[state.box2Contain[i].index].x = state.box2Contain[i].pos.x;
                 this._colliderBox[state.box2Contain[i].index].y = state.box2Contain[i].pos.y;
+                this._colliderBox[state.box2Contain[i].index].data.posIndex = state.box2Contain[i].posIndex;
+                this._colliderBox[state.box2Contain[i].index].sortingOrder = 1;
             }
         }
         if (!globalThis._.isEqual(oldState.box3Contain, state.box3Contain)) {
             for (var i = 0; i < state.box3Contain.length; i++) {
                 this._colliderBox[state.box3Contain[i].index].x = state.box3Contain[i].pos.x;
                 this._colliderBox[state.box3Contain[i].index].y = state.box3Contain[i].pos.y;
+                this._colliderBox[state.box3Contain[i].index].data.posIndex = state.box3Contain[i].posIndex;
+                this._colliderBox[state.box3Contain[i].index].sortingOrder = 1;
             }
         }
         if (!globalThis._.isEqual(oldState.box4Contain, state.box4Contain)) {
             for (var i = 0; i < state.box4Contain.length; i++) {
                 this._colliderBox[state.box4Contain[i].index].x = state.box4Contain[i].pos.x;
                 this._colliderBox[state.box4Contain[i].index].y = state.box4Contain[i].pos.y;
+                this._colliderBox[state.box4Contain[i].index].data.posIndex = state.box4Contain[i].posIndex;
+                this._colliderBox[state.box4Contain[i].index].sortingOrder = 1;
             }
         }
         if (!globalThis._.isEqual(oldState.title, state.title)) {
@@ -786,7 +1060,20 @@ var dragAnswer_model03_v3 = /** @class */ (function (_super) {
         feedback.parent = cc.find("Canvas").parent;
         setTimeout(function () {
             feedback.destroy();
-        }, 1000);
+        }, 2000);
+    };
+    dragAnswer_model03_v3.prototype.offButDrag = function () {
+        this.arrContainOffDrag(this._leftContain);
+        this.arrContainOffDrag(this._rightContain);
+        this.arrContainOffDrag(this._box1Contain);
+        this.arrContainOffDrag(this._box2Contain);
+        this.arrContainOffDrag(this._box3Contain);
+        this.arrContainOffDrag(this._box4Contain);
+    };
+    dragAnswer_model03_v3.prototype.arrContainOffDrag = function (arr) {
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].draggable = false;
+        }
     };
     // 注册状态，及获取状态的方法
     dragAnswer_model03_v3.prototype.registerState = function () {

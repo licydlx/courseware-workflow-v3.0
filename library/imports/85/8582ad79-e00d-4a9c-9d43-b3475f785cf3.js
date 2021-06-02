@@ -86,6 +86,13 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
             SIZE: 1,
             COLOUR: 2
         });
+        _this.tiShiShowType = cc.Enum({
+            No: 0,
+            Size: 1,
+            Color: 2,
+            Finish: 3
+        });
+        _this._tiShiShow = _this.tiShiShowType.No;
         _this._answer = []; // 0：没答题时 1：答对第一种选择时 2： 答对第二种选择时
         _this._state = {};
         return _this;
@@ -103,6 +110,10 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
         configurable: true
     });
     dragAnswer_model03_v1.prototype.onLoad = function () {
+        this._answer = [];
+        this._leftContain = [];
+        this._rightContain = [];
+        this._colliderBox = [];
         this._worldRoot = cc.find("Canvas").parent;
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
@@ -111,22 +122,25 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
         if (this._submit)
             this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
         this._c1 = this._view.getController("c1");
+        this._c2 = this._view.getController("c2");
         if (this._c1) {
             this._c1.selectedIndex = 1;
             this._c1.selectedIndex = 0;
         }
+        if (this._c2) {
+            this._c2.selectedIndex = this._tiShiShow.No;
+        }
+        this._tiShiSize = this._view.getChild("sizeType").asLoader.url;
+        this._tiShiColor = this._view.getChild("colorType").asLoader.url;
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
+        this._titleTrigger.sortingOrder = 2;
         if (this._titleTrigger)
             this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
         this._title = this._view.getChild("title").asButton;
+        this._title.sortingOrder = 2;
         this._colliderGroup = this._view.getChild("colliderBox").asGroup;
         this._collideredGroup = this._view.getChild("collideredBox").asGroup;
-        this._bg1 = this._view.getChild('bg1').asImage;
-        this._bg2 = this._view.getChild('bg2').asImage;
-        this._bg3 = this._view.getChild('bg3').asImage;
-        this._bg1.visible = true;
-        this._bg2.visible = false;
-        this._bg3.visible = false;
+        this._bgdoor = this._view.getChild('bgdoor').asCom;
         for (var i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == this._colliderGroup) {
                 var node = this._view.getChildAt(i).asButton;
@@ -134,13 +148,14 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
                 node.data = {
                     index: this._colliderBox.length,
                     x: node.x,
-                    y: node.y
+                    y: node.y,
+                    posIndex: -1
                 };
                 node.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
                 node.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
                 node.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
                 this._colliderBox.push(node);
-                var colliderData = { pos: { x: node.data.x, y: node.data.y }, index: node.data.index };
+                var colliderData = { pos: { x: node.data.x, y: node.data.y }, index: node.data.index, posIndex: node.data.posIndex };
                 this._colliderCache.push(colliderData);
             }
         }
@@ -289,7 +304,9 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
     };
     dragAnswer_model03_v1.prototype._onDragStart = function (evt) {
         evt.captureTouch();
+        this._lastPos = evt.pos;
         var btn = fgui.GObject.cast(evt.currentTarget);
+        btn.sortingOrder = 1;
         var state = globalThis._.cloneDeep(this._state);
         for (var i = 0; i < state.colliderBox.length; i++) {
             if (btn.data.index === state.colliderBox[i].index) {
@@ -303,97 +320,242 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
     dragAnswer_model03_v1.prototype._onDragMove = function (evt) {
     };
     dragAnswer_model03_v1.prototype._onDragEnd = function (evt) {
-        cc.audioEngine.play(this._dragSound, false, 1);
         var state = globalThis._.cloneDeep(this._state);
         var btn = fgui.GObject.cast(evt.currentTarget);
+        btn.sortingOrder = 0;
+        cc.audioEngine.play(this._dragSound, false, 1);
+        var moveIsMin = Math.abs(evt.pos.x - this._lastPos.x) < 70 && Math.abs(evt.pos.y - this._lastPos.y) < 70;
         var tarPos = new cc.Vec2(btn.x, btn.y);
-        var isContainer = false;
-        for (var i = 0; i < this._leftContain.length; i++) {
-            if (this._leftContain[i] === btn) {
-                isContainer = true;
-                this._leftContain.splice(i, 1);
-                for (var i_1 = 0; i_1 < state.leftContain.length; i_1++) {
-                    if (state.leftContain[i_1].index === btn.data.index) {
-                        state.leftContain.splice(i_1, 1);
-                        break;
-                    }
-                }
-                break;
-            }
-        }
-        for (var i = 0; i < this._rightContain.length; i++) {
-            if (this._rightContain[i] === btn) {
-                isContainer = true;
-                this._rightContain.splice(i, 1);
-                for (var i_2 = 0; i_2 < state.rightContain.length; i_2++) {
-                    if (state.rightContain[i_2].index === btn.data.index) {
-                        state.rightContain.splice(i_2, 1);
-                        break;
-                    }
-                }
-                break;
-            }
-        }
-        if (isContainer) {
-            // 恢复原位
-            var temp = {
-                pos: {
-                    x: btn.data.x,
-                    y: btn.data.y
-                },
-                index: btn.data.index
-            };
-            state.colliderBox.push(temp);
-            for (var i = 0; i < state.leftContain.length; i++) {
-                state.leftContain[i].pos.x = this._leftPositon[i].x;
-                state.leftContain[i].pos.y = this._leftPositon[i].y;
-            }
-            for (var i = 0; i < state.rightContain.length; i++) {
-                state.rightContain[i].pos.x = this._rightPositon[i].x;
-                state.rightContain[i].pos.y = this._rightPositon[i].y;
-            }
-            this.updateState(state);
-            return;
-        }
+        var isContainerLeft = false;
+        var isContainerRight = false;
+        isContainerLeft = this.judgeDragObjInBox(this._leftContain, btn);
+        isContainerRight = this.judgeDragObjInBox(this._rightContain, btn);
         // 左
-        if (this._leftRect.contains(tarPos) && this._leftContain.length < this._containerTotal) {
+        if (this._leftRect.contains(tarPos)) {
             console.log('==== 左 ====');
-            this._leftContain.push(btn);
-            var temp = { pos: { x: this._leftPositon[state.leftContain.length].x,
-                    y: this._leftPositon[state.leftContain.length].y },
-                index: btn.data.index };
-            state.leftContain.push(temp);
+            if (isContainerLeft) {
+                if (moveIsMin || this._leftContain.length < 2) {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                    //删除包含的刷新
+                    this.deleteCurDragObjInBox(this._leftContain, btn, state.leftContain);
+                    this.refreshBoxPos(state.leftContain, this._leftPositon);
+                }
+                else {
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.leftContain, this._leftPositon, btn, this._leftContain, state.colliderBox);
+                }
+            }
+            else {
+                // 从外面拖进来的
+                this.dealAllContainIn(false, isContainerRight, state, btn);
+                if (this._leftContain.length < this._containerTotal) {
+                    this._leftContain.push(btn);
+                    var temp = {
+                        pos: {
+                            x: this._leftPositon[state.leftContain.length].x,
+                            y: this._leftPositon[state.leftContain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.leftContain.length
+                    };
+                    state.leftContain.push(temp);
+                }
+                else {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                }
+            }
         }
-        else if (this._rightRect.contains(tarPos) && this._rightContain.length < this._containerTotal) {
-            this._rightContain.push(btn);
-            var temp = { pos: { x: this._rightPositon[state.rightContain.length].x,
-                    y: this._rightPositon[state.rightContain.length].y },
-                index: btn.data.index };
-            state.rightContain.push(temp);
+        else if (this._rightRect.contains(tarPos)) {
+            if (isContainerRight) {
+                if (moveIsMin || this._rightContain.length < 2) {
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                    //删除左边包含的；刷新
+                    this.deleteCurDragObjInBox(this._rightContain, btn, state.rightContain);
+                    this.refreshBoxPos(state.rightContain, this._rightPositon);
+                }
+                else {
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.rightContain, this._rightPositon, btn, this._rightContain, state.colliderBox);
+                }
+            }
+            else {
+                this.dealAllContainIn(isContainerLeft, false, state, btn);
+                if (this._rightContain.length < this._containerTotal) {
+                    this._rightContain.push(btn);
+                    var temp = {
+                        pos: {
+                            x: this._rightPositon[state.rightContain.length].x,
+                            y: this._rightPositon[state.rightContain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.rightContain.length
+                    };
+                    state.rightContain.push(temp);
+                }
+                else {
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                }
+            }
         }
         else {
-            var temp = { pos: { x: btn.data.x, y: btn.data.y }, index: btn.data.index };
-            state.colliderBox.push(temp);
+            this.dealAllContainIn(isContainerLeft, isContainerRight, state, btn);
+            this.resetButtonInitPos(state.colliderBox, btn);
         }
         this.updateState(state);
     };
-    dragAnswer_model03_v1.prototype.refreshBg = function (answer) {
-        if (answer.length === 0) {
-            this._bg1.visible = true;
-            this._bg2.visible = false;
-            this._bg3.visible = false;
+    dragAnswer_model03_v1.prototype.dealAllContainIn = function (isContainerLeft, isContainerRight, state, btn) {
+        if (isContainerLeft) {
+            this.deleteCurDragObjInBox(this._leftContain, btn, state.leftContain);
+            this.refreshBoxPos(state.leftContain, this._leftPositon);
         }
-        else if (answer.length === 1) {
-            this._bg1.visible = false;
-            this._bg2.visible = true;
-            this._bg3.visible = false;
-            this.answerFeedback(true);
+        if (isContainerRight) {
+            this.deleteCurDragObjInBox(this._rightContain, btn, state.rightContain);
+            this.refreshBoxPos(state.rightContain, this._rightPositon);
+        }
+    };
+    dragAnswer_model03_v1.prototype.judgeChangePosInBox = function (curPos, stateContain, posArr, btn, boxContain, stateColliderBox) {
+        var changeIndex = -1;
+        var clickIndex = btn.data.posIndex;
+        console.log('交换 点击的Index ========' + btn.data.posIndex);
+        if (curPos.x - this._lastPos.x > 110 && Math.abs(curPos.y - this._lastPos.y) < 50) {
+            console.log('交换 右 ========');
+            //右
+            changeIndex = clickIndex + 1;
+        }
+        else if (curPos.x - this._lastPos.x < -110 && Math.abs(curPos.y - this._lastPos.y) < 50) {
+            //左
+            console.log('交换 左 ========');
+            changeIndex = clickIndex - 1;
+        }
+        else if (curPos.y - this._lastPos.y > 110 && Math.abs(curPos.x - this._lastPos.x) < 50) {
+            // 下
+            console.log('交换 下 ========');
+            changeIndex = clickIndex + 2;
+        }
+        else if (curPos.y - this._lastPos.y < -110 && Math.abs(curPos.x - this._lastPos.x) < 50) {
+            // 上
+            console.log('交换 上 ========');
+            changeIndex = clickIndex - 2;
+        }
+        else if (curPos.x - this._lastPos.x > 110 && curPos.y - this._lastPos.y > 110) {
+            // 右下
+            console.log('交换 右下 ========');
+            changeIndex = clickIndex + 3;
+        }
+        else if (Math.abs(curPos.x - this._lastPos.x) > 50 && curPos.x - this._lastPos.x < 110 && curPos.y - this._lastPos.y > 110) {
+            // 左下
+            console.log('交换 左下 ========');
+            changeIndex = clickIndex + 1;
+        }
+        else if (curPos.x - this._lastPos.x > 110 && curPos.y - this._lastPos.y < 110 && Math.abs(curPos.y - this._lastPos.y) > 50) {
+            // 右上
+            console.log('交换 右上 ========');
+            changeIndex = clickIndex - 1;
+        }
+        else if (curPos.x - this._lastPos.x < 110 && curPos.y - this._lastPos.y < 110 && Math.abs(curPos.x - this._lastPos.x) > 50 && Math.abs(curPos.y - this._lastPos.y) > 50) {
+            // 左上
+            console.log('交换 左上 ========');
+            changeIndex = clickIndex - 3;
+        }
+        else {
+            console.log('交换 YYYYY ========' + (curPos.y - this._lastPos.y));
+            // 恢复原位
+            this.resetButtonInitPos(stateColliderBox, btn);
+            //删除左边包含的；刷新
+            this.deleteCurDragObjInBox(boxContain, btn, stateContain);
+            this.refreshBoxPos(stateContain, posArr);
+            return;
+        }
+        console.log('交换ing clickIndex ========  ' + clickIndex);
+        console.log('交换ing changeIndex ========  ' + changeIndex);
+        if (changeIndex < 0 || changeIndex > stateContain.length - 1) {
+            //删除左边包含的；归位到原来的位置
+            this.resetButtonInitPos(stateColliderBox, btn);
+            this.deleteCurDragObjInBox(boxContain, btn, stateContain);
+            this.refreshBoxPos(stateContain, posArr);
+            return;
+        }
+        var tempClickIndex = stateContain[clickIndex].index;
+        var tempChangeIndex = stateContain[changeIndex].index;
+        stateContain[clickIndex].index = tempChangeIndex;
+        stateContain[changeIndex].index = tempClickIndex;
+    };
+    dragAnswer_model03_v1.prototype.resetButtonInitPos = function (stateColliderBox, btn) {
+        // 恢复原位
+        var temp = {
+            pos: {
+                x: btn.data.x,
+                y: btn.data.y
+            },
+            index: btn.data.index,
+            posIndex: -1
+        };
+        stateColliderBox.push(temp);
+    };
+    dragAnswer_model03_v1.prototype.judgeDragObjInBox = function (_box, curBut) {
+        var isContainer = false;
+        for (var i = 0; i < _box.length; i++) {
+            if (_box[i] === curBut) {
+                isContainer = true;
+                break;
+            }
+        }
+        return isContainer;
+    };
+    dragAnswer_model03_v1.prototype.deleteCurDragObjInBox = function (_box, curBut, stateBox) {
+        for (var i = 0; i < _box.length; i++) {
+            if (_box[i] === curBut) {
+                _box.splice(i, 1);
+                for (var i_1 = 0; i_1 < stateBox.length; i_1++) {
+                    if (stateBox[i_1].index === curBut.data.index) {
+                        stateBox.splice(i_1, 1);
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    };
+    dragAnswer_model03_v1.prototype.refreshBoxPos = function (stateContain, posArr) {
+        for (var i = 0; i < stateContain.length; i++) {
+            stateContain[i].pos.x = posArr[i].x;
+            stateContain[i].pos.y = posArr[i].y;
+            stateContain[i].posIndex = i;
+        }
+    };
+    dragAnswer_model03_v1.prototype.refreshBg = function (answer) {
+        var _this = this;
+        if (answer.length === 1) {
+            this._bgdoor.getTransition('open1').play(function () {
+                _this.answerFeedback(true);
+            });
         }
         else if (answer.length === 2) {
-            this._bg1.visible = false;
-            this._bg2.visible = false;
-            this._bg3.visible = true;
-            this.answerFeedback(true);
+            if (answer[0] === this.answerType.SIZE) {
+                this._view.getChild("firstAnswer").asLoader.url = this._tiShiSize;
+            }
+            else {
+                this._view.getChild("firstAnswer").asLoader.url = this._tiShiColor;
+            }
+            if (answer[1] === this.answerType.SIZE) {
+                this._view.getChild("secondAnswer").asLoader.url = this._tiShiSize;
+            }
+            else {
+                this._view.getChild("secondAnswer").asLoader.url = this._tiShiColor;
+            }
+            this._submit.visible = false;
+            this._bgdoor.getTransition('open2').play(function () {
+                _this.answerFeedback(true);
+            });
+            this._view.getChild("showbg1").sortingOrder = 1;
+            this._view.getChild("showbg2").sortingOrder = 1;
+            this._view.getChild("showbg3").sortingOrder = 1;
+            this._view.getChild("firstAnswer").sortingOrder = 1;
+            this._view.getChild("secondAnswer").sortingOrder = 1;
+            this.offButDrag();
         }
     };
     dragAnswer_model03_v1.prototype.refreshInitPanel = function () {
@@ -493,6 +655,10 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
                     }
                     this._answer.push(this.answerType.SIZE); //大小
                     state.answer = this._answer;
+                    this._tiShiShow = this.tiShiShowType.Size;
+                    if (state.answer.length >= 2) {
+                        this._tiShiShow = this.tiShiShowType.Finish;
+                    }
                 }
                 else if (isSame2) {
                     console.log('==== 回答 isSame2 ====');
@@ -505,6 +671,10 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
                     }
                     this._answer.push(this.answerType.COLOUR); //颜色
                     state.answer = this._answer;
+                    this._tiShiShow = this.tiShiShowType.Color;
+                    if (state.answer.length >= 2) {
+                        this._tiShiShow = this.tiShiShowType.Finish;
+                    }
                 }
                 else {
                     this.answerFeedback(false);
@@ -556,18 +726,21 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
             for (var i = 0; i < state.colliderBox.length; i++) {
                 this._colliderBox[state.colliderBox[i].index].x = state.colliderBox[i].pos.x;
                 this._colliderBox[state.colliderBox[i].index].y = state.colliderBox[i].pos.y;
+                this._colliderBox[state.colliderBox[i].index].data.posIndex = -1;
             }
         }
         if (!globalThis._.isEqual(oldState.leftContain, state.leftContain)) {
             for (var i = 0; i < state.leftContain.length; i++) {
                 this._colliderBox[state.leftContain[i].index].x = state.leftContain[i].pos.x;
                 this._colliderBox[state.leftContain[i].index].y = state.leftContain[i].pos.y;
+                this._colliderBox[state.leftContain[i].index].data.posIndex = state.leftContain[i].posIndex;
             }
         }
         if (!globalThis._.isEqual(oldState.rightContain, state.rightContain)) {
             for (var i = 0; i < state.rightContain.length; i++) {
                 this._colliderBox[state.rightContain[i].index].x = state.rightContain[i].pos.x;
                 this._colliderBox[state.rightContain[i].index].y = state.rightContain[i].pos.y;
+                this._colliderBox[state.rightContain[i].index].data.posIndex = state.rightContain[i].posIndex;
             }
         }
         if (!globalThis._.isEqual(oldState.title, state.title)) {
@@ -575,6 +748,7 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
         }
     };
     dragAnswer_model03_v1.prototype.answerFeedback = function (bool) {
+        var _this = this;
         if (!this.feedback)
             return;
         var feedback = cc.instantiate(this.feedback);
@@ -585,7 +759,18 @@ var dragAnswer_model03_v1 = /** @class */ (function (_super) {
         feedback.parent = cc.find("Canvas").parent;
         setTimeout(function () {
             feedback.destroy();
-        }, 1000);
+            if (bool) {
+                _this._c2.selectedIndex = _this._tiShiShow;
+            }
+        }, 2000);
+    };
+    dragAnswer_model03_v1.prototype.offButDrag = function () {
+        for (var i = 0; i < this._leftContain.length; i++) {
+            this._leftContain[i].draggable = false;
+        }
+        for (var i = 0; i < this._rightContain.length; i++) {
+            this._leftContain[i].draggable = false;
+        }
     };
     // 注册状态，及获取状态的方法
     dragAnswer_model03_v1.prototype.registerState = function () {

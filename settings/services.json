@@ -10,7 +10,11 @@
 			"services": [
 				{
 					"service_id": "272",
-					"enable": true
+					"enable": true,
+					"params": {
+						"env_id": "after-school-review-8cguaeaace9d",
+						"plugin_version": "0.7.2_1.3.3"
+					}
 				}
 			]
 		},
@@ -22,7 +26,11 @@
 			"services": [
 				{
 					"service_id": "272",
-					"enable": true
+					"enable": true,
+					"params": {
+						"env_id": "after-school-review-8cguaeaace9d",
+						"plugin_version": "0.7.2_1.3.3"
+					}
 				}
 			]
 		}

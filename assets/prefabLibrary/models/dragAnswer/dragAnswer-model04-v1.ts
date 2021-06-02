@@ -18,13 +18,13 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     private _worldRoot: cc.Node;
     private _view: fgui.GComponent;
 
-    private _colliderGroup:fgui.GGroup;
-    private _collideredGroup:fgui.GGroup;
-    
+    private _colliderGroup: fgui.GGroup;
+    private _collideredGroup: fgui.GGroup;
+
     private _colliderBox = [];
 
-    private _leftPositon: any = [{x: 330, y:760}, {x: 540, y:760}, {x: 330, y:925}, {x: 540, y:925}];
-    private _rightPositon: any = [{x: 1370, y:760}, {x: 1610, y:760}, {x: 1370, y:925}, {x: 1610, y:925}];
+    private _leftPositon: any = [{ x: 330, y: 760 }, { x: 540, y: 760 }, { x: 330, y: 925 }, { x: 540, y: 925 }];
+    private _rightPositon: any = [{ x: 1370, y: 760 }, { x: 1610, y: 760 }, { x: 1370, y: 925 }, { x: 1610, y: 925 }];
 
     private _leftRect: cc.Rect;
     private _rightRect: cc.Rect;
@@ -37,18 +37,19 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     private _colliderCache = [];
 
     private _submit: fgui.GButton;
-    
-    private _bg1: fgui.GImage;
 
-    private _bg2: fgui.GImage;
-
-    private _bg3: fgui.GImage;
+    private _bgdoor: fgui.GComponent;
 
     private _c1: fgui.Controller;
+    private _c2: fgui.Controller;
 
     private _title: fgui.GButton;
 
     private _titleTrigger: fgui.GLoader;
+
+    private _tiShiSize: string;
+
+    private _tiShiColor: string;
 
     private _dragSound: cc.AudioClip;
 
@@ -58,11 +59,23 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     private _dragging = false;
 
+    private _lastPos: cc.Vec2;
+
     private answerType: any = cc.Enum({
 
         SIZE: 1,
         COLOUR: 2
     });
+
+    private tiShiShowType: any = cc.Enum({
+
+        No: 0,
+        Size: 1,
+        Color: 2,
+        Finish: 3
+    });
+
+    private _tiShiShow = this.tiShiShowType.No;
 
     // 远程动态组件
     private feedback: any;
@@ -83,6 +96,11 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     onLoad() {
 
+        this._answer = [];
+        this._leftContain = [];
+        this._rightContain = [];
+        this._colliderBox = [];
+
         this._worldRoot = cc.find("Canvas").parent;
 
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
@@ -93,26 +111,32 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
 
         this._c1 = this._view.getController("c1");
+        this._c2 = this._view.getController("c2");
+
         if (this._c1) {
             this._c1.selectedIndex = 1;
             this._c1.selectedIndex = 0;
         }
 
+        if (this._c2) {
+            this._c2.selectedIndex = this._tiShiShow.No;
+        }
+
+        this._tiShiSize = this._view.getChild("sizeType").asLoader.url;
+        this._tiShiColor = this._view.getChild("colorType").asLoader.url;
+
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
+        this._titleTrigger.sortingOrder = 2;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
 
         this._title = this._view.getChild("title").asButton;
+        this._title.sortingOrder = 2;
 
         this._colliderGroup = this._view.getChild("colliderBox").asGroup;
         this._collideredGroup = this._view.getChild("collideredBox").asGroup;
 
-        this._bg1 = this._view.getChild('bg1').asImage;
-        this._bg2 = this._view.getChild('bg2').asImage;
-        this._bg3 = this._view.getChild('bg3').asImage;
 
-        this._bg1.visible = true;
-        this._bg2.visible = false;
-        this._bg3.visible = false;
+        this._bgdoor = this._view.getChild('bgdoor').asCom;
 
         for (let i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == this._colliderGroup) {
@@ -121,14 +145,14 @@ export default class dragAnswer_model03_v1 extends cc.Component {
                 node.data = {
                     index: this._colliderBox.length,
                     x: node.x,
-                    y: node.y
+                    y: node.y,
+                    posIndex: -1
                 };
-                
                 node.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
                 node.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
                 node.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
                 this._colliderBox.push(node);
-                let colliderData = {pos:{x: node.data.x, y: node.data.y}, index: node.data.index};
+                let colliderData = { pos: { x: node.data.x, y: node.data.y }, index: node.data.index, posIndex: node.data.posIndex };
                 this._colliderCache.push(colliderData);
 
             }
@@ -137,14 +161,13 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         this._leftRect = new cc.Rect(111, 641, 654, 407);
         this._rightRect = new cc.Rect(1162, 641, 654, 407);
 
-
-     // 初始化state
+        // 初始化state
         this._state = {
 
             answer: this._answer,
 
             colliderBox: this._colliderCache,
-  
+
             leftContain: [],
 
             rightContain: [],
@@ -152,6 +175,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             title: false,
 
             submit: false
+
         }
 
         // 临时 禁止操作期间 切页
@@ -173,8 +197,8 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }
     }
 
-     // 操作提示
-     onHandleGuide(handleGuide) {
+    // 操作提示
+    onHandleGuide(handleGuide) {
         if (!handleGuide) return;
         let state: any = globalThis._.cloneDeep(this._state);
         fgui.GRoot.inst.addChild(handleGuide.component);
@@ -214,7 +238,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     }
 
     async init(data: any) {
-       
+
         // 临时 model component json 配置加载
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
@@ -248,12 +272,12 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             }
         }
 
-        let dragBut:fgui.GButton = this._view.getChild('dragSound').asButton;
+        let dragBut: fgui.GButton = this._view.getChild('dragSound').asButton;
         dragBut.visible = false;
         let item = fgui.UIPackage.getItemByURL(dragBut["_sound"]);
         this._dragSound = await loadResource(item.file, cc.AudioClip);
 
-        let clickBut:fgui.GButton = this._view.getChild('clickSound').asButton;
+        let clickBut: fgui.GButton = this._view.getChild('clickSound').asButton;
         clickBut.visible = false;
         item = fgui.UIPackage.getItemByURL(clickBut["_sound"]);
         this._clickSound = await loadResource(item.file, cc.AudioClip);
@@ -270,159 +294,348 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
         evt.captureTouch();
 
-        var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
+        this._lastPos = evt.pos;
 
+
+        var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
+        btn.sortingOrder = 1;
         let state: any = globalThis._.cloneDeep(this._state);
 
         for (let i = 0; i < state.colliderBox.length; i++) {
 
-        if (btn.data.index === state.colliderBox[i].index) {
+            if (btn.data.index === state.colliderBox[i].index) {
 
-            state.colliderBox.splice(i, 1);
-            break;
-         }
-        } 
+                state.colliderBox.splice(i, 1);
+                break;
+            }
+        }
         cc.audioEngine.play(this._clickSound, false, 1);
 
         this.updateState(state);
     }
 
     private _onDragMove(evt: fgui.Event): void {
-       
+
     }
 
     private _onDragEnd(evt: fgui.Event): void {
-        cc.audioEngine.play(this._dragSound, false, 1);
 
         let state: any = globalThis._.cloneDeep(this._state);
-
         var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
+        btn.sortingOrder = 0;
+
+        cc.audioEngine.play(this._dragSound, false, 1);
+
+        let moveIsMin = Math.abs(evt.pos.x - this._lastPos.x) < 70 && Math.abs(evt.pos.y - this._lastPos.y) < 70;
+
         let tarPos = new cc.Vec2(btn.x, btn.y);
-        let isContainer = false;
+        let isContainerLeft = false;
+        let isContainerRight = false;
 
-        for(let i = 0; i < this._leftContain.length; i++) {
-
-            if (this._leftContain[i] === btn) {
-
-                isContainer = true;
-                this._leftContain.splice(i, 1);
-
-                for (let i = 0; i < state.leftContain.length; i++) {
-
-                    if (state.leftContain[i].index === btn.data.index) {
-
-                        state.leftContain.splice(i, 1);
-                        break;
-                    }
-                }
-                break;
-            }
-        } 
-
-        for(let i = 0; i < this._rightContain.length; i++) {
-
-            if (this._rightContain[i] === btn) {
-
-                isContainer = true;
-                this._rightContain.splice(i, 1);
-
-                for (let i = 0; i < state.rightContain.length; i++) {
-
-                    if (state.rightContain[i].index === btn.data.index) {
-
-                        state.rightContain.splice(i, 1);
-                        break;
-                    }
-                }
-
-                break;
-            }
-        } 
-
-        if (isContainer) {
-
-            // 恢复原位
-            let temp = {
-                        pos:
-                        {
-                            x: btn.data.x,
-                            y: btn.data.y
-                        },
-                            index: btn.data.index
-                        };
-                        
-            state.colliderBox.push(temp);
-           
-            for (let i = 0; i < state.leftContain.length; i++) {
-
-                state.leftContain[i].pos.x = this._leftPositon[i].x;
-                state.leftContain[i].pos.y = this._leftPositon[i].y;
-            }
-            for (let i = 0; i < state.rightContain.length; i++) {
-    
-                state.rightContain[i].pos.x = this._rightPositon[i].x;
-                state.rightContain[i].pos.y = this._rightPositon[i].y;
-            }
-            
-            this.updateState(state);
-
-            return;
-        }
+        isContainerLeft = this.judgeDragObjInBox(this._leftContain, btn);
+        isContainerRight = this.judgeDragObjInBox(this._rightContain, btn);
 
         // 左
-        if (this._leftRect.contains(tarPos) && this._leftContain.length < this._containerTotal) {
+        if (this._leftRect.contains(tarPos)) {
 
             console.log('==== 左 ====');
-            this._leftContain.push(btn);
+            if (isContainerLeft) {
 
-            let temp = {pos: {x: this._leftPositon[state.leftContain.length].x,
-                              y: this._leftPositon[state.leftContain.length].y}, 
-                              index: btn.data.index};
-            state.leftContain.push(temp);
+                if (moveIsMin || this._leftContain.length < 2) {
 
-            
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
 
-        } else if (this._rightRect.contains(tarPos) && this._rightContain.length < this._containerTotal) {
-            this._rightContain.push(btn);
+                    //删除包含的刷新
+                    this.deleteCurDragObjInBox(this._leftContain, btn, state.leftContain);
+                    this.refreshBoxPos(state.leftContain, this._leftPositon);
 
-            let temp = {pos: {x: this._rightPositon[state.rightContain.length].x,
-                              y: this._rightPositon[state.rightContain.length].y}, 
-                              index: btn.data.index};
-            state.rightContain.push(temp);
+                } else {
 
-            
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.leftContain, this._leftPositon, btn, this._leftContain, state.colliderBox);
+                }
 
-        }else {
-            let temp = {pos: {x: btn.data.x, y: btn.data.y}, index: btn.data.index};
-            state.colliderBox.push(temp);
+            } else {
+
+                // 从外面拖进来的
+                this.dealAllContainIn(false, isContainerRight, state, btn);
+
+                if (this._leftContain.length < this._containerTotal) {
+
+                    this._leftContain.push(btn);
+
+                    let temp = {
+                        pos: {
+                            x: this._leftPositon[state.leftContain.length].x,
+                            y: this._leftPositon[state.leftContain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.leftContain.length
+                    };
+                    state.leftContain.push(temp);
+
+                } else {
+
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+
+                }
+
+            }
+
+        } else if (this._rightRect.contains(tarPos)) {
+
+            if (isContainerRight) {
+
+                if (moveIsMin || this._rightContain.length < 2) {
+
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                    //删除左边包含的；刷新
+                    this.deleteCurDragObjInBox(this._rightContain, btn, state.rightContain);
+                    this.refreshBoxPos(state.rightContain, this._rightPositon);
+                } else {
+                    // 交换框内的位置
+                    this.judgeChangePosInBox(evt.pos, state.rightContain, this._rightPositon, btn, this._rightContain, state.colliderBox);
+                }
+
+            } else {
+
+                this.dealAllContainIn(isContainerLeft, false, state, btn);
+
+                if (this._rightContain.length < this._containerTotal) {
+
+                    this._rightContain.push(btn);
+
+                    let temp = {
+                        pos: {
+                            x: this._rightPositon[state.rightContain.length].x,
+                            y: this._rightPositon[state.rightContain.length].y
+                        },
+                        index: btn.data.index,
+                        posIndex: state.rightContain.length
+                    };
+                    state.rightContain.push(temp);
+
+                } else {
+
+                    // 恢复原位
+                    this.resetButtonInitPos(state.colliderBox, btn);
+                }
+            }
+
+        } else {
+
+            this.dealAllContainIn(isContainerLeft, isContainerRight, state, btn);
+            this.resetButtonInitPos(state.colliderBox, btn);
         }
 
         this.updateState(state);
     }
 
+
+    private dealAllContainIn(isContainerLeft, isContainerRight, state, btn) {
+
+        if (isContainerLeft) {
+
+            this.deleteCurDragObjInBox(this._leftContain, btn, state.leftContain);
+            this.refreshBoxPos(state.leftContain, this._leftPositon);
+        }
+
+        if (isContainerRight) {
+
+            this.deleteCurDragObjInBox(this._rightContain, btn, state.rightContain);
+            this.refreshBoxPos(state.rightContain, this._rightPositon);
+        }
+
+
+    }
+
+    private judgeChangePosInBox(curPos, stateContain, posArr, btn, boxContain, stateColliderBox) {
+
+        let changeIndex = -1;
+        let clickIndex = btn.data.posIndex;
+
+        console.log('交换 点击的Index ========' + btn.data.posIndex);
+
+        if (curPos.x - this._lastPos.x > 110 && Math.abs(curPos.y - this._lastPos.y) < 50) {
+
+            console.log('交换 右 ========');
+            //右
+            changeIndex = clickIndex + 1;
+
+        } else if (curPos.x - this._lastPos.x < -110 && Math.abs(curPos.y - this._lastPos.y) < 50) {
+
+            //左
+            console.log('交换 左 ========');
+            changeIndex = clickIndex - 1;
+
+        } else if (curPos.y - this._lastPos.y > 110 && Math.abs(curPos.x - this._lastPos.x) < 50) {
+
+            // 下
+            console.log('交换 下 ========');
+            changeIndex = clickIndex + 2;
+
+
+        } else if (curPos.y - this._lastPos.y < -110 && Math.abs(curPos.x - this._lastPos.x) < 50) {
+
+            // 上
+            console.log('交换 上 ========');
+            changeIndex = clickIndex - 2;
+        } else if (curPos.x - this._lastPos.x > 110 && curPos.y - this._lastPos.y > 110) {
+
+            // 右下
+            console.log('交换 右下 ========');
+            changeIndex = clickIndex + 3;
+
+        } else if (Math.abs(curPos.x - this._lastPos.x) > 50 && curPos.x - this._lastPos.x < 110 && curPos.y - this._lastPos.y > 110) {
+
+            // 左下
+            console.log('交换 左下 ========');
+            changeIndex = clickIndex + 1;
+
+        } else if (curPos.x - this._lastPos.x > 110 && curPos.y - this._lastPos.y < 110 && Math.abs(curPos.y - this._lastPos.y) > 50) {
+            // 右上
+            console.log('交换 右上 ========');
+            changeIndex = clickIndex - 1;
+
+        } else if (curPos.x - this._lastPos.x < 110 && curPos.y - this._lastPos.y < 110 && Math.abs(curPos.x - this._lastPos.x) > 50 && Math.abs(curPos.y - this._lastPos.y) > 50) {
+
+            // 左上
+            console.log('交换 左上 ========');
+            changeIndex = clickIndex - 3;
+
+        } else {
+
+            console.log('交换 YYYYY ========' + (curPos.y - this._lastPos.y));
+
+            // 恢复原位
+            this.resetButtonInitPos(stateColliderBox, btn);
+
+            //删除左边包含的；刷新
+            this.deleteCurDragObjInBox(boxContain, btn, stateContain);
+            this.refreshBoxPos(stateContain, posArr);
+
+            return;
+        }
+
+        console.log('交换ing clickIndex ========  ' + clickIndex);
+        console.log('交换ing changeIndex ========  ' + changeIndex);
+
+        if (changeIndex < 0 || changeIndex > stateContain.length - 1) {
+
+            //删除左边包含的；归位到原来的位置
+            this.resetButtonInitPos(stateColliderBox, btn);
+            this.deleteCurDragObjInBox(boxContain, btn, stateContain);
+            this.refreshBoxPos(stateContain, posArr);
+
+            return;
+        }
+
+        let tempClickIndex = stateContain[clickIndex].index;
+        let tempChangeIndex = stateContain[changeIndex].index;
+
+        stateContain[clickIndex].index = tempChangeIndex;
+        stateContain[changeIndex].index = tempClickIndex;
+    }
+
+    private resetButtonInitPos(stateColliderBox, btn) {
+
+        // 恢复原位
+        let temp = {
+            pos:
+            {
+                x: btn.data.x,
+                y: btn.data.y
+            },
+            index: btn.data.index,
+            posIndex: -1
+        };
+        stateColliderBox.push(temp);
+
+    }
+
+    private judgeDragObjInBox(_box, curBut) {
+
+        let isContainer = false;
+        for (let i = 0; i < _box.length; i++) {
+
+            if (_box[i] === curBut) {
+
+                isContainer = true;
+                break;
+            }
+        }
+
+        return isContainer;
+    }
+
+    private deleteCurDragObjInBox(_box, curBut, stateBox) {
+
+        for (let i = 0; i < _box.length; i++) {
+
+            if (_box[i] === curBut) {
+
+                _box.splice(i, 1);
+
+                for (let i = 0; i < stateBox.length; i++) {
+
+                    if (stateBox[i].index === curBut.data.index) {
+
+                        stateBox.splice(i, 1);
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    private refreshBoxPos(stateContain, posArr) {
+
+        for (let i = 0; i < stateContain.length; i++) {
+
+            stateContain[i].pos.x = posArr[i].x;
+            stateContain[i].pos.y = posArr[i].y;
+            stateContain[i].posIndex = i;
+        }
+    }
+
     private refreshBg(answer) {
 
-        if (answer.length === 0) {
+        if (answer.length === 1) {
 
-            this._bg1.visible = true;
-            this._bg2.visible = false;
-            this._bg3.visible = false;
+            this._bgdoor.getTransition('open1').play(() => {
 
-        } else if (answer.length === 1) {
+                this.answerFeedback(true);
+            });
 
-            this._bg1.visible = false;
-            this._bg2.visible = true;
-            this._bg3.visible = false;
+        } else if (answer.length === 2) {
 
-            this.answerFeedback(true);
+            if (answer[0] === this.answerType.SIZE) {
+                this._view.getChild("firstAnswer").asLoader.url = this._tiShiSize
+            } else {
+                this._view.getChild("firstAnswer").asLoader.url = this._tiShiColor;
+            }
+            if (answer[1] === this.answerType.SIZE) {
+                this._view.getChild("secondAnswer").asLoader.url = this._tiShiSize
+            } else {
+                this._view.getChild("secondAnswer").asLoader.url = this._tiShiColor;
+            }
 
-        }else if (answer.length === 2) {
+            this._submit.visible = false;
+            this._bgdoor.getTransition('open2').play(() => {
 
-            this._bg1.visible = false;
-            this._bg2.visible = false;
-            this._bg3.visible = true;
+                this.answerFeedback(true);
 
-            this.answerFeedback(true);
+            });
+
+            this._view.getChild("showbg1").sortingOrder = 1;
+            this._view.getChild("showbg2").sortingOrder = 1;
+            this._view.getChild("showbg3").sortingOrder = 1;
+            this._view.getChild("firstAnswer").sortingOrder = 1;
+            this._view.getChild("secondAnswer").sortingOrder = 1;
+            this.offButDrag();
         }
     }
 
@@ -434,8 +647,9 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             let temp = {
                 pos: {
-                x: this._colliderBox[i].data.x,
-                y: this._colliderBox[i].data.y},
+                    x: this._colliderBox[i].data.x,
+                    y: this._colliderBox[i].data.y
+                },
 
                 index: this._colliderBox[i].data.index
             };
@@ -478,17 +692,17 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     }
 
     private async _clickSubmit(evt: any) {
-    
+
         let state: any = globalThis._.cloneDeep(this._state);
 
         if (this._answer.length === 0 || this._answer.length === 1) {
             if (this._leftContain.length === 0 && this._rightContain.length === 0) {
 
                 state.submit = true;
-                this.updateState(state);       
+                this.updateState(state);
                 return;
             }
-        }else if (this._answer.length >= 2){
+        } else if (this._answer.length >= 2) {
 
             return;
         }
@@ -498,27 +712,27 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             this.answerFeedback(false);
             return;
         }
-        
+
         // 前：1 后：2
         let isSame1 = false;
         let isSame2 = false;
-       
-        if (this._leftContain[0].name[0] === this._leftContain[1].name[0] && 
+
+        if (this._leftContain[0].name[0] === this._leftContain[1].name[0] &&
             this._leftContain[0].name[0] === this._leftContain[2].name[0] &&
             this._leftContain[0].name[0] === this._leftContain[3].name[0]) {
 
             isSame1 = true;
 
         } else if (
-            this._leftContain[0].name[1] === this._leftContain[1].name[1] && 
+            this._leftContain[0].name[1] === this._leftContain[1].name[1] &&
             this._leftContain[0].name[1] === this._leftContain[2].name[1] &&
             this._leftContain[0].name[1] === this._leftContain[3].name[1]) {
 
             isSame2 = true;
         }
-       
+
         if (isSame1) {
-            
+
             console.log('==== 回答 isSame1 ====');
 
             for (let i = 0; i < this._answer.length; i++) {
@@ -530,12 +744,16 @@ export default class dragAnswer_model03_v1 extends cc.Component {
                     return;
                 }
             }
-            
+
             this._answer.push(this.answerType.SIZE); //大小
             state.answer = this._answer;
-            
+            this._tiShiShow = this.tiShiShowType.Size;
+            if (state.answer.length >= 2) {
 
-        } else if (isSame2){
+                this._tiShiShow = this.tiShiShowType.Finish;
+            }
+
+        } else if (isSame2) {
 
             console.log('==== 回答 isSame2 ====');
 
@@ -550,13 +768,18 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             }
             this._answer.push(this.answerType.COLOUR); //颜色
             state.answer = this._answer;
-           
-        }else {
+            this._tiShiShow = this.tiShiShowType.Color;
+            if (state.answer.length >= 2) {
+
+                this._tiShiShow = this.tiShiShowType.Finish;
+            }
+
+        } else {
 
             this.answerFeedback(false);
             console.log('==== 回答错误 ====');
 
-        } 
+        }
 
         if (this._answer.length === 1) {
 
@@ -564,9 +787,10 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             for (let i = 0; i < this._colliderBox.length; i++) {
 
                 let temp = {
-                 pos: {
-                    x: this._colliderBox[i].data.x,
-                    y: this._colliderBox[i].data.y},
+                    pos: {
+                        x: this._colliderBox[i].data.x,
+                        y: this._colliderBox[i].data.y
+                    },
 
                     index: this._colliderBox[i].data.index
                 };
@@ -614,16 +838,20 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             for (let i = 0; i < state.colliderBox.length; i++) {
 
-                 this._colliderBox[state.colliderBox[i].index].x =  state.colliderBox[i].pos.x;
-                 this._colliderBox[state.colliderBox[i].index].y =  state.colliderBox[i].pos.y;
+                this._colliderBox[state.colliderBox[i].index].x = state.colliderBox[i].pos.x;
+                this._colliderBox[state.colliderBox[i].index].y = state.colliderBox[i].pos.y;
+                this._colliderBox[state.colliderBox[i].index].data.posIndex = -1;
+
+
             }
         }
-        
+
         if (!globalThis._.isEqual(oldState.leftContain, state.leftContain)) {
 
-            for (let i = 0; i < state.leftContain.length; i++) {        
-                 this._colliderBox[state.leftContain[i].index].x = state.leftContain[i].pos.x;
-                 this._colliderBox[state.leftContain[i].index].y = state.leftContain[i].pos.y;
+            for (let i = 0; i < state.leftContain.length; i++) {
+                this._colliderBox[state.leftContain[i].index].x = state.leftContain[i].pos.x;
+                this._colliderBox[state.leftContain[i].index].y = state.leftContain[i].pos.y;
+                this._colliderBox[state.leftContain[i].index].data.posIndex = state.leftContain[i].posIndex;
             }
         }
 
@@ -632,6 +860,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             for (let i = 0; i < state.rightContain.length; i++) {
                 this._colliderBox[state.rightContain[i].index].x = state.rightContain[i].pos.x;
                 this._colliderBox[state.rightContain[i].index].y = state.rightContain[i].pos.y;
+                this._colliderBox[state.rightContain[i].index].data.posIndex = state.rightContain[i].posIndex;
             }
         }
 
@@ -650,8 +879,26 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         feedback.parent = cc.find("Canvas").parent;
 
         setTimeout(() => {
+
             feedback.destroy();
-        }, 1000);
+            if (bool) {
+
+                this._c2.selectedIndex = this._tiShiShow;
+            }
+
+        }, 2000);
+    }
+
+    offButDrag() {
+
+        for (let i = 0; i < this._leftContain.length; i++) {
+
+            this._leftContain[i].draggable = false;
+        }
+        for (let i = 0; i < this._rightContain.length; i++) {
+
+            this._leftContain[i].draggable = false;
+        }
     }
 
     // 注册状态，及获取状态的方法
@@ -671,7 +918,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     onEnable() {
         this.registerState();
-       // this.schedule(this.dragSchedule, this._scheduleTime);
+        // this.schedule(this.dragSchedule, this._scheduleTime);
     }
 
     onDisable() {

@@ -7,7 +7,7 @@
     "name": "数理思维",
     "courseName": "t3-class-01",
     "env": "test",
-    "totalPages": 1,
+    "totalPages": 12,
     "pathConfig": {
       "remoteUrl": "",
       "controllerBundlePath": "",
@@ -23,24 +23,24 @@
     "chapters": [
       {
         "model": {
-          "uiPath": "dragAnswer-model04-v3-p10",
+          "uiPath": "static-model01-v1-p1",
+          "bundleName": "static",
+          "prefabName": "static-model01-v1"
+        }
+      },
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v1-p2",
           "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model04-v3",
+          "prefabName": "dragAnswer-model04-v1",
           "config": {
             "answer": [],
             "ae": {
               "handleGuide": {
-                "component": "handleGuide01",
-                "pos": {
-                  "x": -29,
-                  "y": -25
-                }
-              },
-              "handleGuide2": {
                 "component": "handleGuide02",
                 "pos": {
-                  "x": -37,
-                  "y": 65
+                  "x": 0,
+                  "y": 56
                 }
               }
             }
@@ -64,8 +64,8 @@
               "handleGuide": {
                 "component": "handleGuide02",
                 "pos": {
-                  "x": 244,
-                  "y": 90
+                  "x": 13,
+                  "y": 62
                 }
               }
             }
@@ -89,33 +89,8 @@
               "handleGuide": {
                 "component": "handleGuide02",
                 "pos": {
-                  "x": 263,
-                  "y": 65
-                }
-              }
-            }
-          }
-        },
-        "components": {
-          "feedback": {
-            "bundleName": "feedback",
-            "prefabName": "feedback-model01-v1"
-          }
-        }
-      },
-      {
-        "model": {
-          "uiPath": "dragAnswer-model04-v1-p2",
-          "bundleName": "dragAnswer",
-          "prefabName": "dragAnswer-model04-v1",
-          "config": {
-            "answer": [],
-            "ae": {
-              "handleGuide": {
-                "component": "handleGuide02",
-                "pos": {
-                  "x": 146,
-                  "y": 90
+                  "x": 55,
+                  "y": 97
                 }
               }
             }
@@ -146,8 +121,8 @@
               "handleGuide2": {
                 "component": "handleGuide02",
                 "pos": {
-                  "x": -37,
-                  "y": 65
+                  "x": -122,
+                  "y": 85
                 }
               }
             }
@@ -178,8 +153,8 @@
               "handleGuide2": {
                 "component": "handleGuide02",
                 "pos": {
-                  "x": -37,
-                  "y": 65
+                  "x": -122,
+                  "y": 85
                 }
               }
             }
@@ -210,8 +185,8 @@
               "handleGuide2": {
                 "component": "handleGuide02",
                 "pos": {
-                  "x": -37,
-                  "y": 65
+                  "x": -122,
+                  "y": 85
                 }
               }
             }
@@ -222,13 +197,6 @@
             "bundleName": "feedback",
             "prefabName": "feedback-model01-v1"
           }
-        }
-      },
-      {
-        "model": {
-          "uiPath": "static-model01-v1-p1",
-          "bundleName": "static",
-          "prefabName": "static-model01-v1"
         }
       },
       {
@@ -247,10 +215,10 @@
                 }
               },
               "handleGuide2": {
-                "component": "handleGuide01",
+                "component": "handleGuide02",
                 "pos": {
-                  "x": -144,
-                  "y": 25
+                  "x": -55,
+                  "y": 66
                 }
               }
             }
@@ -281,8 +249,40 @@
               "handleGuide2": {
                 "component": "handleGuide02",
                 "pos": {
-                  "x": -37,
-                  "y": 65
+                  "x": -55,
+                  "y": 66
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v3-p10",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v3",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide01",
+                "pos": {
+                  "x": -29,
+                  "y": -25
+                }
+              },
+              "handleGuide2": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -55,
+                  "y": 66
                 }
               }
             }
@@ -304,10 +304,18 @@
             "answer": [],
             "ae": {
               "handleGuide": {
-                "component": "handleGuide01"
+                "component": "handleGuide01",
+                "pos": {
+                  "x": 0,
+                  "y": 0
+                }
               },
               "handleGuide2": {
-                "component": "handleGuide02"
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -160,
+                  "y": 45
+                }
               }
             }
           }
@@ -317,6 +325,13 @@
             "bundleName": "feedback",
             "prefabName": "feedback-model01-v1"
           }
+        }
+      },
+      {
+        "model": {
+          "uiPath": "static-model01-v1-p12",
+          "bundleName": "static",
+          "prefabName": "static-model01-v1"
         }
       }
     ]
