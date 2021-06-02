@@ -137,6 +137,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
 
         this._bgdoor = this._view.getChild('bgdoor').asCom;
+        this._bgdoor.getTransition('close').play();
 
         for (let i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == this._colliderGroup) {
@@ -295,7 +296,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         evt.captureTouch();
 
         this._lastPos = evt.pos;
-
 
         var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         btn.sortingOrder = 1;
@@ -603,7 +603,32 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     private refreshBg(answer) {
 
-        if (answer.length === 1) {
+        if (answer.length === 0) {
+
+            // 回归初始化状态
+            if (this._c1) {
+                this._c1.selectedIndex = 1;
+                this._c1.selectedIndex = 0;
+            }
+            if (this._c2) {
+                this._c2.selectedIndex = this._tiShiShow.No;
+            }
+            for (let i = 0; i < this._colliderBox.length; i++) {
+
+                this._colliderBox[i].draggable = true;
+            }
+            this._bgdoor.getTransition('close').play();
+            this._answer = [];
+            this._leftContain = [];
+            this._rightContain = [];
+            this._submit.visible = true;
+            this._view.getChild("showbg1").sortingOrder = 0;
+            this._view.getChild("showbg2").sortingOrder = 0;
+            this._view.getChild("showbg3").sortingOrder = 0;
+            this._view.getChild("firstAnswer").sortingOrder = 0;
+            this._view.getChild("secondAnswer").sortingOrder = 0;
+
+        } else if (answer.length === 1) {
 
             this._bgdoor.getTransition('open1').play(() => {
 
@@ -740,7 +765,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
                 if (this._answer[i] == this.answerType.SIZE) {
 
                     this.answerFeedback(false);
-                    // this.refreshInitPanel();
                     return;
                 }
             }
@@ -761,8 +785,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
                 if (this._answer[i] == this.answerType.COLOUR) {
                     this.answerFeedback(false);
-                    // this.refreshInitPanel();
-
                     return;
                 }
             }
@@ -777,8 +799,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         } else {
 
             this.answerFeedback(false);
-            console.log('==== 回答错误 ====');
-
         }
 
         if (this._answer.length === 1) {
@@ -835,14 +855,11 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.colliderBox, state.colliderBox)) {
 
-
             for (let i = 0; i < state.colliderBox.length; i++) {
 
                 this._colliderBox[state.colliderBox[i].index].x = state.colliderBox[i].pos.x;
                 this._colliderBox[state.colliderBox[i].index].y = state.colliderBox[i].pos.y;
                 this._colliderBox[state.colliderBox[i].index].data.posIndex = -1;
-
-
             }
         }
 
