@@ -105,6 +105,15 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
     });
 
+    private submitType: any = cc.Enum({
+
+        No: 0,
+        GuideShow: 1,
+        WrongFeed: 2,
+        RightFeed: 3
+
+    });
+
     // 远程动态组件
     private feedback: any;
 
@@ -232,7 +241,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
             box6Contain: [],
 
-            submit: false,
+            submit: this.submitType.No,
 
             title: false,
         }
@@ -336,7 +345,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
         let t: fgui.Transition = handleGuide.component.getTransition("t0");
         t.play(() => {
             fgui.GRoot.inst.removeChild(handleGuide.component);
-            state.submit = false;
+            state.submit = this.submitType.No;
             this.updateState(state);
         }, 2);
     }
@@ -1189,7 +1198,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
         if (this._answer.length === 0) {
             if (this._leftContain.length === 0 && this._rightContain.length === 0 && this._midContain.length === 0) {
 
-                state.submit = true;
+                state.submit = this.submitType.GuideShow;
                 this.updateState(state);
                 return;
             }
@@ -1197,7 +1206,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
             if (this._box1Contain.length === 0 && this._box2Contain.length === 0 && this._box3Contain.length === 0 && this._box4Contain.length === 0 && this._box5Contain.length === 0 && this._box6Contain.length === 0) {
 
-                state.submit = true;
+                state.submit = this.submitType.GuideShow;
                 this.updateState(state);
                 return;
             }
@@ -1211,7 +1220,8 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
             if (this._leftContain.length < this._containerTotal || this._rightContain.length < this._containerTotal || this._midContain.length < this._containerTotal) {
 
-                this.answerFeedback(false);
+                state.submit = this.submitType.WrongFeed;
+                this.updateState(state);
                 return;
             }
 
@@ -1231,6 +1241,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
                 // 第一次答案正确
                 this._answer.push(this.answerType.Shap);
                 state.answer = this._answer;
+                state.submit = this.submitType.RightFeed;
                 this.refreshFirstRightData(state);
 
             } else {
@@ -1241,7 +1252,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
                 console.log('=== 第一次回答错误 ===' + this._leftContain[3].name[0]);
 
                 // 第一次答案错误
-                this.answerFeedback(false);
+                state.submit = this.submitType.WrongFeed;
             }
 
         } else if (this._answer.length === 1) {
@@ -1253,7 +1264,8 @@ export default class dragAnswer_model03_v4 extends cc.Component {
                 this._box5Contain.length < this._containerTotalSecond ||
                 this._box6Contain.length < this._containerTotalSecond) {
 
-                this.answerFeedback(false);
+                state.submit = this.submitType.WrongFeed;
+                this.updateState(state);
                 return;
             }
 
@@ -1265,6 +1277,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
                 console.log('=== 第二次答案正确 颜色===');
                 this._answer.push(this.answerType.Color);
                 state.answer = this._answer;
+                state.submit = this.submitType.RightFeed;
 
             } else {
 
@@ -1272,7 +1285,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
                 console.log('== _box1Contain 0==' + this._box1Contain[0].name[1] + '== _box1Contain 1==' + this._box1Contain[1].name[1]);
                 console.log('== _box3Contain 0==' + this._box3Contain[0].name[1] + '== _box3Contain 1==' + this._box3Contain[1].name[1]);
                 console.log('== _box5Contain 0==' + this._box5Contain[0].name[1] + '== _box5Contain 1==' + this._box5Contain[1].name[1]);
-                this.answerFeedback(false);
+                state.submit = this.submitType.WrongFeed;
             }
 
         }
@@ -1395,24 +1408,25 @@ export default class dragAnswer_model03_v4 extends cc.Component {
             } else if (state.answer.length === 1) {
                 // 显示第二种答题界面
                 this._c2.selectedIndex = 1;
-                this.answerFeedback(true);
 
             } else if (state.answer.length >= 2) {
                 this._c2.selectedIndex = 1;
-                this.answerFeedback(true);
                 this.offButDrag();
             }
         }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
 
-            if (state.submit) {
+            if (state.submit === this.submitType.GuideShow) {
                 if (state.answer.length === 0) {
                     this.onHandleGuide(this.handleGuide);
                 } else if (state.answer.length === 1) {
                     this.onHandleGuide(this.handleGuide2);
                 }
-
+            } else if (state.submit === this.submitType.WrongFeed) {
+                this.answerFeedback(false);
+            } else if (state.submit === this.submitType.RightFeed) {
+                this.answerFeedback(true);
             }
         }
 
@@ -1528,6 +1542,9 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
         setTimeout(() => {
             feedback.destroy();
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.submit = this.submitType.No;
+            this.updateState(state);
         }, 2000);
     }
 

@@ -75,6 +75,15 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         Finish: 3
     });
 
+    private submitType: any = cc.Enum({
+
+        No: 0,
+        GuideShow: 1,
+        WrongFeed: 2,
+        RightFeed: 3
+    });
+
+
     // 远程动态组件
     private feedback: any;
 
@@ -173,7 +182,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             title: false,
 
-            submit: false,
+            submit: this.submitType.No,
 
             tiShiShow: this.tiShiShowType.No
 
@@ -213,7 +222,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         let t: fgui.Transition = handleGuide.component.getTransition("t0");
         t.play(() => {
             fgui.GRoot.inst.removeChild(handleGuide.component);
-            state.submit = false;
+            state.submit = this.submitType.No;
             this.updateState(state);
         }, 2);
     }
@@ -631,10 +640,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         } else if (state.answer.length === 1) {
 
             this._submit.visible = true;
-            this._bgdoor.getTransition('open1').play(() => {
-
-                this.answerFeedback(true, state.tiShiShow);
-            });
 
         } else if (state.answer.length === 2) {
 
@@ -650,11 +655,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             }
 
             this._submit.visible = false;
-            this._bgdoor.getTransition('open2').play(() => {
-
-                this.answerFeedback(true, state.tiShiShow);
-
-            });
 
             this._view.getChild("showbg1").sortingOrder = 1;
             this._view.getChild("showbg2").sortingOrder = 1;
@@ -724,7 +724,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         if (this._answer.length === 0 || this._answer.length === 1) {
             if (this._leftContain.length === 0 && this._rightContain.length === 0) {
 
-                state.submit = true;
+                state.submit = this.submitType.GuideShow;
                 this.updateState(state);
                 return;
             }
@@ -735,7 +735,8 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
         if (this._leftContain.length < this._containerTotal || this._rightContain.length < this._containerTotal) {
 
-            this.answerFeedback(false);
+            state.submit = this.submitType.WrongFeed;
+            this.updateState(state);
             return;
         }
 
@@ -765,13 +766,15 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
                 if (this._answer[i] == this.answerType.SIZE) {
 
-                    this.answerFeedback(false);
+                    state.submit = this.submitType.WrongFeed;
+                    this.updateState(state);
                     return;
                 }
             }
 
             this._answer.push(this.answerType.SIZE); //大小
             state.answer = this._answer;
+            state.submit = this.submitType.RightFeed;
             state.tiShiShow = this.tiShiShowType.Size;
             if (state.answer.length >= 2) {
 
@@ -785,12 +788,14 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             for (let i = 0; i < this._answer.length; i++) {
 
                 if (this._answer[i] == this.answerType.COLOUR) {
-                    this.answerFeedback(false);
+                    state.submit = this.submitType.WrongFeed;
+                    this.updateState(state);
                     return;
                 }
             }
             this._answer.push(this.answerType.COLOUR); //颜色
             state.answer = this._answer;
+            state.submit = this.submitType.RightFeed;
             state.tiShiShow = this.tiShiShowType.Color;
             if (state.answer.length >= 2) {
 
@@ -799,7 +804,8 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
         } else {
 
-            this.answerFeedback(false);
+            state.submit = this.submitType.WrongFeed;
+            this.updateState(state);
         }
 
         if (this._answer.length === 1) {
@@ -849,8 +855,24 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
 
-            if (state.submit) {
+            if (state.submit === this.submitType.GuideShow) {
                 this.onHandleGuide(this.handleGuide);
+            } else if (state.submit === this.submitType.WrongFeed) {
+                this.answerFeedback(false);
+            } else if (state.submit === this.submitType.RightFeed) {
+                if (state.answer.length === 1) {
+                    this._bgdoor.getTransition('open1').play(() => {
+
+                        this.answerFeedback(true, state.tiShiShow);
+                    });
+                } else if (state.answer.length === 2) {
+
+                    this._bgdoor.getTransition('open2').play(() => {
+
+                        this.answerFeedback(true, state.tiShiShow);
+                    });
+                }
+
             }
         }
 
@@ -889,6 +911,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     answerFeedback(bool: boolean, tiShiControl?: number) {
         if (!this.feedback) return;
+        let state: any = globalThis._.cloneDeep(this._state);
         let feedback: any = cc.instantiate(this.feedback);
         feedback.x = 960;
         feedback.y = 540;
@@ -900,9 +923,10 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             feedback.destroy();
             if (bool) {
-
                 this._c2.selectedIndex = tiShiControl;
             }
+            state.submit = this.submitType.No;
+            this.updateState(state);
 
         }, 2000);
     }

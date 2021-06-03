@@ -93,6 +93,14 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
     });
 
+    private submitType: any = cc.Enum({
+
+        No: 0,
+        GuideShow: 1,
+        WrongFeed: 2,
+        RightFeed: 3
+    });
+
     // 远程动态组件
     private feedback: any;
 
@@ -206,7 +214,7 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
             title: false,
 
-            submit: false
+            submit: this.submitType.No
         }
 
         // 临时 禁止操作期间 切页
@@ -243,7 +251,7 @@ export default class dragAnswer_model03_v3 extends cc.Component {
         let t: fgui.Transition = handleGuide.component.getTransition("t0");
         t.play(() => {
             fgui.GRoot.inst.removeChild(handleGuide.component);
-            state.submit = false;
+            state.submit = this.submitType.No;
             this.updateState(state);
         }, 2);
     }
@@ -972,7 +980,7 @@ export default class dragAnswer_model03_v3 extends cc.Component {
         if (this._answer.length === 0) {
             if (this._leftContain.length === 0 && this._rightContain.length === 0) {
 
-                state.submit = true;
+                state.submit = this.submitType.GuideShow;
                 this.updateState(state);
                 return;
             }
@@ -980,7 +988,7 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
             if (this._box1Contain.length === 0 && this._box2Contain.length === 0 && this._box3Contain.length === 0 && this._box4Contain.length === 0) {
 
-                state.submit = true;
+                state.submit = this.submitType.GuideShow;
                 this.updateState(state);
                 return;
             }
@@ -995,7 +1003,8 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
             if (this._leftContain.length < this._containerTotal || this._rightContain.length < this._containerTotal) {
 
-                this.answerFeedback(false);
+                state.submit = this.submitType.WrongFeed;
+                this.updateState(state);
                 return;
             }
 
@@ -1007,6 +1016,7 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                 // 第一次答案正确
                 this._answer.push(this.answerType.Size);
                 state.answer = this._answer;
+                state.submit = this.submitType.RightFeed;
                 this.refreshFirstRightData(state);
 
 
@@ -1017,6 +1027,7 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                 console.log('=== 第一次回答正确 按照形状分===');
                 this._answer.push(this.answerType.Shap);
                 state.answer = this._answer;
+                state.submit = this.submitType.RightFeed;
                 this.refreshFirstRightData(state);
 
             } else {
@@ -1026,7 +1037,7 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                 console.log('=== 第一次回答错误 ===' + this._leftContain[3].name[0]);
 
                 // 第一次答案错误
-                this.answerFeedback(false);
+                state.submit = this.submitType.WrongFeed;
             }
 
         } else if (this._answer.length === 1) {
@@ -1036,7 +1047,8 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                 this._box3Contain.length < this._containerTotalSecond ||
                 this._box4Contain.length < this._containerTotalSecond) {
 
-                this.answerFeedback(false);
+                state.submit = this.submitType.WrongFeed;
+                this.updateState(state);
                 return;
             }
 
@@ -1050,11 +1062,12 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
                     this._answer.push(this.answerType.Shap);
                     state.answer = this._answer;
+                    state.submit = this.submitType.RightFeed;
 
                 } else {
 
                     console.log('=== 第二次答案错误 形状===');
-                    this.answerFeedback(false);
+                    state.submit = this.submitType.WrongFeed;
                 }
 
             } else if (this._answer[this._answer.length - 1] === this.answerType.Shap) {
@@ -1065,11 +1078,12 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                     console.log('=== 第二次答案正确 颜色和大小===');
                     this._answer.push(this.answerType.Size);
                     state.answer = this._answer;
+                    state.submit = this.submitType.RightFeed;
 
                 } else {
 
                     console.log('=== 第二次答案错误 颜色和大小===');
-                    this.answerFeedback(false);
+                    state.submit = this.submitType.WrongFeed;
                 }
             }
         }
@@ -1176,27 +1190,29 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                 this._c2.selectedIndex = 1;
                 this._submit.x = 1667;
                 this._submit.y = 0;
-                this.answerFeedback(true);
+
 
             } else if (state.answer.length === 2) {
 
                 this._c2.selectedIndex = 1;
                 this._submit.x = 1667;
                 this._submit.y = 0;
-                this.answerFeedback(true);
                 this.offButDrag();
             }
         }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
 
-            if (state.submit) {
+            if (state.submit === this.submitType.GuideShow) {
                 if (state.answer.length === 0) {
                     this.onHandleGuide(this.handleGuide);
                 } else if (state.answer.length === 1) {
                     this.onHandleGuide(this.handleGuide2);
                 }
-
+            } else if (state.submit === this.submitType.WrongFeed) {
+                this.answerFeedback(false);
+            } else if (state.submit === this.submitType.RightFeed) {
+                this.answerFeedback(true);
             }
         }
 
@@ -1284,6 +1300,9 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
         setTimeout(() => {
             feedback.destroy();
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.submit = this.submitType.No;
+            this.updateState(state);
         }, 2000);
     }
 
