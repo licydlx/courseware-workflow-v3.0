@@ -1000,7 +1000,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
                 console.log('=== 第一次回答正确 ===');
                 // 第一次答案正确
-                this.answerFeedback(true);
                 this._answer.push(true);
                 state.answer = this._answer;
                 this.refreshFirstRightData(state);
@@ -1013,7 +1012,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
                 // 第一次答案错误
                 this.answerFeedback(false);
-                // this.refreshFirstWrongData(state);
             }
 
         } else if (this._answer.length === 1) {
@@ -1032,14 +1030,13 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
                 // 第一个分类正确
                 console.log('=== 第二次答案正确 ===');
-                this.answerFeedback(true);
                 this._answer.push(true);
                 state.answer = this._answer;
+
 
             } else {
                 console.log('=== 第二次答案错误 ===');
                 this.answerFeedback(false);
-                // this.refreshSecondWrongData(state);
             }
         }
 
@@ -1111,6 +1108,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 }
 
                 this._c2.selectedIndex = 0;
+
                 this._submit.x = 842;
                 this._submit.y = 724;
                 this._answer = [];
@@ -1122,14 +1120,18 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 this._box4Contain = [];
 
             } else if (state.answer.length === 1) {
+
+                this.answerFeedback(true);
+
                 // 显示第二种答题界面
                 this._c2.selectedIndex = 1;
-
                 this._submit.x = 1667;
                 this._submit.y = 0;
 
             } else if (state.answer.length === 2) {
 
+                this.answerFeedback(true);
+                this._c2.selectedIndex = 1;
                 this.offButDrag();
             }
         }

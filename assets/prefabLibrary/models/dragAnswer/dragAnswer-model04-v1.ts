@@ -75,8 +75,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         Finish: 3
     });
 
-    private _tiShiShow = this.tiShiShowType.No;
-
     // 远程动态组件
     private feedback: any;
 
@@ -119,7 +117,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }
 
         if (this._c2) {
-            this._c2.selectedIndex = this._tiShiShow.No;
+            this._c2.selectedIndex = this.tiShiShowType.No;
         }
 
         this._tiShiSize = this._view.getChild("sizeType").asLoader.url;
@@ -175,7 +173,9 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             title: false,
 
-            submit: false
+            submit: false,
+
+            tiShiShow: this.tiShiShowType.No
 
         }
 
@@ -601,9 +601,9 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }
     }
 
-    private refreshBg(answer) {
+    private refreshBg(state) {
 
-        if (answer.length === 0) {
+        if (state.answer.length === 0) {
 
             // 回归初始化状态
             if (this._c1) {
@@ -611,7 +611,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
                 this._c1.selectedIndex = 0;
             }
             if (this._c2) {
-                this._c2.selectedIndex = this._tiShiShow.No;
+                this._c2.selectedIndex = state.tiShiShow;
             }
             for (let i = 0; i < this._colliderBox.length; i++) {
 
@@ -628,21 +628,21 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             this._view.getChild("firstAnswer").sortingOrder = 0;
             this._view.getChild("secondAnswer").sortingOrder = 0;
 
-        } else if (answer.length === 1) {
+        } else if (state.answer.length === 1) {
 
             this._bgdoor.getTransition('open1').play(() => {
 
-                this.answerFeedback(true);
+                this.answerFeedback(true, state.tiShiShow);
             });
 
-        } else if (answer.length === 2) {
+        } else if (state.answer.length === 2) {
 
-            if (answer[0] === this.answerType.SIZE) {
+            if (state.answer[0] === this.answerType.SIZE) {
                 this._view.getChild("firstAnswer").asLoader.url = this._tiShiSize
             } else {
                 this._view.getChild("firstAnswer").asLoader.url = this._tiShiColor;
             }
-            if (answer[1] === this.answerType.SIZE) {
+            if (state.answer[1] === this.answerType.SIZE) {
                 this._view.getChild("secondAnswer").asLoader.url = this._tiShiSize
             } else {
                 this._view.getChild("secondAnswer").asLoader.url = this._tiShiColor;
@@ -651,7 +651,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             this._submit.visible = false;
             this._bgdoor.getTransition('open2').play(() => {
 
-                this.answerFeedback(true);
+                this.answerFeedback(true, state.tiShiShow);
 
             });
 
@@ -771,10 +771,10 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             this._answer.push(this.answerType.SIZE); //大小
             state.answer = this._answer;
-            this._tiShiShow = this.tiShiShowType.Size;
+            state.tiShiShow = this.tiShiShowType.Size;
             if (state.answer.length >= 2) {
 
-                this._tiShiShow = this.tiShiShowType.Finish;
+                state.tiShiShow = this.tiShiShowType.Finish;
             }
 
         } else if (isSame2) {
@@ -790,10 +790,10 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             }
             this._answer.push(this.answerType.COLOUR); //颜色
             state.answer = this._answer;
-            this._tiShiShow = this.tiShiShowType.Color;
+            state.tiShiShow = this.tiShiShowType.Color;
             if (state.answer.length >= 2) {
 
-                this._tiShiShow = this.tiShiShowType.Finish;
+                state.tiShiShow = this.tiShiShowType.Finish;
             }
 
         } else {
@@ -843,7 +843,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.answer, state.answer)) {
 
-            this.refreshBg(state.answer);
+            this.refreshBg(state);
         }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
@@ -886,7 +886,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }
     }
 
-    answerFeedback(bool: boolean) {
+    answerFeedback(bool: boolean, tiShiControl?: number) {
         if (!this.feedback) return;
         let feedback: any = cc.instantiate(this.feedback);
         feedback.x = 960;
@@ -900,7 +900,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             feedback.destroy();
             if (bool) {
 
-                this._c2.selectedIndex = this._tiShiShow;
+                this._c2.selectedIndex = tiShiControl;
             }
 
         }, 2000);

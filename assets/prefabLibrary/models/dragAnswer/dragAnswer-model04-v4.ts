@@ -1186,9 +1186,6 @@ export default class dragAnswer_model03_v4 extends cc.Component {
     private async _clickSubmit(evt: any) {
 
         let state: any = globalThis._.cloneDeep(this._state);
-
-        console.log('===== _answer L ====' + this._answer.length);
-
         if (this._answer.length === 0) {
             if (this._leftContain.length === 0 && this._rightContain.length === 0 && this._midContain.length === 0) {
 
@@ -1209,9 +1206,6 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
             return;
         }
-
-        console.log('===== _answer L ====' + this._answer.length);
-
         // 前：1 后：2
         if (this._answer.length === 0) {
 
@@ -1220,7 +1214,6 @@ export default class dragAnswer_model03_v4 extends cc.Component {
                 this.answerFeedback(false);
                 return;
             }
-
 
             if ((this._leftContain[0].name[0] === this._leftContain[1].name[0] &&
                 this._leftContain[0].name[0] === this._leftContain[2].name[0] &&
@@ -1235,12 +1228,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
                 console.log('=== 第一次回答正确  按照形状分 ===');
 
-                console.log('=== _leftContain ===' + this._leftContain[0].name[0]);
-                console.log('=== _rightContain ===' + this._rightContain[0].name[0]);
-                console.log('=== _midContain ===' + this._midContain[0].name[0]);
-
                 // 第一次答案正确
-                this.answerFeedback(true);
                 this._answer.push(this.answerType.Shap);
                 state.answer = this._answer;
                 this.refreshFirstRightData(state);
@@ -1254,7 +1242,6 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
                 // 第一次答案错误
                 this.answerFeedback(false);
-                // this.refreshFirstWrongData(state);
             }
 
         } else if (this._answer.length === 1) {
@@ -1279,17 +1266,13 @@ export default class dragAnswer_model03_v4 extends cc.Component {
                 this._answer.push(this.answerType.Color);
                 state.answer = this._answer;
 
-                this.answerFeedback(true);
             } else {
 
                 console.log('=== 第二次答案错误 颜色===');
                 console.log('== _box1Contain 0==' + this._box1Contain[0].name[1] + '== _box1Contain 1==' + this._box1Contain[1].name[1]);
                 console.log('== _box3Contain 0==' + this._box3Contain[0].name[1] + '== _box3Contain 1==' + this._box3Contain[1].name[1]);
                 console.log('== _box5Contain 0==' + this._box5Contain[0].name[1] + '== _box5Contain 1==' + this._box5Contain[1].name[1]);
-
-
                 this.answerFeedback(false);
-                // this.refreshSecondWrongData(state);
             }
 
         }
@@ -1412,9 +1395,11 @@ export default class dragAnswer_model03_v4 extends cc.Component {
             } else if (state.answer.length === 1) {
                 // 显示第二种答题界面
                 this._c2.selectedIndex = 1;
+                this.answerFeedback(true);
 
             } else if (state.answer.length >= 2) {
-
+                this._c2.selectedIndex = 1;
+                this.answerFeedback(true);
                 this.offButDrag();
             }
         }

@@ -999,26 +999,22 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                 return;
             }
 
-            console.log('======= leftContain length ===== ' + this._leftContain.length);
-            console.log('======= rightContain length ===== ' + this._rightContain.length);
-
             if (this._leftContain[0].name[0] === this._leftContain[1].name[0] &&
                 this._leftContain[0].name[0] === this._leftContain[2].name[0] &&
                 this._leftContain[0].name[0] === this._leftContain[3].name[0]) {
 
                 console.log('=== 第一次回答正确  按照大小分 ===');
                 // 第一次答案正确
-                this.answerFeedback(true);
                 this._answer.push(this.answerType.Size);
                 state.answer = this._answer;
                 this.refreshFirstRightData(state);
+
 
             } else if (this._leftContain[0].name[1] === this._leftContain[1].name[1] &&
                 this._leftContain[0].name[1] === this._leftContain[2].name[1] &&
                 this._leftContain[0].name[1] === this._leftContain[3].name[1]) {
 
                 console.log('=== 第一次回答正确 按照形状分===');
-                this.answerFeedback(true);
                 this._answer.push(this.answerType.Shap);
                 state.answer = this._answer;
                 this.refreshFirstRightData(state);
@@ -1031,7 +1027,6 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
                 // 第一次答案错误
                 this.answerFeedback(false);
-                // this.refreshFirstWrongData(state);
             }
 
         } else if (this._answer.length === 1) {
@@ -1053,7 +1048,6 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
                     console.log('=== 第二次答案正确 形状===');
 
-                    this.answerFeedback(true);
                     this._answer.push(this.answerType.Shap);
                     state.answer = this._answer;
 
@@ -1061,7 +1055,6 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
                     console.log('=== 第二次答案错误 形状===');
                     this.answerFeedback(false);
-                    // this.refreshSecondWrongData(state);
                 }
 
             } else if (this._answer[this._answer.length - 1] === this.answerType.Shap) {
@@ -1070,7 +1063,6 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                     this._box3Contain[0].name[0] === this._box3Contain[1].name[0]) {
 
                     console.log('=== 第二次答案正确 颜色和大小===');
-                    this.answerFeedback(true);
                     this._answer.push(this.answerType.Size);
                     state.answer = this._answer;
 
@@ -1078,13 +1070,9 @@ export default class dragAnswer_model03_v3 extends cc.Component {
 
                     console.log('=== 第二次答案错误 颜色和大小===');
                     this.answerFeedback(false);
-                    // this.refreshSecondWrongData(state);
                 }
-
             }
-
         }
-
         this.updateState(state);
     }
 
@@ -1186,12 +1174,14 @@ export default class dragAnswer_model03_v3 extends cc.Component {
             } else if (state.answer.length === 1) {
                 // 显示第二种答题界面
                 this._c2.selectedIndex = 1;
-
                 this._submit.x = 1667;
                 this._submit.y = 0;
+                this.answerFeedback(true);
 
             } else if (state.answer.length === 2) {
 
+                this._c2.selectedIndex = 1;
+                this.answerFeedback(true);
                 this.offButDrag();
             }
         }
