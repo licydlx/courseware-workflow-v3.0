@@ -1384,11 +1384,30 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
             if (state.answer.length === 0) {
                 // 显示初始答题界面
-                this._c2.selectedIndex = 0;
-
                 for (let i = 0; i < this._colliderBox.length; i++) {
-                    this._colliderBox[i].draggable = true;
+
+                    for (let j = 0; j < this._colliderCache.length; j++) {
+
+                        if (this._colliderBox[i].data.index === this._colliderCache[j].index) {
+                            this._colliderBox[i].data.x = this._colliderCache[j].pos.x;
+                            this._colliderBox[i].data.y = this._colliderCache[j].pos.y;
+                            this._colliderBox[i].draggable = true;
+                        }
+                    }
                 }
+
+                this._c2.selectedIndex = 0;
+                this._answer = [];
+                this._leftContain = [];
+                this._rightContain = [];
+                this._midContain = [];
+
+                this._box1Contain = [];
+                this._box2Contain = [];
+                this._box3Contain = [];
+                this._box4Contain = [];
+                this._box5Contain = [];
+                this._box6Contain = [];
 
             } else if (state.answer.length === 1) {
                 // 显示第二种答题界面
