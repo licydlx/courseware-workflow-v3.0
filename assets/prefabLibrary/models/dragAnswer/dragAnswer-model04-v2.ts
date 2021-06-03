@@ -1132,6 +1132,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
                 this.answerFeedback(true);
                 this._c2.selectedIndex = 1;
+                this._submit.x = 1667;
+                this._submit.y = 0;
                 this.offButDrag();
             }
         }

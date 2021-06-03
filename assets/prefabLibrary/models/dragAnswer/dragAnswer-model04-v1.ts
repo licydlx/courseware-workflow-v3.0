@@ -630,6 +630,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
         } else if (state.answer.length === 1) {
 
+            this._submit.visible = true;
             this._bgdoor.getTransition('open1').play(() => {
 
                 this.answerFeedback(true, state.tiShiShow);
