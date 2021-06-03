@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2020-11-19 18:05:09
  * @LastEditors: ydlx
- * @LastEditTime: 2021-05-27 14:31:28
+ * @LastEditTime: 2021-06-03 18:43:33
  */
 const { ccclass, property } = cc._decorator;
 
@@ -162,6 +162,10 @@ export default class formal_panle_model02 extends cc.Component {
                 curState = state.snapshoot[monitored];
             } else if (state.snapshoot[monitoredName]) {
                 curState = state.snapshoot[monitoredName];
+            } else {
+                // bug場景
+                // 答題模式：a學生答題，b學生沒答題；老師監控a學生，在監控b學生=>看到a學生的答案
+                curState = window['GlobalData'].courseData.stateShoot;
             }
         }
 
