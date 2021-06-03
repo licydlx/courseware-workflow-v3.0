@@ -2,7 +2,7 @@
 <component size="0,0" extention="Button">
   <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
   <displayList>
-    <loader id="n3_cp1h" name="icon" xy="0,0" size="240,240"/>
+    <loader id="n3_fld2" name="icon" xy="0,0" size="100,100" autoSize="true"/>
   </displayList>
   <Button downEffect="dark" downEffectValue=".8"/>
 </component>

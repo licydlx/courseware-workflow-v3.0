@@ -105,15 +105,7 @@
     <sound id="xmwddh" name="example1_exercise1-1.mp3" path="/audios/"/>
     <sound id="xmwddi" name="example2_exercise2-1_2-2.mp3" path="/audios/"/>
     <sound id="xmwddj" name="example3_exercise3-1.mp3" path="/audios/"/>
-    <sound id="xmwddk" name="exercise1-2.mp3" path="/audios/"/>
-    <sound id="xmwddl" name="exercise1.mp3" path="/audios/"/>
-    <sound id="xmwddm" name="exercise2.mp3" path="/audios/"/>
     <sound id="xmwddn" name="exercise3-2.mp3" path="/audios/"/>
-    <sound id="xmwddo" name="exercise3.mp3" path="/audios/"/>
-    <sound id="xmwddp" name="exercise4.mp3" path="/audios/"/>
-    <sound id="xmwddq" name="exercise5.mp3" path="/audios/"/>
-    <sound id="xmwddr" name="exercise6.mp3" path="/audios/"/>
-    <sound id="xmwdds" name="exercise7.mp3" path="/audios/"/>
     <sound id="xmwddt" name="expand.mp3" path="/audios/"/>
     <sound id="xmwddu" name="click.mp3" path="/audios/"/>
     <sound id="xmwddv" name="drag.mp3" path="/audios/"/>
@@ -154,6 +146,7 @@
     <image id="ugg51fq" name="doorB.png" path="/images/"/>
     <image id="ugg51fr" name="left.png" path="/images/"/>
     <image id="ugg51fs" name="right.png" path="/images/"/>
+    <component id="fld21ft" name="submit3.xml" path="/buttons/"/>
   </resources>
   <publish name=""/>
 </packageDescription>
