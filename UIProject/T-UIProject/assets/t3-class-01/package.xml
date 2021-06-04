@@ -147,6 +147,7 @@
     <image id="ugg51fr" name="left.png" path="/images/"/>
     <image id="ugg51fs" name="right.png" path="/images/"/>
     <component id="fld21ft" name="submit3.xml" path="/buttons/"/>
+    <image id="nl7d1fu" name="tishi_di_2.png" path="/images/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

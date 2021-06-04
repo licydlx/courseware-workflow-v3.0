@@ -105,6 +105,8 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
     });
 
+    private sencondType = { left: '1', mid: '2', right: '3' };
+
     private submitType: any = cc.Enum({
 
         No: 0,
@@ -613,7 +615,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
                 this.dealAllContainIn(false, false, false, false, true, true, true, true, true, state, btn);
 
-                if (this._box1Contain.length < this._containerTotalSecond) {
+                if (this._box1Contain.length < this._containerTotalSecond && btn.name[0] === this.sencondType.left) {
 
                     this._box1Contain.push(btn);
 
@@ -661,7 +663,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
                 this.dealAllContainIn(false, false, false, true, false, true, true, true, true, state, btn);
 
-                if (this._box2Contain.length < this._containerTotalSecond) {
+                if (this._box2Contain.length < this._containerTotalSecond && btn.name[0] === this.sencondType.left) {
 
                     this._box2Contain.push(btn);
 
@@ -710,7 +712,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
                 this.dealAllContainIn(false, false, false, true, true, false, true, true, true, state, btn);
 
-                if (this._box3Contain.length < this._containerTotalSecond) {
+                if (this._box3Contain.length < this._containerTotalSecond && btn.name[0] === this.sencondType.mid) {
 
                     this._box3Contain.push(btn);
 
@@ -757,7 +759,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
                 this.dealAllContainIn(false, false, false, true, true, true, false, true, true, state, btn);
 
-                if (this._box4Contain.length < this._containerTotalSecond) {
+                if (this._box4Contain.length < this._containerTotalSecond && btn.name[0] === this.sencondType.mid) {
 
                     this._box4Contain.push(btn);
 
@@ -807,7 +809,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
                 this.dealAllContainIn(false, false, false, true, true, true, true, false, true, state, btn);
 
-                if (this._box5Contain.length < this._containerTotalSecond) {
+                if (this._box5Contain.length < this._containerTotalSecond && btn.name[0] === this.sencondType.right) {
 
                     this._box5Contain.push(btn);
 
@@ -857,7 +859,7 @@ export default class dragAnswer_model03_v4 extends cc.Component {
 
                 this.dealAllContainIn(false, false, false, true, true, true, true, true, false, state, btn);
 
-                if (this._box6Contain.length < this._containerTotalSecond) {
+                if (this._box6Contain.length < this._containerTotalSecond && btn.name[0] === this.sencondType.right) {
 
                     this._box6Contain.push(btn);
 
@@ -1241,7 +1243,11 @@ export default class dragAnswer_model03_v4 extends cc.Component {
                 // 第一次答案正确
                 this._answer.push(this.answerType.Shap);
                 state.answer = this._answer;
-                state.submit = this.submitType.RightFeed;
+
+                this.sencondType.left = this._leftContain[0].name[0];
+                this.sencondType.mid = this._midContain[0].name[0];
+                this.sencondType.right = this._rightContain[0].name[0];
+
                 this.refreshFirstRightData(state);
 
             } else {

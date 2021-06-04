@@ -26,6 +26,18 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     private _leftPositon: any = [{ x: 330, y: 760 }, { x: 540, y: 760 }, { x: 330, y: 925 }, { x: 540, y: 925 }];
     private _rightPositon: any = [{ x: 1370, y: 760 }, { x: 1610, y: 760 }, { x: 1370, y: 925 }, { x: 1610, y: 925 }];
 
+    private _tishi1Positon: any = [{ x: 1500, y: 50 }, { x: 1590, y: 50 }, { x: 1500, y: 120 }, { x: 1590, y: 120 },
+    { x: 1750, y: 50 }, { x: 1840, y: 50 }, { x: 1750, y: 120 }, { x: 1840, y: 120 }];
+
+    private _tishi1_1Positon: any = [{ x: 700, y: 350 }, { x: 875, y: 350 }, { x: 700, y: 465 }, { x: 875, y: 465 },
+    { x: 1140, y: 350 }, { x: 1300, y: 350 }, { x: 1140, y: 465 }, { x: 1300, y: 465 }];
+
+    private _tishi2Positon: any = [{ x: 700, y: 730 }, { x: 875, y: 730 }, { x: 700, y: 845 }, { x: 875, y: 845 },
+    { x: 1140, y: 730 }, { x: 1300, y: 730 }, { x: 1140, y: 845 }, { x: 1300, y: 845 }];
+
+    private _tishi1Btn = [];
+    private _tishi2Btn = [];
+
     private _leftRect: cc.Rect;
     private _rightRect: cc.Rect;
 
@@ -47,10 +59,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     private _titleTrigger: fgui.GLoader;
 
-    private _tiShiSize: string;
-
-    private _tiShiColor: string;
-
     private _dragSound: cc.AudioClip;
 
     private _clickSound: cc.AudioClip;
@@ -70,9 +78,8 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     private tiShiShowType: any = cc.Enum({
 
         No: 0,
-        Size: 1,
-        Color: 2,
-        Finish: 3
+        AnswerType1: 1,
+        Finish: 2
     });
 
     private submitType: any = cc.Enum({
@@ -129,9 +136,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             this._c2.selectedIndex = this.tiShiShowType.No;
         }
 
-        this._tiShiSize = this._view.getChild("sizeType").asLoader.url;
-        this._tiShiColor = this._view.getChild("colorType").asLoader.url;
-
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         this._titleTrigger.sortingOrder = 2;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
@@ -142,9 +146,26 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         this._colliderGroup = this._view.getChild("colliderBox").asGroup;
         this._collideredGroup = this._view.getChild("collideredBox").asGroup;
 
-
         this._bgdoor = this._view.getChild('bgdoor').asCom;
         this._bgdoor.getTransition('close').play();
+
+        let tishi1Group = this._view.getChild("n93").asGroup;
+
+        for (let i = 0; i < this._view.numChildren; i++) {
+            if (this._view.getChildAt(i).group == tishi1Group) {
+                let node: fgui.GButton = this._view.getChildAt(i).asButton;
+                this._tishi1Btn.push(node);
+            }
+        }
+
+        let tishi2Group = this._view.getChild("n94").asGroup;
+
+        for (let i = 0; i < this._view.numChildren; i++) {
+            if (this._view.getChildAt(i).group == tishi2Group) {
+                let node: fgui.GButton = this._view.getChildAt(i).asButton;
+                this._tishi2Btn.push(node);
+            }
+        }
 
         for (let i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == this._colliderGroup) {
@@ -162,7 +183,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
                 this._colliderBox.push(node);
                 let colliderData = { pos: { x: node.data.x, y: node.data.y }, index: node.data.index, posIndex: node.data.posIndex };
                 this._colliderCache.push(colliderData);
-
             }
         }
 
@@ -184,8 +204,11 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             submit: this.submitType.No,
 
-            tiShiShow: this.tiShiShowType.No
+            tiShiShow: this.tiShiShowType.No,
 
+            tiShiBox1: [],
+
+            tiShiBox2: [],
         }
 
         // 临时 禁止操作期间 切页
@@ -610,11 +633,14 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }
     }
 
-    private refreshBg(state) {
+    private refreshBg(state, isPlayOpen) {
 
         if (state.answer.length === 0) {
 
+            console.log('==== refreshBg close ====');
+
             // 回归初始化状态
+            this.showAllBoxs();
             if (this._c1) {
                 this._c1.selectedIndex = 1;
                 this._c1.selectedIndex = 0;
@@ -622,11 +648,9 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             if (this._c2) {
                 this._c2.selectedIndex = state.tiShiShow;
             }
-            for (let i = 0; i < this._colliderBox.length; i++) {
 
-                this._colliderBox[i].draggable = true;
-            }
             this._bgdoor.getTransition('close').play();
+
             this._answer = [];
             this._leftContain = [];
             this._rightContain = [];
@@ -639,19 +663,15 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
         } else if (state.answer.length === 1) {
 
+            this._c2.selectedIndex = state.tiShiShow;
             this._submit.visible = true;
+            this._bgdoor.getTransition('open1').play();
 
         } else if (state.answer.length === 2) {
 
-            if (state.answer[0] === this.answerType.SIZE) {
-                this._view.getChild("firstAnswer").asLoader.url = this._tiShiSize
-            } else {
-                this._view.getChild("firstAnswer").asLoader.url = this._tiShiColor;
-            }
-            if (state.answer[1] === this.answerType.SIZE) {
-                this._view.getChild("secondAnswer").asLoader.url = this._tiShiSize
-            } else {
-                this._view.getChild("secondAnswer").asLoader.url = this._tiShiColor;
+            if (!isPlayOpen) {
+
+                this._bgdoor.getTransition('open2').play();
             }
 
             this._submit.visible = false;
@@ -774,10 +794,10 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             this._answer.push(this.answerType.SIZE); //大小
             state.answer = this._answer;
-            state.submit = this.submitType.RightFeed;
-            state.tiShiShow = this.tiShiShowType.Size;
-            if (state.answer.length >= 2) {
+            state.tiShiShow = this.tiShiShowType.AnswerType1;
+            if (this._answer.length >= 2) {
 
+                state.submit = this.submitType.RightFeed;
                 state.tiShiShow = this.tiShiShowType.Finish;
             }
 
@@ -795,10 +815,10 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             }
             this._answer.push(this.answerType.COLOUR); //颜色
             state.answer = this._answer;
-            state.submit = this.submitType.RightFeed;
-            state.tiShiShow = this.tiShiShowType.Color;
-            if (state.answer.length >= 2) {
+            state.tiShiShow = this.tiShiShowType.AnswerType1;
+            if (this._answer.length >= 2) {
 
+                state.submit = this.submitType.RightFeed;
                 state.tiShiShow = this.tiShiShowType.Finish;
             }
 
@@ -809,6 +829,30 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }
 
         if (this._answer.length === 1) {
+
+            //存储提示1中的显示的数据
+            state.tiShiBox1 = [];
+            for (let i = 0; i < this._leftContain.length; i++) {
+
+                let temp = {
+                    x: this._leftContain[i].x,
+                    y: this._leftContain[i].y,
+                    icon: this._leftContain[i].icon,
+                };
+
+                state.tiShiBox1.push(temp);
+            }
+
+            for (let i = 0; i < this._rightContain.length; i++) {
+
+                let temp = {
+                    x: this._rightContain[i].x,
+                    y: this._rightContain[i].y,
+                    icon: this._rightContain[i].icon,
+                };
+
+                state.tiShiBox1.push(temp);
+            }
 
             state.colliderBox = [];
             for (let i = 0; i < this._colliderBox.length; i++) {
@@ -829,6 +873,30 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             state.leftContain = [];
             state.rightContain = [];
+
+        } else if (this._answer.length === 2) {
+
+            //存储提示1中的显示的数据
+
+            state.tiShiBox2 = [];
+            for (let i = 0; i < this._leftContain.length; i++) {
+
+                let temp = {
+                    icon: this._leftContain[i].icon,
+                };
+
+                state.tiShiBox2.push(temp);
+            }
+
+            for (let i = 0; i < this._rightContain.length; i++) {
+
+                let temp = {
+                    icon: this._rightContain[i].icon,
+                };
+
+                state.tiShiBox2.push(temp);
+            }
+
         }
 
         this.updateState(state);
@@ -848,11 +916,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
 
-        if (!globalThis._.isEqual(oldState.answer, state.answer)) {
-
-            this.refreshBg(state);
-        }
-
+        let isPlayOpen = false;
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
 
             if (state.submit === this.submitType.GuideShow) {
@@ -860,19 +924,23 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             } else if (state.submit === this.submitType.WrongFeed) {
                 this.answerFeedback(false);
             } else if (state.submit === this.submitType.RightFeed) {
-                if (state.answer.length === 1) {
-                    this._bgdoor.getTransition('open1').play(() => {
 
-                        this.answerFeedback(true, state.tiShiShow);
-                    });
-                } else if (state.answer.length === 2) {
+                isPlayOpen = true;
+                this._c2.selectedIndex = this.tiShiShowType.No;
+                this.answerFeedback(true, state);
+            }
+        }
 
-                    this._bgdoor.getTransition('open2').play(() => {
 
-                        this.answerFeedback(true, state.tiShiShow);
-                    });
-                }
+        if (!globalThis._.isEqual(oldState.answer, state.answer)) {
 
+            this.refreshBg(state, isPlayOpen);
+        }
+
+        if (!globalThis._.isEqual(oldState.tiShiShow, state.tiShiShow)) {
+
+            if (!isPlayOpen) {
+                this.showAllBoxs();
             }
         }
 
@@ -883,6 +951,58 @@ export default class dragAnswer_model03_v1 extends cc.Component {
                 this._colliderBox[state.colliderBox[i].index].x = state.colliderBox[i].pos.x;
                 this._colliderBox[state.colliderBox[i].index].y = state.colliderBox[i].pos.y;
                 this._colliderBox[state.colliderBox[i].index].data.posIndex = -1;
+            }
+        }
+
+        if (!globalThis._.isEqual(oldState.tiShiBox1, state.tiShiBox1)) {
+
+            this.hideAllBoxs();
+            for (let i = 0; i < state.tiShiBox1.length; i++) {
+
+                this._tishi1Btn[i].scaleX = 1.0;
+                this._tishi1Btn[i].scaleY = 1.0;
+                this._tishi1Btn[i].x = state.tiShiBox1[i].x;
+                this._tishi1Btn[i].y = state.tiShiBox1[i].y;
+                this._tishi1Btn[i].icon = state.tiShiBox1[i].icon;
+
+                //做动画
+                if (i === state.tiShiBox1.length - 1) {
+
+                    cc.tween(this._tishi1Btn[i])
+                        .to(0.5, { x: this._tishi1Positon[i].x, y: this._tishi1Positon[i].y })
+                        .to(0.5, { scaleX: 0.4, scaleY: 0.4 })
+                        .call(() => {
+
+                            this.showAllBoxs();
+
+                        })
+                        .start();
+
+                } else {
+
+                    cc.tween(this._tishi1Btn[i])
+                        .to(0.5, { x: this._tishi1Positon[i].x, y: this._tishi1Positon[i].y })
+                        .to(0.5, { scaleX: 0.4, scaleY: 0.4 })
+                        .start();
+                }
+            }
+        }
+
+        if (!globalThis._.isEqual(oldState.tiShiBox2, state.tiShiBox2)) {
+
+            for (let i = 0; i < state.tiShiBox1.length; i++) {
+
+                this._tishi1Btn[i].x = this._tishi1_1Positon[i].x;
+                this._tishi1Btn[i].y = this._tishi1_1Positon[i].y;
+                this._tishi1Btn[i].sortingOrder = 1;
+                this._tishi1Btn[i].scaleX = 0.7;
+                this._tishi1Btn[i].scaleY = 0.7;
+            }
+
+            for (let i = 0; i < state.tiShiBox2.length; i++) {
+
+                this._tishi2Btn[i].icon = state.tiShiBox2[i].icon;
+                this._tishi2Btn[i].sortingOrder = 1;
             }
         }
 
@@ -909,9 +1029,28 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }
     }
 
-    answerFeedback(bool: boolean, tiShiControl?: number) {
+    hideAllBoxs() {
+
+        for (let i = 0; i < this._colliderBox.length; i++) {
+
+            this._colliderBox[i].visible = false;
+        }
+    }
+
+    showAllBoxs() {
+
+        for (let i = 0; i < this._colliderBox.length; i++) {
+
+            this._colliderBox[i].visible = true;
+            this._colliderBox[i].draggable = true;
+        }
+    }
+
+    answerFeedback(bool: boolean, state?: any) {
         if (!this.feedback) return;
-        let state: any = globalThis._.cloneDeep(this._state);
+
+        console.log('==== 进入反馈界面  ====');
+
         let feedback: any = cc.instantiate(this.feedback);
         feedback.x = 960;
         feedback.y = 540;
@@ -923,10 +1062,16 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
             feedback.destroy();
             if (bool) {
-                this._c2.selectedIndex = tiShiControl;
+
+                this._bgdoor.getTransition('open2').play(() => {
+
+                    this._c2.selectedIndex = state.tiShiShow;
+
+                });
             }
-            state.submit = this.submitType.No;
-            this.updateState(state);
+            let state1: any = globalThis._.cloneDeep(this._state);
+            state1.submit = this.submitType.No;
+            this.updateState(state1);
 
         }, 2000);
     }

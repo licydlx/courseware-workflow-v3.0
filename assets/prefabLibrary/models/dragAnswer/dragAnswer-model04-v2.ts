@@ -87,7 +87,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
     private answerType: any = cc.Enum({
 
-        Recyclable: '1'
+        Recyclable: '1',
+        Harmful: '2'
 
     });
 
@@ -506,7 +507,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
         // 左
         if (this._boxRect1.contains(tarPos)) {
-            console.log('==== 框1 ====');
 
             if (isContainer1) {
 
@@ -529,9 +529,9 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
                 this.dealAllContainIn(false, false, false, true, true, true, state, btn);
 
-                if (this._box1Contain.length < this._containerTotalSecond) {
-                    this._box1Contain.push(btn);
+                if (this._box1Contain.length < this._containerTotalSecond && btn.name[0] === this.answerType.Recyclable) {
 
+                    this._box1Contain.push(btn);
                     let temp = {
                         pos: {
                             x: this._typeBoxPos1[state.box1Contain.length].x,
@@ -545,7 +545,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 } else {
                     // 恢复原位
                     this.resetButtonInitPos(state.colliderBox, btn);
-
                 }
             }
 
@@ -575,7 +574,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
                 this.dealAllContainIn(false, false, true, false, true, true, state, btn);
 
-                if (this._box2Contain.length < this._containerTotalSecond) {
+                if (this._box2Contain.length < this._containerTotalSecond && btn.name[0] === this.answerType.Recyclable) {
 
                     this._box2Contain.push(btn);
 
@@ -622,7 +621,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
                 this.dealAllContainIn(false, false, true, true, false, true, state, btn);
 
-                if (this._box3Contain.length < this._containerTotalSecond) {
+                if (this._box3Contain.length < this._containerTotalSecond && btn.name[0] === this.answerType.Harmful) {
 
                     this._box3Contain.push(btn);
 
@@ -635,6 +634,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                         posIndex: state.box3Contain.length
                     };
                     state.box3Contain.push(temp);
+
 
                 } else {
 
@@ -673,7 +673,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
                 this.dealAllContainIn(false, false, true, true, true, false, state, btn);
 
-                if (this._box4Contain.length < this._containerTotalSecond) {
+                if (this._box4Contain.length < this._containerTotalSecond && btn.name[0] === this.answerType.Harmful) {
 
                     this._box4Contain.push(btn);
 
@@ -1011,7 +1011,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 // 第一次答案正确
                 this._answer.push(true);
                 state.answer = this._answer;
-                state.submit = this.submitType.RightFeed;
                 this.refreshFirstRightData(state);
 
             } else {
@@ -1061,6 +1060,36 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
         state.colliderBox = [];
         // 第二次做题时初始化按钮全部位置
+
+        for (let i = 0; i < this._colliderCacheSecond.length; i++) {
+            if (i < this._containerTotal) {
+
+                let temp = {
+                    pos: {
+                        x: this._colliderCacheSecond[i].pos.x,
+                        y: this._colliderCacheSecond[i].pos.y
+                    },
+
+                    index: state.leftContain[i].index
+                };
+                state.colliderBox.push(temp);
+                this._colliderCacheSecond[i].index = state.leftContain[i].index;
+
+            } else {
+
+                let temp = {
+                    pos: {
+                        x: this._colliderCacheSecond[i].pos.x,
+                        y: this._colliderCacheSecond[i].pos.y
+                    },
+
+                    index: state.rightContain[i - this._containerTotal].index
+                };
+                state.colliderBox.push(temp);
+                this._colliderCacheSecond[i].index = state.rightContain[i - this._containerTotal].index;
+            }
+        }
+
         for (let i = 0; i < this._colliderBox.length; i++) {
 
             for (let j = 0; j < this._colliderCacheSecond.length; j++) {
@@ -1068,16 +1097,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 if (this._colliderBox[i].data.index === this._colliderCacheSecond[j].index) {
                     this._colliderBox[i].data.x = this._colliderCacheSecond[j].pos.x;
                     this._colliderBox[i].data.y = this._colliderCacheSecond[j].pos.y;
-
-                    let temp = {
-                        pos: {
-                            x: this._colliderBox[i].data.x,
-                            y: this._colliderBox[i].data.y
-                        },
-
-                        index: this._colliderBox[i].data.index
-                    };
-                    state.colliderBox.push(temp);
+                    break;
                 }
             }
         }
