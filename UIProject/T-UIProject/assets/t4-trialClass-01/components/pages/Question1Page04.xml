@@ -16,48 +16,48 @@
     <graph id="n25_kxox" name="n25" xy="204,122" size="1511,445" group="n26_kxox" visible="false" type="rect"/>
     <group id="n26_kxox" name="collideredBox" xy="204,122" size="1511,445" advanced="true"/>
     <image id="n12_kxox" name="n12" src="msxwb" fileName="images/question1/box.png" xy="276,625" size="1368,454"/>
-    <component id="n9_kxox" name="left0" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,164" group="n24_kxox">
+    <component id="n9_kxox" name="left0" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,210" group="n24_kxox">
       <Button icon="ui://rokozlzwkxoxt"/>
     </component>
-    <component id="n14_kxox" name="left1" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,164" group="n24_kxox">
+    <component id="n14_kxox" name="left1" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,210" group="n24_kxox">
       <Button icon="ui://rokozlzwkxoxt"/>
     </component>
-    <component id="n15_kxox" name="left2" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,164" group="n24_kxox">
+    <component id="n15_kxox" name="left2" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,210" group="n24_kxox">
       <Button icon="ui://rokozlzwkxoxt"/>
     </component>
-    <component id="n16_kxox" name="left3" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,164" group="n24_kxox">
+    <component id="n16_kxox" name="left3" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,210" group="n24_kxox">
       <Button icon="ui://rokozlzwkxoxt"/>
     </component>
-    <component id="n17_kxox" name="left4" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,164" group="n24_kxox">
+    <component id="n17_kxox" name="left4" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,210" group="n24_kxox">
       <Button icon="ui://rokozlzwkxoxt"/>
     </component>
-    <component id="n18_kxox" name="left5" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,164" group="n24_kxox">
+    <component id="n18_kxox" name="left5" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,210" group="n24_kxox">
       <Button icon="ui://rokozlzwkxoxt"/>
     </component>
-    <component id="n27_ku3e" name="left6" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,164" group="n24_kxox">
+    <component id="n27_ku3e" name="left6" src="kxox13" fileName="components/common/DragBtn.xml" xy="674,824" size="199,210" group="n24_kxox">
       <Button icon="ui://rokozlzwkxoxt"/>
     </component>
-    <component id="n10_kxox" name="right0" src="kxox13" fileName="components/common/DragBtn.xml" xy="1054,786" size="224,199" group="n24_kxox">
+    <component id="n10_kxox" name="right0" src="kxox13" fileName="components/common/DragBtn.xml" xy="1064,832" size="224,199" group="n24_kxox" scale="0.8,0.8">
       <Button icon="ui://rokozlzwkxoxu"/>
     </component>
-    <component id="n19_kxox" name="right1" src="kxox13" fileName="components/common/DragBtn.xml" xy="1054,786" size="224,199" group="n24_kxox">
+    <component id="n19_kxox" name="right1" src="kxox13" fileName="components/common/DragBtn.xml" xy="1064,832" size="224,199" group="n24_kxox" scale="0.8,0.8">
       <Button icon="ui://rokozlzwkxoxu"/>
     </component>
-    <component id="n20_kxox" name="right2" src="kxox13" fileName="components/common/DragBtn.xml" xy="1054,786" size="224,199" group="n24_kxox">
+    <component id="n20_kxox" name="right2" src="kxox13" fileName="components/common/DragBtn.xml" xy="1064,832" size="224,199" group="n24_kxox" scale="0.8,0.8">
       <Button icon="ui://rokozlzwkxoxu"/>
     </component>
-    <component id="n21_kxox" name="right3" src="kxox13" fileName="components/common/DragBtn.xml" xy="1054,786" size="224,199" group="n24_kxox">
+    <component id="n21_kxox" name="right3" src="kxox13" fileName="components/common/DragBtn.xml" xy="1064,832" size="224,199" group="n24_kxox" scale="0.8,0.8">
       <Button icon="ui://rokozlzwkxoxu"/>
     </component>
-    <component id="n22_kxox" name="right4" src="kxox13" fileName="components/common/DragBtn.xml" xy="1054,786" size="224,199" group="n24_kxox">
+    <component id="n22_kxox" name="right4" src="kxox13" fileName="components/common/DragBtn.xml" xy="1064,832" size="224,199" group="n24_kxox" scale="0.8,0.8">
       <Button icon="ui://rokozlzwkxoxu"/>
     </component>
-    <component id="n23_kxox" name="right5" src="kxox13" fileName="components/common/DragBtn.xml" xy="1054,786" size="224,199" group="n24_kxox">
+    <component id="n23_kxox" name="right5" src="kxox13" fileName="components/common/DragBtn.xml" xy="1064,832" size="224,199" group="n24_kxox" scale="0.8,0.8">
       <Button icon="ui://rokozlzwkxoxu"/>
     </component>
-    <component id="n28_ku3e" name="right6" src="kxox13" fileName="components/common/DragBtn.xml" xy="1054,786" size="224,199" group="n24_kxox">
+    <component id="n28_ku3e" name="right6" src="kxox13" fileName="components/common/DragBtn.xml" xy="1064,832" size="224,199" group="n24_kxox" scale="0.8,0.8">
       <Button icon="ui://rokozlzwkxoxu"/>
     </component>
-    <group id="n24_kxox" name="colliderBox" xy="674,786" size="604,202" advanced="true"/>
+    <group id="n24_kxox" name="colliderBox" xy="674,824" size="614,210" advanced="true"/>
   </displayList>
 </component>
