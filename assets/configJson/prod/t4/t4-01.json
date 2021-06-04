@@ -5,14 +5,14 @@
     "totalPages": 15,
     "pathConfig": {
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
-        "controllerBundlePath": "T-series/personalTest/guhl/controllers/",
+        "controllerBundlePath": "T-series/prefabLibrary/controllers/",
         "controllerName": "controller-model02",
         "resourceBundlePath": "T-series/fairyUis/t4/",
         "resourceName": "t4-01",
-        "panelBundlePath": "T-series/personalTest/guhl/components/",
+        "panelBundlePath": "T-series/prefabLibrary/components/",
         "panelName": "formal-panle-model02",
-        "modelBundlePath": "T-series/personalTest/guhl/models/",
-        "componentBundlePath": "T-series/personalTest/guhl/components/",
+        "modelBundlePath": "T-series/prefabLibrary/models/",
+        "componentBundlePath": "T-series/prefabLibrary/components/",
         "packageName": "t4-01"
     },
     "chapters": [
@@ -27,7 +27,7 @@
             "model": {
                 "uiPath": "Question1Page01",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "3|0|1"
@@ -45,7 +45,7 @@
             "model": {
                 "uiPath": "Question1Page02",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model01-v1",
+                "prefabName": "savingTheCave-choose",
                 "config": {
                     "answer": [
                         2
@@ -69,7 +69,7 @@
             "model": {
                 "uiPath": "Question1Page03",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model01-v1",
+                "prefabName": "savingTheCave-choose",
                 "config": {
                     "answer": [
                         3
@@ -93,7 +93,7 @@
             "model": {
                 "uiPath": "Question1Page04",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model01-v1",
+                "prefabName": "savingTheCave-choose",
                 "config": {
                     "answer": [
                         3
@@ -117,7 +117,7 @@
             "model": {
                 "uiPath": "Question2Page01",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "3|2|0"
@@ -135,7 +135,7 @@
             "model": {
                 "uiPath": "Question2Page02",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "3|0|1",
@@ -154,7 +154,7 @@
             "model": {
                 "uiPath": "Question2Page03",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "0|2|3",
@@ -173,7 +173,7 @@
             "model": {
                 "uiPath": "Question2Page04",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "2|3|0"
@@ -191,7 +191,7 @@
             "model": {
                 "uiPath": "Question3Page01",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "0"
@@ -209,7 +209,7 @@
             "model": {
                 "uiPath": "Question3Page02",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "0"
@@ -227,7 +227,7 @@
             "model": {
                 "uiPath": "Question3Page03",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "2"
@@ -245,7 +245,7 @@
             "model": {
                 "uiPath": "Question3Page04",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "1"
@@ -263,7 +263,7 @@
             "model": {
                 "uiPath": "Question4Page01",
                 "bundleName": "savingTheCave",
-                "prefabName": "savingTheCave-model03-v2",
+                "prefabName": "savingTheCave-drag",
                 "config": {
                     "answer": [
                         "1"
