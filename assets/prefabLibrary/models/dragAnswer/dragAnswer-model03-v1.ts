@@ -216,6 +216,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
     // private _offsetPos: cc.Vec2 = new cc.Vec2();
     private _onDragStart(evt: fgui.Event): void {
         let s = this;
+        s._dragging = true;
         s.playSound('ui://rokozlzwkxox11');
         evt.captureTouch();
 
@@ -304,7 +305,9 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         // console.warn('pushhhhhhhhhh',dropArr);
 
         let footNum = 0;
-        for (let i = 0; i < dropArr.length; i++) {
+        let len = dropArr.length;
+        let initX = (1500 - len * 200) / 2;
+        for (let i = 0; i < len; i++) {
             let item = dropArr[i];
             // let itemIndex = s._colliderBox.indexOf(item);//状态池中的index
             let itemIndex = s._colliderBox.findIndex(v => v.name == item.name);//状态池中的index
@@ -316,7 +319,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             } else if (item.name.indexOf('right') > -1) {
                 footNum += s._footNum[1];
             }
-            pos.x = collideredBox.x + 150 + 200 * i;
+            pos.x = collideredBox.x + initX + 200 * i;
             pos.y = collideredBox.y + collideredBox.height - curCollider.height;
             state.collider[itemIndex] = {
                 x: pos.x,

@@ -57,7 +57,7 @@
     "_is3DNode": true,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "autoReleaseAssets": false,
+    "autoReleaseAssets": true,
     "_id": "d9e74695-e785-4b40-bcdc-fcb0aa490f14"
   },
   {
@@ -743,8 +743,10 @@
       "__id__": 2
     },
     "_enabled": true,
-    "test": false,
-    "configJson": null,
+    "test": true,
+    "configJson": {
+      "__uuid__": "2aff3dba-c5a4-41fa-82c4-703fe227ea28"
+    },
     "_id": "42xPsb+q9CAbXn9IGsj/Pj"
   }
 ]

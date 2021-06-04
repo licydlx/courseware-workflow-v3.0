@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="141,141">
   <displayList>
-    <image id="n0_jrdo" name="n0" src="mzao25" fileName="images/question3/icon_3.png" xy="0,0"/>
+    <image id="n0_jrdo" name="n0" src="lax046" fileName="images/question3/icon_3_2x.png" xy="0,0" size="141,141" aspect="true"/>
   </displayList>
 </component>
