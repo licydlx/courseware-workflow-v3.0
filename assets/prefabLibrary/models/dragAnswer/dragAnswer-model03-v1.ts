@@ -120,7 +120,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         for (let i = 0; i < this._view.numChildren; i++) {
             if (s._view.getChildAt(i).group == colliderGroup) {
                 let btn: fgui.GButton = this._view.getChildAt(i).asButton;
-                s._cache['colliderBox'].push({ x: btn.x, y: btn.y, belong: null });
+                s._cache['colliderBox'].push({ x: btn.x, y: btn.y, belong: -1 });
                 btn['collideredIndex'] = -1;
                 btn.draggable = true;
                 btn.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
@@ -225,6 +225,7 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         let colliderIndex = s._colliderBox.findIndex(v => v == collider);
 
         let state: any = globalThis._.cloneDeep(s._state);
+        state.drag = 'start';
         state.colliderIndex = colliderIndex;
         s.updateState(state);
     }
@@ -287,7 +288,8 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             }
             state.collider[colliderIndex] = {
                 x: s._cache["colliderBox"][colliderIndex].x,
-                y: s._cache["colliderBox"][colliderIndex].y
+                y: s._cache["colliderBox"][colliderIndex].y,
+                belong: -1
             }
             if (collider.collideredIndex > -1) {
                 collideredIndex = collider.collideredIndex;
@@ -407,6 +409,8 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         let s = this;
 
         if (state.drag == "move") {
+            console.log('move');
+
             if (s._view.getChildIndex(this._colliderBox[state.colliderIndex]) != s._view.numChildren - 1) {
                 s._view.setChildIndex(this._colliderBox[state.colliderIndex], s._view.numChildren - 1);
             }
@@ -415,11 +419,22 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }
 
         if (state.drag == "end") {
+            console.log('end');
+
             // if (!globalThis._.isEqual(oldState.collider, state.collider)) {
-                for (let i = 0; i < state.collider.length; i++) {
+            cc.Tween.stopAll();
+            for (let i = 0; i < state.collider.length; i++) {
+                if (state.collider[i].belong != -1) {
+                    cc.tween(this._colliderBox[i]).to(0.5, {
+                        x: state.collider[i].x,
+                        y: state.collider[i].y
+                    }).start();
+                } else {
                     this._colliderBox[i].x = state.collider[i].x;
                     this._colliderBox[i].y = state.collider[i].y;
                 }
+
+            }
             // }
             if (!globalThis._.isEqual(oldState.submit, state.submit)) {
                 if (state.submit) {

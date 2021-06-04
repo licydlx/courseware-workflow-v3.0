@@ -120,6 +120,8 @@
     <spine id="axzx43" name="smoke.json" path="/images/skeleton/" exported="true" width="100" height="100" require="axzx44,axzx45" atlasNames="smoke" anchor="100,100"/>
     <image id="lax046" name="icon_3_2x.png" path="/images/question3/" scale9grid="56,56,112,112"/>
     <image id="lax047" name="icon_3_4x.png" path="/images/question3/"/>
+    <image id="fjx149" name="椭圆766拷贝3.png" path="/images/question3/"/>
+    <image id="fjx14a" name="椭圆766拷贝2.png" path="/images/question3/"/>
   </resources>
   <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4\t4-trialClass-01" packageCount="2" codePath="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4"/>
 </packageDescription>
