@@ -229,6 +229,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             // state.collider[colliderIndex].collideredIndex = -1;
         }
 
+        state.collider[colliderIndex].x += 1;
+
         state.colliderIndex = colliderIndex;
         s.updateState(state);
         s.showTips(true);
@@ -274,8 +276,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
 
         let state: any = globalThis._.cloneDeep(this._state);
-        console.log('this state = ', this._state);
-        console.log('clone state = ', state);
 
         let dropArr = state.collidered[collideredIndex];
 
@@ -285,11 +285,10 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
         if (collideredIndex != -1) {
             let collideredName: string = collidered.name;
-            console.log('colliderName = ', colliderName);
-            console.log('collideredName = ', collideredName);
+            // console.log('colliderName = ', colliderName);
+            // console.log('collideredName = ', collideredName);
             // 如果头和脚放置位置不匹配则重置位置 head dropBox1 || foot dropBox2
             let matchFlag = colliderName.indexOf('head') > -1 && collideredName.indexOf('dropBox1') > - 1 || colliderName.indexOf('foot') > -1 && collideredName.indexOf('dropBox2') > - 1;
-            console.log('matchFlag ', matchFlag);
 
             // 1.拿到当前放置区对应的放置区 2.获取对应放置区内的元素 3.判断元素的namee是否为相同role
             if (collideredIndex < s._roleCount) {
@@ -304,7 +303,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 /* if ((!matchFlag || dropArr.length == 0) && (!matchFlag || (matchCollinderArr.length > 0 && !(matchCollinderArr[0].roleType == collider.data)))) {
                     collideredIndex = -1;
                 } */
-                // dropArr.length> 0 && 
                 if ((!matchFlag || (dropArr.length == 0 && matchCollinderArr.length > 0 && !(matchCollinderArr[0].roleType == collider.data)))) {
                     collideredIndex = -1;
                 }
@@ -335,7 +333,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             if (dropArr.length == 1) {
                 // 移除原有的元素
                 let existColliderData = dropArr.splice(0, 1);
-                console.log(existColliderData[0]);
 
                 let existColliderIndex: number = this._colliderBox.findIndex((v: any, i: number) => v.name == existColliderData[0].name);
                 state.collider[existColliderIndex] = {
@@ -364,7 +361,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 roleType: collider.data,
                 collideredIndex: collideredIndex
             });
-            console.log('pushhh', dropArr);
 
             state.collider[colliderIndex] = {
                 x: s._collideredBox[collideredIndex].x,
@@ -377,14 +373,11 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         }
         console.log('state.collidered = ', state.collidered);
 
-
         state.drag = "end";
         state.submit = false;
         state.colliderIndex = colliderIndex;
 
         s.updateState(state);
-        console.log('------------------------------------------------');
-
     }
 
     private showTips(isShow: boolean) {
@@ -669,18 +662,15 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         }
 
         if (state.drag == "end") {
+            // 更新位置
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
-            // console.log('endddddddddd update ui', state);
-
                 for (let i = 0; i < state.collider.length; i++) {
                     this._colliderBox[i].x = state.collider[i].x;
                     this._colliderBox[i].y = state.collider[i].y;
                     this._colliderBox[i].visible = state.collider[i].visible;
-                    // console.log(state.collider[i].visible);                    
                 }
             }
             if (!globalThis._.isEqual(oldState.submit, state.submit)) {
-                // console.log('submittttttt');
 
                 if (state.submit) {
                     // 根据collider 初始位置 判断 是否被操作过

@@ -267,16 +267,12 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
 
         let state: any = globalThis._.cloneDeep(this._state);
-        console.log('origin state = ', this._state.dropArr);// right
-        console.log('clone state = ', state.dropArr);//rihgt
 
         let dropArr = state.dropArr;
-        // console.error('s.dropArr11111111111111 = ', dropArr);
 
         let name = collider.name;
         // let dropArrIndex = dropArr.indexOf(data);//放置区是否已包含当前拖拽元素
         let dropArrIndex = dropArr.findIndex(v => v.name == name);//放置区是否已包含当前拖拽元素
-        console.warn('dropArrIndex = ', dropArrIndex);
 
         // 1.重置位置 重置到
         // 2.放入放置区
@@ -298,13 +294,9 @@ export default class dragAnswer_model03_v1 extends cc.Component {
             }
         } else {
             if (dropArrIndex == -1) {
-                // dropArr.push(JSON.parse(JSON.stringify(collider)));
                 dropArr.push({ 'name': collider.name });
-                // console.warn('pushhhhhhhhhh',dropArr);
             }
         }
-        // dropArr.push({ name: collider.name });
-        // console.warn('pushhhhhhhhhh',dropArr);
 
         let footNum = 0;
         let len = dropArr.length;
@@ -334,16 +326,11 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         state.drag = "end";
         state.submit = false;
         state.colliderIndex = colliderIndex;
-        // state.collidered[collideredIndex] = dropArr.concat([]);
-        console.log('给state赋值前的', dropArr);
 
         state.dropArr = dropArr;
-        console.warn('赋值后的', state.dropArr);
 
         state.answer = footNum == s._answer ? true : false;
         s.updateState(state);
-        // s._curDragIcon = null;
-        console.log('------------------------------------------------');
 
     }
 
@@ -409,8 +396,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         let s = this;
 
         if (state.drag == "move") {
-            console.log('move');
-
             if (s._view.getChildIndex(this._colliderBox[state.colliderIndex]) != s._view.numChildren - 1) {
                 s._view.setChildIndex(this._colliderBox[state.colliderIndex], s._view.numChildren - 1);
             }
@@ -419,8 +404,6 @@ export default class dragAnswer_model03_v1 extends cc.Component {
         }
 
         if (state.drag == "end") {
-            console.log('end');
-
             // if (!globalThis._.isEqual(oldState.collider, state.collider)) {
             cc.Tween.stopAll();
             for (let i = 0; i < state.collider.length; i++) {
