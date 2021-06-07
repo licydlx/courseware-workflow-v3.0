@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="152,152">
+  <displayList>
+    <loader id="n3_f97k" name="bg" xy="0,0" size="152,152" url="ui://k4ucnbrrt68dd6"/>
+    <loader id="n2_r1ww" name="value" xy="76,78" pivot="0.5,0.5" anchor="true" size="59,108" url="ui://k4ucnbrrr1wwdw" autoSize="true"/>
+  </displayList>
+</component>

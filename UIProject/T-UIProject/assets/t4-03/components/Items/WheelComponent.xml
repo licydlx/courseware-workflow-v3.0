@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="235,298" mask="n0_pxoy">
+  <displayList>
+    <loader id="n0_pxoy" name="mask" xy="0,0" size="235,298"/>
+    <image id="n4_pxoy" name="n4" src="t68dcj" fileName="images/question2/wheel_practice_1.png" xy="0,0"/>
+  </displayList>
+</component>
