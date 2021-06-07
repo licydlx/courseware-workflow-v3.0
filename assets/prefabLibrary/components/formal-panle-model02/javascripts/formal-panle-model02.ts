@@ -4,7 +4,7 @@
  * @Author: ydlx
  * @Date: 2020-11-19 18:05:09
  * @LastEditors: ydlx
- * @LastEditTime: 2021-06-03 19:07:10
+ * @LastEditTime: 2021-06-07 15:17:44
  */
 const { ccclass, property } = cc._decorator;
 
@@ -115,6 +115,7 @@ export default class formal_panle_model02 extends cc.Component {
             state.monitoredName = null;
             state.launch = null;
             state.ranking = [];
+            state.snapshoot = {};
         } else if (ced == 2) {
             state.launch = null;
         } else if (ced == 3) {
