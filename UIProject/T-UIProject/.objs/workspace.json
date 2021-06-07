@@ -1,29 +1,44 @@
 {
-  "libview.firstColumnWidth": 301,
+  "libview.firstColumnWidth": 255,
   "libview.iconScale": 0,
   "doc.openedDocs": [
-    "ui://rokozlzwku3e3e"
+    "ui://k4ucnbrrr1wwdm",
+    "ui://k4ucnbrrvlccet",
+    "ui://k4ucnbrrvlcceu",
+    "ui://k4ucnbrrvlccev"
   ],
-  "packageGroup.mine": [],
+  "packageGroup.mine": [
+    "k4ucnbrr"
+  ],
   "libview.syncEditor": 0,
   "auxline1": true,
   "canvasColor": 10066329,
   "auxline2": true,
-  "doc.activeDoc": "ui://rokozlzwku3e3e",
+  "doc.activeDoc": "ui://k4ucnbrrr1wwdm",
   "libview.twoColumn": false,
   "libview.expandedNodes": [
-    "rokozlzw",
+    "k4ucnbrr",
     "/",
-    "rokozlzw",
+    "k4ucnbrr",
     "/components/",
-    "rokozlzw",
+    "k4ucnbrr",
+    "/components/common/",
+    "k4ucnbrr",
+    "/components/common/buttons/",
+    "k4ucnbrr",
     "/images/",
-    "rokozlzw",
-    "/images/skeleton/"
+    "k4ucnbrr",
+    "/images/common/",
+    "k4ucnbrr",
+    "/images/num/",
+    "k4ucnbrr",
+    "/images/question2/",
+    "k4ucnbrr",
+    "/images/question3/"
   ],
   "snapToGrid": true,
   "backgroundColor": 6710886,
-  "libview.currentGroup": "t4",
+  "libview.currentGroup": "~",
   "gridSize": 30,
   "gridColor": 80
 }
