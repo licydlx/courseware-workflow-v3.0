@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n50_t1pw" name="n50" src="t1pw36" fileName="images/common/bg.png" xy="0,0"/>
+    <image id="n64_t1pw" name="n64" src="t1pw3l" fileName="images/common/drag_frame.png" xy="1261,65"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="41,61" size="228,171" scale="0.8,0.8" url="ui://tfsfm7mbt1pw0" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <image id="n70_t1pw" name="n70" src="t1pw3q" fileName="images/exercise_1_1/exemple_1_frame_up.png" xy="813,20" group="n26_kxox"/>
+    <group id="n26_kxox" name="collideredBox" xy="813,20" size="350,384" advanced="true"/>
+    <image id="n66_t1pw" name="n66" src="t1pw3o" fileName="images/exercise_1_1/exemple_1_frame_down.png" xy="813,666" group="n62_t1pw"/>
+    <image id="n67_t1pw" name="n67" src="t1pw3p" fileName="images/exercise_1_1/exemple_1_frame_left.png" xy="329,382" group="n62_t1pw"/>
+    <image id="n68_t1pw" name="n68" src="t1pw3r" fileName="images/exercise_1_1/exemple_1_rect_0.png" xy="407,463" group="n62_t1pw"/>
+    <image id="n69_t1pw" name="n69" src="t1pw3r" fileName="images/exercise_1_1/exemple_1_rect_0.png" xy="892,773" group="n62_t1pw"/>
+    <group id="n62_t1pw" name="group" xy="329,382" size="834,668"/>
+    <loader id="n53_t1pw" name="content" xy="832,446" size="292,225" url="ui://tfsfm7mbt1pw3n"/>
+    <loader id="n32_ku3e" name="drag_0" xy="1448,233" pivot="0.5,0.5" anchor="true" size="187,187" group="n33_ku3e" url="ui://tfsfm7mbt1pw3r" align="center" vAlign="middle" autoSize="true"/>
+    <loader id="n41_ku3e" name="drag_1" xy="1448,547" pivot="0.5,0.5" anchor="true" size="187,187" group="n33_ku3e" url="ui://tfsfm7mbt1pw3s" align="center" vAlign="middle" autoSize="true"/>
+    <loader id="n42_ku3e" name="drag_2" xy="1448,842" pivot="0.5,0.5" anchor="true" size="187,187" group="n33_ku3e" url="ui://tfsfm7mbt1pw3t" align="center" vAlign="middle" autoSize="true"/>
+    <group id="n33_ku3e" name="colliderBox" xy="1354,139" size="187,796" advanced="true"/>
+    <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="852,104" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://tfsfm7mbt1pw3m" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+    </component>
+    <component id="n49_t1pw" name="place" src="t1pw33" fileName="components/buttons/title.xml" xy="965,1184" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://tfsfm7mbt1pws" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+    </component>
+    <component id="n60_t1pw" name="submitBtn" src="t1pw3i" fileName="components/buttons/submitBtn.xml" xy="1686,796"/>
+    <component id="n61_t1pw" name="preBtn" src="t1pw3j" fileName="components/buttons/preBtn.xml" xy="69,445"/>
+  </displayList>
+</component>

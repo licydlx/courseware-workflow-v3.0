@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n112_ucr2" name="bg" src="t1pw5g" fileName="images/common/bg_3.png" xy="0,0"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="41,61" size="228,171" scale="0.8,0.8" url="ui://tfsfm7mbt1pw0" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n60_t1pw" name="submitBtn" src="t1pw3i" fileName="components/buttons/submitBtn.xml" xy="1596,796"/>
+    <image id="n114_ucr2" name="imgTop" src="ucr25w" fileName="images/common/example_3_bubble_0.png" xy="752,11" group="n120_ucr2"/>
+    <image id="n115_ucr2" name="imgLeft" src="ucr25x" fileName="images/common/example_3_bubble_1.png" xy="97,388" group="n120_ucr2"/>
+    <image id="n116_ucr2" name="imgDown" src="ucr25y" fileName="images/common/example_3_bubble_2.png" xy="752,755" group="n120_ucr2"/>
+    <loader id="n117_ucr2" name="loaderTop" xy="930,27" size="139,274" group="n120_ucr2" url="ui://tfsfm7mbtamw6p" autoSize="true"/>
+    <loader id="n118_ucr2" name="loaderLeft" xy="931,801" size="138,273" group="n120_ucr2" url="ui://tfsfm7mbtamw6r" autoSize="true"/>
+    <loader id="n119_ucr2" name="loaderDown" xy="204,412" size="273,273" group="n120_ucr2" url="ui://tfsfm7mbtamw6q" autoSize="true"/>
+    <group id="n120_ucr2" name="groupReference" xy="97,11" size="1147,1069"/>
+    <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="1044,109" size="1653,147" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://tfsfm7mbucr261" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+    </component>
+    <image id="n113_ucr2" name="imgTable" src="ucr260" fileName="images/common/example_3_table.png" xy="656,603" group="n171_ucr2"/>
+    <group id="n171_ucr2" name="groupFloorBtn" xy="656,603" size="662,138" advanced="true"/>
+  </displayList>
+</component>

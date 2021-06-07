@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <controller name="c_block" pages="0,,1,,2,,3," selected="0"/>
+  <displayList>
+    <image id="n50_t1pw" name="bg" src="t1pw36" fileName="images/common/bg.png" xy="0,0"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="41,61" size="228,171" scale="0.8,0.8" url="ui://tfsfm7mbt1pw0" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <image id="n72_t1pw" name="n72" src="t1pw4r" fileName="images/example_1/example_1_frame_up.png" xy="866,191" group="n62_t1pw"/>
+    <image id="n73_t1pw" name="n73" src="t1pw4q" fileName="images/example_1/example_1_frame_left.png" xy="383,492" group="n62_t1pw"/>
+    <image id="n74_t1pw" name="n74" src="t1pw4p" fileName="images/example_1/example_1_frame_down.png" xy="866,743" group="n62_t1pw"/>
+    <group id="n62_t1pw" name="group" xy="383,191" size="842,852"/>
+    <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="852,104" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://tfsfm7mbt1pw4y" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+    </component>
+    <component id="n49_t1pw" name="place" src="t1pw33" fileName="components/buttons/title.xml" xy="965,1184" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://tfsfm7mbt1pws" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+    </component>
+    <component id="n75_t1pw" name="nextBtn" src="t1pw4z" fileName="components/buttons/nextBtn.xml" xy="1665,441"/>
+    <component id="n78_t1pw" name="resetBtn" src="t1pw50" fileName="components/buttons/resetBtn.xml" xy="1613,943"/>
+    <image id="n76_t1pw" name="shadow" src="t1pw4x" fileName="images/example_1/example_1_shadow.png" xy="834,667"/>
+    <component id="n94_t1pw" name="blockRight" src="t1pw52" fileName="components/buttons/blockBtn.xml" xy="957,592">
+      <gearDisplay controller="c_block" pages="0,1"/>
+    </component>
+    <component id="n93_t1pw" name="blockLeft" src="t1pw52" fileName="components/buttons/blockBtn.xml" xy="865,592">
+      <gearDisplay controller="c_block" pages="0,3"/>
+    </component>
+    <image id="n77_t1pw" name="contentBlock" src="t1pw4n" fileName="images/example_1/example_1_block_0.png" xy="976,516"/>
+    <component id="n95_t1pw" name="blockRightTop" src="t1pw54" fileName="components/buttons/blockBtnTop.xml" xy="958,592">
+      <gearDisplay controller="c_block" pages="0,1"/>
+    </component>
+    <image id="n82_t1pw" name="n82" src="t1pw4u" fileName="images/example_1/example_1_rect_1.png" xy="559,533" group="n85_t1pw"/>
+    <image id="n83_t1pw" name="rect_left" src="t1pw4v" fileName="images/example_1/example_1_rect_2.png" xy="467,625" group="n85_t1pw">
+      <gearDisplay controller="c_block" pages="0,1,3"/>
+    </image>
+    <group id="n85_t1pw" name="groupLeft" xy="467,533" size="187,187"/>
+    <image id="n86_t1pw" name="n86" src="t1pw4t" fileName="images/example_1/example_1_rect_0.png" xy="998,826" group="n88_t1pw"/>
+    <image id="n87_t1pw" name="n87" src="t1pw4v" fileName="images/example_1/example_1_rect_2.png" xy="906,918" group="n88_t1pw">
+      <gearDisplay controller="c_block" pages="0,3"/>
+    </image>
+    <group id="n88_t1pw" name="groupBottom" xy="906,826" size="279,187"/>
+    <image id="n91_t1pw" name="n91" src="t1pw4t" fileName="images/example_1/example_1_rect_0.png" xy="999,227" group="n92_t1pw"/>
+    <image id="n89_t1pw" name="n89" src="t1pw4v" fileName="images/example_1/example_1_rect_2.png" xy="907,227" group="n92_t1pw">
+      <gearDisplay controller="c_block" pages="0,3"/>
+    </image>
+    <image id="n90_t1pw" name="n90" src="t1pw4v" fileName="images/example_1/example_1_rect_2.png" xy="999,227" group="n92_t1pw">
+      <gearDisplay controller="c_block" pages="0,1"/>
+    </image>
+    <group id="n92_t1pw" name="groupUp" xy="907,227" size="279,187"/>
+  </displayList>
+</component>

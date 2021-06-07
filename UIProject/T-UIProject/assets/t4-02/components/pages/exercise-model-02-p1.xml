@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="1"/>
+  <displayList>
+    <image id="n71_t1pw" name="bg" src="t1pw55" fileName="images/common/bg_2.png" xy="0,0"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="41,61" size="228,171" scale="0.8,0.8" url="ui://tfsfm7mbt1pw0" autoSize="true" frame="12">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n60_t1pw" name="submitBtn" src="t1pw3i" fileName="components/buttons/submitBtn.xml" xy="1596,810"/>
+    <loader id="n72_t1pw" name="imgContent" xy="749,75" size="472,438" url="ui://tfsfm7mbucr25k" autoSize="true"/>
+    <image id="n73_t1pw" name="imgFrame" src="t1pw5a" fileName="images/common/example_2_content.png" xy="540,543"/>
+    <image id="n74_t1pw" name="imgCell" src="t1pw59" fileName="images/common/example_2_cell.png" xy="828,595"/>
+    <image id="n76_t1pw" name="imgArrow" src="t1pw57" fileName="images/example_2/example_2_arrow_front.png" xy="944,464"/>
+    <component id="n97_t1pw" name="cellCom0" src="t1pw5f" fileName="components/common/cellCom.xml" xy="830,596" group="n96_t1pw"/>
+    <component id="n102_t1pw" name="cellCom1" src="t1pw5f" fileName="components/common/cellCom.xml" xy="949,596" group="n96_t1pw"/>
+    <component id="n103_t1pw" name="cellCom2" src="t1pw5f" fileName="components/common/cellCom.xml" xy="1069,596" group="n96_t1pw"/>
+    <component id="n104_t1pw" name="cellCom3" src="t1pw5f" fileName="components/common/cellCom.xml" xy="829,716" group="n96_t1pw"/>
+    <component id="n105_t1pw" name="cellCom4" src="t1pw5f" fileName="components/common/cellCom.xml" xy="949,716" group="n96_t1pw"/>
+    <component id="n106_t1pw" name="cellCom5" src="t1pw5f" fileName="components/common/cellCom.xml" xy="1069,716" group="n96_t1pw"/>
+    <component id="n107_t1pw" name="cellCom6" src="t1pw5f" fileName="components/common/cellCom.xml" xy="829,836" group="n96_t1pw"/>
+    <component id="n108_t1pw" name="cellCom7" src="t1pw5f" fileName="components/common/cellCom.xml" xy="949,836" group="n96_t1pw"/>
+    <component id="n109_t1pw" name="cellCom8" src="t1pw5f" fileName="components/common/cellCom.xml" xy="1069,836" group="n96_t1pw"/>
+    <group id="n96_t1pw" name="collideredBox" xy="829,596" size="361,361" advanced="true"/>
+    <loader id="n111_ucr2" name="img" xy="1303,715" size="123,123" url="ui://tfsfm7mbucr25l" autoSize="true"/>
+    <loader id="n75_t1pw" name="imgDrag" xy="1303,715" size="123,123" url="ui://tfsfm7mbucr25l" autoSize="true"/>
+    <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="932,104" size="1429,135" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://tfsfm7mbt1pw56" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+    </component>
+  </displayList>
+</component>

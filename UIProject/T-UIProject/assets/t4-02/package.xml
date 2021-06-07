@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="tfsfm7mb">
+  <resources>
+    <movieclip id="t1pw0" name="horn.jta" path="/animations/horn/"/>
+    <sound id="t1pw2" name="question1_2.mp3" path="/audios/ttile/"/>
+    <sound id="t1pw3" name="question1_3.mp3" path="/audios/ttile/"/>
+    <sound id="t1pw4" name="question2.mp3" path="/audios/ttile/"/>
+    <sound id="t1pw5" name="question3.mp3" path="/audios/ttile/"/>
+    <sound id="t1pw6" name="question1.mp3" path="/audios/ttile/"/>
+    <sound id="t1pw7" name="question1_1.mp3" path="/audios/ttile/"/>
+    <sound id="t1pw8" name="click.mp3" path="/audios/" exported="true"/>
+    <sound id="t1pw9" name="drop.mp3" path="/audios/" exported="true"/>
+    <component id="t1pwf" name="example-model-01-p2.xml" path="/components/pages/" exported="true"/>
+    <component id="t1pwt" name="static-model01-v1-p1.xml" path="/components/pages/" exported="true"/>
+    <image id="t1pwu" name="bg_0.png" path="/images/static/"/>
+    <image id="t1pw2i" name="0103.png" path="/images/common/"/>
+    <image id="t1pw2j" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
+    <image id="t1pw2k" name="hand.png" path="/images/common/" exported="true"/>
+    <component id="t1pw33" name="title.xml" path="/components/buttons/"/>
+    <sound id="t1pw34" name="question1_title_1.mp3" path="/audios/ttile/"/>
+    <image id="t1pw35" name="submit.png" path="/images/common/"/>
+    <image id="t1pw36" name="bg.png" path="/images/common/"/>
+    <image id="t1pw3f" name="pre_btn.png" path="/images/exercise_1_1/"/>
+    <component id="t1pw3i" name="submitBtn.xml" path="/components/buttons/"/>
+    <component id="t1pw3j" name="preBtn.xml" path="/components/buttons/"/>
+    <image id="t1pw3l" name="drag_frame.png" path="/images/common/"/>
+    <image id="t1pw3m" name="title_0.png" path="/images/common/"/>
+    <image id="t1pw3n" name="exemple_1_content.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3o" name="exemple_1_frame_down.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3p" name="exemple_1_frame_left.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3q" name="exemple_1_frame_up.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3r" name="exemple_1_rect_0.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3s" name="exemple_1_rect_1.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3t" name="exemple_1_rect_2.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3u" name="practice_1_1_content.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3v" name="practice_1_1_frame_down.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3w" name="practice_1_1_frame_left.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3x" name="practice_1_1_frame_up.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3y" name="practice_1_1_rect_0.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw3z" name="practice_1_1_rect_1.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw40" name="practice_1_1_rect_2.png" path="/images/exercise_1_1/"/>
+    <image id="t1pw41" name="practice_1_1_rect_3.png" path="/images/exercise_1_1/"/>
+    <component id="t1pw42" name="example-model-01-p1.xml" path="/components/pages/" exported="true"/>
+    <component id="t1pw43" name="exercise-model-01-p1.xml" path="/components/pages/" exported="true"/>
+    <image id="t1pw44" name="exercise_1_2_content.png" path="/images/exercise_1_2/"/>
+    <image id="t1pw45" name="exercise_1_2_frame_down.png" path="/images/exercise_1_2/"/>
+    <image id="t1pw46" name="exercise_1_2_frame_left.png" path="/images/exercise_1_2/"/>
+    <image id="t1pw47" name="exercise_1_2_frame_up.png" path="/images/exercise_1_2/"/>
+    <image id="t1pw48" name="exercise_1_2_rect_0.png" path="/images/exercise_1_2/"/>
+    <image id="t1pw49" name="exercise_1_2_rect_1.png" path="/images/exercise_1_2/"/>
+    <image id="t1pw4a" name="exercise_1_2_rect_2.png" path="/images/exercise_1_2/"/>
+    <image id="t1pw4b" name="exercise_1_2_rect_3.png" path="/images/exercise_1_2/"/>
+    <image id="t1pw4c" name="exercise_1_2_rect_4.png" path="/images/exercise_1_2/"/>
+    <image id="t1pw4d" name="exercise_1_3_content.png" path="/images/exercise_1_3/"/>
+    <image id="t1pw4e" name="exercise_1_3_frame_down.png" path="/images/exercise_1_3/"/>
+    <image id="t1pw4f" name="exercise_1_3_frame_left.png" path="/images/exercise_1_3/"/>
+    <image id="t1pw4g" name="exercise_1_3_frame_up.png" path="/images/exercise_1_3/"/>
+    <image id="t1pw4h" name="exercise_1_3_rect_0.png" path="/images/exercise_1_3/"/>
+    <image id="t1pw4i" name="exercise_1_3_rect_1.png" path="/images/exercise_1_3/"/>
+    <image id="t1pw4j" name="exercise_1_3_rect_2.png" path="/images/exercise_1_3/"/>
+    <component id="t1pw4k" name="exercise-model-01-p2.xml" path="/components/pages/" exported="true"/>
+    <component id="t1pw4l" name="exercise-model-01-p3.xml" path="/components/pages/" exported="true"/>
+    <image id="t1pw4m" name="exercise_1_3_rect_3.png" path="/images/exercise_1_3/"/>
+    <image id="t1pw4n" name="example_1_block_0.png" path="/images/example_1/"/>
+    <image id="t1pw4o" name="example_1_block_1.png" path="/images/example_1/"/>
+    <image id="t1pw4p" name="example_1_frame_down.png" path="/images/example_1/"/>
+    <image id="t1pw4q" name="example_1_frame_left.png" path="/images/example_1/"/>
+    <image id="t1pw4r" name="example_1_frame_up.png" path="/images/example_1/"/>
+    <image id="t1pw4s" name="example_1_next_btn.png" path="/images/example_1/"/>
+    <image id="t1pw4t" name="example_1_rect_0.png" path="/images/example_1/"/>
+    <image id="t1pw4u" name="example_1_rect_1.png" path="/images/example_1/"/>
+    <image id="t1pw4v" name="example_1_rect_2.png" path="/images/example_1/"/>
+    <image id="t1pw4w" name="example_1_reset.png" path="/images/example_1/"/>
+    <image id="t1pw4x" name="example_1_shadow.png" path="/images/example_1/"/>
+    <image id="t1pw4y" name="example_1_title.png" path="/images/example_1/"/>
+    <component id="t1pw4z" name="nextBtn.xml" path="/components/buttons/"/>
+    <component id="t1pw50" name="resetBtn.xml" path="/components/buttons/"/>
+    <image id="t1pw51" name="example_1_block_up.png" path="/images/example_1/"/>
+    <component id="t1pw52" name="blockBtn.xml" path="/components/buttons/"/>
+    <component id="t1pw54" name="blockBtnTop.xml" path="/components/buttons/"/>
+    <image id="t1pw55" name="bg_2.png" path="/images/common/"/>
+    <image id="t1pw56" name="title_1.png" path="/images/common/"/>
+    <image id="t1pw57" name="example_2_arrow_front.png" path="/images/example_2/"/>
+    <image id="t1pw58" name="example_2_block.png" path="/images/example_2/"/>
+    <image id="t1pw59" name="example_2_cell.png" path="/images/common/"/>
+    <image id="t1pw5a" name="example_2_content.png" path="/images/common/"/>
+    <image id="t1pw5b" name="example_2_rect.png" path="/images/example_2/"/>
+    <component id="t1pw5c" name="example-model-02-p1.xml" path="/components/pages/" exported="true"/>
+    <component id="t1pw5f" name="cellCom.xml" path="/components/common/"/>
+    <image id="t1pw5g" name="bg_3.png" path="/images/common/"/>
+    <component id="ucr25h" name="dragImg.xml" path="/components/common/" exported="true"/>
+    <component id="ucr25i" name="exercise-model-02-p2.xml" path="/components/pages/" exported="true"/>
+    <image id="ucr25j" name="exercise_2_1_arrow.png" path="/images/exercise_2_1/"/>
+    <image id="ucr25k" name="exercise_2_1_block.png" path="/images/exercise_2_1/"/>
+    <image id="ucr25l" name="exercise_2_1_rect.png" path="/images/exercise_2_1/"/>
+    <image id="ucr25m" name="exercise_2_2_arrow.png" path="/images/exercise_2_2/"/>
+    <image id="ucr25n" name="exercise_2_2_block.png" path="/images/exercise_2_2/"/>
+    <image id="ucr25o" name="exercise_2_2_rect.png" path="/images/exercise_2_2/"/>
+    <image id="ucr25p" name="exercise_2_3_arrow.png" path="/images/exercise_2_3/"/>
+    <image id="ucr25q" name="exercise_2_3_block.png" path="/images/exercise_2_3/"/>
+    <image id="ucr25r" name="exercise_2_3_rect.png" path="/images/exercise_2_3/"/>
+    <component id="ucr25s" name="exercise-model-02-p1.xml" path="/components/pages/" exported="true"/>
+    <component id="ucr25t" name="exercise-model-02-p3.xml" path="/components/pages/" exported="true"/>
+    <image id="ucr25u" name="title_2.png" path="/images/common/"/>
+    <image id="ucr25v" name="title_3.png" path="/images/common/"/>
+    <image id="ucr25w" name="example_3_bubble_0.png" path="/images/common/"/>
+    <image id="ucr25x" name="example_3_bubble_1.png" path="/images/common/"/>
+    <image id="ucr25y" name="example_3_bubble_2.png" path="/images/common/"/>
+    <image id="ucr25z" name="example_3_red_rect.png" path="/images/common/"/>
+    <image id="ucr260" name="example_3_table.png" path="/images/common/"/>
+    <image id="ucr261" name="title_4.png" path="/images/common/"/>
+    <image id="ucr266" name="example_3_block.png" path="/images/example_3/"/>
+    <image id="ucr267" name="example_3_rect_down.png" path="/images/example_3/"/>
+    <image id="ucr268" name="example_3_rect_left.png" path="/images/example_3/"/>
+    <image id="ucr269" name="example_3_rect_up.png" path="/images/example_3/"/>
+    <component id="ucr26a" name="exercise-model-03-p1.xml" path="/components/pages/" exported="true"/>
+    <component id="ucr26c" name="createBlockFloorBtn.xml" path="/components/buttons/" exported="true"/>
+    <component id="ucr26e" name="blockCom.xml" path="/components/common/" exported="true"/>
+    <image id="ucr26f" name="example_3_red_rect_1.png" path="/images/common/"/>
+    <image id="ucr26g" name="example_3_red_rect_2.png" path="/images/common/"/>
+    <component id="ucr26h" name="createBlockTopBtn.xml" path="/components/buttons/"/>
+    <component id="ucr26i" name="createBlockLeftBtn.xml" path="/components/buttons/"/>
+    <component id="ucr26j" name="createBlockBehindBtn.xml" path="/components/buttons/"/>
+    <image id="tamw6k" name="exercise_3_1_block.png" path="/images/exercise_3_1/" exported="true"/>
+    <image id="tamw6l" name="exercise_3_1_rect_0.png" path="/images/exercise_3_1/"/>
+    <image id="tamw6m" name="exercise_3_1_rect_1.png" path="/images/exercise_3_1/"/>
+    <image id="tamw6n" name="exercise_3_1_rect_2.png" path="/images/exercise_3_1/"/>
+    <image id="tamw6o" name="exercise_3_2_block.png" path="/images/exercise_3_2/" exported="true"/>
+    <image id="tamw6p" name="exercise_3_1_rect_0.png" path="/images/exercise_3_2/"/>
+    <image id="tamw6q" name="exercise_3_1_rect_1.png" path="/images/exercise_3_2/"/>
+    <image id="tamw6r" name="exercise_3_1_rect_2.png" path="/images/exercise_3_2/"/>
+    <image id="tamw6s" name="exercise_3_1_rect_4.png" path="/images/exercise_3_2/"/>
+    <image id="tamw6t" name="exercise_3_3_block.png" path="/images/exercise_3_3/" exported="true"/>
+    <image id="tamw6u" name="exercise_3_1_rect_0.png" path="/images/exercise_3_3/"/>
+    <image id="tamw6v" name="exercise_3_1_rect_1.png" path="/images/exercise_3_3/"/>
+    <image id="tamw6w" name="exercise_3_1_rect_2.png" path="/images/exercise_3_3/"/>
+    <component id="tamw6x" name="example-model-03-p1.xml" path="/components/pages/" exported="true"/>
+    <component id="tamw6y" name="exercise-model-03-p2.xml" path="/components/pages/" exported="true"/>
+    <component id="tamw6z" name="exercise-model-03-p3.xml" path="/components/pages/" exported="true"/>
+    <component id="tamw70" name="exercise-model-03-p4.xml" path="/components/pages/" exported="true"/>
+    <image id="iqw071" name="bg_title.png" path="/images/static/"/>
+  </resources>
+  <publish name="" path="F:\37Project\fairy-cocos-courseware\assets\fairyUis\t4\t4-02" packageCount="2"/>
+</packageDescription>

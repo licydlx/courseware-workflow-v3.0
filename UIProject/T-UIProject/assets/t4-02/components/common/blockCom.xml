@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="175,179" pivot="0,0.75" anchor="true">
+  <displayList>
+    <loader id="n0_ucr2" name="imgLoader" xy="0,0" size="179,184" scale="0.977,0.972" url="ui://tfsfm7mbucr266" autoSize="true"/>
+    <component id="n3_ucr2" name="topBtn" src="ucr26h" fileName="components/buttons/createBlockTopBtn.xml" xy="3,1" size="168,43"/>
+    <component id="n4_ucr2" name="leftBtn" src="ucr26i" fileName="components/buttons/createBlockLeftBtn.xml" xy="3,7" size="36,167"/>
+    <component id="n5_ucr2" name="frontBtn" src="ucr26j" fileName="components/buttons/createBlockBehindBtn.xml" xy="42,49" size="129,127"/>
+  </displayList>
+</component>
