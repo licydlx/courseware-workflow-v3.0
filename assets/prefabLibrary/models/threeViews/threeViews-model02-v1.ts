@@ -142,7 +142,6 @@ export default class threeViews_model02_v1 extends cc.Component {
 
     private _onDragStart(evt: fgui.Event): void {
         evt.captureTouch();
-        this.playSound('ui://tfsfm7mbt1pw9');
         let state: any = globalThis._.cloneDeep(this._state);
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         this._view.setChildIndex(collider, this._view.numChildren - 1);
@@ -179,7 +178,6 @@ export default class threeViews_model02_v1 extends cc.Component {
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
         let obj: any = this._adsorb(collider);
         let state: any = globalThis._.cloneDeep(this._state);
-        // this.playSound('ui://ik5aab9i98t375');
         if (obj.bool) {
             let isHas: boolean = state.collider.find((v: any, i: number) => {
                 return v.belong == obj.collideredIndex
@@ -193,7 +191,6 @@ export default class threeViews_model02_v1 extends cc.Component {
                 state.isCreate = true;
             }
         } else {
-            // this.playSound(obj.s == -1 ? 'ui://ik5aab9i98t375' : 'ui://ik5aab9i98t374');
             for (let i = 0; i < this._colliderBox.length; i++) {
                 if (collider == this._colliderBox[i]) {
                     state.collider[colliderIndex] = {
@@ -207,13 +204,6 @@ export default class threeViews_model02_v1 extends cc.Component {
         state.drag = "end";
         state.colliderIndex = colliderIndex;
         state.submit = false;
-
-        // let answerBool = state.collider.map((v: any) => v.belong).filter((v: any) => v).join("");
-        // console.log(state);
-        // if (answerBool) {
-        //     state.submit = true;
-        // }
-
         this.updateState(state);
     }
 
@@ -280,13 +270,10 @@ export default class threeViews_model02_v1 extends cc.Component {
 
         if (state.drag == "end") {
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
+                this.playSound('ui://tfsfm7mbt1pw9');
                 for (let i = 0; i < state.collider.length; i++) {
                     if (this._colliderBox[i]) {
                         // 放置声
-                        // if (state.collider[i].x != this._colliderBox[i].x && this._colliderBox[i].y != state.collider[i].y) {
-                        //     // 放置的声音先给我注释掉先
-                        //     this.playPlace();
-                        // }
                         this._colliderBox[i].x = state.collider[i].x;
                         this._colliderBox[i].y = state.collider[i].y;
                     }
@@ -354,20 +341,6 @@ export default class threeViews_model02_v1 extends cc.Component {
         }
     }
 
-    /**
-     * @name: 获取距离
-     * @msg: 
-     * @param {any} self
-     * @param {any} area
-     * @return {*}
-     */
-    private _getDistance(self: any, area: any) {
-        let width = (self.x + self.width / 2) - (area.x + area.width / 2);
-        let height = (self.y + self.height / 2) - (area.y + area.height / 2);
-        let distance = Math.sqrt(width * width + height * height);
-        return distance;
-    }
-
     answerFeedback(bool: boolean) {
         if (!this.feedback) return;
         let state: any = globalThis._.cloneDeep(this._state);
@@ -388,6 +361,7 @@ export default class threeViews_model02_v1 extends cc.Component {
     // 操作提示
     onHandleGuide() {
         if (!this.handleGuide) return;
+        this.playSound("ui://tfsfm7mbt1pw8");
         let state: any = globalThis._.cloneDeep(this._state);
         fgui.GRoot.inst.addChild(this.handleGuide.component);
         if (this.handleGuide.pos) {

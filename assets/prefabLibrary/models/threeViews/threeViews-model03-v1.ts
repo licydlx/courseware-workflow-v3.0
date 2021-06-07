@@ -81,7 +81,9 @@ export default class threeViews_model03_v1 extends cc.Component {
             submit: false,
             answer: false,
             isCreateBlock: false,
-            createBlockData: null
+            createBlockData: null,
+            floorBtnState: null,
+            blockBtnState: null
         }
         // 禁止操作期间 切页
         this.disableForbidHandle();
@@ -142,7 +144,7 @@ export default class threeViews_model03_v1 extends cc.Component {
     private _initFloorBtn() {
         this.floorBtns = [];
         let group = this._view.getChild("groupFloorBtn").asGroup;
-        for (var i = 0; i < this._createFloorBlockData.length; i++) {
+        for (let i = 0; i < this._createFloorBlockData.length; i++) {
             let floorBtn = fgui.UIPackage.createObject("t4-02", "createBlockFloorBtn").asButton;
             floorBtn.on(fgui.Event.CLICK, this._onFloorBtnClick, this);
             floorBtn.x = this._createFloorBlockData[i].x;
@@ -151,6 +153,22 @@ export default class threeViews_model03_v1 extends cc.Component {
             floorBtn.name = i.toString();
             this._view.addChild(floorBtn);
             this.floorBtns.push(floorBtn);
+            floorBtn.on(fgui.Event.ROLL_OVER, () => {
+                let state: any = globalThis._.cloneDeep(this._state);
+                let floorBtnState: any = {};
+                floorBtnState.floorBtnIndex = i;
+                floorBtnState.floorBtnIsHighlight = true;
+                state.floorBtnState = floorBtnState;
+                this.updateState(state);
+            }, this);
+            floorBtn.on(fgui.Event.ROLL_OUT, () => {
+                let state: any = globalThis._.cloneDeep(this._state);
+                let floorBtnState: any = {};
+                floorBtnState.floorBtnIndex = i;
+                floorBtnState.floorBtnIsHighlight = false;
+                state.floorBtnState = floorBtnState;
+                this.updateState(state);
+            }, this);
         }
     }
 
@@ -161,13 +179,9 @@ export default class threeViews_model03_v1 extends cc.Component {
         this._setBlockDataByIndex(createIndex);
     }
 
-    private _startDragTime: number;
     private _onDragStart(evt: fgui.Event): void {
         this._isDrag = false;
-        let time = new Date()
-        this._startDragTime = time.getTime();
         evt.captureTouch();
-        // this.playSound('ui://tfsfm7mbt1pw9');
         let state: any = globalThis._.cloneDeep(this._state);
         let curMoveBlock: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         let index = this._blocks.findIndex((v: CreatedBlockData) => v.target == curMoveBlock);
@@ -188,7 +202,7 @@ export default class threeViews_model03_v1 extends cc.Component {
         let curMoveBlockIndex: number = this._blocks.findIndex((v: CreatedBlockData) => v.target == curMoveBlock);
         let bool: any = this._adsorb(curMoveBlock, curMoveBlockIndex);
         let state: any = globalThis._.cloneDeep(this._state);
-        // this.playSound('ui://ik5aab9i98t375');
+        // this.playSound('ui://tfsfm7mbt1pw9');
         state.isBack = bool;
         state.drag = "end";
         state.curMoveBlockIndex = curMoveBlockIndex;
@@ -286,11 +300,7 @@ export default class threeViews_model03_v1 extends cc.Component {
 
         if (state.drag == "end") {
             if (!globalThis._.isEqual(oldState.isBack, state.isBack)) {
-                //         // 放置声
-                // if (state.collider[i].x != this._colliderBox[i].x && this._colliderBox[i].y != state.collider[i].y) {
-                //     // 放置的声音先给我注释掉先
-                //         //     this.playPlace();
-                //         // }
+                this.playSound('ui://tfsfm7mbt1pw9');
                 if (state.isBack) {
                     cc.tween(this._blocks[state.curMoveBlockIndex].target)
                         .to(0.1, { x: this._blocks[state.curMoveBlockIndex].data.x, y: this._blocks[state.curMoveBlockIndex].data.y })
@@ -321,9 +331,39 @@ export default class threeViews_model03_v1 extends cc.Component {
             }
 
             if (!globalThis._.isEqual(oldState.isCreateBlock, state.isCreateBlock)) {
+                this.playSound('ui://tfsfm7mbt1pw9');
                 state.isCreateBlock = false;
                 this._createBlockUI(state)
             }
+
+            if (!globalThis._.isEqual(oldState.floorBtnState, state.floorBtnState)) {
+                this._updateFloorBtnState(state);
+            }
+
+            if (!globalThis._.isEqual(oldState.blockBtnState, state.blockBtnState)) {
+                this._updateBlockBtnState(state);
+            }
+        }
+    }
+
+    private _updateFloorBtnState(state: any) {
+        let control = this.floorBtns[state.floorBtnState.floorBtnIndex].getController("button");
+        control.selectedIndex = state.floorBtnState.floorBtnIsHighlight ? 3 : 0;
+    }
+
+    private _updateBlockBtnState(state: any) {
+        let block = this._blocks[state.blockBtnState.btnIndex].target;
+        let btn: fgui.GButton;
+        if (state.blockBtnState.btnY == -1) {
+            btn = block.getChild("topBtn") as fgui.GButton;
+        } else if (state.blockBtnState.btnY == -7) {
+            btn = block.getChild("leftBtn") as fgui.GButton;
+        } else if (state.blockBtnState.btnY == -49) {
+            btn = block.getChild("frontBtn") as fgui.GButton;
+        }
+        if (btn) {
+            let control = btn.getController("button");
+            control.selectedIndex = state.blockBtnState.btnIsHighlight ? 3 : 0;
         }
     }
 
@@ -345,11 +385,16 @@ export default class threeViews_model03_v1 extends cc.Component {
     private _judgeDown(curMoveBlockIndex: number) {
         let data = this._blocks[curMoveBlockIndex].data;
         let topBlock = this._blocks.find((v: CreatedBlockData) => {
-            return data.sortIndex == v.data.sortIndex && v.data.floor == 1
+            return data.sortIndex == v.data.sortIndex && v.data.floor == 1;
         })
         if (topBlock) {
+            let topBtn = topBlock.target.getChild('topBtn').asButton;
+            // 重新开放顶层按钮点击
+            topBtn.touchable = true;
             cc.tween(topBlock.target)
-                .to(0.1, { y: topBlock.data.y + 134 })
+                .to(0.03, { y: topBlock.data.y + 134 })
+                .to(0.03, { y: topBlock.data.y + 104 })
+                .to(0.03, { y: topBlock.data.y + 134 })
                 .call(() => {
                     topBlock.data.y += 134;
                     topBlock.data.floor = 0;
@@ -369,11 +414,19 @@ export default class threeViews_model03_v1 extends cc.Component {
         block.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
         block.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
         let topBtn = block.getChild('topBtn').asButton;
+        // 顶层按钮不需要创建上层了
+        topBtn.touchable = state.createBlockData.floor != 1;
         let leftBtn = block.getChild('leftBtn').asButton;
         let frontBtn = block.getChild('frontBtn').asButton;
         topBtn.on(fgui.Event.CLICK, this._setCreateTopBlockData, this);
+        topBtn.on(fgui.Event.ROLL_OVER, this._rollOverBlockBtn, this);
+        topBtn.on(fgui.Event.ROLL_OUT, this._rollOutBlockBtn, this);
         leftBtn.on(fgui.Event.CLICK, this._setCreateLeftBlockData, this);
+        leftBtn.on(fgui.Event.ROLL_OVER, this._rollOverBlockBtn, this);
+        leftBtn.on(fgui.Event.ROLL_OUT, this._rollOutBlockBtn, this);
         frontBtn.on(fgui.Event.CLICK, this._setCreatefrontBlockData, this);
+        frontBtn.on(fgui.Event.ROLL_OVER, this._rollOverBlockBtn, this);
+        frontBtn.on(fgui.Event.ROLL_OUT, this._rollOutBlockBtn, this);
         this._view.addChildAt(block, this._view.numChildren - 1)
         var obj = new CreatedBlockData();
         obj.data = state.createBlockData
@@ -381,9 +434,35 @@ export default class threeViews_model03_v1 extends cc.Component {
         this._blocks.push(obj);
         this._sortBlocks();
         cc.tween(block)
-            .to(0.1, { y: state.createBlockData.y })
+            .to(0.03, { y: state.createBlockData.y })
+            .to(0.03, { y: state.createBlockData.y - 30 })
+            .to(0.03, { y: state.createBlockData.y })
             .start();
         return block;
+    }
+
+    private _rollOverBlockBtn(evt: fgui.Event) {
+        let curBlock: fgui.GObject = fgui.GObject.cast(evt.currentTarget).parent;
+        let curBlockIndex = this._blocks.findIndex((v: CreatedBlockData) => v.target == curBlock);
+        let state: any = globalThis._.cloneDeep(this._state);
+        let blockBtnState: any = {};
+        blockBtnState.btnIndex = curBlockIndex;
+        blockBtnState.btnIsHighlight = true;
+        blockBtnState.btnY = evt.currentTarget.y;
+        state.blockBtnState = blockBtnState;
+        this.updateState(state);
+    }
+
+    private _rollOutBlockBtn(evt: fgui.Event) {
+        let curBlock: fgui.GObject = fgui.GObject.cast(evt.currentTarget).parent;
+        let curBlockIndex = this._blocks.findIndex((v: CreatedBlockData) => v.target == curBlock);
+        let state: any = globalThis._.cloneDeep(this._state);
+        let blockBtnState: any = {};
+        blockBtnState.btnIndex = curBlockIndex;
+        blockBtnState.btnIsHighlight = false;
+        blockBtnState.btnY = evt.currentTarget.y;
+        state.blockBtnState = blockBtnState;
+        this.updateState(state);
     }
 
     private _setCreatefrontBlockData(evt: fgui.Event) {
@@ -516,28 +595,22 @@ export default class threeViews_model03_v1 extends cc.Component {
 
     // 操作提示
     onHandleGuide() {
-        setTimeout(() => {
-            let state: any = globalThis._.cloneDeep(this._state);
+        if (!this.handleGuide) return;
+        this.playSound("ui://tfsfm7mbt1pw8");
+        let state: any = globalThis._.cloneDeep(this._state);
+        fgui.GRoot.inst.addChild(this.handleGuide.component);
+        if (this.handleGuide.pos) {
+            this.handleGuide.component.x = (fgui.GRoot.inst.width - this.handleGuide.component.width) / 2 + this.handleGuide.pos.x;
+            this.handleGuide.component.y = (fgui.GRoot.inst.height - this.handleGuide.component.height) / 2 + this.handleGuide.pos.y;
+        } else {
+            this.handleGuide.component.y = (fgui.GRoot.inst.height - this.handleGuide.component.height) / 2;
+        }
+        let t: fgui.Transition = this.handleGuide.component.getTransition("t0");
+        t.play(() => {
+            fgui.GRoot.inst.removeChild(this.handleGuide.component);
             state.submit = false;
             this.updateState(state);
-        }, 2000);
-
-        // if (!this.handleGuide) return;
-        // let state: any = globalThis._.cloneDeep(this._state);
-        // fgui.GRoot.inst.addChild(this.handleGuide.component);
-        // if (this.handleGuide.pos) {
-        //     this.handleGuide.component.x = (fgui.GRoot.inst.width - this.handleGuide.component.width) / 2 + this.handleGuide.pos.x;
-        //     this.handleGuide.component.y = (fgui.GRoot.inst.height - this.handleGuide.component.height) / 2 + this.handleGuide.pos.y;
-        // } else {
-        //     this.handleGuide.component.y = (fgui.GRoot.inst.height - this.handleGuide.component.height) / 2;
-        // }
-
-        // let t: fgui.Transition = this.handleGuide.component.getTransition("t0");
-        // t.play(() => {
-        //     fgui.GRoot.inst.removeChild(this.handleGuide.component);
-        //     state.submit = false;
-        //     this.updateState(state);
-        // }, 2);
+        }, 2);
     }
 
     // 运行时 禁止操作

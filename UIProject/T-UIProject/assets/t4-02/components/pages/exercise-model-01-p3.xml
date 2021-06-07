@@ -19,13 +19,13 @@
     <loader id="n41_ku3e" name="drag_1" xy="1448,547" pivot="0.5,0.5" anchor="true" size="176,262" group="n33_ku3e" url="ui://tfsfm7mbt1pw4i" align="center" vAlign="middle" autoSize="true"/>
     <loader id="n42_ku3e" name="drag_2" xy="1448,842" pivot="0.5,0.5" anchor="true" size="176,262" group="n33_ku3e" url="ui://tfsfm7mbt1pw4j" align="center" vAlign="middle" autoSize="true"/>
     <group id="n33_ku3e" name="colliderBox" xy="1360,102" size="176,871" advanced="true"/>
-    <component id="n46_t1pw" name="title" src="t1pw33" fileName="buttons/title.xml" xy="852,104" alpha="0" touchable="false">
+    <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="852,104" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://tfsfm7mbt1pw3m" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+      <Button icon="ui://tfsfm7mbt1pw3m" sound="ui://tfsfm7mbtwu673" volume="0"/>
     </component>
-    <component id="n49_t1pw" name="place" src="t1pw33" fileName="buttons/title.xml" xy="965,1184" alpha="0" touchable="false">
+    <component id="n49_t1pw" name="place" src="t1pw33" fileName="components/buttons/title.xml" xy="965,1184" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://tfsfm7mbt1pws" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+      <Button sound="ui://tfsfm7mbt1pw9" volume="0"/>
     </component>
     <component id="n60_t1pw" name="submitBtn" src="t1pw3i" fileName="components/buttons/submitBtn.xml" xy="1686,796"/>
   </displayList>

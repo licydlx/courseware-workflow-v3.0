@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n3_twu6" name="n3" src="twu67g" fileName="images/common/0111.png" xy="1064,451" size="441,243" rotation="47"/>
+    <image id="n2_twu6" name="n2" src="twu67f" fileName="images/common/0109.png" xy="1355,764"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="XY" target="n2_twu6" tween="true" startValue="1347,781" endValue="894,611" duration="24" path="2,0,0,-108,-209,-372,-249,1,2,-453,-170,-1177.785,536.8894,0,0,1"/>
+  </transition>
+</component>

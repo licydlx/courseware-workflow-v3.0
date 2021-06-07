@@ -164,7 +164,6 @@ export default class threeViews_model01_v1 extends cc.Component {
 
     private _onDragStart(evt: fgui.Event): void {
         evt.captureTouch();
-        this.playSound('ui://tfsfm7mbt1pw9');
         let state: any = globalThis._.cloneDeep(this._state);
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
@@ -383,6 +382,7 @@ export default class threeViews_model01_v1 extends cc.Component {
     // 操作提示
     onHandleGuide() {
         if (!this.handleGuide) return;
+        this.playSound("ui://tfsfm7mbt1pw8");
         let state: any = globalThis._.cloneDeep(this._state);
         fgui.GRoot.inst.addChild(this.handleGuide.component);
         if (this.handleGuide.pos) {

@@ -2,12 +2,6 @@
 <packageDescription id="tfsfm7mb">
   <resources>
     <movieclip id="t1pw0" name="horn.jta" path="/animations/horn/"/>
-    <sound id="t1pw2" name="question1_2.mp3" path="/audios/ttile/"/>
-    <sound id="t1pw3" name="question1_3.mp3" path="/audios/ttile/"/>
-    <sound id="t1pw4" name="question2.mp3" path="/audios/ttile/"/>
-    <sound id="t1pw5" name="question3.mp3" path="/audios/ttile/"/>
-    <sound id="t1pw6" name="question1.mp3" path="/audios/ttile/"/>
-    <sound id="t1pw7" name="question1_1.mp3" path="/audios/ttile/"/>
     <sound id="t1pw8" name="click.mp3" path="/audios/" exported="true"/>
     <sound id="t1pw9" name="drop.mp3" path="/audios/" exported="true"/>
     <component id="t1pwf" name="example-model-01-p2.xml" path="/components/pages/" exported="true"/>
@@ -15,9 +9,7 @@
     <image id="t1pwu" name="bg_0.png" path="/images/static/"/>
     <image id="t1pw2i" name="0103.png" path="/images/common/"/>
     <image id="t1pw2j" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
-    <image id="t1pw2k" name="hand.png" path="/images/common/" exported="true"/>
     <component id="t1pw33" name="title.xml" path="/components/buttons/"/>
-    <sound id="t1pw34" name="question1_title_1.mp3" path="/audios/ttile/"/>
     <image id="t1pw35" name="submit.png" path="/images/common/"/>
     <image id="t1pw36" name="bg.png" path="/images/common/"/>
     <image id="t1pw3f" name="pre_btn.png" path="/images/exercise_1_1/"/>
@@ -139,6 +131,21 @@
     <component id="tamw6z" name="exercise-model-03-p3.xml" path="/components/pages/" exported="true"/>
     <component id="tamw70" name="exercise-model-03-p4.xml" path="/components/pages/" exported="true"/>
     <image id="iqw071" name="bg_title.png" path="/images/static/"/>
+    <sound id="twu672" name="example_1.mp3" path="/audios/ttile/"/>
+    <sound id="twu673" name="example_1_2.mp3" path="/audios/ttile/"/>
+    <sound id="twu674" name="example_3.mp3" path="/audios/ttile/"/>
+    <sound id="twu675" name="example_2.mp3" path="/audios/ttile/"/>
+    <sound id="twu678" name="exercise_2_2.mp3" path="/audios/ttile/"/>
+    <sound id="twu679" name="exercise_2_3.mp3" path="/audios/ttile/"/>
+    <component id="twu67a" name="handle-guide-1.xml" path="/components/pages/" exported="true"/>
+    <component id="twu67d" name="handle-guide-0.xml" path="/components/pages/" exported="true"/>
+    <image id="twu67f" name="hand_0.png" path="/images/common/"/>
+    <image id="twu67g" name="line.png" path="/images/common/"/>
+    <component id="twu67h" name="handle-guide-2.xml" path="/components/pages/" exported="true"/>
+    <component id="twu67i" name="handle-guide-3.xml" path="/components/pages/" exported="true"/>
+    <component id="twu67j" name="handle-guide-4.xml" path="/components/pages/" exported="true"/>
+    <image id="twu67k" name="hand_1.png" path="/images/common/"/>
+    <component id="twu67l" name="handle-guide-5.xml" path="/components/pages/" exported="true"/>
   </resources>
   <publish name="" path="F:\37Project\fairy-cocos-courseware\assets\fairyUis\t4\t4-02" packageCount="2"/>
 </packageDescription>

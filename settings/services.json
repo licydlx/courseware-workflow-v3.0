@@ -25,6 +25,18 @@
 					"enable": true
 				}
 			]
+		},
+		{
+			"appid": "UNKNOW"
+		},
+		{
+			"appid": "675857140",
+			"services": [
+				{
+					"service_id": "272",
+					"enable": true
+				}
+			]
 		}
 	],
 	"needExecNative": true

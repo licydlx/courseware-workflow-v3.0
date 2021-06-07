@@ -160,11 +160,19 @@ export default class threeViews_example_model01 extends cc.Component {
     updateUi(oldState: any, state: any) {
         if (!globalThis._.isEqual(oldState.controllerIndex, state.controllerIndex)) {
             this._c_block.selectedIndex = state.controllerIndex;
+            this.playSound("ui://tfsfm7mbt1pw8");
         }
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
         }
+    }
+
+    playSound(url: string) {
+        let item = fgui.UIPackage.getItemByURL(url); 3
+        loadResource(item.file, cc.AudioClip).then((audio: cc.AudioClip) => {
+            cc.audioEngine.play(audio, false, 1);
+        });
     }
 
     async playTitle(bool: boolean) {

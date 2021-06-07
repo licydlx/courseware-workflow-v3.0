@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n4_twu6" name="n4" src="twu67k" fileName="images/common/hand_1.png" xy="925,661" pivot="0.35,0.3" anchor="true" size="176,212"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Scale" target="n4_twu6" tween="true" startValue="1,1" endValue="0.85,0.85" duration="6"/>
+    <item time="6" type="Scale" target="n4_twu6" tween="true" startValue="0.85,0.85" endValue="1,1" duration="6"/>
+    <item time="12" type="Scale" target="n4_twu6" tween="true" startValue="1,1" endValue="0.85,0.85" duration="6"/>
+    <item time="18" type="Scale" target="n4_twu6" tween="true" startValue="0.85,0.85" endValue="1,1" duration="6"/>
+  </transition>
+</component>

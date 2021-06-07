@@ -16,7 +16,7 @@
     <group id="n120_ucr2" name="groupReference" xy="97,11" size="1147,1069"/>
     <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="1044,109" size="1653,147" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://tfsfm7mbucr261" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+      <Button icon="ui://tfsfm7mbucr261" sound="ui://tfsfm7mbtwu674" volume="0"/>
     </component>
     <image id="n113_ucr2" name="imgTable" src="ucr260" fileName="images/common/example_3_table.png" xy="656,603" group="n171_ucr2"/>
     <group id="n171_ucr2" name="groupFloorBtn" xy="656,603" size="662,138" advanced="true"/>

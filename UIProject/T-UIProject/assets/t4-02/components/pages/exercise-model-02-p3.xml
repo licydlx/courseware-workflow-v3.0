@@ -25,7 +25,7 @@
     <loader id="n75_t1pw" name="imgDrag" xy="1303,715" size="123,123" url="ui://tfsfm7mbucr25r" autoSize="true"/>
     <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="932,104" size="1429,134" touchable="false">
       <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://tfsfm7mbucr25u" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+      <Button icon="ui://tfsfm7mbucr25u" sound="ui://tfsfm7mbtwu679" volume="0"/>
     </component>
   </displayList>
 </component>
