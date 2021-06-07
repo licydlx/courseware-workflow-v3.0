@@ -119,7 +119,7 @@ export default class dragAnswer_model01_v1 extends cc.Component {
         // 禁止操作期间 切页
         this.disableForbidHandle();
         // 销毁反馈
-        let feedback:any = this._worldRoot.getChildByName("feedback");
+        let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
     }
 
@@ -176,7 +176,7 @@ export default class dragAnswer_model01_v1 extends cc.Component {
         this._dragging = false;
 
         let state: any = globalThis._.cloneDeep(this._state);
-        let bool:boolean = pointBelongArea("rectangle", this._btnBox, this._dragBtn);
+        let bool: boolean = pointBelongArea("rectangle", this._btnBox, this._dragBtn);
         if (bool) {
             let icon: fgui.GLoader = this._dragBtn.getChild("icon").asLoader;
             let grid: fgui.GLoader = this._grids.find(v => v.url === null);

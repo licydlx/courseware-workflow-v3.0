@@ -701,7 +701,11 @@
     "_enabled": true,
     "test": true,
     "configJson": {
+<<<<<<< HEAD
       "__uuid__": "dcc20a57-9156-4f3d-89ab-cebeb1ca2fd0"
+=======
+      "__uuid__": "2aff3dba-c5a4-41fa-82c4-703fe227ea28"
+>>>>>>> master
     },
     "_id": "42xPsb+q9CAbXn9IGsj/Pj"
   },

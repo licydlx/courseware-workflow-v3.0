@@ -21,6 +21,8 @@
     "ui://tfsfm7mbt1pw3i",
     "ui://tfsfm7mbt1pw5f",
     "ui://tfsfm7mbucr25h",
+    "ui://tfsfm7mbtwu67d",
+    "ui://tfsfm7mbtwu67l",
     "ui://tfsfm7mbucr25t"
   ],
   "packageGroup.mine": [],
@@ -28,11 +30,19 @@
   "auxline1": true,
   "canvasColor": 10066329,
   "auxline2": true,
-  "doc.activeDoc": "ui://tfsfm7mbucr25h",
+  "doc.activeDoc": "ui://tfsfm7mbtwu67l",
   "libview.twoColumn": false,
   "libview.expandedNodes": [
     "tfsfm7mb",
-    "/"
+    "/",
+    "tfsfm7mb",
+    "/audios/",
+    "tfsfm7mb",
+    "/audios/ttile/",
+    "tfsfm7mb",
+    "/components/",
+    "tfsfm7mb",
+    "/components/common/"
   ],
   "snapToGrid": true,
   "backgroundColor": 6710886,

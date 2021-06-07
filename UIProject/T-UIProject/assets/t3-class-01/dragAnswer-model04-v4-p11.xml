@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="c2" pages="0,,1," selected="0"/>
+  <controller name="c2" pages="0,,1," selected="1"/>
   <controller name="c1" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n0_cp1h" name="n0" src="yvac9h" fileName="images/0111.png" xy="0,0" group="n21_cp1h"/>
@@ -45,44 +45,44 @@
       <gearDisplay controller="c2" pages="1"/>
     </image>
     <group id="n20_cp1h" name="collideredBox" xy="20,630" size="1894,434" advanced="true"/>
-    <component id="n11_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="378,232" pivot="0.5,0.5" anchor="true" size="138,139" group="n19_cp1h">
+    <component id="n11_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="366,241" pivot="0.5,0.5" anchor="true" size="138,139" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacam"/>
     </component>
-    <component id="n12_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="1373,226" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
+    <component id="n12_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="1361,235" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacak"/>
     </component>
-    <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="359,478" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
+    <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="347,487" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacak"/>
     </component>
-    <component id="n14_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="588,428" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
+    <component id="n14_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="576,437" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacah"/>
     </component>
-    <component id="n16_cp1h" name="32" src="yvacdc" fileName="components/dragbutton.xml" xy="888,214" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
+    <component id="n16_cp1h" name="32" src="yvacdc" fileName="components/dragbutton.xml" xy="876,223" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac9j"/>
     </component>
-    <component id="n15_cp1h" name="31" src="yvacdc" fileName="components/dragbutton.xml" xy="825,416" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
+    <component id="n15_cp1h" name="31" src="yvacdc" fileName="components/dragbutton.xml" xy="813,425" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac9g"/>
     </component>
-    <component id="n17_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="611,244" pivot="0.5,0.5" anchor="true" size="138,138" group="n19_cp1h">
+    <component id="n17_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="599,253" pivot="0.5,0.5" anchor="true" size="138,138" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacan"/>
     </component>
-    <component id="n18_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1058,438" pivot="0.5,0.5" anchor="true" size="138,139" group="n19_cp1h">
+    <component id="n18_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1046,447" pivot="0.5,0.5" anchor="true" size="138,139" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacan"/>
     </component>
-    <component id="n73_jmn0" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1296,422" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
+    <component id="n73_jmn0" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1284,431" pivot="0.5,0.5" anchor="true" size="139,94" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacah"/>
     </component>
-    <component id="n74_jmn0" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="1122,215" pivot="0.5,0.5" anchor="true" size="138,139" group="n19_cp1h">
+    <component id="n74_jmn0" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="1110,224" pivot="0.5,0.5" anchor="true" size="138,139" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacam"/>
     </component>
-    <component id="n75_jmn0" name="32" src="yvacdc" fileName="components/dragbutton.xml" xy="1534,411" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
+    <component id="n75_jmn0" name="32" src="yvacdc" fileName="components/dragbutton.xml" xy="1522,420" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac9j"/>
     </component>
-    <component id="n88_jmn0" name="31" src="yvacdc" fileName="components/dragbutton.xml" xy="1579,220" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
+    <component id="n88_jmn0" name="31" src="yvacdc" fileName="components/dragbutton.xml" xy="1567,229" pivot="0.5,0.5" anchor="true" size="163,143" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac9g"/>
     </component>
-    <group id="n19_cp1h" name="colliderBox" xy="289,142" size="1371,382" advanced="true"/>
-    <component id="n6_cp1h" name="submit" src="cp1he3" fileName="components/submit2.xml" xy="1676,4" size="240,240">
+    <group id="n19_cp1h" name="colliderBox" xy="277,151" size="1371,382" advanced="true"/>
+    <component id="n6_cp1h" name="submit" src="cp1he3" fileName="components/submit2.xml" xy="1677,0" size="240,240">
       <Button icon="ui://1io1z8o5cp1he2" sound="ui://1io1z8o5xmwddu"/>
     </component>
     <component id="n22_cp1h" name="dragSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-193,376" size="100,15">

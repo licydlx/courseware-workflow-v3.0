@@ -117,7 +117,11 @@
     <component id="jrdo3q" name="DragCom1.xml" path="/components/common/"/>
     <misc id="axzx44" name="smoke.atlas" path="/images/skeleton/"/>
     <image id="axzx45" name="smoke.png" path="/images/skeleton/"/>
-    <spine id="axzx43" name="smoke.json" path="/images/skeleton/" width="100" height="100" require="axzx44,axzx45" atlasNames="smoke" anchor="100,100"/>
+    <spine id="axzx43" name="smoke.json" path="/images/skeleton/" exported="true" width="100" height="100" require="axzx44,axzx45" atlasNames="smoke" anchor="100,100"/>
+    <image id="lax046" name="icon_3_2x.png" path="/images/question3/" scale9grid="56,56,112,112"/>
+    <image id="lax047" name="icon_3_4x.png" path="/images/question3/"/>
+    <image id="fjx149" name="椭圆766拷贝3.png" path="/images/question3/"/>
+    <image id="fjx14a" name="椭圆766拷贝2.png" path="/images/question3/"/>
   </resources>
   <publish name="" path="F:\37Project\fairy-cocos-courseware\assets\fairyUis\t4\t4-trialClass-01" packageCount="2" codePath="F:\37Project\fairy-cocos-courseware\assets\fairyUis\t4\t4-trialClass-01"/>
 </packageDescription>
