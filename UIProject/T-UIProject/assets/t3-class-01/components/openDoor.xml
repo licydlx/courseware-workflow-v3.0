@@ -18,4 +18,10 @@
     <item time="9" type="XY" target="n10_ugg5" tween="true" startValue="92,23.5" endValue="96,23.5" duration="15"/>
     <item time="9" type="XY" target="n9_ugg5" tween="true" startValue="1034,23.5" endValue="1028,23.5" duration="15"/>
   </transition>
+  <transition name="close">
+    <item time="0" type="XY" target="n10_ugg5" tween="true" startValue="174,23.5" endValue="174,23.5" duration="9"/>
+    <item time="0" type="XY" target="n9_ugg5" tween="true" startValue="946.5,23.5" endValue="946,23.5" duration="9"/>
+    <item time="9" type="XY" target="n10_ugg5" value="174,23.5"/>
+    <item time="9" type="XY" target="n9_ugg5" value="946,23.5"/>
+  </transition>
 </component>

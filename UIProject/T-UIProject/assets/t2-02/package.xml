@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="733aoo45">
+  <resources>
+    <component id="w2qd0" name="choose-model03-v1-p2.xml" path="/" exported="true"/>
+    <image id="w2qdp" name="001.png" path="/images/"/>
+    <image id="w2qdq" name="0010.png" path="/images/"/>
+    <image id="w2qdr" name="0011.png" path="/images/"/>
+    <image id="w2qds" name="0012.png" path="/images/"/>
+    <image id="w2qdt" name="002.png" path="/images/"/>
+    <image id="w2qdu" name="003.png" path="/images/"/>
+    <image id="w2qdv" name="004.png" path="/images/"/>
+    <image id="w2qdw" name="005.png" path="/images/"/>
+    <image id="w2qdx" name="006.png" path="/images/"/>
+    <image id="w2qdy" name="007.png" path="/images/"/>
+    <image id="w2qdz" name="008.png" path="/images/"/>
+    <image id="w2qd10" name="009.png" path="/images/"/>
+    <image id="w2qd11" name="例题1.png" path="/images/"/>
+    <component id="w2qd12" name="title.xml" path="/buttons/"/>
+    <movieclip id="w2qd15" name="laba.jta" path="/animations/laba/"/>
+    <sound id="w2qd16" name="dagu.mp3" path="/audios/example1/"/>
+    <sound id="w2qd17" name="dizi.mp3" path="/audios/example1/"/>
+    <sound id="w2qd18" name="gangqin.mp3" path="/audios/example1/"/>
+    <sound id="w2qd19" name="sanjiaotie.mp3" path="/audios/example1/"/>
+    <sound id="w2qd1a" name="shachui.mp3" path="/audios/example1/"/>
+    <sound id="w2qd1b" name="timu.mp3" path="/audios/example1/"/>
+    <sound id="w2qd1c" name="boy.mp3" path="/audios/example2/"/>
+    <sound id="w2qd1d" name="girl.mp3" path="/audios/example2/"/>
+    <sound id="w2qd1e" name="timu.mp3" path="/audios/example2/"/>
+    <sound id="w2qd1f" name="001.mp3" path="/audios/example3/"/>
+    <sound id="w2qd1g" name="timu.mp3" path="/audios/example3/"/>
+    <sound id="w2qd1h" name="goujiao.mp3" path="/audios/exercise1-1/"/>
+    <sound id="w2qd1i" name="maojiao.mp3" path="/audios/exercise1-1/"/>
+    <sound id="w2qd1j" name="qingwajiao.mp3" path="/audios/exercise1-1/"/>
+    <sound id="w2qd1k" name="timu.mp3" path="/audios/exercise1-1/"/>
+    <sound id="w2qd1l" name="yangjiao.mp3" path="/audios/exercise1-1/"/>
+    <sound id="w2qd1m" name="yazijiao.mp3" path="/audios/exercise1-1/"/>
+    <sound id="w2qd1n" name="huoche.mp3" path="/audios/exercise1-2/"/>
+    <sound id="w2qd1o" name="jingche.mp3" path="/audios/exercise1-2/"/>
+    <sound id="w2qd1p" name="jiuhuche.mp3" path="/audios/exercise1-2/"/>
+    <sound id="w2qd1q" name="qiche.mp3" path="/audios/exercise1-2/"/>
+    <sound id="w2qd1r" name="timu.mp3" path="/audios/exercise1-2/"/>
+    <sound id="w2qd1s" name="wajueji.mp3" path="/audios/exercise1-2/"/>
+    <sound id="w2qd1t" name="boy.mp3" path="/audios/exercise2-1/"/>
+    <sound id="w2qd1u" name="girl.mp3" path="/audios/exercise2-1/"/>
+    <sound id="w2qd1v" name="timu.mp3" path="/audios/exercise2-1/"/>
+    <sound id="w2qd1w" name="boy.mp3" path="/audios/exercise2-2/"/>
+    <sound id="w2qd1x" name="girl.mp3" path="/audios/exercise2-2/"/>
+    <sound id="w2qd1y" name="timu.mp3" path="/audios/exercise2-2/"/>
+    <sound id="w2qd1z" name="001.mp3" path="/audios/exercise3-1/"/>
+    <sound id="w2qd20" name="timu.mp3" path="/audios/exercise3-1/"/>
+    <sound id="w2qd21" name="001.mp3" path="/audios/exercise3-2/"/>
+    <sound id="w2qd22" name="timu.mp3" path="/audios/exercise3-2/"/>
+    <sound id="w2qd23" name="001.mp3" path="/audios/tuozhan/"/>
+    <sound id="w2qd24" name="timu.mp3" path="/audios/tuozhan/"/>
+    <component id="w2qd25" name="submit.xml" path="/buttons/"/>
+    <component id="w2qd26" name="magicPen.xml" path="/buttons/"/>
+    <component id="w2qd27" name="yueqi.xml" path="/buttons/"/>
+    <image id="w2qd28" name="0012_2.png" path="/images/"/>
+    <image id="w2qd2a" name="0013.png" path="/images/"/>
+    <image id="w2qd2b" name="008_2.png" path="/images/"/>
+    <component id="w2qd2c" name="choose-model03-v1-p3.xml" path="/" exported="true"/>
+    <image id="w2qd2d" name="0014.png" path="/images/"/>
+    <image id="w2qd2e" name="0015.png" path="/images/"/>
+    <image id="w2qd2f" name="0016.png" path="/images/"/>
+    <image id="w2qd2g" name="0017.png" path="/images/"/>
+    <image id="w2qd2h" name="0018.png" path="/images/"/>
+    <image id="w2qd2i" name="hand.png" path="/images/" exported="true"/>
+    <component id="w2qd2j" name="choose-model03-v1-p4.xml" path="/" exported="true"/>
+    <image id="w2qd2k" name="0019.png" path="/images/"/>
+    <image id="w2qd2l" name="0020.png" path="/images/"/>
+    <image id="w2qd2m" name="0021.png" path="/images/"/>
+    <image id="w2qd2n" name="0022.png" path="/images/"/>
+    <image id="w2qd2o" name="0023.png" path="/images/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>
