@@ -903,37 +903,17 @@ export default class dragAnswer_model04_v1 extends cc.Component {
             } else if (state.submit === this.submitType.RightFeed) {
 
                 if (this.feedback) {
-
+                    this._submit.visible = false;
                     isPlayOpen = true;
-                    this.answerFeedback(true, state);
+                    this._bgdoor.getTransition('open2').play(() => {
+
+                        //开门 --- 反馈 ----消失左右的框和第一次提示框
+                        this.answerFeedback(true);
+                    });
                 }
             }
         }
 
-        if (!globalThis._.isEqual(oldState.answer, state.answer)) {
-
-            if (state.answer.length === 0) {
-
-                // 回归初始化状态
-                this.showAllBoxs();
-                this._bgdoor.getTransition('close').play();
-                this._answer = [];
-                this._leftContain = [];
-                this._rightContain = [];
-
-            } else if (state.answer.length === 1) {
-
-                this._bgdoor.getTransition('open1').play();
-
-            } else if (state.answer.length === 2) {
-
-                if (!isPlayOpen) {
-
-                    this._bgdoor.getTransition('open2').play();
-                    this.hideAllBoxs();
-                }
-            }
-        }
 
         if (!globalThis._.isEqual(oldState.colliderBox, state.colliderBox)) {
 
@@ -941,9 +921,19 @@ export default class dragAnswer_model04_v1 extends cc.Component {
 
                 this._colliderBox[state.colliderBox[i].index].x = state.colliderBox[i].pos.x;
                 this._colliderBox[state.colliderBox[i].index].y = state.colliderBox[i].pos.y;
-                this._colliderBox[state.colliderBox[i].index].visible = state.colliderBox[i].visible;
+                if (!isPlayOpen) {
+
+                    if (state.answer.length === 2) {
+                        this._colliderBox[state.colliderBox[i].index].visible = false;
+                    } else {
+                        this._colliderBox[state.colliderBox[i].index].visible = state.colliderBox[i].visible;
+                    }
+
+                }
+
                 this._colliderBox[state.colliderBox[i].index].data.posIndex = -1;
                 this._colliderBox[state.colliderBox[i].index].draggable = true;
+                this._colliderBox[state.colliderBox[i].index].sortingOrder = 0;
             }
         }
 
@@ -953,7 +943,6 @@ export default class dragAnswer_model04_v1 extends cc.Component {
 
                 this.hideAllBoxs();
             }
-
             for (let i = 0; i < state.tiShiBox1.length; i++) {
 
                 this._tishi1Btn[i].width = state.tiShiBox1[i].width;
@@ -1013,7 +1002,16 @@ export default class dragAnswer_model04_v1 extends cc.Component {
                 this._colliderBox[state.leftContain[i].index].x = state.leftContain[i].pos.x;
                 this._colliderBox[state.leftContain[i].index].y = state.leftContain[i].pos.y;
                 this._colliderBox[state.leftContain[i].index].data.posIndex = state.leftContain[i].posIndex;
-                this._colliderBox[state.leftContain[i].index].visible = state.leftContain[i].visible;
+                if (!isPlayOpen) {
+                    if (state.answer.length === 2) {
+                        this._colliderBox[state.leftContain[i].index].visible = false;
+                    } else {
+                        this._colliderBox[state.leftContain[i].index].visible = state.leftContain[i].visible;
+                    }
+                }
+
+                this._colliderBox[state.leftContain[i].index].sortingOrder = 0;
+
             }
         }
 
@@ -1023,7 +1021,41 @@ export default class dragAnswer_model04_v1 extends cc.Component {
                 this._colliderBox[state.rightContain[i].index].x = state.rightContain[i].pos.x;
                 this._colliderBox[state.rightContain[i].index].y = state.rightContain[i].pos.y;
                 this._colliderBox[state.rightContain[i].index].data.posIndex = state.rightContain[i].posIndex;
-                this._colliderBox[state.rightContain[i].index].visible = state.rightContain[i].visible;
+                if (!isPlayOpen) {
+                    if (state.answer.length === 2) {
+                        this._colliderBox[state.rightContain[i].index].visible = false;
+                    } else {
+                        this._colliderBox[state.rightContain[i].index].visible = state.rightContain[i].visible;
+                    }
+                }
+
+                this._colliderBox[state.rightContain[i].index].sortingOrder = 0;
+            }
+        }
+
+        if (!globalThis._.isEqual(oldState.answer, state.answer)) {
+
+            if (state.answer.length === 0) {
+
+                // 回归初始化状态
+                this.showAllBoxs();
+                this._bgdoor.getTransition('close').play();
+                this._answer = [];
+                this._leftContain = [];
+                this._rightContain = [];
+
+            } else if (state.answer.length === 1) {
+
+                this._bgdoor.getTransition('open1').play();
+
+            } else if (state.answer.length === 2) {
+
+                if (!isPlayOpen) {
+
+                    this._bgdoor.getTransition('open2').play();
+                    this.hideAllBoxs();
+
+                }
             }
         }
 
@@ -1034,21 +1066,23 @@ export default class dragAnswer_model04_v1 extends cc.Component {
         if (!globalThis._.isEqual(oldState.tiShiShow, state.tiShiShow)) {
 
             if (!isPlayOpen) {
+
                 this._c2.selectedIndex = state.tiShiShow;
+
+                if (state.tiShiShow === this.tiShiShowType.No || state.tiShiShow === this.tiShiShowType.AnswerType1) {
+
+                    this._view.getChild("left").visible = true;
+                    this._view.getChild("right").visible = true;
+                    this._submit.visible = true;
+
+                } else if (state.tiShiShow === this.tiShiShowType.Finish) {
+
+                    this._view.getChild("left").visible = false;
+                    this._view.getChild("right").visible = false;
+                    this._submit.visible = false;
+                }
             }
 
-            if (state.tiShiShow === this.tiShiShowType.No || state.tiShiShow === this.tiShiShowType.AnswerType1) {
-
-                this._view.getChild("left").visible = true;
-                this._view.getChild("right").visible = true;
-                this._submit.visible = true;
-
-            } else if (state.tiShiShow === this.tiShiShowType.Finish) {
-
-                this._view.getChild("left").visible = false;
-                this._view.getChild("right").visible = false;
-                this._submit.visible = false;
-            }
         }
     }
 
@@ -1093,7 +1127,7 @@ export default class dragAnswer_model04_v1 extends cc.Component {
         }
     }
 
-    answerFeedback(bool: boolean, state?: any) {
+    answerFeedback(bool: boolean) {
         if (!this.feedback) return;
 
         console.log('==== 进入反馈界面  ====');
@@ -1108,16 +1142,18 @@ export default class dragAnswer_model04_v1 extends cc.Component {
         setTimeout(() => {
 
             feedback.destroy();
+            let state: any = globalThis._.cloneDeep(this._state);
+
             if (bool) {
 
-                this._bgdoor.getTransition('open2').play(() => {
-
-                    this._c2.selectedIndex = state.tiShiShow;
-                });
+                //开门 --- 反馈 ----消失左右的框和第一次提示框
+                this._c2.selectedIndex = state.tiShiShow;
+                this._view.getChild("left").visible = false;
+                this._view.getChild("right").visible = false;
+                this.hideAllBoxs();
             }
-            let state1: any = globalThis._.cloneDeep(this._state);
-            state1.submit = this.submitType.No;
-            this.updateState(state1);
+            state.submit = this.submitType.No;
+            this.updateState(state);
 
         }, 2000);
     }
