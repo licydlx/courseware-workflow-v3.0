@@ -1050,7 +1050,6 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                 console.log();
 
                 state.answer = this._answer;
-                state.submit = this.submitType.RightFeed;
                 this.refreshFirstRightData(state);
 
 
@@ -1065,7 +1064,6 @@ export default class dragAnswer_model03_v3 extends cc.Component {
                 this.sencondType.right = this._rightContain[0].name[1];
 
                 state.answer = this._answer;
-                state.submit = this.submitType.RightFeed;
                 this.refreshFirstRightData(state);
 
             } else {
