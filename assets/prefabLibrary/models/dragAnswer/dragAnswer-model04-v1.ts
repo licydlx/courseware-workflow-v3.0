@@ -14,7 +14,7 @@ const { pointBelongArea } = window['GlobalData'].utils;
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class dragAnswer_model03_v1 extends cc.Component {
+export default class dragAnswer_model04_v1 extends cc.Component {
     private _worldRoot: cc.Node;
     private _view: fgui.GComponent;
 

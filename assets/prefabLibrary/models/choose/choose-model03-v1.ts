@@ -10,7 +10,7 @@ const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class choose_model02_v1 extends cc.Component {
+export default class choose_model03_v1 extends cc.Component {
     private _worldRoot: cc.Node;
     private _view: fgui.GComponent;
     private _c1: fgui.Controller;
