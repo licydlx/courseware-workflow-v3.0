@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="235,338" mask="n18_ke1y">
   <displayList>
-    <component id="n15_pxoy" name="group_1" src="pxoyzf8" fileName="components/Items/Wheel.xml" xy="0,-298"/>
-    <component id="n16_pxoy" name="group_2" src="pxoyzf8" fileName="components/Items/Wheel.xml" xy="0,20"/>
-    <component id="n17_pxoy" name="group_3" src="pxoyzf8" fileName="components/Items/Wheel.xml" xy="0,338"/>
+    <component id="n19_l5cg" name="group_1" src="l5cgzfa" fileName="components/Items/Wheel.xml" xy="0,-298"/>
+    <component id="n20_l5cg" name="group_2" src="l5cgzfa" fileName="components/Items/Wheel.xml" xy="0,20"/>
+    <component id="n21_l5cg" name="group_3" src="l5cgzfa" fileName="components/Items/Wheel.xml" xy="0,338"/>
     <graph id="n18_ke1y" name="mask" xy="0,0" size="235,338" aspect="true" type="rect"/>
   </displayList>
 </component>
