@@ -2,13 +2,14 @@
 <component size="1920,1080">
   <displayList>
     <image id="n0_taz8" name="n0" src="jmn01eo" fileName="components/images/0111.png" xy="229,497" size="557,333" rotation="-8"/>
-    <image id="n1_taz8" name="n1" src="jmn01ep" fileName="components/images/0109.png" xy="794,424"/>
+    <image id="n1_taz8" name="n1" src="jmn01ep" fileName="components/images/0109.png" xy="775,426"/>
   </displayList>
   <transition name="t0">
-    <item time="0" type="XY" target="n1_taz8" tween="true" startValue="794,424" endValue="618.25,453.813" duration="3"/>
-    <item time="3" type="XY" target="n1_taz8" tween="true" startValue="618.25,453.813" endValue="472.25,495.813" duration="3"/>
-    <item time="6" type="XY" target="n1_taz8" tween="true" startValue="472.25,495.813" endValue="399.25,565.813" duration="3"/>
-    <item time="9" type="XY" target="n1_taz8" tween="true" startValue="399.25,565.813" endValue="330,632" duration="3"/>
-    <item time="12" type="XY" target="n1_taz8" tween="true" startValue="330,632" endValue="270,809" duration="12"/>
+    <item time="0" type="XY" target="n1_taz8" tween="true" startValue="765,424" endValue="618.25,441.813" duration="3"/>
+    <item time="3" type="XY" target="n1_taz8" tween="true" startValue="618.25,441.813" endValue="497.25,480.813" duration="3"/>
+    <item time="6" type="XY" target="n1_taz8" tween="true" startValue="497.25,480.813" endValue="392.25,558.813" duration="3"/>
+    <item time="9" type="XY" target="n1_taz8" tween="true" startValue="392.25,558.813" endValue="322,646" duration="3"/>
+    <item time="12" type="XY" target="n1_taz8" tween="true" startValue="322,646" endValue="280,726" duration="6"/>
+    <item time="18" type="XY" target="n1_taz8" tween="true" startValue="280,726" endValue="270,809" duration="6"/>
   </transition>
 </component>
