@@ -110,6 +110,7 @@
     <image id="jrdo3n" name="bg2.png" path="/images/static/"/>
     <component id="jrdo3o" name="static-model01-v1-p2.xml" path="/components/pages/" exported="true"/>
     <image id="jrhm3p" name="icon_2_1.png" path="/images/question2/"/>
+    <image id="uuc73q" name="bg3.png" path="/images/static/"/>
   </resources>
   <publish name="" path="D:\work\project\fairy-cocos-courseware\assets\fairyUis\t4\t4-01" packageCount="2"/>
 </packageDescription>
