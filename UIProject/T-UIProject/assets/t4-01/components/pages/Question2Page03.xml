@@ -16,7 +16,7 @@
     <image id="n35_ku3e" name="drop_1" src="ku3e1a" fileName="images/question1/line_dash.png" xy="280,852" pivot="0.5,0.5" anchor="true" group="n26_kxox"/>
     <image id="n36_ku3e" name="drop_2" src="ku3e1a" fileName="images/question1/line_dash.png" xy="996,921" pivot="0.5,0.5" anchor="true" group="n26_kxox"/>
     <group id="n26_kxox" name="collideredBox" xy="150,27" size="976,1022" advanced="true"/>
-    <loader id="n32_ku3e" name="drag_0" xy="1380,242" pivot="0.5,0.5" anchor="true" size="281,277" group="n33_ku3e" url="ui://5w4y4dqwku3e1r" align="center" vAlign="middle" autoSize="true"/>
+    <loader id="n32_ku3e" name="drag_0" xy="1380,242" pivot="0.5,0.5" anchor="true" size="281,277" group="n33_ku3e" url="ui://5w4y4dqwjrhm3p" align="center" vAlign="middle" autoSize="true"/>
     <loader id="n41_ku3e" name="drag_1" xy="1679,242" pivot="0.5,0.5" anchor="true" size="281,277" group="n33_ku3e" url="ui://5w4y4dqwku3e1o" align="center" vAlign="middle" autoSize="true"/>
     <loader id="n42_ku3e" name="drag_2" xy="1380,557" pivot="0.5,0.5" anchor="true" size="281,277" group="n33_ku3e" url="ui://5w4y4dqwku3e1u" align="center" vAlign="middle" autoSize="true"/>
     <loader id="n43_ku3e" name="drag_3" xy="1679,557" pivot="0.5,0.5" anchor="true" size="281,277" group="n33_ku3e" url="ui://5w4y4dqwku3e1u" align="center" vAlign="middle" autoSize="true"/>

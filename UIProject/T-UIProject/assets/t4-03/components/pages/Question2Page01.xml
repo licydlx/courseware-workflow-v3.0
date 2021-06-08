@@ -33,8 +33,8 @@
     <loader id="n86_vlcc" name="A_value" xy="330,537" pivot="0.5,0.5" anchor="true" size="169,194" group="n94_vlcc" url="ui://k4ucnbrrt68db1" autoSize="true"/>
     <loader id="n88_vlcc" name="B_value" xy="715,526" pivot="0.5,0.5" anchor="true" size="169,194" group="n94_vlcc" url="ui://k4ucnbrrt68db3" autoSize="true"/>
     <loader id="n90_vlcc" name="C_value" xy="1114,532" pivot="0.5,0.5" anchor="true" size="169,194" group="n94_vlcc" url="ui://k4ucnbrrt68db2" autoSize="true"/>
-    <loader id="n98_qv43" name="D_value" xy="1560,501" pivot="0.5,0.5" anchor="true" size="169,194" group="n94_vlcc" url="ui://k4ucnbrrt68db0" autoSize="true"/>
-    <group id="n94_vlcc" name="question" xy="245,404" size="1399,230" advanced="true"/>
+    <group id="n94_vlcc" name="question" xy="245,429" size="953,205" advanced="true"/>
+    <component id="n104_pxoy" name="wheelCom" src="pxoyzf7" fileName="components/Items/WheelComponent.xml" xy="1445,330"/>
   </displayList>
   <transition name="t0"/>
   <transition name="t1"/>

@@ -228,12 +228,16 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
             }
         });
         let collideredIndex: number = this._collideredBox.findIndex((v: any) => v == collidered);
+
+        //如果没有触发定时器， state.collider[colliderIndex]坐标没变化，不会重置位置
+        this._colliderBox[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
+        this._colliderBox[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
         
         let state: any = globalThis._.cloneDeep(this._state);
         if (collideredIndex == -1) {
-            this._colliderBox[state.colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
-            this._colliderBox[state.colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
-            state.colliderIndex = -1
+            state.colliderIndex = colliderIndex
+            state.collider[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
+            state.collider[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
         }
         else{
             state.colliderIndex = colliderIndex
@@ -276,7 +280,6 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
         let width = collider.width - Math.abs(collider.x-collidered.x)
         let height = collider.height - Math.abs(collider.y-collidered.y)
         let distance =width*height
-        console.log("碰撞区域",width, height);
         return distance;
     }
 
@@ -343,21 +346,24 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
                 }
             }
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
-                if(state.colliderIndex != -1){
-                    this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
-                    this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
-                    let len = state.collider[state.colliderIndex].belong.length
-                    if(len > 0){
-                        let  answerCom = this._answerComArr[state.collider[state.colliderIndex].belong[len-1]]
-                        answerCom.visible = true
-                        let value_loader = answerCom.getChild("value") as fgui.GLoader
-                        value_loader.url = this._answerNumSkin[state.colliderIndex]
-                        if(this._answerNumbgSkin != ""){
-                            let bg_loader = answerCom.getChild("bg") as fgui.GLoader
-                            bg_loader.url = this._answerNumbgSkin
+                if(state.colliderIndex || state.colliderIndex==0){
+                    if(state.colliderIndex != -1){
+                        this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
+                        this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
+                        let len = state.collider[state.colliderIndex].belong.length
+                        if(len > 0){
+                            let  answerCom = this._answerComArr[state.collider[state.colliderIndex].belong[len-1]]
+                            answerCom.visible = true
+                            let value_loader = answerCom.getChild("value") as fgui.GLoader
+                            value_loader.url = this._answerNumSkin[state.colliderIndex]
+                            if(this._answerNumbgSkin != ""){
+                                let bg_loader = answerCom.getChild("bg") as fgui.GLoader
+                                bg_loader.url = this._answerNumbgSkin
+                            }
                         }
-                    }
-                }   
+                    }   
+                }
+                
             }
 
             if (!globalThis._.isEqual(oldState.title, state.title)) {

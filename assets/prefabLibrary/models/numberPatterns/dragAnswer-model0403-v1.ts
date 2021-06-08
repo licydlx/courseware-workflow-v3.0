@@ -240,11 +240,15 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         });
         let collideredIndex: number = this._collideredBox.findIndex((v: any) => v == collidered);
 
+        //如果没有触发定时器， state.collider[colliderIndex]坐标没变化，不会重置位置
+        this._colliderBox[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
+        this._colliderBox[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
+
         let state: any = globalThis._.cloneDeep(this._state);
         if (collideredIndex == -1) {
-            this._colliderBox[state.colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
-            this._colliderBox[state.colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
-            state.colliderIndex = -1
+            state.colliderIndex = colliderIndex
+            state.collider[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
+            state.collider[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
         }
         else {
             state.colliderIndex = colliderIndex
@@ -288,7 +292,6 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         let width = collider.width - Math.abs(collider.x - collidered.x)
         let height = collider.height - Math.abs(collider.y - collidered.y)
         let distance = width * height
-        console.log("碰撞区域", width, height);
         return distance;
     }
 
@@ -352,18 +355,20 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             }
            
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
-                if(state.colliderIndex!= -1){
-                    this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
-                    this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
-                    let index = state.collider[state.colliderIndex].belong
-                    if ( index!= -1) {
-                        this.playSound("ui://k4ucnbrrt68d4v");
-                        for (let i = 0; i < this._answerLoader.length; i++) {
-                            if (i == index) {
-                                this._answerLoader[i].url = this._optionsUrl[state.colliderIndex + 1]
-                            }
-                            else {
-                                this._answerLoader[i].url = ""
+                if(state.colliderIndex || state.colliderIndex==0){
+                    if(state.colliderIndex!= -1 ){
+                        this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
+                        this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
+                        let index = state.collider[state.colliderIndex].belong
+                        if ( index!= -1) {
+                            this.playSound("ui://k4ucnbrrt68d4v");
+                            for (let i = 0; i < this._answerLoader.length; i++) {
+                                if (i == index) {
+                                    this._answerLoader[i].url = this._optionsUrl[state.colliderIndex + 1]
+                                }
+                                else {
+                                    this._answerLoader[i].url = ""
+                                }
                             }
                         }
                     }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n7_ugg5" name="n7" src="ugg51fp" fileName="images/bg.png" xy="0,0"/>
+    <image id="n9_ugg5" name="n9" src="ugg51fr" fileName="images/left.png" xy="946,23"/>
+    <image id="n10_ugg5" name="n10" src="ugg51fs" fileName="images/right.png" xy="174,23"/>
+    <image id="n8_ugg5" name="n8" src="ugg51fq" fileName="images/doorB.png" xy="0,0"/>
+  </displayList>
+  <transition name="open2">
+    <item time="0" type="XY" target="n10_ugg5" tween="true" startValue="96,23.5" endValue="105,23.5" duration="10"/>
+    <item time="0" type="XY" target="n9_ugg5" tween="true" startValue="1028,23.5" endValue="1023,23.5" duration="10"/>
+    <item time="10" type="XY" target="n10_ugg5" tween="true" startValue="105,23.5" endValue="-587,23.5" duration="14"/>
+    <item time="10" type="XY" target="n9_ugg5" tween="true" startValue="1023,23.5" endValue="1714,23.5" duration="14"/>
+  </transition>
+  <transition name="open1">
+    <item time="0" type="XY" target="n10_ugg5" tween="true" startValue="174,23.5" endValue="92,23.5" duration="9"/>
+    <item time="0" type="XY" target="n9_ugg5" tween="true" startValue="946.5,23.5" endValue="1034,23.5" duration="9"/>
+    <item time="9" type="XY" target="n10_ugg5" tween="true" startValue="92,23.5" endValue="96,23.5" duration="15"/>
+    <item time="9" type="XY" target="n9_ugg5" tween="true" startValue="1034,23.5" endValue="1028,23.5" duration="15"/>
+  </transition>
+</component>

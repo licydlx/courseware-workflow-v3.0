@@ -19,6 +19,8 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
     private _c1: fgui.Controller;
     private _title: fgui.GButton;
     private _titleTrigger: fgui.GLoader;
+    private _wheelCom: fgui.GComponent;
+    private _wheelArr: fgui.GComponent[] = [];
 
 
     private _submit: fgui.GButton;
@@ -69,24 +71,31 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
         this._title = this._view.getChild("title").asButton;
 
-        this._btnAdd = this._view.getChild("btn_up").asButton;
-        this._btnAdd.on(fgui.Event.CLICK, this._clickAddNum, this);
-        this._btnReduce = this._view.getChild("btn_down").asButton;
+        this._btnReduce = this._view.getChild("btn_up").asButton;
         this._btnReduce.on(fgui.Event.CLICK, this._clickReduce, this);
+        this._btnAdd = this._view.getChild("btn_down").asButton;
+        this._btnAdd.on(fgui.Event.CLICK, this._clickAddNum, this);
 
+
+        this._wheelCom = this._view.getChild("wheelCom").asCom;
+        this._wheelArr = []
+        let group_1 = this._wheelCom.getChild("group_1").asCom;
+        let group_2 = this._wheelCom.getChild("group_2").asCom;
+        let group_3 = this._wheelCom.getChild("group_3").asCom;
+        this._wheelArr.push(group_1)
+        this._wheelArr.push(group_2)
+        this._wheelArr.push(group_3)
+        this._answerLoader = group_2.getChild("value").asLoader;
+        this._answerLoader.url = this._optionsUrl[0]
+        
         //问题 + 答题区
         let question = this._view.getChild("question").asGroup;
         let question_index = 0;
-        this._answerLoader = null
         for (let i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == question) {
                 if(question_index<3){
                     let num_loader = this._view.getChildAt(i).asLoader;
                     num_loader.url = this._optionsUrl[this._questionUrl[question_index]]
-                }
-                else{
-                    this._answerLoader = this._view.getChildAt(i).asLoader;
-                    this._answerLoader.url = this._optionsUrl[0]
                 }
                 question_index++
             }
@@ -95,6 +104,7 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
         // 初始化state
         this._state = {
             option:-1,
+            typeChange: 0,
             title: false,
             submit: false,
             answer: false
@@ -118,6 +128,7 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
         }
         let state: any = globalThis._.cloneDeep(this._state);
         state.option = this._currentAnswer
+        state.typeChange = 2
         this.updateState(state);
     }
 
@@ -130,6 +141,7 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
         }
         let state: any = globalThis._.cloneDeep(this._state);
         state.option = this._currentAnswer
+        state.typeChange = 1
         this.updateState(state);
     }
 
@@ -179,6 +191,26 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
         this.updateState(state);
     }
 
+    private _getAfterValue(value: any) {
+        if(value == 0){
+            value = 9
+        }
+        else{
+            value--
+        }
+        return value
+    }
+
+    private _getBefore(value: any) {
+        if(value == 9){
+            value = 0
+        }
+        else{
+            value++
+        }
+        return value
+    }
+
     // 获取状态
     getState(data: any) {
         this.updateState(data);
@@ -193,7 +225,82 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
         if (!globalThis._.isEqual(oldState.option, state.option)) {
-            this._answerLoader.url = this._optionsUrl[state.option]
+            if(state.typeChange == 1){
+                this.forbidHandle()
+                cc.Tween.stopAll();
+                for (let i = 0; i < this._wheelArr.length; i++) {
+                    //let bg = this._wheelArr[i].getChild("bg").asLoader;
+                    let value = this._wheelArr[i].getChild("value").asLoader;
+                    if(i == 0){
+                        value.url = this._optionsUrl[this._getBefore(this._getBefore(state.option))]
+                    }
+                    else if(i == 1){
+                        value.url = this._optionsUrl[this._getBefore(state.option)]
+                    }
+                    else if(i == 2){
+                        value.url = this._optionsUrl[state.option]
+                    }
+                }
+                for (let i = 0; i < this._wheelArr.length; i++) {
+                    cc.tween(this._wheelArr[i])
+                    .to(0.2, {
+                        x: this._wheelArr[i].x,
+                        y: this._wheelArr[i].y - 318
+                    })
+                    .call(()=>{
+                        console.log("pos",this._wheelArr[0].y,this._wheelArr[1].y,this._wheelArr[2].y)
+                    })
+                    .start();
+                }
+                cc.tween(this._wheelCom)
+                    .delay(0.2)
+                    .call(()=>{
+                        this._wheelArr[0].y = this._wheelArr[2].y + 318
+                        this._wheelArr.sort((a,b)=>{
+                            return  a.y -b.y
+                        })
+                        this.disableForbidHandle()
+                    }).start();
+            }
+            else if(state.typeChange == 2){
+                this.forbidHandle()
+                cc.Tween.stopAll();
+                for (let i = 0; i < this._wheelArr.length; i++) {
+                    //let bg = this._wheelArr[i].getChild("bg").asLoader;
+                    let value = this._wheelArr[i].getChild("value").asLoader;
+                    if(i == 0){
+                        value.url = this._optionsUrl[state.option]
+                    }
+                    else if(i == 1){
+                        value.url = this._optionsUrl[this._getBefore(state.option)]
+                    }
+                    else if(i == 2){
+                        value.url = this._optionsUrl[this._getBefore(this._getBefore(state.option))]
+                    }
+                }
+                for (let i = 0; i < this._wheelArr.length; i++) {
+                    cc.tween(this._wheelArr[i])
+                    .to(0.2, {
+                        x: this._wheelArr[i].x,
+                        y: this._wheelArr[i].y + 318
+                    })
+                    .call(()=>{
+                        console.log("pos",this._wheelArr[0].y,this._wheelArr[1].y,this._wheelArr[2].y)
+                    })
+                    .start();
+                    
+                } 
+                cc.tween(this._wheelCom)
+                .delay(0.2)
+                .call(()=>{
+                    console.log("pos",this._wheelArr[0].y,this._wheelArr[1].y,this._wheelArr[2].y)
+                    this._wheelArr[2].y = this._wheelArr[0].y - 318
+                    this._wheelArr.sort((a,b)=>{
+                        return a.y -b.y
+                    })
+                    this.disableForbidHandle()
+                }).start();
+            } 
         }
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {

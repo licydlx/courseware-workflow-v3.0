@@ -175,6 +175,7 @@
     <image id="103lzf5" name="hand.png" path="/images/common/"/>
     <component id="n2yqzf6" name="handleGuide01.xml" path="/components/common/" exported="true"/>
     <component id="pxoyzf7" name="WheelComponent.xml" path="/components/Items/"/>
+    <component id="pxoyzf8" name="Wheel.xml" path="/components/Items/"/>
   </resources>
   <publish name="" path="E:\workspaces\courseware-workflow-v3.0\assets\fairyUis\t4\t4-03" packageCount="2"/>
 </packageDescription>

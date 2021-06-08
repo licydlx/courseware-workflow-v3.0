@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <image id="n0_taz8" name="n0" src="jmn01eo" fileName="components/images/0111.png" xy="90,415" size="285,410" rotation="-8"/>
-    <image id="n1_taz8" name="n1" src="jmn01ep" fileName="components/images/0109.png" xy="373,378"/>
+    <image id="n2_ugg5" name="n2" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,380" size="30,30"/>
+    <image id="n3_ugg5" name="n3" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,420" size="30,30"/>
+    <image id="n4_ugg5" name="n4" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,460" size="30,30"/>
+    <image id="n5_ugg5" name="n5" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,500" size="30,30"/>
+    <image id="n6_ugg5" name="n6" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,540" size="30,30"/>
+    <image id="n7_ugg5" name="n7" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,580" size="30,30"/>
+    <image id="n8_ugg5" name="n8" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,620" size="30,30"/>
+    <image id="n9_ugg5" name="n9" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,660" size="30,30"/>
+    <image id="n10_ugg5" name="n10" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,700" size="30,30"/>
+    <image id="n1_taz8" name="n1" src="jmn01ep" fileName="components/images/0109.png" xy="352,383" size="124,123"/>
   </displayList>
   <transition name="t0">
-    <item time="0" type="XY" target="n1_taz8" tween="true" startValue="357,384" endValue="313.746,392.965" duration="1"/>
-    <item time="1" type="XY" target="n1_taz8" tween="true" startValue="313.746,392.965" endValue="275.147,405.408" duration="1"/>
-    <item time="2" type="XY" target="n1_taz8" tween="true" startValue="275.147,405.408" endValue="207.204,453.808" duration="1"/>
-    <item time="3" type="XY" target="n1_taz8" tween="true" startValue="207.204,453.808" endValue="166,546" duration="10"/>
-    <item time="13" type="XY" target="n1_taz8" tween="true" startValue="166,546" endValue="141,806" duration="12"/>
+    <item time="0" type="XY" target="n1_taz8" tween="true" startValue="349,380" endValue="349,705" duration="30"/>
   </transition>
 </component>

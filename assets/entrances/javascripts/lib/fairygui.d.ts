@@ -1972,7 +1972,7 @@ declare namespace fgui {
         private loadSpine;
         private loadDragonBones;
     }
-    export {};
+    export { };
 }
 declare namespace fgui {
     class Window extends GComponent {
