@@ -105,15 +105,7 @@
     <sound id="xmwddh" name="example1_exercise1-1.mp3" path="/audios/"/>
     <sound id="xmwddi" name="example2_exercise2-1_2-2.mp3" path="/audios/"/>
     <sound id="xmwddj" name="example3_exercise3-1.mp3" path="/audios/"/>
-    <sound id="xmwddk" name="exercise1-2.mp3" path="/audios/"/>
-    <sound id="xmwddl" name="exercise1.mp3" path="/audios/"/>
-    <sound id="xmwddm" name="exercise2.mp3" path="/audios/"/>
     <sound id="xmwddn" name="exercise3-2.mp3" path="/audios/"/>
-    <sound id="xmwddo" name="exercise3.mp3" path="/audios/"/>
-    <sound id="xmwddp" name="exercise4.mp3" path="/audios/"/>
-    <sound id="xmwddq" name="exercise5.mp3" path="/audios/"/>
-    <sound id="xmwddr" name="exercise6.mp3" path="/audios/"/>
-    <sound id="xmwdds" name="exercise7.mp3" path="/audios/"/>
     <sound id="xmwddt" name="expand.mp3" path="/audios/"/>
     <sound id="xmwddu" name="click.mp3" path="/audios/"/>
     <sound id="xmwddv" name="drag.mp3" path="/audios/"/>
@@ -135,14 +127,6 @@
     <image id="jmn01ep" name="0109.png" path="/components/images/"/>
     <component id="jmn01eq" name="handleGuide02.xml" path="/components/" exported="true"/>
     <component id="e9oy1er" name="dragAnswer-model04-v3-p10.xml" path="/" exported="true"/>
-    <image id="h44m1f1" name="tishi_1_1.png" path="/images/"/>
-    <image id="h44m1f2" name="tishi_1_2.png" path="/images/"/>
-    <image id="h44m1f3" name="tishi_1_di.png" path="/images/"/>
-    <image id="h44m1f4" name="tishi_2_1.png" path="/images/"/>
-    <image id="h44m1f5" name="tishi_2_2.png" path="/images/"/>
-    <image id="h44m1f6" name="tishi_2_di.png" path="/images/"/>
-    <image id="h44m1f7" name="tishi_3_1.png" path="/images/"/>
-    <image id="h44m1f8" name="tishi_3_2.png" path="/images/"/>
     <image id="h44m1f9" name="tishi_di.png" path="/images/"/>
     <component id="ugg51fa" name="static-model01-v1-p12.xml" path="/" exported="true"/>
     <image id="ugg51fc" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
@@ -154,6 +138,11 @@
     <image id="ugg51fq" name="doorB.png" path="/images/"/>
     <image id="ugg51fr" name="left.png" path="/images/"/>
     <image id="ugg51fs" name="right.png" path="/images/"/>
+    <component id="fld21ft" name="submit3.xml" path="/buttons/"/>
+    <image id="nl7d1fu" name="tishi_di_2.png" path="/images/"/>
+    <image id="11vn31fv" name="tishi_di_1.png" path="/images/"/>
+    <image id="11vn31fw" name="ti_shi_number_1.png" path="/images/"/>
+    <image id="11vn31fx" name="ti_shi_number_2.png" path="/images/"/>
   </resources>
   <publish name=""/>
 </packageDescription>
