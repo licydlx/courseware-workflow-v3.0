@@ -29,7 +29,7 @@ export default class choose_model02_v1 extends cc.Component {
     private _cache = {};
     private _answer = 0;
 
-    private _type:any;  // 临时
+    private _type: any;  // 临时
 
     private _state = {};
 
@@ -85,12 +85,12 @@ export default class choose_model02_v1 extends cc.Component {
             checkAnswer: false,
             answer: false
         }
-        
+
         // 临时 
         // 禁止操作期间 切页
         this.disableForbidHandle();
         // 销毁反馈
-        let feedback:any = this._worldRoot.getChildByName("feedback");
+        let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
     }
 
@@ -161,20 +161,20 @@ export default class choose_model02_v1 extends cc.Component {
     updateUi(oldState: any, state: any) {
         if (!globalThis._.isEqual(oldState.option, state.option)) {
             this.playClick();
-            
+
             if (state.option || state.option === 0) {
                 if (oldState.option || oldState.option === 0) {
-                    this.selectEffect(false,oldState.option);
+                    this.selectEffect(false, oldState.option);
                 }
-                this.selectEffect(true,state.option);
+                this.selectEffect(true, state.option);
             }
 
             if (state.option === null) {
                 if (oldState.option || oldState.option === 0) {
-                    this.selectEffect(false,oldState.option);
+                    this.selectEffect(false, oldState.option);
                 }
             }
-            
+
         }
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {
@@ -193,9 +193,9 @@ export default class choose_model02_v1 extends cc.Component {
             }
         }
     }
-    
+
     // 播放 點擊声效
-    async playClick(){
+    async playClick() {
         let click = this._view.getChild("click").asButton;
         if (click) {
             let item = fgui.UIPackage.getItemByURL(click["_sound"]);
@@ -211,12 +211,12 @@ export default class choose_model02_v1 extends cc.Component {
      * @param {number} option
      * @return {*}
      */
-    selectEffect(active:boolean,option:number){
-        let curOption:fgui.GComponent = this._options[option];
-        let border:any = curOption.getChild("border");
-        let arrow:any = curOption.getChild("arrow");
-        let spine:any = curOption.getChild("spine");
-        
+    selectEffect(active: boolean, option: number) {
+        let curOption: fgui.GComponent = this._options[option];
+        let border: any = curOption.getChild("border");
+        let arrow: any = curOption.getChild("arrow");
+        let spine: any = curOption.getChild("spine");
+
         // 临时 赶上线
         if (active) {
             border.alpha = 1;
@@ -238,15 +238,15 @@ export default class choose_model02_v1 extends cc.Component {
         } else {
             border.alpha = 0;
             arrow.alpha = 0;
-            if (!this._type){
+            if (!this._type) {
                 if (spine.animationName.slice(spine.animationName.length - 1, spine.animationName.length)) {
                     spine.animationName = spine.animationName.slice(0, -1) + 3;
                 }
             }
         }
-        
+
     }
-    
+
     async playTitle(bool: boolean) {
         this._c2.selectedIndex = bool ? 1 : 0;
         if (bool) {

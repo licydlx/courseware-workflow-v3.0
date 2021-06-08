@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n66_u7ua" name="bg" src="t68dbm" fileName="images/question1/bg_1.png" xy="0,0"/>
+    <image id="n50_t68d" name="dk" src="m2z94h" fileName="images/question1/dk.png" xy="90,157"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0">
+      <gearLook controller="c2" pages="0" values="0,0,0,1" default="1,0,0,1"/>
+      <Button icon="ui://k4ucnbrrt68dbt" sound="ui://k4ucnbrr103lzew"/>
+    </component>
+    <component id="n70_r1ww" name="A" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="158,201" group="n74_r1ww"/>
+    <component id="n71_r1ww" name="B" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="561,201" group="n74_r1ww"/>
+    <component id="n72_r1ww" name="C" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="964,201" group="n74_r1ww"/>
+    <component id="n73_r1ww" name="D" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="1367,201" group="n74_r1ww"/>
+    <group id="n74_r1ww" name="question" xy="158,201" size="1602,393" advanced="true"/>
+    <component id="n54_t68d" name="value1" src="t68d51" fileName="components/Items/NumExample1.xml" xy="437,654" group="n55_t68d"/>
+    <component id="n57_t68d" name="value2" src="t68d51" fileName="components/Items/NumExample1.xml" xy="673,654" size="176,185" group="n55_t68d"/>
+    <component id="n58_t68d" name="value3" src="t68d51" fileName="components/Items/NumExample1.xml" xy="909,654" size="176,185" group="n55_t68d"/>
+    <component id="n59_t68d" name="value4" src="t68d51" fileName="components/Items/NumExample1.xml" xy="1145,654" size="176,185" group="n55_t68d"/>
+    <component id="n60_t68d" name="value5" src="t68d51" fileName="components/Items/NumExample1.xml" xy="1381,654" size="176,185" group="n55_t68d"/>
+    <component id="n61_t68d" name="value6" src="t68d51" fileName="components/Items/NumExample1.xml" xy="437,867" size="176,185" group="n55_t68d"/>
+    <component id="n62_t68d" name="value7" src="t68d51" fileName="components/Items/NumExample1.xml" xy="673,867" size="176,185" group="n55_t68d"/>
+    <component id="n63_t68d" name="value8" src="t68d51" fileName="components/Items/NumExample1.xml" xy="909,867" size="176,185" group="n55_t68d"/>
+    <component id="n64_t68d" name="value9" src="t68d51" fileName="components/Items/NumExample1.xml" xy="1145,867" size="176,185" group="n55_t68d"/>
+    <component id="n65_t68d" name="value10" src="t68d51" fileName="components/Items/NumExample1.xml" xy="1381,867" size="176,185" group="n55_t68d"/>
+    <group id="n55_t68d" name="colliderBox" xy="437,654" size="1120,398" advanced="true"/>
+    <component id="n80_iefu" name="pos1" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1405,238" size="160,160" group="n84_iefu"/>
+    <component id="n81_iefu" name="pos2" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1565,238" size="160,160" group="n84_iefu"/>
+    <component id="n82_iefu" name="pos3" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1405,398" size="160,160" group="n84_iefu"/>
+    <component id="n83_iefu" name="pos4" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1565,398" size="160,160" group="n84_iefu"/>
+    <group id="n84_iefu" name="collideredBox" xy="1405,238" size="320,320" advanced="true"/>
+    <component id="n75_r1ww" name="submit" src="t68d4x" fileName="components/common/buttons/submit.xml" xy="1687,795">
+      <Button icon="ui://k4ucnbrrm2z94o" selectedIcon="ui://k4ucnbrrm2z94n"/>
+    </component>
+  </displayList>
+</component>

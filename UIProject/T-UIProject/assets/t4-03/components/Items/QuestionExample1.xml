@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="393,393">
+  <displayList>
+    <loader id="n0_r1ww" name="bg" xy="196,196" pivot="0.5,0.5" anchor="true" size="331,326" url="ui://k4ucnbrrt68dbw" autoSize="true"/>
+    <loader id="n1_r1ww" name="value1" xy="115,115" pivot="0.5,0.5" anchor="true" size="50,112" autoSize="true"/>
+    <loader id="n2_r1ww" name="value2" xy="276,115" pivot="0.5,0.5" anchor="true" size="50,112" autoSize="true"/>
+    <loader id="n3_r1ww" name="value3" xy="115,276" pivot="0.5,0.5" anchor="true" size="50,112" autoSize="true"/>
+    <loader id="n4_r1ww" name="value4" xy="276,276" pivot="0.5,0.5" anchor="true" size="50,112" autoSize="true" clearOnPublish="true"/>
+  </displayList>
+</component>
