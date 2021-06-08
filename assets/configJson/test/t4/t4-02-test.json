@@ -1,15 +1,15 @@
 {
-    "name": "",
+    "name": "国王的权杖",
     "courseName": "t4-02",
     "env": "test",
-    "totalPages": 15,
+    "totalPages": 16,
     "pathConfig": {
-        "remoteUrl": "",
-        "controllerBundlePath": "",
-        "panelBundlePath": "",
-        "resourceBundlePath": "",
-        "modelBundlePath": "",
-        "componentBundlePath": "",
+        "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
+        "controllerBundlePath": "T-series/personalTest/xzr/controllers/",
+        "panelBundlePath": "T-series/personalTest/xzr/components/",
+        "resourceBundlePath": "T-series/fairyUis/t4/",
+        "modelBundlePath": "T-series/personalTest/xzr/models/",
+        "componentBundlePath": "T-series/personalTest/xzr/components/",
         "controllerName": "controller-model02",
         "panelName": "formal-panle-model02",
         "resourceName": "t4-02",
@@ -18,35 +18,9 @@
     "chapters": [
         {
             "model": {
-                "uiPath": "exercise-model-03-p4",
-                "bundleName": "threeViews",
-                "prefabName": "threeViews-model03-v1",
-                "config": {
-                    "rectUrl":"ui://tfsfm7mbtamw6t",
-                    "answer": {
-                        "floor_0":[
-                            0,0,0,0,
-                            0,1,1,0,
-                            0,1,1,0
-                        ],
-                        "floor_1":[
-                            0,0,0,0,
-                            0,0,0,0,
-                            0,1,1,0
-                        ]
-                    },
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handle-guide-5"
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
+                "uiPath": "static-model01-v1-p1",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
             }
         },
         {
@@ -376,10 +350,42 @@
                 }
             }
         },
-        
         {
             "model": {
-                "uiPath": "static-model01-v1-p1",
+                "uiPath": "exercise-model-03-p4",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model03-v1",
+                "config": {
+                    "rectUrl":"ui://tfsfm7mbtamw6t",
+                    "answer": {
+                        "floor_0":[
+                            0,0,0,0,
+                            0,1,1,0,
+                            0,1,1,0
+                        ],
+                        "floor_1":[
+                            0,0,0,0,
+                            0,0,0,0,
+                            0,1,1,0
+                        ]
+                    },
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-5"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p2",
                 "bundleName": "static",
                 "prefabName": "static-model01-v1"
             }

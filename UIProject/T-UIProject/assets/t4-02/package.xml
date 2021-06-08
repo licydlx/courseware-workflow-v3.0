@@ -146,6 +146,16 @@
     <component id="twu67j" name="handle-guide-4.xml" path="/components/pages/" exported="true"/>
     <image id="twu67k" name="hand_1.png" path="/images/common/"/>
     <component id="twu67l" name="handle-guide-5.xml" path="/components/pages/" exported="true"/>
+    <component id="py3p7m" name="static-model01-v1-p2.xml" path="/components/pages/" exported="true"/>
+    <sound id="py3p7n" name="question1.mp3" path="/audios/ttile/"/>
+    <sound id="py3p7o" name="question1_1.mp3" path="/audios/ttile/"/>
+    <sound id="py3p7p" name="question1_2.mp3" path="/audios/ttile/"/>
+    <sound id="py3p7q" name="question1_3.mp3" path="/audios/ttile/"/>
+    <sound id="py3p7r" name="question1_title_1.mp3" path="/audios/ttile/"/>
+    <sound id="py3p7s" name="question2.mp3" path="/audios/ttile/"/>
+    <sound id="py3p7t" name="question3.mp3" path="/audios/ttile/"/>
+    <image id="py3p7u" name="bg_4.png" path="/images/common/"/>
+    <image id="py3p7v" name="hand.png" path="/images/common/"/>
   </resources>
   <publish name="" path="F:\37Project\fairy-cocos-courseware\assets\fairyUis\t4\t4-02" packageCount="2"/>
 </packageDescription>

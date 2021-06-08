@@ -52,6 +52,12 @@ export default class threeViews_model03_v1 extends cc.Component {
         this.updateUi(this._state, v);
         this._state = v;
         this.mergeState();
+        // if (v.backBlockCallback) {
+        //     this.backBlockCallbackFunc(v);
+        // }
+        // if (v.removeBlockCallback) {
+        //     this.removeBlockCallbackFunc(v);
+        // }
     }
 
     onLoad() {
@@ -83,7 +89,9 @@ export default class threeViews_model03_v1 extends cc.Component {
             isCreateBlock: false,
             createBlockData: null,
             floorBtnState: null,
-            blockBtnState: null
+            blockBtnState: null,
+            removeBlockCallBack: false,
+            backBlockCallback: false,
         }
         // 禁止操作期间 切页
         this.disableForbidHandle();
@@ -153,22 +161,22 @@ export default class threeViews_model03_v1 extends cc.Component {
             floorBtn.name = i.toString();
             this._view.addChild(floorBtn);
             this.floorBtns.push(floorBtn);
-            floorBtn.on(fgui.Event.ROLL_OVER, () => {
-                let state: any = globalThis._.cloneDeep(this._state);
-                let floorBtnState: any = {};
-                floorBtnState.floorBtnIndex = i;
-                floorBtnState.floorBtnIsHighlight = true;
-                state.floorBtnState = floorBtnState;
-                this.updateState(state);
-            }, this);
-            floorBtn.on(fgui.Event.ROLL_OUT, () => {
-                let state: any = globalThis._.cloneDeep(this._state);
-                let floorBtnState: any = {};
-                floorBtnState.floorBtnIndex = i;
-                floorBtnState.floorBtnIsHighlight = false;
-                state.floorBtnState = floorBtnState;
-                this.updateState(state);
-            }, this);
+            // floorBtn.on(fgui.Event.ROLL_OVER, () => {
+            //     let state: any = globalThis._.cloneDeep(this._state);
+            //     let floorBtnState: any = {};
+            //     floorBtnState.floorBtnIndex = i;
+            //     floorBtnState.floorBtnIsHighlight = true;
+            //     state.floorBtnState = floorBtnState;
+            //     this.updateState(state);
+            // }, this);
+            // floorBtn.on(fgui.Event.ROLL_OUT, () => {
+            //     let state: any = globalThis._.cloneDeep(this._state);
+            //     let floorBtnState: any = {};
+            //     floorBtnState.floorBtnIndex = i;
+            //     floorBtnState.floorBtnIsHighlight = false;
+            //     state.floorBtnState = floorBtnState;
+            //     this.updateState(state);
+            // }, this);
         }
     }
 
@@ -206,6 +214,15 @@ export default class threeViews_model03_v1 extends cc.Component {
         state.isBack = bool;
         state.drag = "end";
         state.curMoveBlockIndex = curMoveBlockIndex;
+        if (state.isBack) {
+            state.blockDatas[curMoveBlockIndex].x = this._blocks[curMoveBlockIndex].data.x;
+            state.blockDatas[curMoveBlockIndex].y = this._blocks[curMoveBlockIndex].data.y;
+            cc.tween(this._blocks[state.curMoveBlockIndex].target)
+                .to(0.1, { x: this._blocks[state.curMoveBlockIndex].data.x, y: this._blocks[state.curMoveBlockIndex].data.y })
+                .start();
+        } else {
+            state.blockDatas.splice(state.curMoveBlockIndex, 1);
+        }
         this.updateState(state);
     }
 
@@ -294,28 +311,11 @@ export default class threeViews_model03_v1 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
         if (state.drag == "move") {
-            this._blocks[state.curMoveBlockIndex].target.x = state.blockDatas[state.curMoveBlockIndex].x
-            this._blocks[state.curMoveBlockIndex].target.y = state.blockDatas[state.curMoveBlockIndex].y
+            this._blocks[state.curMoveBlockIndex].target.x = state.blockDatas[state.curMoveBlockIndex].x;
+            this._blocks[state.curMoveBlockIndex].target.y = state.blockDatas[state.curMoveBlockIndex].y;
         }
 
         if (state.drag == "end") {
-            if (!globalThis._.isEqual(oldState.isBack, state.isBack)) {
-                this.playSound('ui://tfsfm7mbt1pw9');
-                if (state.isBack) {
-                    cc.tween(this._blocks[state.curMoveBlockIndex].target)
-                        .to(0.1, { x: this._blocks[state.curMoveBlockIndex].data.x, y: this._blocks[state.curMoveBlockIndex].data.y })
-                        .start();
-                } else {
-                    this._judgeFloorBtnTouch(this._blocks[state.curMoveBlockIndex].data.sortIndex);
-                    this._judgeDown(state.curMoveBlockIndex);
-                    this._view.removeChild(this._blocks[state.curMoveBlockIndex].target);
-                    this._blocks.splice(state.curMoveBlockIndex, 1);
-                    state.blockDatas.splice(state.curMoveBlockIndex, 1);
-                }
-                state.isBack = null;
-                state.curMoveBlockIndex = null;
-            }
-
             if (!globalThis._.isEqual(oldState.title, state.title)) {
                 this.playTitle(state.title);
             }
@@ -330,19 +330,34 @@ export default class threeViews_model03_v1 extends cc.Component {
                 }
             }
 
-            if (!globalThis._.isEqual(oldState.isCreateBlock, state.isCreateBlock)) {
+            if (!globalThis._.isEqual(oldState.blockDatas, state.blockDatas)) {
                 this.playSound('ui://tfsfm7mbt1pw9');
-                state.isCreateBlock = false;
-                this._createBlockUI(state)
+                if (state.blockDatas.length > this._blocks.length) {
+                    this._createBlockUI(state)
+                } else {
+                    if (this._blocks[state.curMoveBlockIndex].target.x == this._blocks[state.curMoveBlockIndex].data.x) {
+                        console.log('不需要动,学生那边没更新过位置')
+                    } else {
+                        cc.tween(this._blocks[state.curMoveBlockIndex].target)
+                            .to(0.1, { x: this._blocks[state.curMoveBlockIndex].data.x, y: this._blocks[state.curMoveBlockIndex].data.y })
+                            .start();
+                    }
+                    if (!state.isBack) {
+                        this._judgeFloorBtnTouch(this._blocks[state.curMoveBlockIndex].data.sortIndex);
+                        this._judgeDown(state.curMoveBlockIndex);
+                        this._view.removeChild(this._blocks[state.curMoveBlockIndex].target);
+                        this._blocks.splice(state.curMoveBlockIndex, 1);
+                    }
+                }
             }
 
-            if (!globalThis._.isEqual(oldState.floorBtnState, state.floorBtnState)) {
-                this._updateFloorBtnState(state);
-            }
+            // if (!globalThis._.isEqual(oldState.floorBtnState, state.floorBtnState)) {
+            //     this._updateFloorBtnState(state);
+            // }
 
-            if (!globalThis._.isEqual(oldState.blockBtnState, state.blockBtnState)) {
-                this._updateBlockBtnState(state);
-            }
+            // if (!globalThis._.isEqual(oldState.blockBtnState, state.blockBtnState)) {
+            //     this._updateBlockBtnState(state);
+            // }
         }
     }
 
@@ -419,14 +434,14 @@ export default class threeViews_model03_v1 extends cc.Component {
         let leftBtn = block.getChild('leftBtn').asButton;
         let frontBtn = block.getChild('frontBtn').asButton;
         topBtn.on(fgui.Event.CLICK, this._setCreateTopBlockData, this);
-        topBtn.on(fgui.Event.ROLL_OVER, this._rollOverBlockBtn, this);
-        topBtn.on(fgui.Event.ROLL_OUT, this._rollOutBlockBtn, this);
+        // topBtn.on(fgui.Event.ROLL_OVER, this._rollOverBlockBtn, this);
+        // topBtn.on(fgui.Event.ROLL_OUT, this._rollOutBlockBtn, this);
         leftBtn.on(fgui.Event.CLICK, this._setCreateLeftBlockData, this);
-        leftBtn.on(fgui.Event.ROLL_OVER, this._rollOverBlockBtn, this);
-        leftBtn.on(fgui.Event.ROLL_OUT, this._rollOutBlockBtn, this);
+        // leftBtn.on(fgui.Event.ROLL_OVER, this._rollOverBlockBtn, this);
+        // leftBtn.on(fgui.Event.ROLL_OUT, this._rollOutBlockBtn, this);
         frontBtn.on(fgui.Event.CLICK, this._setCreatefrontBlockData, this);
-        frontBtn.on(fgui.Event.ROLL_OVER, this._rollOverBlockBtn, this);
-        frontBtn.on(fgui.Event.ROLL_OUT, this._rollOutBlockBtn, this);
+        // frontBtn.on(fgui.Event.ROLL_OVER, this._rollOverBlockBtn, this);
+        // frontBtn.on(fgui.Event.ROLL_OUT, this._rollOutBlockBtn, this);
         this._view.addChildAt(block, this._view.numChildren - 1)
         var obj = new CreatedBlockData();
         obj.data = state.createBlockData
@@ -661,6 +676,23 @@ export default class threeViews_model03_v1 extends cc.Component {
     mergeState() {
         if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);
     }
+
+    // removeBlockCallbackFunc(curState) {
+    //     this._blocks.splice(curState.curMoveBlockIndex, 1);
+    //     curState.blockDatas.splice(curState.curMoveBlockIndex, 1);
+    //     curState.isBack = null;
+    //     curState.curMoveBlockIndex = null;
+    //     curState.removeBlockCallback = false;
+    //     this.state = curState;
+    // }
+
+    // backBlockCallbackFunc(curState) {
+    //     curState.isBack = null;
+    //     curState.curMoveBlockIndex = null;
+    //     curState.backBlockCallback = false;
+    //     this.state = curState;
+    // }
+
 
     onEnable() {
         this.registerState();
