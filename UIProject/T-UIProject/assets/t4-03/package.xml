@@ -169,7 +169,6 @@
     <sound id="103lzew" name="例1.mp3" path="/audios/" exported="true"/>
     <sound id="103lzex" name="例2.mp3" path="/audios/" exported="true"/>
     <sound id="103lzey" name="例3.mp3" path="/audios/" exported="true"/>
-    <image id="103lzf0" name="0109.png" path="/components/common/buttons/images/common/"/>
     <component id="103lzf1" name="handleGuide02.xml" path="/components/common/" exported="true"/>
     <image id="103lzf4" name="0111.png" path="/images/common/"/>
     <image id="103lzf5" name="hand.png" path="/images/common/"/>
