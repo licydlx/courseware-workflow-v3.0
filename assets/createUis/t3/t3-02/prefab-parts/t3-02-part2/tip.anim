@@ -1,0 +1,176 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "tip",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.5,
+  "sample": 60,
+  "speed": 0.35,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "tip/sc": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.18333333333333332,
+              "value": 80
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": 80
+            },
+            {
+              "frame": 1.4833333333333334,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "tip/hand": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0.11666666666666667,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              },
+              "curve": [
+                0.18,
+                0.89,
+                0.31,
+                1.21
+              ]
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              }
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              },
+              "curve": [
+                0.6,
+                -0.27,
+                0.73,
+                0.04
+              ]
+            },
+            {
+              "frame": 1.5,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              }
+            }
+          ],
+          "position": [
+            {
+              "frame": 0.11666666666666667,
+              "value": [
+                797,
+                46
+              ],
+              "motionPath": []
+            },
+            {
+              "frame": 0.25,
+              "value": [
+                797,
+                46
+              ],
+              "motionPath": [
+                [
+                  432,
+                  117,
+                  611,
+                  127,
+                  246,
+                  106
+                ]
+              ],
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": [
+                -164.3,
+                29.8
+              ],
+              "motionPath": [],
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.8833333333333333,
+              "value": [
+                847,
+                -203
+              ],
+              "motionPath": [
+                [
+                  347,
+                  -50,
+                  593,
+                  -46,
+                  87,
+                  -54
+                ]
+              ],
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": [
+                -154.2,
+                -246.9
+              ],
+              "motionPath": []
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.25,
+      "func": "startDrawDot",
+      "params": []
+    },
+    {
+      "frame": 0.65,
+      "func": "endDrawDot",
+      "params": []
+    },
+    {
+      "frame": 0.9166666666666666,
+      "func": "startDrawDot",
+      "params": []
+    },
+    {
+      "frame": 1.3166666666666667,
+      "func": "endDrawDot",
+      "params": []
+    },
+    {
+      "frame": 1.5,
+      "func": "onTipFinish",
+      "params": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_cket" name="n0" src="cket6u" fileName="images/start-page/bg.jpg" xy="0,0"/>
+    <component id="n3_cket" name="n3" src="cket72" fileName="quePages/start-page/rocks.xml" xy="929,591"/>
+    <image id="n23_cket" name="n23" src="s5he2r" fileName="images/matte.png" xy="424,512" pivot="0.5,0.5" anchor="true" alpha="0" blend="add"/>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Alpha" target="n23_cket" tween="true" startValue="0" endValue="0.2" duration="24" ease="Sine.InOut"/>
+    <item time="24" type="Alpha" target="n23_cket" tween="true" startValue="0.2" endValue="0" duration="24" ease="Sine.InOut"/>
+  </transition>
+</component>

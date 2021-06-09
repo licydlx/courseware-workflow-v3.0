@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="vi0pdm7w">
+  <resources>
+    <component id="i15i1" name="laba-icon.xml" path="/"/>
+    <component id="i15i2" name="btnLaba.xml" path="/buttons/"/>
+    <component id="i15i3" name="touchPad.xml" path="/buttons/"/>
+    <component id="i15i4" name="scene-empty.xml" path="/" exported="true"/>
+    <component id="fj3c5" name="laba.xml" path="/" exported="true"/>
+    <component id="fj3c6" name="page-start.xml" path="/que-pages/page-start/"/>
+    <image id="fj3c7" name="0103.png" path="/images/"/>
+  </resources>
+  <publish name="" path="F:\git\fairy-cocos-courseware-wild\assets\fairyUis\t3\t3-02" packageCount="2"/>
+</packageDescription>

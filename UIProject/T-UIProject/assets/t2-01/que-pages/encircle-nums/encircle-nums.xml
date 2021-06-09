@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n3_mfcc" name="n3" src="mfcc5q" fileName="images/encircle-nums/sbg.png" xy="35,68" size="1845,989"/>
+    <component id="n6_m4qz" name="n6" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="543,407" group="n43_m4qz"/>
+    <component id="n73_8ret" name="n73" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="684,407" group="n43_m4qz"/>
+    <component id="n74_8ret" name="n74" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="825,407" group="n43_m4qz"/>
+    <component id="n75_8ret" name="n75" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="966,407" group="n43_m4qz"/>
+    <component id="n76_8ret" name="n76" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1107,407" group="n43_m4qz"/>
+    <component id="n77_8ret" name="n77" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1248,407" group="n43_m4qz"/>
+    <component id="n78_8ret" name="n78" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1389,407" group="n43_m4qz"/>
+    <component id="n79_8ret" name="n79" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="543,568" group="n43_m4qz"/>
+    <component id="n80_8ret" name="n80" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="684,568" group="n43_m4qz"/>
+    <component id="n81_8ret" name="n81" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="825,568" group="n43_m4qz"/>
+    <component id="n82_8ret" name="n82" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="966,568" group="n43_m4qz"/>
+    <component id="n83_8ret" name="n83" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1107,568" group="n43_m4qz"/>
+    <component id="n84_8ret" name="n84" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1248,568" group="n43_m4qz"/>
+    <component id="n85_8ret" name="n85" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1389,568" group="n43_m4qz"/>
+    <component id="n86_8ret" name="n86" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="543,726" group="n43_m4qz"/>
+    <component id="n87_8ret" name="n87" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="684,726" group="n43_m4qz"/>
+    <component id="n88_8ret" name="n88" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="825,726" group="n43_m4qz"/>
+    <component id="n89_8ret" name="n89" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="966,726" group="n43_m4qz"/>
+    <component id="n90_8ret" name="n90" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1107,726" group="n43_m4qz"/>
+    <component id="n91_8ret" name="n91" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1248,726" group="n43_m4qz"/>
+    <component id="n92_8ret" name="n92" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1389,726" group="n43_m4qz"/>
+    <group id="n43_m4qz" name="textGroup" xy="512,362" size="907,409" advanced="true"/>
+    <image id="n44_m4qz" name="n44" src="mfcc5p" fileName="images/encircle-nums/rect2.png" xy="775,223" pivot="0.5,0.5" anchor="true" size="325,121"/>
+    <component id="n93_rk87" name="n93" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="671,222" group="n48_m4qz" scale="0.8,0.8"/>
+    <component id="n94_rk87" name="n94" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="777,222" group="n48_m4qz" scale="0.8,0.8"/>
+    <component id="n95_rk87" name="n95" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="883,222" group="n48_m4qz" scale="0.8,0.8"/>
+    <group id="n48_m4qz" name="expGroup1" xy="640,177" size="273,90" advanced="true"/>
+    <image id="n49_m4qz" name="n49" src="mfcc5p" fileName="images/encircle-nums/rect2.png" xy="1159,222" pivot="0.5,0.5" anchor="true" size="325,121"/>
+    <component id="n96_rk87" name="n96" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1053,221" group="n53_m4qz" scale="0.8,0.8"/>
+    <component id="n97_rk87" name="n97" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1159,221" group="n53_m4qz" scale="0.8,0.8"/>
+    <component id="n98_rk87" name="n98" src="8ret6f" fileName="que-pages/encircle-nums/num-cell.xml" xy="1265,221" group="n53_m4qz" scale="0.8,0.8"/>
+    <group id="n53_m4qz" name="expGroup2" xy="1022,176" size="273,90" advanced="true"/>
+    <component id="n54_m4qz" name="touchPad" src="bqid22" fileName="buttons/touchPad.xml" xy="0,0"/>
+    <image id="n2_mfcc" name="handle1" src="mfcc5p" fileName="images/encircle-nums/rect2.png" xy="829,897" pivot="0.185,0.5" anchor="true" size="439,150" group="n57_m4qz" visible="false"/>
+    <image id="n55_m4qz" name="handle2" src="mfcc5p" fileName="images/encircle-nums/rect2.png" xy="829,897" pivot="0.185,0.5" anchor="true" size="439,150" group="n57_m4qz" visible="false"/>
+    <image id="n56_m4qz" name="handle3" src="mfcc5p" fileName="images/encircle-nums/rect2.png" xy="830,898" pivot="0.185,0.5" anchor="true" size="439,150" group="n57_m4qz" visible="false"/>
+    <group id="n57_m4qz" name="handles" xy="747,822" size="439,151" advanced="true"/>
+  </displayList>
+</component>

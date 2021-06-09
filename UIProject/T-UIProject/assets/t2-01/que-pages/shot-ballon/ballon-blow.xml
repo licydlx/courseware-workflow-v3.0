@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="148,159">
+  <displayList>
+    <image id="n31_mfcc" name="n31" src="mfcc45" fileName="images/shot-balloon/pieces/1.png" xy="109,125" pivot="0.5,0.5" anchor="true"/>
+    <image id="n32_mfcc" name="n32" src="mfcc46" fileName="images/shot-balloon/pieces/2.png" xy="13,46" pivot="0.5,0.5" anchor="true" rotation="11"/>
+    <image id="n33_mfcc" name="n33" src="mfcc47" fileName="images/shot-balloon/pieces/3.png" xy="14,105" pivot="0.5,0.5" anchor="true"/>
+    <image id="n34_mfcc" name="n34" src="mfcc48" fileName="images/shot-balloon/pieces/4.png" xy="44,122" pivot="0.5,0.5" anchor="true"/>
+    <image id="n35_mfcc" name="n35" src="mfcc49" fileName="images/shot-balloon/pieces/5.png" xy="137,87" pivot="0.5,0.5" anchor="true"/>
+    <image id="n36_mfcc" name="n36" src="mfcc4a" fileName="images/shot-balloon/pieces/6.png" xy="118,20" pivot="0.5,0.5" anchor="true"/>
+    <image id="n37_mfcc" name="n37" src="mfcc4b" fileName="images/shot-balloon/pieces/7.png" xy="74,157" pivot="0.5,0.5" anchor="true"/>
+    <image id="n38_mfcc" name="n38" src="mfcc4a" fileName="images/shot-balloon/pieces/6.png" xy="53,5" pivot="0.5,0.5" anchor="true" rotation="118"/>
+  </displayList>
+  <transition name="blow">
+    <item time="0" type="Alpha" target="n31_mfcc" tween="true" startValue="1" endValue="0" duration="14" ease="Expo.Out"/>
+    <item time="0" type="Alpha" target="n32_mfcc" tween="true" startValue="1" endValue="0" duration="14" ease="Expo.Out"/>
+    <item time="0" type="Alpha" target="n33_mfcc" tween="true" startValue="1" endValue="0" duration="14" ease="Expo.Out"/>
+    <item time="0" type="Alpha" target="n34_mfcc" tween="true" startValue="1" endValue="0" duration="14" ease="Expo.Out"/>
+    <item time="0" type="Alpha" target="n35_mfcc" tween="true" startValue="1" endValue="0" duration="14" ease="Expo.Out"/>
+    <item time="0" type="Alpha" target="n36_mfcc" tween="true" startValue="1" endValue="0" duration="14" ease="Expo.Out"/>
+    <item time="0" type="Alpha" target="n37_mfcc" tween="true" startValue="1" endValue="0" duration="14" ease="Expo.Out"/>
+    <item time="0" type="Alpha" target="n38_mfcc" tween="true" startValue="1" endValue="0" duration="14" ease="Expo.Out"/>
+    <item time="0" type="XY" target="n31_mfcc" tween="true" startValue="99,120" endValue="124,145" duration="14" ease="Expo.Out"/>
+    <item time="0" type="XY" target="n32_mfcc" tween="true" startValue="32,55" endValue="-16,22" duration="14" ease="Expo.Out"/>
+    <item time="0" type="XY" target="n33_mfcc" tween="true" startValue="18,94" endValue="-34,123" duration="14" ease="Expo.Out"/>
+    <item time="0" type="XY" target="n34_mfcc" tween="true" startValue="55,103" endValue="31,141" duration="14" ease="Expo.Out"/>
+    <item time="0" type="XY" target="n35_mfcc" tween="true" startValue="114,87" endValue="152,92" duration="14" ease="Expo.Out"/>
+    <item time="0" type="XY" target="n36_mfcc" tween="true" startValue="100,34" endValue="131,7" duration="14" ease="Expo.Out"/>
+    <item time="0" type="XY" target="n37_mfcc" tween="true" startValue="73,135" endValue="77,170" duration="14" ease="Expo.Out"/>
+    <item time="0" type="XY" target="n38_mfcc" tween="true" startValue="55,30" endValue="44,-7" duration="14" ease="Expo.Out"/>
+  </transition>
+</component>

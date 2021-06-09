@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="473,545" pivot="0.5,0.5" anchor="true" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n5_tq5p" name="n5" xy="182,258" pivot="0.5,0.5" anchor="true" size="406,522" alpha="0" type="polygon" points="146.9968,112.7308,264,41,381.7156,122.2894,406.6879,259.1252,393.8322,411.9886,272.6879,522.1251,154.8796,421.3402,93,266"/>
+  </displayList>
+  <Button/>
+</component>

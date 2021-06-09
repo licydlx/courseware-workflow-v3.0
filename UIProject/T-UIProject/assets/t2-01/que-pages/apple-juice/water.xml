@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="791,184">
+  <displayList>
+    <graph id="n16_mfcc" name="n16" xy="127,0" size="332,180" group="n18_mfcc" type="polygon" lineSize="0" fillColor="#ffdb4930" points="0,40,15.22947,25.90285,33.92471,13.45227,52.15413,5.016769,70,1.031822,93.13238,3.482372,116.4154,11.58957,141.0955,24.97153,166,42,181.9863,57.41408,200.8282,71.99036,224.4116,78.08363,250.6633,81,271.9032,79.18956,296.0953,68.67966,314.8905,57.18245,332,40,332,180,0,180"/>
+    <graph id="n17_mfcc" name="n17" xy="459,0" size="332,180" group="n18_mfcc" type="polygon" lineSize="0" fillColor="#ffdb4930" points="0,40,15.22947,25.90285,33.92471,13.45227,52.15413,5.016769,70,1.031822,93.13238,3.482372,116.4154,11.58957,141.0955,24.97153,166,42,181.9863,57.41408,200.8282,71.99036,224.4116,78.08363,250.6633,81,271.9032,79.18956,296.0953,68.67966,314.8905,57.18245,332,40,332,180,0,180"/>
+    <group id="n18_mfcc" name="back" xy="127,0" size="664,180" group="n28_mfcc" advanced="true"/>
+    <graph id="n12_mfcc" name="n12" xy="0,0" size="332,180" group="n15_mfcc" type="polygon" lineSize="0" fillColor="#ffff6d4b" points="0,40,15.22947,25.90285,33.92471,13.45227,52.15413,5.016769,70,1.031822,93.13238,3.482372,116.4154,11.58957,141.0955,24.97153,166,42,181.9863,57.41408,200.8282,71.99036,224.4116,78.08363,250.6633,81,271.9032,79.18956,296.0953,68.67966,314.8905,57.18245,332,40,332,180,0,180"/>
+    <graph id="n14_mfcc" name="n14" xy="332,0" size="332,180" group="n15_mfcc" type="polygon" lineSize="0" fillColor="#ffff6d4b" points="0,40,15.22947,25.90285,33.92471,13.45227,52.15413,5.016769,70,1.031822,93.13238,3.482372,116.4154,11.58957,141.0955,24.97153,166,42,181.9863,57.41408,200.8282,71.99036,224.4116,78.08363,250.6633,81,271.9032,79.18956,296.0953,68.67966,314.8905,57.18245,332,40,332,180,0,180"/>
+    <group id="n15_mfcc" name="n15" xy="0,0" size="664,180" group="n28_mfcc" advanced="true"/>
+    <image id="n19_mfcc" name="n19" src="mfcc51" fileName="images/apple-juice/guo2.png" xy="67,55" pivot="0.5,0.5" anchor="true" group="n22_mfcc" rotation="-20"/>
+    <image id="n20_mfcc" name="n20" src="mfcc51" fileName="images/apple-juice/guo2.png" xy="60,127" pivot="0.5,0.5" anchor="true" group="n22_mfcc" rotation="-152"/>
+    <image id="n21_mfcc" name="n21" src="mfcc51" fileName="images/apple-juice/guo2.png" xy="119,101" pivot="0.5,0.5" anchor="true" group="n22_mfcc" rotation="-198"/>
+    <group id="n22_mfcc" name="n22" xy="24,34" size="130,113" group="n28_mfcc" advanced="true"/>
+    <image id="n23_mfcc" name="n23" src="mfcc52" fileName="images/apple-juice/guo3.png" xy="48,78" pivot="0.5,0.5" anchor="true" group="n26_mfcc" visible="false"/>
+    <image id="n24_mfcc" name="n24" src="mfcc52" fileName="images/apple-juice/guo3.png" xy="113,86" pivot="0.5,0.5" anchor="true" group="n26_mfcc" visible="false" rotation="140"/>
+    <image id="n25_mfcc" name="n25" src="mfcc52" fileName="images/apple-juice/guo3.png" xy="84,135" pivot="0.5,0.5" anchor="true" group="n26_mfcc" visible="false" rotation="89"/>
+    <group id="n26_mfcc" name="n26" xy="30,53" size="100,106" group="n28_mfcc" advanced="true"/>
+    <group id="n28_mfcc" name="n28" xy="0,0" size="791,180" group="n27_mfcc" advanced="true"/>
+    <group id="n27_mfcc" name="water" xy="0,0" size="791,180" advanced="true"/>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n15_mfcc" tween="true" startValue="0,0" endValue="-332,0" duration="48" ease="Linear"/>
+    <item time="0" type="XY" target="n18_mfcc" tween="true" startValue="127,0" endValue="-205,0" duration="48" ease="Linear"/>
+    <item time="0" type="XY" target="n22_mfcc" tween="true" startValue="24.5,34.5" endValue="9.5,84.415" duration="16" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n26_mfcc" tween="true" startValue="30.5,53.5" endValue="34.5,96.415" duration="16" ease="Sine.InOut"/>
+    <item time="16" type="XY" target="n22_mfcc" tween="true" startValue="9.5,84.415" endValue="71.5,37.5" duration="20" ease="Sine.InOut"/>
+    <item time="16" type="XY" target="n26_mfcc" tween="true" startValue="34.5,96.415" endValue="65.5,69.5" duration="20" ease="Sine.InOut"/>
+    <item time="36" type="XY" target="n22_mfcc" tween="true" startValue="71.5,37.5" endValue="24.5,34.5" duration="12" ease="Quad.InOut"/>
+    <item time="36" type="XY" target="n26_mfcc" tween="true" startValue="65.5,69.5" endValue="30.5,53.5" duration="12" ease="Quad.InOut"/>
+  </transition>
+</component>

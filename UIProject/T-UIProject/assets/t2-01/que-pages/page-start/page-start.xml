@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <component id="n0_cket" name="n0" src="cket71" fileName="quePages/start-page/loop-bg.xml" xy="0,0"/>
+    <image id="n6_cket" name="n6" src="cket6q" fileName="images/start-page/ship.png" xy="-425,756" pivot="0.5,0.5" anchor="true"/>
+    <image id="n8_cket" name="n8" src="cket6s" fileName="images/start-page/t1.png" xy="606,438" pivot="0.5,0.5" anchor="true" alpha="0"/>
+    <image id="n9_cket" name="n9" src="cket6t" fileName="images/start-page/t2.png" xy="1154,725" pivot="0.5,0.5" anchor="true" scale="0,0" alpha="0"/>
+  </displayList>
+  <transition name="start">
+    <item time="0" type="Alpha" target="n8_cket" tween="true" startValue="0" endValue="1" duration="12" ease="Quart.Out"/>
+    <item time="0" type="Scale" target="n8_cket" tween="true" startValue="0.8,0.8" endValue="1,1" duration="12" ease="Back.Out"/>
+    <item time="0" type="XY" target="n6_cket" value="-466,734"/>
+    <item time="8" type="Alpha" target="n9_cket" tween="true" startValue="0" endValue="1" duration="13" ease="Quart.Out"/>
+    <item time="8" type="Scale" target="n9_cket" tween="true" startValue="0.8,0.8" endValue="1,1" duration="13" ease="Back.Out"/>
+    <item time="15" type="XY" target="n6_cket" tween="true" startValue="-466,734" endValue="1541,313" duration="15" ease="Quad.InOut"/>
+    <item time="30" type="XY" target="n6_cket" tween="true" startValue="1541,313" endValue="1321,347" duration="12" ease="Back.InOut"/>
+  </transition>
+</component>

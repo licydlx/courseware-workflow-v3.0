@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="482,217" mask="n42_r3d0">
+  <displayList>
+    <image id="n42_r3d0" name="n42" src="r3d07f" fileName="images/shot-balloon/madel-mask.png" xy="46,43"/>
+    <image id="n40_mfcc" name="n40" src="mfcc4d" fileName="images/shot-balloon/medal.png" xy="240,109" pivot="0.5,0.5" anchor="true"/>
+    <image id="n37_s5he" name="n37" src="s5he2r" fileName="images/matte.png" xy="541,104" pivot="0.5,0.5" anchor="true" size="74,523" alpha="0.433" rotation="23" blend="add"/>
+  </displayList>
+  <transition name="flash" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n37_s5he" tween="true" startValue="541,104" endValue="-76,113" duration="18"/>
+    <item time="27" type="XY" target="n37_s5he" value="541,104"/>
+  </transition>
+</component>

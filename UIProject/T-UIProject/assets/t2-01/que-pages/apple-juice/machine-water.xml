@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="166,179" mask="n13_mfcc">
+  <displayList>
+    <image id="n13_mfcc" name="n13" src="mfcc58" fileName="images/apple-juice/water_mask_machine.png" xy="83,89" pivot="0.5,0.5" anchor="true"/>
+    <component id="n16_mfcc" name="n16" src="mfcc5n" fileName="quePages/apple-juice/water.xml" xy="0,180" size="791,180"/>
+    <image id="n29_mfcc" name="n29" src="mfcc5k" fileName="images/apple-juice/water_fall.png" xy="175,101" pivot="0.5,1" anchor="true" visible="false" rotation="-76"/>
+  </displayList>
+  <transition name="fall">
+    <item time="0" type="Alpha" target="n16_mfcc" value="1"/>
+    <item time="0" type="Alpha" target="n29_mfcc" value="0"/>
+    <item time="0" type="Scale" target="n29_mfcc" value="1,1"/>
+    <item time="0" type="Visible" target="n29_mfcc" value="true"/>
+    <item time="0" type="XY" target="n29_mfcc" value="175,102"/>
+    <item time="8" type="Alpha" target="n16_mfcc" tween="true" startValue="1" endValue="0" duration="4"/>
+    <item time="8" type="Alpha" target="n29_mfcc" tween="true" startValue="0" endValue="1" duration="4"/>
+    <item time="12" type="Scale" target="n29_mfcc" tween="true" startValue="1,1" endValue="1.06,0.77" duration="11" ease="Quad.InOut"/>
+    <item time="12" type="XY" target="n29_mfcc" tween="true" startValue="175,102" endValue="170,117" duration="11" ease="Quad.InOut"/>
+    <item time="30" type="Scale" target="n29_mfcc" tween="true" startValue="1.06,0.77" endValue="1.05,0.43" duration="8" ease="Quad.InOut"/>
+    <item time="30" type="XY" target="n29_mfcc" tween="true" startValue="170,117" endValue="171,102" duration="8" ease="Quad.InOut"/>
+    <item time="46" type="Scale" target="n29_mfcc" tween="true" startValue="1.05,0.43" endValue="1.05,0" duration="8"/>
+    <item time="46" type="XY" target="n29_mfcc" tween="true" startValue="171,102" endValue="167,90" duration="8"/>
+  </transition>
+</component>

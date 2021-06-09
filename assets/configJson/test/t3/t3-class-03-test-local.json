@@ -1,0 +1,427 @@
+{
+    "name": "",
+    "courseName": "t3-class-03",
+    "env": "test",
+    "totalPages": 12,
+    "pathConfig": {
+        "remoteUrl": "",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "controllerBundlePath": "",
+        "panelBundlePath": "",
+        "controllerName": "controller-model02",
+        "panelName": "formal-panle-model02",
+        "resourceBundlePath": "",
+        "resourceName": "t3-class-03",
+        "packageName": "t3-class-03"
+    },
+    "chapters": [
+        
+        {
+            "tag":"开始画面",
+            "model": {
+                "uiPath": "scene-empty",
+                "loaderUiPath": "page-start",
+                "bundleName": "pageAnimation",
+                "prefabName": "pageAnimation",
+                "labaImagePath": "", 
+                "labaTime": 0,
+                "config": {
+                }
+            }
+        },
+        {
+            "tag":"例子1",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "classify",
+                "bundleName": "classify",
+                "prefabName": "classify",
+                "labaImagePath": "t3-03-1-info", 
+                "labaSoundClip": "t3-03-1",
+                "labaTime": 5.5,
+                "config": {
+                    "itemImgList": ["item1-1", "item1-2" ],
+                    "manImg": [ "man1-1" ],
+                    "dstZoneId": 2
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"题目1-1",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "classify",
+                "bundleName": "classify",
+                "prefabName": "classify",
+                "labaImagePath": "t3-03-1b-info", 
+                "labaSoundClip": "t3-03-1-2",
+                "labaTime": 6,
+                "config": {
+                    "itemImgList": ["item2-1", "item2-2" ],
+                    "manImg": [ "man1-2" ],
+                    "dstZoneId": 2
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"题目1-2",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "classify",
+                "bundleName": "classify",
+                "prefabName": "classify",
+                "labaImagePath": "t3-03-1c-info", 
+                "labaSoundClip": "t3-03-1-3",
+                "labaTime": 6,
+                "config": {
+                    "itemImgList": ["item3-1", "item3-2" ],
+                    "manImg": [ "man1-3" ],
+                    "dstZoneId": 2
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"例题2",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "select-character",
+                "bundleName": "selectCharacter", 
+                "prefabName": "selectCharacter",
+                "labaImagePath": "t3-03-2-info", 
+                "labaSoundClip": "t3-03-2",
+                "labaTime": 6,
+                "config": {
+                    "itemImgList": ["item2-1-1", "item2-1-2" ],
+                    "characterImgList": [ 
+                        "man2-1-1", 
+                        "man2-1-2", 
+                        "man2-1-3", 
+                        "man2-1-4", 
+                        "man2-1-5"
+                    ],
+                    "characterLightList": [
+                        "light2-1-1",
+                        "light2-1-2",
+                        "light2-1-3",
+                        "light2-1-4",
+                        "light2-1-5"
+                    ],
+                    "srcStateList":  [ 0, 0, 0, 0, 0 ],
+                    "dstStateList" : [ 0, 0, 0, 0, 1 ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "tag":"题目2-1",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "select-character",
+                "bundleName": "selectCharacter", 
+                "prefabName": "selectCharacter",
+                "labaImagePath": "t3-03-2-info", 
+                "labaSoundClip": "t3-03-2",
+                "labaTime": 6,
+                "config": {
+                    "itemImgList": ["item2-2-1", "item2-2-2" ],
+                    "characterImgList": [ 
+                        "man2-2-1", 
+                        "man2-2-2", 
+                        "man2-2-3", 
+                        "man2-2-4", 
+                        "man2-2-5"
+                    ],
+                    "characterLightList": [
+                        "light2-2-1",
+                        "light2-2-2",
+                        "light2-2-3",
+                        "light2-2-4",
+                        "light2-2-5"
+                    ],
+                    "srcStateList":  [ 0, 0, 0, 0, 0 ],
+                    "dstStateList" : [ 1, 0, 0, 0, 0 ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "tag":"题目2-2",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "select-character",
+                "bundleName": "selectCharacter", 
+                "prefabName": "selectCharacter",
+                "labaImagePath": "t3-03-2-info", 
+                "labaSoundClip": "t3-03-2",
+                "labaTime": 6,
+                "config": {
+                    "itemImgList": ["item2-3-1", "item2-3-2" ],
+                    "characterImgList": [ 
+                        "man2-3-1", 
+                        "man2-3-2", 
+                        "man2-3-3", 
+                        "man2-3-4", 
+                        "man2-3-5"
+                    ],
+                    "characterLightList": [
+                        "light2-3-1",
+                        "light2-3-2",
+                        "light2-3-3",
+                        "light2-3-4",
+                        "light2-3-5"
+                    ],
+                    "srcStateList": [ 0, 0, 0, 0, 0 ],
+                    "dstStateList" : [ 0, 0, 0, 0, 1 ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "tag":"例题3",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "classify-muti5",
+                "bundleName": "classifyMuti",
+                "prefabName": "classifyMuti",
+                "labaImagePath": "t3-03-3-info", 
+                "labaSoundClip": "t3-03-3",
+                "labaTime": 7,
+                "config": {
+                    "manCount": 5,
+                    "itemImgList": ["item3-1-1", "item3-1-2" ],
+                    "exampleClassImgList": [ "example3-1-1", "example3-1-2" ],
+                    "exampleImgList": [ 
+                        "man3-1-1", "man3-1-2", "man3-1-3",
+                        "man3-1-4", "man3-1-5", "man3-1-3"
+                    ],
+                    "manImg": [ 
+                        "man3-1-1",
+                        "man3-1-2",
+                        "man3-1-3",
+                        "man3-1-4",
+                        "man3-1-5"
+                    ],
+                    "srcZones": [
+                        [0,1,2,3,4],
+                        [],
+                        [],
+                        []
+                    ],
+                    "dstZones": [
+                        [],
+                        [0,1],
+                        [2],
+                        [3,4]
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"题目3-1",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "classify-muti5",
+                "bundleName": "classifyMuti",
+                "prefabName": "classifyMuti",
+                "labaImagePath": "t3-03-3b-info", 
+                "labaSoundClip": "t3-03-3-1",
+                "labaTime": 6,
+                "config": {
+                    "manCount": 5,
+                    "itemImgList": ["item3-2-1", "item3-2-2" ],
+                    "exampleClassImgList": [ "example3-2-1", "example3-2-2" ],
+                    "exampleImgList": [ 
+                        "man3-2-1", "man3-2-2", "man3-2-3",
+                        "man3-2-4", "man3-2-5", "man3-2-3"
+                    ],
+                    "manImg": [ 
+                        "man3-2-1",
+                        "man3-2-2",
+                        "man3-2-3",
+                        "man3-2-4",
+                        "man3-2-5"
+                    ],
+                    "srcZones": [
+                        [0,1,2,3,4],
+                        [],
+                        [],
+                        []
+                    ],
+                    "dstZones": [
+                        [],
+                        [0,1],
+                        [2],
+                        [3,4]
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"题目3-2",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "classify-muti5",
+                "bundleName": "classifyMuti",
+                "prefabName": "classifyMuti",
+                "labaImagePath": "t3-03-3b-info", 
+                "labaSoundClip": "t3-03-3-2",
+                "labaTime": 6,
+                "config": {
+                    "manCount": 5,
+                    "itemImgList": ["item3-3-1", "item3-3-2" ],
+                    "exampleClassImgList": [ "example3-3-1", "example3-3-2" ],
+                    "exampleImgList": [ 
+                        "man3-3-1", "man3-3-2", "man3-3-3",
+                        "man3-3-4", "man3-3-5", "man3-3-3"
+                    ],
+                    "manImg": [ 
+                        "man3-3-1",
+                        "man3-3-2",
+                        "man3-3-3",
+                        "man3-3-4",
+                        "man3-3-5"
+                    ],
+                    "srcZones": [
+                        [0,1,2,3,4],
+                        [],
+                        [],
+                        []
+                    ],
+                    "dstZones": [
+                        [],
+                        [0,1],
+                        [2],
+                        [3,4]
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"拓展",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bgCommon",
+                "loaderUiPath": "classify-muti6",
+                "bundleName": "classifyMuti",
+                "prefabName": "classifyMuti",
+                "labaImagePath": "t3-03-3b-info", 
+                "labaSoundClip": "t3-03-4",
+                "labaTime": 6,
+                "config": {
+                    "manCount": 6,
+                    "itemImgList": ["item4-1", "item4-2" ],
+                    "exampleClassImgList": [ "example4-1", "example4-2" ],
+                    "exampleImgList": [ 
+                        "man4-1", "man4-2", "man4-4", "man4-3",
+                        "man4-5", "man4-4", "man4-3", "man4-6"
+                    ],
+                    "manImg": [ 
+                        "man4-1",
+                        "man4-2",
+                        "man4-3",
+                        "man4-4",
+                        "man4-5",
+                        "man4-6"
+                    ],
+                    "srcZones": [
+                        [0,1,2,3,4,5],
+                        [],
+                        [],
+                        []
+                    ],
+                    "dstZones": [
+                        [],
+                        [0,1],
+                        [2,3],
+                        [4,5]
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"结束",
+            "model": {
+                "uiPath": "scene-empty",
+                "loaderUiPath": "page-end",
+                "backgroundName":"bg-solong",
+                "bundleName": "pageAnimation",
+                "prefabName": "pageAnimation",
+                "labaImagePath": "", 
+                "labaTime": 0,
+                "config": {
+                    "aniName" : ""
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,240 @@
+{
+    "name": "",
+    "courseName": "t3-class-02",
+    "env": "test",
+    "totalPages": 12,
+    "pathConfig": {
+        "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
+        "modelBundlePath": "T-series/personalTest/wildptr/models/",
+        "componentBundlePath": "T-series/prefabLibrary/components/",
+        "controllerBundlePath": "T-series/prefabLibrary/controllers/",
+        "resourceBundlePath": "T-series/fairyUis/t3/",
+        "panelBundlePath": "T-series/prefabLibrary/components/",
+
+        "controllerName": "controller-model02",
+        "panelName": "formal-panle-model02",
+        "resourceName": "t3-02",
+        "packageName": "t3-02"
+    },
+    "chapters": [
+        {
+            "model": {
+                "uiPath": "t3-02-start",
+                "bundleName": "pageAnimationCocos",
+                "prefabName": "pageAnimationCocos",
+                "config": {
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part1",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  4,
+                    "srcIdList":   [ 1, 2, 3, 4, 0, 0 ,0, 0 ],
+                    "dstIdList": [ [ 0, 0, 0, 0, 2, 4, 1, 3 ] ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part1b",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  4,
+                    "srcIdList":   [ 1, 2, 3, 4, 0, 0 ,0, 0 ],
+                    "dstIdList": [ [ 0, 0, 0, 0, 4, 2, 1, 3 ] ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part1c",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  4,
+                    "srcIdList":   [ 1, 2, 3, 4, 0, 0 ,0, 0 ],
+                    "dstIdList": [ [ 0, 0, 0, 0, 4, 2, 3, 1 ] ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part2",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  4,
+                    "srcIdList":   [ 1, 2, 3, 4, 0, 0, 0, 0 ],
+                    "dstIdList": [ [ 0, 0, 0, 0, 3, 4, 1, 2 ] ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part2b",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  4,
+                    "srcIdList":   [ 1, 2, 3, 4, 0, 0, 0, 0 ],
+                    "dstIdList": [ [ 0, 0, 0, 0, 1, 2, 3, 4 ] ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part2c",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  4,
+                    "srcIdList":   [ 1, 2, 3, 4, 0, 0, 0, 0 ],
+                    "dstIdList": [ [ 0, 0, 0, 0, 1, 2, 3, 4 ] ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part3",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  3,
+                    "srcIdList":   [ 1, 2, 3, 0, 0, 0 ],
+                    "dstIdList": [ 
+                        [ 0, 0, 0, 2, 1, 3 ],
+                        [ 0, 0, 0, 1, 2, 3 ]
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part3b",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  3,
+                    "srcIdList":   [ 1, 2, 3, 0, 0, 0 ],
+                    "dstIdList": [
+                        [ 0, 0, 0, 1, 3, 2 ],
+                        [ 0, 0, 0, 3, 1, 2 ]
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part3c",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  3,
+                    "srcIdList":   [ 1, 2, 3, 0, 0, 0 ],
+                    "dstIdList": [
+                        [ 0, 0, 0, 3, 2, 1 ],
+                        [ 0, 0, 0, 2, 3, 1 ]
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-part4",
+                "bundleName": "placeGame",
+                "prefabName": "placeGame",
+                "config": {
+                    "itemCount":  4,
+                    "srcIdList":   [ 1, 2, 3, 4, 0, 0, 0, 0 ],
+                    "dstIdList": [ 
+                        [ 0,0,0,0, 1, 2, 3, 4  ],
+                        [ 0,0,0,0, 1, 3, 2, 4  ],
+
+                        [ 0,0,0,0, 2, 1, 4, 3  ],
+                        [ 0,0,0,0, 2, 4, 1, 3  ],
+
+                        [ 0,0,0,0, 3, 1, 4, 2  ],
+                        [ 0,0,0,0, 3, 4, 1, 2  ],
+
+                        [ 0,0,0,0, 4, 2, 3, 1  ],
+                        [ 0,0,0,0, 4, 3, 2, 1  ]
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "t3-02-end",
+                "bundleName": "pageAnimationCocos",
+                "prefabName": "pageAnimationCocos",
+                "config": {
+                }
+            }
+        }
+    ]
+}

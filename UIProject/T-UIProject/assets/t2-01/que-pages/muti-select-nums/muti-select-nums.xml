@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n43_bqid" name="n43" src="bqid21" fileName="images/muti-select-nums/pool.png" xy="-37,627" scale="1.2,1.2"/>
+    <richtext id="n17_bqid" name="score_text" xy="1759,338" pivot="0.5,0.5" anchor="true" size="179,195" group="n25_bqid" fontSize="130" color="#ffffff" autoSize="none" text="00"/>
+    <image id="n24_bqid" name="bottle" src="bqid1v" fileName="images/muti-select-nums/bottle.png" xy="1748,257" pivot="0.5,1" anchor="true" group="n25_bqid"/>
+    <group id="n25_bqid" name="score" xy="1664,56" size="184,379" advanced="true"/>
+    <component id="n27_bqid" name="0" src="bqid1w" fileName="quePages/muti-select-nums/fish.xml" xy="381,905" group="n35_bqid"/>
+    <component id="n29_bqid" name="1" src="bqid1w" fileName="quePages/muti-select-nums/fish.xml" xy="636,778" group="n35_bqid"/>
+    <component id="n31_bqid" name="2" src="bqid1w" fileName="quePages/muti-select-nums/fish.xml" xy="856,956" group="n35_bqid"/>
+    <component id="n30_bqid" name="3" src="bqid1w" fileName="quePages/muti-select-nums/fish.xml" xy="1029,751" group="n35_bqid"/>
+    <component id="n33_bqid" name="4" src="bqid1w" fileName="quePages/muti-select-nums/fish.xml" xy="1227,962" group="n35_bqid"/>
+    <component id="n32_bqid" name="5" src="bqid1w" fileName="quePages/muti-select-nums/fish.xml" xy="1400,774" group="n35_bqid"/>
+    <component id="n34_bqid" name="6" src="bqid1w" fileName="quePages/muti-select-nums/fish.xml" xy="1599,931" group="n35_bqid"/>
+    <group id="n35_bqid" name="sel-group" xy="256,661" size="1468,391" advanced="true"/>
+    <image id="n9_bqid" name="n9" src="bqid1m" fileName="images/muti-select-nums/panel.png" xy="621,181"/>
+    <component id="n36_bqid" name="n36" src="bqid1w" fileName="quePages/muti-select-nums/fish.xml" xy="824,317" group="n38_bqid"/>
+    <component id="n37_bqid" name="n37" src="bqid1w" fileName="quePages/muti-select-nums/fish.xml" xy="1096,317" group="n38_bqid"/>
+    <group id="n38_bqid" name="panel" xy="699,227" size="522,180" advanced="true">
+      <relation target="n9_bqid" sidePair="left-left,top-top"/>
+    </group>
+    <component id="n39_bqid" name="wang" src="bqid1z" fileName="quePages/muti-select-nums/wang.xml" xy="-8,449"/>
+    <component id="n45_bqid" name="touchPad" src="bqid22" fileName="buttons/touchPad.xml" xy="0,0" size="1920,1080"/>
+    <component id="n46_d5em" name="medal" src="d5em6h" fileName="quePages/muti-select-nums/medal.xml" xy="1713,523" pivot="0.5,0.5" anchor="true" alpha="0"/>
+  </displayList>
+  <transition name="catch">
+    <item time="0" type="Rotation" target="n39_bqid" tween="true" startValue="0" endValue="31.28" duration="16"/>
+    <item time="0" type="Scale" target="n39_bqid" tween="true" startValue="1,1" endValue="1.1,1.1" duration="16"/>
+    <item time="16" type="Rotation" target="n39_bqid" tween="true" startValue="31.28" endValue="-16.33" duration="7" ease="Quad.InOut"/>
+    <item time="16" type="Scale" target="n39_bqid" tween="true" startValue="1.1,1.1" endValue="1.2,1.2" duration="7" ease="Back.Out"/>
+    <item time="23" type="Rotation" target="n39_bqid" tween="true" startValue="-16.33" endValue="0" duration="7" ease="Quad.InOut"/>
+    <item time="23" type="Scale" target="n39_bqid" tween="true" startValue="1.2,1.2" endValue="1,1" duration="7"/>
+  </transition>
+  <transition name="bottle">
+    <item time="0" type="Scale" target="n24_bqid" tween="true" startValue="1,1" endValue="1.2,0.8" duration="4" ease="Back.Out"/>
+    <item time="4" type="Scale" target="n24_bqid" tween="true" startValue="1.2,0.8" endValue="0.87,1.12" duration="4" ease="Back.Out"/>
+    <item time="8" type="Scale" target="n24_bqid" tween="true" startValue="0.87,1.12" endValue="1,1" duration="3"/>
+  </transition>
+  <transition name="finish">
+    <item time="0" type="Alpha" target="n46_d5em" tween="true" startValue="0" endValue="1" duration="6"/>
+    <item time="0" type="Scale" target="n46_d5em" tween="true" startValue="1,1" endValue="1.4,1.4" duration="9" ease="Back.Out"/>
+    <item time="0" type="Transition" target="n46_d5em" value="flash,-1"/>
+    <item time="9" type="Scale" target="n46_d5em" tween="true" startValue="1.4,1.4" endValue="1,1" duration="9" ease="Back.Out"/>
+  </transition>
+</component>

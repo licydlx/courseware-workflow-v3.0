@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="vojbwzmj">
+  <resources>
+    <component id="k7640" name="laba.xml" path="/" exported="true"/>
+    <component id="k7641" name="laba-icon.xml" path="/"/>
+    <component id="k7642" name="btnLaba.xml" path="/buttons/"/>
+    <component id="k7643" name="scene-empty.xml" path="/" exported="true"/>
+    <image id="k7644" name="circle.png" path="/images/" exported="true"/>
+    <image id="k7645" name="laba.png" path="/images/" exported="true"/>
+    <image id="k7646" name="laba_wave.png" path="/images/" exported="true"/>
+    <image id="k7647" name="matte.png" path="/images/" exported="true"/>
+    <image id="k7648" name="sc.png" path="/images/"/>
+    <component id="k7649" name="classify.xml" path="/que-pages/classify/" exported="true"/>
+    <image id="k764a" name="bgCommon.jpg" path="/images/" exported="true"/>
+    <image id="k764b" name="show1.png" path="/images/"/>
+    <image id="k764c" name="rl.png" path="/images/classify/"/>
+    <image id="k764d" name="bl.png" path="/images/classify/"/>
+    <image id="k764e" name="circle.png" path="/images/classify/"/>
+    <image id="k764f" name="rb.png" path="/images/classify/"/>
+    <image id="k764h" name="bubble.png" path="/images/"/>
+    <image id="k764j" name="cloud.png" path="/images/"/>
+    <image id="k764k" name="b.png" path="/images/classify/"/>
+    <image id="k764l" name="r.png" path="/images/classify/"/>
+    <image id="k764m" name="item-bg.png" path="/images/"/>
+    <image id="k764n" name="item1-1.png" path="/images/t3-03-1/" exported="true"/>
+    <image id="k764o" name="item1-2.png" path="/images/t3-03-1/" exported="true"/>
+    <image id="k764p" name="item2-1.png" path="/images/t3-03-1/" exported="true"/>
+    <image id="k764q" name="item2-2.png" path="/images/t3-03-1/" exported="true"/>
+    <image id="k764r" name="item3-1.png" path="/images/t3-03-1/" exported="true"/>
+    <image id="k764s" name="item3-2.png" path="/images/t3-03-1/" exported="true"/>
+    <image id="k764t" name="man1-1.png" path="/images/t3-03-1/" exported="true"/>
+    <image id="k764u" name="man1-2.png" path="/images/t3-03-1/" exported="true"/>
+    <image id="k764v" name="man1-3.png" path="/images/t3-03-1/" exported="true"/>
+    <component id="k764w" name="dragMan.xml" path="/que-pages/classify/"/>
+    <component id="k764x" name="think.xml" path="/que-pages/classify/"/>
+    <component id="k764y" name="touchPad.xml" path="/buttons/"/>
+    <component id="t64zz" name="shape1.xml" path="/que-pages/classify/"/>
+    <component id="t64z10" name="test.xml" path="/que-pages/classify/"/>
+    <component id="tq5p11" name="shape2.xml" path="/que-pages/classify/"/>
+    <component id="tq5p12" name="shape3.xml" path="/que-pages/classify/"/>
+    <component id="tq5p13" name="submit.xml" path="/buttons/"/>
+    <image id="tq5p14" name="btn-ok.png" path="/images/"/>
+    <component id="tq5p1a" name="classify-muti-old.xml" path="/que-pages/classify-muti/" exported="true"/>
+    <image id="tq5p1b" name="show3.png" path="/images/"/>
+    <image id="tq5p1c" name="item3-1-2.png" path="/images/t3-03-3/1/" exported="true"/>
+    <image id="tq5p1d" name="example3-1-2.png" path="/images/t3-03-3/1/" exported="true"/>
+    <image id="tq5p1e" name="item3-1-1.png" path="/images/t3-03-3/1/" exported="true"/>
+    <image id="tq5p1f" name="example3-1-1.png" path="/images/t3-03-3/1/" exported="true"/>
+    <image id="tq5p1g" name="man3-1-2.png" path="/images/t3-03-3/1/" exported="true"/>
+    <image id="tq5p1h" name="man3-1-1.png" path="/images/t3-03-3/1/" exported="true"/>
+    <image id="tq5p1i" name="man3-1-4.png" path="/images/t3-03-3/1/" exported="true"/>
+    <image id="tq5p1j" name="man3-1-3.png" path="/images/t3-03-3/1/" exported="true"/>
+    <image id="tq5p1k" name="man3-1-5.png" path="/images/t3-03-3/1/" exported="true"/>
+    <image id="tq5p1l" name="example3-2-1.png" path="/images/t3-03-3/2/" exported="true"/>
+    <image id="tq5p1m" name="man3-2-1.png" path="/images/t3-03-3/2/" exported="true"/>
+    <image id="tq5p1n" name="man3-2-2.png" path="/images/t3-03-3/2/" exported="true"/>
+    <image id="tq5p1o" name="man3-2-3.png" path="/images/t3-03-3/2/" exported="true"/>
+    <image id="tq5p1p" name="man3-2-4.png" path="/images/t3-03-3/2/" exported="true"/>
+    <image id="tq5p1q" name="man3-2-5.png" path="/images/t3-03-3/2/" exported="true"/>
+    <image id="tq5p1r" name="example3-2-2.png" path="/images/t3-03-3/2/" exported="true"/>
+    <image id="tq5p1s" name="man3-3-2.png" path="/images/t3-03-3/3/" exported="true"/>
+    <image id="tq5p1t" name="man3-3-4.png" path="/images/t3-03-3/3/" exported="true"/>
+    <image id="tq5p1u" name="example3-3-1.png" path="/images/t3-03-3/3/" exported="true"/>
+    <image id="tq5p1v" name="man3-3-5.png" path="/images/t3-03-3/3/" exported="true"/>
+    <image id="tq5p1w" name="man3-3-1.png" path="/images/t3-03-3/3/" exported="true"/>
+    <image id="tq5p1x" name="man3-3-3.png" path="/images/t3-03-3/3/" exported="true"/>
+    <image id="tq5p1y" name="example3-3-2.png" path="/images/t3-03-3/3/" exported="true"/>
+    <component id="mf011z" name="classify-muti5.xml" path="/que-pages/classify-muti/" exported="true"/>
+    <component id="mf0120" name="zone.xml" path="/que-pages/classify-muti/"/>
+    <component id="mf0123" name="classify-muti6.xml" path="/que-pages/classify-muti/" exported="true"/>
+    <image id="mf0124" name="man4-2.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf0125" name="item4-1.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf0126" name="item4-2.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf0127" name="example4-2.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf0128" name="man4-1.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf0129" name="man4-6.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf012a" name="man4-3.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf012b" name="man4-5.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf012c" name="example4-1.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf012d" name="man4-4.png" path="/images/t3-03-4/" exported="true"/>
+    <image id="mf012e" name="item3-2-2.png" path="/images/t3-03-3/2/" exported="true"/>
+    <image id="mf012f" name="item3-2-1.png" path="/images/t3-03-3/2/" exported="true"/>
+    <image id="mf012g" name="item3-3-2.png" path="/images/t3-03-3/3/" exported="true"/>
+    <image id="mf012h" name="item3-3-1.png" path="/images/t3-03-3/3/" exported="true"/>
+    <image id="x1k82j" name="show2.png" path="/images/"/>
+    <component id="x1k82k" name="select-character.xml" path="/que-pages/select-character/" exported="true"/>
+    <image id="x1k82l" name="man2-2-2.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82m" name="light2-2-2.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82n" name="man2-2-1.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82o" name="light2-2-1.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82p" name="man2-2-3.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82q" name="light2-2-3.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82r" name="man2-2-4.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82s" name="light2-2-4.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82t" name="man2-2-5.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82u" name="light2-2-5.png" path="/images/bubbles/t3-03-2/2/" exported="true"/>
+    <image id="x1k82v" name="man2-3-4.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k82w" name="man2-3-1.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k82x" name="man2-3-2.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k82y" name="light2-3-4.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k82z" name="light2-3-1.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k830" name="man2-3-3.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k831" name="light2-3-3.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k832" name="light2-3-2.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k833" name="light2-3-5.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k834" name="man2-3-5.png" path="/images/bubbles/t3-03-2/3/" exported="true"/>
+    <image id="x1k835" name="item2-3-1.png" path="/images/bubbles/t3-03-2/" exported="true"/>
+    <image id="x1k836" name="item2-3-2.png" path="/images/bubbles/t3-03-2/" exported="true"/>
+    <image id="x1k837" name="item2-1-2.png" path="/images/bubbles/t3-03-2/" exported="true"/>
+    <image id="x1k838" name="item2-2-2.png" path="/images/bubbles/t3-03-2/" exported="true"/>
+    <image id="x1k839" name="item2-2-1.png" path="/images/bubbles/t3-03-2/" exported="true"/>
+    <image id="x1k83a" name="item2-1-1.png" path="/images/bubbles/t3-03-2/" exported="true"/>
+    <image id="x1k83b" name="man2-1-5.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <image id="x1k83c" name="light2-1-5.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <image id="x1k83d" name="man2-1-1.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <image id="x1k83e" name="light2-1-1.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <image id="x1k83f" name="man2-1-3.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <image id="x1k83g" name="light2-1-3.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <image id="x1k83h" name="man2-1-4.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <image id="x1k83i" name="light2-1-4.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <image id="x1k83j" name="man2-1-2.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <image id="x1k83k" name="light2-1-2.png" path="/images/bubbles/t3-03-2/1/" exported="true"/>
+    <component id="x1k83l" name="character.xml" path="/que-pages/select-character/"/>
+    <image id="x1k83s" name="t3-03-1-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="x1k83t" name="t3-03-2-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="x1k83u" name="t3-03-3b-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="x1k83v" name="t3-03-3-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="x1k83w" name="t3-03-1b-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="x1k83x" name="t3-03-1c-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="x1k83y" name="bg-solong.jpg" path="/images/" exported="true"/>
+    <image id="x1k83z" name="star.png" path="/images/start/"/>
+    <image id="x1k840" name="bg.jpg" path="/images/start/"/>
+    <component id="x1k841" name="page-start.xml" path="/que-pages/" exported="true"/>
+    <image id="x1k842" name="word.png" path="/images/start/"/>
+    <image id="x1k843" name="mask.png" path="/images/start/"/>
+    <component id="x1k844" name="flash.xml" path="/que-pages/"/>
+    <sound id="x1k84d" name="t3-03-1-2.mp3" path="/sounds/info/" exported="true"/>
+    <sound id="x1k84e" name="t3-03-1-3.mp3" path="/sounds/info/" exported="true"/>
+    <sound id="x1k84f" name="t3-03-2.mp3" path="/sounds/info/" exported="true"/>
+    <sound id="x1k84g" name="t3-03-3.mp3" path="/sounds/info/" exported="true"/>
+    <sound id="x1k84h" name="t3-03-3-1.mp3" path="/sounds/info/" exported="true"/>
+    <sound id="x1k84i" name="t3-03-3-2.mp3" path="/sounds/info/" exported="true"/>
+    <sound id="x1k84j" name="t3-03-4.mp3" path="/sounds/info/" exported="true"/>
+    <sound id="x1k84k" name="t3-03-1.mp3" path="/sounds/info/" exported="true"/>
+    <image id="ejfz4l" name="hand.png" path="/images/" exported="true"/>
+    <image id="ejfz4m" name="tip_dot.png" path="/images/" exported="true"/>
+  </resources>
+  <publish name="" path="F:\git\fairy-cocos-courseware-wild\assets\fairyUis\t3\t3-class-03" packageCount="2"/>
+</packageDescription>

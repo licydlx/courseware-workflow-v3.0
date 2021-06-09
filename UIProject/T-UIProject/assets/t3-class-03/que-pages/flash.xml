@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="410,250" mask="n4_x1k8">
+  <displayList>
+    <image id="n4_x1k8" name="n4" src="x1k843" fileName="images/start/mask.png" xy="0,0"/>
+    <image id="n5_x1k8" name="n5" src="k7647" fileName="images/matte.png" xy="606,119" pivot="0.5,0.5" anchor="true" size="73,672" alpha="0.238" rotation="26" blend="add"/>
+    <image id="n6_x1k8" name="n6" src="x1k83z" fileName="images/start/star.png" xy="131,82" pivot="0.5,0.5" anchor="true" scale="0,0" blend="add"/>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Scale" target="n6_x1k8" value="0,0"/>
+    <item time="0" type="XY" target="n5_x1k8" tween="true" startValue="606,119.5" endValue="-85,114.5" duration="24" ease="Sine.Out"/>
+    <item time="13" type="Scale" target="n6_x1k8" tween="true" startValue="0,0" endValue="1,1" duration="5"/>
+    <item time="18" type="Scale" target="n6_x1k8" tween="true" startValue="1,1" endValue="0,0" duration="6"/>
+    <item time="39" type="Scale" target="n6_x1k8" value="0,0"/>
+  </transition>
+</component>

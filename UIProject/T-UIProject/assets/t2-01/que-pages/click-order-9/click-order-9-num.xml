@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="262,262" mask="n2_ncb0">
+  <displayList>
+    <graph id="n2_ncb0" name="mask" xy="-6,255" pivot="0,1" anchor="true" size="274,11" type="rect"/>
+    <loader id="n3_ncb0" name="face" xy="131,130" pivot="0.5,0.5" anchor="true" size="141,171" url="ui://qy6zqmwtncb0f" autoSize="true" clearOnPublish="true"/>
+    <loader id="n4_ncb0" name="face-add" xy="131,130" pivot="0.5,0.5" anchor="true" size="141,171" alpha="0" blend="add" url="ui://qy6zqmwtncb0f" autoSize="true" clearOnPublish="true"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Alpha" target="n4_ncb0" tween="true" startValue="0" endValue="0" duration="8"/>
+    <item time="0" type="Size" target="n2_ncb0" tween="true" startValue="274,10" endValue="274,251" duration="12"/>
+    <item time="8" type="Alpha" target="n4_ncb0" tween="true" startValue="0" endValue="1" duration="3"/>
+    <item time="11" type="Alpha" target="n4_ncb0" tween="true" startValue="1" endValue="0" duration="3"/>
+    <item time="14" type="Alpha" target="n4_ncb0" tween="true" startValue="0" endValue="1" duration="2"/>
+    <item time="16" type="Alpha" target="n4_ncb0" tween="true" startValue="1" endValue="0" duration="3"/>
+  </transition>
+</component>

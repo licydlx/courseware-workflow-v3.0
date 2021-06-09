@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n1_x1k8" name="n1" src="x1k840" fileName="images/start/bg.jpg" xy="0,0"/>
+    <image id="n2_x1k8" name="n2" src="x1k842" fileName="images/start/word.png" xy="1014,506" pivot="0.5,0.5" anchor="true"/>
+    <image id="n3_x1k8" name="n3" src="x1k83z" fileName="images/start/star.png" xy="1530,276" blend="add"/>
+    <component id="n4_x1k8" name="n4" src="x1k844" fileName="que-pages/flash.xml" xy="1140,301"/>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Scale" target="n2_x1k8" tween="true" startValue="1,1" endValue="1.03,1.03" duration="18" ease="Sine.InOut"/>
+    <item time="18" type="Scale" target="n2_x1k8" tween="true" startValue="1.03,1.03" endValue="1,1" duration="18" ease="Sine.InOut"/>
+    <item time="36" type="Scale" target="n2_x1k8" tween="true" startValue="1,1" endValue="1.03,1.03" duration="18" ease="Sine.InOut"/>
+    <item time="54" type="Scale" target="n2_x1k8" tween="true" startValue="1.03,1.03" endValue="1,1" duration="18" ease="Sine.InOut"/>
+  </transition>
+</component>

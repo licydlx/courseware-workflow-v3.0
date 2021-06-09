@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="176,176" pivot="0.5,0.5" anchor="true">
+  <displayList>
+    <loader id="n17_s5he" name="face" xy="88,88" pivot="0.5,0.5" anchor="true" size="176,176" url="ui://qy6zqmwts5he2c" autoSize="true"/>
+    <image id="n18_cket" name="selected" src="cket6j" fileName="images/throw-ball/selected.png" xy="88,88" pivot="0.5,0.5" anchor="true" visible="false" color="#fff82e"/>
+  </displayList>
+  <transition name="loop" autoPlayRepeat="-1">
+    <item time="0" type="Rotation" target="n17_s5he" tween="true" startValue="0" endValue="360" duration="48" ease="Linear"/>
+  </transition>
+  <transition name="wrong">
+    <item time="0" type="Alpha" target="n18_cket" value="1"/>
+    <item time="0" type="Color" target="n17_s5he" tween="true" startValue="#ffffff" endValue="#666666" duration="6"/>
+    <item time="0" type="XY" target="n17_s5he" tween="true" startValue="88,88" endValue="100,88" duration="8"/>
+    <item time="0" type="XY" target="n18_cket" tween="true" startValue="88,88" endValue="100,88" duration="8"/>
+    <item time="6" type="Color" target="n17_s5he" tween="true" startValue="#666666" endValue="#ffffff" duration="6"/>
+    <item time="8" type="XY" target="n17_s5he" tween="true" startValue="100,88" endValue="75,88" duration="9"/>
+    <item time="8" type="XY" target="n18_cket" tween="true" startValue="100,88" endValue="75,88" duration="9"/>
+    <item time="12" type="Color" target="n17_s5he" tween="true" startValue="#ffffff" endValue="#666666" duration="6"/>
+    <item time="17" type="XY" target="n17_s5he" tween="true" startValue="75,88" endValue="88,88" duration="7"/>
+    <item time="17" type="XY" target="n18_cket" tween="true" startValue="75,88" endValue="88,88" duration="7"/>
+    <item time="18" type="Color" target="n17_s5he" tween="true" startValue="#666666" endValue="#ffffff" duration="6"/>
+    <item time="19" type="Alpha" target="n18_cket" tween="true" startValue="1" endValue="0" duration="4"/>
+  </transition>
+</component>

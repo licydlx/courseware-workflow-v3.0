@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="262,262" overflow="hidden">
+  <controller name="c1" pages="" selected="-1"/>
+  <displayList>
+    <loader id="n5_ncb0" name="face" xy="131,130" pivot="0.5,0.5" anchor="true" size="148,145" url="ui://qy6zqmwtncb018" autoSize="true" clearOnPublish="true"/>
+  </displayList>
+  <transition name="clean">
+    <item time="0" type="Alpha" target="n5_ncb0" tween="true" startValue="1" endValue="0" duration="18"/>
+  </transition>
+</component>

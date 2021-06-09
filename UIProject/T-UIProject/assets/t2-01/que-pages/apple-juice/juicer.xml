@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="237,362">
+  <displayList>
+    <image id="n17_mfcc" name="n17" src="mfcc52" fileName="images/apple-juice/guo3.png" xy="109,56" pivot="0.5,0.5" anchor="true" group="n16_mfcc" scale="-1.5,1.5" alpha="0"/>
+    <image id="n18_mfcc" name="n18" src="mfcc52" fileName="images/apple-juice/guo3.png" xy="165,64" pivot="0.5,0.5" anchor="true" group="n16_mfcc" scale="1.5,1.5" alpha="0"/>
+    <image id="n15_mfcc" name="n15" src="mfcc52" fileName="images/apple-juice/guo3.png" xy="148,83" pivot="0.5,0.5" anchor="true" group="n16_mfcc" scale="1.5,1.5" alpha="0" rotation="39"/>
+    <image id="n19_mfcc" name="n19" src="mfcc52" fileName="images/apple-juice/guo3.png" xy="124,99" pivot="0.5,0.5" anchor="true" group="n16_mfcc" scale="-1.5,1.5" alpha="0" rotation="-52"/>
+    <group id="n16_mfcc" name="piece" xy="91,31" size="91,92" advanced="true"/>
+    <image id="n9_mfcc" name="n9" src="mfcc4r" fileName="images/apple-juice/machine1.png" xy="135,23" pivot="0.5,0.5" anchor="true"/>
+    <image id="n23_mfcc" name="n23" src="mfcc5l" fileName="images/apple-juice/water_fall2.png" xy="205,40" pivot="0.268,0.148" anchor="true" alpha="0" rotation="-75"/>
+    <component id="n12_mfcc" name="n12" src="mfcc59" fileName="quePages/apple-juice/machine_water.xml" xy="136,143" pivot="0.5,0.5" anchor="true" group="n14_mfcc"/>
+    <image id="n10_mfcc" name="n10" src="mfcc4s" fileName="images/apple-juice/machine2.png" xy="137,143" pivot="0.6,0.5" anchor="true" group="n14_mfcc"/>
+    <group id="n14_mfcc" name="n14" xy="-1,43" size="230,200" advanced="true"/>
+    <image id="n11_mfcc" name="n11" src="mfcc4t" fileName="images/apple-juice/machine3.png" xy="140,302" pivot="0.5,0.5" anchor="true"/>
+    <component id="n20_mfcc" name="cpu3" src="mfcc5a" fileName="quePages/apple-juice/bottle.xml" xy="510,227"/>
+    <component id="n21_mfcc" name="cpu2" src="mfcc5a" fileName="quePages/apple-juice/bottle.xml" xy="416,227"/>
+    <component id="n22_mfcc" name="cpu1" src="mfcc5a" fileName="quePages/apple-juice/bottle.xml" xy="322,227"/>
+  </displayList>
+  <transition name="open">
+    <item time="0" type="Rotation" target="n9_mfcc" tween="true" startValue="0" endValue="-55.92" duration="9" ease="Back.Out"/>
+    <item time="0" type="XY" target="n9_mfcc" tween="true" startValue="135,23" endValue="-19,-74" duration="9" ease="Back.Out"/>
+  </transition>
+  <transition name="cut">
+    <item time="0" type="Alpha" target="n15_mfcc" value="1"/>
+    <item time="0" type="Alpha" target="n17_mfcc" value="1"/>
+    <item time="0" type="Alpha" target="n18_mfcc" value="1"/>
+    <item time="0" type="Alpha" target="n19_mfcc" value="1"/>
+    <item time="0" type="Rotation" target="n15_mfcc" tween="true" startValue="39" endValue="243.69" duration="10"/>
+    <item time="0" type="Rotation" target="n17_mfcc" tween="true" startValue="0" endValue="-240" duration="10"/>
+    <item time="0" type="Rotation" target="n18_mfcc" tween="true" startValue="0" endValue="500" duration="10"/>
+    <item time="0" type="Rotation" target="n19_mfcc" tween="true" startValue="-52" endValue="-500" duration="10"/>
+    <item time="0" type="XY" target="n15_mfcc" tween="true" startValue="148,83" endValue="170,183" duration="10"/>
+    <item time="0" type="XY" target="n17_mfcc" tween="true" startValue="109,56" endValue="102,178" duration="10" path="2,0,0,-26,-31,-44,-12,1,2,-7,122,25.52488,239.7928,0,0,1"/>
+    <item time="0" type="XY" target="n18_mfcc" tween="true" startValue="165,64" endValue="136,194" duration="10" ease="Quad.InOut" path="2,0,0,-34,-46,-60,62,1,2,-29,130,26.2509,251.1955,0,0,1"/>
+    <item time="0" type="XY" target="n19_mfcc" tween="true" startValue="124,99" endValue="114,194" duration="10"/>
+    <item time="7" type="Alpha" target="n15_mfcc" tween="true" startValue="1" endValue="0" duration="3"/>
+    <item time="7" type="Alpha" target="n17_mfcc" tween="true" startValue="1" endValue="0" duration="3"/>
+    <item time="7" type="Alpha" target="n18_mfcc" tween="true" startValue="1" endValue="0" duration="3"/>
+    <item time="7" type="Alpha" target="n19_mfcc" tween="true" startValue="1" endValue="0" duration="3"/>
+  </transition>
+  <transition name="finish">
+    <item time="0" type="Rotation" target="n10_mfcc" value="0"/>
+    <item time="0" type="Rotation" target="n12_mfcc" value="0"/>
+    <item time="0" type="Rotation" target="n9_mfcc" tween="true" startValue="0" endValue="-23.3" duration="6"/>
+    <item time="0" type="Transition" target="n12_mfcc" value="fall"/>
+    <item time="0" type="XY" target="n14_mfcc" tween="true" startValue="0,40" endValue="95,45" duration="12" ease="Quart.InOut"/>
+    <item time="0" type="XY" target="n9_mfcc" tween="true" startValue="135,23" endValue="-4,-81" duration="6"/>
+    <item time="5" type="Rotation" target="n10_mfcc" tween="true" startValue="0" endValue="72.56" duration="7"/>
+    <item time="5" type="Rotation" target="n12_mfcc" tween="true" startValue="0" endValue="72.56" duration="7"/>
+    <item time="11" type="Alpha" target="n23_mfcc" tween="true" startValue="0" endValue="1" duration="2"/>
+    <item time="11" type="Rotation" target="n23_mfcc" value="3.11"/>
+    <item time="11" type="XY" target="n23_mfcc" value="343.915,183.659"/>
+    <item time="13" type="Transition" target="n22_mfcc" value="fill"/>
+    <item time="21" type="Alpha" target="n23_mfcc" value="1"/>
+    <item time="21" type="XY" target="n14_mfcc" tween="true" startValue="95,45" endValue="187,0" duration="9" ease="Quad.InOut"/>
+    <item time="22" type="Alpha" target="n23_mfcc" value="0"/>
+    <item time="23" type="Rotation" target="n10_mfcc" tween="true" startValue="72.56" endValue="86.36" duration="7"/>
+    <item time="23" type="Rotation" target="n12_mfcc" tween="true" startValue="72.56" endValue="86.36" duration="7"/>
+    <item time="29" type="Alpha" target="n23_mfcc" value="0"/>
+    <item time="29" type="Rotation" target="n23_mfcc" value="3.11"/>
+    <item time="29" type="XY" target="n23_mfcc" value="427.915,166.659"/>
+    <item time="30" type="Alpha" target="n23_mfcc" value="1"/>
+    <item time="31" type="Transition" target="n21_mfcc" value="fill"/>
+    <item time="38" type="Alpha" target="n23_mfcc" value="1"/>
+    <item time="38" type="XY" target="n14_mfcc" tween="true" startValue="187,0" endValue="293,-15" duration="8" ease="Quad.InOut"/>
+    <item time="39" type="Alpha" target="n23_mfcc" value="0"/>
+    <item time="40" type="Rotation" target="n10_mfcc" tween="true" startValue="86.36" endValue="97.46" duration="5"/>
+    <item time="40" type="Rotation" target="n12_mfcc" tween="true" startValue="86.36" endValue="97.46" duration="5"/>
+    <item time="46" type="Transition" target="n20_mfcc" value="fill"/>
+    <item time="47" type="Alpha" target="n23_mfcc" value="0"/>
+    <item time="48" type="Alpha" target="n23_mfcc" value="1"/>
+    <item time="48" type="Rotation" target="n23_mfcc" value="-0.69"/>
+    <item time="48" type="XY" target="n23_mfcc" value="517.31,176.659"/>
+    <item time="53" type="Alpha" target="n23_mfcc" value="1"/>
+    <item time="54" type="Alpha" target="n23_mfcc" value="0"/>
+    <item time="54" type="Rotation" target="n23_mfcc" value="-0.69"/>
+    <item time="54" type="XY" target="n14_mfcc" tween="true" startValue="293,-15" endValue="-3,40" duration="11" ease="Quad.InOut" path="2,0,0,34,-50,-257,-3,1,2,-296,55,0,0,0,0,1"/>
+    <item time="54" type="XY" target="n23_mfcc" value="439.31,62.659"/>
+    <item time="57" type="Rotation" target="n10_mfcc" tween="true" startValue="97.46" endValue="0" duration="8" ease="Quad.InOut"/>
+    <item time="57" type="Rotation" target="n12_mfcc" tween="true" startValue="97.46" endValue="0" duration="8" ease="Quad.InOut"/>
+    <item time="63" type="Rotation" target="n9_mfcc" tween="true" startValue="-23.3" endValue="0" duration="5" ease="Quad.InOut"/>
+    <item time="63" type="XY" target="n9_mfcc" tween="true" startValue="-4,-81" endValue="131,19" duration="5" ease="Quad.InOut"/>
+  </transition>
+</component>

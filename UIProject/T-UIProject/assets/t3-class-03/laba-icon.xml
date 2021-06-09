@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="131,162">
+  <displayList>
+    <image id="n6_x1k8" name="n4" src="k7645" fileName="images/laba.png" xy="44,13" pivot="0.5,0.5" anchor="true"/>
+    <image id="n7_x1k8" name="n5" src="k7646" fileName="images/laba_wave.png" xy="129,-5" pivot="0.5,0.5" anchor="true"/>
+  </displayList>
+  <transition name="loop" autoPlayRepeat="-1">
+    <item time="0" type="Scale" target="n6_x1k8" tween="true" startValue="1,1" endValue="1.2,1.2" duration="6" ease="Quad.InOut"/>
+    <item time="0" type="Scale" target="n7_x1k8" tween="true" startValue="1,1" endValue="1.2,1.2" duration="6" ease="Quad.InOut"/>
+    <item time="6" type="Scale" target="n6_x1k8" tween="true" startValue="1.2,1.2" endValue="1,1" duration="6" ease="Quad.InOut"/>
+    <item time="6" type="Scale" target="n7_x1k8" tween="true" startValue="1.2,1.2" endValue="1,1" duration="6" ease="Quad.InOut"/>
+  </transition>
+</component>

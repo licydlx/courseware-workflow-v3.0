@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="qy6zqmwt">
+  <resources>
+    <component id="ncb0c" name="click-order-9.xml" path="/que-pages/click-order-9/" exported="true"/>
+    <image id="ncb0d" name="bg1.png" path="/images/scene-glass/" exported="true"/>
+    <image id="ncb0e" name="1t.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0f" name="2t.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0g" name="3t.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0h" name="4t.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0i" name="5t.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0j" name="6t.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0k" name="7t.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0l" name="8t.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0m" name="9t.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0n" name="1f.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0o" name="2f.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0p" name="3f.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0q" name="4f.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0r" name="5f.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0s" name="6f.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0t" name="7f.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0u" name="8f.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0v" name="9f.png" path="/images/click9/font/" exported="true"/>
+    <image id="ncb0w" name="bubble-t2-01-1.png" path="/images/bubbles/" exported="true"/>
+    <image id="ncb0x" name="handle.png" path="/images/click9/" exported="true"/>
+    <image id="ncb0y" name="rect.png" path="/images/click9/" exported="true"/>
+    <image id="ncb0z" name="sbg.png" path="/images/click9/" exported="true"/>
+    <image id="ncb011" name="dirty2.png" path="/images/click9/" exported="true"/>
+    <image id="ncb012" name="dirty3.png" path="/images/click9/" exported="true"/>
+    <image id="ncb013" name="bg1d1.png" path="/images/scene-glass/" exported="true"/>
+    <image id="ncb014" name="bg1d2.png" path="/images/scene-glass/" exported="true"/>
+    <component id="ncb015" name="click-order-9-btn.xml" path="/que-pages/click-order-9/" exported="true"/>
+    <component id="ncb016" name="click-order-9-num.xml" path="/que-pages/click-order-9/" exported="true"/>
+    <component id="ncb017" name="dirty.xml" path="/que-pages/click-order-9/" exported="true"/>
+    <image id="ncb018" name="dirty1.png" path="/images/click9/" exported="true"/>
+    <image id="ncb019" name="z1b.png" path="/images/click9/"/>
+    <image id="ncb01a" name="z1c.png" path="/images/click9/"/>
+    <component id="ncb01c" name="cleaner.xml" path="/que-pages/click-order-9/" exported="true"/>
+    <component id="bqid1d" name="scene-glass.xml" path="/" exported="true"/>
+    <component id="bqid1e" name="laba.xml" path="/" exported="true"/>
+    <component id="bqid1f" name="scene-pool.xml" path="/" exported="true"/>
+    <image id="bqid1g" name="bgPool.jpg" path="/images/" exported="true"/>
+    <image id="bqid1h" name="bubble-t2-01-3.png" path="/images/bubbles/" exported="true"/>
+    <image id="bqid1i" name="wave.png" path="/images/muti-select-nums/"/>
+    <image id="bqid1k" name="fg.png" path="/images/muti-select-nums/" exported="true"/>
+    <image id="bqid1l" name="fr.png" path="/images/muti-select-nums/" exported="true"/>
+    <image id="bqid1m" name="panel.png" path="/images/muti-select-nums/"/>
+    <image id="bqid1n" name="fy.png" path="/images/muti-select-nums/" exported="true"/>
+    <image id="bqid1o" name="wang.png" path="/images/muti-select-nums/"/>
+    <component id="bqid1q" name="muti-select-nums.xml" path="/que-pages/muti-select-nums/" exported="true"/>
+    <image id="bqid1t" name="bg2.jpg" path="/images/scene-pool/" exported="true"/>
+    <image id="bqid1v" name="bottle.png" path="/images/muti-select-nums/"/>
+    <component id="bqid1w" name="fish.xml" path="/que-pages/muti-select-nums/"/>
+    <image id="bqid1x" name="show.png" path="/images/muti-select-nums/"/>
+    <component id="bqid1z" name="wang.xml" path="/que-pages/muti-select-nums/"/>
+    <image id="bqid20" name="wangF.png" path="/images/muti-select-nums/"/>
+    <image id="bqid21" name="pool.png" path="/images/muti-select-nums/"/>
+    <component id="bqid22" name="touchPad.xml" path="/buttons/"/>
+    <image id="s5he25" name="basket.png" path="/images/throw-ball/"/>
+    <image id="s5he26" name="basketF.png" path="/images/throw-ball/"/>
+    <image id="s5he28" name="bg3F.png" path="/images/throw-ball/"/>
+    <image id="s5he2a" name="ball2.png" path="/images/throw-ball/" exported="true"/>
+    <image id="s5he2b" name="ball3.png" path="/images/throw-ball/" exported="true"/>
+    <image id="s5he2c" name="ball1.png" path="/images/throw-ball/" exported="true"/>
+    <image id="s5he2d" name="bubble-t2-01-2.png" path="/images/bubbles/" exported="true"/>
+    <image id="s5he2e" name="panel.png" path="/images/throw-ball/"/>
+    <component id="s5he2f" name="scene-empty.xml" path="/" exported="true"/>
+    <component id="s5he2g" name="throw-ball.xml" path="/que-pages/throw-ball/" exported="true"/>
+    <image id="s5he2h" name="medal_show.png" path="/images/throw-ball/"/>
+    <image id="s5he2i" name="finger.png" path="/images/throw-ball/"/>
+    <image id="s5he2j" name="hand.png" path="/images/throw-ball/"/>
+    <image id="s5he2l" name="circle.png" path="/images/" exported="true"/>
+    <component id="s5he2m" name="ball.xml" path="/que-pages/throw-ball/" exported="true"/>
+    <image id="s5he2n" name="shadow_mask.png" path="/images/throw-ball/"/>
+    <component id="s5he2o" name="shadow.xml" path="/que-pages/throw-ball/"/>
+    <component id="s5he2q" name="medal.xml" path="/que-pages/throw-ball/"/>
+    <image id="s5he2r" name="matte.png" path="/images/" exported="true"/>
+    <image id="s5he2s" name="medal.png" path="/images/throw-ball/"/>
+    <image id="s5he2t" name="medal_mask.png" path="/images/throw-ball/"/>
+    <image id="s5he2u" name="medal_star.png" path="/images/" exported="true"/>
+    <component id="s5he2v" name="medal-base.xml" path="/que-pages/throw-ball/"/>
+    <image id="mfcc2w" name="machine.png" path="/images/throw-ball/"/>
+    <image id="mfcc2x" name="bg-common.jpg" path="/images/" exported="true"/>
+    <image id="mfcc3i" name="show.png" path="/images/shot-balloon/"/>
+    <image id="mfcc3l" name="laba.png" path="/images/" exported="true"/>
+    <image id="mfcc3m" name="laba_wave.png" path="/images/" exported="true"/>
+    <component id="mfcc3n" name="shot-ballon.xml" path="/que-pages/shot-ballon/" exported="true"/>
+    <image id="mfcc3o" name="bubble-t2-01-2-1.png" path="/images/bubbles/" exported="true"/>
+    <image id="mfcc3p" name="bubble-t2-01-2-2.png" path="/images/bubbles/" exported="true"/>
+    <component id="mfcc3v" name="btnLaba.xml" path="/buttons/"/>
+    <image id="mfcc3w" name="line1.png" path="/images/shot-balloon/"/>
+    <image id="mfcc3x" name="line2.png" path="/images/shot-balloon/"/>
+    <image id="mfcc3y" name="line3.png" path="/images/shot-balloon/"/>
+    <image id="mfcc3z" name="line4.png" path="/images/shot-balloon/"/>
+    <image id="mfcc40" name="line5.png" path="/images/shot-balloon/"/>
+    <image id="mfcc41" name="ballon3.png" path="/images/shot-balloon/" exported="true"/>
+    <image id="mfcc42" name="cursor.png" path="/images/shot-balloon/"/>
+    <image id="mfcc43" name="ballon1.png" path="/images/shot-balloon/" exported="true"/>
+    <image id="mfcc44" name="ballon2.png" path="/images/shot-balloon/" exported="true"/>
+    <image id="mfcc45" name="1.png" path="/images/shot-balloon/pieces/"/>
+    <image id="mfcc46" name="2.png" path="/images/shot-balloon/pieces/"/>
+    <image id="mfcc47" name="3.png" path="/images/shot-balloon/pieces/"/>
+    <image id="mfcc48" name="4.png" path="/images/shot-balloon/pieces/"/>
+    <image id="mfcc49" name="5.png" path="/images/shot-balloon/pieces/"/>
+    <image id="mfcc4a" name="6.png" path="/images/shot-balloon/pieces/"/>
+    <image id="mfcc4b" name="7.png" path="/images/shot-balloon/pieces/"/>
+    <image id="mfcc4c" name="man.png" path="/images/shot-balloon/"/>
+    <image id="mfcc4d" name="medal.png" path="/images/shot-balloon/"/>
+    <component id="mfcc4e" name="man.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4f" name="line1.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4g" name="line2.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4h" name="line3.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4i" name="line4.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4j" name="line5.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4k" name="ballon.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4l" name="line0.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4n" name="medal-base.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4o" name="medal.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4p" name="cursor.xml" path="/que-pages/shot-ballon/"/>
+    <component id="mfcc4q" name="ballon-blow.xml" path="/que-pages/shot-ballon/"/>
+    <image id="mfcc4r" name="machine1.png" path="/images/apple-juice/"/>
+    <image id="mfcc4s" name="machine2.png" path="/images/apple-juice/"/>
+    <image id="mfcc4t" name="machine3.png" path="/images/apple-juice/"/>
+    <image id="mfcc4u" name="sc.png" path="/images/"/>
+    <image id="mfcc4v" name="water.png" path="/images/apple-juice/"/>
+    <image id="mfcc4x" name="apple2.png" path="/images/apple-juice/" exported="true"/>
+    <image id="mfcc4z" name="bubble-t2-01-2-3.png" path="/images/apple-juice/"/>
+    <image id="mfcc50" name="desk.png" path="/images/apple-juice/"/>
+    <image id="mfcc51" name="guo2.png" path="/images/apple-juice/"/>
+    <image id="mfcc52" name="guo3.png" path="/images/apple-juice/"/>
+    <image id="mfcc53" name="leaf.png" path="/images/apple-juice/"/>
+    <component id="mfcc54" name="apple-juice.xml" path="/que-pages/apple-juice/" exported="true"/>
+    <image id="mfcc55" name="show.png" path="/images/apple-juice/"/>
+    <component id="mfcc56" name="juicer.xml" path="/que-pages/apple-juice/"/>
+    <image id="mfcc57" name="water_mask.png" path="/images/apple-juice/"/>
+    <image id="mfcc58" name="water_mask_machine.png" path="/images/apple-juice/"/>
+    <component id="mfcc59" name="machine-water.xml" path="/que-pages/apple-juice/"/>
+    <component id="mfcc5a" name="bottle.xml" path="/que-pages/apple-juice/"/>
+    <component id="mfcc5b" name="bottle-water.xml" path="/que-pages/apple-juice/"/>
+    <image id="mfcc5d" name="bottle.png" path="/images/apple-juice/"/>
+    <image id="mfcc5e" name="basket.png" path="/images/apple-juice/"/>
+    <image id="mfcc5f" name="basketF.png" path="/images/apple-juice/"/>
+    <component id="mfcc5g" name="apple.xml" path="/que-pages/apple-juice/"/>
+    <image id="mfcc5h" name="medal.png" path="/images/apple-juice/"/>
+    <component id="mfcc5i" name="medal.xml" path="/que-pages/apple-juice/"/>
+    <component id="mfcc5j" name="medal-base.xml" path="/que-pages/apple-juice/"/>
+    <image id="mfcc5k" name="water_fall.png" path="/images/apple-juice/"/>
+    <image id="mfcc5l" name="water_fall2.png" path="/images/apple-juice/"/>
+    <image id="mfcc5m" name="water_fall2(1).png" path="/images/apple-juice/"/>
+    <component id="mfcc5n" name="water.xml" path="/que-pages/apple-juice/"/>
+    <component id="mfcc5o" name="encircle-nums.xml" path="/que-pages/encircle-nums/" exported="true"/>
+    <image id="mfcc5p" name="rect2.png" path="/images/encircle-nums/" scale="9grid" scale9grid="40,40,359,81"/>
+    <image id="mfcc5q" name="sbg.png" path="/images/encircle-nums/"/>
+    <image id="mfcc5r" name="bubble-t2-01-4.png" path="/images/bubbles/" exported="true"/>
+    <image id="mfcc5s" name="show.png" path="/images/encircle-nums/"/>
+    <font id="mfcc5t" name="cfont1.fnt" path="/que-pages/encircle-nums/" exported="true"/>
+    <image id="m4qz64" name="8.png" path="/images/fonts/cfont1/"/>
+    <image id="m4qz65" name="9.png" path="/images/fonts/cfont1/"/>
+    <image id="m4qz67" name="0.png" path="/images/fonts/cfont1/"/>
+    <image id="m4qz68" name="1.png" path="/images/fonts/cfont1/"/>
+    <image id="m4qz69" name="2.png" path="/images/fonts/cfont1/"/>
+    <image id="m4qz6a" name="3.png" path="/images/fonts/cfont1/"/>
+    <image id="m4qz6b" name="4.png" path="/images/fonts/cfont1/"/>
+    <image id="m4qz6c" name="5.png" path="/images/fonts/cfont1/"/>
+    <image id="m4qz6d" name="6.png" path="/images/fonts/cfont1/"/>
+    <image id="m4qz6e" name="7.png" path="/images/fonts/cfont1/"/>
+    <component id="8ret6f" name="num-cell.xml" path="/que-pages/encircle-nums/"/>
+    <image id="d5em6g" name="medal.png" path="/images/muti-select-nums/"/>
+    <component id="d5em6h" name="medal.xml" path="/que-pages/muti-select-nums/"/>
+    <component id="d5em6i" name="medal-base.xml" path="/que-pages/muti-select-nums/"/>
+    <image id="cket6j" name="selected.png" path="/images/throw-ball/"/>
+    <image id="cket6m" name="selected.png" path="/images/shot-balloon/"/>
+    <image id="cket6n" name="selected2.png" path="/images/apple-juice/"/>
+    <image id="cket6o" name="selected1.png" path="/images/apple-juice/"/>
+    <image id="cket6p" name="r5.png" path="/images/page-start/"/>
+    <image id="cket6q" name="ship.png" path="/images/page-start/"/>
+    <image id="cket6s" name="t1.png" path="/images/page-start/"/>
+    <image id="cket6t" name="t2.png" path="/images/page-start/"/>
+    <image id="cket6u" name="page-start-bg.jpg" path="/images/page-start/" exported="true"/>
+    <image id="cket6v" name="r1.png" path="/images/page-start/"/>
+    <image id="cket6w" name="r2.png" path="/images/page-start/"/>
+    <image id="cket6x" name="r3.png" path="/images/page-start/"/>
+    <image id="cket6y" name="r4.png" path="/images/page-start/"/>
+    <image id="cket6z" name="show.jpg" path="/images/page-start/"/>
+    <component id="cket70" name="page-start.xml" path="/que-pages/page-start/" exported="true"/>
+    <component id="cket71" name="loop-bg.xml" path="/que-pages/page-start/"/>
+    <component id="cket72" name="rocks.xml" path="/que-pages/page-start/"/>
+    <image id="w1bc74" name="apple1.png" path="/images/apple-juice/" exported="true"/>
+    <image id="ixxo76" name="0103.png" path="/images/page-end/"/>
+    <component id="ixxo77" name="page-end.xml" path="/que-pages/page-end/" exported="true"/>
+    <component id="r8vn78" name="laba-icon.xml" path="/"/>
+    <image id="fj3c79" name="show4.png" path="/images/"/>
+    <image id="rk877a" name="machineF2.png" path="/images/throw-ball/"/>
+    <image id="rk877b" name="screen-shot.jpg" path="/images/page-end/" exported="true"/>
+    <image id="r3d07c" name="bg-solong.jpg" path="/images/" exported="true"/>
+    <image id="r3d07d" name="medal-mask.png" path="/images/apple-juice/"/>
+    <image id="r3d07e" name="madel_mask2.png" path="/images/throw-ball/"/>
+    <image id="r3d07f" name="madel-mask.png" path="/images/shot-balloon/"/>
+  </resources>
+  <publish name="" path="F:\git\fairy-cocos-courseware-wild\assets\fairyUis\t2\t2-01" packageCount="2"/>
+</packageDescription>

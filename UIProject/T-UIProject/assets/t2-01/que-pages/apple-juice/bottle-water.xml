@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="66,119" mask="n4_mfcc">
+  <displayList>
+    <image id="n4_mfcc" name="n4" src="mfcc57" fileName="images/apple-juice/water_mask.png" xy="0,0"/>
+    <image id="n5_mfcc" name="n5" src="mfcc4v" fileName="images/apple-juice/water.png" xy="0,120" group="n7_mfcc"/>
+    <group id="n7_mfcc" name="water" xy="0,120" size="204,134" advanced="true"/>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n5_mfcc" tween="true" startValue="0,-" endValue="-102,-" duration="24" ease="Linear"/>
+  </transition>
+  <transition name="fill">
+    <item time="0" type="XY" target="n7_mfcc" tween="true" startValue="-,121" endValue="0,8" duration="12" ease="Quart.Out"/>
+  </transition>
+</component>

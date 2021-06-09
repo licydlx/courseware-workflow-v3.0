@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="262,376" pivot="0.5,0.5" anchor="true">
+  <displayList>
+    <image id="n23_cket" name="selected" src="cket6m" fileName="images/shot-balloon/selected.png" xy="49,91" visible="false" color="#e82b2b"/>
+    <loader id="n21_mfcc" name="loader" xy="135,270" pivot="0.5,0.949" anchor="true" size="149,177" url="ui://qy6zqmwtmfcc43" autoSize="true" clearOnPublish="true"/>
+  </displayList>
+  <transition name="blow">
+    <item time="0" type="Alpha" target="n21_mfcc" value="1"/>
+    <item time="0" type="Alpha" target="n23_cket" tween="true" startValue="1" endValue="0" duration="3"/>
+    <item time="1" type="Alpha" target="n21_mfcc" value="0"/>
+  </transition>
+  <transition name="wrong" frameRate="30">
+    <item time="0" type="Color" target="n21_mfcc" tween="true" startValue="#ffffff" endValue="#999999" duration="6" ease="Expo.InOut"/>
+    <item time="6" type="Color" target="n21_mfcc" tween="true" startValue="#999999" endValue="#ffffff" duration="6" ease="Expo.InOut"/>
+    <item time="12" type="Color" target="n21_mfcc" tween="true" startValue="#ffffff" endValue="#999999" duration="6" ease="Expo.InOut"/>
+    <item time="18" type="Color" target="n21_mfcc" tween="true" startValue="#999999" endValue="#ffffff" duration="6" ease="Expo.InOut"/>
+  </transition>
+</component>

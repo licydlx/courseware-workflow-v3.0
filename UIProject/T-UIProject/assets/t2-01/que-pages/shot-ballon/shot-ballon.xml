@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n69_mfcc" name="n69" src="s5he2l" fileName="images/circle.png" xy="1326,551" pivot="0.5,0.5" size="372,94" alpha="0.346" color="#424133"/>
+    <image id="n59_mfcc" name="n59" src="s5he2l" fileName="images/circle.png" xy="739,551" pivot="0.5,0.5" size="372,94" alpha="0.346" color="#424133"/>
+    <image id="n30_mfcc" name="n30" src="s5he2l" fileName="images/circle.png" xy="214,551" pivot="0.5,0.5" size="372,94" alpha="0.346" color="#424133"/>
+    <component id="n85_mfcc" name="n85" src="mfcc4f" fileName="quePages/shot-ballon/line1.xml" xy="232,236" group="n93_mfcc"/>
+    <component id="n86_mfcc" name="n86" src="mfcc4h" fileName="quePages/shot-ballon/line3.xml" xy="389,187" group="n93_mfcc"/>
+    <component id="n87_mfcc" name="n87" src="mfcc4j" fileName="quePages/shot-ballon/line5.xml" xy="545,230" group="n93_mfcc"/>
+    <component id="n88_mfcc" name="n88" src="mfcc4g" fileName="quePages/shot-ballon/line2.xml" xy="332,297" group="n93_mfcc"/>
+    <component id="n89_mfcc" name="n89" src="mfcc4i" fileName="quePages/shot-ballon/line4.xml" xy="477,319" group="n93_mfcc"/>
+    <component id="n90_mfcc" name="n90" src="mfcc4f" fileName="quePages/shot-ballon/line1.xml" xy="245,357" group="n93_mfcc"/>
+    <component id="n91_mfcc" name="n91" src="mfcc4h" fileName="quePages/shot-ballon/line3.xml" xy="384,411" group="n93_mfcc"/>
+    <component id="n92_mfcc" name="n92" src="mfcc4j" fileName="quePages/shot-ballon/line5.xml" xy="554,387" group="n93_mfcc"/>
+    <group id="n93_mfcc" name="group1" xy="101,-1" size="584,600" advanced="true"/>
+    <component id="n94_mfcc" name="n94" src="mfcc4f" fileName="quePages/shot-ballon/line1.xml" xy="774,236" group="n102_mfcc"/>
+    <component id="n95_mfcc" name="n95" src="mfcc4h" fileName="quePages/shot-ballon/line3.xml" xy="931,187" group="n102_mfcc"/>
+    <component id="n96_mfcc" name="n96" src="mfcc4j" fileName="quePages/shot-ballon/line5.xml" xy="1087,230" group="n102_mfcc"/>
+    <component id="n97_mfcc" name="n97" src="mfcc4g" fileName="quePages/shot-ballon/line2.xml" xy="874,297" group="n102_mfcc"/>
+    <component id="n98_mfcc" name="n98" src="mfcc4i" fileName="quePages/shot-ballon/line4.xml" xy="1019,319" group="n102_mfcc"/>
+    <component id="n99_mfcc" name="n99" src="mfcc4f" fileName="quePages/shot-ballon/line1.xml" xy="787,357" group="n102_mfcc"/>
+    <component id="n100_mfcc" name="n100" src="mfcc4h" fileName="quePages/shot-ballon/line3.xml" xy="926,411" group="n102_mfcc"/>
+    <component id="n101_mfcc" name="n101" src="mfcc4j" fileName="quePages/shot-ballon/line5.xml" xy="1096,387" group="n102_mfcc"/>
+    <group id="n102_mfcc" name="group2" xy="643,-1" size="584,600" advanced="true"/>
+    <component id="n81_mfcc" name="n81" src="mfcc4f" fileName="quePages/shot-ballon/line1.xml" xy="1347,246" group="n31_mfcc"/>
+    <component id="n82_mfcc" name="n82" src="mfcc4h" fileName="quePages/shot-ballon/line3.xml" xy="1504,197" group="n31_mfcc"/>
+    <component id="n84_mfcc" name="n84" src="mfcc4j" fileName="quePages/shot-ballon/line5.xml" xy="1660,240" group="n31_mfcc"/>
+    <component id="n23_mfcc" name="n23" src="mfcc4g" fileName="quePages/shot-ballon/line2.xml" xy="1447,307" group="n31_mfcc"/>
+    <component id="n25_mfcc" name="n25" src="mfcc4i" fileName="quePages/shot-ballon/line4.xml" xy="1592,329" group="n31_mfcc"/>
+    <component id="n22_mfcc" name="n22" src="mfcc4f" fileName="quePages/shot-ballon/line1.xml" xy="1360,367" group="n31_mfcc"/>
+    <component id="n24_mfcc" name="n24" src="mfcc4h" fileName="quePages/shot-ballon/line3.xml" xy="1499,421" group="n31_mfcc"/>
+    <component id="n26_mfcc" name="n26" src="mfcc4j" fileName="quePages/shot-ballon/line5.xml" xy="1669,397" group="n31_mfcc"/>
+    <group id="n31_mfcc" name="group3" xy="1216,9" size="584,600" advanced="true"/>
+    <component id="n10_mfcc" name="man" src="mfcc4e" fileName="quePages/shot-ballon/man.xml" xy="865,725"/>
+    <image id="n53_mfcc" name="n53" src="s5he2e" fileName="images/throw-ball/panel.png" xy="1483,677" group="n57_mfcc"/>
+    <loader id="n54_mfcc" name="expBall" xy="1647,774" pivot="0.5,0.5" anchor="true" size="149,177" group="n57_mfcc" scale="0.8,0.8" url="ui://qy6zqmwtmfcc44" autoSize="true" clearOnPublish="true"/>
+    <text id="n56_mfcc" name="scoreTex" xy="1641,922" pivot="0.5,0.5" anchor="true" size="202,172" group="n57_mfcc" fontSize="131" color="#3f36bb" align="center" leading="0" letterSpacing="5" autoSize="none" bold="true" text="00"/>
+    <component id="n58_mfcc" name="medal" src="mfcc4o" fileName="quePages/shot-ballon/medal.xml" xy="1631,593" pivot="0.5,0.5" anchor="true" group="n57_mfcc" alpha="0"/>
+    <group id="n57_mfcc" name="panel" xy="1390,485" size="482,538" advanced="true"/>
+    <image id="n79_mfcc" name="n79" src="mfcc3i" fileName="images/shot-balloon/show.png" xy="0,0" alpha="0"/>
+    <component id="n80_mfcc" name="cursor" src="mfcc4p" fileName="quePages/shot-ballon/cursor.xml" xy="0,0"/>
+    <component id="n12_mfcc" name="touchPad" src="bqid22" fileName="buttons/touchPad.xml" xy="0,0"/>
+  </displayList>
+  <transition name="finish">
+    <item time="0" type="Alpha" target="n58_mfcc" tween="true" startValue="0" endValue="1" duration="4"/>
+    <item time="0" type="Scale" target="n58_mfcc" tween="true" startValue="1,1" endValue="1.5,1.5" duration="8" ease="Back.Out"/>
+    <item time="0" type="Transition" target="n58_mfcc" value="flash,-1"/>
+    <item time="8" type="Scale" target="n58_mfcc" tween="true" startValue="1.5,1.5" endValue="1,1" duration="16" ease="Back.Out"/>
+  </transition>
+</component>

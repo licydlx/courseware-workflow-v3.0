@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n37_tq5p" name="n37" src="tq5p1b" fileName="images/show3.png" xy="0,0" visible="false" color="#666633"/>
+    <loader id="n55_rk87" name="exp-class1" xy="124,47" size="286,358" url="ui://vojbwzmjtq5p1f" autoSize="true" clearOnPublish="true"/>
+    <loader id="n56_rk87" name="exp-class2" xy="1023,31" size="286,358" url="ui://vojbwzmjtq5p1f" autoSize="true" clearOnPublish="true"/>
+    <image id="n26_tq5p" name="rx" src="k764e" fileName="images/classify/circle.png" xy="802,637" pivot="0.5,0.5" anchor="true" size="646,489" alpha="0"/>
+    <image id="n27_tq5p" name="bx" src="k764e" fileName="images/classify/circle.png" xy="1164,636" pivot="0.5,0.5" anchor="true" size="644,492" alpha="0"/>
+    <image id="n1_k764" name="rc" src="k764l" fileName="images/classify/r.png" xy="802,637" pivot="0.5,0.5" anchor="true" size="842,640" scale="0.77,0.77"/>
+    <image id="n3_k764" name="bc" src="k764k" fileName="images/classify/b.png" xy="1162,636" pivot="0.5,0.5" anchor="true" size="842,642" scale="0.77,0.77"/>
+    <image id="n29_tq5p" name="rt" src="k764c" fileName="images/classify/rl.png" xy="802,637" pivot="0.5,0.5" anchor="true" size="653,500" alpha="0"/>
+    <image id="n28_tq5p" name="bt" src="k764d" fileName="images/classify/bl.png" xy="1162,638" pivot="0.5,0.5" anchor="true" size="657,503" alpha="0"/>
+    <image id="n30_tq5p" name="mt" src="k764f" fileName="images/classify/rb.png" xy="982,636" pivot="0.5,0.5" anchor="true" size="285,405" alpha="0"/>
+    <image id="n4_k764" name="n4" src="k764m" fileName="images/item-bg.png" xy="496,618" pivot="0.5,0.5" anchor="true" group="n11_k764" scale="0.9,0.9"/>
+    <loader id="n10_k764" name="item1" xy="496,619" pivot="0.5,0.5" anchor="true" size="83,98" group="n11_k764" scale="0.9,0.9" url="ui://vojbwzmjtq5p1e" autoSize="true" clearOnPublish="true"/>
+    <group id="n11_k764" name="n11" xy="398,520" size="197,197"/>
+    <image id="n12_k764" name="n12" src="k764m" fileName="images/item-bg.png" xy="1453,613" pivot="0.5,0.5" anchor="true" group="n14_k764" scale="0.9,0.9"/>
+    <loader id="n13_k764" name="item2" xy="1453,613" pivot="0.5,0.5" anchor="true" size="91,88" group="n14_k764" scale="0.9,0.9" url="ui://vojbwzmjtq5p1c" autoSize="true" clearOnPublish="true"/>
+    <group id="n14_k764" name="n14" xy="1355,515" size="197,197"/>
+    <graph id="n34_tq5p" name="point1" xy="667,727" pivot="0.5,0.5" anchor="true" size="100,100" alpha="0" type="rect"/>
+    <graph id="n35_tq5p" name="point2" xy="970,716" pivot="0.5,0.5" anchor="true" size="100,100" alpha="0" type="rect"/>
+    <graph id="n36_tq5p" name="point3" xy="1261,734" pivot="0.5,0.5" anchor="true" size="100,100" alpha="0" type="rect"/>
+    <loader id="n45_tq5p" name="n45" xy="423,216" size="143,143" group="n46_tq5p" url="ui://vojbwzmjtq5p1h" autoSize="true" clearOnPublish="true"/>
+    <loader id="n47_tq5p" name="n47" xy="591,216" size="143,143" group="n46_tq5p" url="ui://vojbwzmjtq5p1h" autoSize="true" clearOnPublish="true"/>
+    <loader id="n48_tq5p" name="n48" xy="760,217" size="143,143" group="n46_tq5p" url="ui://vojbwzmjtq5p1h" autoSize="true" clearOnPublish="true"/>
+    <loader id="n49_tq5p" name="n49" xy="1365,218" size="143,143" group="n46_tq5p" url="ui://vojbwzmjtq5p1h" autoSize="true" clearOnPublish="true"/>
+    <loader id="n50_tq5p" name="n50" xy="1533,218" size="143,143" group="n46_tq5p" url="ui://vojbwzmjtq5p1h" autoSize="true" clearOnPublish="true"/>
+    <loader id="n51_tq5p" name="n51" xy="1702,219" size="143,143" group="n46_tq5p" url="ui://vojbwzmjtq5p1h" autoSize="true" clearOnPublish="true"/>
+    <group id="n46_tq5p" name="expGroup" xy="423,216" size="1422,146" advanced="true"/>
+    <component id="n7_k764" name="dragMan0" src="k764w" fileName="que-pages/classify/dragMan.xml" xy="658,987" pivot="0.5,0.8" anchor="true" group="n54_rk87"/>
+    <component id="n39_tq5p" name="dragMan1" src="k764w" fileName="que-pages/classify/dragMan.xml" xy="982,987" pivot="0.5,0.8" anchor="true" group="n54_rk87"/>
+    <component id="n40_tq5p" name="dragMan2" src="k764w" fileName="que-pages/classify/dragMan.xml" xy="1144,987" pivot="0.5,0.8" anchor="true" group="n54_rk87"/>
+    <component id="n41_tq5p" name="dragMan3" src="k764w" fileName="que-pages/classify/dragMan.xml" xy="1306,987" pivot="0.5,0.8" anchor="true" group="n54_rk87"/>
+    <component id="n38_tq5p" name="dragMan4" src="k764w" fileName="que-pages/classify/dragMan.xml" xy="820,988" pivot="0.5,0.8" anchor="true" group="n54_rk87"/>
+    <group id="n54_rk87" name="dragManList" xy="547,779" size="870,260" advanced="true"/>
+    <component id="n19_k764" name="touchPad" src="k764y" fileName="buttons/touchPad.xml" xy="0,0"/>
+    <component id="n33_tq5p" name="submit" src="tq5p13" fileName="buttons/submit.xml" xy="1700,910" pivot="0.5,0.5" anchor="true" scale="0.9,0.9">
+      <Button icon="ui://vojbwzmjtq5p14" sound="ui://ik5aab9iht4324"/>
+    </component>
+  </displayList>
+</component>

@@ -1,0 +1,187 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "tip",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 3.316666666666667,
+  "sample": 60,
+  "speed": 0.7,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "tip/sc": {
+        "comps": {},
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.25,
+              "value": 80
+            },
+            {
+              "frame": 2.816666666666667,
+              "value": 80
+            },
+            {
+              "frame": 3.1666666666666665,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "tip/hand": {
+        "comps": {},
+        "props": {
+          "scale": [
+            {
+              "frame": 0.11666666666666667,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              },
+              "curve": [
+                0.18,
+                0.89,
+                0.31,
+                1.21
+              ]
+            },
+            {
+              "frame": 0.38333333333333336,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1.2,
+                "y": 1.2
+              }
+            },
+            {
+              "frame": 0.48333333333333334,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              },
+              "curve": "constant"
+            },
+            {
+              "frame": 3,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              },
+              "curve": [
+                0.6,
+                -0.27,
+                0.73,
+                0.04
+              ]
+            },
+            {
+              "frame": 3.25,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              }
+            },
+            {
+              "frame": 3.316666666666667,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              }
+            }
+          ],
+          "position": [
+            {
+              "frame": 0.48333333333333334,
+              "value": [
+                640,
+                63
+              ],
+              "curve": "sineInOut",
+              "motionPath": [
+                [
+                  278,
+                  12,
+                  450,
+                  92,
+                  88,
+                  -76
+                ]
+              ]
+            },
+            {
+              "frame": 1.5,
+              "value": [
+                -84,
+                -274
+              ],
+              "motionPath": [],
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 2.1,
+              "value": [
+                792,
+                68
+              ],
+              "motionPath": [
+                [
+                  451,
+                  -33,
+                  602,
+                  51,
+                  306,
+                  -115
+                ]
+              ],
+              "curve": "sineInOut"
+            },
+            {
+              "frame": 3,
+              "value": [
+                199,
+                -262
+              ],
+              "motionPath": []
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.48333333333333334,
+      "func": "startDrawDot",
+      "params": []
+    },
+    {
+      "frame": 1.5,
+      "func": "endDrawDot",
+      "params": []
+    },
+    {
+      "frame": 2.1,
+      "func": "startDrawDot",
+      "params": []
+    },
+    {
+      "frame": 3,
+      "func": "endDrawDot",
+      "params": []
+    },
+    {
+      "frame": 3.283333333333333,
+      "func": "onTipFinish",
+      "params": []
+    }
+  ]
+}

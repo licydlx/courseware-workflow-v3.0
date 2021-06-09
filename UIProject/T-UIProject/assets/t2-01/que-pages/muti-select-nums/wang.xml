@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="455,338">
+  <displayList>
+    <image id="n0_bqid" name="wang" src="bqid1o" fileName="images/muti-select-nums/wang.png" xy="8,6"/>
+    <loader id="n2_bqid" name="fish_face" xy="345,226" pivot="0.5,0.5" anchor="true" size="250,144" scale="0.8,0.8" rotation="120" url="ui://qy6zqmwtbqid1l" autoSize="true" clearOnPublish="true">
+      <relation target="n0_bqid" sidePair="left-center,top-middle"/>
+    </loader>
+    <image id="n3_bqid" name="n3" src="bqid20" fileName="images/muti-select-nums/wangF.png" xy="256,158">
+      <relation target="n0_bqid" sidePair="left-left,top-top"/>
+    </image>
+  </displayList>
+  <transition name="catched" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Rotation" target="n2_bqid" tween="true" startValue="120" endValue="110.1" duration="4"/>
+    <item time="0" type="Visible" target="n2_bqid" value="true"/>
+    <item time="4" type="Rotation" target="n2_bqid" tween="true" startValue="110.1" endValue="121.7" duration="4"/>
+    <item time="8" type="Rotation" target="n2_bqid" tween="true" startValue="121.7" endValue="108.3" duration="4"/>
+    <item time="12" type="Rotation" target="n2_bqid" tween="true" startValue="108.3" endValue="120" duration="4"/>
+    <item time="26" type="Rotation" target="n2_bqid" value="120"/>
+  </transition>
+</component>

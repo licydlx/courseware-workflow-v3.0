@@ -1,0 +1,200 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "tip",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 2.6,
+  "sample": 60,
+  "speed": 0.7,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "tip/sc": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.15,
+              "value": 80
+            },
+            {
+              "frame": 2.45,
+              "value": 80
+            },
+            {
+              "frame": 2.6,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "tip/hand": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0.15,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              },
+              "curve": [
+                0.18,
+                0.89,
+                0.31,
+                1.21
+              ]
+            },
+            {
+              "frame": 0.38333333333333336,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              }
+            },
+            {
+              "frame": 2.45,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              },
+              "curve": [
+                0.6,
+                -0.27,
+                0.73,
+                0.04
+              ]
+            },
+            {
+              "frame": 2.6,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              }
+            }
+          ],
+          "position": [
+            {
+              "frame": 0.15,
+              "value": [
+                792,
+                104
+              ],
+              "motionPath": []
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": [
+                789,
+                104
+              ],
+              "motionPath": [
+                [
+                  483,
+                  -35,
+                  816,
+                  -22,
+                  162,
+                  -48
+                ]
+              ],
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": [
+                -171,
+                38
+              ],
+              "motionPath": []
+            },
+            {
+              "frame": 1.3833333333333333,
+              "value": [
+                -171,
+                38
+              ],
+              "curve": "cubicInOut",
+              "motionPath": []
+            },
+            {
+              "frame": 1.7333333333333334,
+              "value": [
+                813,
+                -396
+              ],
+              "motionPath": []
+            },
+            {
+              "frame": 1.8333333333333333,
+              "value": [
+                813,
+                -396
+              ],
+              "curve": "cubicInOut",
+              "motionPath": []
+            },
+            {
+              "frame": 1.85,
+              "value": [
+                814,
+                -396
+              ],
+              "motionPath": [
+                [
+                  466,
+                  -425,
+                  628,
+                  -452,
+                  316,
+                  -400
+                ]
+              ]
+            },
+            {
+              "frame": 2.45,
+              "value": [
+                188,
+                -292
+              ],
+              "motionPath": []
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.4166666666666667,
+      "func": "startDrawDot",
+      "params": []
+    },
+    {
+      "frame": 1.3333333333333333,
+      "func": "endDrawDot",
+      "params": []
+    },
+    {
+      "frame": 1.85,
+      "func": "startDrawDot",
+      "params": []
+    },
+    {
+      "frame": 2.45,
+      "func": "endDrawDot",
+      "params": []
+    },
+    {
+      "frame": 2.6,
+      "func": "onTipFinish",
+      "params": []
+    }
+  ]
+}

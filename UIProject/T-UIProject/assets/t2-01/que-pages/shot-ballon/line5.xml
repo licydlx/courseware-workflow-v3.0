@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="262,376" pivot="0.5,0.5" anchor="true">
+  <displayList>
+    <image id="n21_mfcc" name="n21" src="mfcc40" fileName="images/shot-balloon/line5.png" xy="-45,424" pivot="0,1" anchor="true"/>
+    <component id="n23_mfcc" name="ball" src="mfcc4k" fileName="quePages/shot-ballon/ballon.xml" xy="131,188"/>
+    <component id="n22_mfcc" name="blow" src="mfcc4q" fileName="quePages/shot-ballon/ballon_blow.xml" xy="138,192" pivot="0.5,0.5" anchor="true" alpha="0">
+      <relation target="n21_mfcc" sidePair="left-left,top-top"/>
+    </component>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Skew" target="n21_mfcc" tween="true" startValue="0,0" endValue="5.68,0" duration="24" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n23_mfcc" tween="true" startValue="131,188" endValue="147,188" duration="24" ease="Sine.InOut"/>
+    <item time="24" type="Skew" target="n21_mfcc" tween="true" startValue="5.68,0" endValue="0,0" duration="24" ease="Sine.InOut"/>
+    <item time="24" type="XY" target="n23_mfcc" tween="true" startValue="147,188" endValue="131,188" duration="24" ease="Sine.InOut"/>
+    <item time="48" type="Skew" target="n21_mfcc" tween="true" startValue="0,0" endValue="-4.12,0" duration="24" ease="Sine.InOut"/>
+    <item time="48" type="XY" target="n23_mfcc" tween="true" startValue="131,188" endValue="123,188" duration="24" ease="Sine.InOut"/>
+    <item time="72" type="Skew" target="n21_mfcc" tween="true" startValue="-4.12,0" endValue="0,0" duration="24" ease="Sine.InOut"/>
+    <item time="72" type="XY" target="n23_mfcc" tween="true" startValue="123,188" endValue="131,188" duration="24" ease="Sine.InOut"/>
+  </transition>
+  <transition name="blow">
+    <item time="0" type="Alpha" target="n22_mfcc" value="1"/>
+    <item time="0" type="Alpha" target="n23_mfcc" value="0"/>
+    <item time="0" type="Transition" target="n22_mfcc" value="blow"/>
+    <item time="14" type="Transition" target="n22_mfcc" value=""/>
+    <item time="16" type="Alpha" target="n21_mfcc" tween="true" startValue="1" endValue="0" duration="6"/>
+  </transition>
+</component>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <component id="n40_mf01" name="zone" src="mf0120" fileName="que-pages/classify-muti/zone.xml" xy="358,349"/>
+    <image id="n4_k764" name="n4" src="k764m" fileName="images/item-bg.png" xy="434,669" pivot="0.5,0.5" anchor="true" group="n11_k764"/>
+    <loader id="n10_k764" name="item1" xy="434,673" pivot="0.5,0.5" anchor="true" size="139,97" group="n11_k764" url="ui://vojbwzmjk764n" autoSize="true" clearOnPublish="true"/>
+    <group id="n11_k764" name="n11" xy="336,571" size="197,197"/>
+    <image id="n12_k764" name="n12" src="k764m" fileName="images/item-bg.png" xy="1482,667" pivot="0.5,0.5" anchor="true" group="n14_k764"/>
+    <loader id="n13_k764" name="item2" xy="1482,671" pivot="0.5,0.5" anchor="true" size="128,128" group="n14_k764" url="ui://vojbwzmjk764o" autoSize="true" clearOnPublish="true"/>
+    <group id="n14_k764" name="n14" xy="1384,569" size="197,197"/>
+    <component id="n15_k764" name="think" src="k764x" fileName="que-pages/classify/think.xml" xy="1071,270" pivot="0.019,1" anchor="true"/>
+    <component id="n7_k764" name="dragMan" src="k764w" fileName="que-pages/classify/dragMan.xml" xy="960,344" pivot="0.5,0.8" anchor="true"/>
+    <graph id="n39_mf01" name="point0" xy="962,321" pivot="0.5,0.5" anchor="true" size="100,100" alpha="0" type="rect"/>
+    <graph id="n34_tq5p" name="point1" xy="667,698" pivot="0.5,0.5" anchor="true" size="100,100" alpha="0" type="rect"/>
+    <graph id="n35_tq5p" name="point2" xy="970,687" pivot="0.5,0.5" anchor="true" size="100,100" alpha="0" type="rect"/>
+    <graph id="n36_tq5p" name="point3" xy="1261,705" pivot="0.5,0.5" anchor="true" size="100,100" alpha="0" type="rect"/>
+    <component id="n19_k764" name="touchPad" src="k764y" fileName="buttons/touchPad.xml" xy="0,0"/>
+    <component id="n33_tq5p" name="submit" src="tq5p13" fileName="buttons/submit.xml" xy="1700,910" pivot="0.5,0.5" anchor="true" scale="0.9,0.9">
+      <Button icon="ui://vojbwzmjtq5p14" sound="ui://ik5aab9iht4324"/>
+    </component>
+    <image id="n41_ejfz" name="hand" src="ejfz4l" fileName="images/hand.png" xy="974,356" pivot="0.13,0.15" anchor="true" scale="0,0"/>
+  </displayList>
+  <transition name="tip">
+    <item time="0" type="Scale" target="n41_ejfz" tween="true" startValue="1,1" endValue="1.1,1.1" duration="4" ease="Back.Out"/>
+    <item time="0" type="XY" target="n41_ejfz" value="974.01,356.55"/>
+    <item time="4" type="Scale" target="n41_ejfz" tween="true" startValue="1.1,1.1" endValue="1,1" duration="5" ease="Back.Out"/>
+    <item time="9" type="XY" target="n41_ejfz" tween="true" startValue="974.01,356.55" endValue="793.01,673.55" duration="30" ease="Sine.InOut" path="2,0,0,22,117,-38,301,1,2,-181,317,-543.7704,357.5897,0,0,1"/>
+    <item time="39" type="Scale" target="n41_ejfz" tween="true" startValue="1,1" endValue="0,0" duration="7" ease="Quad.InOut"/>
+  </transition>
+</component>

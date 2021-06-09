@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n3_cket" name="n3" src="cket6x" fileName="images/start-page/r3.png" xy="848,129" pivot="0.5,0.5" anchor="true" scale="0.2,0.2"/>
+    <image id="n11_cket" name="n11" src="cket6v" fileName="images/start-page/r1.png" xy="452,462" pivot="0.5,0.5" anchor="true" group="n15_cket" scale="0.3,0.3"/>
+    <image id="n12_cket" name="n12" src="cket6w" fileName="images/start-page/r2.png" xy="497,457" pivot="0.5,0.5" anchor="true" group="n15_cket" scale="0.2,0.2" rotation="-20"/>
+    <image id="n13_cket" name="n13" src="cket6v" fileName="images/start-page/r1.png" xy="507,418" pivot="0.5,0.5" anchor="true" group="n15_cket" scale="0.3,0.3"/>
+    <group id="n15_cket" name="n15" xy="390,368" size="213,178"/>
+    <image id="n1_cket" name="n1" src="cket6v" fileName="images/start-page/r1.png" xy="50,334" pivot="0.5,0.5" anchor="true" group="n16_cket" scale="0.3,0.3"/>
+    <image id="n2_cket" name="n2" src="cket6w" fileName="images/start-page/r2.png" xy="107,316" pivot="0.5,0.5" anchor="true" group="n16_cket" scale="0.2,0.2"/>
+    <group id="n16_cket" name="n16" xy="0,227" size="213,178"/>
+    <image id="n18_cket" name="n18" src="cket6v" fileName="images/start-page/r1.png" xy="811,335" pivot="0.5,0.5" anchor="true" group="n21_cket" scale="0.3,0.3"/>
+    <image id="n19_cket" name="n19" src="cket6w" fileName="images/start-page/r2.png" xy="856,330" pivot="0.5,0.5" anchor="true" group="n21_cket" scale="0.2,0.2" rotation="-20"/>
+    <image id="n20_cket" name="n20" src="cket6v" fileName="images/start-page/r1.png" xy="866,291" pivot="0.5,0.5" anchor="true" group="n21_cket" scale="0.3,0.3"/>
+    <image id="n22_cket" name="n22" src="cket6v" fileName="images/start-page/r1.png" xy="898,258" pivot="0.5,0.5" anchor="true" group="n21_cket" scale="0.3,0.3" rotation="-156"/>
+    <group id="n21_cket" name="n21" xy="749,223" size="213,196"/>
+    <image id="n5_cket" name="n5" src="cket6p" fileName="images/start-page/r5.png" xy="218,242" pivot="0.5,0.5" anchor="true" scale="0.2,0.2" rotation="36"/>
+    <image id="n17_cket" name="n17" src="cket6w" fileName="images/start-page/r2.png" xy="869,0" pivot="0.5,0.5" anchor="true" scale="0.4,0.4" rotation="-26" color="#a4f0ff"/>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n11_cket" tween="true" startValue="452,462" endValue="476,462" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n12_cket" tween="true" startValue="497,457" endValue="545,457" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n13_cket" tween="true" startValue="507,418" endValue="533,418" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n17_cket" tween="true" startValue="869,0" endValue="963,0" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n18_cket" tween="true" startValue="811,335" endValue="847,335" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n19_cket" tween="true" startValue="856,330" endValue="916,330" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n1_cket" tween="true" startValue="50,334" endValue="110,334" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n20_cket" tween="true" startValue="866,291" endValue="888,291" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n22_cket" tween="true" startValue="898,258" endValue="958,258" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n2_cket" tween="true" startValue="107,316" endValue="174,316" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n3_cket" tween="true" startValue="848,129" endValue="1027,129" duration="264" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n5_cket" tween="true" startValue="218,242" endValue="327,242" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n11_cket" tween="true" startValue="476,462" endValue="452,462" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n12_cket" tween="true" startValue="545,457" endValue="497,457" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n13_cket" tween="true" startValue="533,418" endValue="507,418" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n17_cket" tween="true" startValue="963,0" endValue="869,0" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n18_cket" tween="true" startValue="847,335" endValue="811,335" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n19_cket" tween="true" startValue="916,330" endValue="856,330" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n1_cket" tween="true" startValue="110,334" endValue="50,334" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n20_cket" tween="true" startValue="888,291" endValue="866,291" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n22_cket" tween="true" startValue="958,258" endValue="898,258" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n2_cket" tween="true" startValue="174,316" endValue="107,316" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n3_cket" tween="true" startValue="1027,129" endValue="848,129" duration="264" ease="Sine.InOut"/>
+    <item time="264" type="XY" target="n5_cket" tween="true" startValue="327,242" endValue="218,242" duration="264" ease="Sine.InOut"/>
+  </transition>
+</component>

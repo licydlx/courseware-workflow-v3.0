@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="300,300">
+  <controller name="state" homePageType="specific" homePage="0" pages="0,q1,6,q2" selected="0"/>
+  <displayList>
+    <image id="n0_ncb0" name="bg" src="ncb0y" fileName="images/click9/rect.png" xy="149,150" pivot="0.5,0.5" anchor="true" size="261,262" group="n12_ncb0"/>
+    <loader id="n11_ncb0" name="n11" xy="150,149" pivot="0.5,0.5" anchor="true" size="141,171" group="n12_ncb0" url="ui://qy6zqmwtncb0o" autoSize="true">
+      <gearXY controller="state" pages="0" values="150,149" default="150,149"/>
+    </loader>
+    <component id="n10_ncb0" name="n10" src="ncb016" fileName="que-pages/click-order-9/click-order-9-num.xml" xy="150,150" pivot="0.5,0.5" anchor="true" size="262,262" group="n12_ncb0"/>
+    <group id="n12_ncb0" name="n12" xy="18,19" size="262,262" advanced="true"/>
+  </displayList>
+  <transition name="right">
+    <item time="0" type="Scale" target="n10_ncb0" tween="true" startValue="1,1" endValue="1.15,1.15" duration="12" ease="Back.Out"/>
+    <item time="0" type="Scale" target="n11_ncb0" tween="true" startValue="1,1" endValue="1.15,1.15" duration="12" ease="Back.Out"/>
+    <item time="0" type="Size" target="n0_ncb0" tween="true" startValue="261,262" endValue="290,290" duration="12" ease="Back.Out"/>
+    <item time="0" type="Transition" target="n10_ncb0" value="t0"/>
+    <item time="12" type="Scale" target="n10_ncb0" tween="true" startValue="1.15,1.15" endValue="1,1" duration="5" ease="Back.Out"/>
+    <item time="12" type="Scale" target="n11_ncb0" tween="true" startValue="1.15,1.15" endValue="1,1" duration="5" ease="Back.Out"/>
+    <item time="12" type="Size" target="n0_ncb0" tween="true" startValue="290,290" endValue="262,262" duration="5" ease="Back.Out"/>
+  </transition>
+  <transition name="wrong">
+    <item time="0" type="ColorFilter" target="n0_ncb0" tween="true" startValue="0,0,0,0" endValue="0,-0.35,0,0" duration="8"/>
+    <item time="0" type="ColorFilter" target="n11_ncb0" tween="true" startValue="0,0,1,0" endValue="0,-0.8,1,0" duration="4"/>
+    <item time="0" type="XY" target="n11_ncb0" tween="true" startValue="150,149" endValue="131,149" duration="5"/>
+    <item time="4" type="ColorFilter" target="n11_ncb0" tween="true" startValue="0,-0.8,1,0" endValue="0,0.8,1,0" duration="4"/>
+    <item time="5" type="XY" target="n11_ncb0" tween="true" startValue="131,149" endValue="166,149" duration="6"/>
+    <item time="8" type="ColorFilter" target="n0_ncb0" tween="true" startValue="0,-0.35,0,0" endValue="0,0,0,0" duration="8"/>
+    <item time="8" type="ColorFilter" target="n11_ncb0" tween="true" startValue="0,0.8,1,0" endValue="0,-0.8,1,0" duration="4"/>
+    <item time="11" type="XY" target="n11_ncb0" tween="true" startValue="166,149" endValue="150,149" duration="5"/>
+    <item time="12" type="ColorFilter" target="n11_ncb0" tween="true" startValue="0,-0.8,1,0" endValue="0,0,1,0" duration="4"/>
+  </transition>
+</component>

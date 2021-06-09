@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="74,128">
+  <displayList>
+    <component id="n4_mfcc" name="n4" src="mfcc5b" fileName="quePages/apple-juice/bottle_water.xml" xy="4,5"/>
+    <image id="n6_mfcc" name="n6" src="mfcc5d" fileName="images/apple-juice/bottle.png" xy="0,0"/>
+  </displayList>
+  <transition name="fill">
+    <item time="0" type="Transition" target="n4_mfcc" value="fill"/>
+  </transition>
+</component>

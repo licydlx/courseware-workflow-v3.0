@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_bqid" name="n0" src="ncb0d" fileName="images/scene-glass/bg1.png" xy="0,0"/>
+    <loader id="n4_bqid" name="loader" xy="0,0" size="1920,1080" url="ui://qy6zqmwtncb0c" clearOnPublish="true"/>
+    <image id="n1_bqid" name="n1" src="ncb013" fileName="images/scene-glass/bg1d1.png" xy="543,906" group="n3_bqid"/>
+    <image id="n2_bqid" name="n2" src="ncb014" fileName="images/scene-glass/bg1d2.png" xy="629,957" group="n3_bqid"/>
+    <group id="n3_bqid" name="glass" xy="543,906" size="201,135"/>
+    <component id="n6_d5em" name="laba" src="bqid1e" fileName="laba.xml" xy="0,0"/>
+  </displayList>
+</component>

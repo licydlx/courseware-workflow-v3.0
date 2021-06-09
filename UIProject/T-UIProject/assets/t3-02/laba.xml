@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="280,220">
+  <displayList>
+    <component id="n4_mfcc" name="n4" src="i15i1" fileName="laba-icon.xml" xy="89,94"/>
+    <loader id="n6_mfcc" name="bubble" xy="264,95" pivot="0,0.5" anchor="true" size="1377,133" alpha="0" autoSize="true" clearOnPublish="true"/>
+    <component id="n9_mfcc" name="touchPad" src="i15i2" fileName="buttons/btnLaba.xml" xy="153,108" pivot="0.5,0.5" anchor="true" size="208,149" alpha="0"/>
+  </displayList>
+  <transition name="click">
+    <item time="0" type="Alpha" target="n6_mfcc" value="0"/>
+    <item time="0" type="Scale" target="n6_mfcc" tween="true" startValue="0.8,1" endValue="1,1" duration="11" ease="Back.Out"/>
+    <item time="0" type="Transition" target="n4_mfcc" value="loop,-1"/>
+    <item time="3" type="Alpha" target="n6_mfcc" tween="true" startValue="0" endValue="1" duration="11"/>
+  </transition>
+  <transition name="fadeOut">
+    <item time="0" type="Alpha" target="n6_mfcc" tween="true" startValue="1" endValue="0" duration="6" ease="Quad.InOut"/>
+    <item time="0" type="Transition" target="n4_mfcc" value=""/>
+  </transition>
+</component>

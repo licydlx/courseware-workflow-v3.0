@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1202,642">
+  <controller name="c1" pages="0,none,1,red,2,min,3,blue" selected="3"/>
+  <displayList>
+    <image id="n27_tq5p" name="bx" src="k764e" fileName="images/classify/circle.png" xy="789,323" pivot="0.5,0.5" anchor="true" size="644,492" alpha="0">
+      <gearLook controller="c1" pages="0,1,2" values="0,0,0,0|1,0,0,0|1,0,0,0" default="0,0,0,0" tween="true"/>
+    </image>
+    <image id="n26_tq5p" name="rx" src="k764e" fileName="images/classify/circle.png" xy="427,324" pivot="0.5,0.5" anchor="true" size="646,489">
+      <gearLook controller="c1" pages="0,2,3" values="0,0,0,0|1,0,0,0|1,0,0,0" default="0,0,0,0" tween="true"/>
+    </image>
+    <image id="n1_k764" name="rc" src="k764l" fileName="images/classify/r.png" xy="427,324" pivot="0.5,0.5" anchor="true" size="842,640" scale="0.77,0.77" alpha="0">
+      <gearLook controller="c1" pages="0,2,3" values="1,0,0,0|0,0,0,0|0,0,0,0" default="1,0,0,0" tween="true"/>
+    </image>
+    <image id="n3_k764" name="bc" src="k764k" fileName="images/classify/b.png" xy="787,323" pivot="0.5,0.5" anchor="true" size="842,642" scale="0.77,0.77" alpha="0">
+      <gearLook controller="c1" pages="0,1,2,3" values="1,0,0,0|0,0,0,0|0,0,0,0|0,0,0,0" tween="true"/>
+    </image>
+    <image id="n29_tq5p" name="rt" src="k764c" fileName="images/classify/rl.png" xy="427,324" pivot="0.5,0.5" anchor="true" size="653,500" alpha="0">
+      <gearLook controller="c1" pages="0,1" values="0,0,0,0|1,0,0,0" default="0,0,0,0" tween="true"/>
+    </image>
+    <image id="n28_tq5p" name="bt" src="k764d" fileName="images/classify/bl.png" xy="787,325" pivot="0.5,0.5" anchor="true" size="657,503">
+      <gearLook controller="c1" pages="0,3" values="0,0,0,0|1,0,0,0" default="0,0,0,0" tween="true"/>
+    </image>
+    <image id="n30_tq5p" name="mt" src="k764f" fileName="images/classify/rb.png" xy="607,323" pivot="0.5,0.5" anchor="true" size="285,405" alpha="0">
+      <gearLook controller="c1" pages="0,2" values="0,0,0,0|1,0,0,0" default="0,0,0,0" tween="true"/>
+    </image>
+  </displayList>
+  <transition name="zone1">
+    <item time="0" type="Alpha" target="n1_k764" value="0"/>
+    <item time="0" type="Alpha" target="n27_tq5p" value="1"/>
+    <item time="0" type="Alpha" target="n29_tq5p" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="0" type="Alpha" target="n3_k764" value="0"/>
+    <item time="6" type="Alpha" target="n29_tq5p" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="12" type="Alpha" target="n29_tq5p" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="18" type="Alpha" target="n29_tq5p" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="24" type="Alpha" target="n1_k764" tween="true" startValue="0" endValue="1" duration="3"/>
+    <item time="24" type="Alpha" target="n27_tq5p" tween="true" startValue="1" endValue="0" duration="3"/>
+    <item time="24" type="Alpha" target="n29_tq5p" tween="true" startValue="1" endValue="0" duration="3"/>
+    <item time="24" type="Alpha" target="n3_k764" tween="true" startValue="0" endValue="1" duration="3"/>
+  </transition>
+  <transition name="zone2">
+    <item time="0" type="Alpha" target="n1_k764" value="0"/>
+    <item time="0" type="Alpha" target="n26_tq5p" value="1"/>
+    <item time="0" type="Alpha" target="n27_tq5p" value="1"/>
+    <item time="0" type="Alpha" target="n28_tq5p" value="0"/>
+    <item time="0" type="Alpha" target="n29_tq5p" value="0"/>
+    <item time="0" type="Alpha" target="n30_tq5p" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="0" type="Alpha" target="n3_k764" value="0"/>
+    <item time="6" type="Alpha" target="n30_tq5p" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="12" type="Alpha" target="n30_tq5p" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="18" type="Alpha" target="n30_tq5p" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="24" type="Alpha" target="n1_k764" tween="true" startValue="0" endValue="1" duration="4"/>
+    <item time="24" type="Alpha" target="n26_tq5p" tween="true" startValue="1" endValue="0" duration="4"/>
+    <item time="24" type="Alpha" target="n27_tq5p" tween="true" startValue="1" endValue="0" duration="4"/>
+    <item time="24" type="Alpha" target="n30_tq5p" tween="true" startValue="1" endValue="0" duration="4"/>
+    <item time="24" type="Alpha" target="n3_k764" tween="true" startValue="0" endValue="1" duration="4"/>
+  </transition>
+  <transition name="zone3">
+    <item time="0" type="Alpha" target="n1_k764" value="0"/>
+    <item time="0" type="Alpha" target="n26_tq5p" value="1"/>
+    <item time="0" type="Alpha" target="n27_tq5p" value="0"/>
+    <item time="0" type="Alpha" target="n28_tq5p" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="0" type="Alpha" target="n29_tq5p" value="0"/>
+    <item time="0" type="Alpha" target="n30_tq5p" value="0"/>
+    <item time="0" type="Alpha" target="n3_k764" value="0"/>
+    <item time="6" type="Alpha" target="n28_tq5p" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="12" type="Alpha" target="n28_tq5p" tween="true" startValue="1" endValue="0.5" duration="6"/>
+    <item time="18" type="Alpha" target="n28_tq5p" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="24" type="Alpha" target="n1_k764" tween="true" startValue="0" endValue="1" duration="4"/>
+    <item time="24" type="Alpha" target="n26_tq5p" tween="true" startValue="1" endValue="0" duration="4"/>
+    <item time="24" type="Alpha" target="n28_tq5p" tween="true" startValue="1" endValue="0" duration="4"/>
+    <item time="24" type="Alpha" target="n3_k764" tween="true" startValue="0" endValue="1" duration="4"/>
+  </transition>
+  <transition name="zone1in">
+    <item time="0" type="Alpha" target="n1_k764" tween="true" startValue="1" endValue="0" duration="7"/>
+    <item time="0" type="Alpha" target="n27_tq5p" tween="true" startValue="0" endValue="1" duration="7"/>
+    <item time="0" type="Alpha" target="n29_tq5p" tween="true" startValue="0" endValue="1" duration="7"/>
+    <item time="0" type="Alpha" target="n3_k764" tween="true" startValue="1" endValue="0" duration="7"/>
+  </transition>
+  <transition name="zone1out">
+    <item time="0" type="Alpha" target="n1_k764" tween="true" startValue="0" endValue="1" duration="9"/>
+    <item time="0" type="Alpha" target="n27_tq5p" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="0" type="Alpha" target="n29_tq5p" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="0" type="Alpha" target="n3_k764" tween="true" startValue="0" endValue="1" duration="9"/>
+  </transition>
+  <transition name="zone2in">
+    <item time="0" type="Alpha" target="n1_k764" tween="true" startValue="1" endValue="0" duration="8"/>
+    <item time="0" type="Alpha" target="n26_tq5p" tween="true" startValue="0" endValue="1" duration="8"/>
+    <item time="0" type="Alpha" target="n27_tq5p" tween="true" startValue="0" endValue="1" duration="8"/>
+    <item time="0" type="Alpha" target="n30_tq5p" tween="true" startValue="0" endValue="1" duration="8"/>
+    <item time="0" type="Alpha" target="n3_k764" tween="true" startValue="1" endValue="0" duration="8"/>
+  </transition>
+  <transition name="zone2out">
+    <item time="0" type="Alpha" target="n1_k764" tween="true" startValue="1" endValue="0" duration="0"/>
+    <item time="0" type="Alpha" target="n1_k764" tween="true" startValue="0" endValue="1" duration="9"/>
+    <item time="0" type="Alpha" target="n26_tq5p" tween="true" startValue="0" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n26_tq5p" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="0" type="Alpha" target="n27_tq5p" tween="true" startValue="0" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n27_tq5p" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="0" type="Alpha" target="n30_tq5p" tween="true" startValue="0" endValue="1" duration="0"/>
+    <item time="0" type="Alpha" target="n30_tq5p" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="0" type="Alpha" target="n3_k764" tween="true" startValue="1" endValue="0" duration="0"/>
+    <item time="0" type="Alpha" target="n3_k764" tween="true" startValue="0" endValue="1" duration="9"/>
+  </transition>
+  <transition name="zone3in">
+    <item time="0" type="Alpha" target="n1_k764" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="0" type="Alpha" target="n26_tq5p" tween="true" startValue="0" endValue="1" duration="9"/>
+    <item time="0" type="Alpha" target="n28_tq5p" tween="true" startValue="0" endValue="1" duration="9"/>
+    <item time="0" type="Alpha" target="n3_k764" tween="true" startValue="1" endValue="0" duration="9"/>
+  </transition>
+  <transition name="zone3out">
+    <item time="0" type="Alpha" target="n1_k764" tween="true" startValue="0" endValue="1" duration="9"/>
+    <item time="0" type="Alpha" target="n26_tq5p" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="0" type="Alpha" target="n28_tq5p" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="0" type="Alpha" target="n3_k764" tween="true" startValue="0" endValue="1" duration="9"/>
+  </transition>
+</component>

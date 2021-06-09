@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="82,82">
+  <displayList>
+    <image id="n80_mfcc" name="n80" src="mfcc42" fileName="images/shot-balloon/cursor.png" xy="-221,41" pivot="0.5,0.5" anchor="true" alpha="0"/>
+  </displayList>
+  <transition name="arm">
+    <item time="0" type="Alpha" target="n80_mfcc" tween="true" startValue="0" endValue="1" duration="5"/>
+    <item time="0" type="Scale" target="n80_mfcc" tween="true" startValue="2,2" endValue="1,1" duration="9"/>
+    <item time="0" type="XY" target="n80_mfcc" tween="true" startValue="-221,41" endValue="41,41" duration="18" ease="Expo.Out"/>
+    <item time="18" type="Scale" target="n80_mfcc" value="1,1"/>
+    <item time="19" type="Scale" target="n80_mfcc" value="1.2,1.2"/>
+    <item time="19" type="XY" target="n80_mfcc" value="37,39"/>
+    <item time="20" type="XY" target="n80_mfcc" value="43,44"/>
+    <item time="21" type="Scale" target="n80_mfcc" value="1,1"/>
+    <item time="21" type="XY" target="n80_mfcc" value="44,38"/>
+    <item time="22" type="XY" target="n80_mfcc" value="41,41"/>
+    <item time="24" type="Alpha" target="n80_mfcc" tween="true" startValue="1" endValue="0" duration="7"/>
+  </transition>
+</component>

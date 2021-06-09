@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="473,545" pivot="0.5,0.5" anchor="true" extention="Button" hitTest="n3_t64z">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n3_t64z" name="n3" xy="225,260" pivot="0.5,0.5" anchor="true" size="498,561" alpha="0" type="polygon" points="40,187,155.3754,22.12518,489,34,416.6879,129.1252,354.6879,277.1251,416.2504,428.7502,498,535,236.6879,561.9377,44,404"/>
+  </displayList>
+  <Button/>
+</component>

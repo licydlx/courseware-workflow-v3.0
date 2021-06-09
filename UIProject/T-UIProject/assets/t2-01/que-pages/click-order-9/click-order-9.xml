@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n3_ncb0" name="n3" src="ncb0z" fileName="images/click9/sbg.png" xy="594,170"/>
+    <component id="n48_ncb0" name="n48" src="ncb015" fileName="click-order-9/click-order-9-btn.xml" xy="590,165" group="n5_ncb0"/>
+    <component id="n56_ncb0" name="n56" src="ncb015" fileName="click-order-9/click-order-9-btn.xml" xy="855,165" group="n5_ncb0"/>
+    <component id="n49_ncb0" name="n49" src="ncb015" fileName="click-order-9/click-order-9-btn.xml" xy="1120,165" group="n5_ncb0"/>
+    <component id="n50_ncb0" name="n50" src="ncb015" fileName="click-order-9/click-order-9-btn.xml" xy="590,430" group="n5_ncb0"/>
+    <component id="n51_ncb0" name="n51" src="ncb015" fileName="click-order-9/click-order-9-btn.xml" xy="855,430" group="n5_ncb0"/>
+    <component id="n52_ncb0" name="n52" src="ncb015" fileName="click-order-9/click-order-9-btn.xml" xy="1120,430" group="n5_ncb0"/>
+    <component id="n53_ncb0" name="n53" src="ncb015" fileName="click-order-9/click-order-9-btn.xml" xy="590,695" group="n5_ncb0"/>
+    <component id="n54_ncb0" name="n54" src="ncb015" fileName="click-order-9/click-order-9-btn.xml" xy="855,695" group="n5_ncb0"/>
+    <component id="n55_ncb0" name="n55" src="ncb015" fileName="click-order-9/click-order-9-btn.xml" xy="1120,695" group="n5_ncb0"/>
+    <group id="n5_ncb0" name="tiles" xy="590,165" size="830,830" advanced="true"/>
+    <component id="n33_ncb0" name="n33" src="ncb017" fileName="click-order-9/dirty.xml" xy="640,221" group="n34_ncb0" touchable="false"/>
+    <component id="n35_ncb0" name="n35" src="ncb017" fileName="click-order-9/dirty.xml" xy="882,136" group="n34_ncb0" touchable="false"/>
+    <component id="n36_ncb0" name="n36" src="ncb017" fileName="click-order-9/dirty.xml" xy="1156,237" group="n34_ncb0" touchable="false"/>
+    <component id="n37_ncb0" name="n37" src="ncb017" fileName="click-order-9/dirty.xml" xy="647,387" group="n34_ncb0" touchable="false"/>
+    <component id="n38_ncb0" name="n38" src="ncb017" fileName="click-order-9/dirty.xml" xy="870,491" group="n34_ncb0" touchable="false"/>
+    <component id="n39_ncb0" name="n39" src="ncb017" fileName="click-order-9/dirty.xml" xy="1105,458" group="n34_ncb0" touchable="false"/>
+    <component id="n40_ncb0" name="n40" src="ncb017" fileName="click-order-9/dirty.xml" xy="608,658" group="n34_ncb0" touchable="false"/>
+    <component id="n41_ncb0" name="n41" src="ncb017" fileName="click-order-9/dirty.xml" xy="902,752" group="n34_ncb0" touchable="false"/>
+    <component id="n42_ncb0" name="n42" src="ncb017" fileName="click-order-9/dirty.xml" xy="1135,739" group="n34_ncb0" touchable="false"/>
+    <group id="n34_ncb0" name="dirtys" xy="608,136" size="810,878" advanced="true"/>
+    <component id="n45_ncb0" name="cleaner" src="ncb01c" fileName="click-order-9/cleaner.xml" xy="0,0"/>
+  </displayList>
+</component>

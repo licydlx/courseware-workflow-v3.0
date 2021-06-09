@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="482,217">
+  <displayList>
+    <component id="n46_mfcc" name="n46" src="mfcc4n" fileName="quePages/shot-ballon/medal-base.xml" xy="0,0"/>
+    <image id="n42_s5he" name="n42" src="s5he2u" fileName="images/medal_star.png" xy="129,142" pivot="0.5,0.5" anchor="true" scale="0.8,0.8"/>
+    <image id="n43_s5he" name="n43" src="s5he2u" fileName="images/medal_star.png" xy="38,52" pivot="0.5,0.5" anchor="true" scale="0.6,0.6"/>
+    <image id="n44_s5he" name="n44" src="s5he2u" fileName="images/medal_star.png" xy="406,69" pivot="0.5,0.5" anchor="true"/>
+    <image id="n45_s5he" name="n45" src="s5he2u" fileName="images/medal_star.png" xy="435,44" pivot="0.5,0.5" anchor="true" scale="0.6,0.6"/>
+  </displayList>
+  <transition name="flash" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Scale" target="n42_s5he" tween="true" startValue="0.8,0.8" endValue="0.5,0.5" duration="6"/>
+    <item time="0" type="Scale" target="n43_s5he" tween="true" startValue="0.6,0.6" endValue="0.8,0.8" duration="6"/>
+    <item time="0" type="Scale" target="n44_s5he" tween="true" startValue="1,1" endValue="0.6,0.6" duration="6"/>
+    <item time="0" type="Scale" target="n45_s5he" tween="true" startValue="0.6,0.6" endValue="1,1" duration="6"/>
+    <item time="6" type="Scale" target="n42_s5he" tween="true" startValue="0.5,0.5" endValue="0.8,0.8" duration="6"/>
+    <item time="6" type="Scale" target="n43_s5he" tween="true" startValue="0.8,0.8" endValue="0.6,0.6" duration="6"/>
+    <item time="6" type="Scale" target="n44_s5he" tween="true" startValue="0.6,0.6" endValue="1,1" duration="6"/>
+    <item time="6" type="Scale" target="n45_s5he" tween="true" startValue="1,1" endValue="0.6,0.6" duration="6"/>
+    <item time="12" type="Scale" target="n42_s5he" tween="true" startValue="0.8,0.8" endValue="0.5,0.5" duration="6"/>
+    <item time="12" type="Scale" target="n43_s5he" tween="true" startValue="0.6,0.6" endValue="0.8,0.8" duration="6"/>
+    <item time="12" type="Scale" target="n44_s5he" tween="true" startValue="1,1" endValue="0.6,0.6" duration="6"/>
+    <item time="12" type="Scale" target="n45_s5he" tween="true" startValue="0.6,0.6" endValue="1,1" duration="6"/>
+    <item time="18" type="Scale" target="n42_s5he" tween="true" startValue="0.5,0.5" endValue="0.8,0.8" duration="6"/>
+    <item time="18" type="Scale" target="n43_s5he" tween="true" startValue="0.8,0.8" endValue="0.6,0.6" duration="6"/>
+    <item time="18" type="Scale" target="n44_s5he" tween="true" startValue="0.6,0.6" endValue="1,1" duration="6"/>
+    <item time="18" type="Scale" target="n45_s5he" tween="true" startValue="1,1" endValue="0.6,0.6" duration="6"/>
+  </transition>
+</component>

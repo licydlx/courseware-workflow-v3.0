@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="107,119">
+  <displayList>
+    <image id="n5_cket" name="selected1" src="cket6o" fileName="images/apple-juice/selected1.png" xy="-6,-7" group="n7_cket" visible="false"/>
+    <image id="n6_cket" name="selected2" src="cket6n" fileName="images/apple-juice/selected2.png" xy="-6,-7" group="n7_cket" visible="false"/>
+    <group id="n7_cket" name="selected" xy="-6,-7" size="119,131" visible="false" advanced="true"/>
+    <loader id="n3_mfcc" name="loader" xy="0,0" size="107,119" url="ui://qy6zqmwtmfcc4x" clearOnPublish="true"/>
+    <image id="n4_mfcc" name="leaf" src="mfcc53" fileName="images/apple-juice/leaf.png" xy="49,16" pivot="0,0.664" anchor="true"/>
+  </displayList>
+  <transition name="loop">
+    <item time="0" type="Rotation" target="n4_mfcc" tween="true" startValue="0" endValue="11.59" duration="5"/>
+    <item time="5" type="Rotation" target="n4_mfcc" tween="true" startValue="11.59" endValue="0" duration="4"/>
+    <item time="24" type="Rotation" target="n4_mfcc" tween="true" startValue="0" endValue="11.07" duration="4"/>
+    <item time="28" type="Rotation" target="n4_mfcc" tween="true" startValue="11.07" endValue="0" duration="3"/>
+    <item time="45" type="Rotation" target="n4_mfcc" value="0"/>
+  </transition>
+</component>

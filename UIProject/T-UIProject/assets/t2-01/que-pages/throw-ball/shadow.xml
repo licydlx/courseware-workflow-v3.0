@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="950,290" mask="n29_s5he">
+  <displayList>
+    <image id="n29_s5he" name="n29" src="s5he2n" fileName="images/throw-ball/shadow_mask.png" xy="0,0" alpha="0.458"/>
+    <image id="n30_s5he" name="shadow" src="s5he2l" fileName="images/circle.png" xy="475,350" pivot="0.5,0.5" anchor="true" size="178,73" group="n31_s5he" alpha="0.724" color="#4544ab"/>
+    <group id="n31_s5he" name="n31" xy="386,313" size="178,73" advanced="true"/>
+  </displayList>
+  <transition name="shot">
+    <item time="0" type="XY" target="n31_s5he" tween="true" startValue="386,313.5" endValue="386,30" duration="15" ease="Cubic.Out"/>
+    <item time="15" type="XY" target="n31_s5he" tween="true" startValue="386,30" endValue="386,79.875" duration="10"/>
+    <item time="25" type="XY" target="n31_s5he" tween="true" startValue="386,79.875" endValue="-,-34" duration="9"/>
+  </transition>
+</component>

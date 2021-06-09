@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_mfcc" name="n0" src="mfcc55" fileName="images/apple-juice/show.png" xy="0,0" alpha="0" grayed="true"/>
+    <image id="n5_mfcc" name="n5" src="mfcc50" fileName="images/apple-juice/desk.png" xy="479,380"/>
+    <image id="n54_mfcc" name="n54" src="s5he2l" fileName="images/circle.png" xy="933,1003" pivot="0.5,0.5" anchor="true" size="441,106" alpha="0.2" color="#000000"/>
+    <image id="n53_mfcc" name="n53" src="s5he2l" fileName="images/circle.png" xy="386,1005" pivot="0.5,0.5" anchor="true" size="441,106" alpha="0.2" color="#000000"/>
+    <image id="n62_mfcc" name="n62" src="s5he2l" fileName="images/circle.png" xy="971,465" pivot="0.5,0.5" anchor="true" size="259,100" alpha="0.2" color="#000000"/>
+    <image id="n63_mfcc" name="n63" src="s5he2l" fileName="images/circle.png" xy="1184,470" pivot="0.5,0.5" anchor="true" size="81,28" alpha="0.2" color="#000000"/>
+    <image id="n64_mfcc" name="n64" src="s5he2l" fileName="images/circle.png" xy="1276,470" pivot="0.5,0.5" anchor="true" size="81,28" alpha="0.2" color="#000000"/>
+    <image id="n65_mfcc" name="n65" src="s5he2l" fileName="images/circle.png" xy="1372,470" pivot="0.5,0.5" anchor="true" size="81,28" alpha="0.2" color="#000000"/>
+    <image id="n55_mfcc" name="n55" src="s5he2l" fileName="images/circle.png" xy="1483,1005" pivot="0.5,0.5" anchor="true" size="441,106" alpha="0.2" color="#000000"/>
+    <component id="n9_mfcc" name="juicer" src="mfcc56" fileName="que-pages/apple-juice/juicer.xml" xy="944,298" pivot="0.5,0.5" anchor="true"/>
+    <image id="n16_mfcc" name="n16" src="mfcc5e" fileName="images/apple-juice/basket.png" xy="141,725" group="n18_mfcc"/>
+    <component id="n19_mfcc" name="n19" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="252,784" pivot="0.5,0.5" anchor="true" group="n21_mfcc"/>
+    <component id="n22_mfcc" name="n22" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="346,785" pivot="0.5,0.5" anchor="true" group="n21_mfcc"/>
+    <component id="n23_mfcc" name="n23" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="436,790" pivot="0.5,0.5" anchor="true" group="n21_mfcc"/>
+    <component id="n24_mfcc" name="n24" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="525,802" pivot="0.5,0.5" anchor="true" group="n21_mfcc"/>
+    <component id="n25_mfcc" name="n25" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="241,867" pivot="0.5,0.5" anchor="true" group="n21_mfcc"/>
+    <component id="n26_mfcc" name="n26" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="325,882" pivot="0.5,0.5" anchor="true" group="n21_mfcc"/>
+    <component id="n27_mfcc" name="n27" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="418,886" pivot="0.5,0.5" anchor="true" group="n21_mfcc"/>
+    <component id="n28_mfcc" name="n28" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="509,889" pivot="0.5,0.5" anchor="true" group="n21_mfcc"/>
+    <group id="n21_mfcc" name="group1" xy="188,725" size="391,224" group="n18_mfcc" advanced="true"/>
+    <image id="n17_mfcc" name="n17" src="mfcc5f" fileName="images/apple-juice/basketF.png" xy="141,832" group="n18_mfcc"/>
+    <group id="n18_mfcc" name="basket1" xy="141,725" size="492,314"/>
+    <image id="n29_mfcc" name="n29" src="mfcc5e" fileName="images/apple-juice/basket.png" xy="686,723" group="n40_mfcc"/>
+    <component id="n30_mfcc" name="n30" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="797,782" pivot="0.5,0.5" anchor="true" group="n38_mfcc"/>
+    <component id="n31_mfcc" name="n31" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="891,783" pivot="0.5,0.5" anchor="true" group="n38_mfcc"/>
+    <component id="n32_mfcc" name="n32" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="981,788" pivot="0.5,0.5" anchor="true" group="n38_mfcc"/>
+    <component id="n33_mfcc" name="n33" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1070,800" pivot="0.5,0.5" anchor="true" group="n38_mfcc"/>
+    <component id="n34_mfcc" name="n34" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="786,865" pivot="0.5,0.5" anchor="true" group="n38_mfcc"/>
+    <component id="n35_mfcc" name="n35" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="870,880" pivot="0.5,0.5" anchor="true" group="n38_mfcc"/>
+    <component id="n36_mfcc" name="n36" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="963,884" pivot="0.5,0.5" anchor="true" group="n38_mfcc"/>
+    <component id="n37_mfcc" name="n37" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1054,887" pivot="0.5,0.5" anchor="true" group="n38_mfcc"/>
+    <group id="n38_mfcc" name="group2" xy="733,723" size="391,224" group="n40_mfcc" advanced="true"/>
+    <image id="n39_mfcc" name="n39" src="mfcc5f" fileName="images/apple-juice/basketF.png" xy="686,830" group="n40_mfcc"/>
+    <group id="n40_mfcc" name="basket2" xy="686,723" size="492,314"/>
+    <image id="n41_mfcc" name="n41" src="mfcc5e" fileName="images/apple-juice/basket.png" xy="1239,729" group="n52_mfcc"/>
+    <component id="n42_mfcc" name="n42" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1350,788" pivot="0.5,0.5" anchor="true" group="n50_mfcc"/>
+    <component id="n43_mfcc" name="n43" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1444,789" pivot="0.5,0.5" anchor="true" group="n50_mfcc"/>
+    <component id="n44_mfcc" name="n44" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1534,794" pivot="0.5,0.5" anchor="true" group="n50_mfcc"/>
+    <component id="n45_mfcc" name="n45" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1623,806" pivot="0.5,0.5" anchor="true" group="n50_mfcc"/>
+    <component id="n46_mfcc" name="n46" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1339,871" pivot="0.5,0.5" anchor="true" group="n50_mfcc"/>
+    <component id="n47_mfcc" name="n47" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1423,886" pivot="0.5,0.5" anchor="true" group="n50_mfcc"/>
+    <component id="n48_mfcc" name="n48" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1516,890" pivot="0.5,0.5" anchor="true" group="n50_mfcc"/>
+    <component id="n49_mfcc" name="n49" src="mfcc5g" fileName="que-pages/apple-juice/apple.xml" xy="1607,893" pivot="0.5,0.5" anchor="true" group="n50_mfcc"/>
+    <group id="n50_mfcc" name="group3" xy="1286,729" size="391,224" group="n52_mfcc" advanced="true"/>
+    <image id="n51_mfcc" name="n51" src="mfcc5f" fileName="images/apple-juice/basketF.png" xy="1239,836" group="n52_mfcc"/>
+    <group id="n52_mfcc" name="basket3" xy="1239,729" size="492,314"/>
+    <image id="n56_mfcc" name="n56" src="s5he2e" fileName="images/throw-ball/panel.png" xy="1483,61" group="n60_mfcc"/>
+    <loader id="n57_mfcc" name="expBall" xy="1639,168" pivot="0.5,0.5" anchor="true" size="107,119" group="n60_mfcc" url="ui://qy6zqmwtmfcc5g" autoSize="true"/>
+    <text id="n58_mfcc" name="scoreTex" xy="1641,306" pivot="0.5,0.5" anchor="true" size="202,172" group="n60_mfcc" fontSize="131" color="#3f36bb" align="center" leading="0" letterSpacing="5" autoSize="none" bold="true" text="00"/>
+    <group id="n60_mfcc" name="panel" xy="1483,61" size="309,346" advanced="true"/>
+    <component id="n66_mfcc" name="medal" src="mfcc5i" fileName="que-pages/apple-juice/medal.xml" xy="1634,489" pivot="0.5,0.5" anchor="true" alpha="0"/>
+    <graph id="n67_mfcc" name="dragPoint" xy="964,231" pivot="0.5,0.5" anchor="true" size="339,236" alpha="0" type="rect"/>
+    <component id="n68_mfcc" name="touchPad" src="bqid22" fileName="buttons/touchPad.xml" xy="0,0"/>
+  </displayList>
+  <transition name="finish">
+    <item time="0" type="Transition" target="n9_mfcc" value="finish"/>
+  </transition>
+  <transition name="medal">
+    <item time="0" type="Alpha" target="n66_mfcc" tween="true" startValue="0" endValue="1" duration="7"/>
+    <item time="0" type="Scale" target="n66_mfcc" tween="true" startValue="1,1" endValue="1.5,1.5" duration="7" ease="Back.Out"/>
+    <item time="0" type="Transition" target="n66_mfcc" value="flash,-1"/>
+    <item time="7" type="Alpha" target="n66_mfcc" tween="true" startValue="1" endValue="1" duration="11"/>
+    <item time="7" type="Scale" target="n66_mfcc" tween="true" startValue="1.5,1.5" endValue="1,1" duration="11" ease="Back.Out"/>
+  </transition>
+</component>

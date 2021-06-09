@@ -1,0 +1,329 @@
+{
+    "name": "",
+    "courseName": "t2-01",
+    "env": "test",
+    "totalPages": 12,
+    "pathConfig": {
+        "remoteUrl": "",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "controllerBundlePath": "",
+        "panelBundlePath": "",
+        
+        "controllerName": "controller-model02",
+        "panelName": "formal-panle-model02",
+        "resourceBundlePath": "",
+        "resourceName": "t2-01",
+        "packageName": "t2-01"
+    },
+    "chapters": [
+        {
+            "model": {
+                "uiPath": "scene-empty",
+                "loaderUiPath": "page-start",
+                "bundleName": "pageAnimation",
+                "prefabName": "pageAnimation",
+                "labaImagePath": "", 
+                "labaTime": 0,
+                "config": {
+                    "aniName" : "start"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "scene-glass",
+                "loaderUiPath": "click-order-9",
+                "bundleName": "clickOrder9",
+                "prefabName": "clickOrder9",
+                "labaImagePath": "bubble-t2-01-1", 
+                "labaTime": 5.5,
+                "config": {
+                    "dirtyImg": "dirty1",
+                    "targetOrder": [
+                        1,2,3,4,5,6,7,8,9
+                    ],
+                    "tileConfig": [
+                        2,8,1,9,5,6,4,3,7
+                    ],
+                    "timeLimit": -1
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "scene-glass",
+                "loaderUiPath": "click-order-9",
+                "bundleName": "clickOrder9",
+                "prefabName": "clickOrder9",
+                "labaImagePath": "bubble-t2-01-1", 
+                "labaTime": 5.5,
+                "config": {
+                    "dirtyImg": "dirty2",
+                    "targetOrder": [
+                        1,2,3,4,5,6,7,8,9
+                    ],
+                    "tileConfig": [
+                        2,4,8,1,7,5,3,6,9
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "scene-glass",
+                "loaderUiPath": "click-order-9",
+                "bundleName": "clickOrder9",
+                "prefabName": "clickOrder9",
+                "labaImagePath": "bubble-t2-01-1", 
+                "labaTime": 5.5,
+                "config": {
+                    "dirtyImg": "dirty3",
+                    "targetOrder": [
+                        1,2,3,4,5,6,7,8,9
+                    ],
+                    "tileConfig": [
+                        1,9,7,4,6,2,8,3,5
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag": "t2-01-(2)篮球",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg-common",
+                "labaImagePath": "bubble-t2-01-2", 
+                "labaTime": 6.5,
+                "loaderUiPath": "throw-ball",
+
+                "bundleName": "throwBall",
+                "prefabName": "throwBall",
+                "config": {
+                    "expBall": 2,
+                    "balls": [
+                        [3,1,2,3,2,3,1,2],
+                        [3,1,3,1,2,3,1,2],
+                        [3,1,2,3,2,3,3,2]
+                    ],
+                    "targetScore": 8,
+                    "canPickWrong": false
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "tag": "t2-01-(2-1)射气球",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg-common",
+                "labaImagePath": "bubble-t2-01-2-1", 
+                "labaTime": 6.5,
+                "loaderUiPath": "shot-ballon",
+
+                "bundleName": "shotBallon",
+                "prefabName": "shotBallon",
+                "config": {
+                    "expBall": 2,
+                    "balls": [
+                        3,1,3,3,1,2,3,2,
+                        1,1,2,3,3,3,2,1,
+                        2,3,2,1,3,2,3,1
+                    ],
+                    "targetScore": 7,
+                    "canPickWrong": false
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag": "t2-01-(2-2)苹果汁",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg-common",
+                "labaImagePath": "bubble-t2-01-2-2", 
+                "labaTime": 7,
+                "loaderUiPath": "apple-juice",
+
+                "bundleName": "appleJuice",
+                "prefabName": "appleJuice",
+                "config": {
+                    "expBall": 1,
+                    "balls": [
+                        1,2,3,1,3,3,1,2,
+                        1,1,3,1,3,2,2,1,
+                        3,2,3,1,1,3,2,3
+                    ],
+                    "targetScore": 9,
+                    "canPickWrong": false
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag": "t2-01-(3)捞鱼",
+            "model": {
+                "uiPath": "scene-pool",
+                "loaderUiPath": "muti-select-nums",
+                "bundleName": "mutiSelectNums",
+                "prefabName": "mutiSelectNums",
+                "labaImagePath": "bubble-t2-01-3", 
+                "labaTime": 5.3,
+                "config": {
+                    "sels": ["626","427","543","323","721","828","531"],
+                    "colors": ["fr","fr","fy","fy","fg","fr","fg"],
+                    "examples": [ "121","323"],
+                    "example_colors": ["fr","fy"],
+                    "rightSels": ["626","323","828"],
+                    "targetScore": 3,
+                    "srcFishStateList": [1,1,1,1,1,1,1],
+                    "targetFishStateList": [0,1,1,0,1,0,1],
+                    "canPickWrong": false,
+                    "canShowTip": true
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag": "t2-01-(3-1)捞鱼2",
+            "model": {
+                "uiPath": "scene-pool",
+                "loaderUiPath": "muti-select-nums",
+                "bundleName": "mutiSelectNums",
+                "prefabName": "mutiSelectNums",
+                "labaImagePath": "bubble-t2-01-3", 
+                "labaTime": 5.3,
+                "config": {
+                    "sels": ["627","262","774","831","721","439","565"],
+                    "colors": ["fr","fy","fy","fr","fg","fr","fg"],
+                    "examples": [ "262","565"],
+                    "example_colors": ["fy","fg"],
+                    "rightSels": ["262", "565"],
+                    "targetScore": 2,
+                    "srcFishStateList": [1,1,1,1,1,1,1],
+                    "targetFishStateList": [1,0,1,1,1,1,0],
+                    "canPickWrong": false,
+                    "canShowTip": false
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag": "t2-01-(3-2)捞鱼3",
+            "model": {
+                "uiPath": "scene-pool",
+                "loaderUiPath": "muti-select-nums",
+                "bundleName": "mutiSelectNums",
+                "prefabName": "mutiSelectNums",
+                "labaImagePath": "bubble-t2-01-3", 
+                "labaTime": 5.3,
+                "config": {
+                    "sels": ["437","272","373","688","966","575","000"],
+                    "colors": ["fy","fg","fr","fr","fg","fy","fg"],
+                    "examples": [ "373","272"],
+                    "example_colors": ["fr","fg"],
+                    "rightSels": ["575","373","272"],
+                    "targetScore": 3,
+                    "srcFishStateList": [1,1,1,1,1,1,0], 
+                    "targetFishStateList": [0,1,1,0,1,0,0],
+                    "canPickWrong": false,
+                    "canShowTip": false
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "tag": "t2-01-(4)拓展，选数字",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg-pool",
+                "labaImagePath": "bubble-t2-01-4", 
+                "loaderUiPath": "encircle-nums",
+                "bundleName": "encircleNums",
+                "prefabName": "encircleNums",
+                "labaTime": 6,
+                "config": {
+                    "expVals": [ [1,3,1], [4,3,4] ],
+                    "vals": [
+                        1,9,5,3,5,7,8,
+                        5,8,3,1,2,3,2,
+                        3,7,9,1,3,1,2
+                    ],
+                    "bingoInd": [ 2, 11, 17 ],
+                    "targetScore": 3,
+                    "canPickWrong": false
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "scene-empty",
+                "loaderUiPath": "page-end",
+                "backgroundName":"bg-solong",
+                "bundleName": "pageAnimation",
+                "prefabName": "pageAnimation",
+                "labaImagePath": "", 
+                "labaTime": 0,
+                "config": {
+                    "aniName" : ""
+                }
+            }
+        }
+    ]
+}

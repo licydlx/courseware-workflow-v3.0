@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n43_mfcc" name="n43" src="mfcc2w" fileName="images/throw-ball/machine.png" xy="353,0"/>
+    <image id="n45_rk87" name="machine_bottom" src="rk877a" fileName="images/throw-ball/machineF2.png" xy="504,337"/>
+    <component id="n29_s5he" name="shadow_com" src="s5he2o" fileName="que-pages/throw-ball/shadow.xml" xy="502,337"/>
+    <image id="n3_s5he" name="n3" src="s5he2i" fileName="images/throw-ball/finger.png" xy="2103,935" pivot="0.884,0.5" anchor="true" group="n8_s5he">
+      <relation target="n2_s5he" sidePair="left-left"/>
+    </image>
+    <image id="n2_s5he" name="n2" src="s5he2j" fileName="images/throw-ball/hand.png" xy="2078,907" group="n8_s5he"/>
+    <image id="n40_s5he" name="n40" src="s5he2i" fileName="images/throw-ball/finger.png" xy="-218,914" pivot="0.884,0.5" anchor="true" group="n8_s5he" scale="-1,1">
+      <relation target="n41_s5he" sidePair="left-left"/>
+    </image>
+    <image id="n41_s5he" name="n41" src="s5he2j" fileName="images/throw-ball/hand.png" xy="-188,883" group="n8_s5he" scale="-1,1"/>
+    <image id="n4_s5he" name="n4" src="s5he25" fileName="images/throw-ball/basket.png" xy="650,733" group="n6_s5he"/>
+    <component id="n16_s5he" name="ball1" src="s5he2m" fileName="que-pages/throw-ball/ball.xml" xy="778,728" group="n38_s5he"/>
+    <component id="n22_s5he" name="ball2" src="s5he2m" fileName="que-pages/throw-ball/ball.xml" xy="918,733" group="n38_s5he"/>
+    <component id="n23_s5he" name="ball3" src="s5he2m" fileName="que-pages/throw-ball/ball.xml" xy="1070,734" group="n38_s5he"/>
+    <component id="n24_s5he" name="ball4" src="s5he2m" fileName="que-pages/throw-ball/ball.xml" xy="1225,737" group="n38_s5he"/>
+    <component id="n26_s5he" name="ball5" src="s5he2m" fileName="que-pages/throw-ball/ball.xml" xy="763,829" group="n38_s5he"/>
+    <component id="n25_s5he" name="ball6" src="s5he2m" fileName="que-pages/throw-ball/ball.xml" xy="915,833" group="n38_s5he"/>
+    <component id="n27_s5he" name="ball7" src="s5he2m" fileName="que-pages/throw-ball/ball.xml" xy="1075,832" group="n38_s5he"/>
+    <component id="n28_s5he" name="ball8" src="s5he2m" fileName="que-pages/throw-ball/ball.xml" xy="1237,833" group="n38_s5he"/>
+    <group id="n38_s5he" name="balls" xy="675,640" size="650,281" group="n6_s5he" advanced="true"/>
+    <image id="n5_s5he" name="n5" src="s5he26" fileName="images/throw-ball/basketF.png" xy="650,870" group="n6_s5he"/>
+    <group id="n6_s5he" name="basket" xy="650,640" size="703,430" group="n8_s5he" advanced="true"/>
+    <image id="n7_s5he" name="n7" src="s5he2i" fileName="images/throw-ball/finger.png" xy="2105,1012" pivot="0.884,0.5" anchor="true" group="n8_s5he" scale="1,-1">
+      <relation target="n2_s5he" sidePair="left-left"/>
+    </image>
+    <image id="n42_s5he" name="n42" src="s5he2i" fileName="images/throw-ball/finger.png" xy="-216,991" pivot="0.884,0.5" anchor="true" group="n8_s5he" scale="-1,-1">
+      <relation target="n41_s5he" sidePair="left-left"/>
+    </image>
+    <group id="n8_s5he" name="hand" xy="-357,640" size="3046,430" advanced="true"/>
+    <image id="n19_s5he" name="kuang" src="s5he28" fileName="images/throw-ball/bg3F.png" xy="980,215" pivot="0.5,0.5" anchor="true"/>
+    <image id="n31_s5he" name="n31" src="s5he2e" fileName="images/throw-ball/panel.png" xy="1483,56" group="n34_s5he"/>
+    <loader id="n39_s5he" name="expBall" xy="1647,153" pivot="0.5,0.5" anchor="true" size="176,176" group="n34_s5he" scale="0.8,0.8" url="ui://qy6zqmwts5he2a" autoSize="true" clearOnPublish="true"/>
+    <component id="n36_s5he" name="medal" src="s5he2q" fileName="que-pages/throw-ball/medal.xml" xy="1631,473" pivot="0.5,0.5" anchor="true" group="n34_s5he" alpha="0"/>
+    <text id="n35_s5he" name="scoreTex" xy="1641,301" pivot="0.5,0.5" anchor="true" size="202,172" group="n34_s5he" fontSize="131" color="#3f36bb" align="center" leading="0" letterSpacing="5" autoSize="none" bold="true" text="00"/>
+    <group id="n34_s5he" name="panel" xy="1390,56" size="482,526" advanced="true"/>
+    <component id="n37_s5he" name="touchPad" src="bqid22" fileName="buttons/touchPad.xml" xy="0,0" size="1920,1080"/>
+  </displayList>
+  <transition name="change">
+    <item time="0" type="XY" target="n2_s5he" value="2078,907"/>
+    <item time="0" type="XY" target="n41_s5he" tween="true" startValue="-188,883" endValue="533.875,883" duration="12" ease="Quad.In"/>
+    <item time="9" type="Rotation" target="n40_s5he" tween="true" startValue="0" endValue="-20" duration="5" ease="Back.Out"/>
+    <item time="9" type="Rotation" target="n42_s5he" tween="true" startValue="0" endValue="20" duration="5" ease="Back.Out"/>
+    <item time="12" type="XY" target="n41_s5he" tween="true" startValue="533.875,883" endValue="594,883" duration="12" ease="Back.Out"/>
+    <item time="12" type="XY" target="n6_s5he" tween="true" startValue="650,640" endValue="590,640" duration="12" ease="Quad.InOut"/>
+    <item time="16" type="Rotation" target="n40_s5he" tween="true" startValue="-20" endValue="0" duration="4"/>
+    <item time="16" type="Rotation" target="n42_s5he" tween="true" startValue="20" endValue="0" duration="4"/>
+    <item time="24" type="XY" target="n41_s5he" tween="true" startValue="594,883" endValue="-820,883" duration="24" ease="Quad.In"/>
+    <item time="24" type="XY" target="n6_s5he" tween="true" startValue="590,640" endValue="-823,640" duration="24" ease="Quad.In"/>
+    <item time="49" type="XY" target="n2_s5he" tween="true" startValue="2974,907" endValue="1430,907" duration="11"/>
+    <item time="49" type="XY" target="n6_s5he" tween="true" startValue="2267,640" endValue="726.418,640" duration="11"/>
+    <item time="60" type="XY" target="n2_s5he" tween="true" startValue="1430,907" endValue="1354,907" duration="12" ease="Back.Out"/>
+    <item time="60" type="XY" target="n6_s5he" tween="true" startValue="726.418,640" endValue="650,640" duration="12" ease="Back.Out"/>
+    <item time="72" type="Rotation" target="n3_s5he" tween="true" startValue="0" endValue="20" duration="5" ease="Back.Out"/>
+    <item time="72" type="Rotation" target="n7_s5he" tween="true" startValue="0" endValue="-20" duration="5" ease="Back.Out"/>
+    <item time="77" type="XY" target="n2_s5he" tween="true" startValue="1354,907" endValue="2332,907" duration="20" ease="Quad.In"/>
+    <item time="95" type="Rotation" target="n3_s5he" value="0"/>
+    <item time="95" type="Rotation" target="n7_s5he" value="0"/>
+  </transition>
+  <transition name="finish">
+    <item time="0" type="Alpha" target="n36_s5he" value="1"/>
+    <item time="0" type="Scale" target="n36_s5he" tween="true" startValue="1,1" endValue="1.5,1.5" duration="13" ease="Back.Out"/>
+    <item time="0" type="Transition" target="n36_s5he" value="flash,-1"/>
+    <item time="13" type="Scale" target="n36_s5he" tween="true" startValue="1.5,1.5" endValue="1,1" duration="11" ease="Back.Out"/>
+  </transition>
+</component>

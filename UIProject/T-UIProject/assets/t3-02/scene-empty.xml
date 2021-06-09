@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <loader id="n5_mfcc" name="background" xy="0,0" size="1920,1080" clearOnPublish="true"/>
+    <loader id="n4_bqid" name="loader" xy="0,0" size="1920,1080" clearOnPublish="true"/>
+    <component id="n12_fj3c" name="laba" src="fj3c5" fileName="laba.xml" xy="1,0"/>
+  </displayList>
+</component>

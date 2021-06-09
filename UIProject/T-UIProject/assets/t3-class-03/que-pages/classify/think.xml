@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="495,228">
+  <displayList>
+    <image id="n15_k764" name="n15" src="k764j" fileName="images/cloud.png" xy="204,99" pivot="0.5,0.5" anchor="true"/>
+    <image id="n16_k764" name="n16" src="k764j" fileName="images/cloud.png" xy="49,195" pivot="0.5,0.5" anchor="true" size="74,49"/>
+    <loader id="n17_k764" name="item1" xy="264,105" pivot="0.5,0.5" anchor="true" size="128,128" scale="0.7,0.7" url="ui://vojbwzmjk764o" autoSize="true" clearOnPublish="true"/>
+    <loader id="n18_k764" name="item2" xy="161,106" pivot="0.5,0.5" anchor="true" size="139,97" scale="0.7,0.7" url="ui://vojbwzmjk764n" autoSize="true" clearOnPublish="true"/>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Scale" target="n15_k764" tween="true" startValue="1,1" endValue="1.1,1.1" duration="18" ease="Quad.InOut"/>
+    <item time="0" type="Scale" target="n16_k764" tween="true" startValue="1,1" endValue="0.8,0.8" duration="18" ease="Quad.InOut"/>
+    <item time="0" type="XY" target="n17_k764" tween="true" startValue="264,105" endValue="263,114" duration="18"/>
+    <item time="0" type="XY" target="n18_k764" tween="true" startValue="161,106" endValue="161,101" duration="18"/>
+    <item time="18" type="Scale" target="n15_k764" tween="true" startValue="1.1,1.1" endValue="1,1" duration="16" ease="Quad.InOut"/>
+    <item time="18" type="Scale" target="n16_k764" tween="true" startValue="0.8,0.8" endValue="1,1" duration="16" ease="Quad.InOut"/>
+    <item time="18" type="XY" target="n17_k764" tween="true" startValue="263,114" endValue="264,105" duration="16"/>
+    <item time="18" type="XY" target="n18_k764" tween="true" startValue="161,101" endValue="161,106" duration="16"/>
+  </transition>
+</component>

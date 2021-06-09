@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="262,376" pivot="0.5,0.5" anchor="true">
+  <displayList>
+    <component id="n21_mfcc" name="ball" src="mfcc4k" fileName="quePages/shot-ballon/ballon.xml" xy="131,188"/>
+    <component id="n22_mfcc" name="blow" src="mfcc4q" fileName="quePages/shot-ballon/ballon_blow.xml" xy="138,195" pivot="0.5,0.5" anchor="true" alpha="0">
+      <relation target="n21_mfcc" sidePair="left-left,top-top"/>
+    </component>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n21_mfcc" tween="true" startValue="131,188" endValue="145,188" duration="24" ease="Sine.InOut"/>
+    <item time="24" type="XY" target="n21_mfcc" tween="true" startValue="145,188" endValue="131,188" duration="24" ease="Sine.InOut"/>
+    <item time="48" type="XY" target="n21_mfcc" tween="true" startValue="131,188" endValue="124,188" duration="24" ease="Sine.InOut"/>
+    <item time="72" type="XY" target="n21_mfcc" tween="true" startValue="124,188" endValue="131,188" duration="24" ease="Sine.InOut"/>
+  </transition>
+  <transition name="blow">
+    <item time="0" type="Alpha" target="n21_mfcc" value="0"/>
+    <item time="0" type="Alpha" target="n22_mfcc" value="1"/>
+    <item time="0" type="Transition" target="n22_mfcc" value="blow"/>
+    <item time="16" type="Transition" target="n22_mfcc" value=""/>
+  </transition>
+</component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="239,304">
+  <displayList>
+    <image id="n10_mfcc" name="n10" src="s5he2l" fileName="images/circle.png" xy="107,272" pivot="0.5,0.5" anchor="true" size="178,35" color="#609551"/>
+    <component id="n15_mfcc" name="line1" src="mfcc4f" fileName="quePages/shot-ballon/line1.xml" xy="-67,-22"/>
+    <image id="n14_mfcc" name="man" src="mfcc4c" fileName="images/shot-balloon/man.png" xy="119,270" pivot="0.5,1" anchor="true"/>
+  </displayList>
+  <transition name="loop" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Scale" target="n14_mfcc" tween="true" startValue="1,1" endValue="1,0.96" duration="12" ease="Cubic.InOut"/>
+    <item time="12" type="Scale" target="n14_mfcc" tween="true" startValue="1,0.96" endValue="1,1" duration="12" ease="Cubic.InOut"/>
+  </transition>
+</component>
