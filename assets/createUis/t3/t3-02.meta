@@ -3,7 +3,7 @@
   "uuid": "d8e29421-ed76-46b3-981a-2a9b6dab9526",
   "isBundle": true,
   "bundleName": "",
-  "priority": 1,
+  "priority": "2",
   "compressionType": {
     "web-mobile": "merge_all_json"
   },
