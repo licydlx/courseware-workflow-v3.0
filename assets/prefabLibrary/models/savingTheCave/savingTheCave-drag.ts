@@ -156,19 +156,6 @@ export default class savingTheCave_drag extends cc.Component {
             this._view = fgui.UIPackage.createObject(s._packName, GComponent).asCom;
         }
 
-        /* s._readTitleBtn = fgui.UIPackage.createObject('t4-trialClass-01', 'TitleCom').asCom;
-
-        (s._readTitleBtn.getChild('title') as fgui.GLoader).url = fgui.UIPackage.createObject('t4-trialClass-01', 'title_3').asImage.resourceURL;
-        s._readTitleBtn.x = 20;
-        s._readTitleBtn.y = 50;
-        this._view.addChild(s._readTitleBtn);
-
-
-        s._submitBtn = fgui.UIPackage.createObject('t4-trialClass-01', 'SubmitBtn').asCom;
-        s._submitBtn.x = 1676;
-        s._submitBtn.y = 806;
-        this._view.addChild(s._submitBtn); */
-
         if (model.config) {
             if (answer) s._answer = answer;
             if (roleUrl) s._roleUrl = roleUrl;
@@ -196,17 +183,11 @@ export default class savingTheCave_drag extends cc.Component {
         }
     }
 
-    getOriginValue(v: any) {
-        return {
-            x: v.x,
-            y: v.y
-        }
-    }
-
     // private _curDragIcon: cc.Node = null;
     // private _offsetPos: cc.Vec2 = new cc.Vec2();
     private _onDragStart(evt: fgui.Event): void {
         let s = this;
+        s._dragging = true;
         evt.captureTouch();
         s.playSound('ui://5w4y4dqwku3ef');
         let collider = fgui.GObject.cast(evt.currentTarget);
@@ -266,14 +247,9 @@ export default class savingTheCave_drag extends cc.Component {
         let state: any = globalThis._.cloneDeep(this._state);
 
         let dropArr = state.collidered[collideredIndex];
-        // console.error('s.dropArr11111111111111 = ', dropArr);
 
         let colliderName: string = collider.name;
 
-
-        // let dropArrIndex = dropArr.indexOf(data);//放置区是否已包含当前拖拽元素
-        // let dropArrIndex = dropArr.findIndex(v => v.name == colliderName);//放置区是否已包含当前拖拽元素
-        // console.warn('dropArrIndex = ', dropArrIndex);
 
         // 1.重置位置 
         // collideredIndex == -1 || 头和脚放置位置不匹配 || 头和脚无法组合 -> 重置回初始位置
@@ -317,39 +293,9 @@ export default class savingTheCave_drag extends cc.Component {
         state.drag = "end";
         state.submit = false;
         state.colliderIndex = colliderIndex;
-        // state.dropArr = dropArr;
 
-        // state.answer = footNum == s._answer ? true : false;
         s.updateState(state);
-        // s._curDragIcon = null;
         console.log('------------------------------------------------');
-
-    }
-
-    private showTips(isShow: boolean) {
-        let s = this;
-        let colliderIndex: number = s._state.colliderIndex;
-        let colliderName: string = s._colliderBox[colliderIndex].name;
-
-        if (isShow) {
-            let filterTag: string;
-            if (colliderName.indexOf('head') > -1) {
-                filterTag = 'dropBox1';
-            } else {
-                filterTag = 'dropBox2';
-            }
-            s._collideredBox.forEach((v: fgui.GComboBox) => {
-                if (v.name.indexOf(filterTag) > -1) {
-                    v.getController('c1').selectedIndex = 1;
-                } else {
-                    v.getController('c1').selectedIndex = 0;
-                }
-            });
-        } else {
-            s._collideredBox.forEach((v: fgui.GComboBox) => {
-                v.getController('c1').selectedIndex = 0;
-            });
-        }
 
     }
 
@@ -404,66 +350,6 @@ export default class savingTheCave_drag extends cc.Component {
         this.updateState(state);
     }
 
-    private showEndAnim(callbackFun: Function = null, callbackThis: any = null): void {
-        let s = this;
-        s.state.collider.forEach((v, i) => {
-            if (v['collideredIndex'] == -1) {
-                s._colliderBox[i].visible = false;
-            }
-        });
-        s._view.touchable = false;
-        s.state.collidered.forEach((v, i) => {
-            if (i < (s.state.collidered.length / 2) >> 0 && v.length > 0) {
-                let bottomCollidered = s.state.collidered[i + s._roleCount];
-                let roleUrl = s._roleUrl[bottomCollidered[0].roleType];
-                console.log(roleUrl);
-
-
-                if (s._gameType === 1) {
-                    let role = fgui.UIPackage.createObject(s._packName, 'Combination').asCom;
-                    (role.getChild('n2') as fgui.GLoader).url = roleUrl;
-                    role.setPivot(0.5, 0.5, true);
-                    role.x = s._collideredBox[i].x + s._collideredBox[i].width / 2;
-                    role.y = s._collideredBox[i].y + 200;
-
-                    role.alpha = 0;
-                    let mask = s._view.getChild('mask');
-                    mask.visible = true;
-
-                    s._view.addChild(role);
-
-                    cc.tween(role).to(1, {
-                        alpha: 1
-                    }).call(() => {
-                        if (callbackFun) {
-                            callbackFun.call(callbackThis);
-                        }
-                    }).start();
-                } else if (s._gameType === 2) {
-                    let role = fgui.UIPackage.createObjectFromURL(roleUrl);
-                    role.setPivot(0.5, 0.5, true);
-                    role.x = s._collideredBox[i].x;
-                    role.y = s._collideredBox[i].y + 100;
-                    s._view.addChild(role);
-                    if (s.pageData.model.uiPath == 'Question4Page01') {
-                        role.scaleX = role.scaleY = 0.7;
-                    }
-                    let offsetY = s.pageData.model.uiPath == 'Question4Page01' ? 220 : 350;
-                    cc.tween(role).to(1, {
-                        alpha: 1
-                    }).delay(0.5).to(1.5, {
-                        y: role.y + offsetY
-                    }).call(() => {
-                        if (callbackFun) {
-                            callbackFun.call(callbackThis);
-                        }
-                    }).start();
-                }
-
-            }
-        });
-    }
-
     // 获取状态
     getState(data: any) {
         this.updateState(data);
@@ -487,9 +373,6 @@ export default class savingTheCave_drag extends cc.Component {
             }
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
-
-            // state.curDragIcon.x = state.curDragIconsPos.x;
-            // state.curDragIcon.y = state.curDragIconsPos.y;
         }
 
         console.log('state.drag ', state.drag);
@@ -526,15 +409,6 @@ export default class savingTheCave_drag extends cc.Component {
             if (!globalThis._.isEqual(oldState.title, state.title)) {
                 this.playTitle(state.title);
             }
-
-            /* if (!globalThis._.isEqual(oldState.submit, state.submit)) {
-                if (state.submit) {
-                    // 根据collider 初始位置 判断 是否被操作过
-                    let nv: any = this._colliderBox.map((v: any) => { return { "x": v.x, "y": v.y } });
-                    let bool: boolean = s._cache["colliderBox"].every((v: any, i: any) => v.x == nv[i].x && v.y == nv[i].y);
-                    bool ? this.onHandleGuide() : this.onFlicker(state.answer);
-                }
-            } */
 
         }
     }
