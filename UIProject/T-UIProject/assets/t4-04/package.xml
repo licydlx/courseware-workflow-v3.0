@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="dj5ft8zh">
+  <resources>
+    <movieclip id="cxq00" name="laba.jta" path="/animations/"/>
+    <sound id="cxq01" name="点击音效.mp3" path="/audios/" exported="true"/>
+    <sound id="cxq02" name="拖动放置.mp3" path="/audios/" exported="true"/>
+    <sound id="cxq03" name="例1.mp3" path="/audios/" exported="true"/>
+    <sound id="cxq04" name="例2.mp3" path="/audios/" exported="true"/>
+    <sound id="cxq05" name="例3.mp3" path="/audios/" exported="true"/>
+    <component id="cxq06" name="title.xml" path="/components/common/buttons/" exported="true"/>
+    <component id="cxq07" name="submit.xml" path="/components/common/buttons/" exported="true"/>
+    <component id="cxq08" name="delect.xml" path="/components/common/buttons/" exported="true"/>
+    <component id="cxq09" name="handleGuide02.xml" path="/components/common/" exported="true"/>
+    <image id="cxq0a" name="hand.png" path="/images/common/"/>
+    <component id="cxq0b" name="handleGuide01.xml" path="/components/common/" exported="true"/>
+    <image id="cxq0c" name="0111.png" path="/images/common/"/>
+    <component id="cxq0g" name="AnswerNum.xml" path="/components/Items/" exported="true"/>
+    <component id="cxq0k" name="Question1Page01.xml" path="/components/pages/" exported="true"/>
+    <component id="cxq0q" name="static-model01-v1-p1.xml" path="/components/pages/" exported="true"/>
+    <image id="cxq0y" name="btn_submit_pressed.png" path="/images/common/" exported="true"/>
+    <image id="cxq0z" name="btn_submit_normal.png" path="/images/common/" exported="true"/>
+    <image id="cxq010" name="circular.png" path="/images/common/" exported="true"/>
+    <image id="cxq04s" name="class_title.png" path="/images/static/" exported="true"/>
+    <image id="cxq04t" name="bg.png" path="/images/static/" exported="true"/>
+    <component id="cxq04u" name="static-model01-v1-p13.xml" path="/components/pages/" exported="true"/>
+    <image id="cxq04v" name="a.png" path="/images/question1/"/>
+    <image id="cxq04w" name="a_practice_1.png" path="/images/question1/"/>
+    <image id="cxq04x" name="a_practice_2.png" path="/images/question1/"/>
+    <image id="cxq04y" name="a_practice_3.png" path="/images/question1/"/>
+    <image id="cxq04z" name="b.png" path="/images/question1/"/>
+    <image id="cxq050" name="bg.png" path="/images/question1/"/>
+    <image id="cxq051" name="bg_practice_1.png" path="/images/question1/"/>
+    <image id="cxq053" name="bg_practice_3.png" path="/images/question1/"/>
+    <image id="cxq054" name="b_practice_1.png" path="/images/question1/"/>
+    <image id="cxq055" name="b_practice_2.png" path="/images/question1/"/>
+    <image id="cxq056" name="b_practice_3.png" path="/images/question1/"/>
+    <image id="cxq057" name="c.png" path="/images/question1/"/>
+    <image id="cxq058" name="c_practice_1.png" path="/images/question1/"/>
+    <image id="cxq059" name="c_practice_2.png" path="/images/question1/"/>
+    <image id="cxq05a" name="c_practice_3.png" path="/images/question1/"/>
+    <image id="cxq05b" name="d.png" path="/images/question1/"/>
+    <image id="cxq05c" name="d_practice_1.png" path="/images/question1/"/>
+    <image id="cxq05d" name="d_practice_2.png" path="/images/question1/"/>
+    <image id="cxq05e" name="d_practice_3.png" path="/images/question1/"/>
+    <image id="cxq05f" name="question.png" path="/images/question1/"/>
+    <image id="cxq05g" name="question_practice_1.png" path="/images/question1/"/>
+    <image id="cxq05h" name="question_practice_2.png" path="/images/question1/"/>
+    <image id="cxq05i" name="question_practice_3.png" path="/images/question1/"/>
+    <image id="cxq05j" name="title.png" path="/images/question1/"/>
+    <image id="cxq05k" name="class_end.png" path="/images/static/"/>
+    <component id="cxq05m" name="Question1Page02.xml" path="/components/pages/" exported="true"/>
+    <component id="cxq05n" name="Question1Page03.xml" path="/components/pages/" exported="true"/>
+    <component id="cxq05o" name="Question1Page04.xml" path="/components/pages/" exported="true"/>
+    <image id="cxq05p" name="0.png" path="/images/question2/1.0/"/>
+    <image id="cxq05q" name="1.png" path="/images/question2/1.0/"/>
+    <image id="cxq05r" name="2.png" path="/images/question2/1.0/"/>
+    <image id="cxq05s" name="3.png" path="/images/question2/1.0/"/>
+    <image id="cxq05t" name="4.png" path="/images/question2/1.0/"/>
+    <image id="cxq05u" name="5.png" path="/images/question2/1.0/"/>
+    <image id="cxq05v" name="6.png" path="/images/question2/1.0/"/>
+    <image id="cxq05w" name="7.png" path="/images/question2/1.0/"/>
+    <image id="cxq05x" name="8.png" path="/images/question2/1.0/"/>
+    <image id="cxq05y" name="9.png" path="/images/question2/1.0/"/>
+    <image id="cxq05z" name="bg.png" path="/images/question2/1.0/"/>
+    <image id="cxq060" name="delect.png" path="/images/question2/1.0/"/>
+    <image id="cxq061" name="jsj_wk.png" path="/images/question2/1.0/"/>
+    <image id="cxq062" name="lk.png" path="/images/question2/1.0/"/>
+    <image id="cxq063" name="passwordBox.png" path="/images/question2/1.0/"/>
+    <image id="cxq064" name="sg_z.png" path="/images/question2/1.0/"/>
+    <image id="cxq065" name="spot.png" path="/images/question2/1.0/"/>
+    <image id="cxq066" name="title.png" path="/images/question2/1.0/"/>
+    <image id="cxq067" name="ys.png" path="/images/question2/1.0/"/>
+    <image id="cxq068" name="yx.png" path="/images/question2/1.0/"/>
+    <image id="cxq069" name="zs.png" path="/images/question2/1.0/"/>
+    <image id="cxq06a" name="zx.png" path="/images/question2/1.0/"/>
+    <image id="cxq06b" name="0.png" path="/images/question2/2.0/"/>
+    <image id="cxq06c" name="1.png" path="/images/question2/2.0/"/>
+    <image id="cxq06d" name="2.png" path="/images/question2/2.0/"/>
+    <image id="cxq06e" name="3.png" path="/images/question2/2.0/"/>
+    <image id="cxq06f" name="4.png" path="/images/question2/2.0/"/>
+    <image id="cxq06g" name="5.png" path="/images/question2/2.0/"/>
+    <image id="cxq06h" name="6.png" path="/images/question2/2.0/"/>
+    <image id="cxq06i" name="7.png" path="/images/question2/2.0/"/>
+    <image id="cxq06j" name="8.png" path="/images/question2/2.0/"/>
+    <image id="cxq06k" name="9.png" path="/images/question2/2.0/"/>
+    <image id="cxq06m" name="delect.png" path="/images/question2/2.0/"/>
+    <image id="cxq06n" name="jsj_wk.png" path="/images/question2/2.0/"/>
+    <image id="cxq06o" name="lk.png" path="/images/question2/2.0/"/>
+    <image id="cxq06p" name="passwordBox.png" path="/images/question2/2.0/"/>
+    <image id="cxq06q" name="passwordBox_1.png" path="/images/question2/2.0/"/>
+    <image id="cxq06r" name="sg_z.png" path="/images/question2/2.0/"/>
+    <image id="cxq06s" name="spot.png" path="/images/question2/2.0/"/>
+    <image id="cxq06t" name="ys.png" path="/images/question2/2.0/"/>
+    <image id="cxq06u" name="yx.png" path="/images/question2/2.0/"/>
+    <image id="cxq06v" name="zs.png" path="/images/question2/2.0/"/>
+    <image id="cxq06w" name="zx.png" path="/images/question2/2.0/"/>
+    <image id="cxq06x" name="0.png" path="/images/question2/3.0/"/>
+    <image id="cxq06y" name="1.png" path="/images/question2/3.0/"/>
+    <image id="cxq06z" name="2.png" path="/images/question2/3.0/"/>
+    <image id="cxq070" name="3.png" path="/images/question2/3.0/"/>
+    <image id="cxq071" name="4.png" path="/images/question2/3.0/"/>
+    <image id="cxq072" name="5.png" path="/images/question2/3.0/"/>
+    <image id="cxq073" name="6.png" path="/images/question2/3.0/"/>
+    <image id="cxq074" name="7.png" path="/images/question2/3.0/"/>
+    <image id="cxq075" name="8.png" path="/images/question2/3.0/"/>
+    <image id="cxq076" name="9.png" path="/images/question2/3.0/"/>
+    <image id="cxq078" name="delect.png" path="/images/question2/3.0/"/>
+    <image id="cxq079" name="jsj_wk.png" path="/images/question2/3.0/"/>
+    <image id="cxq07a" name="lk.png" path="/images/question2/3.0/"/>
+    <image id="cxq07b" name="passwordBox.png" path="/images/question2/3.0/"/>
+    <image id="cxq07c" name="sg_z.png" path="/images/question2/3.0/"/>
+    <image id="cxq07d" name="spot.png" path="/images/question2/3.0/"/>
+    <image id="cxq07e" name="ys.png" path="/images/question2/3.0/"/>
+    <image id="cxq07f" name="yx.png" path="/images/question2/3.0/"/>
+    <image id="cxq07g" name="zs.png" path="/images/question2/3.0/"/>
+    <image id="cxq07h" name="zx.png" path="/images/question2/3.0/"/>
+    <component id="cxq07i" name="Question2Page01.xml" path="/components/pages/" exported="true"/>
+    <image id="cxq07j" name="00.png" path="/images/num/"/>
+    <image id="cxq07k" name="01.png" path="/images/num/"/>
+    <image id="cxq07l" name="02.png" path="/images/num/"/>
+    <image id="cxq07m" name="03.png" path="/images/num/"/>
+    <image id="cxq07n" name="04.png" path="/images/num/"/>
+    <image id="cxq07o" name="05.png" path="/images/num/"/>
+    <image id="cxq07p" name="06.png" path="/images/num/"/>
+    <image id="cxq07q" name="07.png" path="/images/num/"/>
+    <image id="cxq07r" name="08.png" path="/images/num/"/>
+    <image id="cxq07s" name="09.png" path="/images/num/"/>
+    <image id="cxq07t" name="091.png" path="/images/num/"/>
+    <image id="cxq07u" name="10.png" path="/images/num/"/>
+    <image id="cxq07v" name="11.png" path="/images/num/"/>
+    <image id="cxq07w" name="12.png" path="/images/num/"/>
+    <image id="cxq07x" name="13.png" path="/images/num/"/>
+    <image id="cxq07y" name="14.png" path="/images/num/"/>
+    <image id="cxq07z" name="15.png" path="/images/num/"/>
+    <image id="cxq080" name="16.png" path="/images/num/"/>
+    <image id="cxq081" name="17.png" path="/images/num/"/>
+    <image id="cxq082" name="18.png" path="/images/num/"/>
+    <image id="cxq083" name="19.png" path="/images/num/"/>
+    <image id="cxq084" name="191.png" path="/images/num/"/>
+    <image id="cxq085" name="20.png" path="/images/num/"/>
+    <image id="cxq086" name="21.png" path="/images/num/"/>
+    <image id="cxq087" name="22.png" path="/images/num/"/>
+    <image id="cxq088" name="23.png" path="/images/num/"/>
+    <image id="cxq089" name="24.png" path="/images/num/"/>
+    <image id="cxq08a" name="25.png" path="/images/num/"/>
+    <image id="cxq08b" name="26.png" path="/images/num/"/>
+    <image id="cxq08c" name="27.png" path="/images/num/"/>
+    <image id="cxq08d" name="28.png" path="/images/num/"/>
+    <image id="cxq08e" name="29.png" path="/images/num/"/>
+    <image id="cxq08f" name="30.png" path="/images/num/"/>
+    <image id="cxq08g" name="31.png" path="/images/num/"/>
+    <image id="cxq08h" name="32.png" path="/images/num/"/>
+    <image id="cxq08i" name="33.png" path="/images/num/"/>
+    <image id="cxq08j" name="34.png" path="/images/num/"/>
+    <image id="cxq08k" name="35.png" path="/images/num/"/>
+    <image id="cxq08l" name="36.png" path="/images/num/"/>
+    <image id="cxq08m" name="37.png" path="/images/num/"/>
+    <image id="cxq08n" name="38.png" path="/images/num/"/>
+    <image id="cxq08o" name="39.png" path="/images/num/"/>
+    <image id="cxq08p" name="40.png" path="/images/num/"/>
+    <image id="cxq08q" name="41.png" path="/images/num/"/>
+    <image id="cxq08r" name="42.png" path="/images/num/"/>
+    <image id="cxq08s" name="43.png" path="/images/num/"/>
+    <image id="cxq08t" name="44.png" path="/images/num/"/>
+    <image id="cxq08u" name="45.png" path="/images/num/"/>
+    <image id="cxq08v" name="46.png" path="/images/num/"/>
+    <image id="cxq08w" name="47.png" path="/images/num/"/>
+    <image id="cxq08x" name="48.png" path="/images/num/"/>
+    <image id="cxq08y" name="49.png" path="/images/num/"/>
+    <image id="cxq08z" name="50.png" path="/images/num/"/>
+    <image id="cxq090" name="51.png" path="/images/num/"/>
+    <image id="cxq091" name="52.png" path="/images/num/"/>
+    <image id="cxq092" name="53.png" path="/images/num/"/>
+    <image id="cxq093" name="54.png" path="/images/num/"/>
+    <image id="cxq094" name="55.png" path="/images/num/"/>
+    <image id="cxq095" name="56.png" path="/images/num/"/>
+    <image id="cxq096" name="57.png" path="/images/num/"/>
+    <image id="cxq097" name="58.png" path="/images/num/"/>
+    <image id="cxq098" name="59.png" path="/images/num/"/>
+    <component id="cxq099" name="QuestionItemExample21.xml" path="/components/Items/"/>
+    <component id="cxq09b" name="Question2Page02.xml" path="/components/pages/" exported="true"/>
+    <component id="cxq09e" name="QuestionItemExample20.xml" path="/components/Items/"/>
+    <component id="cxq09f" name="Question2Page03.xml" path="/components/pages/" exported="true"/>
+    <component id="cxq09g" name="QuestionItemExample22.xml" path="/components/Items/"/>
+    <component id="cxq09h" name="Question2Page04.xml" path="/components/pages/" exported="true"/>
+    <image id="cxq09i" name="answer_bg.png" path="/images/question3/"/>
+    <image id="cxq09j" name="answer_bg_l.png" path="/images/question3/"/>
+    <image id="cxq09k" name="answer_bg_l_practice_1.png" path="/images/question3/"/>
+    <image id="cxq09l" name="answer_bg_l_practice_2.png" path="/images/question3/"/>
+    <image id="cxq09m" name="answer_bg_practice_1.png" path="/images/question3/"/>
+    <image id="cxq09n" name="answer_bg_practice_2.png" path="/images/question3/"/>
+    <image id="cxq09o" name="bg.png" path="/images/question3/"/>
+    <image id="cxq09p" name="bg_1.png" path="/images/question3/"/>
+    <image id="cxq09q" name="key.png" path="/images/question3/"/>
+    <image id="cxq09r" name="key_l.png" path="/images/question3/"/>
+    <image id="cxq09s" name="key_l_practice_1.png" path="/images/question3/"/>
+    <image id="cxq09t" name="key_l_practice_2.png" path="/images/question3/"/>
+    <image id="cxq09u" name="key_l_practice_3.png" path="/images/question3/"/>
+    <image id="cxq09v" name="key_practice_1.png" path="/images/question3/"/>
+    <image id="cxq09w" name="key_practice_2.png" path="/images/question3/"/>
+    <image id="cxq09x" name="key_practice_4.png" path="/images/question3/"/>
+    <image id="cxq09y" name="key_s.png" path="/images/question3/"/>
+    <image id="cxq09z" name="key_s_practice_1.png" path="/images/question3/"/>
+    <image id="cxq0a0" name="key_s_practice_2.png" path="/images/question3/"/>
+    <image id="cxq0a1" name="key_s_practice_3.png" path="/images/question3/"/>
+    <image id="cxq0a2" name="key_s_practice_4.png" path="/images/question3/"/>
+    <image id="cxq0a3" name="question.png" path="/images/question3/"/>
+    <image id="cxq0a4" name="question_practice_1.png" path="/images/question3/"/>
+    <image id="cxq0a5" name="question_practice_2.png" path="/images/question3/"/>
+    <image id="cxq0a6" name="question_practice_3.png" path="/images/question3/"/>
+    <image id="cxq0a7" name="question_practice_4.png" path="/images/question3/"/>
+    <image id="cxq0a8" name="sz.png" path="/images/question3/"/>
+    <image id="cxq0a9" name="sz_practice_2.png" path="/images/question3/"/>
+    <image id="cxq0aa" name="title.png" path="/images/question3/"/>
+    <image id="cxq0ab" name="wh.png" path="/images/question3/"/>
+    <image id="cxq0ac" name="wh_practice_1.png" path="/images/question3/"/>
+    <image id="cxq0ad" name="wh_practice_2.png" path="/images/question3/"/>
+    <image id="cxq0ae" name="wh_practice_3.png" path="/images/question3/"/>
+    <image id="cxq0af" name="ysk.png" path="/images/question3/"/>
+    <image id="cxq0ag" name="ysk_practice_1.png" path="/images/question3/"/>
+    <image id="cxq0ah" name="ysk_practice_2.png" path="/images/question3/"/>
+    <image id="cxq0ai" name="ysk_practice_3.png" path="/images/question3/"/>
+    <component id="mgr5aj" name="Question3Page01.xml" path="/components/pages/" exported="true"/>
+    <font id="mgr5ak" name="Font3.fnt" path="/components/common/" exported="true"/>
+    <font id="mgr5am" name="Font4.fnt" path="/components/common/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <controller name="c1" pages="0,,1,,2,,3,,4," selected="0"/>
+  <displayList>
+    <loader id="n85_cxq0" name="bg" xy="0,0" size="1920,1080" url="ui://dj5ft8zhcxq05z"/>
+    <loader id="n86_cxq0" name="box" xy="262,75" size="1380,955" url="ui://dj5ft8zhcxq06q" autoSize="true"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://dj5ft8zhcxq00" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0">
+      <gearLook controller="c2" pages="0" values="0,0,0,1" default="1,0,0,1"/>
+      <Button icon="ui://dj5ft8zhcxq066" sound="ui://dj5ft8zhcxq03"/>
+    </component>
+    <component id="n75_r1ww" name="submit" src="cxq07" fileName="components/common/buttons/submit.xml" xy="1687,795">
+      <Button icon="ui://dj5ft8zhcxq0z" selectedIcon="ui://dj5ft8zhcxq0y"/>
+    </component>
+    <component id="n96_cxq0" name="A" src="cxq099" fileName="components/Items/QuestionItemExample21.xml" xy="374,255" group="n144_cxq0"/>
+    <component id="n142_cxq0" name="B" src="cxq099" fileName="components/Items/QuestionItemExample21.xml" xy="671,255" group="n144_cxq0"/>
+    <component id="n141_cxq0" name="C" src="cxq099" fileName="components/Items/QuestionItemExample21.xml" xy="968,255" group="n144_cxq0"/>
+    <component id="n146_cxq0" name="D" src="cxq099" fileName="components/Items/QuestionItemExample21.xml" xy="1265,255" group="n144_cxq0"/>
+    <group id="n144_cxq0" name="questionGroup" xy="374,255" size="1156,265" advanced="true"/>
+    <loader id="n147_cxq0" name="num_bg" xy="549,578" size="738,260" url="ui://dj5ft8zhcxq06n" autoSize="true"/>
+    <loader id="n157_cxq0" name="0" xy="603,614" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06b" autoSize="true"/>
+    <loader id="n148_cxq0" name="1" xy="717,614" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06c" autoSize="true"/>
+    <loader id="n149_cxq0" name="2" xy="831,614" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06d" autoSize="true"/>
+    <loader id="n150_cxq0" name="3" xy="945,614" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06e" autoSize="true"/>
+    <loader id="n151_cxq0" name="4" xy="1059,614" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06f" autoSize="true"/>
+    <loader id="n152_cxq0" name="5" xy="603,731" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06g" autoSize="true"/>
+    <loader id="n153_cxq0" name="6" xy="717,731" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06h" autoSize="true"/>
+    <loader id="n154_cxq0" name="7" xy="831,731" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06i" autoSize="true"/>
+    <loader id="n155_cxq0" name="8" xy="945,731" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06j" autoSize="true"/>
+    <loader id="n156_cxq0" name="9" xy="1059,731" size="83,83" group="n160_cxq0" url="ui://dj5ft8zhcxq06k" autoSize="true"/>
+    <group id="n160_cxq0" name="inputGroup" xy="603,614" size="539,200"/>
+    <component id="n159_cxq0" name="btn_delect" src="cxq08" fileName="components/common/buttons/delect.xml" xy="1173,614">
+      <Button icon="ui://dj5ft8zhcxq06m" selectedIcon="ui://dj5ft8zhcxq06m"/>
+    </component>
+    <loader id="n161_cxq0" name="answe_bg" xy="1461,453" pivot="0.5,0.5" anchor="true" size="113,118" group="n164_cxq0" url="ui://dj5ft8zhcxq06u" autoSize="true"/>
+    <loader id="n162_cxq0" name="light" xy="1462,451" pivot="0.5,0.5" anchor="true" size="126,126" group="n164_cxq0" url="ui://dj5ft8zhcxq06o" autoSize="true"/>
+    <loader id="n163_cxq0" name="value" xy="1463,452" pivot="0.5,0.5" anchor="true" size="66,81" group="n164_cxq0" url="ui://dj5ft8zhcxq084" autoSize="true"/>
+    <group id="n164_cxq0" name="answer" xy="1399,388" size="126,126" advanced="true"/>
+  </displayList>
+</component>
