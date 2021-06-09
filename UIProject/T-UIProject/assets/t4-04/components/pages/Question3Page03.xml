@@ -3,8 +3,8 @@
   <controller name="c2" pages="0,,1," selected="0"/>
   <controller name="c1" pages="0,,1,,2,,3,,4," selected="0"/>
   <displayList>
-    <loader id="n85_cxq0" name="bg" xy="0,0" size="1920,1080" url="ui://dj5ft8zhcxq09o"/>
-    <loader id="n86_cxq0" name="box" xy="121,75" size="1624,446" url="ui://dj5ft8zhcxq0a3" autoSize="true"/>
+    <loader id="n85_cxq0" name="bg" xy="0,0" size="1920,1080" url="ui://dj5ft8zhcxq09p"/>
+    <loader id="n86_cxq0" name="box" xy="121,75" size="1624,446" url="ui://dj5ft8zhcxq0a5" autoSize="true"/>
     <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://dj5ft8zhcxq00" autoSize="true" playing="false">
       <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
@@ -15,7 +15,7 @@
     <component id="n75_r1ww" name="submit" src="cxq07" fileName="components/common/buttons/submit.xml" xy="1687,795">
       <Button icon="ui://dj5ft8zhcxq0z" selectedIcon="ui://dj5ft8zhcxq0y"/>
     </component>
-    <image id="n178_smj1" name="n178" src="cxq09i" fileName="images/question3/answer_bg.png" xy="1365,172" group="n184_smj1"/>
+    <loader id="n178_smj1" name="img" xy="1499,306" pivot="0.5,0.5" anchor="true" size="268,268" group="n184_smj1" url="ui://dj5ft8zhcxq09n"/>
     <text id="n179_smj1" name="1" xy="1410,220" pivot="0.5,0.5" anchor="true" size="80,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="15"/>
     <text id="n180_smj1" name="2" xy="1585,220" pivot="0.5,0.5" anchor="true" size="42,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="8"/>
     <text id="n181_smj1" name="3" xy="1498,307" pivot="0.5,0.5" anchor="true" size="80,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="15"/>
@@ -24,10 +24,10 @@
     <loader id="n161_cxq0" name="answe_bg" xy="1586,394" pivot="0.5,0.5" anchor="true" size="45,67" group="n184_smj1" url="ui://dj5ft8zhcxq0af" autoSize="true"/>
     <loader id="n162_cxq0" name="light" xy="1587,392" pivot="0.5,0.5" anchor="true" size="27,38" group="n184_smj1" url="ui://dj5ft8zhcxq0ab" autoSize="true"/>
     <group id="n184_smj1" name="answer" xy="1365,172" size="268,268"/>
-    <component id="n193_smj1" name="A" src="smj1as" fileName="components/Items/AnswerItemExample30.xml" xy="248,539" group="n192_smj1"/>
-    <component id="n194_smj1" name="B" src="smj1as" fileName="components/Items/AnswerItemExample30.xml" xy="539,539" group="n192_smj1"/>
-    <component id="n195_smj1" name="C" src="smj1as" fileName="components/Items/AnswerItemExample30.xml" xy="859,539" group="n192_smj1"/>
-    <component id="n196_smj1" name="D" src="smj1as" fileName="components/Items/AnswerItemExample30.xml" xy="1176,539" group="n192_smj1"/>
-    <group id="n192_smj1" name="choose" xy="248,539" size="1130,493"/>
+    <component id="n193_smj1" name="A" src="smj1at" fileName="components/Items/AnswerItemExample32.xml" xy="221,539" group="n192_smj1"/>
+    <component id="n194_smj1" name="B" src="smj1at" fileName="components/Items/AnswerItemExample32.xml" xy="530,539" group="n192_smj1"/>
+    <component id="n195_smj1" name="C" src="smj1at" fileName="components/Items/AnswerItemExample32.xml" xy="828,539" group="n192_smj1"/>
+    <component id="n196_smj1" name="D" src="smj1at" fileName="components/Items/AnswerItemExample32.xml" xy="1154,539" group="n192_smj1"/>
+    <group id="n192_smj1" name="choose" xy="221,539" size="1153,493"/>
   </displayList>
 </component>

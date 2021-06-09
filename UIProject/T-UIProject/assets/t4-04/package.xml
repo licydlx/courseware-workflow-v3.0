@@ -198,7 +198,7 @@
     <image id="cxq09u" name="key_l_practice_3.png" path="/images/question3/"/>
     <image id="cxq09v" name="key_practice_1.png" path="/images/question3/"/>
     <image id="cxq09w" name="key_practice_2.png" path="/images/question3/"/>
-    <image id="cxq09x" name="key_practice_4.png" path="/images/question3/"/>
+    <image id="cxq09x" name="key_practice_3.png" path="/images/question3/"/>
     <image id="cxq09y" name="key_s.png" path="/images/question3/"/>
     <image id="cxq09z" name="key_s_practice_1.png" path="/images/question3/"/>
     <image id="cxq0a0" name="key_s_practice_2.png" path="/images/question3/"/>
@@ -223,6 +223,14 @@
     <component id="mgr5aj" name="Question3Page01.xml" path="/components/pages/" exported="true"/>
     <font id="mgr5ak" name="Font3.fnt" path="/components/common/" exported="true"/>
     <font id="mgr5am" name="Font4.fnt" path="/components/common/" exported="true"/>
+    <component id="smj1an" name="AnswerItemExample31.xml" path="/components/Items/"/>
+    <component id="smj1ao" name="Question3Page02.xml" path="/components/pages/" exported="true"/>
+    <component id="smj1ap" name="Question3Page03.xml" path="/components/pages/" exported="true"/>
+    <component id="smj1as" name="AnswerItemExample30.xml" path="/components/Items/"/>
+    <component id="smj1at" name="AnswerItemExample32.xml" path="/components/Items/"/>
+    <component id="smj1au" name="Question3Page04.xml" path="/components/pages/" exported="true"/>
+    <component id="smj1av" name="AnswerItemExample33.xml" path="/components/Items/"/>
+    <component id="smj1aw" name="Question3Page05.xml" path="/components/pages/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

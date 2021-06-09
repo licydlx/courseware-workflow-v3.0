@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="200,493">
+  <displayList>
+    <loader id="n165_mgr5" name="n165" xy="100,277" pivot="0.5,0.5" anchor="true" size="193,405" url="ui://dj5ft8zhcxq09x" autoSize="true"/>
+    <image id="n167_smj1" name="n167" src="cxq0a8" fileName="images/question3/sz.png" xy="100,44" pivot="0.5,0.5" anchor="true"/>
+    <text id="n175_smj1" name="n175" xy="96,195" pivot="0.5,0.5" anchor="true" size="80,53" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="15"/>
+  </displayList>
+</component>
