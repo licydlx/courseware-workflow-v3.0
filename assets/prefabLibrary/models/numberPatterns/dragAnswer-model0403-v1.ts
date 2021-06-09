@@ -204,6 +204,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
 
         let state: any = globalThis._.cloneDeep(this._state);
         state.colliderIndex = colliderIndex;
+        state.isHasCollide = false;
         this.updateState(state);
     }
 
@@ -265,7 +266,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         }
         state.drag = "end";
         state.submit = false;
-        state.isHasCollide = false
+        state.isHasCollide = false;
         this.updateState(state);
     }
 
@@ -335,16 +336,19 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
-
-            if(state.isHasCollide){
-                this._answerComBG.url = this._answerbgSkin[1]
-            }
-            else{
-                this._answerComBG.url = this._answerbgSkin[0]
+            
+            if (!globalThis._.isEqual(oldState.isHasCollide, state.isHasCollide)) {
+                if(state.isHasCollide){
+                    this._answerComBG.url = this._answerbgSkin[1]
+                }
+                else{
+                    this._answerComBG.url = this._answerbgSkin[0]
+                }
             }
         }
 
         if (state.drag == "end") {
+            console.log("end",oldState,state)
             if (!globalThis._.isEqual(oldState.isHasCollide, state.isHasCollide)) {
                 if(state.isHasCollide){
                     this._answerComBG.url = this._answerbgSkin[1]
@@ -450,11 +454,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
     dragSchedule() {
         if (this._dragging) {
             let state: any = globalThis._.cloneDeep(this._state);
-            let arr: any = [];
-            this._collideredBox.forEach((v: any, i: any) => {
-                if (this.isCollisionWithRect(v, this._colliderBox[state.colliderIndex])) arr.push(v);
-            });
-            state.isHasCollide = arr.length > 0
+            state.isHasCollide = true
             state.drag = "move";
             state.collider[state.colliderIndex].x  = this._colliderBox[state.colliderIndex].x
             state.collider[state.colliderIndex].y  = this._colliderBox[state.colliderIndex].y
