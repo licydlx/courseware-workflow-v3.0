@@ -8,9 +8,9 @@
     <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://dj5ft8zhcxq00" autoSize="true" playing="false">
       <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
-    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0">
-      <gearLook controller="c2" pages="0" values="0,0,0,1" default="1,0,0,1"/>
-      <Button icon="ui://dj5ft8zhcxq05j" sound="ui://dj5ft8zhcxq03"/>
+    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
+      <Button sound="ui://dj5ft8zhcxq03"/>
     </component>
     <component id="n75_r1ww" name="submit" src="cxq07" fileName="components/common/buttons/submit.xml" xy="1687,795">
       <Button icon="ui://dj5ft8zhcxq0z" selectedIcon="ui://dj5ft8zhcxq0y"/>
