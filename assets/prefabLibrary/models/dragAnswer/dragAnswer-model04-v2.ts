@@ -26,10 +26,10 @@ export default class dragAnswer_model04_v2 extends cc.Component {
     private _leftPositon: any = [{ x: 200, y: 890 }, { x: 355, y: 890 }, { x: 515, y: 890 }, { x: 680, y: 890 }];
     private _rightPositon: any = [{ x: 1255, y: 890 }, { x: 1410, y: 890 }, { x: 1560, y: 890 }, { x: 1715, y: 890 }];
 
-    private _typeBoxPos1: any = [{ x: 170, y: 877 }, { x: 322, y: 877 }];
-    private _typeBoxPos2: any = [{ x: 634, y: 877 }, { x: 800, y: 877 }];
-    private _typeBoxPos3: any = [{ x: 1136, y: 877 }, { x: 1297, y: 877 }];
-    private _typeBoxPos4: any = [{ x: 1584, y: 877 }, { x: 1751, y: 877 }];
+    private _typeBoxPos1: any = [{ x: 172, y: 877 }, { x: 320, y: 877 }];
+    private _typeBoxPos2: any = [{ x: 636, y: 877 }, { x: 798, y: 877 }];
+    private _typeBoxPos3: any = [{ x: 1138, y: 877 }, { x: 1295, y: 877 }];
+    private _typeBoxPos4: any = [{ x: 1586, y: 877 }, { x: 1749, y: 877 }];
 
     private _colliderCacheSecond: any = [
         { pos: { x: 245, y: 470 }, index: 5 },

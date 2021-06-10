@@ -19,11 +19,11 @@
 
         {
             "model": {
-                "uiPath": "choose-model03-v1-p2",
+                "uiPath": "choose-model03-v2-p5",
                 "bundleName": "choose",
-                "prefabName": "choose-model03-v1",
+                "prefabName": "choose-model03-v2",
                 "config": {
-                    "answer": []
+                    
                 }
             }, 
             
@@ -41,7 +41,7 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v1",
                 "config": {
-                    "answer": []
+                    
                 }
             }, 
             
@@ -59,7 +59,25 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v1",
                 "config": {
-                    "answer": []
+                    
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "choose-model03-v1-p4",
+                "bundleName": "choose",
+                "prefabName": "choose-model03-v1",
+                "config": {
+                    
                 }
             }, 
             

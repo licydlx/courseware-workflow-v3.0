@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <controller name="c2" pages="0,,1,,3," selected="0"/>
+  <controller name="c3" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n4_r375" name="n4" src="r37545" fileName="images/example2/008.png" xy="0,0"/>
+    <image id="n11_r375" name="n11" src="r37540" fileName="images/example2/0030.png" xy="820,-24"/>
+    <image id="n9_r375" name="boyPao" src="r3753x" fileName="images/example2/0028.png" xy="26,185">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <image id="n10_r375" name="girlPao" src="r3753x" fileName="images/example2/0028.png" xy="483,194">
+      <gearDisplay controller="c2" pages="3"/>
+    </image>
+    <component id="n7_r375" name="boy" src="w2qd26" fileName="buttons/magicPen.xml" xy="102,465" size="281,446">
+      <Button icon="ui://733aoo45r37543" sound="ui://733aoo45w2qd1c"/>
+    </component>
+    <component id="n8_r375" name="girl" src="w2qd26" fileName="buttons/magicPen.xml" xy="447,534" size="281,446">
+      <Button icon="ui://733aoo45r37544" sound="ui://733aoo45w2qd1d"/>
+    </component>
+    <component id="n1_r375" name="title" src="w2qd12" fileName="buttons/title.xml" xy="876,106" alpha="0" touchable="false">
+      <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
+      <Button icon="ui://733aoo45w2qdy" sound="ui://733aoo45w2qd1e" volume="0"/>
+    </component>
+    <loader id="n2_r375" name="titleTrigger" xy="73,39" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
+      <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
+    </loader>
+    <component id="n12_r375" name="play" src="w2qd25" fileName="buttons/submit.xml" xy="1197,459" size="368,159">
+      <Button icon="ui://733aoo45r3753d" selectedIcon="ui://733aoo45r3753o" sound="ui://733aoo45r3754n"/>
+    </component>
+    <component id="n24_r375" name="n24" src="w2qd27" fileName="buttons/yueqi.xml" xy="139,312" size="140,96" group="n27_r375">
+      <Button icon="ui://733aoo45r3753h"/>
+    </component>
+    <component id="n25_r375" name="n25" src="w2qd27" fileName="buttons/yueqi.xml" xy="255,300" size="96,172" group="n27_r375">
+      <Button icon="ui://733aoo45r3753i"/>
+    </component>
+    <component id="n23_r375" name="n23" src="w2qd27" fileName="buttons/yueqi.xml" xy="356,321" size="98,138" group="n27_r375">
+      <Button icon="ui://733aoo45r3753j"/>
+    </component>
+    <group id="n27_r375" name="boyFood" xy="69,214" size="336,176" advanced="true">
+      <gearDisplay controller="c2" pages="1"/>
+    </group>
+    <component id="n29_r375" name="n29" src="w2qd27" fileName="buttons/yueqi.xml" xy="574,317" size="134,88" group="n31_r375">
+      <Button icon="ui://733aoo45r3753h"/>
+    </component>
+    <component id="n30_r375" name="n30" src="w2qd27" fileName="buttons/yueqi.xml" xy="706,317" size="120,138" group="n31_r375">
+      <Button icon="ui://733aoo45r3753k"/>
+    </component>
+    <component id="n28_r375" name="n28" src="w2qd27" fileName="buttons/yueqi.xml" xy="828,327" size="108,142" group="n31_r375">
+      <Button icon="ui://733aoo45r3753j"/>
+    </component>
+    <group id="n31_r375" name="girlFood" xy="507,248" size="375,150" advanced="true">
+      <gearDisplay controller="c2" pages="3"/>
+    </group>
+    <text id="n32_nrfy" name="n32" xy="624,58" size="238,102" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="123"/>
+  </displayList>
+</component>

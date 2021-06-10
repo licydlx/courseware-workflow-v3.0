@@ -71,6 +71,49 @@
     <image id="w2qd2m" name="0021.png" path="/images/"/>
     <image id="w2qd2n" name="0022.png" path="/images/"/>
     <image id="w2qd2o" name="0023.png" path="/images/"/>
+    <image id="r3753d" name="001.png" path="/images/example2/"/>
+    <image id="r3753e" name="0010.png" path="/images/example2/"/>
+    <image id="r3753f" name="0011.png" path="/images/example2/"/>
+    <image id="r3753g" name="0012.png" path="/images/example2/"/>
+    <image id="r3753h" name="0013.png" path="/images/example2/"/>
+    <image id="r3753i" name="0014.png" path="/images/example2/"/>
+    <image id="r3753j" name="0015.png" path="/images/example2/"/>
+    <image id="r3753k" name="0016.png" path="/images/example2/"/>
+    <image id="r3753l" name="0017.png" path="/images/example2/" exported="true"/>
+    <image id="r3753o" name="002.png" path="/images/example2/"/>
+    <image id="r3753x" name="0028.png" path="/images/example2/"/>
+    <image id="r3753z" name="003.png" path="/images/example2/"/>
+    <image id="r37540" name="0030.png" path="/images/example2/"/>
+    <image id="r37541" name="004.png" path="/images/example2/"/>
+    <image id="r37542" name="005.png" path="/images/example2/"/>
+    <image id="r37543" name="006.png" path="/images/example2/"/>
+    <image id="r37544" name="007.png" path="/images/example2/"/>
+    <image id="r37545" name="008.png" path="/images/example2/"/>
+    <image id="r37546" name="009.png" path="/images/example2/"/>
+    <component id="r37547" name="choose-model03-v2-p5.xml" path="/" exported="true"/>
+    <image id="r37548" name="例题2.png" path="/images/example2/"/>
+    <image id="r37549" name="例题2-操作1.png" path="/images/example2/"/>
+    <image id="r3754a" name="0010_2.png" path="/images/example2/"/>
+    <image id="r3754b" name="0011_2.png" path="/images/example2/"/>
+    <image id="r3754c" name="0012_2.png" path="/images/example2/"/>
+    <image id="r3754d" name="0013_2.png" path="/images/example2/"/>
+    <image id="r3754e" name="0014_2.png" path="/images/example2/"/>
+    <image id="r3754f" name="0015_2.png" path="/images/example2/"/>
+    <image id="r3754g" name="0016_2.png" path="/images/example2/"/>
+    <image id="r3754h" name="003_2.png" path="/images/example2/"/>
+    <image id="r3754i" name="004_2.png" path="/images/example2/"/>
+    <image id="r3754j" name="005_2.png" path="/images/example2/"/>
+    <sound id="r3754k" name="click.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754l" name="drag.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754m" name="game.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754n" name="ready.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754o" name="star.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754p" name="wrong.mp3" path="/audios/" exported="true"/>
+    <component id="nrfy4q" name="food_1.xml" path="/components/" exported="true"/>
+    <component id="nrfy4r" name="food_2.xml" path="/components/" exported="true"/>
+    <component id="nrfy4s" name="food_3.xml" path="/components/" exported="true"/>
+    <component id="nrfy4t" name="food_4.xml" path="/components/" exported="true"/>
+    <sound id="nrfy4u" name="zimubianxing-bgm.mp3" path="/audios/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

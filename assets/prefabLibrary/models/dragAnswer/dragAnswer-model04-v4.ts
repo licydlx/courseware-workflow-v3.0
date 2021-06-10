@@ -27,12 +27,12 @@ export default class dragAnswer_model04_v4 extends cc.Component {
     private _midPositon: any = [{ x: 840, y: 770 }, { x: 1070, y: 770 }, { x: 840, y: 920 }, { x: 1070, y: 920 }];
     private _rightPositon: any = [{ x: 1480, y: 770 }, { x: 1690, y: 770 }, { x: 1480, y: 920 }, { x: 1690, y: 920 }];
 
-    private _typeBoxPos1: any = [{ x: 175, y: 780 }, { x: 175, y: 913 }];
-    private _typeBoxPos2: any = [{ x: 495, y: 780 }, { x: 495, y: 913 }];
-    private _typeBoxPos3: any = [{ x: 810, y: 780 }, { x: 810, y: 913 }];
-    private _typeBoxPos4: any = [{ x: 1120, y: 780 }, { x: 1120, y: 913 }];
-    private _typeBoxPos5: any = [{ x: 1445, y: 780 }, { x: 1445, y: 913 }];
-    private _typeBoxPos6: any = [{ x: 1760, y: 780 }, { x: 1760, y: 913 }];
+    private _typeBoxPos1: any = [{ x: 175, y: 777 }, { x: 175, y: 917 }];
+    private _typeBoxPos2: any = [{ x: 495, y: 777 }, { x: 495, y: 917 }];
+    private _typeBoxPos3: any = [{ x: 810, y: 777 }, { x: 810, y: 917 }];
+    private _typeBoxPos4: any = [{ x: 1120, y: 777 }, { x: 1120, y: 917 }];
+    private _typeBoxPos5: any = [{ x: 1445, y: 777 }, { x: 1445, y: 917 }];
+    private _typeBoxPos6: any = [{ x: 1760, y: 777 }, { x: 1760, y: 917 }];
 
     private _colliderCacheSecond: any = [
         { pos: { x: 230, y: 295 }, index: 0 },

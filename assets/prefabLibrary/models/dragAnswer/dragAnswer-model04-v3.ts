@@ -41,6 +41,8 @@ export default class dragAnswer_model04_v3 extends cc.Component {
         { pos: { x: 1300, y: 480 }, index: 0 },
         { pos: { x: 1545, y: 480 }, index: 0 }];
 
+    private _isNeedTiltPos: false;
+
     private _leftRect: cc.Rect;
     private _rightRect: cc.Rect;
 
@@ -130,6 +132,14 @@ export default class dragAnswer_model04_v3 extends cc.Component {
         this._box4Contain = [];
 
         this._colliderBox = [];
+
+        if (this._isNeedTiltPos) {
+
+            this._typeBoxPos1 = [{ x: 180, y: 905 }, { x: 280, y: 830 }];
+            this._typeBoxPos2 = [{ x: 658, y: 905 }, { x: 746, y: 830 }];
+            this._typeBoxPos3 = [{ x: 1144, y: 905 }, { x: 1228, y: 830 }];
+            this._typeBoxPos4 = [{ x: 1605, y: 905 }, { x: 1687, y: 830 }];
+        }
 
         this._worldRoot = cc.find("Canvas").parent;
 
@@ -289,7 +299,8 @@ export default class dragAnswer_model04_v3 extends cc.Component {
         }
 
         if (model.config) {
-            let { answer, ae } = model.config;
+            let { isNeedTiltPos, answer, ae } = model.config;
+            if (isNeedTiltPos) this._isNeedTiltPos = isNeedTiltPos;
             if (answer) this._answer = answer;
             // 动效注册
             if (ae) {

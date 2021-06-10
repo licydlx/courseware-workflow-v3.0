@@ -246,7 +246,7 @@ export default class choose_model03_v1 extends cc.Component {
                     isHave1 = true;
                 }
             }
-            if (isHave0 && isHave1) {
+            if (isHave0 && isHave1 && state.lightSelect.length === 2) {
                 state.submit = this.submitType.RightFeed;
             } else {
                 state.submit = this.submitType.WrongFeed;

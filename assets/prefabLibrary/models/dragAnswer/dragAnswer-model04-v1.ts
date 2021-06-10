@@ -26,8 +26,15 @@ export default class dragAnswer_model04_v1 extends cc.Component {
     private _leftPositon: any = [{ x: 330, y: 760 }, { x: 540, y: 760 }, { x: 330, y: 925 }, { x: 540, y: 925 }];
     private _rightPositon: any = [{ x: 1370, y: 760 }, { x: 1610, y: 760 }, { x: 1370, y: 925 }, { x: 1610, y: 925 }];
 
-    private _tishi1Positon: any = [{ x: 1500, y: 50 }, { x: 1590, y: 50 }, { x: 1500, y: 120 }, { x: 1590, y: 120 },
-    { x: 1750, y: 50 }, { x: 1840, y: 50 }, { x: 1750, y: 120 }, { x: 1840, y: 120 }];
+    private _tishi1Positon: any = [
+        { x: 1496, y: 70 },
+        { x: 1586, y: 70 },
+        { x: 1496, y: 140 },
+        { x: 1586, y: 140 },
+        { x: 1746, y: 70 },
+        { x: 1836, y: 70 },
+        { x: 1746, y: 140 },
+        { x: 1836, y: 140 }];
 
     private _tishi1_1Positon: any = [{ x: 700, y: 350 }, { x: 875, y: 350 }, { x: 700, y: 465 }, { x: 875, y: 465 },
     { x: 1140, y: 350 }, { x: 1300, y: 350 }, { x: 1140, y: 465 }, { x: 1300, y: 465 }];
@@ -92,6 +99,12 @@ export default class dragAnswer_model04_v1 extends cc.Component {
     });
 
 
+    private _leftBoxL: fgui.GLabel;
+    private _rightBoxL: fgui.GLabel;
+    private _allBoxL: fgui.GLabel;
+    private _showAllL: fgui.GLabel;
+    private _hideAllL: fgui.GLabel;
+
     // 远程动态组件
     private feedback: any;
 
@@ -121,6 +134,13 @@ export default class dragAnswer_model04_v1 extends cc.Component {
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
         fgui.GRoot.inst.addChild(this._view);
+
+        this._leftBoxL = this._view.getChild('leftBox').asLabel;
+        this._rightBoxL = this._view.getChild('rightBox').asLabel;
+        this._allBoxL = this._view.getChild('allBox').asLabel;
+        this._showAllL = this._view.getChild('showall').asLabel;
+        this._hideAllL = this._view.getChild('hideall').asLabel;
+
 
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
@@ -873,6 +893,7 @@ export default class dragAnswer_model04_v1 extends cc.Component {
 
                 state.rightContain[i].visible = false;
             }
+
         }
 
         this.updateState(state);
@@ -891,6 +912,12 @@ export default class dragAnswer_model04_v1 extends cc.Component {
 
     // 更新ui层
     updateUi(oldState: any, state: any) {
+
+        console.log('==== 更新 111111 ====');
+        console.log(state);
+
+        this._showAllL.text = '';
+        this._hideAllL.text = '';
 
         let isPlayOpen = false;
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
@@ -915,7 +942,42 @@ export default class dragAnswer_model04_v1 extends cc.Component {
         }
 
 
+        if (!globalThis._.isEqual(oldState.answer, state.answer)) {
+
+            if (state.answer.length === 0) {
+
+                // 回归初始化状态
+                this.showAllBoxs();
+                this._bgdoor.getTransition('close').play();
+                this._answer = state.answer;
+                this._leftContain = [];
+                this._rightContain = [];
+
+            } else if (state.answer.length === 1) {
+
+                this._bgdoor.getTransition('open1').play();
+
+            } else if (state.answer.length === 2) {
+
+                if (!isPlayOpen) {
+
+                    this._bgdoor.getTransition('open2').play();
+                    this.hideAllBoxs();
+
+                }
+            }
+        }
+
+
         if (!globalThis._.isEqual(oldState.colliderBox, state.colliderBox)) {
+
+            if (state.colliderBox.length > 0) {
+
+                this._allBoxL.text = 'all: ' + state.colliderBox.length + state.colliderBox[0].visible + 'isPlayOpen:' + isPlayOpen;
+
+            } else {
+                this._allBoxL.text = 'all: ' + state.colliderBox.length + 'isPlayOpen:' + isPlayOpen;
+            }
 
             for (let i = 0; i < state.colliderBox.length; i++) {
 
@@ -939,53 +1001,62 @@ export default class dragAnswer_model04_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.tiShiBox1, state.tiShiBox1)) {
 
-            if (state.tiShiBox1.length > 0) {
+            if (state.tiShiShow === this.tiShiShowType.AnswerType1) {
+
+                this._showAllL.text = '处理第一次答题提示框';
 
                 this.hideAllBoxs();
-            }
-            for (let i = 0; i < state.tiShiBox1.length; i++) {
 
-                this._tishi1Btn[i].width = state.tiShiBox1[i].width;
-                this._tishi1Btn[i].height = state.tiShiBox1[i].height;
-                this._tishi1Btn[i].scaleX = 1.0;
-                this._tishi1Btn[i].scaleY = 1.0;
-                this._tishi1Btn[i].x = state.tiShiBox1[i].x;
-                this._tishi1Btn[i].y = state.tiShiBox1[i].y;
-                this._tishi1Btn[i].icon = state.tiShiBox1[i].icon;
+                for (let i = 0; i < state.tiShiBox1.length; i++) {
 
-                //做动画
-                if (i === state.tiShiBox1.length - 1) {
+                    this._tishi1Btn[i].width = state.tiShiBox1[i].width;
+                    this._tishi1Btn[i].height = state.tiShiBox1[i].height;
+                    this._tishi1Btn[i].scaleX = 1.0;
+                    this._tishi1Btn[i].scaleY = 1.0;
+                    this._tishi1Btn[i].x = state.tiShiBox1[i].x;
+                    this._tishi1Btn[i].y = state.tiShiBox1[i].y;
+                    this._tishi1Btn[i].icon = state.tiShiBox1[i].icon;
 
-                    cc.tween(this._tishi1Btn[i])
-                        .to(0.5, { x: this._tishi1Positon[i].x, y: this._tishi1Positon[i].y })
-                        .to(0.5, { scaleX: 0.4, scaleY: 0.4 })
-                        .call(() => {
+                    //做动画
+                    if (i === state.tiShiBox1.length - 1) {
 
-                            this.showAllBoxs();
+                        cc.tween(this._tishi1Btn[i])
+                            .to(0.5, { x: this._tishi1Positon[i].x, y: this._tishi1Positon[i].y })
+                            .to(0.5, { scaleX: 0.4, scaleY: 0.4 })
+                            .call(() => {
 
-                        })
-                        .start();
+                                this.showAllBoxs();
 
-                } else {
+                            })
+                            .start();
 
-                    cc.tween(this._tishi1Btn[i])
-                        .to(0.5, { x: this._tishi1Positon[i].x, y: this._tishi1Positon[i].y })
-                        .to(0.5, { scaleX: 0.4, scaleY: 0.4 })
-                        .start();
+                    } else {
+
+                        cc.tween(this._tishi1Btn[i])
+                            .to(0.5, { x: this._tishi1Positon[i].x, y: this._tishi1Positon[i].y })
+                            .to(0.5, { scaleX: 0.4, scaleY: 0.4 })
+                            .start();
+                    }
                 }
+
             }
+
         }
 
-        if (!globalThis._.isEqual(oldState.tiShiBox2, state.tiShiBox2)) {
+        if (!globalThis._.isEqual(oldState.tiShiBox1_1, state.tiShiBox1_1)) {
 
-            for (let i = 0; i < state.tiShiBox1.length; i++) {
+            for (let i = 0; i < state.tiShiBox1_1.length; i++) {
 
-                this._tishi1_1Btn[i].width = state.tiShiBox1[i].width;
-                this._tishi1_1Btn[i].height = state.tiShiBox1[i].height;
-                this._tishi1_1Btn[i].icon = state.tiShiBox1[i].icon;
+                this._tishi1_1Btn[i].width = state.tiShiBox1_1[i].width;
+                this._tishi1_1Btn[i].height = state.tiShiBox1_1[i].height;
+                this._tishi1_1Btn[i].icon = state.tiShiBox1_1[i].icon;
                 this._tishi1_1Btn[i].sortingOrder = 1;
 
             }
+        }
+
+
+        if (!globalThis._.isEqual(oldState.tiShiBox2, state.tiShiBox2)) {
 
             for (let i = 0; i < state.tiShiBox2.length; i++) {
 
@@ -997,6 +1068,15 @@ export default class dragAnswer_model04_v1 extends cc.Component {
         }
 
         if (!globalThis._.isEqual(oldState.leftContain, state.leftContain)) {
+
+            if (state.leftContain.length > 0) {
+
+                this._leftBoxL.text = 'left: ' + state.leftContain.length + state.leftContain[0].visible + 'isPlayOpen:' + isPlayOpen;
+
+            } else {
+                this._leftBoxL.text = 'left: ' + state.leftContain.length + 'isPlayOpen:' + isPlayOpen;
+            }
+
 
             for (let i = 0; i < state.leftContain.length; i++) {
                 this._colliderBox[state.leftContain[i].index].x = state.leftContain[i].pos.x;
@@ -1017,11 +1097,21 @@ export default class dragAnswer_model04_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.rightContain, state.rightContain)) {
 
+            if (state.leftContain.length > 0) {
+
+                this._rightBoxL.text = 'right: ' + state.rightContain.length + state.rightContain[0].visible + 'isPlayOpen:' + isPlayOpen;
+
+            } else {
+                this._rightBoxL.text = 'right: ' + state.rightContain.length + 'isPlayOpen:' + isPlayOpen;
+            }
+
+
             for (let i = 0; i < state.rightContain.length; i++) {
                 this._colliderBox[state.rightContain[i].index].x = state.rightContain[i].pos.x;
                 this._colliderBox[state.rightContain[i].index].y = state.rightContain[i].pos.y;
                 this._colliderBox[state.rightContain[i].index].data.posIndex = state.rightContain[i].posIndex;
                 if (!isPlayOpen) {
+
                     if (state.answer.length === 2) {
                         this._colliderBox[state.rightContain[i].index].visible = false;
                     } else {
@@ -1033,31 +1123,6 @@ export default class dragAnswer_model04_v1 extends cc.Component {
             }
         }
 
-        if (!globalThis._.isEqual(oldState.answer, state.answer)) {
-
-            if (state.answer.length === 0) {
-
-                // 回归初始化状态
-                this.showAllBoxs();
-                this._bgdoor.getTransition('close').play();
-                this._answer = [];
-                this._leftContain = [];
-                this._rightContain = [];
-
-            } else if (state.answer.length === 1) {
-
-                this._bgdoor.getTransition('open1').play();
-
-            } else if (state.answer.length === 2) {
-
-                if (!isPlayOpen) {
-
-                    this._bgdoor.getTransition('open2').play();
-                    this.hideAllBoxs();
-
-                }
-            }
-        }
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
@@ -1071,14 +1136,14 @@ export default class dragAnswer_model04_v1 extends cc.Component {
 
                 if (state.tiShiShow === this.tiShiShowType.No || state.tiShiShow === this.tiShiShowType.AnswerType1) {
 
-                    this._view.getChild("left").visible = true;
-                    this._view.getChild("right").visible = true;
+                    this._view.getChild("left").asImage.visible = true;
+                    this._view.getChild("right").asImage.visible = true;
                     this._submit.visible = true;
 
                 } else if (state.tiShiShow === this.tiShiShowType.Finish) {
 
-                    this._view.getChild("left").visible = false;
-                    this._view.getChild("right").visible = false;
+                    this._view.getChild("left").asImage.visible = false;
+                    this._view.getChild("right").asImage.visible = false;
                     this._submit.visible = false;
                 }
             }
@@ -1087,6 +1152,8 @@ export default class dragAnswer_model04_v1 extends cc.Component {
     }
 
     hideAllBoxs() {
+
+        this._hideAllL.text = 'hide: ' + this._colliderBox.length + ' ' + this._leftContain.length + ' ' + this._rightContain.length;
 
         for (let i = 0; i < this._colliderBox.length; i++) {
 
