@@ -107,7 +107,8 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
             typeChange: 0,
             title: false,
             submit: false,
-            answer: false
+            answer: false,
+            isLock: false
         }
         this._currentAnswer = 0
         
@@ -181,6 +182,7 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
     private _clickTitle(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
         state.title = true;
+        state.isLock = true
         this.updateState(state);
     }
 
@@ -318,30 +320,41 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
             }
          }
 
+        if (!globalThis._.isEqual(oldState.isLock, state.isLock)) {
+            if(state.isLock){
+                this.forbidHandle();
+                if(state.title){
+                    this._c1.selectedIndex = 0
+                }
+                else{
+                    this._c1.selectedIndex = 1
+                }
+            }
+            else{
+                this._c1.selectedIndex = 0
+                this.disableForbidHandle();
+            }
+        }
      }
 
     async playTitle(bool: boolean) {
         this._c2.selectedIndex = bool ? 1 : 0;
-
         if (bool) {
             cc.audioEngine.stopAll();
-            this.forbidHandle();
             let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
             let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
             let audioId = cc.audioEngine.play(audio, false, 1);
             cc.audioEngine.setFinishCallback(audioId, () => {
                 let state: any = globalThis._.cloneDeep(this._state);
                 state.title = false;
+                state.isLock = false;
                 this.updateState(state);
             });
-        } else {
-            this.disableForbidHandle();
         }
     }
 
     answerFeedback(bool: boolean) {
         if (!this.feedback) return;
-        this._c1.selectedIndex = bool ? 1:0
         let state: any = globalThis._.cloneDeep(this._state);
         let feedback: any = cc.instantiate(this.feedback);
         feedback.x = 960;
@@ -353,6 +366,7 @@ export default class chooseAnswer_model0403_v2 extends cc.Component {
         setTimeout(() => {
             feedback.destroy();
             state.submit = false;
+            state.isLock = bool;
             this.updateState(state);
         }, 2000);
     }

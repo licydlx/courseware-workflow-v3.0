@@ -139,7 +139,8 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             isHasCollide: false,
             title: false,
             submit: false,
-            answer: false
+            answer: false,
+            isLock:false
         }
 
         // 临时 
@@ -299,6 +300,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
     private _clickTitle(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
         state.title = true;
+        state.isLock = true
         this.updateState(state);
     }
 
@@ -387,7 +389,14 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
                 if (state.submit) {
                     let bool: boolean = state.collider.every((v: any) => v.belong == -1);
                     bool ? this.onHandleGuide() : this.answerFeedback(state.answer);
-                } else {
+                }
+            }
+
+            if (!globalThis._.isEqual(oldState.isLock, state.isLock)) {
+                if(state.isLock){
+                    this.forbidHandle();
+                }
+                else{
                     this.disableForbidHandle();
                 }
             }
@@ -398,17 +407,15 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         this._c2.selectedIndex = bool ? 1 : 0;
         if (bool) {
             cc.audioEngine.stopAll();
-            this.forbidHandle();
             let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
             let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
             let audioId = cc.audioEngine.play(audio, false, 1);
             cc.audioEngine.setFinishCallback(audioId, () => {
                 let state: any = globalThis._.cloneDeep(this._state);
                 state.title = false;
+                state.isLock = false;
                 this.updateState(state);
             });
-        } else {
-            this.disableForbidHandle();
         }
     }
 
@@ -425,6 +432,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             feedback.destroy();
             state.submit = false;
             state.isHasCollide = bool
+            state.isLock = bool
             this.updateState(state);
         }, 2000);
     }
