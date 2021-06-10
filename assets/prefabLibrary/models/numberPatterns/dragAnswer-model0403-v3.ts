@@ -231,14 +231,11 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
         this._dragging = false;
 
         let collider = fgui.GObject.cast(evt.currentTarget);
-		let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
-
         let arr: any = [];
         let collidered: any;
         this._collideredBox.forEach((v: any, i: any) => {
             if (s.isCollisionWithRect(v, collider)) arr.push(v);
         });
-
         let curMaxArea = 0
         arr.forEach((v: any, i: any) => {
             if (i == 0) {
@@ -252,24 +249,18 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
                 }
             }
         });
-
-        let state: any = globalThis._.cloneDeep(this._state);
         let collideredIndex: number = this._collideredBox.findIndex((v: any) => v == collidered);
+
+        let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
+        let state: any = globalThis._.cloneDeep(this._state);
         if(colliderIndex!= -1){
-           
             //如果没有触发定时器， state.collider[colliderIndex]坐标没变化，不会重置位置
             this._colliderBox[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
             this._colliderBox[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
-            
-            if (collideredIndex == -1) {
-                state.colliderIndex = colliderIndex
-                state.collider[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
-                state.collider[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
-            }
-            else{
-                state.colliderIndex = colliderIndex
-                state.collider[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
-                state.collider[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
+            state.collider[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
+            state.collider[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
+            state.colliderIndex = colliderIndex
+            if (collideredIndex != -1) {
                 for (let i = 0; i < state.collider.length; i++) {
                     let index = state.collider[i].belong.findIndex((v: any) => v == collideredIndex);
                     if(index!=-1){
@@ -284,6 +275,9 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
             if(answerIndex!= -1){
                 this._answerBox[answerIndex].x = this._cache['answerColliderBoxOrigin'][answerIndex].x
                 this._answerBox[answerIndex].y = this._cache['answerColliderBoxOrigin'][answerIndex].y
+                state.answerCollider[answerIndex].x = this._cache['answerColliderBoxOrigin'][answerIndex].x
+                state.answerCollider[answerIndex].y = this._cache['answerColliderBoxOrigin'][answerIndex].y
+                state.answerIndex = answerIndex
                 if (collideredIndex == -1) {
                     for (let i = 0; i < state.collider.length; i++) {
                         let arr = state.collider[i].belong
@@ -292,8 +286,6 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
                             state.collider[i].belong.splice(index,1)
                         }
                     }
-                    state.answerCollider[answerIndex].x = this._cache['answerColliderBoxOrigin'][answerIndex].x
-                    state.answerCollider[answerIndex].y = this._cache['answerColliderBoxOrigin'][answerIndex].y
                 }
                 else{
                     if(answerIndex != collideredIndex){
@@ -317,7 +309,7 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
                             arr1.push(collideredIndex)
 
                             let arr2 = state.collider[collideredIndex0].belong
-                            let index2 = arr.indexOf(collideredIndex)
+                            let index2 = arr2.indexOf(collideredIndex)
                             arr2.splice(index2,1)
                             arr2.push(answerIndex)
                         }
@@ -327,10 +319,6 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
                             arr.splice(index,1)
                             arr.push(collideredIndex)
                         }
-                    }
-                    else{
-                        state.answerCollider[answerIndex].x = this._cache['answerColliderBoxOrigin'][answerIndex].x
-                        state.answerCollider[answerIndex].y = this._cache['answerColliderBoxOrigin'][answerIndex].y
                     }
                 }
             }
@@ -417,8 +405,8 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
                 this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
             }
             else if(state.answerIndex!=-1){
-                this._colliderBox[state.answerIndex].x = state.collider[state.answerIndex].x;
-                this._colliderBox[state.answerIndex].y = state.collider[state.answerIndex].y;
+                this._answerBox[state.answerIndex].x = state.answerCollider[state.answerIndex].x;
+                this._answerBox[state.answerIndex].y = state.answerCollider[state.answerIndex].y;
             }
             
 
@@ -484,8 +472,8 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
             if (!globalThis._.isEqual(oldState.answerCollider, state.collider.answerCollider)) {
                 if(state.answerIndex || state.answerIndex==0){
                     if(state.answerIndex != -1){
-                        this._colliderBox[state.answerIndex].x = state.collider[state.answerIndex].x;
-                        this._colliderBox[state.answerIndex].y = state.collider[state.answerIndex].y;
+                        this._answerBox[state.answerIndex].x = state.answerCollider[state.answerIndex].x;
+                        this._answerBox[state.answerIndex].y = state.answerCollider[state.answerIndex].y;
                     }
                 }
             }
@@ -578,8 +566,8 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
                 state.collider[state.colliderIndex].y  = this._colliderBox[state.colliderIndex].y
             }
             else if(state.answerIndex != -1){
-                state.collider[state.answerIndex].x  = this._colliderBox[state.answerIndex].x
-                state.collider[state.answerIndex].y  = this._colliderBox[state.answerIndex].y
+                state.answerCollider[state.answerIndex].x  = this._answerBox[state.answerIndex].x
+                state.answerCollider[state.answerIndex].y  = this._answerBox[state.answerIndex].y
             }
             
             this.updateState(state);

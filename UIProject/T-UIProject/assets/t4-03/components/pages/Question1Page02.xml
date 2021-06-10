@@ -35,5 +35,10 @@
     <component id="n75_r1ww" name="submit" src="t68d4x" fileName="components/common/buttons/submit.xml" xy="1687,795">
       <Button icon="ui://k4ucnbrrm2z94o" selectedIcon="ui://k4ucnbrrm2z94n"/>
     </component>
+    <component id="n102_oqfz" name="answerValue1" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1420,255" group="n106_oqfz"/>
+    <component id="n103_oqfz" name="answerValue2" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1580,255" group="n106_oqfz"/>
+    <component id="n104_oqfz" name="answerValue3" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1420,415" group="n106_oqfz"/>
+    <component id="n105_oqfz" name="answerValue4" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1580,415" group="n106_oqfz"/>
+    <group id="n106_oqfz" name="answerBox" xy="1420,255" size="286,286" advanced="true"/>
   </displayList>
 </component>

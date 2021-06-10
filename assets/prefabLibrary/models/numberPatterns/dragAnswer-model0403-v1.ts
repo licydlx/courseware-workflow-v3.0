@@ -26,6 +26,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
     private _cache = {};
     private _colliderBox = [];
     private _collideredBox = [];
+    private _answerBox = [];
     private _dragging = false;
 
     private _answer = "";
@@ -69,9 +70,30 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
 
         //问题 + 答题区
+
+        let answerBox = this._view.getChild("answerBox").asGroup;
+        this._answerLoader = [];
+        this._cache['answerColliderBox'] = []
+        this._cache['answerColliderBoxOrigin'] = []
+        for (let i = 0; i < this._view.numChildren; i++) {
+            if (this._view.getChildAt(i).group == answerBox) {
+                let btn: fgui.GButton = this._view.getChildAt(i).asButton;
+                this._cache['answerColliderBox'].push({ x: btn.x, y: btn.y, belong: -1 });
+                this._cache['answerColliderBoxOrigin'].push({ x: btn.x, y: btn.y})
+                btn.draggable = true;
+                btn.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
+                btn.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
+                btn.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
+                this._answerBox.push(btn);
+
+                let com  = this._view.getChildAt(i).asCom;
+                let loader = com.getChild("answerValue1").asLoader;
+                this._answerLoader.push(loader)
+            }
+        }
         let question = this._view.getChild("question").asGroup;
         let question_index = 0;
-        this._answerLoader = []
+        
         for (let i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == question) {
                 let com = this._view.getChildAt(i).asCom;
@@ -79,8 +101,8 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
                 bg_loader.url = this._answerbgSkin[0]
                 if (question_index == 3) {
                     for (let i = 1; i < 5; i++) {
-                        let value_loader = com.getChild("value" + i) as fgui.GLoader
-                        this._answerLoader.push(value_loader)
+                        let value_loader = com.getChild("value" + i).asLoader
+                        value_loader.url = ""
                     }
                     this._answerComBG = bg_loader
                 }
@@ -136,6 +158,8 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             drag: "end",
             collider: this._cache["colliderBox"].map((v: any) => v),
             colliderIndex: null,
+            answerCollider: this._cache["answerColliderBox"].map((v: any) => v),
+            answerIndex: null,
             isHasCollide: false,
             title: false,
             submit: false,
@@ -204,7 +228,16 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         let colliderIndex = this._colliderBox.findIndex(v => v == collider);
 
         let state: any = globalThis._.cloneDeep(this._state);
-        state.colliderIndex = colliderIndex;
+        if(colliderIndex != -1){
+            state.colliderIndex = colliderIndex;
+            state.answerIndex = -1
+            
+        }
+        else{
+            let answerIndex = this._answerBox.findIndex(v => v == collider);
+            state.colliderIndex = -1;
+            state.answerIndex = answerIndex
+        }
         state.isHasCollide = false;
         this.updateState(state);
     }
@@ -219,14 +252,11 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         this._dragging = false;
 
         let collider = fgui.GObject.cast(evt.currentTarget);
-        let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
-
         let arr: any = [];
         let collidered: any;
         this._collideredBox.forEach((v: any, i: any) => {
             if (s.isCollisionWithRect(v, collider)) arr.push(v);
         });
-
         let curMaxArea = 0
         arr.forEach((v: any, i: any) => {
             if (i == 0) {
@@ -242,29 +272,49 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         });
         let collideredIndex: number = this._collideredBox.findIndex((v: any) => v == collidered);
 
-        //如果没有触发定时器， state.collider[colliderIndex]坐标没变化，不会重置位置
-        this._colliderBox[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
-        this._colliderBox[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
-
+        let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
         let state: any = globalThis._.cloneDeep(this._state);
-        if (collideredIndex == -1) {
-            state.colliderIndex = colliderIndex
+        if(colliderIndex != -1){
+            //如果没有触发定时器， state.collider[colliderIndex]坐标没变化，不会重置位置
+            this._colliderBox[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
+            this._colliderBox[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
             state.collider[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
             state.collider[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
-        }
-        else {
             state.colliderIndex = colliderIndex
-            state.collider[colliderIndex].x = this._cache["colliderBoxOrigin"][colliderIndex].x
-            state.collider[colliderIndex].y = this._cache["colliderBoxOrigin"][colliderIndex].y
-            for (let i = 0; i < state.collider.length; i++) {
-                if (colliderIndex == i) {
-                    state.collider[i].belong = collideredIndex
-                }
-                else {
-                    state.collider[i].belong = -1
+            if (collideredIndex != -1) {
+                for (let i = 0; i < state.collider.length; i++) {
+                    if (colliderIndex == i) {
+                        state.collider[i].belong = collideredIndex
+                    }
+                    else {
+                        state.collider[i].belong = -1
+                    }
                 }
             }
         }
+        else{
+            let answerIndex: number = this._answerBox.findIndex((v: any) => v == collider);
+            if(answerIndex != -1){
+                this._answerBox[answerIndex].x = this._cache['answerColliderBoxOrigin'][answerIndex].x
+                this._answerBox[answerIndex].y = this._cache['answerColliderBoxOrigin'][answerIndex].y
+                state.answerCollider[answerIndex].x = this._cache['answerColliderBoxOrigin'][answerIndex].x
+                state.answerCollider[answerIndex].y = this._cache['answerColliderBoxOrigin'][answerIndex].y
+                state.answerIndex = answerIndex
+            }
+
+            if (collideredIndex != -1) {
+                for (let i = 0; i < state.collider.length; i++) {
+                    if (state.collider[i].belong == answerIndex) {
+                        state.collider[i].belong = collideredIndex
+                    }
+                }
+            }
+            else{
+                for (let i = 0; i < state.collider.length; i++) {
+                    state.collider[i].belong = -1
+                }
+            }
+        } 
         state.drag = "end";
         state.submit = false;
         state.isHasCollide = false;
@@ -336,8 +386,14 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
         if (state.drag == "move") {
-            this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
-            this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
+            if(state.colliderIndex!=-1){
+                this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
+                this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
+            }
+            else if(state.answerIndex!=-1){ 
+                this._answerBox[state.answerIndex].x = state.answerCollider[state.answerIndex].x;
+                this._answerBox[state.answerIndex].y = state.answerCollider[state.answerIndex].y;
+            }
             
             if (!globalThis._.isEqual(oldState.isHasCollide, state.isHasCollide)) {
                 if(state.isHasCollide){
@@ -362,7 +418,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
            
             if (!globalThis._.isEqual(oldState.collider, state.collider)) {
                 if(state.colliderIndex || state.colliderIndex==0){
-                    if(state.colliderIndex!= -1 ){
+                    if(state.colliderIndex != -1){
                         this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
                         this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
                         let index = state.collider[state.colliderIndex].belong
@@ -377,6 +433,34 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
                                 }
                             }
                         }
+                    }
+                    else if(state.answerIndex != -1){
+                        let value = 1
+                        let index = 0
+                        for (let i = 0; i < state.collider.length; i++) {
+                            if(state.collider[i].belong!=-1){
+                                value = i
+                                index = state.collider[i].belong
+                            }
+                        }
+                        for (let i = 0; i < this._answerLoader.length; i++) {
+                            if (i == index) {
+                                this._answerLoader[i].url = this._optionsUrl[value + 1]
+                            }
+                            else {
+                                this._answerLoader[i].url = ""
+                            }
+                        }
+                    }
+                    
+                }
+            }
+
+            if (!globalThis._.isEqual(oldState.answerCollider, state.collider.answerCollider)) {
+                if(state.answerIndex || state.answerIndex==0){
+                    if(state.answerIndex != -1){
+                        this._answerBox[state.answerIndex].x = state.answerCollider[state.answerIndex].x;
+                        this._answerBox[state.answerIndex].y = state.answerCollider[state.answerIndex].y;
                     }
                 }
             }
@@ -464,8 +548,14 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             let state: any = globalThis._.cloneDeep(this._state);
             state.isHasCollide = true
             state.drag = "move";
-            state.collider[state.colliderIndex].x  = this._colliderBox[state.colliderIndex].x
-            state.collider[state.colliderIndex].y  = this._colliderBox[state.colliderIndex].y
+            if(state.colliderIndex != -1){
+                state.collider[state.colliderIndex].x  = this._colliderBox[state.colliderIndex].x
+                state.collider[state.colliderIndex].y  = this._colliderBox[state.colliderIndex].y
+            }
+            else if(state.answerIndex != -1){
+                state.answerCollider[state.answerIndex].x  = this._answerBox[state.answerIndex].x
+                state.answerCollider[state.answerIndex].y  = this._answerBox[state.answerIndex].y
+            }
             this.updateState(state);
         }
     }
