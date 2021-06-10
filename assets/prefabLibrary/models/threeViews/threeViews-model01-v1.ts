@@ -123,10 +123,8 @@ export default class threeViews_model01_v1 extends cc.Component {
             this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
         }
 
-
         if (model.config) {
             let { answer, ae } = model.config;
-
             if (model.config.dragEndPos) {
                 this._dragEndPos = model.config.dragEndPos
             }
@@ -397,7 +395,7 @@ export default class threeViews_model01_v1 extends cc.Component {
             fgui.GRoot.inst.removeChild(this.handleGuide.component);
             state.submit = false;
             this.updateState(state);
-        }, 2);
+        }, 1);
     }
 
     // 运行时 禁止操作

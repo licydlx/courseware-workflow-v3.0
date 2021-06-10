@@ -625,7 +625,7 @@ export default class threeViews_model03_v1 extends cc.Component {
             fgui.GRoot.inst.removeChild(this.handleGuide.component);
             state.submit = false;
             this.updateState(state);
-        }, 2);
+        }, 1);
     }
 
     // 运行时 禁止操作

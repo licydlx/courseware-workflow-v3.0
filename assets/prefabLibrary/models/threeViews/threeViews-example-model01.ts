@@ -77,13 +77,16 @@ export default class threeViews_example_model01 extends cc.Component {
         // 销毁反馈
         let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
+
+        let { role } = window['GlobalData'].courseData;
+        // 0 是老师, 2是学生
+        this._nextBtn.visible = role == 0;
     }
 
     async init(data: any) {
         // 临时 model component json 配置加载
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
-
 
         if (model.uiPath) {
             let GComponent = model.uiPath;
