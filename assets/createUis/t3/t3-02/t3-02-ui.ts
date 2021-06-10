@@ -112,9 +112,8 @@ export default class NewClass extends cc.Component {
 
                 fgui.GRoot.inst.removeChildren(0, -1, true);
                 if (model02._currentPageNode) {
-                    let pageQue = model02._currentPageNode.getComponent(cc.Component);
-                    // pageQue.relieveState();
-                    pageQue.onOut();
+                    let oldPageQue = model02._currentPageNode.getComponent(cc.Component);
+                    oldPageQue.enabled = false; //执行onDisable
                     model02._currentPageNode.runAction(cc.sequence(
                         cc.delayTime(fadeTime),
                         cc.callFunc(cc.Node.prototype.destroy.bind(model02._currentPageNode))
@@ -129,7 +128,6 @@ export default class NewClass extends cc.Component {
 
                 model02._currentPageNode = node;
                 let pageQue = model02._currentPageNode.getComponent(cc.Component);
-                pageQue.onIn();
                 node.opacity = 0;
                 node.runAction(cc.fadeIn(fadeTime));
                 model02.resetPanel();

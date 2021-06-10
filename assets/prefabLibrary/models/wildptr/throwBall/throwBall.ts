@@ -309,7 +309,7 @@ export default class ThrowBall extends cc.Component {
 
     onDragStart(evt) {
         //如果是答案或者投放，老师不能操作。
-        if( IsTeacherNotInDemo() ) {
+        if (IsTeacherNotInDemo()) {
             return;
         }
 
@@ -332,7 +332,7 @@ export default class ThrowBall extends cc.Component {
     }
     onDragMove(evt) {
         //如果是答案或者投放，老师不能操作。
-        if( IsTeacherNotInDemo() ) {
+        if (IsTeacherNotInDemo()) {
             return;
         }
         if (this.blocked > 0) {
@@ -348,6 +348,11 @@ export default class ThrowBall extends cc.Component {
         let curBall = this.curBall;
         if (curBall) {
             let bp = cc.v2(curBall.x, curBall.y);
+            let op = curBall["_originPosition"];
+            if( Math.abs( op.y - bp.y ) > 20 ) {
+                return;
+            }
+
             if (dragDisY < 10) {
                 bp.y += delta.y;
             }
@@ -363,13 +368,14 @@ export default class ThrowBall extends cc.Component {
             else if (dragDisY >= 60) {
                 bp.y += delta.y * 0.025;
             }
+
             curBall.x = bp.x;
             curBall.y = bp.y;
         }
     }
     onDragEnd(evt) {
         //如果是答案或者投放，老师不能操作。
-        if( IsTeacherNotInDemo() ) {
+        if (IsTeacherNotInDemo()) {
             return;
         }
 

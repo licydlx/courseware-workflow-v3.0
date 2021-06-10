@@ -197,5 +197,5 @@
     <image id="r3d07e" name="madel_mask2.png" path="/images/throw-ball/"/>
     <image id="r3d07f" name="madel-mask.png" path="/images/shot-balloon/"/>
   </resources>
-  <publish name="" path="F:\git\fairy-cocos-courseware-wild\assets\fairyUis\t2\t2-01" packageCount="2"/>
+  <publish name="" path="F:\git\courseware-workflow-v3.0\assets\fairyUis\t2\t2-01" packageCount="2"/>
 </packageDescription>

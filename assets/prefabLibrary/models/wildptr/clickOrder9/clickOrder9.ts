@@ -180,8 +180,6 @@ export default class ClickOrder9 extends cc.Component {
 
         //获得loader
         this.loader = this._view.getChild("loader").asLoader;
-        // let quePage = fgui.UIPackage.createObject(Package, model.uiPath).asCom;
-        // this.loader.asCom.addChild( quePage );
         let packageName = this.config.pathConfig.packageName;
         this.loader.url = `ui://${packageName}/${model.loaderUiPath}`;
         this.quePage = this.loader.component;
@@ -194,14 +192,7 @@ export default class ClickOrder9 extends cc.Component {
             try {
                 this.labaPage = this._view.getChild("laba").asCom;
                 this.labaPage.getChild("bubble").asLoader.url = `ui://${packageName}/${model.labaImagePath}`;
-                this.labaPage.getChild("touchPad").asButton.on(fgui.Event.CLICK, () => {
-                    if (this.blocked) {
-                        return;
-                    }
-                    let state = this.cloneState();
-                    state["movement"] = "laba";
-                    this.updateState(state);
-                });
+                this.labaPage.getChild("touchPad").asButton.on(fgui.Event.CLICK, this.onClickLaba.bind(this));
             } catch (e) {
                 console.log("创建喇叭失败：", e);
             }
@@ -217,11 +208,21 @@ export default class ClickOrder9 extends cc.Component {
         }
     }
 
+    onClickLaba() {
+        if (this.blocked) {
+            return;
+        }
+        let state = this.cloneState();
+        state["movement"] = "laba";
+        this.updateState(state);
+    }
 
     onLoad() {
-
+        this.initUI();
+        this.initState();
+    }
+    initUI(){
         this._worldRoot = cc.find("Canvas").parent;
-
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
         fgui.GRoot.inst.addChild(this._view);
@@ -259,8 +260,6 @@ export default class ClickOrder9 extends cc.Component {
                 this.dirtys.push(dirty);
             }
         );
-        this.initState();
-
         this.cleaner = this.quePage.getChild("cleaner").asCom;
     }
     switchController(ctrl) {
@@ -350,7 +349,6 @@ export default class ClickOrder9 extends cc.Component {
                 break;
         }
     }
-
 
     refreshTiles() {
         let tileState = this.state["tileState"];

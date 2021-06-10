@@ -1,7 +1,9 @@
 
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 
+
 const { ccclass, property } = cc._decorator;
+
 
 @ccclass
 export default class PlaceGame extends cc.Component {
@@ -94,6 +96,7 @@ export default class PlaceGame extends cc.Component {
         if (this.blocked) {
             this.blocked = 0;
         }
+        this.stopAllSound();
     }
     initState() {
         if (this._stateInited) {
@@ -254,7 +257,7 @@ export default class PlaceGame extends cc.Component {
         switch (state["movement"]) {
             case "submit":
                 {
-                    if( this.feedBackCount > 0 ) {
+                    if (this.feedBackCount > 0) {
                         return;
                     }
                     let right = this.checkFinish();
@@ -461,23 +464,12 @@ export default class PlaceGame extends cc.Component {
     }
 
     onEnable() {
-        // this.onIn();
+        this.registerState();
         this.schedule(this.dragSchedule, 0.3);
     }
-    onIn() {
-        this.registerState();
-    }
-    onOut() {
-        if (this.blocked) {
-            this.blocked = 0;
-        }
-        this.stopAllSound();
-        this.relieveState();
-    }
-
     onDisable() {
         this.abortAllStep();
-        // this.relieveState();
+        this.relieveState();
     }
 
     // 注册状态，及获取状态的方法
