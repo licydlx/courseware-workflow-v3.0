@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="oonhxon0">
+  <resources>
+    <image id="swpu0" name="bg.jpg" path="/images/start/"/>
+    <image id="swpu1" name="char1.png" path="/images/start/"/>
+    <image id="swpu2" name="char2.png" path="/images/start/"/>
+    <image id="swpu3" name="title.png" path="/images/start/"/>
+    <component id="swpu5" name="touchPad.xml" path="/buttons/"/>
+    <image id="swpu6" name="circle.png" path="/images/" exported="true"/>
+    <image id="swpu7" name="laba.png" path="/images/" exported="true"/>
+    <image id="swpu8" name="laba_wave.png" path="/images/" exported="true"/>
+    <image id="swpu9" name="matte.png" path="/images/" exported="true"/>
+    <image id="swpua" name="sc.png" path="/images/"/>
+    <component id="swpub" name="laba.xml" path="/" exported="true"/>
+    <component id="swpuc" name="laba-icon.xml" path="/"/>
+    <component id="swpud" name="btnLaba.xml" path="/buttons/"/>
+    <component id="swpue" name="scene-empty.xml" path="/" exported="true"/>
+    <component id="swpuf" name="page-start.xml" path="/quePage/page-start/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

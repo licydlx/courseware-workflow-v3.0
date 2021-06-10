@@ -133,7 +133,7 @@ export default class NewClass extends cc.Component {
                 model02.resetPanel();
                 // 当前页面 state 快照
                 window['GlobalData'].courseData.stateShoot = globalThis._.cloneDeep(window['GlobalData'].stateProxy["state"]);
-                // model02.recoverState();
+                model02.recoverState();
             }
         } catch (e) {
             console.log("hack fail, ", e);

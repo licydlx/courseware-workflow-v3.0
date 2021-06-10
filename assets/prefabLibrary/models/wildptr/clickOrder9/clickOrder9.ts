@@ -323,6 +323,11 @@ export default class ClickOrder9 extends cc.Component {
     }
     refresh(oldState: any, state: any) { //override
         // super.refresh(oldState, state);
+
+        if (this.hasChange("tileState")) {
+            this.refreshTiles();
+        }
+
         switch (state["movement"]) {
             case "idle":
                 this.refreshPage(state);
@@ -467,7 +472,6 @@ export default class ClickOrder9 extends cc.Component {
                 tile.getChild("n10").asCom.getChild("mask").height = 250;
 
                 let state = this.cloneState();
-                //因为会走2次idle，排除掉相同的数字。
                 this.pushUnique(state["order"], tileId);
                 state["tileState"][ind] = 1;
                 state["movement"] = "idle";
@@ -522,7 +526,7 @@ export default class ClickOrder9 extends cc.Component {
             return;
         }
         Object.assign(this._state, {
-            movement: "idle",
+            // movement: "idle",
             tileState: new Array(9).fill(0),
             order: [],
             clickInd: -1,

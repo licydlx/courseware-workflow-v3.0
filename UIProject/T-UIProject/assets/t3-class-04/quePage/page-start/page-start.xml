@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_swpu" name="n0" src="swpu0" fileName="images/start/bg.jpg" xy="0,0"/>
+    <image id="n2_swpu" name="n2" src="swpu2" fileName="images/start/char2.png" xy="355,533" pivot="0.5,0.5" anchor="true" group="n4_swpu"/>
+    <image id="n3_swpu" name="n3" src="swpu3" fileName="images/start/title.png" xy="1002,544" pivot="0.5,0.5" anchor="true" group="n4_swpu"/>
+    <image id="n1_swpu" name="n1" src="swpu1" fileName="images/start/char1.png" xy="1705,560" pivot="0.5,0.5" anchor="true" group="n4_swpu"/>
+    <group id="n4_swpu" name="n4" xy="155,305" size="1689,456" advanced="true"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Scale" target="n3_swpu" tween="true" startValue="1,1" endValue="1.05,1.05" duration="33" ease="Sine.InOut"/>
+    <item time="33" type="Scale" target="n3_swpu" tween="true" startValue="1.05,1.05" endValue="1,1" duration="33" ease="Sine.InOut"/>
+  </transition>
+</component>

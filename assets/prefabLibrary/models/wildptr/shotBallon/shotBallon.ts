@@ -576,7 +576,7 @@ export default class ShotBallon extends cc.Component {
                         .call(() => {
                             this.cursor.getTransition("arm").play();
                         })
-                        .delay(1.0)
+                        .delay(0.9)
                     ,
                     step
                 );
