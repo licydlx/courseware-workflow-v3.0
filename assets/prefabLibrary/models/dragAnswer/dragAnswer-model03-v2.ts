@@ -48,9 +48,12 @@ export default class dragAnswer_model03_v2 extends cc.Component {
 
     private _answer;
     private _roleUrl;
+    /** 游戏类型 0：例题2 1：例题1 */
     private _gameType = 0;
     /** 角色数量 */
     private _roleCount = 0;
+    /** 碰撞体类型，控制显示隐藏 */
+    private _colliderType: any;
 
     public pageData: any;
 
@@ -120,8 +123,15 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         s._cache["colliderBox"] = [];
         for (let i = 0; i < this._view.numChildren; i++) {
             if (s._view.getChildAt(i).group == colliderGroup) {
-                let btn: fgui.GButton = this._view.getChildAt(i).asButton;
-                s._cache['colliderBox'].push({ x: btn.x, y: btn.y, collideredIndex: -1, roleType: btn.data, visible: btn.visible });
+                let btn: fgui.GObject = this._view.getChildAt(i);
+                s._cache['colliderBox'].push({
+                    x: btn.x,
+                    y: btn.y,
+                    collideredIndex: -1,
+                    roleType: btn.data,
+                    visible: btn.visible,
+                    name: btn.name
+                });
                 btn['collideredIndex'] = -1;
                 btn.draggable = true;
                 btn.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
@@ -156,31 +166,19 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         let { pathConfig, model, components } = data;
         s._packName = pathConfig.packageName;
         let GComponent = model.uiPath;
-        let { answer, roleUrl, ae, gameType, roleCount } = model.config;
+        let { answer, roleUrl, ae, gameType, roleCount, colliderType } = model.config;
 
         if (model.uiPath) {
             GComponent = model.uiPath;
             this._view = fgui.UIPackage.createObject(s._packName, GComponent).asCom;
         }
 
-        /* s._readTitleBtn = fgui.UIPackage.createObject('t4-trialClass-01', 'TitleCom').asCom;
-
-        (s._readTitleBtn.getChild('title') as fgui.GLoader).url = fgui.UIPackage.createObject('t4-trialClass-01', 'title_3').asImage.resourceURL;
-        s._readTitleBtn.x = 20;
-        s._readTitleBtn.y = 50;
-        this._view.addChild(s._readTitleBtn);
-
-
-        s._submitBtn = fgui.UIPackage.createObject('t4-trialClass-01', 'SubmitBtn').asCom;
-        s._submitBtn.x = 1676;
-        s._submitBtn.y = 806;
-        this._view.addChild(s._submitBtn); */
-
         if (model.config) {
             if (answer) s._answer = answer;
             if (roleUrl) s._roleUrl = roleUrl;
             if (gameType) s._gameType = gameType;
             if (roleCount) s._roleCount = roleCount;
+            if (colliderType) s._colliderType = colliderType;
             // 动效注册
             if (ae) {
                 for (let v in ae) {
@@ -200,13 +198,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 let componentPrefab: any = await loadPrefab(componentBundle, components[key].prefabName);
                 this[key] = componentPrefab;
             }
-        }
-    }
-
-    getOriginValue(v: any) {
-        return {
-            x: v.x,
-            y: v.y
         }
     }
 
@@ -241,7 +232,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         s._dragging = true;
     }
 
-    // private dropArr = [];
     private _onDragEnd(evt: fgui.Event): void {
         let s = this;
         s.showTips(false);
@@ -255,7 +245,6 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         let arr: any = [];
         let collidered: any;
         this._collideredBox.forEach((v: any, i: any) => {
-            // if (this._belongArea(collider, v, 500) == true) arr.push(v);
             if (s.isCollisionWithRect(v, collider)) arr.push(v);
         });
 
@@ -326,7 +315,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 y: s._cache["colliderBox"][colliderIndex].y,
                 collideredIndex: -1,
                 roleType: state.collider[colliderIndex].roleType,
-                visible: state.collider[colliderIndex].visible
+                visible: state.collider[colliderIndex].visible,
+                name: state.collider[colliderIndex].name
             }
         } else {
             // 如果放置区已有元素
@@ -340,7 +330,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                     y: s._cache["colliderBox"][existColliderIndex].y,
                     collideredIndex: -1,
                     roleType: state.collider[existColliderIndex].roleType,
-                    visible: state.collider[existColliderIndex].visible
+                    visible: state.collider[existColliderIndex].visible,
+                    name: state.collider[existColliderIndex].name
                 }
 
                 // 修改需求：可以替换已组合好的元素
@@ -352,7 +343,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                         y: s._cache["colliderBox"][matchExistColliderIndex].y,
                         collideredIndex: -1,
                         roleType: state.collider[matchExistColliderIndex].roleType,
-                        visible: state.collider[matchExistColliderIndex].visible
+                        visible: state.collider[matchExistColliderIndex].visible,
+                        name: state.collider[matchExistColliderIndex].name
                     }
                 }
             }
@@ -366,11 +358,31 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 x: s._collideredBox[collideredIndex].x,
                 y: s._collideredBox[collideredIndex].y,
                 collideredIndex: collideredIndex,
-                roleType: state.collider[collideredIndex].roleType,
-                visible: state.collider[collideredIndex].visible
-            }
+                roleType: state.collider[colliderIndex].roleType,
+                visible: state.collider[colliderIndex].visible,
+                name: state.collider[colliderIndex].name
+            }            
             state.collidered[collideredIndex] = dropArr;
         }
+        for (let i = 0; i < s._colliderType.length; i++) {
+            let len = state.collider.length;
+            let firstFlag = true;
+            while (--len > -1) {
+                let thisCollider = state.collider[len];
+                if (thisCollider['name'].indexOf(s._colliderType[i]) > -1) {
+                    if (thisCollider['collideredIndex'] == -1) {
+                        if (firstFlag) {
+                            firstFlag = false;
+                            thisCollider.visible = true;
+                        } else {
+                            thisCollider.visible = false;                            
+                        }
+                    }
+                   
+                }
+            }
+        }
+        console.log('state.collider = ', state.collider);
         console.log('state.collidered = ', state.collidered);
 
         state.drag = "end";
@@ -477,15 +489,16 @@ export default class dragAnswer_model03_v2 extends cc.Component {
         state.answer = JSON.stringify(userAnswer) === JSON.stringify(s._answer) && collideredCount == (s._answer.role1 + s._answer.role2) * 2;
         state.submit = true;
         if (state.answer) {
-            state.collider.forEach((v,i)=>{
+            state.collider.forEach((v, i) => {
                 state.collider[i] = {
                     x: v.x,
                     y: v.y,
                     collideredIndex: v.collideredIndex,
                     roleType: v.roleType,
-                    visible: false
+                    visible: false,
+                    name: v.name
                 }
-                
+
             });
         }
         this.updateState(state);
@@ -494,9 +507,9 @@ export default class dragAnswer_model03_v2 extends cc.Component {
     }
 
     private _roleArr: fgui.GComponent[] = [];
-    private showEndAnim(state:any,callbackFun: Function = null, callbackThis: any = null): void {
+    private showEndAnim(state: any, callbackFun: Function = null, callbackThis: any = null): void {
         let s = this;
-        
+
         s._view.touchable = false;
         state.collidered.forEach((v, i) => {
             if (i < (state.collidered.length / 2) >> 0 && v.length > 0) {
@@ -570,7 +583,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 cc.tween(role).to(1.5, {
                     alpha: 1
                 }).call(() => {
-                    if (callbackFun) {              
+                    if (callbackFun) {
                         callbackFun.call(callbackThis);
                         callbackFun = null;
                         callbackThis = null;
@@ -681,7 +694,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                         return;
                     }
                     if (state.answer) {
-                        s.showEndAnim(state,() => {
+                        s.showEndAnim(state, () => {
                             this.answerFeedback(state.answer);
                         });
                     } else {
@@ -691,7 +704,7 @@ export default class dragAnswer_model03_v2 extends cc.Component {
             } else {
                 if (state.answer && state.submit) {
                     s.hideEndAnimation();
-                    s.showEndAnim(state,() => {
+                    s.showEndAnim(state, () => {
                         this.answerFeedback(state.answer);
                     });
                 }
@@ -854,7 +867,8 @@ export default class dragAnswer_model03_v2 extends cc.Component {
                 y: this._colliderBox[state.colliderIndex].y,
                 collideredIndex: state.collider[state.colliderIndex].collideredIndex,
                 roleType: state.collider[state.colliderIndex].roleType,
-                visible: true
+                visible: true,
+                name: state.collider[state.colliderIndex].name
             };
             s.updateState(state);
         }

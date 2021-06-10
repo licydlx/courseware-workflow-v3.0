@@ -9,7 +9,7 @@
       <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
     <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="217,35" size="1270,135" alpha="0" touchable="false">
-      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0" tween="true"/>
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
       <Button icon="ui://k4ucnbrrt68dcd" sound="ui://k4ucnbrr103lzex"/>
     </component>
     <component id="n75_r1ww" name="submit" src="t68d4x" fileName="components/common/buttons/submit.xml" xy="1706,856">

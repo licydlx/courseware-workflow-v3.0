@@ -175,6 +175,9 @@
     <component id="n2yqzf6" name="handleGuide01.xml" path="/components/common/" exported="true"/>
     <component id="pxoyzf7" name="WheelComponent.xml" path="/components/Items/" exported="true"/>
     <component id="l5cgzfa" name="Wheel.xml" path="/components/Items/" exported="true"/>
+    <component id="jreazfb" name="static-model01-v1-p13.xml" path="/components/pages/" exported="true"/>
+    <image id="jreazfc" name="class_end.png" path="/images/static/"/>
+    <component id="oqfzzff" name="NumExample10.xml" path="/components/Items/"/>
   </resources>
   <publish name="" path="E:\workspaces\courseware-workflow-v3.0\assets\fairyUis\t4\t4-03" packageCount="2"/>
 </packageDescription>

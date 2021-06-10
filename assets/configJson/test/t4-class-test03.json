@@ -2,7 +2,7 @@
     "name": "",
     "courseName": "t4-class-test03",
     "env": "test",
-    "totalPages": 14,
+    "totalPages": 15,
     "pathConfig": {
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
         "controllerBundlePath": "T-series/personalTest/wj/controllers/",
@@ -252,7 +252,6 @@
                 }
             }
         },
-
         {
             "model": {
                 "uiPath": "Question2Page02",
@@ -291,7 +290,6 @@
                 }
             }
         },
-
         {
             "model": {
                 "uiPath": "Question2Page03",
@@ -330,7 +328,6 @@
                 }
             }
         },
-
         {
             "model": {
                 "uiPath": "Question2Page04",
@@ -370,8 +367,6 @@
             }
         },
 
-
-       
         {
             "model": {
                 "uiPath": "Question3Page01",
@@ -425,7 +420,8 @@
                     "prefabName": "feedback-model01-v1"
                 }
             }
-        }, {
+        },
+        {
             "model": {
                 "uiPath": "Question3Page02",
                 "bundleName": "numberPatterns",
@@ -478,7 +474,8 @@
                     "prefabName": "feedback-model01-v1"
                 }
             }
-        }, {
+        },
+        {
             "model": {
                 "uiPath": "Question3Page03",
                 "bundleName": "numberPatterns",
@@ -531,7 +528,8 @@
                     "prefabName": "feedback-model01-v1"
                 }
             }
-        }, {
+        },
+        {
             "model": {
                 "uiPath": "Question3Page04",
                 "bundleName": "numberPatterns",
@@ -584,7 +582,8 @@
                     "prefabName": "feedback-model01-v1"
                 }
             }
-        }, {
+        },
+        {
             "model": {
                 "uiPath": "Question3Page05",
                 "bundleName": "numberPatterns",
@@ -637,6 +636,15 @@
                     "prefabName": "feedback-model01-v1"
                 }
             }
+        },
+        
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p13",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
+            }
+            
         }
     ]
 }

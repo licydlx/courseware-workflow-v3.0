@@ -7,8 +7,8 @@
     <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
       <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
-    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0">
-      <gearLook controller="c2" pages="0" values="0,0,0,1" default="1,0,0,1"/>
+    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
       <Button icon="ui://k4ucnbrrt68dbt" sound="ui://k4ucnbrr103lzew"/>
     </component>
     <component id="n70_r1ww" name="A" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="158,201" group="n74_r1ww"/>
@@ -35,5 +35,10 @@
     <component id="n75_r1ww" name="submit" src="t68d4x" fileName="components/common/buttons/submit.xml" xy="1687,795">
       <Button icon="ui://k4ucnbrrm2z94o" selectedIcon="ui://k4ucnbrrm2z94n"/>
     </component>
+    <component id="n85_oqfz" name="answerValue1" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1420,255" group="n89_oqfz"/>
+    <component id="n91_oqfz" name="answerValue2" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1580,255" group="n89_oqfz"/>
+    <component id="n92_oqfz" name="answerValue3" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1420,415" group="n89_oqfz"/>
+    <component id="n93_oqfz" name="answerValue4" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1580,415" group="n89_oqfz"/>
+    <group id="n89_oqfz" name="answerBox" xy="1420,255" size="286,286" advanced="true"/>
   </displayList>
 </component>

@@ -7,8 +7,8 @@
     <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
       <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
-    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0">
-      <gearLook controller="c2" pages="0" values="0,0,0,1" default="1,0,0,1"/>
+    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
       <Button icon="ui://k4ucnbrrt68dbt" sound="ui://k4ucnbrr103lzew"/>
     </component>
     <component id="n75_r1ww" name="submit" src="t68d4x" fileName="components/common/buttons/submit.xml" xy="1687,795">
@@ -35,5 +35,10 @@
     <component id="n94_iefu" name="pos3" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1405,382" size="160,160" group="n96_iefu"/>
     <component id="n95_iefu" name="pos4" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1565,382" size="160,160" group="n96_iefu"/>
     <group id="n96_iefu" name="collideredBox" xy="1405,222" size="320,320" advanced="true"/>
+    <component id="n107_oqfz" name="answerValue1" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1418,238" group="n111_oqfz"/>
+    <component id="n108_oqfz" name="answerValue2" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1578,238" group="n111_oqfz"/>
+    <component id="n109_oqfz" name="answerValue3" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1418,398" group="n111_oqfz"/>
+    <component id="n110_oqfz" name="answerValue4" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1578,398" group="n111_oqfz"/>
+    <group id="n111_oqfz" name="answerBox" xy="1418,238" size="286,286" advanced="true"/>
   </displayList>
 </component>
