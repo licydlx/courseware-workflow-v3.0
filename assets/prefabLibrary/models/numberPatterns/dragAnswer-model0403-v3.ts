@@ -592,22 +592,12 @@ export default class dragAnswer_model0403_v3 extends cc.Component {
 
     // 运行时 禁止操作
     forbidHandle() {
-        let handleMask = this._worldRoot.getChildByName('handleMask');
-        if (!handleMask) {
-            let handleMask = new cc.Node('handleMask');
-            handleMask.addComponent(cc.BlockInputEvents);
-            handleMask.parent = this._worldRoot;
-            handleMask.width = 1920;
-            handleMask.height = 1080;
-            handleMask.x = 960;
-            handleMask.y = 540;
-        }
+        this._view.touchable = false
     }
 
     // 消除禁止
     disableForbidHandle() {
-        let handleMask = this._worldRoot.getChildByName('handleMask');
-        if (handleMask) handleMask.destroy();
+        this._view.touchable = true
     }
 
     onEnable() {

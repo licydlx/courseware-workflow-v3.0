@@ -582,25 +582,15 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);
     }
 
-    // 运行时 禁止操作
-    forbidHandle() {
-        let handleMask = this._worldRoot.getChildByName('handleMask');
-        if (!handleMask) {
-            let handleMask = new cc.Node('handleMask');
-            handleMask.addComponent(cc.BlockInputEvents);
-            handleMask.parent = this._worldRoot;
-            handleMask.width = 1920;
-            handleMask.height = 1080;
-            handleMask.x = 960;
-            handleMask.y = 540;
+        // 运行时 禁止操作
+        forbidHandle() {
+            this._view.touchable = false
         }
-    }
-
-    // 消除禁止
-    disableForbidHandle() {
-        let handleMask = this._worldRoot.getChildByName('handleMask');
-        if (handleMask) handleMask.destroy();
-    }
+    
+        // 消除禁止
+        disableForbidHandle() {
+            this._view.touchable = true
+        }
 
     onEnable() {
         this.registerState();
