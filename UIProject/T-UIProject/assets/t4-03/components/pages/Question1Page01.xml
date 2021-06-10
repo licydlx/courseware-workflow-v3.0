@@ -7,8 +7,8 @@
     <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
       <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
-    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0">
-      <gearLook controller="c2" pages="0" values="0,0,0,1" default="1,0,0,1"/>
+    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
       <Button icon="ui://k4ucnbrrt68dbt" sound="ui://k4ucnbrr103lzew"/>
     </component>
     <component id="n70_r1ww" name="A" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="158,201" group="n74_r1ww"/>
