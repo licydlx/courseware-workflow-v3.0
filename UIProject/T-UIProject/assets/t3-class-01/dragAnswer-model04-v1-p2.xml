@@ -172,10 +172,5 @@
       <Button icon="ui://1io1z8o5yvacav"/>
     </component>
     <group id="n133_hef4" name="n95" xy="626,274" size="748,258" advanced="true"/>
-    <text id="n134_g9vs" name="leftBox" xy="410,14" size="1000,54" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="1111"/>
-    <text id="n135_g9vs" name="rightBox" xy="407,78" size="1000,54" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="1111"/>
-    <text id="n136_g9vs" name="allBox" xy="411,137" size="1000,54" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="1111"/>
-    <text id="n137_g9vs" name="showall" xy="407,197" size="1000,54" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="show_all"/>
-    <text id="n138_g9vs" name="hideall" xy="404,252" size="1000,54" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="hide_all"/>
   </displayList>
 </component>
