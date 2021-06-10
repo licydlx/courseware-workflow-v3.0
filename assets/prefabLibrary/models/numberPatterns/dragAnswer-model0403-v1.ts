@@ -435,19 +435,26 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
                         }
                     }
                     else if(state.answerIndex != -1){
-                        let value = 1
-                        let index = 0
+                        let value = 0
+                        let index = -1
+                        let isExit = false
                         for (let i = 0; i < state.collider.length; i++) {
                             if(state.collider[i].belong!=-1){
                                 value = i
                                 index = state.collider[i].belong
+                                isExit = true
                             }
                         }
                         for (let i = 0; i < this._answerLoader.length; i++) {
-                            if (i == index) {
-                                this._answerLoader[i].url = this._optionsUrl[value + 1]
+                            if(isExit ){
+                                if (i == index) {
+                                    this._answerLoader[i].url = this._optionsUrl[value + 1]
+                                }
+                                else {
+                                    this._answerLoader[i].url = ""
+                                }
                             }
-                            else {
+                            else{
                                 this._answerLoader[i].url = ""
                             }
                         }
