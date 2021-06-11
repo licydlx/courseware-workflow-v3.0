@@ -2,7 +2,7 @@
     "name": "",
     "courseName": "t3-class-04",
     "env": "test",
-    "totalPages": 5,
+    "totalPages": 12,
     "pathConfig": {
         "remoteUrl": "",
         "modelBundlePath": "",
@@ -153,6 +153,227 @@
                     "lightColorHex": "bb84ff",
                     "srcStateList":  [ 0, 0, 0, 0, 0, 0 ],
                     "dstStateList" : [ 0, 0, 1, 1, 0, 0 ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"例题2",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg2-1",
+                "loaderUiPath": "t3-04-2-1",
+                "bundleName": "classifyInput",
+                "prefabName": "classifyInput",
+                "labaImagePath": "t3-04-2-info", 
+                "labaSoundClip": "t3-04-2",
+                "labaTime": 6,
+                "config": {
+                    "srcValue": [ -1, -1 ],
+                    "dstValue": [ 3, 2 ]
+                }
+            },
+            "components": {
+                "keypad": {
+                    "bundleName": "keypad",
+                    "prefabName": "keypad",
+                    "config": {
+                        "y": -280
+                    }
+                },
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"习题2-1",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg2-2",
+                "loaderUiPath": "t3-04-2-2",
+                "bundleName": "classifyInput",
+                "prefabName": "classifyInput",
+                "labaImagePath": "t3-04-2-info", 
+                "labaSoundClip": "t3-04-2",
+                "labaTime": 6,
+                "config": {
+                    "srcValue": [ -1, -1 ],
+                    "dstValue": [ 2, 2 ]
+                }
+            },
+            "components": {
+                "keypad": {
+                    "bundleName": "keypad",
+                    "prefabName": "keypad",
+                    "config": {
+                        "y": -280
+                    }
+                },
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"习题2-2",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg2-2",
+                "loaderUiPath": "t3-04-2-3",
+                "bundleName": "classifyInput",
+                "prefabName": "classifyInput",
+                "labaImagePath": "t3-04-2-info", 
+                "labaSoundClip": "t3-04-2",
+                "labaTime": 6,
+                "config": {
+                    "srcValue": [ -1, -1 ],
+                    "dstValue": [ 2, 2 ]
+                }
+            },
+            "components": {
+                "keypad": {
+                    "bundleName": "keypad",
+                    "prefabName": "keypad",
+                    "config": {
+                        "y": -280
+                    }
+                },
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"例题2",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg3-1",
+                "loaderUiPath": "t3-04-3-1",
+                "bundleName": "classifyInput",
+                "prefabName": "classifyInput",
+                "labaImagePath": "t3-04-3-info", 
+                "labaSoundClip": "t3-04-3",
+                "labaTime": 6,
+                "config": {
+                    "srcValue": [ -1, -1 ],
+                    "dstValue": [ 3, 3 ]
+                }
+            },
+            "components": {
+                "keypad": {
+                    "bundleName": "keypad",
+                    "prefabName": "keypad",
+                    "config": {
+                        "y": -280
+                    }
+                },
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"习题3-1",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg3-1",
+                "loaderUiPath": "t3-04-3-2",
+                "bundleName": "classifyInput",
+                "prefabName": "classifyInput",
+                "labaImagePath": "t3-04-3-info", 
+                "labaSoundClip": "t3-04-3",
+                "labaTime": 6,
+                "config": {
+                    "srcValue": [ -1, -1 ],
+                    "dstValue": [ 2, 3 ]
+                }
+            },
+            "components": {
+                "keypad": {
+                    "bundleName": "keypad",
+                    "prefabName": "keypad",
+                    "config": {
+                        "y": -280
+                    }
+                },
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"习题3-2",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg3-1",
+                "loaderUiPath": "t3-04-3-3",
+                "bundleName": "classifyInput",
+                "prefabName": "classifyInput",
+                "labaImagePath": "t3-04-3-info", 
+                "labaSoundClip": "t3-04-3",
+                "labaTime": 6,
+                "config": {
+                    "srcValue": [ -1, -1 ],
+                    "dstValue": [ 3, 3 ]
+                }
+            },
+            "components": {
+                "keypad": {
+                    "bundleName": "keypad",
+                    "prefabName": "keypad",
+                    "config": {
+                        "y": -280
+                    }
+                },
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"拓展提升",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg4-1",
+                "loaderUiPath": "t3-04-4",
+                "bundleName": "collectDrag",
+                "prefabName": "collectDrag",
+                "labaImagePath": "t3-04-4-info", 
+                "labaSoundClip": "t3-04-4",
+                "labaTime": 6,
+                "config": {
+                    "itemCount" : 5,
+                    "itemImg":[
+                        "man4-1",
+                        "man4-2",
+                        "man4-3",
+                        "man4-4",
+                        "man4-5"
+                    ],
+                    "zoneMaxCount": [
+                        5,
+                        3
+                    ],
+                    "srcZones": [
+                        [0,1,2,3,4],
+                        []
+                    ],
+                    "dstZones": [
+                        [3,4],
+                        [0,1,2]
+                    ]
                 }
             },
             "components": {

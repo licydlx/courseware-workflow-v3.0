@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="222,259" pivot="0.5,0.75" anchor="true">
+  <displayList>
+    <image id="n7_k764" name="n7" src="swpu6" fileName="images/circle.png"  xy="110,256" pivot="0.5,0.5" anchor="true" size="130,33" alpha="0.292" color="#000000"/>
+    <loader id="n8_tq5p" name="loader" xy="110,258" pivot="0.5,1" anchor="true" size="143,143" url="ui://vojbwzmjtq5p1h" autoSize="true"/>
+  </displayList>
+  <transition name="up">
+    <item time="0" type="Alpha" target="n7_k764" tween="true" startValue="0.292" endValue="0" duration="4"/>
+    <item time="0" type="XY" target="n8_tq5p" tween="true" startValue="110,258" endValue="110,218" duration="4"/>
+  </transition>
+  <transition name="down">
+    <item time="0" type="Alpha" target="n7_k764" tween="true" startValue="0" endValue="0.292" duration="4"/>
+    <item time="0" type="XY" target="n8_tq5p" tween="true" startValue="110,218" endValue="110,268" duration="4"/>
+    <item time="4" type="XY" target="n8_tq5p" tween="true" startValue="110,268" endValue="110,258" duration="2"/>
+  </transition>
+</component>

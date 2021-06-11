@@ -71,14 +71,14 @@
     <image id="iix120" name="item1-2-2.png" path="/images/t3-04-1/2/" exported="true"/>
     <image id="iix121" name="item1-2-1.png" path="/images/t3-04-1/2/" exported="true"/>
     <image id="iix122" name="bg1-2.png" path="/images/t3-04-1/" exported="true"/>
-    <image id="iix123" name="bg4.png" path="/images/t3-04-2/"/>
-    <image id="iix124" name="bg2-1.png" path="/images/t3-04-2/"/>
+    <image id="iix123" name="bg2-2.png" path="/images/t3-04-2/" exported="true"/>
+    <image id="iix124" name="bg2-1.png" path="/images/t3-04-2/" exported="true"/>
     <image id="iix125" name="例1-1.png" path="/images/shows/"/>
     <image id="iix126" name="例1.png" path="/images/shows/"/>
     <image id="iix127" name="例2-1.png" path="/images/shows/"/>
     <image id="iix128" name="例2-2.png" path="/images/shows/"/>
     <image id="iix129" name="例2.png" path="/images/shows/"/>
-    <component id="iix12a" name="t3-04-2.xml" path="/quePage/t3-04-2/"/>
+    <component id="iix12a" name="t3-04-2-1.xml" path="/quePage/t3-04-2/" exported="true"/>
     <image id="iix12b" name="man2-1-3.png" path="/images/t3-04-2/1/"/>
     <image id="iix12c" name="man2-1-1.png" path="/images/t3-04-2/1/"/>
     <image id="iix12d" name="man2-1-2.png" path="/images/t3-04-2/1/"/>
@@ -96,6 +96,92 @@
     <image id="iix12p" name="4.png" path="/images/font1/"/>
     <image id="iix12q" name="5.png" path="/images/font1/"/>
     <font id="iix12r" name="Font1.fnt" path="/images/font1/" exported="true"/>
+    <image id="iix12s" name="item2-1-2.png" path="/images/t3-04-2/1/" exported="true"/>
+    <image id="iix12t" name="item2-1-1.png" path="/images/t3-04-2/1/" exported="true"/>
+    <image id="iix12u" name="9.png" path="/images/keypad/"/>
+    <image id="iix12v" name="bg.png" path="/images/keypad/"/>
+    <image id="iix12w" name="reset.png" path="/images/keypad/"/>
+    <image id="iix12x" name="submit.png" path="/images/keypad/"/>
+    <image id="iix12y" name="0.png" path="/images/keypad/"/>
+    <image id="iix12z" name="1.png" path="/images/keypad/"/>
+    <image id="iix130" name="2.png" path="/images/keypad/"/>
+    <image id="iix131" name="3.png" path="/images/keypad/"/>
+    <image id="iix132" name="4.png" path="/images/keypad/"/>
+    <image id="iix133" name="5.png" path="/images/keypad/"/>
+    <image id="iix134" name="6.png" path="/images/keypad/"/>
+    <image id="iix135" name="7.png" path="/images/keypad/"/>
+    <image id="iix136" name="8.png" path="/images/keypad/"/>
+    <sound id="iix138" name="click.mp3" path="/sounds/" exported="true"/>
+    <sound id="iix139" name="info-temp.mp3" path="/sounds/" exported="true"/>
+    <component id="iix13a" name="t3-04-2-2.xml" path="/quePage/t3-04-2/" exported="true"/>
+    <image id="iix140" name="7.png" path="/images/t3-04-2/2/"/>
+    <image id="iix141" name="8.png" path="/images/t3-04-2/2/"/>
+    <image id="iix142" name="9.png" path="/images/t3-04-2/2/"/>
+    <image id="iix143" name="item2.png" path="/images/t3-04-2/2/"/>
+    <image id="iix144" name="solt1.png" path="/images/t3-04-2/2/"/>
+    <image id="iix145" name="solt2.png" path="/images/t3-04-2/2/"/>
+    <image id="iix146" name="item1.png" path="/images/t3-04-2/2/"/>
+    <image id="iix147" name="1.png" path="/images/t3-04-2/2/"/>
+    <image id="iix148" name="2.png" path="/images/t3-04-2/2/"/>
+    <image id="iix149" name="3.png" path="/images/t3-04-2/2/"/>
+    <image id="iix14a" name="6.png" path="/images/t3-04-2/2/"/>
+    <image id="iix14b" name="6.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14c" name="7.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14d" name="9.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14e" name="12.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14f" name="solt2.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14g" name="item1.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14h" name="item2.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14i" name="solt1.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14j" name="2.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14k" name="3.png" path="/images/t3-04-2/3/"/>
+    <image id="iix14l" name="5.png" path="/images/t3-04-2/3/"/>
+    <component id="iix14m" name="t3-04-2-3.xml" path="/quePage/t3-04-2/" exported="true"/>
+    <image id="iix14n" name="bg3-1.png" path="/images/t3-04-3/" exported="true"/>
+    <component id="iix14o" name="t3-04-3-1.xml" path="/quePage/t3-04-3/" exported="true"/>
+    <image id="iix14p" name="例3.png" path="/images/shows/"/>
+    <image id="iix14q" name="例3-1.png" path="/images/shows/"/>
+    <image id="iix14r" name="例3-2.png" path="/images/shows/"/>
+    <image id="iix14s" name="item1.png" path="/images/t3-04-3/1/"/>
+    <image id="iix14t" name="man3.png" path="/images/t3-04-3/1/"/>
+    <image id="iix14u" name="solt1.png" path="/images/t3-04-3/1/"/>
+    <image id="iix14v" name="solt2.png" path="/images/t3-04-3/1/"/>
+    <image id="iix14w" name="item2.png" path="/images/t3-04-3/1/"/>
+    <image id="iix14x" name="man1.png" path="/images/t3-04-3/1/"/>
+    <image id="iix14y" name="man2.png" path="/images/t3-04-3/1/"/>
+    <component id="iix14z" name="t3-04-3-2.xml" path="/quePage/t3-04-3/" exported="true"/>
+    <image id="iix157" name="man3.png" path="/images/t3-04-3/2/"/>
+    <image id="iix158" name="solt1.png" path="/images/t3-04-3/2/"/>
+    <image id="iix159" name="solt2.png" path="/images/t3-04-3/2/"/>
+    <image id="iix15a" name="item1.png" path="/images/t3-04-3/2/"/>
+    <image id="iix15b" name="item2.png" path="/images/t3-04-3/2/"/>
+    <image id="iix15c" name="man1.png" path="/images/t3-04-3/2/"/>
+    <image id="iix15d" name="man2.png" path="/images/t3-04-3/2/"/>
+    <component id="iix15e" name="t3-04-3-3.xml" path="/quePage/t3-04-3/" exported="true"/>
+    <image id="iix15f" name="solt2.png" path="/images/t3-04-3/3/"/>
+    <image id="iix15g" name="item1.png" path="/images/t3-04-3/3/"/>
+    <image id="iix15h" name="item2.png" path="/images/t3-04-3/3/"/>
+    <image id="iix15i" name="man1.png" path="/images/t3-04-3/3/"/>
+    <image id="iix15j" name="man2.png" path="/images/t3-04-3/3/"/>
+    <image id="iix15k" name="man3.png" path="/images/t3-04-3/3/"/>
+    <image id="iix15l" name="solt1.png" path="/images/t3-04-3/3/"/>
+    <image id="iix15m" name="chair.png" path="/images/t3-04-4/"/>
+    <image id="iix15n" name="cYellow.png" path="/images/"/>
+    <image id="iix15o" name="item1.png" path="/images/t3-04-4/"/>
+    <image id="iix15p" name="item2.png" path="/images/t3-04-4/"/>
+    <image id="iix15q" name="item3.png" path="/images/t3-04-4/"/>
+    <image id="iix15r" name="man4-1.png" path="/images/t3-04-4/" exported="true"/>
+    <image id="iix15s" name="man4-2.png" path="/images/t3-04-4/" exported="true"/>
+    <image id="iix15t" name="man4-3.png" path="/images/t3-04-4/" exported="true"/>
+    <image id="iix15u" name="man4-4.png" path="/images/t3-04-4/" exported="true"/>
+    <image id="iix15v" name="man4-5.png" path="/images/t3-04-4/" exported="true"/>
+    <component id="iix15w" name="t3-04-4.xml" path="/quePage/t3-04-4/" exported="true"/>
+    <image id="iix15x" name="拓展提升.png" path="/images/shows/"/>
+    <component id="iix15y" name="dragMan.xml" path="/quePage/t3-04-4/"/>
+    <sound id="iix15z" name="drag.mp3" path="/sounds/" exported="true"/>
+    <image id="iix160" name="hand.png" path="/images/" exported="true"/>
+    <image id="iix161" name="bg4-1.png" path="/images/t3-04-4/" exported="true"/>
+    <component id="iix162" name="touchPad.xml" path="/quePage/buttons/"/>
   </resources>
   <publish name="" path="F:\git\courseware-workflow-v3.0\assets\fairyUis\t3\t3-class-04" packageCount="2"/>
 </packageDescription>

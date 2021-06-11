@@ -26,7 +26,6 @@ export default class Classify extends cc.Component {
     dragging = false;
     dragPos = cc.v2();
     dragZoneId = 0;
-
     clickZoneId = 0;
 
     //场景装载器

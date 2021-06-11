@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n1_iix1" name="n1" src="iix1j" fileName="images/b.png" xy="951,575" pivot="0.5,0.5" anchor="true" size="640,493"/>
+    <image id="n2_iix1" name="n2" src="iix1i" fileName="images/r.png" xy="542,572" pivot="0.5,0.5" anchor="true" size="641,493"/>
+    <image id="n3_iix1" name="n3" src="iix15n" fileName="images/cYellow.png" xy="1044,334"/>
+    <component id="n4_iix1" name="man0" src="iix15y" fileName="quePage/t3-04-4/dragMan.xml" xy="449,580" group="n9_iix1"/>
+    <component id="n5_iix1" name="man1" src="iix15y" fileName="quePage/t3-04-4/dragMan.xml" xy="740,580" group="n9_iix1"/>
+    <component id="n6_iix1" name="man2" src="iix15y" fileName="quePage/t3-04-4/dragMan.xml" xy="949,586" group="n9_iix1"/>
+    <component id="n7_iix1" name="man3" src="iix15y" fileName="quePage/t3-04-4/dragMan.xml" xy="1158,580" group="n9_iix1"/>
+    <component id="n8_iix1" name="man4" src="iix15y" fileName="quePage/t3-04-4/dragMan.xml" xy="1440,572" group="n9_iix1"/>
+    <group id="n9_iix1" name="dragItemList" xy="338,377" size="1213,273" advanced="true"/>
+    <loader id="n13_iix1" name="item1" xy="432,213" size="225,225" url="ui://oonhxon0iix15o" autoSize="true"/>
+    <loader id="n14_iix1" name="item2" xy="849,219" size="225,225" url="ui://oonhxon0iix15p" autoSize="true"/>
+    <loader id="n15_iix1" name="item3" xy="1261,226" size="225,225" url="ui://oonhxon0iix15q" autoSize="true"/>
+    <image id="n16_iix1" name="chair" src="iix15m" fileName="images/t3-04-4/chair.png" xy="997,980" pivot="0.5,0.5" anchor="true"/>
+    <graph id="n19_iix1" name="point0" xy="904,540" size="100,100" group="n22_iix1" alpha="0" type="rect"/>
+    <graph id="n24_iix1" name="point1" xy="952,907" size="100,100" group="n22_iix1" alpha="0" type="rect"/>
+    <group id="n22_iix1" name="points" xy="904,540" size="148,467" advanced="true"/>
+    <component id="n26_iix1" name="touchPad" src="iix162" fileName="quePage/buttons/touchPad.xml" xy="0,0"/>
+    <image id="n25_iix1" name="hand" src="iix160" fileName="images/hand.png" xy="474,575" pivot="0.123,0.125" anchor="true" scale="0,0"/>
+    <component id="n23_iix1" name="submit" src="iix1u" fileName="quePage/buttons/submit.xml" xy="1764,802" pivot="0.5,0.5" anchor="true" scale="0.9,0.9">
+      <Button icon="ui://oonhxon0iix1v" sound="ui://ik5aab9iht4324"/>
+    </component>
+  </displayList>
+  <transition name="tip">
+    <item time="0" type="Scale" target="n25_iix1" tween="true" startValue="0,0" endValue="1.1,1.1" duration="4" ease="Back.Out"/>
+    <item time="0" type="XY" target="n25_iix1" value="458.5,557.5"/>
+    <item time="4" type="Scale" target="n25_iix1" tween="true" startValue="1.1,1.1" endValue="1,1" duration="4" ease="Back.Out"/>
+    <item time="8" type="XY" target="n25_iix1" tween="true" startValue="458.5,557.5" endValue="956.5,932.5" duration="21" ease="Sine.InOut" path="2,0,0,19,46,163,377,1,2,498,375,1121.39,371.2783,0,0,1"/>
+    <item time="31" type="Scale" target="n25_iix1" tween="true" startValue="1,1" endValue="0,0" duration="6" ease="Quad.In"/>
+  </transition>
+</component>
