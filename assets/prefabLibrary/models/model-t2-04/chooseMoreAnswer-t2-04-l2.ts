@@ -19,7 +19,7 @@ interface StateType {
 
 
 
-   
+
     title: boolean,
     submit: boolean,
     answer: boolean,
@@ -48,13 +48,14 @@ export default class chooseMoreAnswer_t2_04_l2 extends cc.Component {
 
     private _scrollingImage: fgui.GImage[] = [];
     private _clickImage: fgui.GButton[] = [];
+    private _clickLight: fgui.GImage[] = [];
 
     // 远程动态组件
     private feedback: any;
 
     private _cache = {};
 
-    private _answer = 0;
+    private _answer: boolean[] = [];
 
     private _state: StateType = {} as StateType;
 
@@ -103,27 +104,6 @@ export default class chooseMoreAnswer_t2_04_l2 extends cc.Component {
                 this._scrollingImage.push(img);
             }
         }
-        let clickImage = this._view.getChild('clickImage').asGroup;
-        for (let i = 0; i < this._view.numChildren; i++) {
-            if (this._view.getChildAt(i).group == clickImage) {
-                let btn: fgui.GButton = this._view.getChildAt(i).asButton;
-                btn.on(fgui.Event.CLICK, this._clickChooseImage, this);
-                this._clickImage.push(btn);
-            }
-        }
-
-        // 初始化state
-        this._state = {
-            gameStart: false,
-            isShowEnd: false,
-            clickImgs: [false, false, false, false],
-            checkAnswer: false,
-
-           
-            title: false,
-            submit: false,
-            answer: false,
-        }
 
         // 临时 
         // 禁止操作期间 切页
@@ -131,6 +111,29 @@ export default class chooseMoreAnswer_t2_04_l2 extends cc.Component {
         // 销毁反馈
         let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
+    }
+
+    private initClickImage(length: number) {
+        for (let i = 0; i < length; i++) {
+            let btn: fgui.GButton = this._view.getChild(`btn${i}`).asButton;
+            btn.on(fgui.Event.CLICK, this._clickChooseImage, this);
+            this._clickImage.push(btn);
+
+            let img = this._view.getChild(`light${i}`).asImage;
+            img.visible = false;
+            this._clickLight.push(img);
+        }
+
+        // 初始化state
+        this._state = {
+            gameStart: false,
+            isShowEnd: false,
+            clickImgs: new Array(length).fill(false),
+            checkAnswer: false,
+            title: false,
+            submit: false,
+            answer: false,
+        }
     }
 
     _clickChooseImage(evt: any) {
@@ -180,8 +183,11 @@ export default class chooseMoreAnswer_t2_04_l2 extends cc.Component {
         }
 
         if (model.config) {
-            let { answer, ae, selfIndex } = model.config;
-            if (answer) this._answer = answer;
+            let { answer, ae } = model.config;
+            if (answer) {
+                this._answer = answer;
+                this.initClickImage(this._answer.length);
+            }
             // 动效注册
             if (ae) {
                 for (let v in ae) {
@@ -224,7 +230,7 @@ export default class chooseMoreAnswer_t2_04_l2 extends cc.Component {
         // let tempState = state.checkAnswer
         state.checkAnswer = !state.checkAnswer;
         state.submit = true;
-        state.answer = state.clickImgs.every(v => v);
+        state.answer = state.clickImgs.every((v, k) => v == this._answer[k]);
         this.updateState(state);
     }
     private _clickStartBtn(evt: any) {
@@ -256,9 +262,8 @@ export default class chooseMoreAnswer_t2_04_l2 extends cc.Component {
         }
         if (!globalThis._.isEqual(oldState.clickImgs, state.clickImgs)) {
             //此处处理图片选中与否
-            console.log('click image');
-            this._clickImage.map((v,k)=>{
-                v.selected = state.clickImgs[k];
+            this._clickLight.map((v, k) => {
+                v.visible = state.clickImgs[k];
             })
         }
         if (!globalThis._.isEqual(oldState.title, state.title)) {
@@ -266,7 +271,6 @@ export default class chooseMoreAnswer_t2_04_l2 extends cc.Component {
         }
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
             //此处处理图片选中与否
-            console.warn('click image');
             if (state.submit) {
                 if (state.answer) {
                     this.answerFeedback(state.answer);

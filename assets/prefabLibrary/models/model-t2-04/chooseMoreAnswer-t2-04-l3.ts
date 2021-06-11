@@ -126,7 +126,7 @@ export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
         }
     }
 
-    
+
 
 
     async init(data: any) {
@@ -208,7 +208,13 @@ export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
     // 更新ui层
     updateUi(oldState: StateType, state: StateType) {
         if (!globalThis._.isEqual(oldState.gameStart, state.gameStart)) {
-            this._c1.selectedIndex = 1;
+            this._startBtn.visible = false;
+            this.scheduleOnce(() => {
+                this._c1.selectedIndex = 1;
+                this.scheduleOnce(()=>{
+                    this._c1.selectedIndex = 2;
+                }, 2)
+            }, 2)
             // this.showScrollImage();
         }
         if (!globalThis._.isEqual(oldState.isShowEnd, state.isShowEnd)) {

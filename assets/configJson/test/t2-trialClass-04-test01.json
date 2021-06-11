@@ -2,7 +2,7 @@
     "name": "数理思维",
     "courseName": "t2-trialclass-04",
     "env": "test",
-    "totalPages": 6,
+    "totalPages": 7,
     "pathConfig": {
         "remoteUrl": "",
         "controllerBundlePath": "",
@@ -103,7 +103,7 @@
                 "bundleName": "model-t2-04",
                 "prefabName": "chooseMoreAnswer-t2-04-l2",
                 "config": {
-                    "answer": 0,
+                    "answer": [true, true, true, true, false, false],
                     "remarks": "例题2",
                     "ae": {
                         "handleGuide": {
@@ -129,8 +129,34 @@
                 "bundleName": "model-t2-04",
                 "prefabName": "chooseMoreAnswer-t2-04-l2",
                 "config": {
-                    "answer": 0,
+                    "answer": [true, true, false, true, false, false, true],
                     "remarks": "2-1",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -850,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "choooseMoreAanwert2-04-l2-2",
+                "bundleName": "model-t2-04",
+                "prefabName": "chooseMoreAnswer-t2-04-l2",
+                "config": {
+                    "answer": [false, true, true, true, true],
+                    "remarks": "2-2",
                     "ae": {
                         "handleGuide": {
                             "component": "handleGuide02",

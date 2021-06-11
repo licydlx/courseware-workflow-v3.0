@@ -3,16 +3,16 @@
   <controller name="c1" pages="0,,1,,2," selected="2"/>
   <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
-    <image id="n49_x38m" name="n49" src="x38m24" fileName="images/backgrounds/t2-04-bg2.png" xy="0,0" group="n28_x38m">
+    <image id="n49_x38m" name="n49" src="x38m24" fileName="images/backgrounds/bg/t2-04-bg2.png" xy="0,0" group="n28_x38m">
       <gearDisplay controller="c1" pages="0,1"/>
     </image>
-    <image id="n52_x38m" name="n52" src="x38m2c" fileName="images/backgrounds/t2-04-bg3.png" xy="0,243" group="n28_x38m">
+    <image id="n52_x38m" name="n52" src="x38m2c" fileName="images/backgrounds/bg/t2-04-bg3.png" xy="0,243" group="n28_x38m">
       <gearDisplay controller="c1" pages="1"/>
     </image>
-    <image id="n59_x38m" name="n59" src="x38m2d" fileName="images/backgrounds/t2-04-bg4.png" xy="0,0" group="n28_x38m">
+    <image id="n59_x38m" name="n59" src="x38m2d" fileName="images/backgrounds/bg/t2-04-bg4.png" xy="0,0" group="n28_x38m">
       <gearDisplay controller="c1" pages="2"/>
     </image>
-    <image id="n60_x38m" name="n60" src="x38m2e" fileName="images/backgrounds/t2-04-bg5.png" xy="0,0" group="n28_x38m">
+    <image id="n60_x38m" name="n60" src="x38m2e" fileName="images/backgrounds/bg/t2-04-bg5.png" xy="0,0" group="n28_x38m">
       <gearDisplay controller="c1" pages="2"/>
     </image>
     <image id="n53_x38m" name="n53" src="x38m28" fileName="images/drags/t2-04-09.png" xy="-228,675" pivot="1,1" anchor="true" group="n57_x38m"/>
@@ -22,31 +22,44 @@
     <group id="n57_x38m" name="moveImage" xy="-600,429" size="372,246" group="n28_x38m" advanced="true">
       <gearDisplay controller="c1" pages="1"/>
     </group>
-    <component id="n70_x38m" name="n70" src="x38m3h" fileName="buttons/selectImage.xml" xy="886,133" size="236,236" group="n64_x38m">
-      <Button icon="ui://u409owwjx38m2h" selectedIcon="ui://u409owwjx38m27"/>
-    </component>
-    <component id="n71_x38m" name="n71" src="x38m3h" fileName="buttons/selectImage.xml" xy="702,369" size="110,132" group="n64_x38m">
-      <Button icon="ui://u409owwjx38m2g" selectedIcon="ui://u409owwjx38m27"/>
-    </component>
-    <component id="n72_x38m" name="n72" src="x38m3h" fileName="buttons/selectImage.xml" xy="800,517" size="505,380" group="n64_x38m">
-      <Button icon="ui://u409owwjx38m2k" selectedIcon="ui://u409owwjx38m27"/>
-    </component>
-    <component id="n73_x38m" name="n73" src="x38m3h" fileName="buttons/selectImage.xml" xy="979,531" size="222,132" group="n64_x38m">
-      <Button icon="ui://u409owwjx38m2f" selectedIcon="ui://u409owwjx38m27"/>
-    </component>
-    <group id="n64_x38m" name="clickImage" xy="702,133" size="603,764" group="n28_x38m" advanced="true">
-      <gearDisplay controller="c1" pages="2"/>
-    </group>
-    <group id="n28_x38m" name="UI" xy="-600,0" size="2520,1080" advanced="true"/>
-    <image id="n61_x38m" name="n61" src="x38m2j" fileName="images/drags/t2-04-14.png" xy="1135,829" group="n68_x38m"/>
-    <image id="n62_x38m" name="n62" src="x38m2i" fileName="images/drags/t2-04-13.png" xy="655,863" group="n68_x38m"/>
-    <group id="n68_x38m" name="n68" xy="655,829" size="634,173" advanced="true">
-      <gearDisplay controller="c1" pages="2"/>
-    </group>
-    <component id="n38_x38m" name="title" src="x38m9" fileName="buttons/title.xml" xy="966,97" alpha="0" touchable="false">
+    <component id="n38_x38m" name="title" src="x38m9" fileName="buttons/title.xml" xy="966,97" group="n28_x38m" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://u409owwjx38m26" sound="ui://u409owwjx38m1i" volume="0"/>
     </component>
+    <image id="n77_x38m" name="light0" src="x38m3j" fileName="images/drags/t2-04-18_1.png" xy="884,132" group="n76_x38m"/>
+    <component id="n70_x38m" name="btn0" src="x38m3h" fileName="buttons/selectImage.xml" xy="884,132" size="226,219" group="n76_x38m">
+      <Button icon="ui://u409owwjx38m3i"/>
+    </component>
+    <group id="n76_x38m" name="n76" xy="884,132" size="240,236" group="n64_x38m"/>
+    <image id="n78_x38m" name="light1" src="x38m3l" fileName="images/drags/t2-04-15_1.png" xy="800,517" group="n75_x38m"/>
+    <component id="n72_x38m" name="btn1" src="x38m3h" fileName="buttons/selectImage.xml" xy="800,517" size="505,380" group="n75_x38m">
+      <Button icon="ui://u409owwjx38m3k"/>
+    </component>
+    <group id="n75_x38m" name="n75" xy="800,517" size="519,461" group="n64_x38m"/>
+    <image id="n80_x38m" name="light2" src="x38m3n" fileName="images/drags/t2-04-17_1.png" xy="703,385" group="n79_x38m"/>
+    <component id="n71_x38m" name="btn2" src="x38m3h" fileName="buttons/selectImage.xml" xy="703,385" size="110,132" group="n79_x38m">
+      <Button icon="ui://u409owwjx38m3m"/>
+    </component>
+    <group id="n79_x38m" name="n79" xy="703,385" size="122,141" group="n64_x38m"/>
+    <image id="n82_x38m" name="light3" src="x38m3p" fileName="images/drags/t2-04-16_1.png" xy="979,531" group="n81_x38m"/>
+    <component id="n73_x38m" name="btn3" src="x38m3h" fileName="buttons/selectImage.xml" xy="979,531" size="222,132" group="n81_x38m">
+      <Button icon="ui://u409owwjx38m3o"/>
+    </component>
+    <group id="n81_x38m" name="n81" xy="979,531" size="230,141" group="n64_x38m"/>
+    <image id="n86_x38m" name="light4" src="x38m3r" fileName="images/drags/t2-04-13_1.png" xy="656,853" size="158,125" group="n85_x38m"/>
+    <component id="n84_x38m" name="btn4" src="x38m3h" fileName="buttons/selectImage.xml" xy="656,853" size="147,132" group="n85_x38m">
+      <Button icon="ui://u409owwjx38m3q"/>
+    </component>
+    <group id="n85_x38m" name="n85" xy="656,853" size="158,132" group="n64_x38m"/>
+    <image id="n90_x38m" name="light5" src="x38m3s" fileName="images/drags/t2-04-14_1.png" xy="1140,828" group="n89_x38m"/>
+    <component id="n88_x38m" name="btn5" src="x38m3h" fileName="buttons/selectImage.xml" xy="1140,828" size="147,159" group="n89_x38m">
+      <Button icon="ui://u409owwjx38m2j"/>
+    </component>
+    <group id="n89_x38m" name="n89" xy="1140,828" size="154,173" group="n64_x38m"/>
+    <group id="n64_x38m" name="clickImage" xy="656,132" size="663,869" group="n28_x38m" advanced="true">
+      <gearDisplay controller="c1" pages="2"/>
+    </group>
+    <group id="n28_x38m" name="UI" xy="-600,0" size="2520,1080" advanced="true"/>
     <component id="n39_x38m" name="place" src="x38mf" fileName="buttons/audios.xml" xy="-748,2156" group="n40_x38m">
       <Button sound="ui://u409owwjx38m17" volume="0"/>
     </component>

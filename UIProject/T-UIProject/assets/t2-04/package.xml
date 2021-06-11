@@ -51,28 +51,23 @@
     <image id="x38m1y" name="next.png" path="/images/common/" exported="true"/>
     <image id="x38m21" name="t2-04-v1-title.png" path="/images/backgrounds/"/>
     <component id="x38m23" name="choooseMoreAanwert2-04-l2.xml" path="/" exported="true"/>
-    <image id="x38m24" name="t2-04-bg2.png" path="/images/backgrounds/"/>
+    <image id="x38m24" name="t2-04-bg2.png" path="/images/backgrounds/bg/"/>
     <image id="x38m26" name="t4-04-pp1.png" path="/images/backgrounds/"/>
     <image id="x38m27" name="t2-04-08.png" path="/images/drags/"/>
     <image id="x38m28" name="t2-04-09.png" path="/images/drags/"/>
     <image id="x38m29" name="t2-04-10.png" path="/images/drags/"/>
     <image id="x38m2a" name="t2-04-11.png" path="/images/drags/"/>
     <image id="x38m2b" name="t2-04-12.png" path="/images/drags/"/>
-    <image id="x38m2c" name="t2-04-bg3.png" path="/images/backgrounds/"/>
-    <image id="x38m2d" name="t2-04-bg4.png" path="/images/backgrounds/"/>
-    <image id="x38m2e" name="t2-04-bg5.png" path="/images/backgrounds/"/>
-    <image id="x38m2f" name="t2-04-16.png" path="/images/drags/"/>
-    <image id="x38m2g" name="t2-04-17.png" path="/images/drags/"/>
-    <image id="x38m2h" name="t2-04-18.png" path="/images/drags/"/>
-    <image id="x38m2i" name="t2-04-13.png" path="/images/drags/"/>
+    <image id="x38m2c" name="t2-04-bg3.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m2d" name="t2-04-bg4.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m2e" name="t2-04-bg5.png" path="/images/backgrounds/bg/"/>
     <image id="x38m2j" name="t2-04-14.png" path="/images/drags/"/>
-    <image id="x38m2k" name="t2-04-15.png" path="/images/drags/"/>
     <component id="x38m2l" name="handleGuide01.xml" path="/components/" exported="true"/>
     <component id="x38m2o" name="handleGuide02.xml" path="/components/" exported="true"/>
     <image id="x38m2p" name="0109.png" path="/components/images/common/" exported="true"/>
     <image id="x38m2q" name="t2-04-pp2.png" path="/images/backgrounds/"/>
     <component id="x38m2r" name="choooseMoreAanwert2-04-l3.xml" path="/" exported="true"/>
-    <image id="x38m2t" name="t0-4-01.png" path="/images/backgrounds/"/>
+    <image id="x38m2t" name="t0-4-01.png" path="/images/backgrounds/bg/"/>
     <component id="x38m2u" name="drawAnswer-model01-v2.xml" path="/" exported="true"/>
     <image id="x38m2v" name="t2-04-23.png" path="/images/drags/"/>
     <image id="x38m2w" name="t2-04-24.png" path="/images/drags/"/>
@@ -94,8 +89,57 @@
     <image id="x38m3c" name="t2-04-32.png" path="/images/drags/"/>
     <image id="x38m3d" name="t2-04-33.png" path="/images/drags/"/>
     <image id="x38m3e" name="t2-04-34.png" path="/images/drags/"/>
-    <component id="x38m3f" name="choooseMoreAanwert2-04-l2-1.xml" path="/" exported="true"/>
     <component id="x38m3h" name="selectImage.xml" path="/buttons/"/>
+    <image id="x38m3i" name="t2-04-18.png" path="/images/drags/"/>
+    <image id="x38m3j" name="t2-04-18_1.png" path="/images/drags/"/>
+    <image id="x38m3k" name="t2-04-15.png" path="/images/drags/"/>
+    <image id="x38m3l" name="t2-04-15_1.png" path="/images/drags/"/>
+    <image id="x38m3m" name="t2-04-17.png" path="/images/drags/"/>
+    <image id="x38m3n" name="t2-04-17_1.png" path="/images/drags/"/>
+    <image id="x38m3o" name="t2-04-16.png" path="/images/drags/"/>
+    <image id="x38m3p" name="t2-04-16_1.png" path="/images/drags/"/>
+    <image id="x38m3q" name="t2-04-13.png" path="/images/drags/"/>
+    <image id="x38m3r" name="t2-04-13_1.png" path="/images/drags/"/>
+    <image id="x38m3s" name="t2-04-14_1.png" path="/images/drags/"/>
+    <component id="x38m3t" name="choooseMoreAanwert2-04-l2-1.xml" path="/" exported="true"/>
+    <image id="x38m3u" name="t2-04-bg6.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m3v" name="t2-04-35.png" path="/images/drags/"/>
+    <image id="x38m3w" name="t2-04-35_1.png" path="/images/drags/"/>
+    <image id="x38m3x" name="t2-04-36.png" path="/images/drags/"/>
+    <image id="x38m3y" name="t2-04-36_1.png" path="/images/drags/"/>
+    <image id="x38m3z" name="t2-04-37.png" path="/images/drags/"/>
+    <image id="x38m40" name="t2-04-37_1.png" path="/images/drags/"/>
+    <image id="x38m41" name="t2-04-38.png" path="/images/drags/"/>
+    <image id="x38m42" name="t2-04-38_1.png" path="/images/drags/"/>
+    <image id="x38m43" name="t2-04-39.png" path="/images/drags/"/>
+    <image id="x38m44" name="t2-04-39_1.png" path="/images/drags/"/>
+    <image id="x38m45" name="t2-04-40.png" path="/images/drags/"/>
+    <image id="x38m46" name="t2-04-40_1.png" path="/images/drags/"/>
+    <image id="x38m47" name="t2-04-41.png" path="/images/drags/"/>
+    <image id="x38m48" name="t2-04-41_1.png" path="/images/drags/"/>
+    <component id="x38m49" name="choooseMoreAanwert2-04-l2-2.xml" path="/" exported="true"/>
+    <image id="x38m4a" name="t2-04-42.png" path="/images/drags/"/>
+    <image id="x38m4b" name="t2-04-43.png" path="/images/drags/"/>
+    <image id="x38m4c" name="t2-04-44.png" path="/images/drags/"/>
+    <image id="x38m4d" name="t2-04-45.png" path="/images/drags/"/>
+    <image id="x38m4e" name="t2-04-bg7.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m4f" name="t2-04-46.png" path="/images/drags/"/>
+    <image id="x38m4g" name="t2-04-46_1.png" path="/images/drags/"/>
+    <image id="x38m4h" name="t2-04-47.png" path="/images/drags/"/>
+    <image id="x38m4i" name="t2-04-47_1.png" path="/images/drags/"/>
+    <image id="x38m4j" name="t2-04-48.png" path="/images/drags/"/>
+    <image id="x38m4k" name="t2-04-48_1.png" path="/images/drags/"/>
+    <image id="x38m4l" name="t2-04-49.png" path="/images/drags/"/>
+    <image id="x38m4m" name="t2-04-49_1.png" path="/images/drags/"/>
+    <image id="x38m4n" name="t2-04-50.png" path="/images/drags/"/>
+    <image id="x38m4o" name="t2-04-50_1.png" path="/images/drags/"/>
+    <image id="x38m4p" name="t2-04-pp6.png" path="/images/backgrounds/"/>
+    <image id="x38m4q" name="t2-04-bg8.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m4r" name="t2-04-bg9.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m4s" name="t2-04-bg10.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m4t" name="t2-04-53.png" path="/images/drags/"/>
+    <image id="x38m4u" name="t2-04-51.png" path="/images/drags/"/>
+    <image id="x38m4v" name="t2-04-52.png" path="/images/drags/"/>
   </resources>
   <publish name="" path="D:\word\courseware-workflow-v3.0\assets\fairyUis\t2\t2-04" packageCount="2"/>
 </packageDescription>
