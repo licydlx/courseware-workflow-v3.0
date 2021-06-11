@@ -67,11 +67,11 @@
     <component id="n23_cp1h" name="clickSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-193,465" size="100,41">
       <Button sound="ui://1io1z8o5xmwddu"/>
     </component>
-    <component id="n50_e9oy" name="title" src="xmwddd" fileName="buttons/title.xml" xy="874,83" alpha="0" touchable="false">
+    <component id="n50_e9oy" name="title" src="xmwddd" fileName="buttons/title.xml" xy="941,87" alpha="0" touchable="false">
       <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
       <Button icon="ui://1io1z8o5yvac90" sound="ui://1io1z8o5xmwddn" volume="0"/>
     </component>
-    <loader id="n51_e9oy" name="titleTrigger" xy="34,33" size="228,171" scale="0.8,0.8" url="ui://1io1z8o5xmwddg" autoSize="true" playing="false">
+    <loader id="n51_e9oy" name="titleTrigger" xy="114,37" size="228,171" scale="0.8,0.8" url="ui://1io1z8o5xmwddg" autoSize="true" playing="false">
       <gearAni controller="c1" pages="0" values="0,s" default="12,p"/>
     </loader>
   </displayList>

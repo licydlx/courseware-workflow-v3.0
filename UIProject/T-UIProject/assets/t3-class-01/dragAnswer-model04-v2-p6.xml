@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <controller name="c2" pages="0,,1," selected="0"/>
-  <controller name="c1" pages="0,,1," selected="1"/>
+  <controller name="c1" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n0_cp1h" name="n0" src="yvac9h" fileName="images/0111.png" xy="0,0" group="n21_cp1h"/>
     <image id="n1_cp1h" name="n1" src="yvac9w" fileName="images/01123.png" xy="102,20" group="n21_cp1h">
@@ -67,11 +67,11 @@
     <component id="n23_cp1h" name="clickSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-193,465" size="100,41">
       <Button sound="ui://1io1z8o5xmwddu"/>
     </component>
-    <component id="n38_e9oy" name="title" src="xmwddd" fileName="buttons/title.xml" xy="893,85" touchable="false">
+    <component id="n38_e9oy" name="title" src="xmwddd" fileName="buttons/title.xml" xy="941,87" alpha="0" touchable="false">
       <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
       <Button icon="ui://1io1z8o5yvaccs" sound="ui://1io1z8o5xmwddi" volume="0"/>
     </component>
-    <loader id="n39_e9oy" name="titleTrigger" xy="53,35" size="228,171" scale="0.8,0.8" url="ui://1io1z8o5xmwddg" autoSize="true" frame="12">
+    <loader id="n39_e9oy" name="titleTrigger" xy="114,37" size="228,171" scale="0.8,0.8" url="ui://1io1z8o5xmwddg" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
   </displayList>
