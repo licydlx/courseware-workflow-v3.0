@@ -95,6 +95,7 @@ export default class choose_model02_v1 extends cc.Component {
     }
 
     async init(data: any) {
+        console.log('data->', data)
         // 临时 model component json 配置加载
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;

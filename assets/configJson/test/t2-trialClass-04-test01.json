@@ -1,0 +1,179 @@
+{
+    "name": "数理思维",
+    "courseName": "t2-trialclass-04",
+    "env": "test",
+    "totalPages": 6,
+    "pathConfig": {
+        "remoteUrl": "",
+        "controllerBundlePath": "",
+        "controllerName": "controller-model02",
+        "resourceBundlePath": "",
+        "resourceName": "t2-04",
+        "panelBundlePath": "",
+        "panelName": "formal-panle-model02",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "packageName": "t2-04"
+    },
+    "chapters": [
+        {
+            "model": {
+                "uiPath": "drawAnswer-model01-v2",
+                "bundleName": "model-t2-04",
+                "prefabName": "drag-model-t2-04-v1",
+                "config": {
+                    "answer": 1,
+                    "selfIndex": 0,
+                    "remarks": "例题1",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide04",
+                            "pos": {
+                                "x": 0,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "drawAnswer-model01-v1",
+                "bundleName": "model-t2-04",
+                "prefabName": "drag-model-t2-04-v1",
+                "config": {
+                    "answer": 0,
+                    "selfIndex": 2,
+                    "remarks": "1-1",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide04",
+                            "pos": {
+                                "x": 0,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "drawAnswer-model01-v3",
+                "bundleName": "model-t2-04",
+                "prefabName": "drag-model-t2-04-v1",
+                "config": {
+                    "answer": 2,
+                    "selfIndex": 1,
+                    "remarks": "1-2",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide04",
+                            "pos": {
+                                "x": 0,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "choooseMoreAanwert2-04-l2",
+                "bundleName": "model-t2-04",
+                "prefabName": "chooseMoreAnswer-t2-04-l2",
+                "config": {
+                    "answer": 0,
+                    "remarks": "例题2",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -850,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "choooseMoreAanwert2-04-l2-1",
+                "bundleName": "model-t2-04",
+                "prefabName": "chooseMoreAnswer-t2-04-l2",
+                "config": {
+                    "answer": 0,
+                    "remarks": "2-1",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -850,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "choooseMoreAanwert2-04-l3",
+                "bundleName": "model-t2-04",
+                "prefabName": "chooseMoreAnswer-t2-04-l3",
+                "config": {
+                    "answer": 0,
+                    "remarks": "例题3",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -850,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="1"/>
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n49_x38m" name="n49" src="x38m2t" fileName="images/backgrounds/t0-4-01.png" xy="0,0" group="n28_x38m"/>
+    <group id="n28_x38m" name="UI" xy="0,0" size="1920,1080" advanced="true"/>
+    <image id="n29_x38m" name="n29" src="x38mo" fileName="images/dragAnswer-model01-v2/0107.png" xy="428,434" pivot="0.5,1" anchor="true" size="217,221" group="n35_x38m" visible="false"/>
+    <image id="n30_x38m" name="n30" src="x38mo" fileName="images/dragAnswer-model01-v2/0107.png" xy="957,434" pivot="0.5,1" anchor="true" size="207,209" group="n35_x38m" visible="false"/>
+    <image id="n31_x38m" name="n31" src="x38mo" fileName="images/dragAnswer-model01-v2/0107.png" xy="1487,434" pivot="0.5,1" anchor="true" size="219,215" group="n35_x38m" visible="false"/>
+    <group id="n35_x38m" name="collideredBox" xy="320,213" size="1277,221" advanced="true"/>
+    <image id="n25_x38m" name="n3" src="x38m5" fileName="images/drags/ribbit.png" xy="1417,502" group="n28_x38m"/>
+    <image id="n24_x38m" name="n1" src="x38m4" fileName="images/drags/monkey.png" xy="328,500" group="n28_x38m"/>
+    <image id="n22_x38m" name="n2" src="x38m2" fileName="images/drags/milk.png" xy="893,526" group="n28_x38m"/>
+    <component id="n43_x38m" name="n43" src="x38m16" fileName="buttons/dragBtn.xml" xy="420,1010" pivot="0.5,1" anchor="true" size="282,242" group="n10_x38m">
+      <gearXY controller="c1" pages="0,1" values="954,437|420,1010"/>
+      <Button icon="ui://u409owwjx38m3"/>
+    </component>
+    <component id="n44_x38m" name="n44" src="x38m16" fileName="buttons/dragBtn.xml" xy="962,1012" pivot="0.5,1" anchor="true" size="195,237" group="n10_x38m">
+      <gearXY controller="c1" pages="0,1" values="1490,425|962,1012"/>
+      <Button icon="ui://u409owwjx38m6"/>
+    </component>
+    <component id="n45_x38m" name="n45" src="x38m16" fileName="buttons/dragBtn.xml" xy="1511,1010" pivot="0.5,1" anchor="true" size="217,164" group="n10_x38m">
+      <gearXY controller="c1" pages="0,1" values="428,428|1511,1010"/>
+      <Button icon="ui://u409owwjx38m8"/>
+    </component>
+    <group id="n10_x38m" name="colliderBox" xy="279,768" size="1340,244" advanced="true"/>
+    <component id="n38_x38m" name="title" src="x38m9" fileName="buttons/title.xml" xy="966,97" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
+      <gearIcon controller="c1" pages="1" values="ui://u409owwjx38m21" default="ui://u409owwjx38m19"/>
+      <Button icon="ui://u409owwjx38m21" sound="ui://u409owwjx38m1e" volume="0"/>
+    </component>
+    <component id="n39_x38m" name="place" src="x38mf" fileName="buttons/audios.xml" xy="-748,2156" group="n40_x38m">
+      <Button sound="ui://u409owwjx38m17" volume="0"/>
+    </component>
+    <component id="n50_x38m" name="title2" src="x38mf" fileName="buttons/audios.xml" xy="-1912,4069" group="n40_x38m">
+      <Button sound="ui://u409owwjx38m1f" volume="0"/>
+    </component>
+    <group id="n40_x38m" name="audios" xy="-1912,2156" size="1164,1913"/>
+    <component id="n41_x38m" name="submit" src="x38md" fileName="buttons/submit.xml" xy="1675,751">
+      <gearDisplay controller="c1" pages="0"/>
+      <Button icon="ui://u409owwjx38m1y" sound="ui://ik5aab9iht4324"/>
+    </component>
+    <loader id="n46_x38m" name="titleTrigger" xy="111,42" size="228,171" scale="0.8,0.8" url="ui://u409owwjx38m0" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="1" values="12,p" default="0,s"/>
+    </loader>
+    <component id="n48_x38m" name="result" src="x38md" fileName="buttons/submit.xml" xy="1663,747">
+      <gearDisplay2 controller="c1" pages="1" condition="0"/>
+      <Button icon="ui://u409owwjx38me" sound="ui://ik5aab9iht4324"/>
+    </component>
+  </displayList>
+</component>

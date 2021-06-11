@@ -1,8 +1,7 @@
 {
 	"game": {
-		"name": "时习之",
-		"appid": "675857140",
-		"cid": "12424"
+		"name": "未知游戏",
+		"appid": "UNKNOW"
 	},
 	"configs": [
 		{
@@ -33,6 +32,9 @@
 					}
 				}
 			]
+		},
+		{
+			"appid": "UNKNOW"
 		}
 	],
 	"needExecNative": true

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="u409owwj">
+  <resources>
+    <movieclip id="x38m0" name="laba.jta" path="/animations/laba/" exported="true"/>
+    <movieclip id="x38m1" name="laba.jta" path="/animations/" exported="true"/>
+    <image id="x38m2" name="milk.png" path="/images/drags/" exported="true"/>
+    <image id="x38m3" name="milkh.png" path="/images/drags/" exported="true"/>
+    <image id="x38m4" name="monkey.png" path="/images/drags/" exported="true"/>
+    <image id="x38m5" name="ribbit.png" path="/images/drags/" exported="true"/>
+    <image id="x38m6" name="ribbitp.png" path="/images/drags/" exported="true"/>
+    <component id="x38m7" name="drawAnswer-model01-v1.xml" path="/" exported="true"/>
+    <image id="x38m8" name="banana.png" path="/images/drags/" exported="true"/>
+    <component id="x38m9" name="title.xml" path="/buttons/" exported="true"/>
+    <sound id="x38mb" name="例题1、练习1-1、1-2.mp3" path="/audios/" exported="true"/>
+    <movieclip id="x38mc" name="laba(1).jta" path="/animations/laba/" exported="true"/>
+    <component id="x38md" name="submit.xml" path="/buttons/" exported="true"/>
+    <image id="x38me" name="0112.png" path="/images/common/" exported="true"/>
+    <component id="x38mf" name="audios.xml" path="/buttons/" exported="true"/>
+    <sound id="x38mi" name="例题1、练习1-1、1-2(1).mp3" path="/audios/" exported="true"/>
+    <movieclip id="x38mj" name="laba(2).jta" path="/animations/laba/" exported="true"/>
+    <image id="x38mo" name="0107.png" path="/images/dragAnswer-model01-v2/" exported="true"/>
+    <image id="x38mt" name="0104.png" path="/images/common/" exported="true"/>
+    <sound id="x38mu" name="点击音效.mp3" path="/audios/" exported="true"/>
+    <sound id="x38mw" name="例题3、练习3-1、练习3-2.mp3" path="/audios/" exported="true"/>
+    <component id="x38m11" name="handleGuide04.xml" path="/components/" exported="true"/>
+    <image id="x38m12" name="0111.png" path="/components/images/" exported="true"/>
+    <image id="x38m13" name="0109.png" path="/components/images/" exported="true"/>
+    <component id="x38m16" name="dragBtn.xml" path="/buttons/" exported="true"/>
+    <sound id="x38m17" name="拖动放置.mp3" path="/audios/" exported="true"/>
+    <image id="x38m19" name="t0-4-03.png" path="/images/backgrounds/" exported="true"/>
+    <sound id="x38m1e" name="例1-1（1）.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1f" name="例1-1（2）.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1g" name="例1-2（1）.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1h" name="例1-2（2）.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1i" name="例2、2-1、2-2.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1j" name="例3.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1k" name="例3-1.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1l" name="例3-2.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1m" name="拓展提升 (1).mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1n" name="例1（1）.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1o" name="例1（2）.mp3" path="/audios/" exported="true"/>
+    <sound id="x38m1p" name="课后练习1（1）.mp3" path="/audios/课后练习/" exported="true"/>
+    <sound id="x38m1q" name="课后练习1（2）.mp3" path="/audios/课后练习/" exported="true"/>
+    <sound id="x38m1r" name="课后练习2（1）.mp3" path="/audios/课后练习/" exported="true"/>
+    <sound id="x38m1s" name="课后练习2（2）.mp3" path="/audios/课后练习/" exported="true"/>
+    <sound id="x38m1t" name="课后练习3.mp3" path="/audios/课后练习/" exported="true"/>
+    <sound id="x38m1u" name="课后练习4.mp3" path="/audios/课后练习/" exported="true"/>
+    <sound id="x38m1v" name="课后练习5.mp3" path="/audios/课后练习/" exported="true"/>
+    <sound id="x38m1w" name="课后练习6.mp3" path="/audios/课后练习/" exported="true"/>
+    <sound id="x38m1x" name="课后练习7.mp3" path="/audios/课后练习/" exported="true"/>
+    <image id="x38m1y" name="next.png" path="/images/common/" exported="true"/>
+    <image id="x38m21" name="t2-04-v1-title.png" path="/images/backgrounds/"/>
+    <component id="x38m23" name="choooseMoreAanwert2-04-l2.xml" path="/" exported="true"/>
+    <image id="x38m24" name="t2-04-bg2.png" path="/images/backgrounds/"/>
+    <image id="x38m26" name="t4-04-pp1.png" path="/images/backgrounds/"/>
+    <image id="x38m27" name="t2-04-08.png" path="/images/drags/"/>
+    <image id="x38m28" name="t2-04-09.png" path="/images/drags/"/>
+    <image id="x38m29" name="t2-04-10.png" path="/images/drags/"/>
+    <image id="x38m2a" name="t2-04-11.png" path="/images/drags/"/>
+    <image id="x38m2b" name="t2-04-12.png" path="/images/drags/"/>
+    <image id="x38m2c" name="t2-04-bg3.png" path="/images/backgrounds/"/>
+    <image id="x38m2d" name="t2-04-bg4.png" path="/images/backgrounds/"/>
+    <image id="x38m2e" name="t2-04-bg5.png" path="/images/backgrounds/"/>
+    <image id="x38m2f" name="t2-04-16.png" path="/images/drags/"/>
+    <image id="x38m2g" name="t2-04-17.png" path="/images/drags/"/>
+    <image id="x38m2h" name="t2-04-18.png" path="/images/drags/"/>
+    <image id="x38m2i" name="t2-04-13.png" path="/images/drags/"/>
+    <image id="x38m2j" name="t2-04-14.png" path="/images/drags/"/>
+    <image id="x38m2k" name="t2-04-15.png" path="/images/drags/"/>
+    <component id="x38m2l" name="handleGuide01.xml" path="/components/" exported="true"/>
+    <component id="x38m2o" name="handleGuide02.xml" path="/components/" exported="true"/>
+    <image id="x38m2p" name="0109.png" path="/components/images/common/" exported="true"/>
+    <image id="x38m2q" name="t2-04-pp2.png" path="/images/backgrounds/"/>
+    <component id="x38m2r" name="choooseMoreAanwert2-04-l3.xml" path="/" exported="true"/>
+    <image id="x38m2t" name="t0-4-01.png" path="/images/backgrounds/"/>
+    <component id="x38m2u" name="drawAnswer-model01-v2.xml" path="/" exported="true"/>
+    <image id="x38m2v" name="t2-04-23.png" path="/images/drags/"/>
+    <image id="x38m2w" name="t2-04-24.png" path="/images/drags/"/>
+    <image id="x38m2x" name="t2-04-19.png" path="/images/drags/"/>
+    <image id="x38m2y" name="t2-04-20.png" path="/images/drags/"/>
+    <image id="x38m2z" name="t2-04-21.png" path="/images/drags/"/>
+    <image id="x38m30" name="t2-04-22.png" path="/images/drags/"/>
+    <image id="x38m31" name="t2-04-pp3.png" path="/images/backgrounds/"/>
+    <image id="x38m32" name="t2-04-pp4.png" path="/images/backgrounds/"/>
+    <image id="x38m33" name="t2-04-25.png" path="/images/drags/"/>
+    <image id="x38m34" name="t2-04-26.png" path="/images/drags/"/>
+    <image id="x38m35" name="t2-04-27.png" path="/images/drags/"/>
+    <image id="x38m36" name="t2-04-28.png" path="/images/drags/"/>
+    <image id="x38m37" name="t2-04-29.png" path="/images/drags/"/>
+    <image id="x38m38" name="t2-04-30.png" path="/images/drags/"/>
+    <component id="x38m39" name="drawAnswer-model01-v3.xml" path="/" exported="true"/>
+    <image id="x38m3a" name="t2-04-pp5.png" path="/images/backgrounds/"/>
+    <image id="x38m3b" name="t2-04-31.png" path="/images/drags/"/>
+    <image id="x38m3c" name="t2-04-32.png" path="/images/drags/"/>
+    <image id="x38m3d" name="t2-04-33.png" path="/images/drags/"/>
+    <image id="x38m3e" name="t2-04-34.png" path="/images/drags/"/>
+    <component id="x38m3f" name="choooseMoreAanwert2-04-l2-1.xml" path="/" exported="true"/>
+    <component id="x38m3h" name="selectImage.xml" path="/buttons/"/>
+  </resources>
+  <publish name="" path="D:\word\courseware-workflow-v3.0\assets\fairyUis\t2\t2-04" packageCount="2"/>
+</packageDescription>
