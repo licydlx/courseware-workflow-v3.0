@@ -31,10 +31,11 @@
     <loader id="n89_vlcc" name="C_bg" xy="968,362" size="339,339" url="ui://k4ucnbrrt68dco" autoSize="true"/>
     <loader id="n91_vlcc" name="D_bg" xy="1326,246" size="477,455" url="ui://k4ucnbrrt68dc6" autoSize="true"/>
     <loader id="n92_vlcc" name="wheel" xy="1447,350" size="235,298" url="ui://k4ucnbrrt68dcj" autoSize="true"/>
+    <image id="n96_cw1q" name="wheel_up" src="cw1qzfh" fileName="images/question2/wheel_up_practice_1.png" xy="1459,365"/>
     <component id="n95_ke1y" name="wheelCom" src="pxoyzf7" fileName="components/Items/WheelComponent.xml" xy="1447,330"/>
     <loader id="n86_vlcc" name="A_value" xy="325,569" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbc" autoSize="true"/>
-    <loader id="n88_vlcc" name="B_value" xy="745,571" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbd" autoSize="true"/>
+    <loader id="n88_vlcc" name="B_value" xy="745,573" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" scale="0.8,0.8" url="ui://k4ucnbrrt68dbd" autoSize="true"/>
     <loader id="n90_vlcc" name="C_value" xy="1137,559" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbd" autoSize="true"/>
-    <group id="n94_vlcc" name="question" xy="244,466" size="973,198" advanced="true"/>
+    <group id="n94_vlcc" name="question" xy="244,466" size="973,200" advanced="true"/>
   </displayList>
 </component>

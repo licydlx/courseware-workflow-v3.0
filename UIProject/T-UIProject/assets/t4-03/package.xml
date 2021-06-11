@@ -178,6 +178,8 @@
     <component id="jreazfb" name="static-model01-v1-p13.xml" path="/components/pages/" exported="true"/>
     <image id="jreazfc" name="class_end.png" path="/images/static/"/>
     <component id="oqfzzff" name="NumExample10.xml" path="/components/Items/"/>
+    <image id="cw1qzfg" name="wheel_up.png" path="/images/question2/"/>
+    <image id="cw1qzfh" name="wheel_up_practice_1.png" path="/images/question2/"/>
   </resources>
   <publish name="" path="F:\37Project\courseware-workflow-v3.0\assets\fairyUis\t4\t4-02" packageCount="2"/>
 </packageDescription>

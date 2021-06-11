@@ -31,6 +31,7 @@
     <loader id="n89_vlcc" name="C_bg" xy="922,311" size="399,390" url="ui://k4ucnbrrt68dc7" autoSize="true"/>
     <loader id="n91_vlcc" name="D_bg" xy="1339,307" size="449,391" url="ui://k4ucnbrrt68dcp" autoSize="true"/>
     <loader id="n92_vlcc" name="wheel" xy="1446,353" size="235,298" url="ui://k4ucnbrrt68dcj" autoSize="true"/>
+    <image id="n96_cw1q" name="wheel_up" src="cw1qzfh" fileName="images/question2/wheel_up_practice_1.png" xy="1458,368"/>
     <component id="n95_ke1y" name="wheelCom" src="pxoyzf7" fileName="components/Items/WheelComponent.xml" xy="1446,333"/>
     <loader id="n86_vlcc" name="A_value" xy="334,529" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbb" autoSize="true"/>
     <loader id="n88_vlcc" name="B_value" xy="693,514" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbc" autoSize="true"/>

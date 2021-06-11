@@ -238,7 +238,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             state.colliderIndex = -1;
             state.answerIndex = answerIndex
         }
-        state.isHasCollide = false;
+        state.isHasCollide = true;
         this.updateState(state);
     }
 
@@ -248,7 +248,12 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
 
     private _onDragEnd(evt: fgui.Event): void {
         let s = this
-        if (!this._dragging) return;
+        if (!this._dragging){
+            let state: any = globalThis._.cloneDeep(this._state)
+            state.isHasCollide = false
+            this.updateState(state);
+            return;
+        } 
         this._dragging = false;
 
         let collider = fgui.GObject.cast(evt.currentTarget);

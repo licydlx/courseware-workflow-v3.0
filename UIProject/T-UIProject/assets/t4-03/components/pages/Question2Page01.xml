@@ -30,6 +30,7 @@
     <loader id="n89_vlcc" name="C_bg" xy="952,366" size="339,339" url="ui://k4ucnbrrt68dcn" autoSize="true"/>
     <loader id="n91_vlcc" name="D_bg" xy="1321,296" size="472,411" url="ui://k4ucnbrrt68dc5" autoSize="true"/>
     <loader id="n92_vlcc" name="wheel" xy="1439,352" size="235,298" url="ui://k4ucnbrrt68dci" autoSize="true"/>
+    <image id="n105_cw1q" name="wheel_up" src="cw1qzfg" fileName="images/question2/wheel_up.png" xy="1451,367"/>
     <loader id="n86_vlcc" name="A_value" xy="330,537" pivot="0.5,0.5" anchor="true" size="169,194" group="n94_vlcc" url="ui://k4ucnbrrt68db1" autoSize="true"/>
     <loader id="n88_vlcc" name="B_value" xy="715,526" pivot="0.5,0.5" anchor="true" size="169,194" group="n94_vlcc" url="ui://k4ucnbrrt68db3" autoSize="true"/>
     <loader id="n90_vlcc" name="C_value" xy="1114,532" pivot="0.5,0.5" anchor="true" size="169,194" group="n94_vlcc" url="ui://k4ucnbrrt68db2" autoSize="true"/>
