@@ -10,7 +10,7 @@ const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class dragAnswer_model0403_v1 extends cc.Component {
+export default class dragAnswer_model0404_v1 extends cc.Component {
     private _worldRoot: cc.Node;
     private _view: fgui.GComponent;
     private _state = {}
@@ -19,7 +19,6 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
     private _title: fgui.GButton;
     private _titleTrigger: fgui.GLoader;
     private _c2: fgui.Controller;
-    private _c1: fgui.Controller;
 
     private _scheduleTime = .3;
     private _cache = {};
@@ -28,7 +27,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
     private _dragging = false;
 
     private _answer;
-
+    private _pos;
     // fairygui 组件
     private handleGuide: any;
     // 远程动态组件
@@ -160,17 +159,14 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
     //答案检测
     private async _clickSubmit(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
-        
-        let arr =  state.collider.map((v: any) => v.belong)
-        let key = -1,value = -1
-        for (let i in arr) {
-            if(arr[i] != -1) {
-                value = arr[i] + 1
-                key = Number(i) + 1
-            } 
+        let index = -1
+        for (let i = 0; i < state.collider.length; i++) {
+            if(state.collider[i].isSelect){
+                index = i+1
+                break
+            }
         }
-        let str = "" + value.toString() + key.toString()
-        state.answer = this._answer === str
+        state.answer = this._answer == index
         state.submit = true;
         this.updateState(state);
     }
@@ -182,9 +178,10 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         let GComponent = model.uiPath;
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
 
-        let { answer, ae } = model.config;
+        let { answer, pos, ae } = model.config;
         if (model.config) {
             if (answer) this._answer = answer;
+            if (pos) this._pos = pos;
             // 动效注册
             if (ae) {
                 for (let v in ae) {
@@ -214,15 +211,11 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         fgui.GRoot.inst.addChild(this._view);
 
         this._c2 = this._view.getController("c2");
-        this._c1 = this._view.getController("c1");
+        
         // bug 初始设置不播放不生效
         if (this._c2) {
             this._c2.selectedIndex = 1;
             this._c2.selectedIndex = 0;
-        }
-
-        if (this._c1) {
-            this._c1.selectedIndex = 0;
         }
 
         this._submit = this._view.getChild("submit").asButton;
@@ -231,7 +224,8 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
 
-
+        //界面初始化
+        this.createUI()
         // 初始化state （colliderIndex 0-9  collideredIndex 0-3）
         this._state = {
             drag: "end",
@@ -242,7 +236,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             answer: false,
             isLock:false
         }
-        this.createUI()
+        
 
         // 禁止操作期间 切页
         this.disableForbidHandle();
@@ -310,16 +304,33 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         let state: any = globalThis._.cloneDeep(this._state);
         if(collidered){
             for (let i = 0; i < state.collider.length; i++) {
-                if(i == collider){
-
+                if(i == colliderIndex){
+                    state.collider[i].isSelect = true
+                    state.collider[i].x  = this._pos.x
+                    state.collider[i].y  = this._pos.y
+                    this._colliderBox[i].x  = this._pos.x;
+                    this._colliderBox[i].y  = this._pos.y;
                 }
-                
+                else{
+                    state.collider[i].x  = this._cache['colliderBoxOrigin'][i].x;
+                    state.collider[i].y  = this._cache['colliderBoxOrigin'][i].y;
+                }
             }
-            state
+
+           
         }
         else{
-
+            this._colliderBox[colliderIndex].x  = this._cache['colliderBoxOrigin'][colliderIndex].x;
+            this._colliderBox[colliderIndex].y  = this._cache['colliderBoxOrigin'][colliderIndex].y;
+            for (let i = 0; i < state.collider.length; i++) {
+                state.collider[i].x  = this._cache['colliderBoxOrigin'][i].x;
+                state.collider[i].y  = this._cache['colliderBoxOrigin'][i].y;
+                state.collider[i].isSelect = false
+            }
         }
+        state.drag = "end";
+        state.submit = false;
+        this.updateState(state);
     }
 
     //矩形碰撞
@@ -349,6 +360,44 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
 
     // 更新ui层
     updateUi(oldState: any, state: any) {
-    
-    }
+        if (state.drag == "move") {
+            this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
+            this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
+        }
+
+        if (state.drag == "end") {
+            //读题
+            console.log("end",oldState,state)
+            if (!globalThis._.isEqual(oldState.title, state.title)) {
+                this.playTitle(state.title);
+            }
+
+            //提交
+            if (!globalThis._.isEqual(oldState.submit, state.submit)) {
+                if (state.submit) {
+                    let bool: boolean = state.collider.every((v: any) => v.isSelect == false);
+                    bool ? this.onHandleGuide() : this.answerFeedback(state.answer);
+                }
+            }
+            //锁屏
+            if (!globalThis._.isEqual(oldState.isLock, state.isLock)) {
+                if(state.isLock){
+                    this.forbidHandle();
+                }
+                else{
+                    this.disableForbidHandle();
+                }
+            }
+
+            //数据变化更新UI
+            if (!globalThis._.isEqual(oldState.collider, state.collider)) {
+                this.playSound("ui://dj5ft8zhcxq02");
+                for (let i = 0; i < this._colliderBox.length; i++) {
+                    this._colliderBox[i].x = state.collider[i].x;
+                    this._colliderBox[i].y = state.collider[i].y;
+                    
+                }
+            }
+        }
+    }   
 }

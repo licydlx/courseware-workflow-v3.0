@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <image id="n1_103lz" name="n1" src="cxq010" fileName="images/common/circular.png" xy="457,743"/>
+    <image id="n1_103lz" name="n1" src="t68da4" fileName="images/common/circular.png" pkg="k4ucnbrr" xy="457,743"/>
     <loader id="n0_gst0" name="n0" xy="505,798" size="127,147" url="ui://dj5ft8zhcxq0a"/>
   </displayList>
-  <transition name="t1" autoPlayRepeat="10">
+  <transition name="t0" autoPlayRepeat="10">
     <item time="0" type="Alpha" target="n1_103lz" value="1"/>
     <item time="4" type="Alpha" target="n1_103lz" value="0"/>
     <item time="8" type="Alpha" target="n1_103lz" value="1"/>

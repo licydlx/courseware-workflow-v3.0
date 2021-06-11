@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080" overflow="hidden">
-  <controller name="c2" pages="0,,1," selected="0"/>
+  <controller name="c2" pages="0,,1," selected="1"/>
   <controller name="c1" pages="0,,1,,2,,3,,4," selected="0"/>
   <displayList>
     <loader id="n85_cxq0" name="bg" xy="0,0" size="1920,1080" url="ui://dj5ft8zhcxq09o"/>
     <loader id="n86_cxq0" name="box" xy="121,75" size="1624,446" url="ui://dj5ft8zhcxq0a4" autoSize="true"/>
-    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://dj5ft8zhcxq00" autoSize="true" playing="false">
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://dj5ft8zhcxq00" autoSize="true" frame="12">
       <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
-    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0">
-      <gearLook controller="c2" pages="0" values="0,0,0,1" default="1,0,0,1"/>
-      <Button icon="ui://dj5ft8zhcxq066" sound="ui://dj5ft8zhcxq05"/>
+    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
+      <Button icon="ui://dj5ft8zhcxq0aa" sound="ui://dj5ft8zhcxq05"/>
     </component>
     <component id="n75_r1ww" name="submit" src="cxq07" fileName="components/common/buttons/submit.xml" xy="1687,795">
       <Button icon="ui://dj5ft8zhcxq0z" selectedIcon="ui://dj5ft8zhcxq0y"/>
     </component>
-    <loader id="n178_smj1" name="n178" xy="1365,172" size="268,268" group="n184_smj1" url="ui://dj5ft8zhcxq09m"/>
-    <text id="n179_smj1" name="1" xy="1410,220" pivot="0.5,0.5" anchor="true" size="80,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="15"/>
-    <text id="n180_smj1" name="2" xy="1585,220" pivot="0.5,0.5" anchor="true" size="42,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="8"/>
-    <text id="n181_smj1" name="3" xy="1498,307" pivot="0.5,0.5" anchor="true" size="80,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="15"/>
-    <text id="n182_smj1" name="4" xy="1410,393" pivot="0.5,0.5" anchor="true" size="80,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="15"/>
-    <text id="n183_smj1" name="5" xy="1585,393" pivot="0.5,0.5" anchor="true" size="80,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="15"/>
-    <loader id="n161_cxq0" name="answe_bg" xy="1586,394" pivot="0.5,0.5" anchor="true" size="45,67" group="n184_smj1" url="ui://dj5ft8zhcxq0af" autoSize="true"/>
-    <loader id="n162_cxq0" name="light" xy="1587,392" pivot="0.5,0.5" anchor="true" size="27,38" group="n184_smj1" url="ui://dj5ft8zhcxq0ab" autoSize="true"/>
-    <group id="n184_smj1" name="answer" xy="1365,172" size="268,268"/>
+    <loader id="n178_smj1" name="answer_bg" xy="1499,306" pivot="0.5,0.5" anchor="true" size="268,268" url="ui://dj5ft8zhcxq09m" autoSize="true"/>
+    <text id="n179_smj1" name="1" xy="1410,220" pivot="0.5,0.5" anchor="true" size="85,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="49" letterSpacing="5" text="15"/>
+    <text id="n180_smj1" name="2" xy="1585,220" pivot="0.5,0.5" anchor="true" size="42,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="49" letterSpacing="5" text="8"/>
+    <text id="n181_smj1" name="3" xy="1498,307" pivot="0.5,0.5" anchor="true" size="85,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="49" letterSpacing="5" text="15"/>
+    <text id="n182_smj1" name="4" xy="1410,393" pivot="0.5,0.5" anchor="true" size="85,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="49" letterSpacing="5" text="15"/>
+    <text id="n183_smj1" name="5" xy="1585,393" pivot="0.5,0.5" anchor="true" size="85,53" group="n184_smj1" font="ui://dj5ft8zhmgr5ak" fontSize="49" letterSpacing="5" text="15"/>
+    <group id="n184_smj1" name="answerGroup" xy="1367,193" size="260,226" advanced="true"/>
     <component id="n193_smj1" name="A" src="smj1av" fileName="components/Items/AnswerItemExample33.xml" xy="249,539" group="n197_smj1"/>
     <component id="n194_smj1" name="B" src="smj1av" fileName="components/Items/AnswerItemExample33.xml" xy="540,539" group="n197_smj1"/>
     <component id="n195_smj1" name="C" src="smj1av" fileName="components/Items/AnswerItemExample33.xml" xy="860,539" group="n197_smj1"/>
     <component id="n196_smj1" name="D" src="smj1av" fileName="components/Items/AnswerItemExample33.xml" xy="1177,539" group="n197_smj1"/>
-    <group id="n197_smj1" name="choose" xy="249,539" size="1128,493"/>
+    <group id="n197_smj1" name="chooseGroup" xy="249,539" size="1128,493" advanced="true"/>
+    <loader id="n161_cxq0" name="value_wh_bg" xy="1586,394" pivot="0.5,0.5" anchor="true" size="46,67" url="ui://dj5ft8zhcxq0ai" autoSize="true"/>
+    <loader id="n162_cxq0" name="value_wh" xy="1587,392" pivot="0.5,0.5" anchor="true" size="27,38" url="ui://dj5ft8zhcxq0ae" autoSize="true"/>
   </displayList>
 </component>

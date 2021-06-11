@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="220,493">
   <displayList>
-    <loader id="n165_mgr5" name="n165" xy="110,277" pivot="0.5,0.5" anchor="true" size="208,427" url="ui://dj5ft8zhcxq09w" autoSize="true"/>
-    <loader id="n167_smj1" name="n167" xy="110,44" pivot="0.5,0.5" anchor="true" size="33,88" url="ui://dj5ft8zhcxq0a9" autoSize="true"/>
-    <text id="n175_smj1" name="n175" xy="106,155" pivot="0.5,0.5" anchor="true" size="80,53" font="ui://dj5ft8zhmgr5ak" fontSize="12" text="15"/>
+    <loader id="n165_mgr5" name="key" xy="110,277" pivot="0.5,0.5" anchor="true" size="208,427" url="ui://dj5ft8zhcxq09w" autoSize="true"/>
+    <loader id="n167_smj1" name="sz" xy="110,44" pivot="0.5,0.5" anchor="true" size="33,88" url="ui://dj5ft8zhcxq0a9" autoSize="true"/>
+    <loader id="n175_smj1" name="value" xy="106,155" pivot="0.5,0.5" anchor="true" size="66,85" url="ui://dj5ft8zhzntsb9" autoSize="true"/>
   </displayList>
 </component>

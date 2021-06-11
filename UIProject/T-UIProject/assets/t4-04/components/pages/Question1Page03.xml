@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080" overflow="hidden">
   <controller name="c2" pages="0,,1," selected="0"/>
-  <controller name="c1" pages="0,,1,,2,,3,,4," selected="4"/>
   <displayList>
     <loader id="n85_cxq0" name="bg" xy="0,0" size="1920,1080" url="ui://dj5ft8zhcxq051"/>
     <loader id="n86_cxq0" name="question" xy="32,176" size="1860,503" url="ui://dj5ft8zhcxq05h" autoSize="true"/>
     <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://dj5ft8zhcxq00" autoSize="true" playing="false">
       <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
-    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0">
-      <gearLook controller="c2" pages="0" values="0,0,0,1" default="1,0,0,1"/>
+    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
       <Button icon="ui://dj5ft8zhcxq05j" sound="ui://dj5ft8zhcxq03"/>
     </component>
     <component id="n75_r1ww" name="submit" src="cxq07" fileName="components/common/buttons/submit.xml" xy="1687,795">
       <Button icon="ui://dj5ft8zhcxq0z" selectedIcon="ui://dj5ft8zhcxq0y"/>
     </component>
-    <loader id="n87_cxq0" name="A" xy="171,753" size="235,224" group="n91_cxq0" url="ui://dj5ft8zhcxq04x" autoSize="true">
-      <gearXY controller="c1" pages="1" values="1337,427" default="171,753" duration=".1"/>
-    </loader>
-    <loader id="n88_cxq0" name="B" xy="555,748" size="235,224" group="n91_cxq0" url="ui://dj5ft8zhcxq055" autoSize="true">
-      <gearXY controller="c1" pages="2" values="1337,427" default="555,748" duration=".1"/>
-    </loader>
-    <loader id="n89_cxq0" name="C" xy="939,748" size="235,224" group="n91_cxq0" url="ui://dj5ft8zhcxq059" autoSize="true">
-      <gearXY controller="c1" pages="3" values="1337,427" default="939,748" duration=".1"/>
-    </loader>
-    <loader id="n90_cxq0" name="D" xy="1337,427" size="235,224" group="n91_cxq0" url="ui://dj5ft8zhcxq05d" autoSize="true">
-      <gearXY controller="c1" pages="4" values="1337,427" default="1323,748" duration=".1"/>
-    </loader>
-    <group id="n91_cxq0" name="colliderBox" xy="171,427" size="1401,550"/>
-    <component id="n93_cxq0" name="collidered" src="cxq0g" fileName="components/Items/AnswerNum.xml" xy="1379,430" size="180,150"/>
+    <loader id="n87_cxq0" name="A" xy="171,753" size="235,224" group="n91_cxq0" url="ui://dj5ft8zhcxq04x" autoSize="true"/>
+    <loader id="n88_cxq0" name="B" xy="555,748" size="235,224" group="n91_cxq0" url="ui://dj5ft8zhcxq055" autoSize="true"/>
+    <loader id="n89_cxq0" name="C" xy="939,748" size="235,224" group="n91_cxq0" url="ui://dj5ft8zhcxq059" autoSize="true"/>
+    <loader id="n90_cxq0" name="D" xy="1323,748" size="235,224" group="n91_cxq0" url="ui://dj5ft8zhcxq05d" autoSize="true"/>
+    <group id="n91_cxq0" name="colliderBox" xy="171,748" size="1387,229" advanced="true"/>
+    <component id="n93_cxq0" name="collidered" src="cxq0g" fileName="components/Items/AnswerNum.xml" xy="1409,430" size="150,145"/>
   </displayList>
 </component>
