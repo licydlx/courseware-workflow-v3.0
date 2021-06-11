@@ -133,6 +133,15 @@ export default class threeViews_model01_v1 extends cc.Component {
         // 销毁反馈
         let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
+
+        let { role } = window['GlobalData'].courseData;
+        // 0 是老师, 2是学生
+        if (this._nextBtn) {
+            this._nextBtn.visible = role == 0;
+        }
+        if (this._preBtn) {
+            this._preBtn.visible = role == 0;
+        }
     }
 
     private _isExample: boolean;
