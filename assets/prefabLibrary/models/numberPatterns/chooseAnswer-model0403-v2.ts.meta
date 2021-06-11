@@ -1,0 +1,13 @@
+{
+  "ver": "1.0.8",
+<<<<<<< HEAD:assets/prefabLibrary/models/threeViews/threeViews-example-model01.ts.meta
+  "uuid": "b5bf1153-d8dd-43c9-a27e-97f1b786eb0c",
+=======
+  "uuid": "ffb11149-5d3c-4fdd-a2b9-3e43b09b776d",
+>>>>>>> 063cd49fb78b3a92ba89668ae099bcf7c30c77f9:assets/prefabLibrary/models/numberPatterns/chooseAnswer-model0403-v2.ts.meta
+  "isPlugin": false,
+  "loadPluginInWeb": true,
+  "loadPluginInNative": true,
+  "loadPluginInEditor": false,
+  "subMetas": {}
+}

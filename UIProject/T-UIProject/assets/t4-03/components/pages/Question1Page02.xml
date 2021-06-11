@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n66_u7ua" name="bg" src="t68dbm" fileName="images/question1/bg_1.png" xy="0,0"/>
+    <loader id="n50_t68d" name="dk" xy="83,119" size="1740,484" url="ui://k4ucnbrrt68dbo"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
+      <Button icon="ui://k4ucnbrrt68dbt" sound="ui://k4ucnbrr103lzew"/>
+    </component>
+    <component id="n76_iefu" name="A" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="158,201" group="n80_iefu"/>
+    <component id="n77_iefu" name="B" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="561,201" group="n80_iefu"/>
+    <component id="n78_iefu" name="C" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="964,201" group="n80_iefu"/>
+    <component id="n79_iefu" name="D" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="1367,201" group="n80_iefu"/>
+    <group id="n80_iefu" name="question" xy="158,201" size="1602,393" advanced="true"/>
+    <component id="n81_iefu" name="value1" src="t68d51" fileName="components/Items/NumExample1.xml" xy="437,654" group="n91_iefu"/>
+    <component id="n82_iefu" name="value2" src="t68d51" fileName="components/Items/NumExample1.xml" xy="673,654" size="176,185" group="n91_iefu"/>
+    <component id="n83_iefu" name="value3" src="t68d51" fileName="components/Items/NumExample1.xml" xy="909,654" size="176,185" group="n91_iefu"/>
+    <component id="n84_iefu" name="value4" src="t68d51" fileName="components/Items/NumExample1.xml" xy="1145,654" size="176,185" group="n91_iefu"/>
+    <component id="n85_iefu" name="value5" src="t68d51" fileName="components/Items/NumExample1.xml" xy="1381,654" size="176,185" group="n91_iefu"/>
+    <component id="n86_iefu" name="value6" src="t68d51" fileName="components/Items/NumExample1.xml" xy="437,867" size="176,185" group="n91_iefu"/>
+    <component id="n87_iefu" name="value7" src="t68d51" fileName="components/Items/NumExample1.xml" xy="673,867" size="176,185" group="n91_iefu"/>
+    <component id="n88_iefu" name="value8" src="t68d51" fileName="components/Items/NumExample1.xml" xy="909,867" size="176,185" group="n91_iefu"/>
+    <component id="n89_iefu" name="value9" src="t68d51" fileName="components/Items/NumExample1.xml" xy="1145,867" size="176,185" group="n91_iefu"/>
+    <component id="n90_iefu" name="value10" src="t68d51" fileName="components/Items/NumExample1.xml" xy="1381,867" size="176,185" group="n91_iefu"/>
+    <group id="n91_iefu" name="colliderBox" xy="437,654" size="1120,398" advanced="true"/>
+    <component id="n92_iefu" name="pos1" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1405,238" size="160,160" group="n96_iefu"/>
+    <component id="n93_iefu" name="pos2" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1565,238" size="160,160" group="n96_iefu"/>
+    <component id="n94_iefu" name="pos3" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1405,398" size="160,160" group="n96_iefu"/>
+    <component id="n95_iefu" name="pos4" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1565,398" size="160,160" group="n96_iefu"/>
+    <group id="n96_iefu" name="collideredBox" xy="1405,238" size="320,320" advanced="true"/>
+    <component id="n75_r1ww" name="submit" src="t68d4x" fileName="components/common/buttons/submit.xml" xy="1687,795">
+      <Button icon="ui://k4ucnbrrm2z94o" selectedIcon="ui://k4ucnbrrm2z94n"/>
+    </component>
+    <component id="n102_oqfz" name="answerValue1" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1420,255" group="n106_oqfz"/>
+    <component id="n103_oqfz" name="answerValue2" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1580,255" group="n106_oqfz"/>
+    <component id="n104_oqfz" name="answerValue3" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1420,415" group="n106_oqfz"/>
+    <component id="n105_oqfz" name="answerValue4" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1580,415" group="n106_oqfz"/>
+    <group id="n106_oqfz" name="answerBox" xy="1420,255" size="286,286" advanced="true"/>
+  </displayList>
+</component>

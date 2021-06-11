@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n2_jrea" name="class_end" src="jreazfc" fileName="images/static/class_end.png" xy="0,0"/>
+  </displayList>
+</component>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="176,185">
+  <displayList>
+    <loader id="n0_t68d" name="bg" xy="0,0" size="176,185" group="n2_t68d" aspect="true" url="ui://k4ucnbrrm2z94e" autoSize="true"/>
+    <loader id="n1_t68d" name="value" xy="88,92" pivot="0.5,0.5" anchor="true" size="50,112" group="n2_t68d" url="ui://k4ucnbrrt68da6" autoSize="true"/>
+    <group id="n2_t68d" name="num" xy="0,0" size="176,185" advanced="true"/>
+  </displayList>
+</component>

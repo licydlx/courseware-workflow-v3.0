@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <loader id="n66_u7ua" name="bg" xy="0,0" size="1920,1080" url="ui://k4ucnbrrt68dby" autoSize="true"/>
+    <loader id="n50_t68d" name="dk" xy="101,131" size="1716,734" url="ui://k4ucnbrrt68dcm" autoSize="true"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="217,35" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://k4ucnbrrt68dcd" sound="ui://k4ucnbrr103lzex"/>
+    </component>
+    <component id="n75_r1ww" name="submit" src="t68d4x" fileName="components/common/buttons/submit.xml" xy="1706,856">
+      <Button icon="ui://k4ucnbrrm2z94o" selectedIcon="ui://k4ucnbrrm2z94n"/>
+    </component>
+    <component id="n78_r1ww" name="btn_up" src="r1wwdo" fileName="components/common/buttons/up.xml" xy="1441,153">
+      <gearLook controller="c1" pages="1" values="1,0,0,0" default="1,0,0,1"/>
+      <gearIcon controller="c1" pages="1" values="ui://k4ucnbrrt68dc3" default="ui://k4ucnbrrt68dc1"/>
+      <Button icon="ui://k4ucnbrrt68dc1" selectedIcon="ui://k4ucnbrrt68dc1" sound="ui://k4ucnbrrt68d4r"/>
+    </component>
+    <component id="n79_r1ww" name="btn_down" src="r1wwdo" fileName="components/common/buttons/up.xml" xy="1572,804" pivot="0.5,0.5" anchor="true" size="262,80">
+      <gearXY controller="c1" pages="0,1" values="1572,804|1572,803"/>
+      <gearLook controller="c1" pages="1" values="1,180,0,0" default="1,0,0,1"/>
+      <gearIcon controller="c1" pages="1" values="ui://k4ucnbrrt68dc3" default="ui://k4ucnbrrt68dbz"/>
+      <Button icon="ui://k4ucnbrrt68dbz" selectedIcon="ui://k4ucnbrrt68dbz" sound="ui://k4ucnbrrt68d4r"/>
+    </component>
+    <loader id="n85_vlcc" name="A_bg" xy="152,407" size="353,245" url="ui://k4ucnbrrt68dcb" autoSize="true"/>
+    <loader id="n87_vlcc" name="B_bg" xy="498,328" size="391,373" url="ui://k4ucnbrrt68dcg" autoSize="true"/>
+    <loader id="n89_vlcc" name="C_bg" xy="922,311" size="399,390" url="ui://k4ucnbrrt68dc7" autoSize="true"/>
+    <loader id="n91_vlcc" name="D_bg" xy="1339,307" size="449,391" url="ui://k4ucnbrrt68dcp" autoSize="true"/>
+    <loader id="n92_vlcc" name="wheel" xy="1446,353" size="235,298" url="ui://k4ucnbrrt68dcj" autoSize="true"/>
+    <component id="n95_ke1y" name="wheelCom" src="pxoyzf7" fileName="components/Items/WheelComponent.xml" xy="1446,333"/>
+    <loader id="n86_vlcc" name="A_value" xy="334,529" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbb" autoSize="true"/>
+    <loader id="n88_vlcc" name="B_value" xy="693,514" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbc" autoSize="true"/>
+    <loader id="n90_vlcc" name="C_value" xy="1121,505" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbe" autoSize="true"/>
+    <group id="n94_vlcc" name="question" xy="253,412" size="948,210" advanced="true"/>
+  </displayList>
+</component>
