@@ -130,7 +130,7 @@ export default class chooseAnswer_model0404_v3 extends cc.Component {
             this.handleGuide.component.y = (fgui.GRoot.inst.height - this.handleGuide.component.height) / 2;
         }
 
-        let t: fgui.Transition = this.handleGuide.component.getTransition("t0");
+        let t: fgui.Transition = this.handleGuide.component.getTransition("t1");
         t.play(() => {
             fgui.GRoot.inst.removeChild(this.handleGuide.component);
             state.submit = false;

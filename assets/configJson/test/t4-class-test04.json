@@ -27,157 +27,6 @@
 
         {
             "model": {
-                "uiPath": "Question3Page01",
-                "bundleName": "numberPatterns",
-                "prefabName": "chooseAnswer-model0404-v3",
-                "config": {
-                    "answer": 2,
-                    "question": [8,9,4,13,12],
-                    "chooseValue": [11,12,13,14],
-                    "choose": ["ui://dj5ft8zhzntsb1","ui://dj5ft8zhzntsb2","ui://dj5ft8zhzntsb3","ui://dj5ft8zhzntsb4"],
-                    "chooseSkin":["ui://dj5ft8zhcxq09q","ui://dj5ft8zhcxq09r"],
-                    "answerSkin":["ui://dj5ft8zhcxq09i","ui://dj5ft8zhcxq09j"],
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide02",
-                            "pos": {
-                                "x": 700,
-                                "y": 0
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-        {
-            "model": {
-                "uiPath": "Question3Page02",
-                "bundleName": "numberPatterns",
-                "prefabName": "chooseAnswer-model0404-v3",
-                "config": {
-                    "answer": 4,
-                    "question":  [6,7,8,15,14],
-                    "chooseValue": [11,12,13,14],
-                    "choose": ["ui://dj5ft8zhzntsb5","ui://dj5ft8zhzntsb6","ui://dj5ft8zhzntsb7","ui://dj5ft8zhzntsb8"],
-                    "chooseSkin":["ui://dj5ft8zhcxq09v","ui://dj5ft8zhcxq09s"],
-                    "answerSkin":["ui://dj5ft8zhcxq09m","ui://dj5ft8zhcxq09k"],
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide02",
-                            "pos": {
-                                "x": 700,
-                                "y": 0
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-        {
-            "model": {
-                "uiPath": "Question3Page03",
-                "bundleName": "numberPatterns",
-                "prefabName": "chooseAnswer-model0404-v3",
-                "config": {
-                    "answer": 3,
-                    "question": [9,8,4,4,5],
-                    "chooseValue": [3,4,5,6],
-                    "choose": ["ui://dj5ft8zhzntsb9","ui://dj5ft8zhzntsba","ui://dj5ft8zhzntsbb","ui://dj5ft8zhzntsbc"],
-                    "chooseSkin":["ui://dj5ft8zhcxq09w","ui://dj5ft8zhcxq09t"],
-                    "answerSkin":["ui://dj5ft8zhcxq09n","ui://dj5ft8zhcxq09l"],
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide02",
-                            "pos": {
-                                "x": 700,
-                                "y": 0
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-        {
-            "model": {
-                "uiPath": "Question3Page04",
-                "bundleName": "numberPatterns",
-                "prefabName": "chooseAnswer-model0404-v3",
-                "config": {
-                    "answer": 1,
-                    "question": [13,16,6,10,7],
-                    "chooseValue": [10,11,12,13],
-                    "choose": ["ui://dj5ft8zhzntsbd","ui://dj5ft8zhzntsbe","ui://dj5ft8zhzntsbf","ui://dj5ft8zhzntsbg"],
-                    "chooseSkin":["ui://dj5ft8zhcxq09x","ui://dj5ft8zhcxq09u"],
-                    "answerSkin":["ui://dj5ft8zhcxq09m","ui://dj5ft8zhcxq09k"],
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide02",
-                            "pos": {
-                                "x": 700,
-                                "y": 0
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-        {
-            "model": {
-                "uiPath": "Question3Page05",
-                "bundleName": "numberPatterns",
-                "prefabName": "chooseAnswer-model0404-v3",
-                "config": {
-                    "answer": 1,
-                    "question": [9,3,3,7,1],
-                    "chooseValue": [1,2,3,4],
-                    "choose": ["ui://dj5ft8zhzntsbh","ui://dj5ft8zhzntsbi","ui://dj5ft8zhzntsbj","ui://dj5ft8zhzntsbk"],
-                    "chooseSkin":["ui://dj5ft8zhcxq09q","ui://dj5ft8zhcxq09r"],
-                    "answerSkin":["ui://dj5ft8zhcxq09i","ui://dj5ft8zhcxq09j"],
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handleGuide02",
-                            "pos": {
-                                "x": 700,
-                                "y": 0
-                            }
-                        }
-                    }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-
-        {
-            "model": {
                 "uiPath": "Question1Page01",
                 "bundleName": "numberPatterns",
                 "prefabName": "dragAnswer-model0404-v1",
@@ -397,6 +246,158 @@
                 }
             }
         },
+
+        {
+            "model": {
+                "uiPath": "Question3Page01",
+                "bundleName": "numberPatterns",
+                "prefabName": "chooseAnswer-model0404-v3",
+                "config": {
+                    "answer": 2,
+                    "question": [8,9,4,13,12],
+                    "chooseValue": [11,12,13,14],
+                    "choose": ["ui://dj5ft8zhzntsb1","ui://dj5ft8zhzntsb2","ui://dj5ft8zhzntsb3","ui://dj5ft8zhzntsb4"],
+                    "chooseSkin":["ui://dj5ft8zhcxq09q","ui://dj5ft8zhcxq09r"],
+                    "answerSkin":["ui://dj5ft8zhcxq09i","ui://dj5ft8zhcxq09j"],
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": 440,
+                                "y": 110
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question3Page02",
+                "bundleName": "numberPatterns",
+                "prefabName": "chooseAnswer-model0404-v3",
+                "config": {
+                    "answer": 4,
+                    "question":  [6,7,8,15,14],
+                    "chooseValue": [11,12,13,14],
+                    "choose": ["ui://dj5ft8zhzntsb5","ui://dj5ft8zhzntsb6","ui://dj5ft8zhzntsb7","ui://dj5ft8zhzntsb8"],
+                    "chooseSkin":["ui://dj5ft8zhcxq09v","ui://dj5ft8zhcxq09s"],
+                    "answerSkin":["ui://dj5ft8zhcxq09m","ui://dj5ft8zhcxq09k"],
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": 440,
+                                "y": 110
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question3Page03",
+                "bundleName": "numberPatterns",
+                "prefabName": "chooseAnswer-model0404-v3",
+                "config": {
+                    "answer": 3,
+                    "question": [9,8,4,4,5],
+                    "chooseValue": [3,4,5,6],
+                    "choose": ["ui://dj5ft8zhzntsb9","ui://dj5ft8zhzntsba","ui://dj5ft8zhzntsbb","ui://dj5ft8zhzntsbc"],
+                    "chooseSkin":["ui://dj5ft8zhcxq09w","ui://dj5ft8zhcxq09t"],
+                    "answerSkin":["ui://dj5ft8zhcxq09n","ui://dj5ft8zhcxq09l"],
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": 420,
+                                "y": 110
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question3Page04",
+                "bundleName": "numberPatterns",
+                "prefabName": "chooseAnswer-model0404-v3",
+                "config": {
+                    "answer": 1,
+                    "question": [13,16,6,10,7],
+                    "chooseValue": [10,11,12,13],
+                    "choose": ["ui://dj5ft8zhzntsbd","ui://dj5ft8zhzntsbe","ui://dj5ft8zhzntsbf","ui://dj5ft8zhzntsbg"],
+                    "chooseSkin":["ui://dj5ft8zhcxq09x","ui://dj5ft8zhcxq09u"],
+                    "answerSkin":["ui://dj5ft8zhcxq09m","ui://dj5ft8zhcxq09k"],
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": 440,
+                                "y": 110
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "Question3Page05",
+                "bundleName": "numberPatterns",
+                "prefabName": "chooseAnswer-model0404-v3",
+                "config": {
+                    "answer": 1,
+                    "question": [9,3,3,7,1],
+                    "chooseValue": [1,2,3,4],
+                    "choose": ["ui://dj5ft8zhzntsbh","ui://dj5ft8zhzntsbi","ui://dj5ft8zhzntsbj","ui://dj5ft8zhzntsbk"],
+                    "chooseSkin":["ui://dj5ft8zhcxq09q","ui://dj5ft8zhcxq09r"],
+                    "answerSkin":["ui://dj5ft8zhcxq09i","ui://dj5ft8zhcxq09j"],
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": 440,
+                                "y": 110
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        
         {
             "model": {
                 "uiPath": "static-model01-v1-p13",
