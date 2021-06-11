@@ -1,33 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080" overflow="hidden">
-  <controller name="c2" pages="0,,1," selected="0"/>
+  <controller name="c2" pages="0,,1," selected="1"/>
+  <controller name="c_panel" pages="0,,1," selected="1"/>
+  <controller name="c_block" pages="0,,1,,2,,3," selected="0"/>
   <displayList>
-    <image id="n50_t1pw" name="n50" src="t1pw36" fileName="images/common/bg.png" xy="0,0"/>
-    <image id="n64_t1pw" name="n64" src="t1pw3l" fileName="images/common/drag_frame.png" xy="1261,65"/>
-    <loader id="n7_kxox" name="titleTrigger" xy="41,61" size="228,171" scale="0.8,0.8" url="ui://tfsfm7mbt1pw0" autoSize="true" playing="false">
-      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
-    </loader>
+    <loader id="n98_oio2" name="bg" xy="0,0" size="1920,1080" url="ui://tfsfm7mbt1pw36" autoSize="true"/>
+    <image id="n100_oio2" name="n100" src="t1pw4r" fileName="images/example_1/example_1_frame_up.png" xy="866,191" group="n103_oio2"/>
+    <image id="n101_oio2" name="n101" src="t1pw4q" fileName="images/example_1/example_1_frame_left.png" xy="383,492" group="n103_oio2"/>
+    <image id="n102_oio2" name="n102" src="t1pw4p" fileName="images/example_1/example_1_frame_down.png" xy="866,743" group="n103_oio2"/>
+    <group id="n103_oio2" name="n103" xy="383,191" size="842,852" group="n121_oio2"/>
+    <component id="n104_oio2" name="nextBtn" src="t1pw4z" fileName="components/buttons/nextBtn.xml" xy="1665,441" group="n121_oio2"/>
+    <component id="n105_oio2" name="resetBtn" src="t1pw50" fileName="components/buttons/resetBtn.xml" xy="1613,943" group="n121_oio2"/>
+    <image id="n106_oio2" name="shadow" src="t1pw4x" fileName="images/example_1/example_1_shadow.png" xy="834,667" group="n121_oio2"/>
+    <component id="n107_oio2" name="blockRight" src="t1pw52" fileName="components/buttons/blockBtn.xml" xy="957,592" group="n121_oio2">
+      <gearDisplay controller="c_block" pages="0,1"/>
+    </component>
+    <component id="n108_oio2" name="blockLeft" src="t1pw52" fileName="components/buttons/blockBtn.xml" xy="865,592" group="n121_oio2">
+      <gearDisplay controller="c_block" pages="0,3"/>
+    </component>
+    <image id="n109_oio2" name="contentBlock" src="t1pw4n" fileName="images/example_1/example_1_block_0.png" xy="976,516" group="n121_oio2"/>
+    <component id="n110_oio2" name="blockRightTop" src="t1pw54" fileName="components/buttons/blockBtnTop.xml" xy="958,592" group="n121_oio2">
+      <gearDisplay controller="c_block" pages="0,1"/>
+    </component>
+    <image id="n111_oio2" name="n111" src="t1pw4u" fileName="images/example_1/example_1_rect_1.png" xy="559,533" group="n113_oio2"/>
+    <image id="n112_oio2" name="rect_left" src="t1pw4v" fileName="images/example_1/example_1_rect_2.png" xy="467,625" group="n113_oio2">
+      <gearDisplay controller="c_block" pages="0,1,3"/>
+    </image>
+    <group id="n113_oio2" name="groupLeft" xy="467,533" size="187,187" group="n121_oio2"/>
+    <image id="n114_oio2" name="n114" src="t1pw4t" fileName="images/example_1/example_1_rect_0.png" xy="998,826" group="n116_oio2"/>
+    <image id="n115_oio2" name="n115" src="t1pw4v" fileName="images/example_1/example_1_rect_2.png" xy="906,918" group="n116_oio2">
+      <gearDisplay controller="c_block" pages="0,3"/>
+    </image>
+    <group id="n116_oio2" name="groupBottom" xy="906,826" size="279,187" group="n121_oio2"/>
+    <image id="n117_oio2" name="n117" src="t1pw4t" fileName="images/example_1/example_1_rect_0.png" xy="999,227" group="n120_oio2"/>
+    <image id="n118_oio2" name="n118" src="t1pw4v" fileName="images/example_1/example_1_rect_2.png" xy="907,227" group="n120_oio2">
+      <gearDisplay controller="c_block" pages="0,3"/>
+    </image>
+    <image id="n119_oio2" name="n119" src="t1pw4v" fileName="images/example_1/example_1_rect_2.png" xy="999,227" group="n120_oio2">
+      <gearDisplay controller="c_block" pages="0,1"/>
+    </image>
+    <group id="n120_oio2" name="groupUp" xy="907,227" size="279,187" group="n121_oio2"/>
+    <group id="n121_oio2" name="groupExample0" xy="383,191" size="1456,852" advanced="true">
+      <gearDisplay controller="c_panel" pages="0"/>
+    </group>
+    <image id="n64_t1pw" name="n64" src="t1pw3l" fileName="images/common/drag_frame.png" xy="1261,65" group="n99_oio2"/>
     <image id="n70_t1pw" name="n70" src="t1pw3q" fileName="images/exercise_1_1/exemple_1_frame_up.png" xy="988,192" pivot="0.5,0.45" anchor="true" group="n26_kxox"/>
-    <group id="n26_kxox" name="collideredBox" xy="813,20" size="350,384" advanced="true"/>
+    <group id="n26_kxox" name="collideredBox" xy="813,20" size="350,384" group="n99_oio2" advanced="true"/>
     <image id="n66_t1pw" name="n66" src="t1pw3o" fileName="images/exercise_1_1/exemple_1_frame_down.png" xy="813,666" group="n62_t1pw"/>
     <image id="n67_t1pw" name="n67" src="t1pw3p" fileName="images/exercise_1_1/exemple_1_frame_left.png" xy="329,382" group="n62_t1pw"/>
     <image id="n68_t1pw" name="n68" src="t1pw3r" fileName="images/exercise_1_1/exemple_1_rect_0.png" xy="407,463" group="n62_t1pw"/>
     <image id="n69_t1pw" name="n69" src="t1pw3r" fileName="images/exercise_1_1/exemple_1_rect_0.png" xy="892,773" group="n62_t1pw"/>
-    <group id="n62_t1pw" name="group" xy="329,382" size="834,668"/>
-    <loader id="n53_t1pw" name="content" xy="832,446" size="292,225" url="ui://tfsfm7mbt1pw3n"/>
+    <group id="n62_t1pw" name="group" xy="329,382" size="834,668" group="n99_oio2"/>
+    <loader id="n53_t1pw" name="content" xy="832,446" size="292,225" group="n99_oio2" url="ui://tfsfm7mbt1pw3n"/>
     <loader id="n32_ku3e" name="drag_0" xy="1448,233" pivot="0.5,0.5" anchor="true" size="187,187" group="n33_ku3e" url="ui://tfsfm7mbt1pw3r" align="center" vAlign="middle" autoSize="true"/>
     <loader id="n41_ku3e" name="drag_1" xy="1448,547" pivot="0.5,0.5" anchor="true" size="187,187" group="n33_ku3e" url="ui://tfsfm7mbt1pw3s" align="center" vAlign="middle" autoSize="true"/>
     <loader id="n42_ku3e" name="drag_2" xy="1448,842" pivot="0.5,0.5" anchor="true" size="187,187" group="n33_ku3e" url="ui://tfsfm7mbt1pw3t" align="center" vAlign="middle" autoSize="true"/>
-    <group id="n33_ku3e" name="colliderBox" xy="1354,139" size="187,796" advanced="true"/>
-    <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="852,104" alpha="0" touchable="false">
-      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://tfsfm7mbt1pw3m" sound="ui://tfsfm7mbtwu673" volume="0"/>
-    </component>
-    <component id="n49_t1pw" name="place" src="t1pw33" fileName="components/buttons/title.xml" xy="965,1184" alpha="0" touchable="false">
+    <group id="n33_ku3e" name="colliderBox" xy="1354,139" size="187,796" group="n99_oio2" advanced="true"/>
+    <component id="n60_t1pw" name="submitBtn" src="t1pw3i" fileName="components/buttons/submitBtn.xml" xy="1686,796" group="n99_oio2"/>
+    <component id="n61_t1pw" name="preBtn" src="t1pw3j" fileName="components/buttons/preBtn.xml" xy="69,445" group="n99_oio2"/>
+    <group id="n99_oio2" name="groupExample1" xy="69,20" size="1820,1030" advanced="true">
+      <gearDisplay controller="c_panel" pages="1"/>
+    </group>
+    <component id="n49_t1pw" name="place" src="t1pw33" fileName="components/buttons/title.xml" xy="965,1184" touchable="false">
       <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
       <Button icon="ui://tfsfm7mbt1pws" sound="ui://tfsfm7mbt1pw9" volume="0"/>
     </component>
-    <component id="n60_t1pw" name="submitBtn" src="t1pw3i" fileName="components/buttons/submitBtn.xml" xy="1686,796"/>
-    <component id="n61_t1pw" name="preBtn" src="t1pw3j" fileName="components/buttons/preBtn.xml" xy="69,445"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="41,61" size="228,171" scale="0.8,0.8" url="ui://tfsfm7mbt1pw0" autoSize="true" frame="12">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="852,104" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <gearIcon controller="c_panel" pages="1" values="ui://tfsfm7mbt1pw3m" default="ui://tfsfm7mbt1pw4y"/>
+      <Button icon="ui://tfsfm7mbt1pw3m" sound="ui://tfsfm7mbtwu673" volume="0"/>
+    </component>
   </displayList>
 </component>

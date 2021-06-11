@@ -6,12 +6,19 @@ export default class threeViews_model01_v1 extends cc.Component {
 
     private _worldRoot: cc.Node;
     private _view: fgui.GComponent;
-    private _c1: fgui.Controller;
     private _c2: fgui.Controller;
+    private _c_panel: fgui.Controller;
+    private _c_block: fgui.Controller;
     private _submit: fgui.GButton;
     private _title: fgui.GButton;
     private _titleTrigger: fgui.GLoader;
     private _preBtn: fairygui.GObject;
+    private _nextBtn: fairygui.GObject;
+
+    private _blockLeft: fairygui.GObject;
+    private _blockRight: fairygui.GObject;
+    private _blockRightTop: fairygui.GObject;
+    private _resetBtn: fairygui.GObject;
 
     // fairygui 组件
     private handleGuide: any;
@@ -25,14 +32,8 @@ export default class threeViews_model01_v1 extends cc.Component {
     private _cache = {};
     private _scheduleTime = .3;
     private _dragging = false;
-
     private _answer = 0;
-
     private _state = {};
-
-    private _dragEndPos = {};
-
-    public stateIndex: number = 1;
 
     get state(): any {
         return this._state;
@@ -52,8 +53,9 @@ export default class threeViews_model01_v1 extends cc.Component {
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
         fgui.GRoot.inst.addChild(this._view);
 
-        this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");
+        this._c_panel = this._view.getController("c_panel");
+        this._c_block = this._view.getController("c_block");
         // 臨時
         // bug 初始设置不播放不生效
         if (this._c2) {
@@ -61,8 +63,27 @@ export default class threeViews_model01_v1 extends cc.Component {
             this._c2.selectedIndex = 0;
         }
 
+        if (this._isExample) {
+            this._c_panel.selectedIndex = 1;
+        }
+
         this._preBtn = this._view.getChild("preBtn");
         if (this._preBtn) this._preBtn.asButton.on(fgui.Event.CLICK, this._prePage, this);
+
+        this._nextBtn = this._view.getChild("nextBtn");
+        if (this._nextBtn) this._nextBtn.asButton.on(fgui.Event.CLICK, this._nextPage, this);
+
+        this._blockLeft = this._view.getChild("blockLeft");
+        if (this._blockLeft) this._blockLeft.asButton.on(fgui.Event.CLICK, this._onBlockLeft, this);
+
+        this._blockRight = this._view.getChild("blockRight");
+        if (this._blockRight) this._blockRight.asButton.on(fgui.Event.CLICK, this._onBlockRight, this);
+
+        this._blockRightTop = this._view.getChild("blockRightTop");
+        if (this._blockRightTop) this._blockRightTop.asButton.on(fgui.Event.CLICK, this._onBlockRight, this);
+
+        this._resetBtn = this._view.getChild("resetBtn");
+        if (this._resetBtn) this._resetBtn.asButton.on(fgui.Event.CLICK, this._onReset, this);
 
         this._submit = this._view.getChild("submitBtn").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
@@ -102,7 +123,8 @@ export default class threeViews_model01_v1 extends cc.Component {
             title: false,
             submit: false,
             answer: false,
-            modelSelectIndex: 1,
+            cPanel: 0,
+            cBlock: 0,
         }
 
         // 临时 
@@ -113,8 +135,7 @@ export default class threeViews_model01_v1 extends cc.Component {
         if (feedback) feedback.destroy();
     }
 
-    private _childModel: any;
-    private _childModelJson: any;
+    private _isExample: boolean;
     async init(data: any) {
         // 临时 model component json 配置加载
         let { pathConfig, model, components } = data;
@@ -127,11 +148,8 @@ export default class threeViews_model01_v1 extends cc.Component {
 
         if (model.config) {
             let { answer, ae } = model.config;
-            if (model.config.dragEndPos) {
-                this._dragEndPos = model.config.dragEndPos
-            }
-
             if (answer) this._answer = answer;
+            this._isExample = model.config.isExample;
             // 动效注册
             if (ae) {
                 for (let v in ae) {
@@ -155,11 +173,38 @@ export default class threeViews_model01_v1 extends cc.Component {
         }
     }
 
-    getOriginValue(v: any) {
-        return {
-            x: v.x,
-            y: v.y
+    private _onBlockLeft() {
+        this._blockLeft.visible = false;
+        this._changeIndex();
+    }
+
+    private _onBlockRight() {
+        this._blockRight.visible = false;
+        this._changeIndex();
+    }
+
+    private _changeIndex() {
+        let index = 0;
+        if (this._blockLeft.visible && this._blockRight.visible) {
+            index = 0;
+        } else if (!this._blockLeft.visible && this._blockRight.visible) {
+            index = 1;
+        } else if (this._blockLeft.visible && !this._blockRight.visible) {
+            index = 3;
+        } else {
+            index = 2;
         }
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.cBlock = index;
+        this.updateState(state);
+    }
+
+    private _onReset() {
+        this._blockLeft.visible = true;
+        this._blockRight.visible = true;
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.cBlock = 0;
+        this.updateState(state);
     }
 
     private _onDragStart(evt: fgui.Event): void {
@@ -168,8 +213,9 @@ export default class threeViews_model01_v1 extends cc.Component {
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
         state.colliderIndex = colliderIndex;
-        this._view.setChildIndex(collider, this._view.numChildren - 1);
+        this._view.setChildIndex(collider, this._view.numChildren - 2);
         this.updateState(state);
+        this.playSound("ui://t4-02/click");
     }
 
     private _onDragMove(evt: fgui.Event): void {
@@ -266,7 +312,13 @@ export default class threeViews_model01_v1 extends cc.Component {
 
     private _prePage() {
         let state: any = globalThis._.cloneDeep(this._state);
-        state.modelSelectIndex = 0;
+        state.cPanel = 0;
+        this.updateState(state);
+    }
+
+    private _nextPage() {
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.cPanel = 1;
         this.updateState(state);
     }
 
@@ -288,7 +340,7 @@ export default class threeViews_model01_v1 extends cc.Component {
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
             let index = this._view.getChildIndex(this._colliderBox[state.colliderIndex]);
             if (index != this._view.numChildren - 1) {
-                this._view.setChildIndex(this._colliderBox[state.colliderIndex], this._view.numChildren - 1);
+                this._view.setChildIndex(this._colliderBox[state.colliderIndex], this._view.numChildren - 2);
             }
         }
 
@@ -319,15 +371,17 @@ export default class threeViews_model01_v1 extends cc.Component {
                     this.disableForbidHandle();
                 }
             }
-        }
 
-        if (!globalThis._.isEqual(oldState.modelSelectIndex, state.modelSelectIndex)) {
-            this._onPrev();
-        }
-    }
+            if (!globalThis._.isEqual(oldState.cPanel, state.cPanel)) {
+                this._c_panel.selectedIndex = state.cPanel;
+                this.playSound("ui://t4-02/click");
+            }
 
-    private _onPrev() {
-        this._view.visible = false;
+            if (!globalThis._.isEqual(oldState.cBlock, state.cBlock)) {
+                this._c_block.selectedIndex = state.cBlock;
+                this.playSound("ui://t4-02/click");
+            }
+        }
     }
 
     playSound(url: string) {
@@ -354,7 +408,8 @@ export default class threeViews_model01_v1 extends cc.Component {
         if (bool) {
             cc.audioEngine.stopAll();
             this.forbidHandle();
-            let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
+            let str = this._c_panel.selectedIndex == 0 ? "ui://t4-02/example_1" : "ui://t4-02/example_1_2";
+            let item = fgui.UIPackage.getItemByURL(str);
             let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
             let audioId = cc.audioEngine.play(audio, false, 1);
             cc.audioEngine.setFinishCallback(audioId, () => {
@@ -365,35 +420,6 @@ export default class threeViews_model01_v1 extends cc.Component {
         } else {
             this.disableForbidHandle();
         }
-    }
-
-    /**
-     * @name: 获取距离
-     * @msg: 
-     * @param {any} self
-     * @param {any} area
-     * @return {*}
-     */
-    private _getDistance(self: any, area: any) {
-        let width = (self.x + self.width / 2) - (area.x + area.width / 2);
-        let height = (self.y + self.height / 2) - (area.y + area.height / 2);
-        let distance = Math.sqrt(width * width + height * height);
-        return distance;
-    }
-
-    /**
-     * @name: 区域所属判断
-     * @msg: 
-     * @param {any} self
-     * @param {any} area
-     * @param {number} gap
-     * @return {*}
-     */
-    private _belongArea(self: any, area: any, gap: number = 10) {
-        let width = (self.x + self.width / 2) - (area.x + area.width / 2);
-        let height = (self.y + self.height / 2) - (area.y + area.height / 2);
-        let distance = Math.sqrt(width * width + height * height);
-        return distance < gap;
     }
 
     answerFeedback(bool: boolean) {

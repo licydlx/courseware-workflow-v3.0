@@ -11,14 +11,6 @@
     <image id="n73_t1pw" name="n73" src="t1pw4q" fileName="images/example_1/example_1_frame_left.png" xy="383,492" group="n62_t1pw"/>
     <image id="n74_t1pw" name="n74" src="t1pw4p" fileName="images/example_1/example_1_frame_down.png" xy="866,743" group="n62_t1pw"/>
     <group id="n62_t1pw" name="group" xy="383,191" size="842,852"/>
-    <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="852,104" alpha="0" touchable="false">
-      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://tfsfm7mbt1pw4y" sound="ui://tfsfm7mbtwu672" volume="0"/>
-    </component>
-    <component id="n49_t1pw" name="place" src="t1pw33" fileName="components/buttons/title.xml" xy="965,1184" alpha="0" touchable="false">
-      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://tfsfm7mbt1pws" sound="ui://tfsfm7mbt1pw34" volume="0"/>
-    </component>
     <component id="n75_t1pw" name="nextBtn" src="t1pw4z" fileName="components/buttons/nextBtn.xml" xy="1665,441"/>
     <component id="n78_t1pw" name="resetBtn" src="t1pw50" fileName="components/buttons/resetBtn.xml" xy="1613,943"/>
     <image id="n76_t1pw" name="shadow" src="t1pw4x" fileName="images/example_1/example_1_shadow.png" xy="834,667"/>
@@ -50,5 +42,13 @@
       <gearDisplay controller="c_block" pages="0,1"/>
     </image>
     <group id="n92_t1pw" name="groupUp" xy="907,227" size="279,187"/>
+    <component id="n46_t1pw" name="title" src="t1pw33" fileName="components/buttons/title.xml" xy="852,104" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://tfsfm7mbt1pw4y" sound="ui://tfsfm7mbtwu672" volume="0"/>
+    </component>
+    <component id="n49_t1pw" name="place" src="t1pw33" fileName="components/buttons/title.xml" xy="965,1184" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://tfsfm7mbt1pws" sound="ui://tfsfm7mbt1pw34" volume="0"/>
+    </component>
   </displayList>
 </component>

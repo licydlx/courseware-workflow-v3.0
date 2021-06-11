@@ -131,7 +131,7 @@
     <component id="tamw6z" name="exercise-model-03-p3.xml" path="/components/pages/" exported="true"/>
     <component id="tamw70" name="exercise-model-03-p4.xml" path="/components/pages/" exported="true"/>
     <image id="iqw071" name="bg_title.png" path="/images/static/"/>
-    <sound id="twu672" name="example_1.mp3" path="/audios/ttile/"/>
+    <sound id="twu672" name="example_1.mp3" path="/audios/ttile/" exported="true"/>
     <sound id="twu673" name="example_1_2.mp3" path="/audios/ttile/"/>
     <sound id="twu674" name="example_3.mp3" path="/audios/ttile/"/>
     <sound id="twu675" name="example_2.mp3" path="/audios/ttile/"/>

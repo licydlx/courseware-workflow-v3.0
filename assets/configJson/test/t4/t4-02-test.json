@@ -2,14 +2,14 @@
     "name": "国王的权杖",
     "courseName": "t4-02",
     "env": "test",
-    "totalPages": 16,
+    "totalPages": 15,
     "pathConfig": {
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
-        "controllerBundlePath": "T-series/personalTest/xzr/controllers/",
-        "panelBundlePath": "T-series/personalTest/xzr/components/",
+        "controllerBundlePath": "T-series/prefabLibrary/controllers/",
+        "panelBundlePath": "T-series/prefabLibrary/components/",
         "resourceBundlePath": "T-series/fairyUis/t4/",
         "modelBundlePath": "T-series/personalTest/xzr/models/",
-        "componentBundlePath": "T-series/personalTest/xzr/components/",
+        "componentBundlePath": "T-series/prefabLibrary/components/",
         "controllerName": "controller-model02",
         "panelName": "formal-panle-model02",
         "resourceName": "t4-02",
@@ -25,9 +25,24 @@
         },
         {
             "model": {
-                "uiPath": "example-model-01-p1",
+                "uiPath": "example-model-01-p2",
                 "bundleName": "threeViews",
-                "prefabName": "threeViews-example-model01"
+                "prefabName": "threeViews-model01-v1",
+                "isExample": true,
+                "config": {
+                    "answer": 0,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-1"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
             }
         },
         {
@@ -37,10 +52,6 @@
                 "prefabName": "threeViews-model01-v1",
                 "config": {
                     "answer": 0,
-                    "dragEndPos": {
-                        "x": 503,
-                        "y": 555
-                    },
                     "ae": {
                         "handleGuide": {
                             "component": "handle-guide-2"
@@ -62,10 +73,6 @@
                 "prefabName": "threeViews-model01-v1",
                 "config": {
                     "answer": 2,
-                    "dragEndPos": {
-                        "x": 985,
-                        "y": 194
-                    },
                     "ae": {
                         "handleGuide": {
                             "component": "handle-guide-1"
@@ -87,10 +94,6 @@
                 "prefabName": "threeViews-model01-v1",
                 "config": {
                     "answer": 0,
-                    "dragEndPos": {
-                        "x": 1021,
-                        "y": 898
-                    },
                     "ae": {
                         "handleGuide": {
                             "component": "handle-guide-3"
@@ -111,8 +114,14 @@
                 "bundleName": "threeViews",
                 "prefabName": "threeViews-model02-v1",
                 "config": {
-                    "rectUrl":"ui://tfsfm7mbt1pw5b",
-                    "answer": [1,4,6,7,8],
+                    "rectUrl": "ui://tfsfm7mbt1pw5b",
+                    "answer": [
+                        1,
+                        4,
+                        6,
+                        7,
+                        8
+                    ],
                     "ae": {
                         "handleGuide": {
                             "component": "handle-guide-4"
@@ -133,8 +142,15 @@
                 "bundleName": "threeViews",
                 "prefabName": "threeViews-model02-v1",
                 "config": {
-                    "rectUrl":"ui://tfsfm7mbucr25l",
-                    "answer": [0,3,4,6,7,8],
+                    "rectUrl": "ui://tfsfm7mbucr25l",
+                    "answer": [
+                        0,
+                        3,
+                        4,
+                        6,
+                        7,
+                        8
+                    ],
                     "ae": {
                         "handleGuide": {
                             "component": "handle-guide-4"
@@ -155,8 +171,13 @@
                 "bundleName": "threeViews",
                 "prefabName": "threeViews-model02-v1",
                 "config": {
-                    "rectUrl":"ui://tfsfm7mbucr25o",
-                    "answer": [3,6,7,8],
+                    "rectUrl": "ui://tfsfm7mbucr25o",
+                    "answer": [
+                        3,
+                        6,
+                        7,
+                        8
+                    ],
                     "ae": {
                         "handleGuide": {
                             "component": "handle-guide-4"
@@ -177,8 +198,15 @@
                 "bundleName": "threeViews",
                 "prefabName": "threeViews-model02-v1",
                 "config": {
-                    "rectUrl":"ui://tfsfm7mbucr25r",
-                    "answer": [1,2,3,4,5,8],
+                    "rectUrl": "ui://tfsfm7mbucr25r",
+                    "answer": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        8
+                    ],
                     "ae": {
                         "handleGuide": {
                             "component": "handle-guide-4"
@@ -199,17 +227,35 @@
                 "bundleName": "threeViews",
                 "prefabName": "threeViews-model03-v1",
                 "config": {
-                    "rectUrl":"ui://tfsfm7mbucr266",
+                    "rectUrl": "ui://tfsfm7mbucr266",
                     "answer": {
-                        "floor_0":[
-                            0,0,0,0,
-                            0,1,1,1,
-                            0,0,0,0
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0
                         ],
-                        "floor_1":[
-                            0,0,0,0,
-                            0,0,1,0,
-                            0,0,0,0
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
                         ]
                     },
                     "ae": {
@@ -232,17 +278,35 @@
                 "bundleName": "threeViews",
                 "prefabName": "threeViews-model03-v1",
                 "config": {
-                    "rectUrl":"ui://tfsfm7mbtamw6k",
+                    "rectUrl": "ui://tfsfm7mbtamw6k",
                     "answer": {
-                        "floor_0":[
-                            0,0,0,0,
-                            0,1,1,0,
-                            0,0,0,0
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
                         ],
-                        "floor_1":[
-                            0,0,0,0,
-                            0,1,0,0,
-                            0,0,0,0
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
                         ]
                     },
                     "ae": {
@@ -265,17 +329,35 @@
                 "bundleName": "threeViews",
                 "prefabName": "threeViews-model03-v1",
                 "config": {
-                    "rectUrl":"ui://tfsfm7mbtamw6o",
+                    "rectUrl": "ui://tfsfm7mbtamw6o",
                     "answer": {
-                        "floor_0":[
-                            0,0,0,0,
-                            0,1,0,0,
-                            0,1,0,0
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0
                         ],
-                        "floor_1":[
-                            0,0,0,0,
-                            0,1,0,0,
-                            0,0,0,0
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
                         ]
                     },
                     "ae": {
@@ -298,17 +380,35 @@
                 "bundleName": "threeViews",
                 "prefabName": "threeViews-model03-v1",
                 "config": {
-                    "rectUrl":"ui://tfsfm7mbtamw6o",
+                    "rectUrl": "ui://tfsfm7mbtamw6o",
                     "answer": {
-                        "floor_0":[
-                            0,0,0,0,
-                            0,1,0,0,
-                            0,1,0,0
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0
                         ],
-                        "floor_1":[
-                            0,0,0,0,
-                            0,0,0,0,
-                            0,1,0,0
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0
                         ]
                     },
                     "ae": {
@@ -331,17 +431,35 @@
                 "bundleName": "threeViews",
                 "prefabName": "threeViews-model03-v1",
                 "config": {
-                    "rectUrl":"ui://tfsfm7mbtamw6t",
+                    "rectUrl": "ui://tfsfm7mbtamw6t",
                     "answer": {
-                        "floor_0":[
-                            0,0,0,0,
-                            0,1,1,0,
-                            0,1,1,0
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            0,
+                            0,
+                            1,
+                            1,
+                            0
                         ],
-                        "floor_1":[
-                            0,0,0,0,
-                            0,0,0,0,
-                            0,1,1,0
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            0
                         ]
                     },
                     "ae": {
