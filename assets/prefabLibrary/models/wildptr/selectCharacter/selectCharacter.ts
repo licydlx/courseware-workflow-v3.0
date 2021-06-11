@@ -29,6 +29,8 @@ export default class SelectCharacter extends cc.Component {
 
     characters: fgui.GComponent[] = [];
 
+    touchPad: fgui.GButton = null;
+
     feedback: cc.Node = null;
     feedbackCount = 0;
 
@@ -70,6 +72,12 @@ export default class SelectCharacter extends cc.Component {
             }
         }
 
+        try{ 
+            this.touchPad = this.quePage.getChild("touchPad").asButton;
+        }catch(e){
+            console.log("么有touchPad");
+        }
+
         if (components) {
             for (const key in components) {
                 let componentPath: any = `${pathConfig.remoteUrl}${pathConfig.componentBundlePath}${components[key].bundleName}`;
@@ -82,6 +90,11 @@ export default class SelectCharacter extends cc.Component {
     onLoad() {
         this.initState();
         this.initUI();
+    }
+    start() {
+        if (this.touchPad) {
+            this.touchPad.on(fgui.Event.TOUCH_END, this.onTouchEnd, this);
+        }
     }
     onDestroy() {
         if (this.blocked) {
@@ -98,8 +111,8 @@ export default class SelectCharacter extends cc.Component {
         let modelConfig = this.config.model.config;
 
 
-        let imgList = this.config.model.config.characterImgList;
-        let lightList = this.config.model.config.characterLightList;
+        let imgList = modelConfig.characterImgList;
+        let lightList = modelConfig.characterLightList;
         this.groupChildrenForEach(
             this.quePage.getChild("characters").asGroup,
             (obj: fgui.GObject, ind: number) => {
@@ -108,6 +121,13 @@ export default class SelectCharacter extends cc.Component {
 
                 obj["light"] = obj.asCom.getChild("light");
                 obj["light"].asLoader.url = `ui://${packageName}/${lightList[ind]}`;
+
+                if (modelConfig.lightColorHex) {
+                    let color = new cc.Color();
+                    color.fromHEX(modelConfig.lightColorHex);
+                    obj["light"].color = color;
+                }
+
                 obj["light"].visible = false;
 
                 obj["ind"] = ind;
@@ -122,8 +142,24 @@ export default class SelectCharacter extends cc.Component {
         this.quePage.getChild("submit").asButton.on(fgui.Event.CLICK, this.onClickSubmit, this);
 
     }
+    onTouchEnd(evt: fgui.Event) {
+        if (IsTeacherNotInDemo()) {
+            return;
+        }
+        let charInd = this.calcMinDisInd(evt.pos, this.characters, 140);
+        if (charInd !== -1) {
+            this.playSound("soundClick");
+
+            let state = this.cloneState();
+            state["movement"] = "clicked";
+            //flip the value
+            state["stateList"][charInd] = (state["stateList"][charInd] == 0 ? 1 : 0);
+            this.updateState(state);
+        }
+    }
+
     onClickCharacter(evt: fgui.Event) {
-        if( IsTeacherNotInDemo() ) { 
+        if (IsTeacherNotInDemo()) {
             return;
         }
 
@@ -140,7 +176,7 @@ export default class SelectCharacter extends cc.Component {
 
     }
     onClickSubmit() {
-        if( IsTeacherNotInDemo() ) { 
+        if (IsTeacherNotInDemo()) {
             return;
         }
         let state = this.cloneState();
@@ -253,8 +289,7 @@ export default class SelectCharacter extends cc.Component {
         return obj.localToGlobal(0, 0);
     }
     //寻找最近的触摸目标
-    calcMinDisInd(pos, list) {
-        let minDis = 9999;
+    calcMinDisInd(pos, list, minDis = 9999) {
         let selInd = -1;
         for (let i = 0; i < list.length; i++) {
             let obj = list[i];
@@ -268,9 +303,6 @@ export default class SelectCharacter extends cc.Component {
                 selInd = i;
                 minDis = dis;
             }
-        }
-        if (minDis > 100) {
-            selInd = -1;
         }
 
         return selInd;

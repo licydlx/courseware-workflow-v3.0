@@ -1,0 +1,181 @@
+{
+    "name": "",
+    "courseName": "t3-class-04",
+    "env": "test",
+    "totalPages": 5,
+    "pathConfig": {
+        "remoteUrl": "",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "controllerBundlePath": "",
+        "panelBundlePath": "",
+        "controllerName": "controller-model02",
+        "panelName": "formal-panle-model02",
+        "resourceBundlePath": "",
+        "resourceName": "t3-class-04",
+        "packageName": "t3-class-04"
+    },
+    "chapters": [
+        
+        {
+            "tag":"开始画面",
+            "model": {
+                "uiPath": "scene-empty",
+                "loaderUiPath": "page-start",
+                "bundleName": "pageAnimation",
+                "prefabName": "pageAnimation",
+                "labaImagePath": "", 
+                "labaTime": 0,
+                "config": {
+                }
+            }
+        },
+        {
+            "tag":"例子1",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg1-1",
+                "loaderUiPath": "select-character-t3-04-1",
+                "bundleName": "selectCharacter",
+                "prefabName": "selectCharacter",
+                "labaImagePath": "t3-04-1-1-info", 
+                "labaSoundClip": "t3-04-1-1",
+                "labaTime": 5.5,
+                "config": {
+                    "itemImgList": [
+                        "item1-1-1",
+                        "item1-1-2"
+                    ],
+                    "characterImgList": [ 
+                        "man1-1-1", 
+                        "man1-1-1", 
+                        "man1-1-2", 
+                        "man1-1-2", 
+                        "man1-1-3",
+                        "man1-1-3"
+                    ],
+                    "characterLightList": [
+                        "light1-1",
+                        "light1-1",
+                        "light1-1",
+                        "light1-1",
+                        "light1-1",
+                        "light1-1"
+                    ],
+                    "lightColorHex": "ffe743",
+                    "srcStateList":  [ 0, 0, 0, 0, 0, 0 ],
+                    "dstStateList" : [ 1, 1, 1, 1, 0, 0 ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"题目1-1",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg1-2",
+                "loaderUiPath": "select-character-t3-04-1-1",
+                "bundleName": "selectCharacter",
+                "prefabName": "selectCharacter",
+                "labaImagePath": "t3-04-1-2-info", 
+                "labaSoundClip": "t3-04-1-2",
+                "labaTime": 6,
+                "config": {
+                    "itemImgList": [
+                        "item1-2-1",
+                        "item1-2-2"
+                    ],
+                    "characterImgList": [ 
+                        "man1-2-1", 
+                        "man1-2-2", 
+                        "man1-2-3", 
+                        "man1-2-4", 
+                        "man1-2-5",
+                        "man1-2-6"
+                    ],
+                    "characterLightList": [
+                        "light1-2-1",
+                        "light1-2-2",
+                        "light1-2-3",
+                        "light1-2-4",
+                        "light1-2-5",
+                        "light1-2-6"
+                    ],
+                    "lightColorHex": "bb84ff",
+                    "srcStateList":  [ 0, 0, 0, 0, 0, 0 ],
+                    "dstStateList" : [ 0, 0, 1, 1, 1, 1 ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"题目1-2",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg1-2",
+                "loaderUiPath": "select-character-t3-04-1-1",
+                "bundleName": "selectCharacter",
+                "prefabName": "selectCharacter",
+                "labaImagePath": "t3-04-1-3-info", 
+                "labaSoundClip": "t3-04-1-3",
+                "labaTime": 6,
+                "config": {
+                    "itemImgList": [
+                        "item1-3-1",
+                        "item1-3-2"
+                    ],
+                    "characterImgList": [ 
+                        "man1-3-1", 
+                        "man1-3-2", 
+                        "man1-3-3", 
+                        "man1-3-4", 
+                        "man1-3-5",
+                        "man1-3-6"
+                    ],
+                    "characterLightList": [
+                        "light1-3-1",
+                        "light1-3-2",
+                        "light1-3-3",
+                        "light1-3-4",
+                        "light1-3-5",
+                        "light1-3-6"
+                    ],
+                    "lightColorHex": "bb84ff",
+                    "srcStateList":  [ 0, 0, 0, 0, 0, 0 ],
+                    "dstStateList" : [ 0, 0, 1, 1, 0, 0 ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "tag":"结束",
+            "model": {
+                "uiPath": "scene-empty",
+                "loaderUiPath": "page-end",
+                "backgroundName":"bg-solong",
+                "bundleName": "pageAnimation",
+                "prefabName": "pageAnimation",
+                "labaImagePath": "", 
+                "labaTime": 0,
+                "config": {
+                    "aniName" : ""
+                }
+            }
+        }
+    ]
+}

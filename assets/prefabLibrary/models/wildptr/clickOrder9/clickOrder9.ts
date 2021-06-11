@@ -322,8 +322,6 @@ export default class ClickOrder9 extends cc.Component {
         }
     }
     refresh(oldState: any, state: any) { //override
-        // super.refresh(oldState, state);
-
         if (this.hasChange("tileState")) {
             this.refreshTiles();
         }

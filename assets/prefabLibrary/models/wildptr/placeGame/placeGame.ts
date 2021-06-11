@@ -134,7 +134,8 @@ export default class PlaceGame extends cc.Component {
         if (id === 0 || ind === -1) {
             return;
         }
-        this.playClip(this.ui.soundDrag);
+        // this.playClip(this.ui.soundDrag);
+        this.playClip(this.ui.soundClick);
 
 
         state["movement"] = "grap";
@@ -153,6 +154,7 @@ export default class PlaceGame extends cc.Component {
     }
 
     onClick() {
+        this.playClip(this.ui.soundDrag);
         // this.playClip( this.ui.soundClick );
         //如果是点击，则把物体返回到原来的SOLT
         let state = this.cloneState();

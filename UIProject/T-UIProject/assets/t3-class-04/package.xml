@@ -15,7 +15,87 @@
     <component id="swpuc" name="laba-icon.xml" path="/"/>
     <component id="swpud" name="btnLaba.xml" path="/buttons/"/>
     <component id="swpue" name="scene-empty.xml" path="/" exported="true"/>
-    <component id="swpuf" name="page-start.xml" path="/quePage/page-start/"/>
+    <component id="swpuf" name="page-start.xml" path="/quePage/page-start/" exported="true"/>
+    <component id="iix1g" name="zone.xml" path="/quePage/select-character/"/>
+    <image id="iix1h" name="circle(1).png" path="/images/"/>
+    <image id="iix1i" name="r.png" path="/images/"/>
+    <image id="iix1j" name="b.png" path="/images/"/>
+    <image id="iix1k" name="rl.png" path="/images/"/>
+    <image id="iix1l" name="bl.png" path="/images/"/>
+    <image id="iix1m" name="rb.png" path="/images/"/>
+    <component id="iix1p" name="character.xml" path="/quePage/select-character/"/>
+    <component id="iix1q" name="select-character-t3-04-1.xml" path="/quePage/select-character/" exported="true"/>
+    <image id="iix1t" name="item-bg.png" path="/images/"/>
+    <component id="iix1u" name="submit.xml" path="/quePage/buttons/"/>
+    <image id="iix1v" name="btn-ok.png" path="/images/"/>
+    <image id="iix1w" name="man1-1-2.png" path="/images/t3-04-1/1/" exported="true"/>
+    <image id="iix1x" name="man1-1-1.png" path="/images/t3-04-1/1/" exported="true"/>
+    <image id="iix1y" name="light1-1.png" path="/images/t3-04-1/1/" exported="true"/>
+    <component id="iix1z" name="select-character-t3-04-1-1.xml" path="/quePage/select-character/" exported="true"/>
+    <image id="iix110" name="man1-1-3.png" path="/images/t3-04-1/1/" exported="true"/>
+    <image id="iix111" name="item1-1-1.png" path="/images/t3-04-1/1/" exported="true"/>
+    <image id="iix112" name="item1-1-2.png" path="/images/t3-04-1/1/" exported="true"/>
+    <image id="iix113" name="bg1-1.png" path="/images/t3-04-1/" exported="true"/>
+    <image id="iix114" name="t3-04-1-1-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="iix115" name="t3-04-1-2-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="iix116" name="t3-04-1-3-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="iix117" name="t3-04-2-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="iix118" name="t3-04-3-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="iix119" name="t3-04-4-info.png" path="/images/bubbles/" exported="true"/>
+    <image id="iix11a" name="man1-2-6.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11b" name="man1-2-1.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11c" name="man1-2-2.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11d" name="man1-2-3.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11e" name="man1-2-4.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11f" name="man1-2-5.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11g" name="light1-2-6.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11h" name="light1-2-1.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11i" name="light1-2-2.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11j" name="light1-2-3.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11k" name="light1-2-4.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11l" name="light1-2-5.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix11m" name="man1-3-6.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11n" name="man1-3-1.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11o" name="man1-3-2.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11p" name="man1-3-3.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11q" name="man1-3-4.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11r" name="man1-3-5.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11s" name="light1-3-6.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11t" name="light1-3-1.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11u" name="light1-3-2.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11v" name="light1-3-3.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11w" name="light1-3-4.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11x" name="light1-3-5.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11y" name="item1-3-1.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix11z" name="item1-3-2.png" path="/images/t3-04-1/3/" exported="true"/>
+    <image id="iix120" name="item1-2-2.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix121" name="item1-2-1.png" path="/images/t3-04-1/2/" exported="true"/>
+    <image id="iix122" name="bg1-2.png" path="/images/t3-04-1/" exported="true"/>
+    <image id="iix123" name="bg4.png" path="/images/t3-04-2/"/>
+    <image id="iix124" name="bg2-1.png" path="/images/t3-04-2/"/>
+    <image id="iix125" name="例1-1.png" path="/images/shows/"/>
+    <image id="iix126" name="例1.png" path="/images/shows/"/>
+    <image id="iix127" name="例2-1.png" path="/images/shows/"/>
+    <image id="iix128" name="例2-2.png" path="/images/shows/"/>
+    <image id="iix129" name="例2.png" path="/images/shows/"/>
+    <component id="iix12a" name="t3-04-2.xml" path="/quePage/t3-04-2/"/>
+    <image id="iix12b" name="man2-1-3.png" path="/images/t3-04-2/1/"/>
+    <image id="iix12c" name="man2-1-1.png" path="/images/t3-04-2/1/"/>
+    <image id="iix12d" name="man2-1-2.png" path="/images/t3-04-2/1/"/>
+    <image id="iix12e" name="1.png" path="/images/t3-04-2/1/"/>
+    <image id="iix12f" name="2.png" path="/images/t3-04-2/1/"/>
+    <image id="iix12g" name="btnSound.png" path="/images/"/>
+    <image id="iix12h" name="6.png" path="/images/font1/"/>
+    <image id="iix12i" name="7.png" path="/images/font1/"/>
+    <image id="iix12j" name="8.png" path="/images/font1/"/>
+    <image id="iix12k" name="9.png" path="/images/font1/"/>
+    <image id="iix12l" name="0.png" path="/images/font1/"/>
+    <image id="iix12m" name="1.png" path="/images/font1/"/>
+    <image id="iix12n" name="2.png" path="/images/font1/"/>
+    <image id="iix12o" name="3.png" path="/images/font1/"/>
+    <image id="iix12p" name="4.png" path="/images/font1/"/>
+    <image id="iix12q" name="5.png" path="/images/font1/"/>
+    <font id="iix12r" name="Font1.fnt" path="/images/font1/" exported="true"/>
   </resources>
-  <publish name=""/>
+  <publish name="" path="F:\git\courseware-workflow-v3.0\assets\fairyUis\t3\t3-class-04" packageCount="2"/>
 </packageDescription>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="400,400" pivot="0.5,0.5" anchor="true">
+  <displayList>
+    <loader id="n7_x1k8" name="light" xy="200,205" pivot="0.5,0.5" anchor="true" size="269,398" visible="false" url="ui://oonhxon0iix11h" autoSize="true" clearOnPublish="true"/>
+    <loader id="n8_x1k8" name="face" xy="200,205" pivot="0.5,0.5" anchor="true" size="216,345" url="ui://oonhxon0iix11b" autoSize="true" clearOnPublish="true"/>
+  </displayList>
+  <transition name="loop" autoPlayRepeat="0">
+    <item time="0" type="Scale" target="n7_x1k8" tween="true" startValue="1,1" endValue="1.1,1.1" duration="24" ease="Sine.InOut"/>
+    <item time="24" type="Scale" target="n7_x1k8" tween="true" startValue="1.1,1.1" endValue="1,1" duration="24" ease="Sine.InOut"/>
+  </transition>
+</component>

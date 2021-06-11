@@ -3,6 +3,6 @@
   <displayList>
     <loader id="n5_mfcc" name="background" xy="0,0" size="1920,1080" fill="scale" clearOnPublish="true"/>
     <loader id="n4_bqid" name="loader" xy="0,0" size="1920,1080" clearOnPublish="true"/>
-    <component id="n11_swpu" name="n11" src="swpub" fileName="laba.xml" xy="0,0"/>
+    <component id="n11_swpu" name="laba" src="swpub" fileName="laba.xml" xy="0,0"/>
   </displayList>
 </component>
