@@ -32,6 +32,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
     private _answer = "";
     private _questionUrl = [];
     private _optionsUrl = [];
+    private _answerUrl = []
     private _answerbgSkin = [];
   
     // fairygui 组件
@@ -109,7 +110,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
                 else {
                     let pos = this._questionUrl[question_index]["pos"]
                     let value = this._questionUrl[question_index]["value"]
-                    let value_url = this._optionsUrl[value]
+                    let value_url = this._answerUrl[value]
                     let value_loader = com.getChild("value" + pos) as fgui.GLoader
                     value_loader.url = value_url
                 }
@@ -182,13 +183,20 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         let GComponent = model.uiPath;
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
 
-        let { answer, questionUrl, optionsUrl, answerbgSkin, ae } = model.config;
+        let { answer, questionUrl, optionsUrl, answerbgSkin, answerUrl, ae } = model.config;
 
         if (model.config) {
             if (answer) this._answer = answer;
             if (questionUrl) this._questionUrl = questionUrl;
             if (optionsUrl) this._optionsUrl = optionsUrl;
             if (answerbgSkin) this._answerbgSkin = answerbgSkin;
+
+            if(answerUrl) {
+                this._answerUrl = answerUrl
+            }
+            else if(optionsUrl){
+                this._answerUrl = optionsUrl
+            }
 
             // 动效注册
             if (ae) {
@@ -431,7 +439,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
                             this.playSound("ui://k4ucnbrrt68d4v");
                             for (let i = 0; i < this._answerLoader.length; i++) {
                                 if (i == index) {
-                                    this._answerLoader[i].url = this._optionsUrl[state.colliderIndex + 1]
+                                    this._answerLoader[i].url = this._answerUrl[state.colliderIndex + 1]
                                 }
                                 else {
                                     this._answerLoader[i].url = ""
@@ -453,7 +461,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
                         for (let i = 0; i < this._answerLoader.length; i++) {
                             if(isExit ){
                                 if (i == index) {
-                                    this._answerLoader[i].url = this._optionsUrl[value + 1]
+                                    this._answerLoader[i].url = this._answerUrl[value + 1]
                                 }
                                 else {
                                     this._answerLoader[i].url = ""
@@ -463,8 +471,17 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
                                 this._answerLoader[i].url = ""
                             }
                         }
+
+
                     }
-                    
+                    for (let i = 0; i <  this._colliderBox.length; i++) {
+                        if (state.collider[i].belong != -1){
+                            this._colliderBox[i].visible = false
+                        }
+                        else{
+                            this._colliderBox[i].visible = true
+                        }
+                    }
                 }
             }
 

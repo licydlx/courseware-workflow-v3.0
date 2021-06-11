@@ -180,6 +180,26 @@
     <component id="oqfzzff" name="NumExample10.xml" path="/components/Items/"/>
     <image id="cw1qzfg" name="wheel_up.png" path="/images/question2/"/>
     <image id="cw1qzfh" name="wheel_up_practice_1.png" path="/images/question2/"/>
+    <image id="qtgvzfi" name="case_one_2_1.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfj" name="case_one_2_10.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfk" name="case_one_2_2.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfl" name="case_one_2_3.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfm" name="case_one_2_4.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfn" name="case_one_2_5.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfo" name="case_one_2_6.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfp" name="case_one_2_7.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfq" name="case_one_2_8.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfr" name="case_one_2_9.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfs" name="case_one_3_1.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzft" name="case_one_3_10.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfu" name="case_one_3_2.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfv" name="case_one_3_3.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfw" name="case_one_3_4.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfx" name="case_one_3_5.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfy" name="case_one_3_6.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzfz" name="case_one_3_7.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzg0" name="case_one_3_8.png" path="/images/num/" exported="true"/>
+    <image id="qtgvzg1" name="case_one_3_9.png" path="/images/num/" exported="true"/>
   </resources>
-  <publish name="" path="F:\37Project\courseware-workflow-v3.0\assets\fairyUis\t4\t4-02" packageCount="2"/>
+  <publish name="" path="E:\workspaces\courseware-workflow-v3.0\assets\fairyUis\t4\t4-03" packageCount="2"/>
 </packageDescription>
