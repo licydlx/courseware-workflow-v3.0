@@ -144,9 +144,9 @@ export default class threeViews_model02_v1 extends cc.Component {
         evt.captureTouch();
         let state: any = globalThis._.cloneDeep(this._state);
         let collider: any = fgui.GObject.cast(evt.currentTarget);
-        this._view.setChildIndex(collider, this._view.numChildren - 1);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
         state.colliderIndex = colliderIndex;
+        this._view.setChildIndex(collider, this._view.numChildren - 1);
         this.updateState(state);
     }
 
@@ -160,7 +160,7 @@ export default class threeViews_model02_v1 extends cc.Component {
         imgObj.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
         imgObj.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
         imgObj.on(fgui.Event.TOUCH_END, this._onDragEnd, this);
-        this._view.addChildAt(imgObj, this._view.numChildren - 1)
+        this._view.addChildAt(imgObj, this._view.numChildren - 1);
         this._colliderBox.push(imgObj);
         this._cache["colliderBox"].push({ x: imgObj.x, y: imgObj.y, belong: null });
         return imgObj;
@@ -266,6 +266,10 @@ export default class threeViews_model02_v1 extends cc.Component {
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
+            let index = this._view.getChildIndex(this._colliderBox[state.colliderIndex]);
+            if (index != this._view.numChildren - 1) {
+                this._view.setChildIndex(this._colliderBox[state.colliderIndex], this._view.numChildren - 1);
+            }
         }
 
         if (state.drag == "end") {

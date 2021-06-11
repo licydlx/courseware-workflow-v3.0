@@ -27,31 +27,31 @@
             "model": {
                 "uiPath": "example-model-01-p1",
                 "bundleName": "threeViews",
-                "prefabName": "threeViews-example-model01"
-            }
-        },
-        {
-            "model": {
-                "uiPath": "example-model-01-p2",
-                "bundleName": "threeViews",
-                "prefabName": "threeViews-model01-v1",
-                "config": {
-                    "answer": 0,
-                    "dragEndPos": {
-                        "x": 990.5,
-                        "y": 192
+                "prefabName": "threeViews-example-model01",
+                "childModel": {
+                    "model": {
+                        "uiPath": "example-model-01-p2",
+                        "bundleName": "threeViews",
+                        "prefabName": "threeViews-model01-v1",
+                        "config": {
+                            "answer": 0,
+                            "dragEndPos": {
+                                "x": 990.5,
+                                "y": 192
+                            },
+                            "ae": {
+                                "handleGuide": {
+                                    "component": "handle-guide-1"
+                                }
+                            }
+                        }
                     },
-                    "ae": {
-                        "handleGuide": {
-                            "component": "handle-guide-1"
+                    "components": {
+                        "feedback": {
+                            "bundleName": "feedback",
+                            "prefabName": "feedback-model01-v1"
                         }
                     }
-                }
-            },
-            "components": {
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
                 }
             }
         },

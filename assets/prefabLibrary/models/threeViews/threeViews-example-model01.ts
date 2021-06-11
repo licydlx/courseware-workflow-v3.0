@@ -16,7 +16,7 @@ export default class threeViews_example_model01 extends cc.Component {
     private _blockRight: fgui.GButton;
     private _blockRightTop: fgui.GButton;
     private _resetBtn: fgui.GButton;
-
+    public stateIndex: number = 0;
 
     private _state = {};
 
@@ -31,7 +31,6 @@ export default class threeViews_example_model01 extends cc.Component {
     }
 
     onLoad() {
-        this._controllerJs = this.node.parent.getComponent(cc.Component);
         this._worldRoot = cc.find("Canvas").parent;
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
@@ -70,6 +69,7 @@ export default class threeViews_example_model01 extends cc.Component {
         this._state = {
             controllerIndex: 0,
             title: false,
+            modelSelectIndex: 0,
         }
 
         // 禁止操作期间 切页
@@ -83,10 +83,14 @@ export default class threeViews_example_model01 extends cc.Component {
         this._nextBtn.visible = role == 0;
     }
 
+    private _pathConfig: any;
+    private _childModel: any;
+    private _childModelJson: any;
     async init(data: any) {
         // 临时 model component json 配置加载
-        let { pathConfig, model, components } = data;
+        let { pathConfig, model, components, childModel } = data;
         let Package = pathConfig.packageName;
+        this._pathConfig = pathConfig;
 
         if (model.uiPath) {
             let GComponent = model.uiPath;
@@ -101,6 +105,14 @@ export default class threeViews_example_model01 extends cc.Component {
                 let componentPrefab: any = await loadPrefab(componentBundle, components[key].prefabName);
                 this[key] = componentPrefab;
             }
+        }
+
+        if (model.childModel) {
+            this._childModelJson = model.childModel
+            let componentPath: any = `${pathConfig.remoteUrl}${pathConfig.componentBundlePath}${this._childModelJson.model.bundleName}`;
+            let componentBundle: any = await loadBundle(componentPath);
+            let componentPrefab: any = await loadPrefab(componentBundle, this._childModelJson.model.prefabName);
+            this._childModel = componentPrefab;
         }
     }
 
@@ -145,7 +157,15 @@ export default class threeViews_example_model01 extends cc.Component {
     }
 
     private _nextPage() {
-        this._controllerJs.onJumpConfig(++this._controllerJs._toPage);
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.modelSelectIndex = 1;
+        this.updateState(state);
+        
+        // let childModel: any = cc.instantiate(this._childModel);
+        // let childModelJs: any = childModel.getComponent(cc.Component);
+        // console.log('childModelJs', childModelJs)
+        // console.log('childModelJs.state', childModelJs._state)
+        // childModelJs.getState(state);
     }
 
     // 获取状态
@@ -169,6 +189,19 @@ export default class threeViews_example_model01 extends cc.Component {
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
         }
+
+        if (!globalThis._.isEqual(oldState.modelSelectIndex, state.modelSelectIndex)) {
+            this._onNext();
+        }
+    }
+
+    private _onNext() {
+        let childModel: any = cc.instantiate(this._childModel);
+        childModel.x = 0;
+        childModel.y = 0;
+        let childModelJs: any = childModel.getComponent(cc.Component);
+        childModelJs.init({ pathConfig: this._pathConfig, model: this._childModelJson.model, components: this._childModelJson.components });
+        childModel.parent = cc.find("Canvas").parent;
     }
 
     playSound(url: string) {

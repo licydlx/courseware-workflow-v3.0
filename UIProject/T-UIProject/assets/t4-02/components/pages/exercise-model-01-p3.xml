@@ -7,7 +7,7 @@
     <loader id="n7_kxox" name="titleTrigger" xy="41,61" size="228,171" scale="0.8,0.8" url="ui://tfsfm7mbt1pw0" autoSize="true" playing="false">
       <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
     </loader>
-    <image id="n86_t1pw" name="n86" src="t1pw4e" fileName="images/exercise_1_3/exercise_1_3_frame_down.png" xy="851,703" group="n26_kxox"/>
+    <image id="n86_t1pw" name="n86" src="t1pw4e" fileName="images/exercise_1_3/exercise_1_3_frame_down.png" xy="1016,902" pivot="0.5,0.55" anchor="true" group="n26_kxox"/>
     <group id="n26_kxox" name="collideredBox" xy="851,703" size="330,363" advanced="true"/>
     <image id="n88_t1pw" name="n88" src="t1pw4g" fileName="images/exercise_1_3/exercise_1_3_frame_up.png" xy="851,20" group="n62_t1pw"/>
     <image id="n83_t1pw" name="n83" src="t1pw46" fileName="images/exercise_1_2/exercise_1_2_frame_left.png" xy="382,362" group="n62_t1pw"/>

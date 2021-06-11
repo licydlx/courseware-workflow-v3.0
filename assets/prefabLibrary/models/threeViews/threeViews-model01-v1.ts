@@ -31,7 +31,8 @@ export default class threeViews_model01_v1 extends cc.Component {
     private _state = {};
 
     private _dragEndPos = {};
-    private _controllerJs: any;
+
+    public stateIndex: number = 1;
 
     get state(): any {
         return this._state;
@@ -44,7 +45,6 @@ export default class threeViews_model01_v1 extends cc.Component {
     }
 
     onLoad() {
-        this._controllerJs = this.node.parent.getComponent(cc.Component);
 
         this._worldRoot = cc.find("Canvas").parent;
 
@@ -101,7 +101,8 @@ export default class threeViews_model01_v1 extends cc.Component {
             colliderIndex: null,
             title: false,
             submit: false,
-            answer: false
+            answer: false,
+            modelSelectIndex: 1,
         }
 
         // 临时 
@@ -112,11 +113,12 @@ export default class threeViews_model01_v1 extends cc.Component {
         if (feedback) feedback.destroy();
     }
 
+    private _childModel: any;
+    private _childModelJson: any;
     async init(data: any) {
         // 临时 model component json 配置加载
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
-
 
         if (model.uiPath) {
             let GComponent = model.uiPath;
@@ -166,6 +168,7 @@ export default class threeViews_model01_v1 extends cc.Component {
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
         state.colliderIndex = colliderIndex;
+        this._view.setChildIndex(collider, this._view.numChildren - 1);
         this.updateState(state);
     }
 
@@ -178,53 +181,72 @@ export default class threeViews_model01_v1 extends cc.Component {
         // 两个被拖拽物 同时被松开 会触发2次回调
         if (!this._dragging) return;
         this._dragging = false;
-
         let collider: any = fgui.GObject.cast(evt.currentTarget);
         let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
-
-        let arr: any = [];
-        let collidered: any;
-        this._collideredBox.forEach((v: any) => {
-            if (this._belongArea(collider, v, 250) == true) arr.push(v);
-        });
-
-        arr.forEach((v: any, i: any) => {
-            if (i == 0) {
-                collidered = v;
-            } else {
-                let pd = this._getDistance(collider, arr[i - 1]);
-                let cd = this._getDistance(collider, v);
-                if (cd < pd) collidered = v;
-            }
-        });
-
-        // 被撞击的框的下标
-        let collideredIndex: number = this._collideredBox.findIndex((v: any) => v == collidered);
+        let obj: any = this._adsorb(collider);
         let state: any = globalThis._.cloneDeep(this._state);
-        if (collideredIndex == -1) {
+        let initBelong = state.collider[colliderIndex].belong;
+        if (obj.bool) {
+            let replaceObj: any = state.collider.find((v: any, i: number) => v.belong == obj.collideredIndex);
+            let replaceIndex: any = state.collider.findIndex((v: any, i: number) => v.belong == obj.collideredIndex);
+            state.collider[colliderIndex] = {
+                x: obj.pos.x,
+                y: obj.pos.y,
+                belong: obj.collideredIndex
+            }
+            if (initBelong != null && replaceObj) {
+                // 替换的元素互换位置
+                replaceObj.x = this._collideredBox[initBelong].x;
+                replaceObj.y = this._collideredBox[initBelong].y;;
+                replaceObj.belong = initBelong;
+            } else if (replaceObj) {
+                // 替换的元素回归原位
+                replaceObj.x = this._cache["colliderBox"][replaceIndex].x;
+                replaceObj.y = this._cache["colliderBox"][replaceIndex].y;;
+                replaceObj.belong = null;
+            }
+        } else {
             state.collider[colliderIndex] = {
                 x: this._cache["colliderBox"][colliderIndex].x,
                 y: this._cache["colliderBox"][colliderIndex].y,
-                belong: null,
+                belong: null
             }
-        } else {
-            let x: number = this._dragEndPos["x"]
-            let y: number = this._dragEndPos["y"]
-            let bool: boolean = state.collider.find((v: any) => {
-                return (Math.abs(v.x - x) < 20) && (Math.abs(v.y - y) < 20)
-            });
-
-            state.collider[colliderIndex] = {
-                x: bool ? this._cache["colliderBox"][colliderIndex].x : x,
-                y: bool ? this._cache["colliderBox"][colliderIndex].y : y,
-                belong: colliderIndex,
-            }
+            state.collider[colliderIndex].x = this._cache["colliderBox"][colliderIndex].x
+            state.collider[colliderIndex].y = this._cache["colliderBox"][colliderIndex].y
         }
-
-        state.submit = false;
         state.drag = "end";
         state.colliderIndex = colliderIndex;
+        state.submit = false;
         this.updateState(state);
+    }
+
+    // 区域所属判断
+    private _adsorb(obj: any) {
+        let a: any;
+        let b: any;
+        let c: any;
+        let collideredIndex: any;
+        for (let i = 0; i < this._collideredBox.length; i++) {
+            a = obj.x - this._collideredBox[i].x;
+            b = obj.y - this._collideredBox[i].y;
+            if (c) {
+                if (c > Math.sqrt(a * a + b * b)) {
+                    c = Math.sqrt(a * a + b * b);
+                    collideredIndex = i;
+                }
+            } else {
+                c = Math.sqrt(a * a + b * b);
+                collideredIndex = i;
+            }
+        }
+        return {
+            bool: c < 150,
+            collideredIndex: collideredIndex,
+            pos: {
+                x: this._collideredBox[collideredIndex].x,
+                y: this._collideredBox[collideredIndex].y,
+            }
+        };
     }
 
     private _clickTitle(evt: any) {
@@ -243,7 +265,9 @@ export default class threeViews_model01_v1 extends cc.Component {
     }
 
     private _prePage() {
-        this._controllerJs.onJumpConfig(--this._controllerJs._toPage);
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.modelSelectIndex = 0;
+        this.updateState(state);
     }
 
     // 获取状态
@@ -262,6 +286,10 @@ export default class threeViews_model01_v1 extends cc.Component {
         if (state.drag == "move") {
             this._colliderBox[state.colliderIndex].x = state.collider[state.colliderIndex].x;
             this._colliderBox[state.colliderIndex].y = state.collider[state.colliderIndex].y;
+            let index = this._view.getChildIndex(this._colliderBox[state.colliderIndex]);
+            if (index != this._view.numChildren - 1) {
+                this._view.setChildIndex(this._colliderBox[state.colliderIndex], this._view.numChildren - 1);
+            }
         }
 
         if (state.drag == "end") {
@@ -292,6 +320,14 @@ export default class threeViews_model01_v1 extends cc.Component {
                 }
             }
         }
+
+        if (!globalThis._.isEqual(oldState.modelSelectIndex, state.modelSelectIndex)) {
+            this._onPrev();
+        }
+    }
+
+    private _onPrev() {
+        this._view.visible = false;
     }
 
     playSound(url: string) {
