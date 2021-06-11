@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <loader id="n85_cxq0" name="bg" xy="0,0" size="1920,1080" url="ui://dj5ft8zhcxq05z"/>
+    <image id="n172_r38y" name="spot" src="cxq065" fileName="images/question2/title1/spot.png" xy="197,783"/>
+    <loader id="n86_cxq0" name="box" xy="262,85" size="1380,893" url="ui://dj5ft8zhcxq063" autoSize="true"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://dj5ft8zhcxq00" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,1"/>
+      <Button icon="ui://dj5ft8zhcxq066" sound="ui://dj5ft8zhcxq04"/>
+    </component>
+    <component id="n75_r1ww" name="submit" src="cxq07" fileName="components/common/buttons/submit.xml" xy="1687,795">
+      <Button icon="ui://dj5ft8zhcxq0z" selectedIcon="ui://dj5ft8zhcxq0y"/>
+    </component>
+    <component id="n161_cxq0" name="A" src="cxq09e" fileName="components/Items/QuestionItemExample20.xml" xy="377,278" group="n144_cxq0"/>
+    <component id="n162_cxq0" name="B" src="cxq09e" fileName="components/Items/QuestionItemExample20.xml" xy="674,278" group="n144_cxq0"/>
+    <component id="n163_cxq0" name="C" src="cxq09e" fileName="components/Items/QuestionItemExample20.xml" xy="971,278" group="n144_cxq0"/>
+    <component id="n164_cxq0" name="D" src="cxq09e" fileName="components/Items/QuestionItemExample20.xml" xy="1268,278" group="n144_cxq0"/>
+    <group id="n144_cxq0" name="questionGroup" xy="377,278" size="1156,265" advanced="true"/>
+    <image id="n147_cxq0" name="num_bg" src="cxq061" fileName="images/question2/title1/jsj_wk.png" xy="549,578"/>
+    <loader id="n157_cxq0" name="0" xy="603,614" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05p" autoSize="true"/>
+    <loader id="n148_cxq0" name="1" xy="717,614" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05q" autoSize="true"/>
+    <loader id="n149_cxq0" name="2" xy="831,614" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05r" autoSize="true"/>
+    <loader id="n150_cxq0" name="3" xy="945,614" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05s" autoSize="true"/>
+    <loader id="n151_cxq0" name="4" xy="1059,614" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05t" autoSize="true"/>
+    <loader id="n152_cxq0" name="5" xy="603,731" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05u" autoSize="true"/>
+    <loader id="n153_cxq0" name="6" xy="717,731" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05v" autoSize="true"/>
+    <loader id="n154_cxq0" name="7" xy="831,731" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05w" autoSize="true"/>
+    <loader id="n155_cxq0" name="8" xy="945,731" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05x" autoSize="true"/>
+    <loader id="n156_cxq0" name="9" xy="1059,731" size="84,87" group="n160_cxq0" url="ui://dj5ft8zhcxq05y" autoSize="true"/>
+    <group id="n160_cxq0" name="inputGroup" xy="603,614" size="540,204" advanced="true"/>
+    <component id="n159_cxq0" name="btn_delect" src="cxq08" fileName="components/common/buttons/delect.xml" xy="1173,614"/>
+    <loader id="n168_cxq0" name="answe_bg" xy="1461,472" pivot="0.5,0.5" anchor="true" size="113,113" group="n171_r38y" url="ui://dj5ft8zhcxq068" autoSize="true"/>
+    <loader id="n165_cxq0" name="light" xy="1462,473" pivot="0.5,0.5" anchor="true" size="126,126" group="n171_r38y" url="ui://dj5ft8zhcxq062" autoSize="true"/>
+    <loader id="n166_cxq0" name="value_wh" xy="1463,474" pivot="0.5,0.5" anchor="true" size="48,56" group="n171_r38y" url="ui://dj5ft8zhcxq07t" autoSize="true"/>
+    <text id="n170_r38y" name="answer_value" xy="1463,473" pivot="0.5,0.5" anchor="true" size="52,59" group="n171_r38y" font="ui://dj5ft8zhr38yay" fontSize="55" text="8"/>
+    <group id="n171_r38y" name="answerGroup" xy="1399,410" size="126,126" advanced="true"/>
+  </displayList>
+</component>
