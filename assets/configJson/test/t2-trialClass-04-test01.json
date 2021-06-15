@@ -2,7 +2,7 @@
     "name": "数理思维",
     "courseName": "t2-trialclass-04",
     "env": "test",
-    "totalPages": 7,
+    "totalPages": 10,
     "pathConfig": {
         "remoteUrl": "",
         "controllerBundlePath": "",
@@ -183,6 +183,84 @@
                 "config": {
                     "answer": 0,
                     "remarks": "例题3",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -850,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "choooseMoreAanwert2-04-l3-1",
+                "bundleName": "model-t2-04",
+                "prefabName": "chooseMoreAnswer-t2-04-l3",
+                "config": {
+                    "answer": 0,
+                    "remarks": "3-1",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -850,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "choooseMoreAanwert2-04-l3-2",
+                "bundleName": "model-t2-04",
+                "prefabName": "chooseMoreAnswer-t2-04-l3",
+                "config": {
+                    "answer": 1,
+                    "remarks": "3-2",
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handleGuide02",
+                            "pos": {
+                                "x": -850,
+                                "y": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "choooseMoreAanwert2-04-l3-tuozhan",
+                "bundleName": "model-t2-04",
+                "prefabName": "chooseMoreAnswer-t2-04-l3",
+                "config": {
+                    "answer": 1,
+                    "remarks": "拓展提升",
                     "ae": {
                         "handleGuide": {
                             "component": "handleGuide02",

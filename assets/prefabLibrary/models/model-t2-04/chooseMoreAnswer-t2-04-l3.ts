@@ -12,18 +12,15 @@ const { ccclass, property } = cc._decorator;
 
 
 interface StateType {
+    chooseImage: number,
     gameStart: boolean,
-    isShowEnd: boolean,
-    clickImgs: boolean[],
-    checkAnswer: boolean,
-
+    toAnswer: boolean,
     title: boolean,
     submit: boolean,
     answer: boolean,
-    toAnswer: boolean
 }
 
-const IMAGE_MOVE_TIME = 0.2;
+const offsetAnswer = cc.v2(5, -11.5);
 
 @ccclass
 export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
@@ -42,11 +39,10 @@ export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
 
     // fairygui 组件
     private handleGuide: any;
-    private lineBlink: any;
 
-    private _scrollingImage: fgui.GImage[] = [];
-    private _clickImage: cc.Node[] = [];
-
+    private clickAnswer: fgui.GImage;
+    private answerArr: fgui.GButton[] = [];
+    private posArr: number[] = [];
     // 远程动态组件
     private feedback: any;
 
@@ -93,18 +89,23 @@ export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
         this._startBtn = this._view.getChild("startBtn").asButton;
         if (this._startBtn) this._startBtn.on(fgui.Event.CLICK, this._clickStartBtn, this);
 
+        for (let i = 0; i < 3; i++) {
+            let btn = this._view.getChild(`answer${i}`).asButton;
+            btn.on(fgui.Event.CLICK, this._clickChooseImage, this);
+            btn['selfIndex'] = i;
+            this.posArr.push(btn.x);
+            this.answerArr.push(btn);
+        }
+        this.clickAnswer = this._view.getChild('click').asImage;
 
         // 初始化state
         this._state = {
+            chooseImage: -1,
             gameStart: false,
-            isShowEnd: false,
-            clickImgs: [false, false, false, false],
-            checkAnswer: false,
-
+            toAnswer: false,
             title: false,
             submit: false,
             answer: false,
-            toAnswer: false
         }
 
         // 临时 
@@ -115,18 +116,45 @@ export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
         if (feedback) feedback.destroy();
     }
 
-    _clickChooseImage(event: cc.Event.EventTouch) {
-        let target: cc.Node = event.target;
-        let index = this._clickImage.findIndex(img => img == target);
+    _clickChooseImage(evt: any) {
+        let state: StateType = globalThis._.cloneDeep(this._state);
+        if (!state.toAnswer) return;
+        let option: any = fgui.GObject.cast(evt.currentTarget);
+        let index = this.answerArr.findIndex(v => v == option);
         if (index != -1) {
-            let state: StateType = globalThis._.cloneDeep(this._state);
-            state.clickImgs[index] = state.clickImgs[index] ? false : true;
-            console.log('state.clickImgs:', state.clickImgs);
+            state.chooseImage = index;
             this.updateState(state);
         }
     }
 
+    private moveAnswerAni() {
+        let index = 0;
+        let changeIndex = [[0, 2], [1, 2], [0, 1]];
+        let ani = (arr: number[]) => {
 
+            if (index > 2) {
+                index = undefined;
+                changeIndex = undefined;
+                this._state.toAnswer = true;
+                return;
+            }
+
+            let id1 = this.answerArr.findIndex(v => v.x == this.posArr[arr[0]]);
+            let id2 = this.answerArr.findIndex(v => v.x == this.posArr[arr[1]]);
+            let tempPos1 = this.answerArr[id1].x;
+            let tempPos2 = this.answerArr[id2].x;
+            let time = 0.6;
+            cc.tween(this.answerArr[id1]).to(time, { x: tempPos2 }).start();
+            cc.tween(this.answerArr[id2]).to(time, { x: tempPos1 }).delay(0.1).call(() => {
+                this.answerArr[id1]['selfIndex'] = id2;
+                this.answerArr[id2]['selfIndex'] = id1;
+                index++;
+                ani(changeIndex[index]);
+            }).start();
+        }
+
+        ani(changeIndex[index]);
+    }
 
 
     async init(data: any) {
@@ -134,14 +162,13 @@ export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
 
-
         if (model.uiPath) {
             let GComponent = model.uiPath;
             this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
         }
 
         if (model.config) {
-            let { answer, ae, selfIndex } = model.config;
+            let { answer, ae } = model.config;
             if (answer) this._answer = answer;
             // 动效注册
             if (ae) {
@@ -180,16 +207,14 @@ export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
     }
 
     private _clickSubmit(evt: any) {
-        cc.log('here', evt)
         let state: StateType = globalThis._.cloneDeep(this._state);
-        // let tempState = state.checkAnswer
-        state.checkAnswer = !state.checkAnswer;
+
         state.submit = true;
-        state.answer = state.clickImgs.every(v => v);
+        state.answer = state.chooseImage == this._answer;
         this.updateState(state);
     }
     private _clickStartBtn(evt: any) {
-        let state: any = globalThis._.cloneDeep(this._state);
+        let state: StateType = globalThis._.cloneDeep(this._state);
         state.gameStart = true;
         this.updateState(state);
     }
@@ -207,35 +232,31 @@ export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
 
     // 更新ui层
     updateUi(oldState: StateType, state: StateType) {
+        if (!globalThis._.isEqual(oldState.chooseImage, state.chooseImage)) {
+            this.clickAnswer.visible = true;
+            this.clickAnswer.x = this.answerArr[state.chooseImage].x + offsetAnswer.x;
+            this.clickAnswer.y = this.answerArr[state.chooseImage].y + offsetAnswer.y;
+        }
         if (!globalThis._.isEqual(oldState.gameStart, state.gameStart)) {
             this._startBtn.visible = false;
             this.scheduleOnce(() => {
                 this._c1.selectedIndex = 1;
-                this.scheduleOnce(()=>{
+                this.scheduleOnce(() => {
                     this._c1.selectedIndex = 2;
-                }, 2)
-            }, 2)
-            // this.showScrollImage();
-        }
-        if (!globalThis._.isEqual(oldState.isShowEnd, state.isShowEnd)) {
-            this._c1.selectedIndex = 2;
-            // this.showScrollImage();
-        }
-        if (!globalThis._.isEqual(oldState.clickImgs, state.clickImgs)) {
-            //此处处理图片选中与否
-            console.log('click image');
+                    this.moveAnswerAni();
+                }, 1)
+            }, 1)
         }
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
         }
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
             //此处处理图片选中与否
-            console.warn('click image');
             if (state.submit) {
                 if (state.answer) {
                     this.answerFeedback(state.answer);
                 } else {
-                    let isTips = state.clickImgs.every(v => !v);
+                    let isTips = state.chooseImage == -1;
                     isTips ? this.onHandleGuide() : this.answerFeedback(state.answer);
                 }
             }
@@ -379,19 +400,7 @@ export default class chooseMoreAnswer_t2_04_l3 extends cc.Component {
         if (handleMask) handleMask.destroy();
     }
 
-    // 临时
-    // 拖拽定时器
-    // dragSchedule() {
-    //     if (this._dragging) {
-    //         let state: any = globalThis._.cloneDeep(this._state);
-    //         state.drag = "move";
-    //         state.collider[state.colliderIndex] = {
-    //             x: this._colliderBox[state.colliderIndex].x,
-    //             y: this._colliderBox[state.colliderIndex].y,
-    //         };
-    //         this.updateState(state);
-    //     }
-    // }
+
 
     // 注册状态，及获取状态的方法
     registerState() {

@@ -140,6 +140,34 @@
     <image id="x38m4t" name="t2-04-53.png" path="/images/drags/"/>
     <image id="x38m4u" name="t2-04-51.png" path="/images/drags/"/>
     <image id="x38m4v" name="t2-04-52.png" path="/images/drags/"/>
+    <image id="x38m4w" name="t2-04-54.png" path="/images/drags/"/>
+    <image id="x38m4x" name="t2-04-55.png" path="/images/drags/"/>
+    <image id="x38m4y" name="t2-04-bg11.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m4z" name="t2-04-bg12.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m50" name="t2-04-bg13.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m51" name="t2-04-pp7.png" path="/images/backgrounds/"/>
+    <image id="x38m53" name="t2-04-56.png" path="/images/drags/"/>
+    <image id="x38m54" name="t2-04-57.png" path="/images/drags/"/>
+    <image id="x38m55" name="t2-04-58.png" path="/images/drags/"/>
+    <component id="x38m56" name="choooseMoreAanwert2-04-l3-1.xml" path="/" exported="true"/>
+    <image id="x38m57" name="t2-04-61.png" path="/images/drags/"/>
+    <image id="x38m58" name="t2-04-59.png" path="/images/drags/"/>
+    <image id="x38m59" name="t2-04-60.png" path="/images/drags/"/>
+    <image id="x38m5a" name="t2-04-pp8.png" path="/images/backgrounds/"/>
+    <image id="x38m5b" name="t2-04-bg14.png" path="/images/backgrounds/bg/"/>
+    <component id="x38m5c" name="choooseMoreAanwert2-04-l3-2.xml" path="/" exported="true"/>
+    <image id="x38m5d" name="t2-04-62.png" path="/images/drags/"/>
+    <image id="x38m5e" name="t2-04-63.png" path="/images/drags/"/>
+    <image id="x38m5f" name="t2-04-64.png" path="/images/drags/"/>
+    <image id="x38m5g" name="t2-04-65.png" path="/images/drags/"/>
+    <image id="x38m5h" name="t2-04-66.png" path="/images/drags/"/>
+    <image id="x38m5i" name="t2-04-67.png" path="/images/drags/"/>
+    <component id="x38m5j" name="choooseMoreAanwert2-04-l3-tuozhan.xml" path="/" exported="true"/>
+    <image id="x38m5k" name="t2-04-pp9.png" path="/images/backgrounds/"/>
+    <image id="x38m5l" name="t2-04-bg15.png" path="/images/backgrounds/bg/"/>
+    <image id="x38m5m" name="t2-04-69.png" path="/images/drags/"/>
+    <image id="x38m5n" name="t2-04-70.png" path="/images/drags/"/>
+    <image id="x38m5o" name="t2-04-68.png" path="/images/drags/"/>
   </resources>
   <publish name="" path="D:\word\courseware-workflow-v3.0\assets\fairyUis\t2\t2-04" packageCount="2"/>
 </packageDescription>

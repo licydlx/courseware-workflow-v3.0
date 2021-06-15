@@ -3,18 +3,20 @@
   <controller name="c1" pages="0,,3,,4," selected="1"/>
   <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
-    <image id="n96_x38m" name="n96" src="x38m4r" fileName="images/backgrounds/bg/t2-04-bg9.png" xy="0,0" group="n28_x38m"/>
-    <image id="n95_x38m" name="n95" src="x38m4q" fileName="images/backgrounds/bg/t2-04-bg8.png" xy="0,0" group="n28_x38m"/>
+    <image id="n102_x38m" name="n102" src="x38m5l" fileName="images/backgrounds/bg/t2-04-bg15.png" xy="0,0" group="n28_x38m"/>
+    <image id="n103_x38m" name="n103" src="x38m5g" fileName="images/drags/t2-04-65.png" xy="-3,510" group="n28_x38m"/>
+    <image id="n104_x38m" name="n104" src="x38m5h" fileName="images/drags/t2-04-66.png" xy="895,3" group="n28_x38m"/>
+    <image id="n105_x38m" name="n105" src="x38m5i" fileName="images/drags/t2-04-67.png" xy="0,0" group="n28_x38m"/>
     <image id="n70_x38m" name="n70" src="x38m2e" fileName="images/backgrounds/bg/t2-04-bg5.png" xy="0,0" group="n28_x38m">
       <gearDisplay controller="c1" pages="0"/>
     </image>
     <image id="n73_x38m" name="n73" src="x38m4s" fileName="images/backgrounds/bg/t2-04-bg10.png" xy="0,0" group="n28_x38m">
       <gearDisplay controller="c1" pages="3,4"/>
     </image>
-    <group id="n28_x38m" name="UI" xy="0,0" size="1920,1080" advanced="true"/>
-    <image id="n99_x38m" name="n99" src="x38m4t" fileName="images/drags/t2-04-53.png" xy="6,308" group="n77_x38m"/>
-    <image id="n97_x38m" name="n97" src="x38m4u" fileName="images/drags/t2-04-51.png" xy="628,308" group="n77_x38m"/>
-    <image id="n98_x38m" name="n98" src="x38m4v" fileName="images/drags/t2-04-52.png" xy="1246,308" group="n77_x38m"/>
+    <group id="n28_x38m" name="UI" xy="-3,0" size="1923,1080" advanced="true"/>
+    <image id="n106_x38m" name="n106" src="x38m5o" fileName="images/drags/t2-04-68.png" xy="6,308" group="n77_x38m"/>
+    <image id="n107_x38m" name="n107" src="x38m5m" fileName="images/drags/t2-04-69.png" xy="628,308" group="n77_x38m"/>
+    <image id="n108_x38m" name="n108" src="x38m5n" fileName="images/drags/t2-04-70.png" xy="1246,308" group="n77_x38m"/>
     <group id="n77_x38m" name="n77" xy="6,308" size="1910,443" advanced="true">
       <gearDisplay controller="c1" pages="3"/>
     </group>
@@ -33,7 +35,7 @@
     </group>
     <component id="n38_x38m" name="title" src="x38m9" fileName="buttons/title.xml" xy="966,97" alpha="0" touchable="false">
       <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,0"/>
-      <Button icon="ui://u409owwjx38m4p" sound="ui://u409owwjx38m1j" volume="0"/>
+      <Button icon="ui://u409owwjx38m5k" sound="ui://u409owwjx38m1m" volume="0"/>
     </component>
     <component id="n39_x38m" name="place" src="x38mf" fileName="buttons/audios.xml" xy="-748,2156" group="n40_x38m">
       <Button sound="ui://u409owwjx38m17" volume="0"/>
