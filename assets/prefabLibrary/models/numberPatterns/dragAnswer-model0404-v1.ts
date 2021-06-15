@@ -69,14 +69,42 @@ export default class dragAnswer_model0404_v1 extends cc.Component {
         if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);
     }
 
-    // 运行时禁止操作
+
+
+    // 运行时 禁止操作
     forbidHandle() {
-        this._view.touchable = false
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (!handleMask) {
+            let handleMask = new cc.Node('handleMask');
+            handleMask.addComponent(cc.BlockInputEvents);
+            handleMask.parent = this._worldRoot;
+            handleMask.width = 1920;
+            handleMask.height = 1080;
+            handleMask.x = 960;
+            handleMask.y = 540;
+        }
     }
 
     // 消除禁止
     disableForbidHandle() {
-        this._view.touchable = true
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (handleMask) handleMask.destroy();
+    }
+
+    // 运行时 禁止操作
+    forbidHandleBesidesTitle() {
+        let mask = this._view.getChild("mask")
+        if(mask){
+            mask.visible = true
+        }
+    }
+
+    //消除禁止
+    disableForbidHandleBesidesTitle() {
+        let mask = this._view.getChild("mask")
+        if(mask){
+            mask.visible = false
+        }
     }
 
     onEnable() {
@@ -137,22 +165,24 @@ export default class dragAnswer_model0404_v1 extends cc.Component {
         this._c2.selectedIndex = bool ? 1 : 0;
         if (bool) {
             cc.audioEngine.stopAll();
+            this.forbidHandle()
             let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
             let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
             let audioId = cc.audioEngine.play(audio, false, 1);
             cc.audioEngine.setFinishCallback(audioId, () => {
                 let state: any = globalThis._.cloneDeep(this._state);
                 state.title = false;
-                state.isLock = false;
                 this.updateState(state);
             });
+        }
+        else{
+            this.disableForbidHandle()
         }
     }
 
     private _clickTitle(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
         state.title = true;
-        state.isLock = true
         this.updateState(state);
     }
 
@@ -240,6 +270,7 @@ export default class dragAnswer_model0404_v1 extends cc.Component {
 
         // 禁止操作期间 切页
         this.disableForbidHandle();
+        this.disableForbidHandleBesidesTitle();
         // 销毁反馈
         let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
@@ -255,7 +286,7 @@ export default class dragAnswer_model0404_v1 extends cc.Component {
             if(this._view.getChildAt(i).group == colliderBox) {
                 let btn: fgui.GButton = this._view.getChildAt(i).asButton;
                 this._cache['colliderBox'].push({ x: btn.x, y: btn.y, isSelect: false});
-                this._cache['colliderBoxOrigin'].push({ x: btn.x, y: btn.y})
+                this._cache['colliderBoxOrigin'].push({ x: btn.x, y: btn.y, deep: this._view.getChildIndex(btn)})
                 btn.draggable = true;
                 btn.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
                 btn.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
@@ -286,10 +317,19 @@ export default class dragAnswer_model0404_v1 extends cc.Component {
     }
 
     private _onDragEnd(evt: fgui.Event): void {
+
+        let collider = fgui.GObject.cast(evt.currentTarget);
+        let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
+       
+        let deep = this._view.numChildren - 1
+        if(colliderIndex != -1){
+            deep = this._cache['colliderBoxOrigin'][colliderIndex].deep
+        }
+        this._view.setChildIndex(collider, deep);
+
         if (!this._dragging) return;
         this._dragging = false;
 
-        let collider = fgui.GObject.cast(evt.currentTarget);
         let arr: any = [];
         let collidered: any = null;
         this._collideredBox.forEach((v: any, i: any) => {
@@ -300,7 +340,6 @@ export default class dragAnswer_model0404_v1 extends cc.Component {
             collidered = arr[0]
         }
 
-        let colliderIndex = this._colliderBox.findIndex(v => v == collider);
         let state: any = globalThis._.cloneDeep(this._state);
         if(collidered){
             for (let i = 0; i < state.collider.length; i++) {
@@ -312,6 +351,7 @@ export default class dragAnswer_model0404_v1 extends cc.Component {
                     this._colliderBox[i].y  = this._pos.y;
                 }
                 else{
+                    state.collider[i].isSelect = false
                     state.collider[i].x  = this._cache['colliderBoxOrigin'][i].x;
                     state.collider[i].y  = this._cache['colliderBoxOrigin'][i].y;
                 }
@@ -382,10 +422,10 @@ export default class dragAnswer_model0404_v1 extends cc.Component {
             //锁屏
             if (!globalThis._.isEqual(oldState.isLock, state.isLock)) {
                 if(state.isLock){
-                    this.forbidHandle();
+                    this.forbidHandleBesidesTitle();
                 }
                 else{
-                    this.disableForbidHandle();
+                    this.disableForbidHandleBesidesTitle();
                 }
             }
 

@@ -76,14 +76,40 @@ export default class chooseAnswer_model0404_v3 extends cc.Component {
         if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);
     }
 
-    // 运行时禁止操作
+    // 运行时 禁止操作
     forbidHandle() {
-        this._view.touchable = false
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (!handleMask) {
+            let handleMask = new cc.Node('handleMask');
+            handleMask.addComponent(cc.BlockInputEvents);
+            handleMask.parent = this._worldRoot;
+            handleMask.width = 1920;
+            handleMask.height = 1080;
+            handleMask.x = 960;
+            handleMask.y = 540;
+        }
     }
 
     // 消除禁止
     disableForbidHandle() {
-        this._view.touchable = true
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (handleMask) handleMask.destroy();
+    }
+
+    // 运行时 禁止操作
+    forbidHandleBesidesTitle() {
+        let mask = this._view.getChild("mask")
+        if(mask){
+            mask.visible = true
+        }
+    }
+
+    //消除禁止
+    disableForbidHandleBesidesTitle() {
+        let mask = this._view.getChild("mask")
+        if(mask){
+            mask.visible = false
+        }
     }
 
     onEnable() {
@@ -143,22 +169,24 @@ export default class chooseAnswer_model0404_v3 extends cc.Component {
         this._c2.selectedIndex = bool ? 1 : 0;
         if (bool) {
             cc.audioEngine.stopAll();
+            this.forbidHandle()
             let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
             let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
             let audioId = cc.audioEngine.play(audio, false, 1);
             cc.audioEngine.setFinishCallback(audioId, () => {
                 let state: any = globalThis._.cloneDeep(this._state);
                 state.title = false;
-                state.isLock = false;
                 this.updateState(state);
             });
+        }
+        else{
+            this.disableForbidHandle()
         }
     }
 
     private _clickTitle(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
         state.title = true;
-        state.isLock = true
         this.updateState(state);
     }
 
@@ -240,6 +268,7 @@ export default class chooseAnswer_model0404_v3 extends cc.Component {
 
         // 禁止操作期间 切页
         this.disableForbidHandle();
+        this.disableForbidHandleBesidesTitle();
         // 销毁反馈
         let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
@@ -316,10 +345,10 @@ export default class chooseAnswer_model0404_v3 extends cc.Component {
         //锁屏
         if (!globalThis._.isEqual(oldState.isLock, state.isLock)) {
             if(state.isLock){
-                this.forbidHandle();
+                this.forbidHandleBesidesTitle();
             }
             else{
-                this.disableForbidHandle();
+                this.disableForbidHandleBesidesTitle();
             }
         }
 
