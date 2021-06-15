@@ -1,18 +1,18 @@
 {
-    "name": "鏁板舰瑙勫緥",
+    "name": "数形规律",
     "courseName": "t4-03",
     "env": "prod",
     "totalPages": 15,
     "pathConfig": {
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
         "controllerBundlePath": "T-series/prefabLibrary/controllers/",
-        "controllerName": "controller-model02",
-        "resourceBundlePath": "T-series/fairyUis/t4/",
-        "resourceName": "t4-03",
         "panelBundlePath": "T-series/prefabLibrary/components/",
-        "panelName": "formal-panle-model02",
+        "resourceBundlePath": "T-series/fairyUis/t4/",
         "modelBundlePath": "T-series/prefabLibrary/models/",
         "componentBundlePath": "T-series/prefabLibrary/components/",
+        "controllerName": "controller-model02",
+        "panelName": "formal-panle-model02",
+        "resourceName": "t4-03",
         "packageName": "t4-03"
     },
     "chapters": [
@@ -90,16 +90,16 @@
                     ],
                     "optionsUrl": [
                         "ui://k4ucnbrrt68dbk",
-                        "ui://k4ucnbrrt68da6",
-                        "ui://k4ucnbrrt68da8",
-                        "ui://k4ucnbrrt68da9",
-                        "ui://k4ucnbrrt68daa",
-                        "ui://k4ucnbrrt68dab",
-                        "ui://k4ucnbrrt68dac",
-                        "ui://k4ucnbrrt68dad",
-                        "ui://k4ucnbrrt68dae",
-                        "ui://k4ucnbrrt68daf",
-                        "ui://k4ucnbrrt68da7"
+                        "ui://k4ucnbrrqtgvzfi",
+                        "ui://k4ucnbrrqtgvzfk",
+                        "ui://k4ucnbrrqtgvzfl",
+                        "ui://k4ucnbrrqtgvzfm",
+                        "ui://k4ucnbrrqtgvzfn",
+                        "ui://k4ucnbrrqtgvzfo",
+                        "ui://k4ucnbrrqtgvzfp",
+                        "ui://k4ucnbrrqtgvzfq",
+                        "ui://k4ucnbrrqtgvzfr",
+                        "ui://k4ucnbrrqtgvzfj"
                     ],
                     "ae": {
                         "handleGuide": {
@@ -137,6 +137,19 @@
                     ],
                     "optionsUrl": [
                         "ui://k4ucnbrrt68dbl",
+                        "ui://k4ucnbrrqtgvzfs",
+                        "ui://k4ucnbrrqtgvzfu",
+                        "ui://k4ucnbrrqtgvzfv",
+                        "ui://k4ucnbrrqtgvzfw",
+                        "ui://k4ucnbrrqtgvzfx",
+                        "ui://k4ucnbrrqtgvzfy",
+                        "ui://k4ucnbrrqtgvzfz",
+                        "ui://k4ucnbrrqtgvzg0",
+                        "ui://k4ucnbrrqtgvzg1",
+                        "ui://k4ucnbrrqtgvzft"
+                    ],
+                    "answerUrl": [
+                        "",
                         "ui://k4ucnbrrt68dag",
                         "ui://k4ucnbrrt68dai",
                         "ui://k4ucnbrrt68daj",
@@ -184,6 +197,19 @@
                     ],
                     "optionsUrl": [
                         "ui://k4ucnbrrt68dbl",
+                        "ui://k4ucnbrrqtgvzfs",
+                        "ui://k4ucnbrrqtgvzfu",
+                        "ui://k4ucnbrrqtgvzfv",
+                        "ui://k4ucnbrrqtgvzfw",
+                        "ui://k4ucnbrrqtgvzfx",
+                        "ui://k4ucnbrrqtgvzfy",
+                        "ui://k4ucnbrrqtgvzfz",
+                        "ui://k4ucnbrrqtgvzg0",
+                        "ui://k4ucnbrrqtgvzg1",
+                        "ui://k4ucnbrrqtgvzft"
+                    ],
+                    "answerUrl": [
+                        "",
                         "ui://k4ucnbrrt68dag",
                         "ui://k4ucnbrrt68dai",
                         "ui://k4ucnbrrt68daj",
@@ -378,7 +404,7 @@
                         "ui://k4ucnbrrt68ddb",
                         "ui://k4ucnbrrt68ddc"
                     ],
-                    "answerNumbgSkin":"",
+                    "answerNumbgSkin":"ui://k4ucnbrr63auzg3",
                     "answerNumSkin": [
                         "ui://k4ucnbrrt68daq",
                         "ui://k4ucnbrrt68dar",
