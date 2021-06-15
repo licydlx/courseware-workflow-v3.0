@@ -4,14 +4,15 @@
     "env": "test",
     "totalPages": 12,
     "pathConfig": {
-        "remoteUrl": "",
-        "modelBundlePath": "",
-        "componentBundlePath": "",
-        "controllerBundlePath": "",
-        "panelBundlePath": "",
+        "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
+        "modelBundlePath": "T-series/personalTest/wildptr/models/",
+        "componentBundlePath": "T-series/personalTest/wildptr/components/",
+        "controllerBundlePath": "T-series/prefabLibrary/controllers/",
+        "resourceBundlePath": "T-series/fairyUis/t3/",
+        "panelBundlePath": "T-series/prefabLibrary/components/",
+
         "controllerName": "controller-model02",
         "panelName": "formal-panle-model02",
-        "resourceBundlePath": "",
         "resourceName": "t3-class-04",
         "packageName": "t3-class-04"
     },

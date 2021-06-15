@@ -158,7 +158,6 @@
     <image id="iix15c" name="man1.png" path="/images/t3-04-3/2/"/>
     <image id="iix15d" name="man2.png" path="/images/t3-04-3/2/"/>
     <component id="iix15e" name="t3-04-3-3.xml" path="/quePage/t3-04-3/" exported="true"/>
-    <image id="iix15f" name="solt2.png" path="/images/t3-04-3/3/"/>
     <image id="iix15g" name="item1.png" path="/images/t3-04-3/3/"/>
     <image id="iix15h" name="item2.png" path="/images/t3-04-3/3/"/>
     <image id="iix15i" name="man1.png" path="/images/t3-04-3/3/"/>
@@ -182,6 +181,26 @@
     <image id="iix160" name="hand.png" path="/images/" exported="true"/>
     <image id="iix161" name="bg4-1.png" path="/images/t3-04-4/" exported="true"/>
     <component id="iix162" name="touchPad.xml" path="/quePage/buttons/"/>
+    <image id="zvwa63" name="bg-solong.jpg" path="/images/" exported="true"/>
+    <sound id="zvwa64" name="t3-04-2-3-a.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa65" name="t3-04-2-3-b.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa66" name="t3-04-3-1-a.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa67" name="t3-04-3-1-b.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa68" name="t3-04-3-2-a.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa69" name="t3-04-3-2-b.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6a" name="t3-04-3-3-a.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6c" name="t3-04-2-1-a.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6d" name="t3-04-2-1-b.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6e" name="t3-04-2-2-a.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6f" name="t3-04-2-2-b.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6g" name="t3-04-3-3-b.mp3" path="/sounds/" exported="true"/>
+    <image id="zvwa6h" name="solt2.png" path="/images/t3-04-3/3/"/>
+    <sound id="zvwa6i" name="t3-04-2.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6j" name="t3-04-3.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6k" name="t3-04-4.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6l" name="t3-04-1-1.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6m" name="t3-04-1-2.mp3" path="/sounds/" exported="true"/>
+    <sound id="zvwa6n" name="t3-04-1-3.mp3" path="/sounds/" exported="true"/>
   </resources>
   <publish name="" path="F:\git\courseware-workflow-v3.0\assets\fairyUis\t3\t3-class-04" packageCount="2"/>
 </packageDescription>

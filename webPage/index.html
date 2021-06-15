@@ -1,0 +1,37 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: ydlx
+ * @Date: 2021-01-26 14:57:41
+ * @LastEditors: ydlx
+ * @LastEditTime: 2021-05-06 17:34:42
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>test</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    const parseURL = function (str) {
+      let obj = {};
+      let list = str.substring(str.indexOf('?') + 1).split('&');
+      list.forEach(v => {
+        let _arr = v.split('=');
+        obj[_arr[0]] = _arr[1];
+      });
+      return obj;
+    }
+
+    let urlObj = parseURL(window.location.href);
+    let { name, role, userid } = urlObj;
+    let par = `${name ? `&name=${name}` : ""}${role ? `&role=${role}` : ""}${userid ? `&userid=${userid}` : ""}`
+    let url = `https://after-school-review-8cguaeaace9d-1304725138.tcloudbaseapp.com/T-series/t3-courseware/test/index.html?courseName=t3-class-04${par}`;
+
+    window.location.href = url;
+  </script>
+</body>
+</html>

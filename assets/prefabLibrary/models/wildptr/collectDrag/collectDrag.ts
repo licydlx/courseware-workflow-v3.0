@@ -88,9 +88,8 @@ export default class CollectDrag extends cc.Component {
                     this.updateState(state);
                 });
 
-
                 //音频
-                this.loadSoundFromFGui("soundInfo", model.labaSoundClip);
+                this.soundInfo = this.loadSoundFromFGui(model.labaSoundClip);
 
             } catch (e) {
                 console.log("创建喇叭失败：", e);
@@ -103,7 +102,7 @@ export default class CollectDrag extends cc.Component {
                 let componentBundle: any = await loadBundle(componentPath);
                 let componentPrefab: any = await loadPrefab(componentBundle, components[key].prefabName);
 
-                this.prefabMap.set(key, componentPrefab)
+                this.prefabMap.set(key, componentPrefab);
             }
         }
     }
@@ -163,8 +162,8 @@ export default class CollectDrag extends cc.Component {
         this.tipHand.node.zIndex = 9999;
 
         //音频, this.soundClick = （fgui里的click音频文件名）
-        this.loadSoundFromFGui("soundClick", "click");
-        this.loadSoundFromFGui("soundDrag", "drag");
+        this.soundClick = this.loadSoundFromFGui("click");
+        this.soundDrag = this.loadSoundFromFGui("drag");
     }
 
     initState() {
@@ -264,7 +263,7 @@ export default class CollectDrag extends cc.Component {
                         np.x -= (spacing * (zone.length - 1)) / 2;
                         for (let c = 0; c < zone.length; c++) {
                             let manInd = zone[c];
-                            this.dragItemList[manInd].setPosition(np.x + c * spacing, np.y );
+                            this.dragItemList[manInd].setPosition(np.x + c * spacing, np.y);
                         }
                     }
                     break;
@@ -290,7 +289,7 @@ export default class CollectDrag extends cc.Component {
                 break;
             case "grap":
                 {
-                    this.playSound("soundDrag");
+                    this.playSound("soundClick");
                     let dragInd = state["dragInd"];
                     let dragMan = this.dragItemList[dragInd];
 
@@ -450,7 +449,7 @@ export default class CollectDrag extends cc.Component {
         this.touchPad.on(fgui.Event.TOUCH_MOVE, this.onDragMove, this);
         this.touchPad.on(fgui.Event.TOUCH_END, this.onDragEnd, this);
 
-        this.btnOk.on(fgui.Event.CLICK, this.onSubmit, this);
+        this.btnOk.on(fgui.Event.CLICK, this.onClickSubmit, this);
     }
 
     onDragStart(evt) {
@@ -636,8 +635,18 @@ export default class CollectDrag extends cc.Component {
             }
         }
     }
-    onSubmit() {
+    onClickSubmit() {
+        if (IsTeacherNotInDemo()) {
+            return;
+        }
+        let state = this.cloneState();
+        if (state["zoneId"] === 0) {
+            // 是否需要提示。
+            // return;
+        }
 
+        state["movement"] = "submit";
+        this.updateState(state);
     }
 
 
@@ -960,13 +969,14 @@ export default class CollectDrag extends cc.Component {
             cc.audioEngine.stop(Number(key));
         }
     }
-    loadSoundFromFGui(key, name) {
+    loadSoundFromFGui(name): cc.AudioClip | null {
         let packageName = this.config.pathConfig.packageName;
         //音频
         let item: fgui.PackageItem = fgui.UIPackage.getItemByURL(`ui://${packageName}/${name}`);
-        let clip: cc.AudioClip = <cc.AudioClip>item.load();
-        console.log("asset:", item.load());
-        this[key] = clip;
+        if (!item) {
+            return null;
+        }
+        return item.load() as cc.AudioClip;
     }
 };
 

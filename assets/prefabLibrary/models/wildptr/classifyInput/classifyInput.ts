@@ -39,7 +39,7 @@ export default class ClassifyInput extends cc.Component {
     feedback: cc.Node = null;
     feedbackCount = 0;
 
-    audioMap: cc.AudioClip[] = [];
+    audioList: cc.AudioClip[] = [];
 
     //before onLoad 初始化
     async init(data: any) {
@@ -75,7 +75,7 @@ export default class ClassifyInput extends cc.Component {
                 });
 
                 //音频, this.soundClick = （fgui里的click音频文件名）
-                this.loadSoundFromFGui("soundInfo", model.labaSoundClip);
+                this.soundInfo = this.loadSoundFromFGui(model.labaSoundClip);
 
             } catch (e) {
                 console.log("创建喇叭失败：", e);
@@ -100,6 +100,11 @@ export default class ClassifyInput extends cc.Component {
     onDestroy() {
         if (this.blocked) {
             this.blocked = 0;
+        }
+
+        if( cc.isValid(this.keypad) ){ 
+            this.keypad.destroy();
+            this.keypad = null;
         }
     }
     initUI() {
@@ -133,7 +138,14 @@ export default class ClassifyInput extends cc.Component {
         });
 
         //音频, this.soundClick = （fgui里的click音频文件名）
-        this.loadSoundFromFGui("soundClick", "click");
+        this.soundClick = this.loadSoundFromFGui("click");
+
+        if (modelConfig.soundTipNames) {
+            for (let i = 0; i < modelConfig.soundTipNames.length; i++) {
+                let sn = modelConfig.soundTipNames[i];
+                this.audioList.push(this.loadSoundFromFGui(sn));
+            }
+        }
     }
 
     initState() {
@@ -142,8 +154,8 @@ export default class ClassifyInput extends cc.Component {
         }
         Object.assign(this._state, {
             movement: "idle",
-            editInd: 0,
-            audioInd: 0,
+            editInd: -1,
+            audioInd: -1,
             keypad: 0,
             value: this.config.model.config.srcValue.slice(),
         });
@@ -153,7 +165,7 @@ export default class ClassifyInput extends cc.Component {
         Object.assign(this._originState, this._state);
     }
     start() {
-        this.quePage.getChild("submit").asButton.on(fgui.Event.CLICK, this.onSubmit, this);
+        this.quePage.getChild("submit").asButton.on(fgui.Event.CLICK, this.onClickSubmit, this);
     }
 
     refresh(oldState: any, state: any) {
@@ -190,8 +202,45 @@ export default class ClassifyInput extends cc.Component {
                     break;
                 case "idle":
                     break;
+                case "laba":
+                    this.actLaba();
+                    break;
             }
         }
+    }
+    actLaba(noAni = false) {
+        return new Promise((resolve, reject) => {
+            //动画前
+            this.blocked++;
+            let playingId = this.playSound("soundInfo");
+            let aniFadeOut = this.labaPage.getTransition("fadeOut");
+            let aniFadeIn = this.labaPage.getTransition("click");
+            //动画后
+            let step = () => {
+                this.blocked--;
+                this.stopSound(playingId);
+                aniFadeIn.stop();
+                aniFadeOut.stop();
+
+                this.resetState("movement");
+                resolve(null);
+            };
+            if (noAni) {
+                step();
+            }
+            else {
+                //动画
+                aniFadeIn.play();
+                cc.tween(this.node)
+                    .delay(this.config.model.labaTime)
+                    .call(() => {
+                        aniFadeOut.play();
+                    })
+                    .delay(0.25)
+                    .call(step)
+                    .start();
+            }
+        });
     }
     actAudio(audioInd: number, noAni = false) {
         let soundId = -1;
@@ -203,7 +252,7 @@ export default class ClassifyInput extends cc.Component {
             this.resetState("audioInd");
         };
 
-        soundId = this.playSound(this.audioMap[audioInd]);
+        soundId = this.playClip(this.audioList[audioInd]);
         let step = this.createStep(
             cc.tween(this.quePage)
                 .delay(99.0),
@@ -213,7 +262,7 @@ export default class ClassifyInput extends cc.Component {
         cc.audioEngine.setFinishCallback(soundId, step.finish.bind(step));
     }
 
-    onSubmit() {
+    onClickSubmit() {
         if (IsTeacherNotInDemo()) {
             return;
         }
@@ -297,6 +346,10 @@ export default class ClassifyInput extends cc.Component {
     }
     createKeyPad() {
         if (cc.isValid(this.keypad)) {
+            return;
+        }
+        if( !cc.isValid(this.prefabMap.get("keypad") ) ) {
+            console.log("插件components还没载入，或载入失败。");
             return;
         }
 
@@ -565,15 +618,14 @@ export default class ClassifyInput extends cc.Component {
 
     playSound(name) {
         let clip = this[name];
+        return this.playClip(clip);
+    }
+    playClip(clip) {
         let id = cc.audioEngine.play(clip, false, 1);
         this._playingList[id] = clip;
-        // return new Promise<void>( (resolve, reject) =>{
-        //     cc.audioEngine.setFinishCallback(id, ()=>{
-        //         resolve();
-        //     });
-        // });
         return id;
     }
+
     stopSound(id) {
         cc.audioEngine.stop(id);
     }
@@ -584,13 +636,15 @@ export default class ClassifyInput extends cc.Component {
         }
     }
 
-    loadSoundFromFGui(key, name) {
+    loadSoundFromFGui(name): cc.AudioClip | null {
         let packageName = this.config.pathConfig.packageName;
         //音频
         let item: fgui.PackageItem = fgui.UIPackage.getItemByURL(`ui://${packageName}/${name}`);
-        let clip: cc.AudioClip = <cc.AudioClip>item.load();
-        console.log("asset:", item.load());
-        this[key] = clip;
+        if (!item) {
+            return null;
+        }
+
+        return item.load() as cc.AudioClip;
     }
 };
 
