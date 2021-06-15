@@ -248,35 +248,16 @@ export default class CollectDrag extends cc.Component {
         for (let r = 1; r < zoneList.length; r++) {
             let zone = zoneList[r];
             let np = cc.v2(this.pointList[r].x, this.pointList[r].y);
-            switch (zone.length) {
-                case 0:
-                    break;
-                case 1:
-                    {
-                        let manInd = zone[0];
-                        this.dragItemList[manInd].setPosition(np.x, np.y);
-                    }
-                    break;
-                case 2:
-                    {
-                        let spacing = 300;
-                        np.x -= (spacing * (zone.length - 1)) / 2;
-                        for (let c = 0; c < zone.length; c++) {
-                            let manInd = zone[c];
-                            this.dragItemList[manInd].setPosition(np.x + c * spacing, np.y);
-                        }
-                    }
-                    break;
-                case 3:
-                    {
-                        let spacing = 160;
-                        np.x -= (spacing * (zone.length - 1)) / 2;
-                        for (let c = 0; c < zone.length; c++) {
-                            let manInd = zone[c];
-                            this.dragItemList[manInd].setPosition(np.x + c * spacing, np.y);
-                        }
-                    }
-                    break;
+
+            let itemCount = zone.length;
+            let zoneWidth = itemCount*130;
+            let itemWidth = 140;
+            let spacing = 100;
+            np.x -= zoneWidth / 2;
+
+            for (let c = 0; c < zone.length; c++) {
+                let manInd = zone[c];         //item中心点 = 左 + 索引*itemWidth/2 + 索引*间距, np.y
+                this.dragItemList[manInd].setPosition(np.x + c * itemWidth / 2 + c * spacing, np.y);
             }
         }
 
