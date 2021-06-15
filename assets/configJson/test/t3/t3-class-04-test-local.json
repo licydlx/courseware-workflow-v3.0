@@ -16,7 +16,47 @@
         "packageName": "t3-class-04"
     },
     "chapters": [
-        
+        {
+            "tag":"拓展提升",
+            "model": {
+                "uiPath": "scene-empty",
+                "backgroundName": "bg4-1",
+                "loaderUiPath": "t3-04-4",
+                "bundleName": "collectDrag",
+                "prefabName": "collectDrag",
+                "labaImagePath": "t3-04-4-info", 
+                "labaSoundClip": "t3-04-4",
+                "labaTime": 6,
+                "config": {
+                    "itemCount" : 5,
+                    "itemImg":[
+                        "man4-1",
+                        "man4-2",
+                        "man4-3",
+                        "man4-4",
+                        "man4-5"
+                    ],
+                    "zoneMaxCount": [
+                        5,
+                        3
+                    ],
+                    "srcZones": [
+                        [0,1,2,3,4],
+                        []
+                    ],
+                    "dstZones": [
+                        [3,4],
+                        [0,1,2]
+                    ]
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
         {
             "tag":"开始画面",
             "model": {
@@ -336,47 +376,6 @@
                         "y": -280
                     }
                 },
-                "feedback": {
-                    "bundleName": "feedback",
-                    "prefabName": "feedback-model01-v1"
-                }
-            }
-        },
-        {
-            "tag":"拓展提升",
-            "model": {
-                "uiPath": "scene-empty",
-                "backgroundName": "bg4-1",
-                "loaderUiPath": "t3-04-4",
-                "bundleName": "collectDrag",
-                "prefabName": "collectDrag",
-                "labaImagePath": "t3-04-4-info", 
-                "labaSoundClip": "t3-04-4",
-                "labaTime": 6,
-                "config": {
-                    "itemCount" : 5,
-                    "itemImg":[
-                        "man4-1",
-                        "man4-2",
-                        "man4-3",
-                        "man4-4",
-                        "man4-5"
-                    ],
-                    "zoneMaxCount": [
-                        5,
-                        3
-                    ],
-                    "srcZones": [
-                        [0,1,2,3,4],
-                        []
-                    ],
-                    "dstZones": [
-                        [3,4],
-                        [0,1,2]
-                    ]
-                }
-            },
-            "components": {
                 "feedback": {
                     "bundleName": "feedback",
                     "prefabName": "feedback-model01-v1"

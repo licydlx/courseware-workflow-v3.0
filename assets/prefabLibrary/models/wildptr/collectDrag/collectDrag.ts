@@ -55,6 +55,8 @@ export default class CollectDrag extends cc.Component {
 
     tipHand: fgui.GObject = null;
 
+    drawer: cc.Graphics = null;
+
     //before onLoad 初始化
     async init(data: any) {
         this.config = data;
@@ -258,21 +260,21 @@ export default class CollectDrag extends cc.Component {
                     break;
                 case 2:
                     {
-                        let spacing = 180;
-                        np.y -= (spacing * (zone.length - 1)) / 2;
+                        let spacing = 300;
+                        np.x -= (spacing * (zone.length - 1)) / 2;
                         for (let c = 0; c < zone.length; c++) {
                             let manInd = zone[c];
-                            this.dragItemList[manInd].setPosition(np.x, np.y + c * spacing);
+                            this.dragItemList[manInd].setPosition(np.x + c * spacing, np.y );
                         }
                     }
                     break;
                 case 3:
                     {
-                        let spacing = 120;
-                        np.y -= (spacing * (zone.length - 1)) / 2;
+                        let spacing = 160;
+                        np.x -= (spacing * (zone.length - 1)) / 2;
                         for (let c = 0; c < zone.length; c++) {
                             let manInd = zone[c];
-                            this.dragItemList[manInd].setPosition(np.x, np.y + c * spacing);
+                            this.dragItemList[manInd].setPosition(np.x + c * spacing, np.y);
                         }
                     }
                     break;
@@ -509,9 +511,13 @@ export default class CollectDrag extends cc.Component {
     checkDragZone() {
         //检查是否放到热区内
         let dragMan = this.dragItemList[this.dragInd];
-        let np = dragMan.localToGlobal(0, 0);
-        let box = this.containerArea.node.getBoundingBoxToWorld();
-        if (box.contains(np)) {
+        let wp = this.getCCPos(dragMan);
+        let fw = this.containerArea.width;
+        let fh = this.containerArea.height;
+        let fx = this.containerArea.x - fw / 2;
+        let fy = this.containerArea.y - fh / 2;
+        let box = new cc.Rect(fx, fy, fw, fh);
+        if (box.contains(wp)) {
             this.dstZoneInd = 1;
         }
         else {
@@ -526,18 +532,28 @@ export default class CollectDrag extends cc.Component {
             this.dragOp = cc.v2();
             let loc = evt.pos;
             this.dragPos = loc;
+
+            //todo: 不要写死值
             if (this.dragPos.y < 250) {
                 this.dragPos.y = 250;
             }
             else if (this.dragPos.y > 1000) {
                 this.dragPos.y = 1000;
             }
+
+            //todo: 不要写死宽度值
+            if (this.dragPos.x <= 20) {
+                this.dragPos.x = 20;
+            }
+            else if (this.dragPos.x > 1850) {
+                this.dragPos.x = 1850;
+            }
             let dragMan = this.dragItemList[this.dragInd]
 
             dragMan.x = this.dragPos.x;
             dragMan.y = this.dragPos.y;
 
-            this.checkDragZone();
+            // this.checkDragZone();
         }
     }
     onDragEnd(evt) {
@@ -550,6 +566,7 @@ export default class CollectDrag extends cc.Component {
         }
         else {
             this.dragging = false;
+            this.checkDragZone();
             // this.refreshDragManList(this.dragInd, this.dragPos, true);
             //寻找最后的ZONE落点。
             let state = this.cloneState();
