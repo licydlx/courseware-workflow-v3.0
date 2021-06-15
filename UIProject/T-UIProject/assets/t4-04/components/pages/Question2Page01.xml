@@ -5,13 +5,6 @@
     <loader id="n85_cxq0" name="bg" xy="0,0" size="1920,1080" url="ui://dj5ft8zhcxq05z"/>
     <image id="n172_r38y" name="spot" src="cxq065" fileName="images/question2/title1/spot.png" xy="197,783"/>
     <loader id="n86_cxq0" name="box" xy="262,85" size="1380,893" url="ui://dj5ft8zhcxq063" autoSize="true"/>
-    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://dj5ft8zhcxq00" autoSize="true" playing="false">
-      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
-    </loader>
-    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
-      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,1"/>
-      <Button icon="ui://dj5ft8zhcxq066" sound="ui://dj5ft8zhcxq04"/>
-    </component>
     <component id="n75_r1ww" name="submit" src="cxq07" fileName="components/common/buttons/submit.xml" xy="1687,795">
       <Button icon="ui://dj5ft8zhcxq0z" selectedIcon="ui://dj5ft8zhcxq0y"/>
     </component>
@@ -38,5 +31,13 @@
     <loader id="n166_cxq0" name="value_wh" xy="1463,474" pivot="0.5,0.5" anchor="true" size="48,56" group="n171_r38y" url="ui://dj5ft8zhcxq07t" autoSize="true"/>
     <text id="n170_r38y" name="answer_value" xy="1463,473" pivot="0.5,0.5" anchor="true" size="52,59" group="n171_r38y" font="ui://dj5ft8zhr38yay" fontSize="55" text="8"/>
     <group id="n171_r38y" name="answerGroup" xy="1399,410" size="126,126" advanced="true"/>
+    <graph id="n173_vbyp" name="mask" xy="0,0" size="1920,1080" alpha="0" type="rect"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://dj5ft8zhcxq00" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n52_t68d" name="title" src="cxq06" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,1"/>
+      <Button icon="ui://dj5ft8zhcxq066" sound="ui://dj5ft8zhcxq04"/>
+    </component>
   </displayList>
 </component>
