@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="hidden">
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <loader id="n66_u7ua" name="bg" xy="0,0" size="1920,1080" url="ui://k4ucnbrrr1wwea" autoSize="true"/>
+    <loader id="n50_t68d" name="dk" xy="57,116" size="1807,479" url="ui://k4ucnbrrr1wwe4" autoSize="true"/>
+    <component id="n75_r1ww" name="submit" src="t68d4x" fileName="components/common/buttons/submit.xml" xy="1707,857">
+      <Button icon="ui://k4ucnbrrm2z94o" selectedIcon="ui://k4ucnbrrm2z94n"/>
+    </component>
+    <loader id="n98_r1ww" name="answer" xy="1559,464" pivot="0.5,0.5" anchor="true" size="496,222" url="ui://k4ucnbrrt68ddc" autoSize="true"/>
+    <loader id="n85_r1ww" name="num_bg" xy="459,627" size="1017,400" url="ui://k4ucnbrrr1wwe5" autoSize="true"/>
+    <component id="n99_r1ww" name="value1" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="532,659" group="n109_r1ww"/>
+    <component id="n100_r1ww" name="value2" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="719,659" group="n109_r1ww"/>
+    <component id="n101_r1ww" name="value3" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="906,659" group="n109_r1ww"/>
+    <component id="n102_r1ww" name="value4" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="1093,659" group="n109_r1ww"/>
+    <component id="n103_r1ww" name="value5" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="1280,659" group="n109_r1ww"/>
+    <component id="n104_r1ww" name="value6" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="532,846" group="n109_r1ww"/>
+    <component id="n105_r1ww" name="value7" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="719,846" group="n109_r1ww"/>
+    <component id="n106_r1ww" name="value8" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="906,846" group="n109_r1ww"/>
+    <component id="n107_r1ww" name="value9" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="1093,846" group="n109_r1ww"/>
+    <component id="n108_r1ww" name="value10" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="1280,846" group="n109_r1ww"/>
+    <group id="n109_r1ww" name="colliderBox" xy="532,659" size="892,341" advanced="true"/>
+    <component id="n110_f97k" name="pos1" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1336,377" size="152,170" group="n116_f97k"/>
+    <component id="n111_f97k" name="pos2" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1491,377" size="137,170" group="n116_f97k"/>
+    <component id="n112_f97k" name="pos3" src="iefueg" fileName="components/Items/AnswerNum.xml" xy="1630,377" size="152,170" group="n116_f97k"/>
+    <group id="n116_f97k" name="collideredBox" xy="1336,377" size="446,170" advanced="true"/>
+    <component id="n117_f97k" name="value11" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="1345,386" group="n120_f97k"/>
+    <component id="n118_f97k" name="value12" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="1489,386" group="n120_f97k"/>
+    <component id="n119_f97k" name="value13" src="r1wwed" fileName="components/Items/NumExample3.xml" xy="1633,386" group="n120_f97k"/>
+    <group id="n120_f97k" name="answeArea" xy="1345,386" size="432,154" advanced="true"/>
+    <graph id="n121_63au" name="mask" xy="0,0" size="1920,1080" alpha="0" type="rect"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="217,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
+      <Button icon="ui://k4ucnbrrt68dd4" sound="ui://k4ucnbrr103lzey"/>
+    </component>
+  </displayList>
+</component>

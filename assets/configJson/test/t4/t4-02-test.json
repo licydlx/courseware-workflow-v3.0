@@ -1,0 +1,487 @@
+{
+    "name": "国王的权杖",
+    "courseName": "t4-02",
+    "env": "test",
+    "totalPages": 15,
+    "pathConfig": {
+        "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
+        "controllerBundlePath": "T-series/prefabLibrary/controllers/",
+        "panelBundlePath": "T-series/prefabLibrary/components/",
+        "resourceBundlePath": "T-series/fairyUis/t4/",
+        "modelBundlePath": "T-series/personalTest/xzr/models/",
+        "componentBundlePath": "T-series/prefabLibrary/components/",
+        "controllerName": "controller-model02",
+        "panelName": "formal-panle-model02",
+        "resourceName": "t4-02",
+        "packageName": "t4-02"
+    },
+    "chapters": [
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p1",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
+            }
+        },
+        {
+            "model": {
+                "uiPath": "example-model-01-p2",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model01-v1",
+                "isExample": true,
+                "config": {
+                    "answer": 0,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-1"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-01-p1",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model01-v1",
+                "config": {
+                    "answer": 0,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-2"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-01-p2",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model01-v1",
+                "config": {
+                    "answer": 2,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-1"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-01-p3",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model01-v1",
+                "config": {
+                    "answer": 0,
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-3"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "example-model-02-p1",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model02-v1",
+                "config": {
+                    "rectUrl": "ui://tfsfm7mbt1pw5b",
+                    "answer": [
+                        1,
+                        4,
+                        6,
+                        7,
+                        8
+                    ],
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-4"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-02-p1",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model02-v1",
+                "config": {
+                    "rectUrl": "ui://tfsfm7mbucr25l",
+                    "answer": [
+                        0,
+                        3,
+                        4,
+                        6,
+                        7,
+                        8
+                    ],
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-4"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-02-p2",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model02-v1",
+                "config": {
+                    "rectUrl": "ui://tfsfm7mbucr25o",
+                    "answer": [
+                        3,
+                        6,
+                        7,
+                        8
+                    ],
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-4"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-02-p3",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model02-v1",
+                "config": {
+                    "rectUrl": "ui://tfsfm7mbucr25r",
+                    "answer": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        8
+                    ],
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-4"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "example-model-03-p1",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model03-v1",
+                "config": {
+                    "rectUrl": "ui://tfsfm7mbucr266",
+                    "answer": {
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-5"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-03-p1",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model03-v1",
+                "config": {
+                    "rectUrl": "ui://tfsfm7mbtamw6k",
+                    "answer": {
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-5"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-03-p2",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model03-v1",
+                "config": {
+                    "rectUrl": "ui://tfsfm7mbtamw6o",
+                    "answer": {
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0
+                        ],
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-5"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-03-p3",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model03-v1",
+                "config": {
+                    "rectUrl": "ui://tfsfm7mbtamw6o",
+                    "answer": {
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0
+                        ],
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0
+                        ]
+                    },
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-5"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "exercise-model-03-p4",
+                "bundleName": "threeViews",
+                "prefabName": "threeViews-model03-v1",
+                "config": {
+                    "rectUrl": "ui://tfsfm7mbtamw6t",
+                    "answer": {
+                        "floor_0": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            0,
+                            0,
+                            1,
+                            1,
+                            0
+                        ],
+                        "floor_1": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            0
+                        ]
+                    },
+                    "ae": {
+                        "handleGuide": {
+                            "component": "handle-guide-5"
+                        }
+                    }
+                }
+            },
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        {
+            "model": {
+                "uiPath": "static-model01-v1-p2",
+                "bundleName": "static",
+                "prefabName": "static-model01-v1"
+            }
+        }
+    ]
+}

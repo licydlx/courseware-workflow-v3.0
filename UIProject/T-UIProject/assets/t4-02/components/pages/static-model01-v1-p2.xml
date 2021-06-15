@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n2_py3p" name="n2" src="py3p7u" fileName="images/common/bg_4.png" xy="0,0"/>
+  </displayList>
+</component>

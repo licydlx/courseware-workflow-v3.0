@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="265,265">
+  <displayList>
+    <loader id="n96_cxq0" name="bg1" xy="0,0" size="265,266" group="n109_cxq0" url="ui://dj5ft8zhcxq07c" autoSize="true"/>
+    <loader id="n97_cxq0" name="1" xy="69,72" pivot="0.5,0.5" anchor="true" size="113,116" group="n109_cxq0" url="ui://dj5ft8zhcxq07g" autoSize="true"/>
+    <loader id="n94_cxq0" name="2" xy="195,72" pivot="0.5,0.5" anchor="true" size="113,116" group="n109_cxq0" url="ui://dj5ft8zhcxq07e" autoSize="true"/>
+    <loader id="n99_cxq0" name="3" xy="69,198" pivot="0.5,0.5" anchor="true" size="113,116" group="n109_cxq0" url="ui://dj5ft8zhcxq07h" autoSize="true"/>
+    <loader id="n98_cxq0" name="4" xy="195,198" pivot="0.5,0.5" anchor="true" size="113,116" group="n109_cxq0" url="ui://dj5ft8zhcxq07f" autoSize="true"/>
+    <text id="n105_cxq0" name="11" xy="68,69" pivot="0.5,0.5" anchor="true" size="131,85" group="n109_cxq0" scale="0.8,0.8" font="ui://dj5ft8zhr38yb0" fontSize="81" letterSpacing="-5" text="99"/>
+    <text id="n106_cxq0" name="22" xy="194,69" pivot="0.5,0.5" anchor="true" size="131,85" group="n109_cxq0" scale="0.8,0.8" font="ui://dj5ft8zhr38yb0" fontSize="81" letterSpacing="-5" text="99"/>
+    <text id="n107_cxq0" name="33" xy="68,195" pivot="0.5,0.5" anchor="true" size="131,85" group="n109_cxq0" scale="0.8,0.8" font="ui://dj5ft8zhr38yb0" fontSize="81" letterSpacing="-5" text="99"/>
+    <text id="n108_cxq0" name="44" xy="194,195" pivot="0.5,0.5" anchor="true" size="131,85" group="n109_cxq0" scale="0.8,0.8" font="ui://dj5ft8zhr38yb0" fontSize="81" letterSpacing="-5" text="99"/>
+    <group id="n109_cxq0" name="question1" xy="0,0" size="265,266" advanced="true"/>
+  </displayList>
+</component>

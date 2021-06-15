@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="183,49" extention="Button" initName="top">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="2"/>
+  <displayList>
+    <image id="n0_ucr2" name="n0" src="ucr25z" fileName="images/common/example_3_red_rect.png" xy="0,0" alpha="0">
+      <gearDisplay controller="button" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1_ucr2" name="n1" src="ucr25z" fileName="images/common/example_3_red_rect.png" xy="0,0" alpha="0.5">
+      <gearDisplay controller="button" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n2_ucr2" name="n2" src="ucr25z" fileName="images/common/example_3_red_rect.png" xy="0,0" alpha="0">
+      <gearDisplay controller="button" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n3_ucr2" name="n3" src="ucr25z" fileName="images/common/example_3_red_rect.png" xy="0,0" alpha="0">
+      <gearDisplay controller="button" pages="3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+  </displayList>
+  <Button/>
+</component>

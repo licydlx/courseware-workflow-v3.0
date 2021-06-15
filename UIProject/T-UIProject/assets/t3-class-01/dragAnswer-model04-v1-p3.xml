@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <controller name="c1" pages="0,,1," selected="0"/>
-  <controller name="c2" alias="提示展示" pages="0,,1,,2,,3," selected="2"/>
+  <controller name="c2" alias="提示展示" pages="0,,1,,2," selected="2"/>
   <displayList>
     <component id="n75_ugg5" name="bgdoor" src="ugg51fo" fileName="components/openDoor.xml" xy="0,0"/>
     <image id="n22_yvac" name="left" src="yvacbl" fileName="images/0138.png" xy="111,641" group="n10_dpbr"/>
@@ -41,34 +41,136 @@
     <component id="n65_xmwd" name="clickSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-142,276">
       <Button sound="ui://1io1z8o5xmwddu"/>
     </component>
-    <loader id="n66_h44m" name="colorType" xy="1420,0" size="500,160" group="n73_h44m" url="ui://1io1z8o5h44m1f4" fill="scaleFree">
-      <gearDisplay controller="c2" pages="2"/>
-    </loader>
-    <loader id="n67_h44m" name="sizeType" xy="1420,0" size="500,160" group="n73_h44m" url="ui://1io1z8o5h44m1f5" fill="scaleFree">
-      <gearDisplay controller="c2" pages="1"/>
-    </loader>
-    <image id="n68_h44m" name="showbg1" src="h44m1f9" fileName="images/tishi_di.png" xy="261,83" group="n73_h44m">
-      <gearDisplay controller="c2" pages="3"/>
-    </image>
-    <image id="n69_h44m" name="showbg2" src="h44m1f3" fileName="images/tishi_1_di.png" xy="463,210" group="n73_h44m">
-      <gearDisplay controller="c2" pages="3"/>
-    </image>
-    <image id="n70_h44m" name="showbg3" src="h44m1f6" fileName="images/tishi_2_di.png" xy="463,589" group="n73_h44m">
-      <gearDisplay controller="c2" pages="3"/>
-    </image>
-    <loader id="n71_h44m" name="firstAnswer" xy="580,246" size="840,255" group="n73_h44m" autoSize="true">
-      <gearDisplay controller="c2" pages="3"/>
-    </loader>
-    <loader id="n72_h44m" name="secondAnswer" xy="580,622" size="840,255" group="n73_h44m" autoSize="true">
-      <gearDisplay controller="c2" pages="3"/>
-    </loader>
-    <group id="n73_h44m" name="n73" xy="261,0" size="1659,1019"/>
-    <component id="n61_xmwd" name="title" src="xmwddd" fileName="buttons/title.xml" xy="899,95" alpha="0" touchable="false">
+    <component id="n61_xmwd" name="title" src="xmwddd" fileName="buttons/title.xml" xy="941,87" alpha="0" touchable="false">
       <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
       <Button icon="ui://1io1z8o5yvac8x" sound="ui://1io1z8o5xmwddh" volume="0"/>
     </component>
-    <loader id="n62_xmwd" name="titleTrigger" xy="59,45" size="228,171" scale="0.8,0.8" url="ui://1io1z8o5xmwddg" autoSize="true" playing="false">
+    <loader id="n62_xmwd" name="titleTrigger" xy="114,37" size="228,171" scale="0.8,0.8" url="ui://1io1z8o5xmwddg" autoSize="true" playing="false">
       <gearAni controller="c1" pages="0,1" values="0,s|12,p"/>
     </loader>
+    <image id="n76_11vn3" name="showbg1" src="h44m1f9" fileName="images/tishi_di.png" xy="261,116" group="n81_11vn3">
+      <gearDisplay controller="c2" pages="2"/>
+    </image>
+    <image id="n79_11vn3" name="firstAnswer" src="nl7d1fu" fileName="images/tishi_di_2.png" xy="585,274" group="n81_11vn3">
+      <gearDisplay controller="c2" pages="2"/>
+    </image>
+    <image id="n80_11vn3" name="secondAnswer" src="nl7d1fu" fileName="images/tishi_di_2.png" xy="585,656" group="n81_11vn3">
+      <gearDisplay controller="c2" pages="2"/>
+    </image>
+    <image id="n101_11vn3" name="showbg2" src="11vn31fv" fileName="images/tishi_di_1.png" xy="540,250" group="n81_11vn3">
+      <gearDisplay controller="c2" pages="2"/>
+    </image>
+    <image id="n102_11vn3" name="showbg3" src="11vn31fv" fileName="images/tishi_di_1.png" xy="540,630" group="n81_11vn3">
+      <gearDisplay controller="c2" pages="2"/>
+    </image>
+    <image id="n103_11vn3" name="number1" src="11vn31fw" fileName="images/ti_shi_number_1.png" xy="433,360" group="n81_11vn3">
+      <gearDisplay controller="c2" pages="2"/>
+    </image>
+    <image id="n104_11vn3" name="number2" src="11vn31fx" fileName="images/ti_shi_number_2.png" xy="433,730" group="n81_11vn3">
+      <gearDisplay controller="c2" pages="2"/>
+    </image>
+    <group id="n81_11vn3" name="n91" xy="261,116" size="1417,936" advanced="true"/>
+    <image id="n82_11vn3" name="n82" src="nl7d1fu" fileName="images/tishi_di_2.png" xy="1422,0" size="490,170">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <component id="n83_11vn3" name="left1" src="yvacdc" fileName="components/dragbutton.xml" xy="1496,50" pivot="0.5,0.5" anchor="true" size="150,100" group="n91_11vn3" scale="0.4,0.4" customData="big1">
+      <gearDisplay controller="c2" pages="1"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n84_11vn3" name="left2" src="yvacdc" fileName="components/dragbutton.xml" xy="1586,50" pivot="0.5,0.5" anchor="true" size="150,100" group="n91_11vn3" scale="0.4,0.4" customData="big1">
+      <gearDisplay controller="c2" pages="1"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n85_11vn3" name="left3" src="yvacdc" fileName="components/dragbutton.xml" xy="1496,120" pivot="0.5,0.5" anchor="true" size="150,100" group="n91_11vn3" scale="0.4,0.4" customData="big1">
+      <gearDisplay controller="c2" pages="1"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n86_11vn3" name="left4" src="yvacdc" fileName="components/dragbutton.xml" xy="1586,120" pivot="0.5,0.5" anchor="true" size="150,100" group="n91_11vn3" scale="0.4,0.4" customData="big1">
+      <gearDisplay controller="c2" pages="1"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n87_11vn3" name="right1" src="yvacdc" fileName="components/dragbutton.xml" xy="1746,50" pivot="0.5,0.5" anchor="true" size="150,100" group="n91_11vn3" scale="0.4,0.4" customData="big1">
+      <gearDisplay controller="c2" pages="1"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n88_11vn3" name="right2" src="yvacdc" fileName="components/dragbutton.xml" xy="1836,50" pivot="0.5,0.5" anchor="true" size="150,100" group="n91_11vn3" scale="0.4,0.4" customData="big1">
+      <gearDisplay controller="c2" pages="1"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n89_11vn3" name="right3" src="yvacdc" fileName="components/dragbutton.xml" xy="1746,120" pivot="0.5,0.5" anchor="true" size="150,100" group="n91_11vn3" scale="0.4,0.4" customData="big1">
+      <gearDisplay controller="c2" pages="1"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n90_11vn3" name="right4" src="yvacdc" fileName="components/dragbutton.xml" xy="1836,120" pivot="0.5,0.5" anchor="true" size="150,100" group="n91_11vn3" scale="0.4,0.4" customData="big1">
+      <gearDisplay controller="c2" pages="1"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <group id="n91_11vn3" name="n93" xy="1421,0" size="490,170" advanced="true"/>
+    <component id="n92_11vn3" name="left1" src="yvacdc" fileName="components/dragbutton.xml" xy="700,730" pivot="0.5,0.5" anchor="true" size="148,148" group="n100_11vn3" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n93_11vn3" name="left2" src="yvacdc" fileName="components/dragbutton.xml" xy="875,730" pivot="0.5,0.5" anchor="true" size="148,148" group="n100_11vn3" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n94_11vn3" name="left3" src="yvacdc" fileName="components/dragbutton.xml" xy="700,845" pivot="0.5,0.5" anchor="true" size="148,148" group="n100_11vn3" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n95_11vn3" name="left4" src="yvacdc" fileName="components/dragbutton.xml" xy="875,845" pivot="0.5,0.5" anchor="true" size="148,148" group="n100_11vn3" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n96_11vn3" name="right1" src="yvacdc" fileName="components/dragbutton.xml" xy="1140,730" pivot="0.5,0.5" anchor="true" size="148,148" group="n100_11vn3" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n97_11vn3" name="right2" src="yvacdc" fileName="components/dragbutton.xml" xy="1300,730" pivot="0.5,0.5" anchor="true" size="148,148" group="n100_11vn3" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n98_11vn3" name="right3" src="yvacdc" fileName="components/dragbutton.xml" xy="1140,845" pivot="0.5,0.5" anchor="true" size="148,148" group="n100_11vn3" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n99_11vn3" name="right4" src="yvacdc" fileName="components/dragbutton.xml" xy="1300,845" pivot="0.5,0.5" anchor="true" size="148,148" group="n100_11vn3" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <group id="n100_11vn3" name="n94" xy="626,656" size="748,263" advanced="true"/>
+    <component id="n105_hef4" name="left1" src="yvacdc" fileName="components/dragbutton.xml" xy="700,345" pivot="0.5,0.5" anchor="true" size="148,148" group="n113_hef4" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n106_hef4" name="left2" src="yvacdc" fileName="components/dragbutton.xml" xy="875,345" pivot="0.5,0.5" anchor="true" size="148,148" group="n113_hef4" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n107_hef4" name="left3" src="yvacdc" fileName="components/dragbutton.xml" xy="700,460" pivot="0.5,0.5" anchor="true" size="148,148" group="n113_hef4" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n108_hef4" name="left4" src="yvacdc" fileName="components/dragbutton.xml" xy="875,460" pivot="0.5,0.5" anchor="true" size="148,148" group="n113_hef4" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n109_hef4" name="right1" src="yvacdc" fileName="components/dragbutton.xml" xy="1140,345" pivot="0.5,0.5" anchor="true" size="148,148" group="n113_hef4" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n110_hef4" name="right2" src="yvacdc" fileName="components/dragbutton.xml" xy="1300,345" pivot="0.5,0.5" anchor="true" size="148,148" group="n113_hef4" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n111_hef4" name="right3" src="yvacdc" fileName="components/dragbutton.xml" xy="1140,460" pivot="0.5,0.5" anchor="true" size="148,148" group="n113_hef4" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <component id="n112_hef4" name="right4" src="yvacdc" fileName="components/dragbutton.xml" xy="1300,460" pivot="0.5,0.5" anchor="true" size="148,148" group="n113_hef4" scale="0.7,0.7" customData="big1">
+      <gearDisplay controller="c2" pages="2"/>
+      <Button icon="ui://1io1z8o5yvacav"/>
+    </component>
+    <group id="n113_hef4" name="n95" xy="626,271" size="748,263" advanced="true"/>
   </displayList>
 </component>

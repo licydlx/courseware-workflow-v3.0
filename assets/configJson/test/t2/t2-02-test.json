@@ -1,0 +1,75 @@
+{
+    "name": "数理思维",
+    "courseName": "t2-02",
+    "env": "test",
+    "totalPages": 12,
+    "pathConfig": {
+        "remoteUrl": "",
+        "controllerBundlePath": "",
+        "controllerName": "controller-model02",
+        "resourceBundlePath": "",
+        "panelBundlePath": "",
+        "panelName": "formal-panle-model02",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "resourceName": "t2-02",
+        "packageName": "t2-02"
+    },
+    "chapters": [ 
+
+        {
+            "model": {
+                "uiPath": "choose-model03-v1-p2",
+                "bundleName": "choose",
+                "prefabName": "choose-model03-v1",
+                "config": {
+                    "answer": []
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "choose-model03-v1-p2",
+                "bundleName": "choose",
+                "prefabName": "choose-model03-v1",
+                "config": {
+                    "answer": []
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "choose-model03-v1-p3",
+                "bundleName": "choose",
+                "prefabName": "choose-model03-v1",
+                "config": {
+                    "answer": []
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        }
+
+    ]
+}

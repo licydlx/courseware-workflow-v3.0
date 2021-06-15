@@ -1,7 +1,8 @@
 {
 	"game": {
-		"name": "未知游戏",
-		"appid": "UNKNOW"
+		"name": "时习之",
+		"appid": "675857140",
+		"cid": "12424"
 	},
 	"configs": [
 		{
@@ -9,7 +10,7 @@
 			"services": [
 				{
 					"service_id": "272",
-					"enable": true,
+					"enable": false,
 					"params": {
 						"env_id": "after-school-review-8cguaeaace9d",
 						"plugin_version": "0.7.2_1.3.3"
@@ -25,7 +26,7 @@
 			"services": [
 				{
 					"service_id": "272",
-					"enable": true,
+					"enable": false,
 					"params": {
 						"env_id": "after-school-review-8cguaeaace9d",
 						"plugin_version": "0.7.2_1.3.3"
@@ -35,6 +36,15 @@
 		},
 		{
 			"appid": "UNKNOW"
+		},
+		{
+			"appid": "675857140",
+			"services": [
+				{
+					"service_id": "272",
+					"enable": false
+				}
+			]
 		}
 	],
 	"needExecNative": true

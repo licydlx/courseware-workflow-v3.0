@@ -382,11 +382,13 @@ export default class dragAnswer_model03_v1 extends cc.Component {
 
     // 获取状态
     getState(data: any) {
+        console.log(11111);
         this.updateState(data);
     }
 
     // 更新状态层
     updateState(curState: any) {
+        console.log(22222);
         // if (globalThis._.isEqual(this._state, curState)) return;
         this.state = curState;
     }
