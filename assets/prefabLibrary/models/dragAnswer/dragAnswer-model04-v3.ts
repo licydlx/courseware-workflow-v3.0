@@ -65,6 +65,8 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
     private _titleTrigger: fgui.GLoader;
 
+    private _maskBg: fgui.GGraph;
+
     // fairygui 组件
     private handleGuide: any;
 
@@ -98,7 +100,7 @@ export default class dragAnswer_model04_v3 extends cc.Component {
     // 远程动态组件
     private feedback: any;
 
-    private _answer: any = []; // 0：没答题时 1：答对第一种选择时 2： 答对第二种选择时
+    // 0：没答题时 1：答对第一种选择时 2： 答对第二种选择时
 
     private _state = {};
 
@@ -114,7 +116,6 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
     onLoad() {
 
-        this._answer = [];
         this._colliderBox = [];
 
         if (this._isNeedTiltPos) {
@@ -130,6 +131,10 @@ export default class dragAnswer_model04_v3 extends cc.Component {
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
         fgui.GRoot.inst.addChild(this._view);
+
+        this._maskBg = this._view.getChild("maskBg").asGraph;
+        this._maskBg.visible = false;
+        this._maskBg.sortingOrder = 5;
 
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
@@ -188,10 +193,13 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
         this._title = this._view.getChild("title").asButton;
 
+        this._titleTrigger.sortingOrder = 5;
+        this._title.sortingOrder = 5;
+
         // 初始化state
         this._state = {
 
-            answer: this._answer,
+            answer: [],
 
             colliderBox: this._colliderCache,
 
@@ -209,7 +217,12 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
             title: false,
 
-            submit: this.submitType.No
+            submit: this.submitType.No,
+
+            colliderCache: this._colliderCache,
+
+            maskBg: false
+
         }
 
         // 临时 禁止操作期间 切页
@@ -285,7 +298,6 @@ export default class dragAnswer_model04_v3 extends cc.Component {
         if (model.config) {
             let { isNeedTiltPos, answer, ae } = model.config;
             if (isNeedTiltPos) this._isNeedTiltPos = isNeedTiltPos;
-            if (answer) this._answer = answer;
             // 动效注册
             if (ae) {
                 for (let v in ae) {
@@ -356,21 +368,22 @@ export default class dragAnswer_model04_v3 extends cc.Component {
     private _onDragEnd(evt: fgui.Event): void {
         cc.audioEngine.play(this._dragSound, false, 1);
 
-        if (this._answer.length === 0) {
+        let state: any = globalThis._.cloneDeep(this._state);
+
+        if (state.answer.length === 0) {
 
             // 第一次答题时
-            this.dragEndFirstDeal(evt);
+            this.dragEndFirstDeal(evt, state);
 
-        } else if (this._answer.length === 1) {
+        } else if (state.answer.length === 1) {
 
             // 第二次答题时
-            this.dragEndScendDeal(evt);
+            this.dragEndScendDeal(evt, state);
         }
+        this.updateState(state);
     }
 
-    private dragEndFirstDeal(evt) {
-
-        let state: any = globalThis._.cloneDeep(this._state);
+    private dragEndFirstDeal(evt, state: any) {
 
         let moveIsMin = Math.abs(evt.pos.x - this._lastPos.x) < 70 && Math.abs(evt.pos.y - this._lastPos.y) < 70;
 
@@ -479,14 +492,9 @@ export default class dragAnswer_model04_v3 extends cc.Component {
             // 恢复原位
             this.resetButtonInitPos(state.colliderBox, btn);
         }
-
-        this.updateState(state);
-
     }
 
-    private dragEndScendDeal(evt) {
-
-        let state: any = globalThis._.cloneDeep(this._state);
+    private dragEndScendDeal(evt, state: any) {
 
         let moveIsMin = Math.abs(evt.pos.x - this._lastPos.x) < 70 && Math.abs(evt.pos.y - this._lastPos.y) < 70;
 
@@ -527,7 +535,7 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
                 if (state.box1Contain.length < this._containerTotalSecond) {
 
-                    if ((this._answer[0] === this.answerType.Size && btn.name[0] === this.sencondType.left) || (this._answer[0] === this.answerType.Shap && btn.name[1] === this.sencondType.left)) {
+                    if ((state.answer[0] === this.answerType.Size && btn.name[0] === this.sencondType.left) || (state.answer[0] === this.answerType.Shap && btn.name[1] === this.sencondType.left)) {
 
                         let temp = {
                             pos: {
@@ -583,7 +591,7 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
                 if (state.box2Contain.length < this._containerTotalSecond) {
 
-                    if ((this._answer[0] === this.answerType.Size && btn.name[0] === this.sencondType.left) || (this._answer[0] === this.answerType.Shap && btn.name[1] === this.sencondType.left)) {
+                    if ((state.answer[0] === this.answerType.Size && btn.name[0] === this.sencondType.left) || (state.answer[0] === this.answerType.Shap && btn.name[1] === this.sencondType.left)) {
 
                         let temp = {
                             pos: {
@@ -637,7 +645,7 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
                 if (state.box3Contain.length < this._containerTotalSecond) {
 
-                    if ((this._answer[0] === this.answerType.Size && btn.name[0] === this.sencondType.right) || (this._answer[0] === this.answerType.Shap && btn.name[1] === this.sencondType.right)) {
+                    if ((state.answer[0] === this.answerType.Size && btn.name[0] === this.sencondType.right) || (state.answer[0] === this.answerType.Shap && btn.name[1] === this.sencondType.right)) {
 
                         let temp = {
                             pos: {
@@ -691,7 +699,7 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
                 if (state.box4Contain.length < this._containerTotalSecond) {
 
-                    if ((this._answer[0] === this.answerType.Size && btn.name[0] === this.sencondType.right) || (this._answer[0] === this.answerType.Shap && btn.name[1] === this.sencondType.right)) {
+                    if ((state.answer[0] === this.answerType.Size && btn.name[0] === this.sencondType.right) || (state.answer[0] === this.answerType.Shap && btn.name[1] === this.sencondType.right)) {
 
                         let temp = {
                             pos: {
@@ -725,8 +733,6 @@ export default class dragAnswer_model04_v3 extends cc.Component {
             // 恢复原位
             this.resetButtonInitPos(state.colliderBox, btn);
         }
-
-        this.updateState(state);
     }
 
     private dealAllContainIn(isContainerLeft, isContainerRight, isContainer1, isContainer2, isContainer3, isContainer4, state, btn) {
@@ -935,14 +941,14 @@ export default class dragAnswer_model04_v3 extends cc.Component {
     private async _clickSubmit(evt: any) {
 
         let state: any = globalThis._.cloneDeep(this._state);
-        if (this._answer.length === 0) {
+        if (state.answer.length === 0) {
             if (state.leftContain.length === 0 && state.rightContain.length === 0) {
 
                 state.submit = this.submitType.GuideShow;
                 this.updateState(state);
                 return;
             }
-        } else if (this._answer.length === 1) {
+        } else if (state.answer.length === 1) {
 
             if (state.box1Contain.length === 0 && state.box2Contain.length === 0 && state.box3Contain.length === 0 && state.box4Contain.length === 0) {
 
@@ -951,13 +957,13 @@ export default class dragAnswer_model04_v3 extends cc.Component {
                 return;
             }
 
-        } else if (this._answer.length >= 2) {
+        } else if (state.answer.length >= 2) {
 
             return;
         }
 
         // 前：1 后：2
-        if (this._answer.length === 0) {
+        if (state.answer.length === 0) {
 
             if (state.leftContain.length < this._containerTotal || state.rightContain.length < this._containerTotal) {
 
@@ -972,14 +978,11 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
                 console.log('=== 第一次回答正确  按照大小分 ===');
                 // 第一次答案正确
-                this._answer.push(this.answerType.Size);
+                state.answer.push(this.answerType.Size);
 
                 this.sencondType.left = state.leftContain[0].name[0];
                 this.sencondType.right = state.rightContain[0].name[0];
 
-                console.log();
-
-                state.answer = this._answer;
                 this.refreshFirstRightData(state);
 
 
@@ -987,12 +990,11 @@ export default class dragAnswer_model04_v3 extends cc.Component {
                 state.leftContain[0].name[1] === state.leftContain[2].name[1] &&
                 state.leftContain[0].name[1] === state.leftContain[3].name[1]) {
 
-                this._answer.push(this.answerType.Shap);
+                state.answer.push(this.answerType.Shap);
 
                 this.sencondType.left = state.leftContain[0].name[1];
                 this.sencondType.right = state.rightContain[0].name[1];
 
-                state.answer = this._answer;
                 this.refreshFirstRightData(state);
 
             } else {
@@ -1000,7 +1002,7 @@ export default class dragAnswer_model04_v3 extends cc.Component {
                 state.submit = this.submitType.WrongFeed;
             }
 
-        } else if (this._answer.length === 1) {
+        } else if (state.answer.length === 1) {
 
             if (state.box1Contain.length < this._containerTotalSecond ||
                 state.box2Contain.length < this._containerTotalSecond ||
@@ -1013,29 +1015,29 @@ export default class dragAnswer_model04_v3 extends cc.Component {
             }
 
             // 大小 在前
-            if (this._answer[this._answer.length - 1] === this.answerType.Size) {
+            if (state.answer[state.answer.length - 1] === this.answerType.Size) {
 
                 if (state.box1Contain[0].name[1] === state.box1Contain[1].name[1] &&
                     state.box3Contain[0].name[1] === state.box3Contain[1].name[1]) {
 
-                    this._answer.push(this.answerType.Shap);
-                    state.answer = this._answer;
+                    state.answer.push(this.answerType.Shap);
                     state.submit = this.submitType.RightFeed;
+                    state.maskBg = true;
 
                 } else {
 
                     state.submit = this.submitType.WrongFeed;
                 }
 
-            } else if (this._answer[this._answer.length - 1] === this.answerType.Shap) {
+            } else if (state.answer[state.answer.length - 1] === this.answerType.Shap) {
 
                 if (state.box1Contain[0].name[0] === state.box1Contain[1].name[0] &&
                     state.box3Contain[0].name[0] === state.box3Contain[1].name[0]) {
 
                     console.log('=== 第二次答案正确 颜色和大小===');
-                    this._answer.push(this.answerType.Size);
-                    state.answer = this._answer;
+                    state.answer.push(this.answerType.Size);
                     state.submit = this.submitType.RightFeed;
+                    state.maskBg = true;
 
                 } else {
 
@@ -1050,6 +1052,7 @@ export default class dragAnswer_model04_v3 extends cc.Component {
     refreshFirstRightData(state) {
 
         state.colliderBox = [];
+        state.colliderCache = [];
         // 第二次做题时初始化按钮全部位置
 
         for (let i = 0; i < this._colliderCacheSecond.length; i++) {
@@ -1083,18 +1086,7 @@ export default class dragAnswer_model04_v3 extends cc.Component {
             }
         }
 
-        for (let i = 0; i < this._colliderBox.length; i++) {
-
-            for (let j = 0; j < this._colliderCacheSecond.length; j++) {
-
-                if (this._colliderBox[i].data.index === this._colliderCacheSecond[j].index) {
-                    this._colliderBox[i].data.x = this._colliderCacheSecond[j].pos.x;
-                    this._colliderBox[i].data.y = this._colliderCacheSecond[j].pos.y;
-                    break;
-                }
-            }
-        }
-
+        state.colliderCache = this._colliderCacheSecond;
         state.leftContain = [];
         state.rightContain = [];
     }
@@ -1117,22 +1109,9 @@ export default class dragAnswer_model04_v3 extends cc.Component {
 
             if (state.answer.length === 0) {
                 // 显示初始答题界面
-                for (let i = 0; i < this._colliderBox.length; i++) {
-
-                    for (let j = 0; j < this._colliderCache.length; j++) {
-
-                        if (this._colliderBox[i].data.index === this._colliderCache[j].index) {
-                            this._colliderBox[i].data.x = this._colliderCache[j].pos.x;
-                            this._colliderBox[i].data.y = this._colliderCache[j].pos.y;
-                            this._colliderBox[i].draggable = true;
-                        }
-                    }
-                }
-
                 this._c2.selectedIndex = 0;
                 this._submit.x = 842;
                 this._submit.y = 724;
-                this._answer = [];
 
             } else if (state.answer.length === 1) {
                 // 显示第二种答题界面
@@ -1146,24 +1125,23 @@ export default class dragAnswer_model04_v3 extends cc.Component {
                 this._c2.selectedIndex = 1;
                 this._submit.x = 1667;
                 this._submit.y = 0;
-                this.offButDrag(state);
             }
         }
 
-        if (!globalThis._.isEqual(oldState.submit, state.submit)) {
+        if (!globalThis._.isEqual(oldState.maskBg, state.maskBg)) {
 
-            if (state.submit === this.submitType.GuideShow) {
-                if (state.answer.length === 0) {
-                    this.onHandleGuide(this.handleGuide);
-                } else if (state.answer.length === 1) {
-                    this.onHandleGuide(this.handleGuide2);
-                }
-            } else if (state.submit === this.submitType.WrongFeed) {
-                this.answerFeedback(false);
-            } else if (state.submit === this.submitType.RightFeed) {
-                this.answerFeedback(true);
+            this._maskBg.visible = state.maskBg;
+        }
+
+        if (!globalThis._.isEqual(oldState.colliderCache, state.colliderCache)) {
+
+            for (let i = 0; i < state.colliderCache.length; i++) {
+
+                this._colliderBox[state.colliderCache[i].index].data.x = state.colliderCache[i].pos.x;
+                this._colliderBox[state.colliderCache[i].index].data.y = state.colliderCache[i].pos.y;
             }
         }
+
 
         if (!globalThis._.isEqual(oldState.colliderBox, state.colliderBox)) {
 
@@ -1233,6 +1211,21 @@ export default class dragAnswer_model04_v3 extends cc.Component {
             }
         }
 
+        if (!globalThis._.isEqual(oldState.submit, state.submit)) {
+
+            if (state.submit === this.submitType.GuideShow) {
+                if (state.answer.length === 0) {
+                    this.onHandleGuide(this.handleGuide);
+                } else if (state.answer.length === 1) {
+                    this.onHandleGuide(this.handleGuide2);
+                }
+            } else if (state.submit === this.submitType.WrongFeed) {
+                this.answerFeedback(false);
+            } else if (state.submit === this.submitType.RightFeed) {
+                this.answerFeedback(true);
+            }
+        }
+
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
         }
@@ -1255,23 +1248,6 @@ export default class dragAnswer_model04_v3 extends cc.Component {
         }, 2000);
     }
 
-    offButDrag(state: any) {
-
-        this.arrContainOffDrag(state.leftContain);
-        this.arrContainOffDrag(state.rightContain);
-        this.arrContainOffDrag(state.box1Contain);
-        this.arrContainOffDrag(state.box2Contain);
-        this.arrContainOffDrag(state.box3Contain);
-        this.arrContainOffDrag(state.box4Contain);
-    }
-
-    arrContainOffDrag(arr) {
-
-        for (let i = 0; i < arr.length; i++) {
-
-            arr[i].draggable = false;
-        }
-    }
 
     // 注册状态，及获取状态的方法
     registerState() {

@@ -67,6 +67,7 @@
     <component id="n23_cp1h" name="clickSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-193,465" size="100,41">
       <Button sound="ui://1io1z8o5xmwddu"/>
     </component>
+    <graph id="n37_rx0n" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#00ffffff"/>
     <component id="n35_e9oy" name="title" src="xmwddd" fileName="buttons/title.xml" xy="941,87" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://1io1z8o5yvaccs" sound="ui://1io1z8o5xmwddi" volume="0"/>

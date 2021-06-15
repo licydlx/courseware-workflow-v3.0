@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <controller name="c2" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n39_ku3l" name="n39" src="ku3l4v" fileName="images/example3/001.png" xy="0,0"/>
+    <image id="n40_ku3l" name="n40" src="ku3l4y" fileName="images/example3/004.png" xy="786,153"/>
+    <image id="n41_xeds" name="n41" src="ku3l51" fileName="images/example3/006.png" xy="119,177">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <component id="n62_uqx5" name="n62" src="uqx55h" fileName="buttons/choose.xml" xy="244,344" size="166,86" group="n27_r375">
+      <Button icon="ui://733aoo45uqx56k"/>
+    </component>
+    <component id="n63_uqx5" name="n63" src="uqx55h" fileName="buttons/choose.xml" xy="435,344" size="196,98" group="n27_r375">
+      <Button icon="ui://733aoo45uqx56f"/>
+    </component>
+    <component id="n64_uqx5" name="n64" src="uqx55h" fileName="buttons/choose.xml" xy="610,344" size="144,114" group="n27_r375">
+      <Button icon="ui://733aoo45uqx56j"/>
+    </component>
+    <group id="n27_r375" name="pao" xy="161,287" size="521,114" advanced="true">
+      <gearDisplay controller="c2" pages="1"/>
+    </group>
+    <component id="n56_uqx5" name="n56" src="uqx55h" fileName="buttons/choose.xml" xy="1612,455" size="228,278" group="n60_uqx5">
+      <Button icon="ui://733aoo45uqx56h" sound="ui://733aoo45r3754k"/>
+    </component>
+    <component id="n57_uqx5" name="n57" src="uqx55h" fileName="buttons/choose.xml" xy="1005,445" size="320,194" group="n60_uqx5">
+      <Button icon="ui://733aoo45uqx56l" sound="ui://733aoo45r3754k"/>
+    </component>
+    <component id="n61_uqx5" name="n61" src="uqx55h" fileName="buttons/choose.xml" xy="1317,443" size="276,230" group="n60_uqx5">
+      <Button icon="ui://733aoo45uqx56d" sound="ui://733aoo45r3754k"/>
+    </component>
+    <group id="n60_uqx5" name="choose" xy="845,316" size="881,278" advanced="true"/>
+    <component id="n12_r375" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1253,789" size="205,192">
+      <Button icon="ui://733aoo45w2qdp" sound="ui://733aoo45r3754k"/>
+    </component>
+    <image id="n65_uqx5" name="n65" src="uqx56i" fileName="images/tuozhan/004_2.png" xy="1497,315" group="n49_uqx5"/>
+    <image id="n67_uqx5" name="n67" src="uqx56m" fileName="images/tuozhan/007_2.png" xy="843,350" group="n49_uqx5"/>
+    <image id="n66_uqx5" name="n66" src="uqx56e" fileName="images/tuozhan/001_2.png" xy="1183,327" group="n49_uqx5"/>
+    <group id="n49_uqx5" name="select" xy="843,315" size="901,283" advanced="true"/>
+    <graph id="n50_uqx5" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#b2000000"/>
+    <component id="n1_r375" name="title" src="w2qd12" fileName="buttons/title.xml" xy="944,99" size="1368,135" alpha="0" touchable="false">
+      <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
+      <Button icon="ui://733aoo45uqx56g" sound="ui://733aoo45w2qd24" volume="0"/>
+    </component>
+    <loader id="n2_r375" name="titleTrigger" xy="73,39" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
+      <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
+    </loader>
+    <component id="n8_r375" name="box" src="w2qd26" fileName="buttons/magicPen.xml" xy="167,485" size="427,467">
+      <Button icon="ui://733aoo45ku3l4w"/>
+    </component>
+  </displayList>
+</component>

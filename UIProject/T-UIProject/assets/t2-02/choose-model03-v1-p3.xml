@@ -13,22 +13,22 @@
     <component id="n4_w2qd" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1635,746" size="204,204">
       <Button icon="ui://733aoo45w2qdp"/>
     </component>
-    <component id="n30_w2qd" name="piano" src="w2qd27" fileName="buttons/yueqi.xml" xy="1342,300" size="210,216" group="n32_w2qd">
+    <component id="n30_w2qd" name="piano" src="w2qd27" fileName="buttons/yueqi.xml" xy="1242,189" size="191,216" group="n32_w2qd">
       <Button icon="ui://733aoo45w2qd2e" sound="ui://733aoo45w2qd1m"/>
     </component>
-    <component id="n27_w2qd" name="gu" src="w2qd27" fileName="buttons/yueqi.xml" xy="991,537" size="200,226" group="n32_w2qd">
+    <component id="n27_w2qd" name="gu" src="w2qd27" fileName="buttons/yueqi.xml" xy="900,434" size="170,226" group="n32_w2qd">
       <Button icon="ui://733aoo45w2qd2f" sound="ui://733aoo45w2qd1j"/>
     </component>
-    <component id="n28_w2qd" name="shachui" src="w2qd27" fileName="buttons/yueqi.xml" xy="653,807" size="222,204" group="n32_w2qd">
+    <component id="n28_w2qd" name="shachui" src="w2qd27" fileName="buttons/yueqi.xml" xy="554,707" size="222,204" group="n32_w2qd">
       <Button icon="ui://733aoo45w2qd2g" sound="ui://733aoo45w2qd1i"/>
     </component>
-    <component id="n29_w2qd" name="dizi" src="w2qd27" fileName="buttons/yueqi.xml" xy="1367,765" size="224,220" group="n32_w2qd">
+    <component id="n29_w2qd" name="dizi" src="w2qd27" fileName="buttons/yueqi.xml" xy="1276,650" size="194,220" group="n32_w2qd">
       <Button icon="ui://733aoo45w2qd2d" sound="ui://733aoo45w2qd1h"/>
     </component>
-    <component id="n31_w2qd" name="sanjiaotie" src="w2qd27" fileName="buttons/yueqi.xml" xy="616,305" size="240,212" group="n32_w2qd">
+    <component id="n31_w2qd" name="sanjiaotie" src="w2qd27" fileName="buttons/yueqi.xml" xy="498,214" size="240,186" group="n32_w2qd">
       <Button icon="ui://733aoo45w2qd2h" sound="ui://733aoo45w2qd1l"/>
     </component>
-    <group id="n32_w2qd" name="optionBox" xy="496,192" size="983,717" advanced="true"/>
+    <group id="n32_w2qd" name="optionBox" xy="498,189" size="972,722" advanced="true"/>
     <component id="n6_w2qd" name="magicPen" src="w2qd26" fileName="buttons/magicPen.xml" xy="1745,466" pivot="0.5,0.5" anchor="true" size="218,394">
       <Button icon="ui://733aoo45w2qds" selectedIcon="ui://733aoo45w2qd28"/>
     </component>

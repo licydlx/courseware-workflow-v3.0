@@ -42,13 +42,13 @@
     <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="1250,230" pivot="0.5,0.5" anchor="true" size="115,115" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac91"/>
     </component>
-    <component id="n14_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="869,209" pivot="0.5,0.5" anchor="true" size="170,175" group="n19_cp1h" scale="0.98,0.98">
+    <component id="n14_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="869,209" pivot="0.5,0.5" anchor="true" size="170,175" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac92"/>
     </component>
     <component id="n16_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="755,409" pivot="0.5,0.5" anchor="true" size="175,80" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvaca7"/>
     </component>
-    <component id="n15_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1096,410" pivot="0.5,0.5" anchor="true" size="170,175" group="n19_cp1h" scale="0.98,0.98">
+    <component id="n15_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1096,410" pivot="0.5,0.5" anchor="true" size="170,175" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac92"/>
     </component>
     <component id="n17_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1466,414" pivot="0.5,0.5" anchor="true" size="175,80" group="n19_cp1h">
@@ -67,6 +67,7 @@
     <component id="n23_cp1h" name="clickSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-193,465" size="100,41">
       <Button sound="ui://1io1z8o5xmwddu"/>
     </component>
+    <graph id="n52_rx0n" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#00ffffff"/>
     <component id="n50_e9oy" name="title" src="xmwddd" fileName="buttons/title.xml" xy="941,87" alpha="0" touchable="false">
       <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
       <Button icon="ui://1io1z8o5yvac90" sound="ui://1io1z8o5xmwddn" volume="0"/>

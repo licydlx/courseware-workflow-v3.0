@@ -19,7 +19,7 @@ export default class choose_model03_v2 extends cc.Component {
 
     private _boyFood: any = [];
     private _girlFood: any = [];
-    private _gameFood: any = ['food_1', 'food_2', 'food_3', 'food_4'];
+    private _gameFood: any = [];
 
     private _gameOver: boolean = false;
     private _gameStart: boolean = false;
@@ -36,6 +36,8 @@ export default class choose_model03_v2 extends cc.Component {
 
     /** 我自己的对象池 */
     private myFoodPools: any = [];
+
+    private _rightIndexs: any = [];
 
     private _dropSpeed: number = 2.5;
 
@@ -153,10 +155,13 @@ export default class choose_model03_v2 extends cc.Component {
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
         let GComponent = model.uiPath;
-        let { type, ae } = model.config;
+        let { gameFood, rightIndexs } = model.config;
         this._package = Package;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
+
+        if (gameFood) this._gameFood = gameFood;
+        if (rightIndexs) this._rightIndexs = rightIndexs;
 
         let item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754m');
         this._gameMusic = await loadResource(item.file, cc.AudioClip);
@@ -292,7 +297,14 @@ export default class choose_model03_v2 extends cc.Component {
         let obj: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         let btn = obj.asButton;
         // 是正确的
-        if (btn.data.index === 0 || btn.data.index === 1) {
+        let isRight = false;
+        for (let i = 0; i < this._rightIndexs.length; i++) {
+            if (btn.data.index === this._rightIndexs[i]) {
+                isRight = true;
+                break;
+            }
+        }
+        if (isRight) {
 
             //点击正确
             btn.icon = 'ui://733aoo45r3753l';
@@ -335,9 +347,6 @@ export default class choose_model03_v2 extends cc.Component {
 
             state.rightSoundFile = [{ sex: 2, file: this._girlSound }, { sex: 1, file: this._boySound }];
         }
-
-        console.log('===== click 1111  ====');
-
         state.elvesPlay = true;
         this.updateState(state);
     }
