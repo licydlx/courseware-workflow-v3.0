@@ -200,6 +200,8 @@
     <image id="qtgvzfz" name="case_one_3_7.png" path="/images/num/" exported="true"/>
     <image id="qtgvzg0" name="case_one_3_8.png" path="/images/num/" exported="true"/>
     <image id="qtgvzg1" name="case_one_3_9.png" path="/images/num/" exported="true"/>
+    <component id="63auzg2" name="mask.xml" path="/components/common/buttons/" exported="true"/>
+    <image id="63auzg3" name="answer.png" path="/images/question3/" exported="true"/>
   </resources>
   <publish name="" path="E:\workspaces\courseware-workflow-v3.0\assets\fairyUis\t4\t4-03" packageCount="2"/>
 </packageDescription>

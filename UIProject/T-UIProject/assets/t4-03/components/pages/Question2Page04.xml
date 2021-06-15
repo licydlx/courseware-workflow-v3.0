@@ -5,13 +5,6 @@
   <displayList>
     <loader id="n66_u7ua" name="bg" xy="0,0" size="1920,1080" url="ui://k4ucnbrrt68dby" autoSize="true"/>
     <loader id="n50_t68d" name="dk" xy="79,126" size="1747,783" url="ui://k4ucnbrrt68dcl" autoSize="true"/>
-    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
-      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
-    </loader>
-    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="217,35" size="1270,135" alpha="0" touchable="false">
-      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
-      <Button icon="ui://k4ucnbrrt68dcd" sound="ui://k4ucnbrr103lzex"/>
-    </component>
     <component id="n75_r1ww" name="submit" src="t68d4x" fileName="components/common/buttons/submit.xml" xy="1706,856">
       <Button icon="ui://k4ucnbrrm2z94o" selectedIcon="ui://k4ucnbrrm2z94n"/>
     </component>
@@ -37,5 +30,13 @@
     <loader id="n88_vlcc" name="B_value" xy="707,526" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbi" autoSize="true"/>
     <loader id="n90_vlcc" name="C_value" xy="1124,531" pivot="0.5,0.5" anchor="true" size="161,186" group="n94_vlcc" url="ui://k4ucnbrrt68dbg" autoSize="true"/>
     <group id="n94_vlcc" name="question" xy="247,433" size="957,207" advanced="true"/>
+    <graph id="n97_63au" name="mask" xy="0,0" size="1920,1080" alpha="0" type="rect"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="217,35" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0,1" values="0,0,0,0|1,0,0,0"/>
+      <Button icon="ui://k4ucnbrrt68dcd" sound="ui://k4ucnbrr103lzex"/>
+    </component>
   </displayList>
 </component>

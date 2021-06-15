@@ -80,7 +80,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             if (this._view.getChildAt(i).group == answerBox) {
                 let btn: fgui.GButton = this._view.getChildAt(i).asButton;
                 this._cache['answerColliderBox'].push({ x: btn.x, y: btn.y, belong: -1 });
-                this._cache['answerColliderBoxOrigin'].push({ x: btn.x, y: btn.y})
+                this._cache['answerColliderBoxOrigin'].push({ x: btn.x, y: btn.y, deep: this._view.getChildIndex(btn)})
                 btn.draggable = true;
                 btn.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
                 btn.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
@@ -127,7 +127,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             if (this._view.getChildAt(i).group == colliderBox) {
                 let btn: fgui.GButton = this._view.getChildAt(i).asButton;
                 this._cache['colliderBox'].push({ x: btn.x, y: btn.y, belong: -1 });
-                this._cache['colliderBoxOrigin'].push({ x: btn.x, y: btn.y})
+                this._cache['colliderBoxOrigin'].push({ x: btn.x, y: btn.y, deep: this._view.getChildIndex(btn)})
                 btn.draggable = true;
                 btn.on(fgui.Event.TOUCH_BEGIN, this._onDragStart, this);
                 btn.on(fgui.Event.TOUCH_MOVE, this._onDragMove, this);
@@ -171,6 +171,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         // 临时 
         // 禁止操作期间 切页
         this.disableForbidHandle();
+        this.disableForbidHandleBesidesTitle()
         // 销毁反馈
         let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
@@ -256,6 +257,19 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
 
     private _onDragEnd(evt: fgui.Event): void {
         let s = this
+        let collider = fgui.GObject.cast(evt.currentTarget);
+        let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
+        let answerIndex: number = this._answerBox.findIndex((v: any) => v == collider);
+
+        let deep = this._view.numChildren - 1
+        if(colliderIndex != -1){
+            deep = this._cache['colliderBoxOrigin'][colliderIndex].deep
+        }
+        else if(answerIndex != -1){
+            deep = this._cache['answerColliderBoxOrigin'][answerIndex].deep
+        }
+        this._view.setChildIndex(collider, deep);
+        //处理点击发光隐藏
         if (!this._dragging){
             let state: any = globalThis._.cloneDeep(this._state)
             state.isHasCollide = false
@@ -264,7 +278,6 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         } 
         this._dragging = false;
 
-        let collider = fgui.GObject.cast(evt.currentTarget);
         let arr: any = [];
         let collidered: any;
         this._collideredBox.forEach((v: any, i: any) => {
@@ -285,7 +298,7 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         });
         let collideredIndex: number = this._collideredBox.findIndex((v: any) => v == collidered);
 
-        let colliderIndex: number = this._colliderBox.findIndex((v: any) => v == collider);
+        
         let state: any = globalThis._.cloneDeep(this._state);
         if(colliderIndex != -1){
             //如果没有触发定时器， state.collider[colliderIndex]坐标没变化，不会重置位置
@@ -306,7 +319,6 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
             }
         }
         else{
-            let answerIndex: number = this._answerBox.findIndex((v: any) => v == collider);
             if(answerIndex != -1){
                 this._answerBox[answerIndex].x = this._cache['answerColliderBoxOrigin'][answerIndex].x
                 this._answerBox[answerIndex].y = this._cache['answerColliderBoxOrigin'][answerIndex].y
@@ -363,7 +375,6 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
     private _clickTitle(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
         state.title = true;
-        state.isLock = true
         this.updateState(state);
     }
 
@@ -507,10 +518,10 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
 
             if (!globalThis._.isEqual(oldState.isLock, state.isLock)) {
                 if(state.isLock){
-                    this.forbidHandle();
+                    this.forbidHandleBesidesTitle();
                 }
                 else{
-                    this.disableForbidHandle();
+                    this.disableForbidHandleBesidesTitle();
                 }
             }
         }
@@ -520,15 +531,18 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         this._c2.selectedIndex = bool ? 1 : 0;
         if (bool) {
             cc.audioEngine.stopAll();
+            this.forbidHandle();
             let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
             let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
             let audioId = cc.audioEngine.play(audio, false, 1);
             cc.audioEngine.setFinishCallback(audioId, () => {
                 let state: any = globalThis._.cloneDeep(this._state);
                 state.title = false;
-                state.isLock = false;
                 this.updateState(state);
             });
+        }
+        else{
+            this.disableForbidHandle();
         }
     }
 
@@ -604,15 +618,41 @@ export default class dragAnswer_model0403_v1 extends cc.Component {
         if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);
     }
 
-        // 运行时 禁止操作
-        forbidHandle() {
-            this._view.touchable = false
+    // 运行时 禁止操作
+    forbidHandle() {
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (!handleMask) {
+            let handleMask = new cc.Node('handleMask');
+            handleMask.addComponent(cc.BlockInputEvents);
+            handleMask.parent = this._worldRoot;
+            handleMask.width = 1920;
+            handleMask.height = 1080;
+            handleMask.x = 960;
+            handleMask.y = 540;
         }
-    
-        // 消除禁止
-        disableForbidHandle() {
-            this._view.touchable = true
+    }
+
+    // 消除禁止
+    disableForbidHandle() {
+        let handleMask = this._worldRoot.getChildByName('handleMask');
+        if (handleMask) handleMask.destroy();
+    }
+
+    // 运行时 禁止操作
+    forbidHandleBesidesTitle() {
+        let mask = this._view.getChild("mask")
+        if(mask){
+            mask.visible = true
         }
+    }
+
+    //消除禁止
+    disableForbidHandleBesidesTitle() {
+        let mask = this._view.getChild("mask")
+        if(mask){
+            mask.visible = false
+        }
+    }
 
     onEnable() {
         this.registerState();

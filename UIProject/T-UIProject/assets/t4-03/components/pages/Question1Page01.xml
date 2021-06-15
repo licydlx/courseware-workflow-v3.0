@@ -4,13 +4,6 @@
   <displayList>
     <image id="n66_u7ua" name="bg" src="t68dbm" fileName="images/question1/bg_1.png" xy="0,0"/>
     <image id="n50_t68d" name="dk" src="m2z94h" fileName="images/question1/dk.png" xy="90,157"/>
-    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
-      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
-    </loader>
-    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
-      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
-      <Button icon="ui://k4ucnbrrt68dbt" sound="ui://k4ucnbrr103lzew"/>
-    </component>
     <component id="n70_r1ww" name="A" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="158,201" group="n74_r1ww"/>
     <component id="n71_r1ww" name="B" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="561,201" group="n74_r1ww"/>
     <component id="n72_r1ww" name="C" src="r1wwdg" fileName="components/Items/QuestionExample1.xml" xy="964,201" group="n74_r1ww"/>
@@ -40,5 +33,13 @@
     <component id="n92_oqfz" name="answerValue3" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1420,415" group="n89_oqfz"/>
     <component id="n93_oqfz" name="answerValue4" src="oqfzzff" fileName="components/Items/NumExample10.xml" xy="1580,415" group="n89_oqfz"/>
     <group id="n89_oqfz" name="answerBox" xy="1420,255" size="286,286" advanced="true"/>
+    <graph id="n95_63au" name="mask" xy="0,0" size="1920,1080" alpha="0" type="rect"/>
+    <loader id="n7_kxox" name="titleTrigger" xy="60,38" size="228,171" scale="0.8,0.8" url="ui://k4ucnbrrm2z91x" autoSize="true" playing="false">
+      <gearAni controller="c2" pages="0,1" values="0,s|12,p"/>
+    </loader>
+    <component id="n52_t68d" name="title" src="t68d4w" fileName="components/common/buttons/title.xml" xy="218,36" size="1270,135" alpha="0" touchable="false">
+      <gearLook controller="c2" pages="0" values="0,0,0,0" default="1,0,0,1"/>
+      <Button icon="ui://k4ucnbrrt68dbt" sound="ui://k4ucnbrr103lzew"/>
+    </component>
   </displayList>
 </component>

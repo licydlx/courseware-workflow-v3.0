@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="144,154">
   <displayList>
-    <image id="n0_r1ww" name="bg" src="r1wwe9" fileName="images/question3/tmk.png" xy="0,0"/>
+    <loader id="n0_r1ww" name="bg" xy="0,0" size="144,154" url="ui://k4ucnbrrr1wwe9"/>
     <loader id="n2_r1ww" name="value" xy="72,83" pivot="0.5,0.5" anchor="true" size="10,97" url="ui://k4ucnbrrr1wwdx" autoSize="true"/>
   </displayList>
 </component>
