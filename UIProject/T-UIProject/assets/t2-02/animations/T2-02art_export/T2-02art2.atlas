@@ -1,0 +1,125 @@
+
+T2-02art2.png
+size: 419,1040
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dizi
+  rotate: false
+  xy: 2, 596
+  size: 244, 214
+  orig: 244, 214
+  offset: 0, 0
+  index: -1
+gangqin1
+  rotate: false
+  xy: 2, 386
+  size: 235, 208
+  orig: 235, 208
+  offset: 0, 0
+  index: -1
+gangqin2
+  rotate: false
+  xy: 264, 779
+  size: 123, 62
+  orig: 123, 62
+  offset: 0, 0
+  index: -1
+gangqin3
+  rotate: false
+  xy: 248, 689
+  size: 168, 88
+  orig: 168, 88
+  offset: 0, 0
+  index: -1
+gangqin4
+  rotate: false
+  xy: 2, 812
+  size: 260, 226
+  orig: 260, 226
+  offset: 0, 0
+  index: -1
+gu1
+  rotate: false
+  xy: 264, 945
+  size: 127, 93
+  orig: 127, 93
+  offset: 0, 0
+  index: -1
+gu2
+  rotate: false
+  xy: 264, 843
+  size: 123, 100
+  orig: 123, 100
+  offset: 0, 0
+  index: -1
+gu3
+  rotate: false
+  xy: 2, 215
+  size: 232, 169
+  orig: 232, 169
+  offset: 0, 0
+  index: -1
+music1_1
+  rotate: false
+  xy: 321, 244
+  size: 84, 69
+  orig: 84, 69
+  offset: 0, 0
+  index: -1
+music1_2
+  rotate: false
+  xy: 389, 893
+  size: 27, 50
+  orig: 27, 50
+  offset: 0, 0
+  index: -1
+music1_3
+  rotate: false
+  xy: 349, 634
+  size: 64, 53
+  orig: 64, 53
+  offset: 0, 0
+  index: -1
+music1_4
+  rotate: false
+  xy: 349, 568
+  size: 60, 64
+  orig: 60, 64
+  offset: 0, 0
+  index: -1
+music1_5
+  rotate: false
+  xy: 236, 240
+  size: 83, 73
+  orig: 83, 73
+  offset: 0, 0
+  index: -1
+qiaojibang1
+  rotate: false
+  xy: 248, 528
+  size: 99, 159
+  orig: 99, 159
+  offset: 0, 0
+  index: -1
+qiaojibang2
+  rotate: false
+  xy: 2, 2
+  size: 224, 211
+  orig: 224, 211
+  offset: 0, 0
+  index: -1
+shacui1
+  rotate: false
+  xy: 228, 10
+  size: 185, 203
+  orig: 185, 203
+  offset: 0, 0
+  index: -1
+shacui2
+  rotate: false
+  xy: 239, 315
+  size: 178, 211
+  orig: 178, 211
+  offset: 0, 0
+  index: -1

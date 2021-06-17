@@ -122,8 +122,7 @@
     <component id="jmn01ea" name="dragAnswer-model04-v4-p11.xml" path="/" exported="true"/>
     <component id="jmn01ed" name="static-model01-v1-p1.xml" path="/" exported="true"/>
     <image id="jmn01ee" name="01bg.png" path="/images/"/>
-    <component id="jmn01en" name="handleGuide01.xml" path="/components/" exported="true"/>
-    <image id="jmn01eo" name="0111.png" path="/components/images/"/>
+    <component id="jmn01en" name="handleGuide01.xml" path="/components/"/>
     <image id="jmn01ep" name="0109.png" path="/components/images/"/>
     <component id="jmn01eq" name="handleGuide02.xml" path="/components/" exported="true"/>
     <component id="e9oy1er" name="dragAnswer-model04-v3-p10.xml" path="/" exported="true"/>
@@ -132,7 +131,6 @@
     <image id="ugg51fc" name="0113.png" path="/images/common/" scale="tile" scale9grid="25,25,50,50"/>
     <image id="ugg51fd" name="0103.png" path="/images/common/"/>
     <image id="ugg51fe" name="over_bg.png" path="/images/"/>
-    <image id="ugg51ff" name="spot_guide.png" path="/components/images/"/>
     <component id="ugg51fo" name="openDoor.xml" path="/components/" exported="true"/>
     <image id="ugg51fp" name="bg.png" path="/images/"/>
     <image id="ugg51fq" name="doorB.png" path="/images/"/>
@@ -143,6 +141,8 @@
     <image id="11vn31fv" name="tishi_di_1.png" path="/images/"/>
     <image id="11vn31fw" name="ti_shi_number_1.png" path="/images/"/>
     <image id="11vn31fx" name="ti_shi_number_2.png" path="/images/"/>
+    <sound id="gzaz31fy" name="example1_2.mp3" path="/audios/"/>
+    <image id="gzaz31fz" name="01160.png" path="/images/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

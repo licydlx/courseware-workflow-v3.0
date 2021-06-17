@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <image id="n2_ugg5" name="n2" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,380" size="30,30"/>
-    <image id="n3_ugg5" name="n3" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,420" size="30,30"/>
-    <image id="n4_ugg5" name="n4" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,460" size="30,30"/>
-    <image id="n5_ugg5" name="n5" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,500" size="30,30"/>
-    <image id="n6_ugg5" name="n6" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,540" size="30,30"/>
-    <image id="n7_ugg5" name="n7" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,580" size="30,30"/>
-    <image id="n8_ugg5" name="n8" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,620" size="30,30"/>
-    <image id="n9_ugg5" name="n9" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,660" size="30,30"/>
-    <image id="n10_ugg5" name="n10" src="ugg51ff" fileName="components/images/spot_guide.png" xy="350,700" size="30,30"/>
     <image id="n1_taz8" name="n1" src="jmn01ep" fileName="components/images/0109.png" xy="352,383" size="124,123"/>
   </displayList>
   <transition name="t0">
-    <item time="0" type="XY" target="n1_taz8" tween="true" startValue="349,380" endValue="349,705" duration="30"/>
+    <item time="0" type="XY" target="n1_taz8" tween="true" startValue="349,380" endValue="349,770" duration="30"/>
   </transition>
 </component>

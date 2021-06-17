@@ -33,31 +33,31 @@
       <gearDisplay controller="c2" pages="1"/>
     </image>
     <group id="n20_cp1h" name="collideredBox" xy="20,580" size="1880,487" advanced="true"/>
-    <component id="n11_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="751,389" pivot="0.5,0.5" anchor="true" size="126,125" group="n19_cp1h">
+    <component id="n11_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="677,416" pivot="0.5,0.5" anchor="true" size="126,125" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacao"/>
     </component>
-    <component id="n12_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="600,229" pivot="0.5,0.5" anchor="true" size="101,165" group="n19_cp1h">
+    <component id="n12_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="880,221" pivot="0.5,0.5" anchor="true" size="101,165" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacba"/>
     </component>
-    <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="386,342" pivot="0.5,0.5" anchor="true" size="92,175" group="n19_cp1h">
+    <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="347,361" pivot="0.5,0.5" anchor="true" size="92,175" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacbc"/>
     </component>
-    <component id="n14_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="960,209" pivot="0.5,0.5" anchor="true" size="106,139" group="n19_cp1h">
+    <component id="n14_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="577,214" pivot="0.5,0.5" anchor="true" size="106,139" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac93"/>
     </component>
-    <component id="n16_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1118,415" pivot="0.5,0.5" anchor="true" size="79,124" group="n19_cp1h">
+    <component id="n16_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1038,424" pivot="0.5,0.5" anchor="true" size="79,124" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacbi"/>
     </component>
-    <component id="n15_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1304,234" pivot="0.5,0.5" anchor="true" size="95,201" group="n19_cp1h">
+    <component id="n15_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1262,246" pivot="0.5,0.5" anchor="true" size="95,201" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacb2"/>
     </component>
-    <component id="n17_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1488,417" pivot="0.5,0.5" anchor="true" size="79,124" group="n19_cp1h">
+    <component id="n17_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1474,426" pivot="0.5,0.5" anchor="true" size="79,124" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacbg"/>
     </component>
-    <component id="n18_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="1565,210" pivot="0.5,0.5" anchor="true" size="119,113" group="n19_cp1h">
+    <component id="n18_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="1546,214" pivot="0.5,0.5" anchor="true" size="119,113" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacaq"/>
     </component>
-    <group id="n19_cp1h" name="colliderBox" xy="340,133" size="1284,345" advanced="true"/>
+    <group id="n19_cp1h" name="colliderBox" xy="301,138" size="1304,349" advanced="true"/>
     <component id="n6_cp1h" name="submit" src="cp1he3" fileName="components/submit2.xml" xy="842,724" size="240,240">
       <Button icon="ui://1io1z8o5cp1he2" sound="ui://1io1z8o5xmwddu"/>
     </component>
@@ -67,6 +67,7 @@
     <component id="n23_cp1h" name="clickSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-193,465" size="100,41">
       <Button sound="ui://1io1z8o5xmwddu"/>
     </component>
+    <graph id="n35_rx0n" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#00ffffff"/>
     <component id="n33_e9oy" name="title" src="xmwddd" fileName="buttons/title.xml" xy="941,87" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://1io1z8o5yvaccs" sound="ui://1io1z8o5xmwddi" volume="0"/>

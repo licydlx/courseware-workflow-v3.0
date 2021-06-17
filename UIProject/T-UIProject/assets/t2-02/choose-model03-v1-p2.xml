@@ -5,30 +5,20 @@
     <image id="n1_w2qd" name="n1" src="w2qdt" fileName="images/002.png" xy="5,-3" group="n26_w2qd"/>
     <image id="n5_w2qd" name="n5" src="w2qdr" fileName="images/0011.png" xy="1596,206" group="n26_w2qd"/>
     <image id="n22_w2qd" name="n22" src="w2qdz" fileName="images/008.png" xy="397,93" group="n26_w2qd"/>
-    <image id="n25_w2qd" name="n25" src="w2qdz" fileName="images/008.png" xy="1102,77" group="n26_w2qd"/>
-    <image id="n24_w2qd" name="n24" src="w2qdz" fileName="images/008.png" xy="756,326" group="n26_w2qd"/>
+    <image id="n25_w2qd" name="n25" src="w2qdz" fileName="images/008.png" xy="1103,74" group="n26_w2qd"/>
+    <image id="n24_w2qd" name="n24" src="w2qdz" fileName="images/008.png" xy="756,324" group="n26_w2qd"/>
     <image id="n23_w2qd" name="n23" src="w2qdz" fileName="images/008.png" xy="426,584" group="n26_w2qd"/>
     <image id="n21_w2qd" name="n21" src="w2qdz" fileName="images/008.png" xy="1130,538" group="n26_w2qd"/>
     <group id="n26_w2qd" name="n26" xy="5,-3" size="1920,1080"/>
     <component id="n4_w2qd" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1635,746" size="204,204">
-      <Button icon="ui://733aoo45w2qdp"/>
+      <Button icon="ui://733aoo45w2qdp" sound="ui://733aoo45r3754k"/>
     </component>
-    <component id="n30_w2qd" name="piano" src="w2qd27" fileName="buttons/yueqi.xml" xy="1342,764" size="268,238" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qdv" sound="ui://733aoo45w2qd18"/>
-    </component>
-    <component id="n27_w2qd" name="gu" src="w2qd27" fileName="buttons/yueqi.xml" xy="615,300" size="260,222" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qdw" sound="ui://733aoo45w2qd16"/>
-    </component>
-    <component id="n28_w2qd" name="shachui" src="w2qd27" fileName="buttons/yueqi.xml" xy="1323,291" size="260,204" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qd2a" sound="ui://733aoo45w2qd1a"/>
-    </component>
-    <component id="n29_w2qd" name="dizi" src="w2qd27" fileName="buttons/yueqi.xml" xy="976,575" size="268,256" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qdu" sound="ui://733aoo45w2qd17"/>
-    </component>
-    <component id="n31_w2qd" name="sanjiaotie" src="w2qd27" fileName="buttons/yueqi.xml" xy="651,796" size="240,292" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qd10" sound="ui://733aoo45w2qd19"/>
-    </component>
-    <group id="n32_w2qd" name="optionBox" xy="485,189" size="991,753" advanced="true"/>
+    <loader3D id="n44_rx0n" name="piano" xy="1223,656" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
+    <loader3D id="n45_rx0n" name="gu" xy="478,224" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
+    <loader3D id="n46_rx0n" name="shachui" xy="1193,211" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
+    <loader3D id="n47_rx0n" name="dizi" xy="835,440" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
+    <loader3D id="n48_rx0n" name="sanjiaotie" xy="513,691" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
+    <group id="n32_w2qd" name="optionBox" xy="478,211" size="1013,715" advanced="true"/>
     <component id="n6_w2qd" name="magicPen" src="w2qd26" fileName="buttons/magicPen.xml" xy="1745,466" pivot="0.5,0.5" anchor="true" size="218,394">
       <Button icon="ui://733aoo45w2qds" selectedIcon="ui://733aoo45w2qd28"/>
     </component>
@@ -40,7 +30,7 @@
     <group id="n42_w2qd" name="selectLight" xy="395,74" size="1181,944" advanced="true"/>
     <graph id="n43_w2qd" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#b2000000"/>
     <component id="n33_w2qd" name="labaguai" src="w2qd26" fileName="buttons/magicPen.xml" xy="113,328" size="218,395">
-      <Button icon="ui://733aoo45w2qdq"/>
+      <Button icon="ui://733aoo45w2qdq" sound="ui://733aoo45r3754k"/>
     </component>
     <component id="n2_w2qd" name="title" src="w2qd12" fileName="buttons/title.xml" xy="875,92" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>

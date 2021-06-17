@@ -115,10 +115,10 @@
                     "answer": [],
                     "ae": {
                         "handleGuide": {
-                            "component": "handleGuide01",
+                            "component": "handleGuide02",
                             "pos": {
-                                "x": -29,
-                                "y": -25
+                                "x": 299,
+                                "y": 15
                             }
                         },
                         
@@ -150,10 +150,10 @@
                     "answer": [],
                     "ae": {
                         "handleGuide": {
-                            "component": "handleGuide01",
+                            "component": "handleGuide02",
                             "pos": {
-                                "x": -29,
-                                "y": -25
+                                "x": 287,
+                                "y": -12
                             }
                         },
                         
@@ -185,10 +185,10 @@
                     "answer": [],
                     "ae": {
                         "handleGuide": {
-                            "component": "handleGuide01",
+                            "component": "handleGuide02",
                             "pos": {
-                                "x": -29,
-                                "y": -25
+                                "x": 290,
+                                "y": -44
                             }
                         },
                         
@@ -220,10 +220,10 @@
                     "answer": [],
                     "ae": {
                         "handleGuide": {
-                            "component": "handleGuide01",
+                            "component": "handleGuide02",
                             "pos": {
-                                "x": -39,
-                                "y": -29
+                                "x": 31,
+                                "y": -28
                             }
                         },
                         "handleGuide2": {
@@ -254,10 +254,10 @@
                     "answer": [],
                     "ae": {
                         "handleGuide": {
-                            "component": "handleGuide01",
+                            "component": "handleGuide02",
                             "pos": {
-                                "x": -29,
-                                "y": -25
+                                "x": 64,
+                                "y": 28
                             }
                         },
                         "handleGuide2": {
@@ -288,10 +288,10 @@
                     "answer": [],
                     "ae": {
                         "handleGuide": {
-                            "component": "handleGuide01",
+                            "component": "handleGuide02",
                             "pos": {
-                                "x": -29,
-                                "y": -25
+                                "x": 17,
+                                "y": 12
                             }
                         },
                         "handleGuide2": {
@@ -324,18 +324,18 @@
                     "ae": 
                     {
                         "handleGuide": {
-                            "component": "handleGuide01",
+                            "component": "handleGuide02",
                             "pos": {
-                                "x": 0,
-                                "y": 0
+                                "x": -14,
+                                "y": 97
                             }
                         },
 
                         "handleGuide2": {
                             "component": "handleGuide02",
                             "pos": {
-                                "x": -160,
-                                "y": 45
+                                "x": -155,
+                                "y": 15
                             }
                         }
                     }

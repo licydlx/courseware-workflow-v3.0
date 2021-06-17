@@ -33,31 +33,31 @@
       <gearDisplay controller="c2" pages="0"/>
     </image>
     <group id="n20_cp1h" name="collideredBox" xy="20,579" size="1880,488" advanced="true"/>
-    <component id="n11_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="740,408" pivot="0.5,0.5" anchor="true" size="184,95" group="n19_cp1h">
+    <component id="n11_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="672,390" pivot="0.5,0.5" anchor="true" size="184,95" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvaccj"/>
     </component>
-    <component id="n12_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="627,229" pivot="0.5,0.5" anchor="true" size="145,87" group="n19_cp1h">
+    <component id="n12_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="573,196" pivot="0.5,0.5" anchor="true" size="145,87" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacar"/>
     </component>
-    <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="1285,250" pivot="0.5,0.5" anchor="true" size="145,87" group="n19_cp1h">
+    <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="1254,213" pivot="0.5,0.5" anchor="true" size="145,87" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacas"/>
     </component>
-    <component id="n14_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="957,220" pivot="0.5,0.5" anchor="true" size="100,145" group="n19_cp1h">
+    <component id="n14_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="927,211" pivot="0.5,0.5" anchor="true" size="100,145" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvaccm"/>
     </component>
-    <component id="n16_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="362,385" pivot="0.5,0.5" anchor="true" size="142,125" group="n19_cp1h">
+    <component id="n16_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="366,355" pivot="0.5,0.5" anchor="true" size="142,125" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac9n"/>
     </component>
-    <component id="n15_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1046,413" pivot="0.5,0.5" anchor="true" size="120,132" group="n19_cp1h">
+    <component id="n15_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1032,406" pivot="0.5,0.5" anchor="true" size="120,132" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvaccn"/>
     </component>
-    <component id="n17_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1481,428" pivot="0.5,0.5" anchor="true" size="154,130" group="n19_cp1h">
+    <component id="n17_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1393,401" pivot="0.5,0.5" anchor="true" size="154,130" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac9o"/>
     </component>
     <component id="n18_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="1558,221" pivot="0.5,0.5" anchor="true" size="115,130" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvacco"/>
     </component>
-    <group id="n19_cp1h" name="colliderBox" xy="291,147" size="1324,345" advanced="true"/>
+    <group id="n19_cp1h" name="colliderBox" xy="295,138" size="1320,333" advanced="true"/>
     <component id="n6_cp1h" name="submit" src="cp1he3" fileName="components/submit2.xml" xy="842,724" size="240,240">
       <Button icon="ui://1io1z8o5cp1he2" sound="ui://1io1z8o5xmwddu"/>
     </component>
@@ -67,6 +67,7 @@
     <component id="n23_cp1h" name="clickSound" src="xmwddw" fileName="components/soundbutton.xml" xy="-193,465" size="100,41">
       <Button sound="ui://1io1z8o5xmwddu"/>
     </component>
+    <graph id="n40_rx0n" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#00ffffff"/>
     <component id="n38_e9oy" name="title" src="xmwddd" fileName="buttons/title.xml" xy="941,87" alpha="0" touchable="false">
       <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
       <Button icon="ui://1io1z8o5yvaccs" sound="ui://1io1z8o5xmwddi" volume="0"/>

@@ -7,56 +7,29 @@
     <image id="w2qdr" name="0011.png" path="/images/"/>
     <image id="w2qds" name="0012.png" path="/images/"/>
     <image id="w2qdt" name="002.png" path="/images/"/>
-    <image id="w2qdu" name="003.png" path="/images/"/>
-    <image id="w2qdv" name="004.png" path="/images/"/>
-    <image id="w2qdw" name="005.png" path="/images/"/>
     <image id="w2qdx" name="006.png" path="/images/"/>
     <image id="w2qdy" name="007.png" path="/images/"/>
     <image id="w2qdz" name="008.png" path="/images/"/>
     <image id="w2qd10" name="009.png" path="/images/"/>
-    <image id="w2qd11" name="例题1.png" path="/images/"/>
     <component id="w2qd12" name="title.xml" path="/buttons/"/>
     <movieclip id="w2qd15" name="laba.jta" path="/animations/laba/"/>
-    <sound id="w2qd16" name="dagu.mp3" path="/audios/example1/"/>
-    <sound id="w2qd17" name="dizi.mp3" path="/audios/example1/"/>
-    <sound id="w2qd18" name="gangqin.mp3" path="/audios/example1/"/>
-    <sound id="w2qd19" name="sanjiaotie.mp3" path="/audios/example1/"/>
-    <sound id="w2qd1a" name="shachui.mp3" path="/audios/example1/"/>
+    <sound id="w2qd16" name="dagu.mp3" path="/audios/example1/" exported="true"/>
+    <sound id="w2qd17" name="dizi.mp3" path="/audios/example1/" exported="true"/>
+    <sound id="w2qd18" name="gangqin.mp3" path="/audios/example1/" exported="true"/>
+    <sound id="w2qd19" name="sanjiaotie.mp3" path="/audios/example1/" exported="true"/>
+    <sound id="w2qd1a" name="shachui.mp3" path="/audios/example1/" exported="true"/>
     <sound id="w2qd1b" name="timu.mp3" path="/audios/example1/"/>
-    <sound id="w2qd1c" name="boy.mp3" path="/audios/example2/"/>
-    <sound id="w2qd1d" name="girl.mp3" path="/audios/example2/"/>
+    <sound id="w2qd1c" name="boy.mp3" path="/audios/example2/" exported="true"/>
+    <sound id="w2qd1d" name="girl.mp3" path="/audios/example2/" exported="true"/>
     <sound id="w2qd1e" name="timu.mp3" path="/audios/example2/"/>
-    <sound id="w2qd1f" name="001.mp3" path="/audios/example3/"/>
+    <sound id="w2qd1f" name="001.mp3" path="/audios/example3/" exported="true"/>
     <sound id="w2qd1g" name="timu.mp3" path="/audios/example3/"/>
-    <sound id="w2qd1h" name="goujiao.mp3" path="/audios/exercise1-1/"/>
-    <sound id="w2qd1i" name="maojiao.mp3" path="/audios/exercise1-1/"/>
-    <sound id="w2qd1j" name="qingwajiao.mp3" path="/audios/exercise1-1/"/>
-    <sound id="w2qd1k" name="timu.mp3" path="/audios/exercise1-1/"/>
-    <sound id="w2qd1l" name="yangjiao.mp3" path="/audios/exercise1-1/"/>
-    <sound id="w2qd1m" name="yazijiao.mp3" path="/audios/exercise1-1/"/>
-    <sound id="w2qd1n" name="huoche.mp3" path="/audios/exercise1-2/"/>
-    <sound id="w2qd1o" name="jingche.mp3" path="/audios/exercise1-2/"/>
-    <sound id="w2qd1p" name="jiuhuche.mp3" path="/audios/exercise1-2/"/>
-    <sound id="w2qd1q" name="qiche.mp3" path="/audios/exercise1-2/"/>
-    <sound id="w2qd1r" name="timu.mp3" path="/audios/exercise1-2/"/>
-    <sound id="w2qd1s" name="wajueji.mp3" path="/audios/exercise1-2/"/>
-    <sound id="w2qd1t" name="boy.mp3" path="/audios/exercise2-1/"/>
-    <sound id="w2qd1u" name="girl.mp3" path="/audios/exercise2-1/"/>
-    <sound id="w2qd1v" name="timu.mp3" path="/audios/exercise2-1/"/>
-    <sound id="w2qd1w" name="boy.mp3" path="/audios/exercise2-2/"/>
-    <sound id="w2qd1x" name="girl.mp3" path="/audios/exercise2-2/"/>
-    <sound id="w2qd1y" name="timu.mp3" path="/audios/exercise2-2/"/>
-    <sound id="w2qd1z" name="001.mp3" path="/audios/exercise3-1/"/>
-    <sound id="w2qd20" name="timu.mp3" path="/audios/exercise3-1/"/>
-    <sound id="w2qd21" name="001.mp3" path="/audios/exercise3-2/"/>
-    <sound id="w2qd22" name="timu.mp3" path="/audios/exercise3-2/"/>
-    <sound id="w2qd23" name="001.mp3" path="/audios/tuozhan/"/>
+    <sound id="w2qd23" name="001.mp3" path="/audios/tuozhan/" exported="true"/>
     <sound id="w2qd24" name="timu.mp3" path="/audios/tuozhan/"/>
     <component id="w2qd25" name="submit.xml" path="/buttons/"/>
     <component id="w2qd26" name="magicPen.xml" path="/buttons/"/>
     <component id="w2qd27" name="yueqi.xml" path="/buttons/"/>
     <image id="w2qd28" name="0012_2.png" path="/images/"/>
-    <image id="w2qd2a" name="0013.png" path="/images/"/>
     <image id="w2qd2b" name="008_2.png" path="/images/"/>
     <component id="w2qd2c" name="choose-model03-v1-p3.xml" path="/" exported="true"/>
     <image id="w2qd2d" name="0014.png" path="/images/"/>
@@ -71,6 +44,122 @@
     <image id="w2qd2m" name="0021.png" path="/images/"/>
     <image id="w2qd2n" name="0022.png" path="/images/"/>
     <image id="w2qd2o" name="0023.png" path="/images/"/>
+    <image id="r3753d" name="001.png" path="/images/example2/"/>
+    <image id="r3753e" name="0010.png" path="/images/example2/"/>
+    <image id="r3753f" name="0011.png" path="/images/example2/"/>
+    <image id="r3753g" name="0012.png" path="/images/example2/"/>
+    <image id="r3753h" name="0013.png" path="/images/example2/"/>
+    <image id="r3753i" name="0014.png" path="/images/example2/"/>
+    <image id="r3753j" name="0015.png" path="/images/example2/"/>
+    <image id="r3753k" name="0016.png" path="/images/example2/"/>
+    <image id="r3753l" name="0017.png" path="/images/example2/" exported="true"/>
+    <image id="r3753o" name="002.png" path="/images/example2/"/>
+    <image id="r3753x" name="0028.png" path="/images/example2/"/>
+    <image id="r3753z" name="003.png" path="/images/example2/"/>
+    <image id="r37540" name="0030.png" path="/images/example2/"/>
+    <image id="r37541" name="004.png" path="/images/example2/"/>
+    <image id="r37542" name="005.png" path="/images/example2/"/>
+    <image id="r37545" name="008.png" path="/images/example2/"/>
+    <image id="r37546" name="009.png" path="/images/example2/"/>
+    <component id="r37547" name="choose-model03-v2-p6.xml" path="/" exported="true"/>
+    <image id="r3754a" name="0010_2.png" path="/images/example2/"/>
+    <image id="r3754b" name="0011_2.png" path="/images/example2/"/>
+    <image id="r3754c" name="0012_2.png" path="/images/example2/"/>
+    <image id="r3754d" name="0013_2.png" path="/images/example2/"/>
+    <image id="r3754e" name="0014_2.png" path="/images/example2/"/>
+    <image id="r3754f" name="0015_2.png" path="/images/example2/"/>
+    <image id="r3754g" name="0016_2.png" path="/images/example2/"/>
+    <image id="r3754h" name="003_2.png" path="/images/example2/"/>
+    <image id="r3754i" name="004_2.png" path="/images/example2/"/>
+    <image id="r3754j" name="005_2.png" path="/images/example2/"/>
+    <sound id="r3754k" name="click.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754l" name="drag.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754m" name="game.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754n" name="ready.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754o" name="star.mp3" path="/audios/" exported="true"/>
+    <sound id="r3754p" name="wrong.mp3" path="/audios/" exported="true"/>
+    <component id="nrfy4q" name="food_1.xml" path="/components/" exported="true"/>
+    <component id="nrfy4r" name="food_2.xml" path="/components/" exported="true"/>
+    <component id="nrfy4s" name="food_3.xml" path="/components/" exported="true"/>
+    <component id="nrfy4t" name="food_4.xml" path="/components/" exported="true"/>
+    <image id="ku3l4v" name="001.png" path="/images/example3/"/>
+    <image id="ku3l4x" name="003.png" path="/images/example3/"/>
+    <image id="ku3l4y" name="004.png" path="/images/example3/"/>
+    <image id="ku3l50" name="005.png" path="/images/example3/"/>
+    <image id="ku3l51" name="006.png" path="/images/example3/"/>
+    <image id="ku3l53" name="007.png" path="/images/example3/"/>
+    <image id="ku3l54" name="008.png" path="/images/example3/"/>
+    <image id="ku3l56" name="009.png" path="/images/example3/"/>
+    <image id="ku3l57" name="icon_yg.png" path="/images/example3/"/>
+    <component id="ku3l5b" name="choose-model03-v2-p8.xml" path="/" exported="true"/>
+    <image id="ku3l5c" name="0010.png" path="/images/example3/"/>
+    <image id="ku3l5d" name="004_2.png" path="/images/example3/"/>
+    <image id="ku3l5e" name="007_2.png" path="/images/example3/"/>
+    <image id="ku3l5f" name="009_2.png" path="/images/example3/"/>
+    <component id="uqx55h" name="choose.xml" path="/buttons/"/>
+    <component id="uqx55i" name="choose-model03-v2-p9.xml" path="/" exported="true"/>
+    <image id="uqx55j" name="0011.png" path="/images/example3/"/>
+    <image id="uqx55k" name="0011_2.png" path="/images/example3/"/>
+    <image id="uqx55l" name="0012.png" path="/images/example3/"/>
+    <image id="uqx55m" name="0013.png" path="/images/example3/"/>
+    <image id="uqx55n" name="0013_2.png" path="/images/example3/"/>
+    <image id="uqx55o" name="0014.png" path="/images/example3/"/>
+    <image id="uqx55p" name="0015.png" path="/images/example3/"/>
+    <image id="uqx55q" name="0016.png" path="/images/example3/"/>
+    <image id="uqx55r" name="0016_2.png" path="/images/example3/"/>
+    <image id="uqx55s" name="3-1.png" path="/images/example3/"/>
+    <component id="uqx55t" name="choose-model03-v2-p10.xml" path="/" exported="true"/>
+    <image id="uqx55u" name="0017.png" path="/images/example3/"/>
+    <image id="uqx55v" name="0018.png" path="/images/example3/"/>
+    <image id="uqx55w" name="0019.png" path="/images/example3/"/>
+    <image id="uqx55x" name="0020.png" path="/images/example3/"/>
+    <image id="uqx55y" name="0021.png" path="/images/example3/"/>
+    <image id="uqx55z" name="0022.png" path="/images/example3/"/>
+    <image id="uqx560" name="0023.png" path="/images/example3/"/>
+    <image id="uqx561" name="0024.png" path="/images/example3/"/>
+    <image id="uqx562" name="0025.png" path="/images/example3/"/>
+    <image id="uqx56d" name="001.png" path="/images/tuozhan/"/>
+    <image id="uqx56e" name="001_2.png" path="/images/tuozhan/"/>
+    <image id="uqx56f" name="002.png" path="/images/tuozhan/"/>
+    <image id="uqx56g" name="003.png" path="/images/tuozhan/"/>
+    <image id="uqx56h" name="004.png" path="/images/tuozhan/"/>
+    <image id="uqx56i" name="004_2.png" path="/images/tuozhan/"/>
+    <image id="uqx56j" name="005.png" path="/images/tuozhan/"/>
+    <image id="uqx56k" name="006.png" path="/images/tuozhan/"/>
+    <image id="uqx56l" name="007.png" path="/images/tuozhan/"/>
+    <image id="uqx56m" name="007_2.png" path="/images/tuozhan/"/>
+    <component id="uqx56n" name="choose-model03-v2-p11.xml" path="/" exported="true"/>
+    <image id="uqx56o" name="0024.png" path="/images/"/>
+    <image id="uqx56p" name="0025.png" path="/images/"/>
+    <component id="uqx56q" name="static-model01-v1-p1.xml" path="/" exported="true"/>
+    <component id="uqx56s" name="static-model01-v1-p12.xml" path="/" exported="true"/>
+    <component id="uqx56t" name="choose-model03-v2-p5.xml" path="/" exported="true"/>
+    <component id="uqx56u" name="choose-model03-v2-p7.xml" path="/" exported="true"/>
+    <component id="uqx56v" name="food_1_1.xml" path="/components/" exported="true"/>
+    <component id="uqx56w" name="food_2_1.xml" path="/components/" exported="true"/>
+    <component id="uqx56x" name="food_3_1.xml" path="/components/" exported="true"/>
+    <misc id="gzaz6y" name="T2-02art1.atlas" path="/animations/T2-02art_export/" exported="true"/>
+    <image id="gzaz70" name="T2-02art1.png" path="/animations/T2-02art_export/" exported="true"/>
+    <spine id="gzaz6z" name="T2-02art1.json" path="/animations/T2-02art_export/" exported="true" width="294" height="451" require="gzaz6y,gzaz70" atlasNames="T2-02art1" anchor="139,314"/>
+    <misc id="gzaz71" name="T2-02art2.atlas" path="/animations/T2-02art_export/" exported="true"/>
+    <image id="gzaz73" name="T2-02art2.png" path="/animations/T2-02art_export/" exported="true"/>
+    <spine id="gzaz72" name="T2-02art2.json" path="/animations/T2-02art_export/" exported="true" width="268" height="235" require="gzaz71,gzaz73" atlasNames="T2-02art2" anchor="139,95"/>
+    <misc id="gzaz74" name="T2-02art3.atlas" path="/animations/T2-02art_export/" exported="true"/>
+    <image id="gzaz76" name="T2-02art3.png" path="/animations/T2-02art_export/" exported="true"/>
+    <spine id="gzaz75" name="T2-02art3.json" path="/animations/T2-02art_export/" exported="true" width="421" height="435" require="gzaz74,gzaz76" atlasNames="T2-02art3" anchor="160,347"/>
+    <component id="gzaz77" name="food_1_2.xml" path="/components/" exported="true"/>
+    <component id="gzaz78" name="food_2_2.xml" path="/components/" exported="true"/>
+    <component id="gzaz79" name="food_3_2.xml" path="/components/" exported="true"/>
+    <image id="gzaz7a" name="0031.png" path="/images/example2/"/>
+    <image id="gzaz7b" name="0032.png" path="/images/example2/"/>
+    <image id="gzaz7c" name="0033.png" path="/images/example2/"/>
+    <image id="gzaz7d" name="0034.png" path="/images/example2/"/>
+    <sound id="gzaz7e" name="boy.mp3" path="/audios/example2_1/" exported="true"/>
+    <sound id="gzaz7f" name="girl.mp3" path="/audios/example2_1/" exported="true"/>
+    <sound id="gzaz7g" name="boy.mp3" path="/audios/example2_2/" exported="true"/>
+    <sound id="gzaz7h" name="girl.mp3" path="/audios/example2_2/" exported="true"/>
+    <sound id="gzaz7i" name="001.mp3" path="/audios/example3_1/" exported="true"/>
+    <sound id="gzaz7j" name="001.mp3" path="/audios/example3_2/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>
