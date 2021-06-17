@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="c2" pages="0,,1," selected="0"/>
+  <controller name="c2" pages="0,,1," selected="1"/>
   <controller name="c1" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n33_11bm1" name="n33" src="yvac9s" fileName="images/0112.png" xy="0,0" group="n21_cp1h"/>
@@ -33,31 +33,31 @@
       <gearDisplay controller="c2" pages="1"/>
     </image>
     <group id="n20_cp1h" name="collideredBox" xy="20,620" size="1880,456" advanced="true"/>
-    <component id="n11_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="403,402" pivot="0.5,0.5" anchor="true" size="250,120" group="n19_cp1h">
+    <component id="n11_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="403,402" pivot="0.5,0.5" anchor="true" size="180,140" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvaca6"/>
     </component>
-    <component id="n12_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="486,200" pivot="0.5,0.5" anchor="true" size="115,115" group="n19_cp1h">
+    <component id="n12_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="486,200" pivot="0.5,0.5" anchor="true" size="160,130" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac91"/>
     </component>
-    <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="1250,230" pivot="0.5,0.5" anchor="true" size="115,115" group="n19_cp1h">
+    <component id="n13_cp1h" name="22" src="yvacdc" fileName="components/dragbutton.xml" xy="1202,212" pivot="0.5,0.5" anchor="true" size="160,130" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac91"/>
     </component>
-    <component id="n14_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="869,209" pivot="0.5,0.5" anchor="true" size="170,175" group="n19_cp1h">
+    <component id="n14_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="869,209" pivot="0.5,0.5" anchor="true" size="160,145" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac92"/>
     </component>
-    <component id="n16_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="755,409" pivot="0.5,0.5" anchor="true" size="175,80" group="n19_cp1h">
+    <component id="n16_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="755,409" pivot="0.5,0.5" anchor="true" size="160,130" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvaca7"/>
     </component>
-    <component id="n15_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1096,410" pivot="0.5,0.5" anchor="true" size="170,175" group="n19_cp1h">
+    <component id="n15_cp1h" name="12" src="yvacdc" fileName="components/dragbutton.xml" xy="1096,410" pivot="0.5,0.5" anchor="true" size="160,145" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvac92"/>
     </component>
-    <component id="n17_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1466,414" pivot="0.5,0.5" anchor="true" size="175,80" group="n19_cp1h">
+    <component id="n17_cp1h" name="21" src="yvacdc" fileName="components/dragbutton.xml" xy="1466,414" pivot="0.5,0.5" anchor="true" size="160,130" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvaca7"/>
     </component>
-    <component id="n18_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="1497,210" pivot="0.5,0.5" anchor="true" size="165,140" group="n19_cp1h">
+    <component id="n18_cp1h" name="11" src="yvacdc" fileName="components/dragbutton.xml" xy="1497,210" pivot="0.5,0.5" anchor="true" size="180,140" group="n19_cp1h">
       <Button icon="ui://1io1z8o5yvaca6"/>
     </component>
-    <group id="n19_cp1h" name="colliderBox" xy="278,121" size="1301,376" advanced="true"/>
+    <group id="n19_cp1h" name="colliderBox" xy="313,135" size="1274,347" advanced="true"/>
     <component id="n6_cp1h" name="submit" src="cp1he3" fileName="components/submit2.xml" xy="842,724" size="240,240">
       <Button icon="ui://1io1z8o5cp1he2" sound="ui://1io1z8o5xmwddu"/>
     </component>

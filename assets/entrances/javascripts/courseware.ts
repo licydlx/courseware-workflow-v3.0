@@ -28,6 +28,7 @@ export default class t3_courseware extends cc.Component {
     private _controllerJs: any;
 
     async onLoad() {
+
         let configJson: any;
         if (this.test) {
             // 本地测试
@@ -53,8 +54,8 @@ export default class t3_courseware extends cc.Component {
 
         if (this.test) {
             this._controllerJs.onJumpConfig(1);
-        }      
-	    cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+        }
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         // cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
         this._controllerJs._toPage = 1;
     }
@@ -72,7 +73,7 @@ export default class t3_courseware extends cc.Component {
                 if (this._controllerJs._toPage >= this.configJson.json.totalPages) return;
                 this._controllerJs.onJumpConfig(++this._controllerJs._toPage);
                 break;
-            default: break ;
+            default: break;
         }
     }
 

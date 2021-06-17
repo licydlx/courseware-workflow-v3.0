@@ -141,6 +141,8 @@
     <image id="11vn31fv" name="tishi_di_1.png" path="/images/"/>
     <image id="11vn31fw" name="ti_shi_number_1.png" path="/images/"/>
     <image id="11vn31fx" name="ti_shi_number_2.png" path="/images/"/>
+    <sound id="gzaz31fy" name="example1_2.mp3" path="/audios/"/>
+    <image id="gzaz31fz" name="01160.png" path="/images/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

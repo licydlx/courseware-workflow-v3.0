@@ -284,7 +284,6 @@
         "bundleName": "dragAnswer",
         "prefabName": "dragAnswer-model04-v3",
         "config": {
-          "isNeedTiltPos": true,
           "answer": [],
           "ae": {
             "handleGuide": {

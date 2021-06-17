@@ -37,6 +37,8 @@ export default class choose_model03_v2 extends cc.Component {
     /** 我自己的对象池 */
     private myFoodPools: any = [];
 
+    private _foodTag: number = 1;
+
     private _rightIndexs: any = [];
 
     private _dropSpeed: number = 2.5;
@@ -50,10 +52,21 @@ export default class choose_model03_v2 extends cc.Component {
     private _gameMusic: cc.AudioClip;
     private _wrongSound: cc.AudioClip;
     private _rightSound: cc.AudioClip;
+    private _readySound: cc.AudioClip;
 
     private _boySound: string;
     private _girlSound: string;
 
+    private _boy3D: fgui.GLoader3D;
+
+    private _girl3D: fgui.GLoader3D;
+
+    private _readyGroup: fgui.GGroup;
+    private _ready: fgui.GImage;
+    private _go: fgui.GImage;
+    private _over: fgui.GGroup;
+
+    private _clickTotalLimit: number = 0.5;
 
     private feedbackType: any = cc.Enum({
 
@@ -101,13 +114,27 @@ export default class choose_model03_v2 extends cc.Component {
         this.timeText = this._view.getChild("n32").asLabel;
         this.timeText.text = this._gameTime + '';
 
-        let boy = this._view.getChild("boy").asButton;
-        this._boySound = fgui.UIPackage.getItemByURL(boy.sound).file;
-        boy.on(fgui.Event.CLICK, this._clickElves, this);
+        this._readyGroup = this._view.getChild('readyGroup').asGroup;
+        this._ready = this._view.getChild('ready').asImage;
+        this._go = this._view.getChild('go').asImage;
+        this._over = this._view.getChild('over').asGroup;
 
-        let girl = this._view.getChild("girl").asButton;
-        this._girlSound = fgui.UIPackage.getItemByURL(girl.sound).file;
-        girl.on(fgui.Event.CLICK, this._clickElves, this);
+        this._readyGroup.visible = false;
+        this._ready.visible = false;
+        this._go.visible = false;
+        this._over.visible = false;
+
+        this._boy3D = this._view.getChild('boy') as fgui.GLoader3D;
+        this._girl3D = this._view.getChild('girl') as fgui.GLoader3D;
+
+        this._boy3D.url = "ui://733aoo45gzaz6z";
+        this._girl3D.url = "ui://733aoo45gzaz6z";
+
+        this._boy3D.animationName = 'b_idle';
+        this._girl3D.animationName = 'g_idle';
+
+        this._boy3D.on(fgui.Event.CLICK, this._clickElves, this);
+        this._girl3D.on(fgui.Event.CLICK, this._clickElves, this);
 
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
@@ -136,6 +163,12 @@ export default class choose_model03_v2 extends cc.Component {
             }
         }
 
+        let rigthTotalTemp = {};
+        let temp = {};
+        for (let i = 0; i < this._rightIndexs.length; i++) {
+            temp = { 'clickTotle': 0, 'showTotal': 0, 'percent': 0 };
+            rigthTotalTemp[this._rightIndexs[i]] = temp;
+        }
         // 初始化state
         this._state = {
             title: false,
@@ -146,7 +179,8 @@ export default class choose_model03_v2 extends cc.Component {
             gameStart: false,
             submitFeedback: this.feedbackType.No,
             gameTime: 0,
-            clickTotal: 0,
+            clickFoodTag: -1,
+            rigthTotal: rigthTotalTemp,
         }
     }
 
@@ -155,7 +189,7 @@ export default class choose_model03_v2 extends cc.Component {
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
         let GComponent = model.uiPath;
-        let { gameFood, rightIndexs } = model.config;
+        let { gameFood, rightIndexs, boySoundPath, girlSoundPath } = model.config;
         this._package = Package;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
@@ -172,14 +206,12 @@ export default class choose_model03_v2 extends cc.Component {
         item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754o');
         this._rightSound = await loadResource(item.file, cc.AudioClip);
 
-        // 动效注册
-        // for (let v in ae) {
-        //     if (ae[v]) {
-        //         this[v] = {};
-        //         if (ae[v].component) this[v].component = fgui.UIPackage.createObject(Package, ae[v].component).asCom;
-        //         if (ae[v].pos) this[v].pos = ae[v].pos;
-        //     }
-        // }
+        this._boySound = fgui.UIPackage.getItemByURL(boySoundPath).file;
+
+        this._girlSound = fgui.UIPackage.getItemByURL(girlSoundPath).file;
+
+        item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754n');
+        this._readySound = await loadResource(item.file, cc.AudioClip);
 
         if (components) {
             for (const key in components) {
@@ -197,55 +229,17 @@ export default class choose_model03_v2 extends cc.Component {
 
             return;
         }
+        this._gameTime++;
 
-        let state: any = globalThis._.cloneDeep(this._state);
-        if (state.gameTime >= 60 * 15) {
-            this._interTime = 0;
-            state.gameOver = true;
-            state.gameTime = 0;
-            if (state.clickTotal >= 5) {
-
-                state.submitFeedback = this.feedbackType.RightFeed;
-            } else {
-                state.submitFeedback = this.feedbackType.WrongFeed;
-            }
+        if (this._gameTime === 2) {
+            this._gameTime = 0;
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.gameTime++;
             this.updateState(state);
-            return;
         }
-        state.gameTime++;
-        this._interTime++;
-        if (state.gameTime <= 5 * 60) {
-
-            this._dropSpeed = 2.5; // 2.5 ----> 60*1.5
-            this._interTimeLimit = 60 * 1.5;
-
-        } else if (state.gameTime > 5 * 60 && state.gameTime <= 10 * 60) {
-
-            this._dropSpeed = 2.1; //2.0 ----> 60 * 0.6
-            this._interTimeLimit = 60 * 0.7;
-
-        } else if (state.gameTime > 10 * 60) {
-
-            this._dropSpeed = 1.8; // 1.8 ----> 60 * 0.4
-            this._interTimeLimit = 60 * 0.5;
-        }
-        if (this._interTime >= this._interTimeLimit) {
-            this._interTime = 0;
-            // 获取正确字母数组中的2个字母 可均衡获取0到length的随机整数。
-            let randIndex: number = Math.floor(Math.random() * this._gameFood.length);
-            this.foodDropAnimate(randIndex);
-        }
-        this.timeText.text = parseInt(state.gameTime / 60 + '') + 's';
-        this.updateState(state);
     }
 
-    private foodDropAnimate(index: number) {
-
-        if (!this._gameStart || this._gameOver) {
-
-            return;
-        }
-        console.log('==== length ====' + this.myFoodPools.length);
+    private foodDropAnimate(index: number, state: any) {
 
         let isHave = false;
         let food = null;
@@ -254,32 +248,38 @@ export default class choose_model03_v2 extends cc.Component {
             if (this.myFoodPools[i].data.index === index && !this.myFoodPools[i].data.isShow) {
                 isHave = true;
                 food = this.myFoodPools[i];
-                food.data.isShow = true;
-                food.data.total++;
+                let temp111 = { index: food.data.index, isShow: true, total: food.data.total + 1, tag: food.data.tag };
+                food.data = temp111;
                 break;
             }
         }
+
         if (!isHave) {
             food = fgui.UIPackage.createObject(this._package, this._gameFood[index]).asButton;
             food.on(fgui.Event.CLICK, this._clickDropFood, this);
+            let totalInit = 1;
+            let isHa = false;
+            for (let i = 0; i < this.myFoodPools.length; i++) {
 
-            let temp = { index: index, isShow: true, total: 1 };
+                if (this.myFoodPools[i].data.index === index) {
+                    isHa = true;
+                    totalInit = this.myFoodPools[i].data.total + 1;
+                    break;
+                }
+
+            }
+            let temp = { index: index, isShow: true, total: totalInit, tag: this._foodTag };
             food.data = temp;
             this._view.addChild(food);
             this.myFoodPools.push(food);
+            this._foodTag++;
         }
+
         // 1058 ----1693 Math.floor(Math.random()*(max-min+1)+min)
-        let randPosX: number = Math.floor(Math.random() * (1693 - 1058 + 1) + 1058);
+        let randPosX: number = Math.floor(Math.random() * (1685 - 1065 + 1) + 1065);
         food.x = randPosX;
         food.y = 100;
         food.visible = true;
-
-        if (food.data.index === 0) {
-
-            console.log('==== 蛋糕次数 ====' + food.data.total);
-        } else if (food.data.index === 1) {
-            console.log('==== 薯条次数 ====' + food.data.total);
-        }
 
         cc.tween(food)
             .to(this._dropSpeed, { x: food.x, y: 970 })
@@ -290,49 +290,30 @@ export default class choose_model03_v2 extends cc.Component {
 
             })
             .start();
+
+
+        for (let i = 0; i < this._rightIndexs.length; i++) {
+
+            if (this._rightIndexs[i] === index) {
+
+                let state1: any = globalThis._.cloneDeep(this._state);
+                state1.rigthTotal[index].showTotal = food.data.total;
+                console.log('==== AAAAAAAA ===' + state1.rigthTotal[index].showTotal + '== index ==' + index);
+                this.updateState(state1);
+                break;
+            }
+        }
+
     }
 
     private _clickDropFood(evt: any) {
 
+        let state: any = globalThis._.cloneDeep(this._state);
+
         let obj: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         let btn = obj.asButton;
-        // 是正确的
-        let isRight = false;
-        for (let i = 0; i < this._rightIndexs.length; i++) {
-            if (btn.data.index === this._rightIndexs[i]) {
-                isRight = true;
-                break;
-            }
-        }
-        if (isRight) {
-
-            //点击正确
-            btn.icon = 'ui://733aoo45r3753l';
-            btn.data.isShow = true;
-            cc.tween(this)
-                .delay(0.1)
-                .call(() => {
-
-                    for (let i = 0; i < this.myFoodPools.length; i++) {
-                        if (this.myFoodPools[i] === btn) {
-                            this.myFoodPools.splice(i, 1);
-                            btn.removeFromParent();
-                            break;
-                        }
-                    }
-                })
-                .start()
-            cc.audioEngine.playEffect(this._rightSound, false);
-
-            let state: any = globalThis._.cloneDeep(this._state);
-            state.clickTotal++;
-            this.updateState(state);
-        } else {
-
-            //点击错误
-            cc.audioEngine.playEffect(this._wrongSound, false);
-
-        }
+        state.clickFoodTag = btn.data.tag;
+        this.updateState(state);
 
     }
 
@@ -354,7 +335,6 @@ export default class choose_model03_v2 extends cc.Component {
     private _clickStartPlay(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
         state.play = true;
-        state.gameStart = true;
         this.updateState(state);
     }
 
@@ -398,10 +378,11 @@ export default class choose_model03_v2 extends cc.Component {
                     this.myFoodPools[i].removeFromParent();
                 }
                 this.myFoodPools = [];
+                this._foodTag = 1;
                 cc.audioEngine.playMusic(this._gameMusic, true);
-                // 第一个开始
+
                 let randIndex: number = Math.floor(Math.random() * this._gameFood.length);
-                this.foodDropAnimate(randIndex);
+                this.foodDropAnimate(randIndex, state);
 
             } else {
                 let boy = this._view.getChild("boy").asButton;
@@ -416,7 +397,28 @@ export default class choose_model03_v2 extends cc.Component {
 
             if (state.play) {
                 this._playBtn.visible = false;
+                this._readyGroup.visible = true;
+                this._ready.visible = true;
+                cc.tween(this)
+                    .delay(0.7)
+                    .call(() => {
+                        this._go.visible = true;
+                        this._ready.visible = false;
+                    })
+                    .start();
+
+                let audioId = cc.audioEngine.play(this._readySound, false, 1);
+                cc.audioEngine.setFinishCallback(audioId, () => {
+
+                    this._readyGroup.visible = false;
+
+                    let state1: any = globalThis._.cloneDeep(this._state);
+                    state1.gameStart = true;
+                    this.updateState(state1);
+                });
+
             } else {
+                this._readyGroup.visible = false;
                 this._playBtn.visible = true;
             }
         }
@@ -429,6 +431,74 @@ export default class choose_model03_v2 extends cc.Component {
                 let girl = this._view.getChild("girl").asButton;
                 boy.touchable = false;
                 girl.touchable = false;
+                this._over.visible = true;
+            } else {
+
+                this._over.visible = false;
+            }
+        }
+
+        if (!globalThis._.isEqual(oldState.clickFoodTag, state.clickFoodTag)) {
+
+            if (state.clickFoodTag) {
+
+                let btn = null;
+                for (let i = 0; i < this.myFoodPools.length; i++) {
+
+                    if (state.clickFoodTag === this.myFoodPools[i].data.tag) {
+                        btn = this.myFoodPools[i];
+                        break;
+                    }
+                }
+
+                if (btn) {
+
+                    // 是正确的
+                    let isRight = false;
+                    for (let i = 0; i < this._rightIndexs.length; i++) {
+                        if (btn.data.index === this._rightIndexs[i]) {
+                            isRight = true;
+                            break;
+                        }
+                    }
+                    if (isRight) {
+
+                        //点击正确
+                        btn.icon = 'ui://733aoo45r3753l';
+                        btn.data.isShow = true;
+                        cc.tween(this)
+                            .delay(0.15)
+                            .call(() => {
+
+                                let indexTemp = btn.data.index;
+
+                                for (let i = 0; i < this.myFoodPools.length; i++) {
+                                    if (this.myFoodPools[i] === btn) {
+                                        this.myFoodPools.splice(i, 1);
+                                        btn.removeFromParent();
+                                        break;
+                                    }
+                                }
+
+                                let state2: any = globalThis._.cloneDeep(this._state);
+                                state2.rigthTotal[indexTemp].clickTotle++;
+                                this.updateState(state2);
+
+                            })
+                            .start()
+                        cc.audioEngine.playEffect(this._rightSound, false);
+
+
+
+                    } else {
+
+                        //点击错误
+                        cc.audioEngine.playEffect(this._wrongSound, false);
+
+                    }
+                }
+
+
             }
 
         }
@@ -457,9 +527,66 @@ export default class choose_model03_v2 extends cc.Component {
             }
         }
 
+
+        if (!globalThis._.isEqual(oldState.gameTime, state.gameTime)) {
+            if (state.gameTime >= 60 * 15) {
+
+                let state1: any = globalThis._.cloneDeep(this._state);
+                let isFail = false;
+                for (var key in state.rigthTotal) {
+
+                    state.rigthTotal[key].percent = state.rigthTotal[key].clickTotle / state.rigthTotal[key].showTotal;
+                    if (state.rigthTotal[key].percent <= 0.5) {
+                        isFail = true;
+                        break;
+                    }
+                }
+
+                if (isFail) {
+
+                    state1.submitFeedback = this.feedbackType.WrongFeed;
+
+                } else {
+
+                    state1.submitFeedback = this.feedbackType.RightFeed;
+
+                }
+
+                state1.gameOver = true;
+                this.updateState(state1);
+                return;
+            }
+
+            this._interTime++;
+            if (state.gameTime <= 5 * 60) {
+
+                this._dropSpeed = 3.0; // 2.5 ----> 60*1.5
+                this._interTimeLimit = 60 * 1.5;
+
+            } else if (state.gameTime > 5 * 60 && state.gameTime <= 10 * 60) {
+
+                this._dropSpeed = 2.3;
+                //2.0 ----> 60 * 0.6
+                this._interTimeLimit = 60 * 0.7;
+
+            } else if (state.gameTime > 10 * 60) {
+
+                this._dropSpeed = 1.8; // 1.8 ----> 60 * 0.4
+                this._interTimeLimit = 60 * 0.5;
+            }
+            if (this._interTime >= this._interTimeLimit) {
+                this._interTime = 0;
+                // 获取正确字母数组中的2个字母 可均衡获取0到length的随机整数。
+                let randIndex: number = Math.floor(Math.random() * this._gameFood.length);
+                this.foodDropAnimate(randIndex, state);
+            }
+            this.timeText.text = parseInt(state.gameTime / 60 + '') + 's';
+        }
+
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
         }
+
     }
 
 
@@ -499,11 +626,12 @@ export default class choose_model03_v2 extends cc.Component {
         if (rightSoundFile[curIndex].sex === 1) {
 
             foodArr = this._boyFood;
+            this._boy3D.animationName = 'b_speak';
 
         } else {
             foodArr = this._girlFood;
+            this._girl3D.animationName = 'g_speak';
         }
-        this.playFoodShowAnimate(0, foodArr);
 
         cc.tween(this)
             .delay(0.5)
@@ -517,6 +645,15 @@ export default class choose_model03_v2 extends cc.Component {
         let audio: cc.AudioClip = await loadResource(rightSoundFile[curIndex].file, cc.AudioClip);
         let audioId = cc.audioEngine.play(audio, false, 1);
         cc.audioEngine.setFinishCallback(audioId, () => {
+
+            if (rightSoundFile[curIndex].sex === 1) {
+
+                this._boy3D.animationName = 'b_idle';
+
+            } else {
+                this._girl3D.animationName = 'g_idle';
+            }
+
             if (curIndex >= rightSoundFile.length - 1) {
                 this.disableForbidHandle();
                 this._c2.selectedIndex = 0;
@@ -543,11 +680,10 @@ export default class choose_model03_v2 extends cc.Component {
     playFoodShowAnimate(index: number, foodArr: any) {
 
         cc.tween(foodArr[index])
-            .to(0.5, { alpha: 1 })
+            .to(1.0, { alpha: 1 })
             .call(() => {
                 index++;
                 if (index < foodArr.length) {
-                    console.log('=== index ===' + index)
                     this.playFoodShowAnimate(index, foodArr);
                 }
             })
@@ -557,7 +693,6 @@ export default class choose_model03_v2 extends cc.Component {
 
     answerFeedback(bool: boolean) {
         if (!this.feedback) return;
-        let state: any = globalThis._.cloneDeep(this._state);
         let feedback: any = cc.instantiate(this.feedback);
         feedback.x = 960;
         feedback.y = 540;
@@ -568,7 +703,6 @@ export default class choose_model03_v2 extends cc.Component {
         setTimeout(() => {
             feedback.destroy();
             let state: any = globalThis._.cloneDeep(this._state);
-            state.clickTotal = 0;
             state.submitFeedback = this.feedbackType.No;
             this.updateState(state);
         }, 2000);

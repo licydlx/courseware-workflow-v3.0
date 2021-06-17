@@ -31,7 +31,20 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v1",
                 "config": {
-                    
+                    "isAnimateShow": true,
+                    "soundFile": {"piano": "ui://733aoo45w2qd18", "gu": "ui://733aoo45w2qd16", "shachui": "ui://733aoo45w2qd1a", "dizi": "ui://733aoo45w2qd17", "sanjiaotie": "ui://733aoo45w2qd19" },
+                    "rightSoundFile": ["ui://733aoo45w2qd18", "ui://733aoo45w2qd16"],
+                    "animateName":{"piano": {"idle": "05gangqin_idle", "play": "05gangqin_play", "skin": "05gangqin"},"gu": {"idle": "01gu_idle", "play": "01gu_play", "skin": "01gu"},"shachui": {"idle": "02shacui_idle", "play": "02shacui_play", "skin": "02shacui"},
+                    "dizi": {"idle": "03dizi_idle", "play": "03dizi_play", "skin": "03dizi"},
+                    "sanjiaotie": {"idle": "04qiaojibang_idle", "play": "04qiaojibang_play", "skin": "04qiaojibang"}},
+                    "rightName": ["piano", "gu"],
+                    "optionsRect":{
+                     "piano": {"x": 1237, "y": 653, "width":260, "height": 220},
+                     "gu": {"x": 495, "y": 200, "width":260, "height": 220},
+                      "shachui": {"x": 1205, "y": 190, "width":260, "height": 220}, 
+                      "dizi": {"x": 850, "y": 440, "width":260, "height": 220}, 
+                      "sanjiaotie": {"x": 520, "y": 695, "width":260, "height": 220}
+                    }
                 }
             }, 
             
@@ -49,7 +62,14 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v1",
                 "config": {
-                    
+
+                    "rightName": ["piano", "gu"],
+
+                    "optionsRect": {"piano": {"x": 1205, "y": 190, "width":260, "height": 220},
+                     "gu": {"x": 850, "y": 440, "width":260, "height": 220},
+                      "shachui": {"x": 520, "y": 695, "width":260, "height": 220}, 
+                      "dizi": {"x": 1237, "y": 653, "width":260, "height": 220}, 
+                      "sanjiaotie": {"x": 495, "y": 200, "width":260, "height": 220}}
                 }
             }, 
             
@@ -68,6 +88,12 @@
                 "prefabName": "choose-model03-v1",
                 "config": {
                     
+                    "rightName": ["piano", "gu"],
+                    "optionsRect": {"piano": {"x": 850, "y": 440, "width":260, "height": 220}, 
+                     "gu": {"x": 520, "y": 695, "width":260, "height": 220},
+                      "shachui": {"x": 495, "y": 200, "width":260, "height": 220}, 
+                      "dizi": {"x": 1205, "y": 190, "width":260, "height": 220}, 
+                      "sanjiaotie": {"x": 1237, "y": 653, "width":260, "height": 220}}
                 }
             }, 
             
@@ -85,9 +111,10 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v2",
                 "config": {
-
                     "gameFood": ["food_1", "food_2", "food_3", "food_4"],
-                    "rightIndexs": [0, 1]
+                    "rightIndexs": [0, 1],
+                    "boySoundPath": "ui://733aoo45w2qd1c",
+                    "girlSoundPath": "ui://733aoo45w2qd1d"
                     
                 }
             }, 
@@ -106,9 +133,33 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v2",
                 "config": {
-
                     "gameFood": ["food_1_1", "food_2_1", "food_3_1"],
-                    "rightIndexs": [0]
+                    "rightIndexs": [0],
+                    "boySoundPath": "ui://733aoo45gzaz7e",
+                    "girlSoundPath": "ui://733aoo45gzaz7f"
+                    
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "choose-model03-v2-p7",
+                "bundleName": "choose",
+                "prefabName": "choose-model03-v2",
+                "config": {
+
+                    "gameFood": ["food_1_2", "food_2_2", "food_3_2"],
+                    "rightIndexs": [1],
+                    "boySoundPath": "ui://733aoo45gzaz7g",
+                    "girlSoundPath": "ui://733aoo45gzaz7h"
                     
                 }
             }, 
@@ -150,7 +201,7 @@
                 "prefabName": "choose-model03-v3",
                 "config": {
 
-                    "boxSoundUrl": "ui://733aoo45w2qd1z",
+                    "boxSoundUrl": "ui://733aoo45gzaz7i",
                     "guidIndex": 2
                     
                 }
@@ -171,7 +222,7 @@
                 "prefabName": "choose-model03-v3",
                 "config": {
 
-                    "boxSoundUrl": "ui://733aoo45w2qd21",
+                    "boxSoundUrl": "ui://733aoo45gzaz7j",
 
                     "guidIndex": 0
                     

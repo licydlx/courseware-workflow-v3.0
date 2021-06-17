@@ -1,3 +1,4 @@
+
 /*
  * @Descripttion: 
  * @version: 
@@ -21,9 +22,9 @@ export default class choose_model03_v1 extends cc.Component {
     private _titleTrigger: fgui.GLoader;
 
     // 选项集合
-    private _options = [];
+    private _options = {};
 
-    private _selectLights = [];
+    private _lightSelect = {};
 
     private _rightSoundFile = [];
 
@@ -31,13 +32,25 @@ export default class choose_model03_v1 extends cc.Component {
 
     private _magicPenData = [];
 
-    private _optionsRect = [];
+    private _optionsRect = {};
 
     private _package: any;
 
     private _maskBg: fgui.GGraph;
 
     private _labaguai: fgui.GButton;
+
+    private _isAnimateShow: boolean = false;
+
+    private _soundFile = {};
+
+    private _animateName = {};
+
+    private _rigthName = [];
+
+    private _clickSound: cc.AudioClip;
+
+    private _dragSound: cc.AudioClip;
 
     private submitType: any = cc.Enum({
 
@@ -79,7 +92,7 @@ export default class choose_model03_v1 extends cc.Component {
         }
 
         this._maskBg = this._view.getChild("maskBg").asGraph;
-        this._maskBg.visible = true;
+        this._maskBg.visible = false;
 
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
@@ -92,30 +105,44 @@ export default class choose_model03_v1 extends cc.Component {
 
         for (let i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == optionGroup) {
-                let btn: fgui.GButton = this._view.getChildAt(i).asButton;
-                btn.on(fgui.Event.CLICK, this._clickOption, this);
-                this._options.push(btn);
+                let btn = null;
+                if (this._isAnimateShow) {
 
-                let tempRect = new cc.Rect(btn.x - btn.width / 2, btn.y - btn.height / 2, btn.width, btn.height);
-                this._optionsRect.push(tempRect);
+                    btn = this._view.getChildAt(i) as fgui.GLoader3D;
+                    btn.animationName = this._animateName[btn.name].idle;
+                    btn.skinName = this._animateName[btn.name].skin;
+                    btn.url = "ui://733aoo45gzaz72";
 
-                if (this._options.length <= 2) {
-                    let item = fgui.UIPackage.getItemByURL(btn.sound);
-                    this._rightSoundFile.push(item.file);
+                } else {
+                    btn = this._view.getChildAt(i).asButton;
                 }
+
+                btn.on(fgui.Event.CLICK, this._clickOption, this);
+                this._options[btn.name] = btn;
+
+                if (!this._isAnimateShow) {
+
+                    if (Object.keys(this._options).length <= 2) {
+                        let item = fgui.UIPackage.getItemByURL(btn.sound);
+                        this._rightSoundFile.push(item);
+                    }
+                }
+
             }
         }
 
         let lightGroup = this._view.getChild("selectLight").asGroup;
+        let tempLight = {};
 
         for (let i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == lightGroup) {
                 let node: fgui.GImage = this._view.getChildAt(i).asImage;
                 node.visible = false;
-                this._selectLights.push(node);
+                let subName = node.name.substring(0, node.name.indexOf('_'));
+                this._lightSelect[subName] = node;
+                tempLight[subName] = false;
             }
         }
-
 
         this._labaguai = this._view.getChild("labaguai").asButton;
         if (this._labaguai) this._labaguai.on(fgui.Event.CLICK, this._clickLaBaGuai, this);
@@ -135,7 +162,8 @@ export default class choose_model03_v1 extends cc.Component {
             laBaGuaiPlay: false,
             submit: false,
             move: false,
-            lightSelect: []
+            lightSelect: tempLight,
+            clickPlayName: ''
         }
 
         // 临时 
@@ -151,19 +179,38 @@ export default class choose_model03_v1 extends cc.Component {
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
         let GComponent = model.uiPath;
-        let { type, ae } = model.config;
+        let { isAnimateShow, soundFile, rightSoundFile, animateName, rightName, optionsRect } = model.config;
         this._package = Package;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
 
-        // 动效注册
-        // for (let v in ae) {
-        //     if (ae[v]) {
-        //         this[v] = {};
-        //         if (ae[v].component) this[v].component = fgui.UIPackage.createObject(Package, ae[v].component).asCom;
-        //         if (ae[v].pos) this[v].pos = ae[v].pos;
-        //     }
-        // }
+        console.log('==== isAnimateShow  ====' + isAnimateShow);
+
+        if (isAnimateShow) this._isAnimateShow = isAnimateShow;
+        if (soundFile) this._soundFile = soundFile;
+        if (rightSoundFile) {
+
+            for (let i = 0; i < rightSoundFile.length; i++) {
+                let item = fgui.UIPackage.getItemByURL(rightSoundFile[i]);
+                this._rightSoundFile.push(item);
+            }
+        }
+        if (animateName) this._animateName = animateName;
+        if (rightName) this._rigthName = rightName;
+        if (optionsRect) {
+
+            for (var key in optionsRect) {
+
+                let tempRect = new cc.Rect(optionsRect[key].x, optionsRect[key].y, optionsRect[key].width, optionsRect[key].height);
+                this._optionsRect[key] = tempRect;
+            }
+        }
+
+        let item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754k');
+        this._clickSound = await loadResource(item.file, cc.AudioClip);
+
+        item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754l');
+        this._dragSound = await loadResource(item.file, cc.AudioClip);
 
         if (components) {
             for (const key in components) {
@@ -176,6 +223,9 @@ export default class choose_model03_v1 extends cc.Component {
     }
 
     private _onDragStart(evt: fgui.Event): void {
+
+        cc.audioEngine.playEffect(this._clickSound, false);
+
         evt.captureTouch();
         let state: any = globalThis._.cloneDeep(this._state);
         state.move = true;
@@ -191,68 +241,71 @@ export default class choose_model03_v1 extends cc.Component {
     }
 
     private _onDragEnd(evt: fgui.Event): void {
+        cc.audioEngine.playEffect(this._dragSound, false);
 
         var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         let btnRect = new cc.Rect(btn.x - btn.width / 2, btn.y - btn.height / 2, btn.width, btn.height);
 
         let state: any = globalThis._.cloneDeep(this._state);
         state.move = false;
-        for (let i = 0; i < this._optionsRect.length; i++) {
+        for (var key in this._optionsRect) {
 
-            if (this._optionsRect[i].intersects(btnRect)) {
-                state.lightSelect.push(i);
+            let rect = this._optionsRect[key];
+            if (rect.intersects(btnRect)) {
+
+                state.lightSelect[key] = !state.lightSelect[key];
                 break;
             }
         }
-
         this.updateState(state);
     }
 
     private _clickTitle(evt: any) {
+
         let state: any = globalThis._.cloneDeep(this._state);
         state.title = true;
         this.updateState(state);
     }
 
     private _clickLaBaGuai(evt: any) {
-        console.log('=== 点击喇叭怪 ====');
+
         let state: any = globalThis._.cloneDeep(this._state);
         state.laBaGuaiPlay = true;
         this.updateState(state);
     }
 
     private async _clickOption(evt: any) {
-        cc.audioEngine.stopAllEffects();
 
         var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
-        var btn2: fgui.GButton = btn.asButton;
-        let item = fgui.UIPackage.getItemByURL(btn2.sound);
-        let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
-        cc.audioEngine.play(audio, false, 1);
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.clickPlayName = btn.name;
+        this.updateState(state);
     }
 
     private _clickSubmit(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
-        if (state.lightSelect.length === 0) {
+        let num = 0;
+        let submitNames = [];
+        for (var key in state.lightSelect) {
+
+            if (state.lightSelect[key]) {
+                num++;
+                submitNames.push(key);
+            }
+        }
+        if (num === 0) {
             state.submit = this.submitType.GuideShow;
         } else {
 
-            let isHave0 = false;
-            let isHave1 = false;
-            for (let i = 0; i < state.lightSelect.length; i++) {
-                if (state.lightSelect[i] === 0) {
-                    isHave0 = true;
-                } else if (state.lightSelect[i] === 1) {
-                    isHave1 = true;
-                }
-            }
-            if (isHave0 && isHave1 && state.lightSelect.length === 2) {
+            let submitNamesTemp = submitNames.sort();
+            let right = this._rigthName.sort();
+            if (JSON.stringify(submitNamesTemp) === JSON.stringify(right)) {
                 state.submit = this.submitType.RightFeed;
+
             } else {
                 state.submit = this.submitType.WrongFeed;
             }
         }
-
         this.updateState(state);
     }
 
@@ -284,6 +337,22 @@ export default class choose_model03_v1 extends cc.Component {
             }
         }
 
+        if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {
+
+            if (oldState.clickPlayName != '' && this._isAnimateShow) {
+
+                let btn = this._options[oldState.clickPlayName];
+                let btnTemp = btn as fgui.GLoader3D;
+                btnTemp.animationName = this._animateName[btn.name].idle;
+            }
+
+            if (state.clickPlayName != '') {
+
+                this.playClickYueQi(state.clickPlayName);
+            }
+
+        }
+
         if (!globalThis._.isEqual(oldState.laBaGuaiPlay, state.laBaGuaiPlay)) {
             this.playLaBaGuai(state.laBaGuaiPlay);
         }
@@ -304,28 +373,43 @@ export default class choose_model03_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.lightSelect, state.lightSelect)) {
 
-            for (let i = 0; i < this._selectLights.length; i++) {
+            for (var key in state.lightSelect) {
 
-                let isHave = false;
-                for (let j = 0; j < state.lightSelect.length; j++) {
-
-                    if (i === state.lightSelect[j]) {
-
-                        isHave = true;
-                        break;
-                    }
-                }
-                if (isHave) {
-                    this._selectLights[i].visible = true;
-                } else {
-                    this._selectLights[i].visible = false;
-                }
+                this._lightSelect[key].visible = state.lightSelect[key];
             }
         }
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
         }
+    }
+
+
+    async playClickYueQi(name: string) {
+
+        cc.audioEngine.stopAllEffects();
+        let btn = this._options[name];
+        let item = null;
+        if (this._isAnimateShow) {
+
+            item = fgui.UIPackage.getItemByURL(this._soundFile[name]);
+        } else {
+
+            item = fgui.UIPackage.getItemByURL(btn.asButton.sound);
+        }
+        let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
+        let audioId = cc.audioEngine.play(audio, false, 1);
+        if (this._isAnimateShow) {
+
+            let btnTemp = btn as fgui.GLoader3D;
+            btnTemp.animationName = this._animateName[btn.name].play;
+            cc.audioEngine.setFinishCallback(audioId, () => {
+
+                console.log('=== animationName 停止动画 ====' + btnTemp.animationName);
+                btnTemp.animationName = this._animateName[btn.name].idle;
+            });
+        }
+
     }
 
     async playTitle(bool: boolean) {
@@ -361,14 +445,12 @@ export default class choose_model03_v1 extends cc.Component {
 
     async playRightSound(curIndex: number) {
 
-        console.log('===== playLaBaGuai 2222 ====' + this._rightSoundFile[curIndex]);
-
-        let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex], cc.AudioClip);
+        let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].file, cc.AudioClip);
         let audioId = cc.audioEngine.play(audio, false, 1);
         cc.audioEngine.setFinishCallback(audioId, () => {
             if (curIndex >= this._rightSoundFile.length - 1) {
 
-                this._maskBg.visible = false;
+                // this._maskBg.visible = false;
 
                 let state: any = globalThis._.cloneDeep(this._state);
                 state.laBaGuaiPlay = false;

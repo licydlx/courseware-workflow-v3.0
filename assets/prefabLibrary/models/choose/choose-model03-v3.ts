@@ -42,6 +42,7 @@ export default class choose_model03_v3 extends cc.Component {
 
     private _guidIndex: number = 0;
 
+    private _box3D: fgui.GLoader3D;
 
     private submitType: any = cc.Enum({
 
@@ -86,8 +87,10 @@ export default class choose_model03_v3 extends cc.Component {
             this._c1.selectedIndex = 0;
         }
 
-        let box = this._view.getChild("box").asButton;
-        box.on(fgui.Event.CLICK, this._clickBox, this);
+        this._box3D = this._view.getChild("box") as fgui.GLoader3D;
+        this._box3D.on(fgui.Event.CLICK, this._clickBox, this);
+        this._box3D.url = "ui://733aoo45gzaz75";
+        this._box3D.animationName = 'sjq_idle';
 
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
@@ -251,6 +254,9 @@ export default class choose_model03_v3 extends cc.Component {
         if (!globalThis._.isEqual(oldState.boxPlay, state.boxPlay)) {
             if (state.boxPlay) {
                 this.playBoxSpeak(state.boxPlay);
+            } else {
+                this._box3D.animationName = 'sjq_idle';
+                this._c2.selectedIndex = 0;
             }
         }
 
@@ -314,6 +320,16 @@ export default class choose_model03_v3 extends cc.Component {
 
     playBoxSpeak(bool: boolean) {
         if (bool) {
+
+            this._box3D.animationName = 'sjq_idle1to2';
+
+            cc.tween(this._box3D)
+                .delay(0.3)
+                .call(() => {
+                    this._box3D.animationName = 'sjq_idle2';
+                })
+                .start()
+
             cc.audioEngine.stopAll();
             this.forbidHandle();
             this.playBoxSound();
@@ -337,6 +353,7 @@ export default class choose_model03_v3 extends cc.Component {
 
         let audioId = cc.audioEngine.play(this._boxSound, false, 1);
         cc.audioEngine.setFinishCallback(audioId, () => {
+            this._box3D.animationName = 'sjq_idle';
             this.disableForbidHandle();
             this._c2.selectedIndex = 0;
             let state: any = globalThis._.cloneDeep(this._state);
@@ -352,7 +369,7 @@ export default class choose_model03_v3 extends cc.Component {
     playPaoShowAnimate(index: number) {
 
         cc.tween(this._paoShow[index])
-            .to(0.5, { alpha: 1 })
+            .to(1.0, { alpha: 1 })
             .call(() => {
                 index++;
                 if (index < this._paoShow.length) {

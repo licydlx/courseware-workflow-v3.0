@@ -23,13 +23,13 @@
     <component id="n56_uqx5" name="n56" src="uqx55h" fileName="buttons/choose.xml" xy="1612,455" size="228,278" group="n60_uqx5">
       <Button icon="ui://733aoo45uqx56h" sound="ui://733aoo45r3754k"/>
     </component>
-    <component id="n57_uqx5" name="n57" src="uqx55h" fileName="buttons/choose.xml" xy="1005,445" size="320,194" group="n60_uqx5">
+    <component id="n57_uqx5" name="n57" src="uqx55h" fileName="buttons/choose.xml" xy="1004,445" size="320,194" group="n60_uqx5">
       <Button icon="ui://733aoo45uqx56l" sound="ui://733aoo45r3754k"/>
     </component>
-    <component id="n61_uqx5" name="n61" src="uqx55h" fileName="buttons/choose.xml" xy="1317,443" size="276,230" group="n60_uqx5">
+    <component id="n61_uqx5" name="n61" src="uqx55h" fileName="buttons/choose.xml" xy="1320,442" size="276,230" group="n60_uqx5">
       <Button icon="ui://733aoo45uqx56d" sound="ui://733aoo45r3754k"/>
     </component>
-    <group id="n60_uqx5" name="choose" xy="845,316" size="881,278" advanced="true"/>
+    <group id="n60_uqx5" name="choose" xy="844,316" size="882,278" advanced="true"/>
     <component id="n12_r375" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1253,789" size="205,192">
       <Button icon="ui://733aoo45w2qdp" sound="ui://733aoo45r3754k"/>
     </component>
@@ -45,8 +45,6 @@
     <loader id="n2_r375" name="titleTrigger" xy="73,39" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
-    <component id="n8_r375" name="box" src="w2qd26" fileName="buttons/magicPen.xml" xy="167,485" size="427,467">
-      <Button icon="ui://733aoo45ku3l4w"/>
-    </component>
+    <loader3D id="n68_gzaz" name="box" xy="275,510" size="421,435" url="ui://733aoo45gzaz75" animation="" skin="" loop="true"/>
   </displayList>
 </component>

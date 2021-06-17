@@ -45,8 +45,6 @@
     <loader id="n2_r375" name="titleTrigger" xy="73,39" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
-    <component id="n8_r375" name="box" src="w2qd26" fileName="buttons/magicPen.xml" xy="167,485" size="427,467">
-      <Button icon="ui://733aoo45ku3l4w"/>
-    </component>
+    <loader3D id="n68_gzaz" name="box" xy="275,510" size="421,435" url="ui://733aoo45gzaz75" animation="" skin="" loop="true"/>
   </displayList>
 </component>

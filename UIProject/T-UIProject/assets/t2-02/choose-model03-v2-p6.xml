@@ -2,7 +2,6 @@
 <component size="1920,1080">
   <controller name="c1" pages="0,,1," selected="0"/>
   <controller name="c2" pages="0,,1,,3," selected="0"/>
-  <controller name="c3" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n4_r375" name="n4" src="r37545" fileName="images/example2/008.png" xy="0,0"/>
     <image id="n11_r375" name="n11" src="r37540" fileName="images/example2/0030.png" xy="820,-24"/>
@@ -12,12 +11,6 @@
     <image id="n10_r375" name="girlPao" src="r3753x" fileName="images/example2/0028.png" xy="483,194">
       <gearDisplay controller="c2" pages="3"/>
     </image>
-    <component id="n7_r375" name="boy" src="w2qd26" fileName="buttons/magicPen.xml" xy="102,465" size="281,446">
-      <Button icon="ui://733aoo45r37543" sound="ui://733aoo45w2qd1t"/>
-    </component>
-    <component id="n8_r375" name="girl" src="w2qd26" fileName="buttons/magicPen.xml" xy="447,534" size="281,446">
-      <Button icon="ui://733aoo45r37544" sound="ui://733aoo45w2qd1u"/>
-    </component>
     <component id="n1_r375" name="title" src="w2qd12" fileName="buttons/title.xml" xy="876,106" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://733aoo45r37546" sound="ui://733aoo45w2qd1e" volume="0"/>
@@ -47,5 +40,14 @@
       <gearDisplay controller="c2" pages="3"/>
     </group>
     <text id="n32_nrfy" name="n32" xy="624,58" size="238,102" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="123"/>
+    <loader3D id="n33_rx0n" name="boy" xy="128,468" size="294,451" url="ui://733aoo45rx0n72" animation="" skin="" loop="true"/>
+    <loader3D id="n34_rx0n" name="girl" xy="466,480" size="294,451" url="ui://733aoo45rx0n72" animation="" skin="" loop="true"/>
+    <image id="n35_gzaz" name="n35" src="gzaz7d" fileName="images/example2/0034.png" xy="980,418" group="n38_gzaz"/>
+    <image id="n36_gzaz" name="ready" src="gzaz7c" fileName="images/example2/0033.png" xy="980,418" group="n38_gzaz"/>
+    <image id="n37_gzaz" name="go" src="gzaz7a" fileName="images/example2/0031.png" xy="980,418" group="n38_gzaz"/>
+    <group id="n38_gzaz" name="readyGroup" xy="980,418" size="793,226" advanced="true"/>
+    <image id="n39_gzaz" name="n39" src="gzaz7d" fileName="images/example2/0034.png" xy="980,418" group="n41_gzaz"/>
+    <image id="n40_gzaz" name="n40" src="gzaz7b" fileName="images/example2/0032.png" xy="980,418" group="n41_gzaz"/>
+    <group id="n41_gzaz" name="over" xy="980,418" size="793,226" advanced="true"/>
   </displayList>
 </component>
