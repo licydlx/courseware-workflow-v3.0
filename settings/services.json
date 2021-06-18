@@ -10,11 +10,15 @@
 			"services": [
 				{
 					"service_id": "272",
-					"enable": false,
+					"enable": true,
 					"params": {
 						"env_id": "after-school-review-8cguaeaace9d",
 						"plugin_version": "0.7.2_1.3.3"
 					}
+				},
+				{
+					"service_id": "301",
+					"enable": false
 				}
 			]
 		},
@@ -26,11 +30,15 @@
 			"services": [
 				{
 					"service_id": "272",
-					"enable": false,
+					"enable": true,
 					"params": {
 						"env_id": "after-school-review-8cguaeaace9d",
 						"plugin_version": "0.7.2_1.3.3"
 					}
+				},
+				{
+					"service_id": "301",
+					"enable": false
 				}
 			]
 		},
@@ -42,6 +50,10 @@
 			"services": [
 				{
 					"service_id": "272",
+					"enable": true
+				},
+				{
+					"service_id": "301",
 					"enable": false
 				}
 			]
