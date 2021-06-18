@@ -35,7 +35,7 @@ export default class choose_model03_v1 extends cc.Component {
 
     private _package: any;
 
-    private _maskBg: fgui.GGraph;
+    private _maskOver: fgui.GGraph;
 
     private _labaguai: fgui.GButton;
 
@@ -94,8 +94,8 @@ export default class choose_model03_v1 extends cc.Component {
             this._c1.selectedIndex = 0;
         }
 
-        this._maskBg = this._view.getChild("maskBg").asGraph;
-        this._maskBg.visible = false;
+        this._maskOver = this._view.getChild("maskOver").asGraph;
+        this._maskOver.visible = false;
 
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
@@ -161,7 +161,8 @@ export default class choose_model03_v1 extends cc.Component {
             submit: false,
             move: false,
             lightSelect: tempLight,
-            clickPlayName: ''
+            clickPlayName: '',
+            maskOver: false
         }
 
         // 临时 
@@ -299,6 +300,7 @@ export default class choose_model03_v1 extends cc.Component {
             let right = this._rigthName.sort();
             if (JSON.stringify(submitNamesTemp) === JSON.stringify(right)) {
                 state.submit = this.submitType.RightFeed;
+                state.maskOver = true;
 
             } else {
                 state.submit = this.submitType.WrongFeed;
@@ -334,6 +336,11 @@ export default class choose_model03_v1 extends cc.Component {
 
                 this.answerFeedback(true);
             }
+        }
+
+        if (!globalThis._.isEqual(oldState.maskOver, state.maskOver)) {
+
+            this._maskOver.visible = state.maskOver;
         }
 
         if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {
@@ -433,7 +440,6 @@ export default class choose_model03_v1 extends cc.Component {
 
     playLaBaGuai(bool: boolean) {
         if (bool) {
-            console.log('===== playLaBaGuai 111 ====' + bool);
             cc.audioEngine.stopAll();
             this.forbidHandle();
             let curIndex = 0;

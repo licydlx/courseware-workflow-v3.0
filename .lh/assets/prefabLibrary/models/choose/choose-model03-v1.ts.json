@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 44,
+            "activePatchIndex": 51,
             "patches": [
                 {
                     "date": 1623989407691,
@@ -184,6 +184,34 @@
                 {
                     "date": 1623992979213,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -493,9 +493,9 @@\n         let hand = fgui.UIPackage.createObject(this._package, 'hand');\r\n         this._view.addChild(hand);\r\n         hand.x = fromObj.x;\r\n         hand.y = fromObj.y;\r\n-        cc.tween(hand).to(1.0, {\r\n+        cc.tween(hand).to(0.8, {\r\n             x: toObj.x,\r\n             y: toObj.y\r\n         }).call(() => {\r\n             this._view.removeChild(hand);\r\n"
+                },
+                {
+                    "date": 1623993541539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -432,9 +432,8 @@\n     }\r\n \r\n     playLaBaGuai(bool: boolean) {\r\n         if (bool) {\r\n-            console.log('===== playLaBaGuai 111 ====' + bool);\r\n             cc.audioEngine.stopAll();\r\n             this.forbidHandle();\r\n             let curIndex = 0;\r\n             this._laba2.animationName = 'play';\r\n"
+                },
+                {
+                    "date": 1623993562420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     private _optionsRect = {};\r\n \r\n     private _package: any;\r\n \r\n-    private _maskBg: fgui.GGraph;\r\n+    private _maskOver: fgui.GGraph;\r\n \r\n     private _labaguai: fgui.GButton;\r\n \r\n     private _isAnimateShow: boolean = false;\r\n"
+                },
+                {
+                    "date": 1623993597177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,10 +93,10 @@\n             this._c1.selectedIndex = 1;\r\n             this._c1.selectedIndex = 0;\r\n         }\r\n \r\n-        this._maskBg = this._view.getChild(\"maskBg\").asGraph;\r\n-        this._maskBg.visible = false;\r\n+        this._maskOver = this._view.getChild(\"maskOver\").asGraph;\r\n+        this._maskOver.visible = false;\r\n \r\n         this._submit = this._view.getChild(\"submit\").asButton;\r\n         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);\r\n \r\n@@ -160,9 +160,10 @@\n             laBaGuaiPlay: false,\r\n             submit: false,\r\n             move: false,\r\n             lightSelect: tempLight,\r\n-            clickPlayName: ''\r\n+            clickPlayName: '',\r\n+            _maskOver: false\r\n         }\r\n \r\n         // 临时 \r\n         // 禁止操作期间 切页\r\n"
+                },
+                {
+                    "date": 1623993623189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -161,9 +161,9 @@\n             submit: false,\r\n             move: false,\r\n             lightSelect: tempLight,\r\n             clickPlayName: '',\r\n-            _maskOver: false\r\n+            maskOver: false\r\n         }\r\n \r\n         // 临时 \r\n         // 禁止操作期间 切页\r\n@@ -299,8 +299,9 @@\n             let submitNamesTemp = submitNames.sort();\r\n             let right = this._rigthName.sort();\r\n             if (JSON.stringify(submitNamesTemp) === JSON.stringify(right)) {\r\n                 state.submit = this.submitType.RightFeed;\r\n+                state.maskOver\r\n \r\n             } else {\r\n                 state.submit = this.submitType.WrongFeed;\r\n             }\r\n"
+                },
+                {
+                    "date": 1623993628821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -299,9 +299,9 @@\n             let submitNamesTemp = submitNames.sort();\r\n             let right = this._rigthName.sort();\r\n             if (JSON.stringify(submitNamesTemp) === JSON.stringify(right)) {\r\n                 state.submit = this.submitType.RightFeed;\r\n-                state.maskOver\r\n+                state.maskOver = true;\r\n \r\n             } else {\r\n                 state.submit = this.submitType.WrongFeed;\r\n             }\r\n"
+                },
+                {
+                    "date": 1623993653253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -337,8 +337,23 @@\n                 this.answerFeedback(true);\r\n             }\r\n         }\r\n \r\n+        if (!globalThis._.isEqual(oldState.submit, state.submit)) {\r\n+\r\n+            // 控制反馈动画和指引动画\r\n+            if (state.submit === this.submitType.GuideShow) {\r\n+\r\n+                this.handTips1(this._magicPen, this._options[this._guideName]);\r\n+\r\n+            } else if (state.submit === this.submitType.WrongFeed) {\r\n+                this.answerFeedback(false);\r\n+            } else if (state.submit === this.submitType.RightFeed) {\r\n+\r\n+                this.answerFeedback(true);\r\n+            }\r\n+        }\r\n+\r\n         if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {\r\n \r\n             if (oldState.clickPlayName != '' && this._isAnimateShow) {\r\n \r\n"
+                },
+                {
+                    "date": 1623993683054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -337,21 +337,11 @@\n                 this.answerFeedback(true);\r\n             }\r\n         }\r\n \r\n-        if (!globalThis._.isEqual(oldState.submit, state.submit)) {\r\n+        if (!globalThis._.isEqual(oldState.maskOver, state.maskOver)) {\r\n \r\n-            // 控制反馈动画和指引动画\r\n-            if (state.submit === this.submitType.GuideShow) {\r\n-\r\n-                this.handTips1(this._magicPen, this._options[this._guideName]);\r\n-\r\n-            } else if (state.submit === this.submitType.WrongFeed) {\r\n-                this.answerFeedback(false);\r\n-            } else if (state.submit === this.submitType.RightFeed) {\r\n-\r\n-                this.answerFeedback(true);\r\n-            }\r\n+            this._maskOver.visible = state.maskOver;\r\n         }\r\n \r\n         if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {\r\n \r\n"
                 }
             ],
             "date": 1623989407691,

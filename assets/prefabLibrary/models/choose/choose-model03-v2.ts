@@ -180,7 +180,7 @@ export default class choose_model03_v2 extends cc.Component {
             submitFeedback: this.feedbackType.No,
             gameTime: 0,
             clickFoodTag: -1,
-            rigthTotal: rigthTotalTemp,
+            rigthTotal: rigthTotalTemp
         }
     }
 
