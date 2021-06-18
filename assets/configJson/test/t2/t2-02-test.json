@@ -65,7 +65,7 @@
                 "prefabName": "choose-model03-v1",
                 "config": {
 
-                    "soundFile": {"piano": "ui://733aoo45bl377s", "gu": "ui://733aoo45bl377p", "shachui": "ui://733aoo45bl377o", "dizi": "ui://733aoo45bl377n", "sanjiaotie": "ui://733aoo45bl377r" },
+                    "soundFile": {"piano": "ui://733aoo45bl377s", "gu": "ui://733aoo45bl377p", "shachui": "ui://733aoo45bl377o", "dizi": "ui://733aoo45bl3781", "sanjiaotie": "ui://733aoo45bl377r" },
                     "rightSoundFile": ["ui://733aoo45bl377s", "ui://733aoo45bl377p"],
 
                     "rightName": ["piano", "gu"],
@@ -142,7 +142,7 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v2",
                 "config": {
-                    "gameFood": ["food_1_1", "food_2_1", "food_3_1"],
+                    "gameFood": ["ui://733aoo45uqx56v", "ui://733aoo45uqx56w", "ui://733aoo45uqx56x"],
                     "rightIndexs": [0],
                     "boySoundPath": "ui://733aoo45gzaz7e",
                     "girlSoundPath": "ui://733aoo45gzaz7f"
@@ -165,7 +165,7 @@
                 "prefabName": "choose-model03-v2",
                 "config": {
 
-                    "gameFood": ["food_1_2", "food_2_2", "food_3_2"],
+                    "gameFood": ["ui://733aoo45gzaz77", "ui://733aoo45gzaz78", "ui://733aoo45gzaz79"],
                     "rightIndexs": [1],
                     "boySoundPath": "ui://733aoo45gzaz7g",
                     "girlSoundPath": "ui://733aoo45gzaz7h"

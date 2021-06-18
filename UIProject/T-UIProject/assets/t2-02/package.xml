@@ -7,7 +7,6 @@
     <image id="w2qdr" name="0011.png" path="/images/"/>
     <image id="w2qds" name="0012.png" path="/images/"/>
     <image id="w2qdt" name="002.png" path="/images/"/>
-    <image id="w2qdx" name="006.png" path="/images/"/>
     <image id="w2qdy" name="007.png" path="/images/"/>
     <image id="w2qdz" name="008.png" path="/images/"/>
     <image id="w2qd10" name="009.png" path="/images/"/>
@@ -163,7 +162,6 @@
     <misc id="bl377k" name="T2-02art4.atlas" path="/animations/T2-02art_export/" exported="true"/>
     <image id="bl377m" name="T2-02art4.png" path="/animations/T2-02art_export/" exported="true"/>
     <spine id="bl377l" name="T2-02art4.json" path="/animations/T2-02art_export/" exported="true" width="144" height="143" require="bl377k,bl377m" atlasNames="T2-02art4" anchor="73,72"/>
-    <sound id="bl377n" name="gou.mp3" path="/audios/example1_1/" exported="true"/>
     <sound id="bl377o" name="mao.mp3" path="/audios/example1_1/" exported="true"/>
     <sound id="bl377p" name="qingwa.mp3" path="/audios/example1_1/" exported="true"/>
     <sound id="bl377q" name="timu.mp3" path="/audios/example1_1/"/>
@@ -177,6 +175,7 @@
     <sound id="bl377y" name="wajueji.mp3" path="/audios/example1_2/" exported="true"/>
     <image id="bl377z" name="0026.png" path="/images/"/>
     <image id="bl3780" name="0027.png" path="/images/"/>
+    <sound id="bl3781" name="gou.wav" path="/audios/example1_1/"/>
   </resources>
   <publish name=""/>
 </packageDescription>
