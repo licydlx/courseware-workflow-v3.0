@@ -14,19 +14,19 @@
       <Button icon="ui://733aoo45w2qdp"/>
     </component>
     <component id="n30_w2qd" name="piano" src="w2qd27" fileName="buttons/yueqi.xml" xy="1242,189" size="191,216" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qd2e" sound="ui://733aoo45w2qd1m"/>
+      <Button icon="ui://733aoo45w2qd2e"/>
     </component>
     <component id="n27_w2qd" name="gu" src="w2qd27" fileName="buttons/yueqi.xml" xy="900,434" size="170,226" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qd2f" sound="ui://733aoo45w2qd1j"/>
+      <Button icon="ui://733aoo45w2qd2f"/>
     </component>
     <component id="n28_w2qd" name="shachui" src="w2qd27" fileName="buttons/yueqi.xml" xy="554,707" size="222,204" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qd2g" sound="ui://733aoo45w2qd1i"/>
+      <Button icon="ui://733aoo45w2qd2g"/>
     </component>
     <component id="n29_w2qd" name="dizi" src="w2qd27" fileName="buttons/yueqi.xml" xy="1276,650" size="194,220" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qd2d" sound="ui://733aoo45w2qd1h"/>
+      <Button icon="ui://733aoo45w2qd2d"/>
     </component>
     <component id="n31_w2qd" name="sanjiaotie" src="w2qd27" fileName="buttons/yueqi.xml" xy="498,214" size="240,186" group="n32_w2qd">
-      <Button icon="ui://733aoo45w2qd2h" sound="ui://733aoo45w2qd1l"/>
+      <Button icon="ui://733aoo45w2qd2h"/>
     </component>
     <group id="n32_w2qd" name="optionBox" xy="498,189" size="972,722" advanced="true"/>
     <component id="n6_w2qd" name="magicPen" src="w2qd26" fileName="buttons/magicPen.xml" xy="1745,466" pivot="0.5,0.5" anchor="true" size="218,394">
@@ -44,11 +44,11 @@
     </component>
     <component id="n2_w2qd" name="title" src="w2qd12" fileName="buttons/title.xml" xy="875,92" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
-      <Button icon="ui://733aoo45w2qdy" sound="ui://733aoo45w2qd1k" volume="0"/>
+      <Button icon="ui://733aoo45bl377z" sound="ui://733aoo45bl377q" volume="0"/>
     </component>
     <loader id="n3_w2qd" name="titleTrigger" xy="72,36" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
-    <image id="n34_w2qd" name="n34" src="w2qdx" fileName="images/006.png" xy="156,665"/>
+    <loader3D id="n44_bl37" name="laba2" xy="145,650" size="144,143" url="ui://733aoo45bl377l" animation="" skin="" loop="true"/>
   </displayList>
 </component>

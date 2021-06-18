@@ -39,6 +39,6 @@
     <loader id="n3_w2qd" name="titleTrigger" xy="72,36" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
-    <image id="n34_w2qd" name="n34" src="w2qdx" fileName="images/006.png" xy="156,665"/>
+    <loader3D id="n49_bl37" name="laba2" xy="145,650" size="144,143" url="ui://733aoo45bl377l" animation="" skin="" loop="true"/>
   </displayList>
 </component>
