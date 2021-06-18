@@ -39,7 +39,7 @@
     <group id="n31_r375" name="girlFood" xy="570,221" size="291,200" advanced="true">
       <gearDisplay controller="c2" pages="3"/>
     </group>
-    <text id="n32_nrfy" name="n32" xy="624,58" size="238,102" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="123"/>
+    <text id="n32_nrfy" name="n32" xy="707,17" size="238,102" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="123"/>
     <loader3D id="n33_rx0n" name="boy" xy="128,468" size="294,451" url="ui://733aoo45rx0n72" animation="" skin="" loop="true"/>
     <loader3D id="n34_rx0n" name="girl" xy="466,480" size="294,451" url="ui://733aoo45rx0n72" animation="" skin="" loop="true"/>
     <image id="n35_gzaz" name="n35" src="gzaz7d" fileName="images/example2/0034.png" xy="980,418" group="n38_gzaz"/>

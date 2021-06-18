@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080" bgColorEnabled="true" bgColor="#000000">
   <controller name="c1" pages="0,,1," selected="0"/>
+  <controller name="c2" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n1_w2qd" name="n1" src="w2qdt" fileName="images/002.png" xy="5,-3" group="n26_w2qd"/>
     <image id="n5_w2qd" name="n5" src="w2qdr" fileName="images/0011.png" xy="1596,206" group="n26_w2qd"/>
@@ -28,10 +29,11 @@
     <image id="n40_w2qd" name="dizi_s" src="w2qd2b" fileName="images/008_2.png" xy="756,323" group="n42_w2qd"/>
     <image id="n41_w2qd" name="sanjiaotie_s" src="w2qd2b" fileName="images/008_2.png" xy="426,588" group="n42_w2qd"/>
     <group id="n42_w2qd" name="selectLight" xy="395,74" size="1181,944" advanced="true"/>
-    <graph id="n43_w2qd" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#b2000000"/>
     <component id="n33_w2qd" name="labaguai" src="w2qd26" fileName="buttons/magicPen.xml" xy="113,328" size="218,395">
       <Button icon="ui://733aoo45w2qdq" sound="ui://733aoo45r3754k"/>
     </component>
+    <loader3D id="n49_e0ty" name="laba2" xy="140,649" size="144,143" url="ui://733aoo45e0ty80" animation="" skin="" loop="true"/>
+    <graph id="n43_w2qd" name="maskOver" xy="-4,-4" size="1920,1080" type="rect" fillColor="#00000000"/>
     <component id="n2_w2qd" name="title" src="w2qd12" fileName="buttons/title.xml" xy="875,92" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://733aoo45w2qdy" sound="ui://733aoo45w2qd1b" volume="0"/>
@@ -39,6 +41,11 @@
     <loader id="n3_w2qd" name="titleTrigger" xy="72,36" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
-    <image id="n34_w2qd" name="n34" src="w2qdx" fileName="images/006.png" xy="156,665"/>
+    <graph id="n50_e0ty" name="overShowBg" xy="0,0" size="1920,1080" group="n53_e0ty" type="rect" fillColor="#4c000000"/>
+    <loader3D id="n51_e0ty" name="n51" xy="605,343" size="268,235" group="n53_e0ty" url="ui://733aoo45gzaz72" animation="" skin="" loop="true"/>
+    <loader3D id="n52_e0ty" name="n52" xy="1095,365" size="268,235" group="n53_e0ty" url="ui://733aoo45gzaz72" animation="" skin="" loop="true"/>
+    <group id="n53_e0ty" name="n53" xy="0,0" size="1920,1080" advanced="true">
+      <gearDisplay controller="c2" pages="1"/>
+    </group>
   </displayList>
 </component>

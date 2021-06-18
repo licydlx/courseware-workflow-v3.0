@@ -38,6 +38,8 @@
     <image id="n67_uqx5" name="n67" src="uqx55n" fileName="images/example3/0013_2.png" xy="926,283" group="n49_uqx5"/>
     <group id="n49_uqx5" name="select" xy="926,283" size="873,377" advanced="true"/>
     <graph id="n50_uqx5" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#b2000000"/>
+    <loader3D id="n69_gzaz" name="box" xy="275,510" size="421,435" url="ui://733aoo45gzaz75" animation="" skin="" loop="true"/>
+    <graph id="n70_e0ty" name="maskOver" xy="0,0" size="1920,1080" type="rect" fillColor="#00000000"/>
     <component id="n1_r375" name="title" src="w2qd12" fileName="buttons/title.xml" xy="876,106" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://733aoo45ku3l4x" sound="ui://733aoo45w2qd1g" volume="0"/>
@@ -45,6 +47,5 @@
     <loader id="n2_r375" name="titleTrigger" xy="73,39" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
-    <loader3D id="n69_gzaz" name="box" xy="275,510" size="421,435" url="ui://733aoo45gzaz75" animation="" skin="" loop="true"/>
   </displayList>
 </component>

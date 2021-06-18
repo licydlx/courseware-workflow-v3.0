@@ -160,6 +160,24 @@
     <sound id="gzaz7h" name="girl.mp3" path="/audios/example2_2/" exported="true"/>
     <sound id="gzaz7i" name="001.mp3" path="/audios/example3_1/" exported="true"/>
     <sound id="gzaz7j" name="001.mp3" path="/audios/example3_2/" exported="true"/>
+    <sound id="e0ty7k" name="gou.mp3" path="/audios/example1_1/" exported="true"/>
+    <sound id="e0ty7l" name="mao.mp3" path="/audios/example1_1/" exported="true"/>
+    <sound id="e0ty7m" name="qingwa.mp3" path="/audios/example1_1/" exported="true"/>
+    <sound id="e0ty7n" name="timu.mp3" path="/audios/example1_1/"/>
+    <sound id="e0ty7o" name="yang.mp3" path="/audios/example1_1/" exported="true"/>
+    <sound id="e0ty7p" name="yazi.mp3" path="/audios/example1_1/" exported="true"/>
+    <sound id="e0ty7q" name="huoche.mp3" path="/audios/example1_2/" exported="true"/>
+    <sound id="e0ty7r" name="jingche.mp3" path="/audios/example1_2/" exported="true"/>
+    <sound id="e0ty7s" name="jiuhuche.mp3" path="/audios/example1_2/" exported="true"/>
+    <sound id="e0ty7t" name="qiche.mp3" path="/audios/example1_2/" exported="true"/>
+    <sound id="e0ty7u" name="timu.mp3" path="/audios/example1_2/"/>
+    <sound id="e0ty7v" name="wajueji.mp3" path="/audios/example1_2/" exported="true"/>
+    <image id="e0ty7w" name="0026.png" path="/images/"/>
+    <image id="e0ty7x" name="0027.png" path="/images/"/>
+    <image id="e0ty7y" name="0026.png" path="/images/example3/"/>
+    <misc id="e0ty7z" name="T2-02art4.atlas" path="/animations/T2-02art_export/" exported="true"/>
+    <image id="e0ty81" name="T2-02art4.png" path="/animations/T2-02art_export/" exported="true"/>
+    <spine id="e0ty80" name="T2-02art4.json" path="/animations/T2-02art_export/" exported="true" width="144" height="143" require="e0ty7z,e0ty81" atlasNames="T2-02art4" anchor="73,72"/>
   </resources>
   <publish name=""/>
 </packageDescription>

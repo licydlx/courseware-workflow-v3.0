@@ -15,7 +15,6 @@ export default class choose_model03_v1 extends cc.Component {
     private _worldRoot: cc.Node;
     private _view: fgui.GComponent;
     private _c1: fgui.Controller;
-    private _c2: fgui.Controller;
 
     private _submit: fgui.GButton;
     private _title: fgui.GButton;
@@ -36,8 +35,6 @@ export default class choose_model03_v1 extends cc.Component {
 
     private _package: any;
 
-    private _maskBg: fgui.GGraph;
-
     private _labaguai: fgui.GButton;
 
     private _isAnimateShow: boolean = false;
@@ -51,6 +48,12 @@ export default class choose_model03_v1 extends cc.Component {
     private _clickSound: cc.AudioClip;
 
     private _dragSound: cc.AudioClip;
+
+    private _laba2: fgui.GLoader3D;
+
+    private _guideName: string;
+
+    private _maskOver: fgui.GGraph;
 
     private submitType: any = cc.Enum({
 
@@ -91,8 +94,13 @@ export default class choose_model03_v1 extends cc.Component {
             this._c1.selectedIndex = 0;
         }
 
-        this._maskBg = this._view.getChild("maskBg").asGraph;
-        this._maskBg.visible = false;
+        this._maskOver = this._view.getChild("maskOver").asGraph;
+        this._maskOver.visible = false;
+
+        this._laba2 = this._view.getChild("laba2") as fgui.GLoader3D;
+        this._laba2.url = 'ui://733aoo45e0ty80';
+        this._laba2.animationName = 'idle';
+        if (this._laba2) this._laba2.on(fgui.Event.CLICK, this._clickLaBaGuai, this);
 
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
@@ -119,15 +127,6 @@ export default class choose_model03_v1 extends cc.Component {
 
                 btn.on(fgui.Event.CLICK, this._clickOption, this);
                 this._options[btn.name] = btn;
-
-                if (!this._isAnimateShow) {
-
-                    if (Object.keys(this._options).length <= 2) {
-                        let item = fgui.UIPackage.getItemByURL(btn.sound);
-                        this._rightSoundFile.push(item);
-                    }
-                }
-
             }
         }
 
@@ -163,7 +162,8 @@ export default class choose_model03_v1 extends cc.Component {
             submit: false,
             move: false,
             lightSelect: tempLight,
-            clickPlayName: ''
+            clickPlayName: '',
+            maskOver: false
         }
 
         // 临时 
@@ -179,12 +179,10 @@ export default class choose_model03_v1 extends cc.Component {
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
         let GComponent = model.uiPath;
-        let { isAnimateShow, soundFile, rightSoundFile, animateName, rightName, optionsRect } = model.config;
+        let { isAnimateShow, soundFile, rightSoundFile, animateName, rightName, optionsRect, guideName } = model.config;
         this._package = Package;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
-
-        console.log('==== isAnimateShow  ====' + isAnimateShow);
 
         if (isAnimateShow) this._isAnimateShow = isAnimateShow;
         if (soundFile) this._soundFile = soundFile;
@@ -205,6 +203,8 @@ export default class choose_model03_v1 extends cc.Component {
                 this._optionsRect[key] = tempRect;
             }
         }
+
+        if (guideName) this._guideName = guideName;
 
         let item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754k');
         this._clickSound = await loadResource(item.file, cc.AudioClip);
@@ -301,6 +301,7 @@ export default class choose_model03_v1 extends cc.Component {
             let right = this._rigthName.sort();
             if (JSON.stringify(submitNamesTemp) === JSON.stringify(right)) {
                 state.submit = this.submitType.RightFeed;
+                state.maskOver = true;
 
             } else {
                 state.submit = this.submitType.WrongFeed;
@@ -328,13 +329,18 @@ export default class choose_model03_v1 extends cc.Component {
             // 控制反馈动画和指引动画
             if (state.submit === this.submitType.GuideShow) {
 
-                this.handTips2(this._labaguai);
+                this.handTips1(this._magicPen, this._options[this._guideName]);
             } else if (state.submit === this.submitType.WrongFeed) {
                 this.answerFeedback(false);
             } else if (state.submit === this.submitType.RightFeed) {
 
                 this.answerFeedback(true);
             }
+        }
+
+        if (!globalThis._.isEqual(oldState.maskOver, state.maskOver)) {
+
+            this._maskOver.visible = state.maskOver;
         }
 
         if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {
@@ -350,7 +356,6 @@ export default class choose_model03_v1 extends cc.Component {
 
                 this.playClickYueQi(state.clickPlayName);
             }
-
         }
 
         if (!globalThis._.isEqual(oldState.laBaGuaiPlay, state.laBaGuaiPlay)) {
@@ -390,25 +395,28 @@ export default class choose_model03_v1 extends cc.Component {
         cc.audioEngine.stopAllEffects();
         let btn = this._options[name];
         let item = null;
-        if (this._isAnimateShow) {
-
-            item = fgui.UIPackage.getItemByURL(this._soundFile[name]);
-        } else {
-
-            item = fgui.UIPackage.getItemByURL(btn.asButton.sound);
-        }
+        item = fgui.UIPackage.getItemByURL(this._soundFile[name]);
         let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
         let audioId = cc.audioEngine.play(audio, false, 1);
+
         if (this._isAnimateShow) {
 
             let btnTemp = btn as fgui.GLoader3D;
             btnTemp.animationName = this._animateName[btn.name].play;
-            cc.audioEngine.setFinishCallback(audioId, () => {
+        }
+        cc.audioEngine.setFinishCallback(audioId, () => {
 
+            if (this._isAnimateShow) {
+
+                let btnTemp = btn as fgui.GLoader3D;
                 console.log('=== animationName 停止动画 ====' + btnTemp.animationName);
                 btnTemp.animationName = this._animateName[btn.name].idle;
-            });
-        }
+            }
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.clickPlayName = '';
+            this.updateState(state);
+
+        });
 
     }
 
@@ -432,10 +440,10 @@ export default class choose_model03_v1 extends cc.Component {
 
     playLaBaGuai(bool: boolean) {
         if (bool) {
-            console.log('===== playLaBaGuai 111 ====' + bool);
             cc.audioEngine.stopAll();
             this.forbidHandle();
             let curIndex = 0;
+            this._laba2.animationName = 'play';
             this.playRightSound(curIndex);
 
         } else {
@@ -450,8 +458,7 @@ export default class choose_model03_v1 extends cc.Component {
         cc.audioEngine.setFinishCallback(audioId, () => {
             if (curIndex >= this._rightSoundFile.length - 1) {
 
-                // this._maskBg.visible = false;
-
+                this._laba2.animationName = 'idle';
                 let state: any = globalThis._.cloneDeep(this._state);
                 state.laBaGuaiPlay = false;
                 this.updateState(state);
@@ -485,30 +492,19 @@ export default class choose_model03_v1 extends cc.Component {
 
 
     /**
-     * 点击指引
-     * @param obj 点击对象
+     * 拖动指引
+     * @param fromObj start
+     * @param toObj end
      */
-    handTips2(obj: fgui.GObject) {
+    handTips1(fromObj: fgui.GObject, toObj: fgui.GObject) {
+
         let hand = fgui.UIPackage.createObject(this._package, 'hand');
         this._view.addChild(hand);
-        let tempX = obj.x + obj.width / 2;
-        let tempY = obj.y + obj.height / 2;
-
-        hand.x = tempX;
-        hand.y = tempY;
-
-        cc.tween(hand).to(0.3, {
-            x: tempX - 30,
-            y: tempY - 30
-        }).to(0.3, {
-            x: tempX,
-            y: tempY
-        }).to(0.3, {
-            x: tempX - 30,
-            y: tempY - 30
-        }).to(0.3, {
-            x: tempX,
-            y: tempY
+        hand.x = fromObj.x;
+        hand.y = fromObj.y;
+        cc.tween(hand).to(1.2, {
+            x: toObj.x,
+            y: toObj.y
         }).call(() => {
             this._view.removeChild(hand);
             hand = null;
@@ -517,6 +513,8 @@ export default class choose_model03_v1 extends cc.Component {
             this.updateState(state)
         }).start();
     }
+
+
 
     // 运行时 禁止操作
     forbidHandle() {

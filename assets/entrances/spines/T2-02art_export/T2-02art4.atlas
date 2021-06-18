@@ -1,0 +1,27 @@
+
+T2-02art4.png
+size: 185,147
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0
+  rotate: false
+  xy: 148, 97
+  size: 35, 48
+  orig: 35, 48
+  offset: 0, 0
+  index: -1
+11
+  rotate: false
+  xy: 2, 2
+  size: 144, 143
+  orig: 144, 143
+  offset: 0, 0
+  index: -1
+bo2
+  rotate: false
+  xy: 148, 51
+  size: 20, 44
+  orig: 20, 44
+  offset: 0, 0
+  index: -1

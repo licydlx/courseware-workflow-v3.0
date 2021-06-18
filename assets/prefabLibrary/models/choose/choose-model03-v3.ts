@@ -44,6 +44,8 @@ export default class choose_model03_v3 extends cc.Component {
 
     private _box3D: fgui.GLoader3D;
 
+    private _maskOver: fgui.GGraph;
+
     private submitType: any = cc.Enum({
 
         No: 0,
@@ -91,6 +93,9 @@ export default class choose_model03_v3 extends cc.Component {
         this._box3D.on(fgui.Event.CLICK, this._clickBox, this);
         this._box3D.url = "ui://733aoo45gzaz75";
         this._box3D.animationName = 'sjq_idle';
+
+        this._maskOver = this._view.getChild("maskOver").asGraph;
+        this._maskOver.visible = false;
 
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
@@ -213,6 +218,7 @@ export default class choose_model03_v3 extends cc.Component {
                 if (state.chooseCach[i].selected && state.chooseCach[i].index === 0) {
 
                     state.submit = this.submitType.RightFeed;
+                    state.maskOver = true;
                     break;
                 }
             }
@@ -258,6 +264,11 @@ export default class choose_model03_v3 extends cc.Component {
                 this._box3D.animationName = 'sjq_idle';
                 this._c2.selectedIndex = 0;
             }
+        }
+
+        if (!globalThis._.isEqual(oldState.maskOver, state.maskOver)) {
+
+            this._maskOver.visible = state.maskOver;
         }
 
         if (!globalThis._.isEqual(oldState.chooseCach, state.chooseCach)) {
