@@ -1,5 +1,4 @@
 
-
 /*
  * @Descripttion: 
  * @version: 
@@ -38,13 +37,11 @@ export default class choose_model03_v2 extends cc.Component {
     /** 我自己的对象池 */
     private myFoodPools: any = [];
 
-    private _curDropLength: number = 0;
-
     private _foodTag: number = 1;
 
     private _rightIndexs: any = [];
 
-    private _dropSpeed: number = 3.0;
+    private _dropSpeed: number = 3.5;
 
     private _playBtn: fgui.GButton;
 
@@ -52,7 +49,7 @@ export default class choose_model03_v2 extends cc.Component {
 
     private timeText: fgui.GLabel;
 
-    private _framesSecond: number = 30;
+    private _framesSecond: number = 12;
 
     private _gameMusic: cc.AudioClip;
     private _wrongSound: cc.AudioClip;
@@ -95,6 +92,8 @@ export default class choose_model03_v2 extends cc.Component {
     }
 
     async onLoad() {
+
+        this._interTimeLimit = this._framesSecond * 1.2;
         this._worldRoot = cc.find("Canvas").parent;
 
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
@@ -169,7 +168,7 @@ export default class choose_model03_v2 extends cc.Component {
         let rigthTotalTemp = {};
         let temp = {};
         for (let i = 0; i < this._rightIndexs.length; i++) {
-            temp = { 'clickTotle': 0, 'showTotal': 0, 'percent': 0 };
+            temp = { 'clickTotle': 0, 'showTotal': 0 };
             rigthTotalTemp[this._rightIndexs[i]] = temp;
         }
         // 初始化state
@@ -238,69 +237,62 @@ export default class choose_model03_v2 extends cc.Component {
             return;
         }
         this._gameTime++;
-        // if (this._gameTime >= this._framesSecond * 15) {
+        if (this._gameTime >= this._framesSecond * 15) {
 
-        //     this.unschedule(this.updateAdd);
+            this.unschedule(this.updateAdd);
 
-        //     let state: any = globalThis._.cloneDeep(this._state);
-        //     let isFail = false;
-        //     for (var key in state.rigthTotal) {
+            let state: any = globalThis._.cloneDeep(this._state);
+            let isFail = false;
+            let tempClickTotle = 0;
+            let tempShowTotal = 0;
+            for (var key in state.rigthTotal) {
 
-        //         state.rigthTotal[key].percent = state.rigthTotal[key].clickTotle / state.rigthTotal[key].showTotal;
-        //         if (state.rigthTotal[key].percent <= 0.5) {
-        //             isFail = true;
-        //             break;
-        //         }
-        //     }
+                tempClickTotle += state.rigthTotal[key].clickTotle;
+                tempShowTotal += state.rigthTotal[key].showTotal;
+            }
 
-        //     if (isFail) {
+            if (tempClickTotle / tempShowTotal < 0.5) {
 
-        //         state.submitFeedback = this.feedbackType.WrongFeed;
+                state.submitFeedback = this.feedbackType.WrongFeed;
 
-        //     } else {
+            } else {
 
-        //         state.submitFeedback = this.feedbackType.RightFeed;
+                state.submitFeedback = this.feedbackType.RightFeed;
 
-        //     }
-        //     this._gameTime = 0;
-        //     state.gameTime = this._gameTime;
-        //     state.gameOver = true;
-        //     this.updateState(state);
-        //     return;
-        // }
+            }
+            this._gameTime = 0;
+            state.gameTime = this._gameTime;
+            state.gameOver = true;
+            this.updateState(state);
+            return;
+        }
 
         this._interTime++;
 
         if (this._interTime >= this._interTimeLimit) {
-            // if (this._gameTime <= 5 * this._framesSecond) {
 
-            //     this._dropSpeed = 3.0; // 2.5 ----> 60*1.5
-            //     this._interTimeLimit = this._framesSecond * 1.2;
+            if (this._gameTime <= 5 * this._framesSecond) {
 
-            // } else if (this._gameTime > 5 * this._framesSecond && this._gameTime <= 10 * this._framesSecond) {
+                this._dropSpeed = 3.5;
+                this._interTimeLimit = this._framesSecond * 1.2;
 
-            //     // this._dropSpeed = 3.0; // 2.5 ----> 60*1.5
-            //     // this._interTimeLimit = this._framesSecond * 1.2;
+            } else if (this._gameTime > 5 * this._framesSecond && this._gameTime <= 10 * this._framesSecond) {
 
-            //     this._dropSpeed = 2.3;
-            //     //2.0 ----> 60 * 0.6
-            //     this._interTimeLimit = this._framesSecond * 0.5;
+                this._dropSpeed = 5.0;
+                this._interTimeLimit = this._framesSecond * 0.8;
 
-            // } else if (this._gameTime > 10 * this._framesSecond) {
+            } else if (this._gameTime > 10 * this._framesSecond) {
 
-            //     // this._dropSpeed = 3.0; // 2.5 ----> 60*1.5
-            //     // this._interTimeLimit = this._framesSecond * 1.2;
-
-            //     this._dropSpeed = 1.8; // 1.8 ----> 60 * 0.4
-            //     this._interTimeLimit = this._framesSecond * 0.3;
-            // }
+                this._dropSpeed = 6.5;
+                this._interTimeLimit = this._framesSecond * 0.4;
+            }
 
             this._interTime = 0;
             let state: any = globalThis._.cloneDeep(this._state);
             let randIndex: number = Math.floor(Math.random() * this._gameFood.length);
-            let randPosX: number = Math.floor(Math.random() * (1685 - 1065 + 1) + 1065);
+            let randPosX: number = Math.floor(Math.random() * (1685 - 1045 + 1) + 1045);
 
-            let temp = { index: randIndex, isShow: true, tag: this._foodTag, x: randPosX, speed: this._dropSpeed };
+            let temp = { index: randIndex, isShow: true, tag: this._foodTag, x: randPosX, y: 10, speed: this._dropSpeed };
             this._foodTag++;
             state.gameFoodData = temp;
             state.dropSpeed = this._dropSpeed;
@@ -313,31 +305,21 @@ export default class choose_model03_v2 extends cc.Component {
 
     private foodDropAnimate(state: any, foodData) {
 
-        console.log('====== foodData ======' + foodData.tag);
-        console.log(foodData);
-
         let isHave = false;
         let food = null;
-        // for (let i = 0; i < this.myFoodPools.length; i++) {
+        for (let i = 0; i < this.myFoodPools.length; i++) {
 
-        //     if (this.myFoodPools[i].data.index === foodData.index && !this.myFoodPools[i].data.isShow) {
-        //         isHave = true;
-        //         food = this.myFoodPools[i];
-
-        //         break;
-        //     }
-        // }
+            if (this.myFoodPools[i].data.index === foodData.index && !this.myFoodPools[i].data.isShow) {
+                isHave = true;
+                food = this.myFoodPools[i];
+                food.repeatShow(foodData);
+                break;
+            }
+        }
 
         if (!isHave) {
 
-            // food = new MyDropFood(this._package, this._gameFood[foodData.index], foodData);
-            food = new MyDropFood();
-            let item = fgui.UIPackage.getItemByURL(this._gameFood[foodData.index]);
-            food.url = this._gameFood[foodData.index];
-            // food.packageItem = item;
-            food.testHHHH();
-            food.x = 300;
-            food.y = 500;
+            food = new MyDropFood(this._gameFood[foodData.index], foodData);
             food.on(fgui.Event.CLICK, this._clickDropFood, this);
             this._view.addChild(food);
             this.myFoodPools.push(food);
@@ -455,7 +437,7 @@ export default class choose_model03_v2 extends cc.Component {
 
                 }, 0.02);
 
-                this.schedule(this.updateAdd, 0.02);
+                this.schedule(this.updateAdd, 0.05);
 
             } else {
                 let boy = this._view.getChild("boy").asButton;
@@ -537,35 +519,22 @@ export default class choose_model03_v2 extends cc.Component {
                     if (isRight) {
 
                         //点击正确
-                        btn.icon = 'ui://733aoo45r3753l';
-                        btn.data.isShow = true;
+                        btn.clickChangeIcon();
                         setTimeout(() => {
 
-                            let indexTemp = btn.data.index;
-
-                            for (let i = 0; i < this.myFoodPools.length; i++) {
-                                if (this.myFoodPools[i] === btn) {
-                                    this.myFoodPools.splice(i, 1);
-                                    btn.removeFromParent();
-
-                                    console.log('=== clickFoodTag ===' + btn.data.tag);
-
-                                    console.log(this.myFoodPools);
-
-                                    break;
-                                }
-                            }
-
                             let state2: any = globalThis._.cloneDeep(this._state);
-                            state2.rigthTotal[indexTemp].clickTotle++;
+                            state2.rigthTotal[btn.data.index].clickTotle++;
                             this.updateState(state2);
 
                         }, 0.05);
+
+
 
                         cc.audioEngine.playEffect(this._rightSound, false);
 
                     } else {
 
+                        btn.clickWrongAnimate();
                         //点击错误
                         cc.audioEngine.playEffect(this._wrongSound, false);
 
@@ -605,6 +574,11 @@ export default class choose_model03_v2 extends cc.Component {
 
             this._dropSpeed = state.dropSpeed;
 
+            for (let i = 0; i < this.myFoodPools.length; i++) {
+
+                this.myFoodPools[i].setNewSpeed(this._dropSpeed);
+            }
+
         }
 
         if (!globalThis._.isEqual(oldState.interTimeLimit, state.interTimeLimit)) {
@@ -630,6 +604,9 @@ export default class choose_model03_v2 extends cc.Component {
             this.foodDropAnimate(state, state.gameFoodData);
 
             this.timeText.text = parseInt(state.gameTime / this._framesSecond + '') + 's';
+
+            console.log('===== GGGGG  ====');
+            console.log(this.myFoodPools);
         }
 
 
@@ -841,58 +818,119 @@ export default class choose_model03_v2 extends cc.Component {
 }
 
 
-class MyDropFood extends fgui.GObject {
+class MyDropFood extends fgui.GButton {
+
+    private _url: string;
+
+    private _iconLoader: fgui.GLoader;
+
+    private _itemR: any;
+
+    private _isDou: boolean;
+
+    private _speed: number;
 
 
-    // constructor(pkgName: string, resName: string, foodData: any) {
 
-    //     super();
+    constructor(url: string, foodData: any) {
 
-    //     let item = fgui.UIPackage.createObject(pkgName, resName) as MyDropFood;
-    //     item.data = foodData;
+        let _item = super();
 
-    //     item.x = item.data.x;
-    //     let tempX = item.x;
-    //     item.y = 100;
-    //     item.visible = true;
-    //     cc.tween(item)
-    //         .to(item.data.speed, { x: item.x, y: 970 })
-    //         .call(() => {
+        this._isDou = false;
 
-    //             item.y = 300;
-    //             // item.visible = false;
-    //             item.data.isShow = false;
-    //             console.log('==== call ====');
-    //             console.log(item);
+        this._itemR = _item;
+        this._iconLoader = new fgui.GLoader();
+        this._iconLoader.name = 'icon';
+        this._iconLoader.url = url;
+        this._iconLoader.autoSize = true;
+        this.addChild(this._iconLoader);
 
-    //         })
-    //         .start();
+        this._url = url;
 
-    //     return item;
-    // }
+        this._speed = foodData.speed;
 
-    constructor() {
-        console.log('==== 111111 constructor 2222222====');
+        this.data = foodData;
 
-        super();
+        this.x = this.data.x;
+        this.y = 30;
+        this.visible = true;
     }
 
-    protected testHHHH(): void {
+    protected setNewSpeed(newSpeed: number) {
 
-        console.log('==== 111111 test 2222222====');
+        this._speed = newSpeed;
+    }
 
+    protected repeatShow(foodData: any): void {
+
+        this._speed = foodData.speed;
+
+        this.data = foodData;
+
+        this.x = this.data.x;
+        this.y = 30;
+        this.visible = true;
+
+    }
+
+
+    protected clickWrongAnimate(): void {
+
+        this._isDou = true;
+
+        let tempX = this.x;
+        let tempY = this.y;
+        let offset = 10;
+        cc.tween(this._itemR)
+            .to(0.02, { x: tempX + (5 + offset), y: tempY + (offset + 7) })
+            .to(0.02, { x: tempX - (6 + offset), y: tempY + (offset + 7) })
+            .repeat(5)
+            .call(() => {
+
+                this.x = tempX;
+                this.y = tempY;
+
+                this._isDou = false;
+
+            })
+            .start();
+    }
+
+    protected clickChangeIcon(): void {
+
+        this._iconLoader.url = 'ui://733aoo45r3753l';
+        cc.tween(this)
+            .delay(0.06)
+            .call(() => {
+
+                this.data.isShow = false;
+                this.visible = false;
+                this._iconLoader.url = this._url;
+            })
+            .start();
     }
 
     protected onUpdate() {
 
-        // this.y += this.data.speed * 0.01;
-        // if (this.y >= 970) {
+        if (this.data.isShow === false) {
 
-        //     this.y = 100;
-        //     this.visible = false;
-        //     this.data.isShow = false;
+            this.y = 30;
+            this.visible = false;
 
-        // }
+            console.log('==== onUpdate TTTT 222 ==== ' + this.data.tag);
+            return;
+        }
+
+        if (this._isDou) {
+            return;
+        }
+
+        this.y += this._speed;
+
+        if (this.y >= 890) {
+
+            this.data.isShow = false;
+        }
 
     }
 
@@ -902,30 +940,7 @@ class MyDropFood extends fgui.GObject {
 
     }
 
-    init() {
 
-
-        console.log('==== 111111 myFood 2222222====');
-
-        return;
-
-        this.x = this.data.x;
-        let tempX = this.x;
-        this.y = 300;
-        this.visible = true;
-        // cc.tween(this)
-        //     .to(this.data.speed, { x: tempX, y: 970 })
-        //     .call(() => {
-        //         this.y = 100;
-        //         this.visible = false;
-        //         this.data.isShow = false;
-
-        //     })
-        //     .start();
-
-        console.log('==== 111111 myFood 2222222====');
-
-    }
 
 }
 

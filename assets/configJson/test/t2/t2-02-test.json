@@ -120,7 +120,7 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v2",
                 "config": {
-                    "gameFood": ["food_1", "food_2", "food_3", "food_4"],
+                    "gameFood": ["ui://733aoo45r3754d", "ui://733aoo45r3754f", "ui://733aoo45r3754e", "ui://733aoo45r3754g"],
                     "rightIndexs": [0, 1],
                     "boySoundPath": "ui://733aoo45w2qd1c",
                     "girlSoundPath": "ui://733aoo45w2qd1d"

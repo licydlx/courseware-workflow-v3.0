@@ -64,10 +64,10 @@
     <image id="r3754a" name="0010_2.png" path="/images/example2/"/>
     <image id="r3754b" name="0011_2.png" path="/images/example2/"/>
     <image id="r3754c" name="0012_2.png" path="/images/example2/"/>
-    <image id="r3754d" name="0013_2.png" path="/images/example2/"/>
-    <image id="r3754e" name="0014_2.png" path="/images/example2/"/>
-    <image id="r3754f" name="0015_2.png" path="/images/example2/"/>
-    <image id="r3754g" name="0016_2.png" path="/images/example2/"/>
+    <image id="r3754d" name="0013_2.png" path="/images/example2/" exported="true"/>
+    <image id="r3754e" name="0014_2.png" path="/images/example2/" exported="true"/>
+    <image id="r3754f" name="0015_2.png" path="/images/example2/" exported="true"/>
+    <image id="r3754g" name="0016_2.png" path="/images/example2/" exported="true"/>
     <image id="r3754h" name="003_2.png" path="/images/example2/"/>
     <image id="r3754i" name="004_2.png" path="/images/example2/"/>
     <image id="r3754j" name="005_2.png" path="/images/example2/"/>
@@ -176,6 +176,7 @@
     <image id="bl377z" name="0026.png" path="/images/"/>
     <image id="bl3780" name="0027.png" path="/images/"/>
     <sound id="bl3781" name="gou.wav" path="/audios/example1_1/"/>
+    <component id="nm5j82" name="Button1.xml" path="/components/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

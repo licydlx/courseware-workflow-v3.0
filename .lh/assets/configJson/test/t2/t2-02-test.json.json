@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 28,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1623990191040,
@@ -120,6 +120,38 @@
                 {
                     "date": 1624019211161,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"ui://733aoo45nrfy4q\", \"ui://733aoo45nrfy4r\", \"ui://733aoo45nrfy4s\", \"ui://733aoo45nrfy4t\"],\r\n+                    \"gameFood\": [\"food_1\", \"food_2\", \"food_3\", \"food_4\"],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n                     \r\n"
+                },
+                {
+                    "date": 1624186521574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"food_1\", \"food_2\", \"food_3\", \"food_4\"],\r\n+                    // \"gameFood\": [\"food_1\", \"food_2\", \"food_3\", \"food_4\"],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n                     \r\n"
+                },
+                {
+                    "date": 1624186527204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    // \"gameFood\": [\"food_1\", \"food_2\", \"food_3\", \"food_4\"],\r\n+                    \"gameFood\": [\"food_1\", \"food_2\", \"food_3\", \"food_4\"],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n                     \r\n"
+                },
+                {
+                    "date": 1624186709836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"food_1\", \"food_2\", \"food_3\", \"food_4\"],\r\n+                    \"gameFood\": [\"ui://733aoo45r3754d\", \"food_2\", \"food_3\", \"food_4\"],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n                     \r\n"
+                },
+                {
+                    "date": 1624186718688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"ui://733aoo45r3754d\", \"food_2\", \"food_3\", \"food_4\"],\r\n+                    \"gameFood\": [\"ui://733aoo45r3754d\", \"ui://733aoo45r3754f\", \"food_3\", \"food_4\"],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n                     \r\n"
+                },
+                {
+                    "date": 1624186727395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"ui://733aoo45r3754d\", \"ui://733aoo45r3754f\", \"food_3\", \"food_4\"],\r\n+                    \"gameFood\": [\"ui://733aoo45r3754d\", \"ui://733aoo45r3754f\", \"ui://733aoo45r3754e\", \"food_4\"],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n                     \r\n"
+                },
+                {
+                    "date": 1624186746091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"ui://733aoo45r3754d\", \"ui://733aoo45r3754f\", \"ui://733aoo45r3754e\", \"food_4\"],\r\n+                    \"gameFood\": [\"ui://733aoo45r3754d\", \"ui://733aoo45r3754f\", \"ui://733aoo45r3754e\", \"ui://733aoo45r3754g\"],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n                     \r\n"
+                },
+                {
+                    "date": 1624188543668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"ui://733aoo45r3754d\", \"ui://733aoo45r3754f\", \"ui://733aoo45r3754e\", \"ui://733aoo45r3754g\"],\r\n+                    \"gameFood\": [\"food_1\", \"food_2\", \"food_3\", \"food_4\"],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n                     \r\n"
+                },
+                {
+                    "date": 1624189010510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"food_1\", \"food_2\", \"food_3\", \"food_4\"],\r\n+                    \"gameFood\": [\"ui://733aoo45r3754d\", \"ui://733aoo45r3754f\", \"ui://733aoo45r3754e\", \"ui://733aoo45r3754g\"],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n                     \r\n"
                 }
             ],
             "date": 1623990191040,
