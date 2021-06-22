@@ -142,7 +142,7 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v2",
                 "config": {
-                    "gameFood": ["ui://733aoo45uqx56v", "ui://733aoo45uqx56w", "ui://733aoo45uqx56x"],
+                    "gameFood": ["ui://733aoo45r3754i", "ui://733aoo45r3754j", "ui://733aoo45r3754h"],
                     "rightIndexs": [0],
                     "boySoundPath": "ui://733aoo45gzaz7e",
                     "girlSoundPath": "ui://733aoo45gzaz7f"
@@ -165,7 +165,7 @@
                 "prefabName": "choose-model03-v2",
                 "config": {
 
-                    "gameFood": ["ui://733aoo45gzaz77", "ui://733aoo45gzaz78", "ui://733aoo45gzaz79"],
+                    "gameFood": ["ui://733aoo45r3754a", "ui://733aoo45r3754b", "ui://733aoo45r3754c"],
                     "rightIndexs": [1],
                     "boySoundPath": "ui://733aoo45gzaz7g",
                     "girlSoundPath": "ui://733aoo45gzaz7h"
