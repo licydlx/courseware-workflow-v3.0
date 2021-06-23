@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="mgpb39d5">
+  <resources>
+    <component id="j79e0" name="t4-05-model-p2.xml" path="/"/>
+    <image id="j79e1" name="0.png" path="/images/example1/"/>
+    <image id="j79e2" name="1.png" path="/images/example1/"/>
+    <image id="j79e3" name="2.png" path="/images/example1/"/>
+    <image id="j79e4" name="3.png" path="/images/example1/"/>
+    <image id="j79e5" name="4.png" path="/images/example1/"/>
+    <image id="j79e6" name="5.png" path="/images/example1/"/>
+    <image id="j79e7" name="6.png" path="/images/example1/"/>
+    <image id="j79e8" name="7.png" path="/images/example1/"/>
+    <image id="j79e9" name="8.png" path="/images/example1/"/>
+    <image id="j79ea" name="9.png" path="/images/example1/"/>
+    <image id="j79eb" name="bg.png" path="/images/example1/"/>
+    <image id="j79ec" name="dk.png" path="/images/example1/"/>
+    <image id="j79ed" name="jpd.png" path="/images/example1/"/>
+    <image id="j79eq" name="0010.png" path="/images/example1/"/>
+    <image id="j79er" name="0011.png" path="/images/example1/"/>
+    <image id="j79es" name="0012.png" path="/images/example1/"/>
+    <image id="j79et" name="0013.png" path="/images/example1/"/>
+    <image id="j79eu" name="0014.png" path="/images/example1/"/>
+    <image id="j79ev" name="0015.png" path="/images/example1/"/>
+    <image id="j79ew" name="0016.png" path="/images/example1/"/>
+    <image id="j79ex" name="0017.png" path="/images/example1/"/>
+    <image id="j79ey" name="0018.png" path="/images/example1/"/>
+    <image id="j79ez" name="0019.png" path="/images/example1/"/>
+    <image id="j79e10" name="001.png" path="/images/"/>
+    <image id="j79e11" name="002.png" path="/images/"/>
+    <image id="j79e12" name="例题1.png" path="/images/"/>
+    <component id="j79e13" name="title.xml" path="/buttons/"/>
+    <image id="j79e14" name="007.png" path="/images/"/>
+    <sound id="j79e15" name="timu.mp3" path="/audios/example1/"/>
+    <movieclip id="j79e16" name="laba.jta" path="/animations/laba/"/>
+    <component id="j79e17" name="button1.xml" path="/buttons/"/>
+    <sound id="j79e18" name="click.mp3" path="/audios/"/>
+    <sound id="j79e19" name="drag.mp3" path="/audios/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>
