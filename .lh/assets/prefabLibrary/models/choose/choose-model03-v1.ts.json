@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 110,
+            "activePatchIndex": 116,
             "patches": [
                 {
                     "date": 1623989407691,
@@ -448,6 +448,30 @@
                 {
                     "date": 1624354962012,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -372,14 +372,8 @@\n \r\n         }\r\n \r\n         if (!globalThis._.isEqual(oldState.laBaGuaiPlay, state.laBaGuaiPlay)) {\r\n-            if (state.clickPlayName != '' && this._isAnimateShow) {\r\n-\r\n-                let btn = this._options[oldState.clickPlayName];\r\n-                let btnTemp = btn as fgui.GLoader3D;\r\n-                btnTemp.animationName = this._animateName[btn.name].idle;\r\n-            }\r\n             this.playLaBaGuai(state.laBaGuaiPlay);\r\n         }\r\n \r\n         if (!globalThis._.isEqual(oldState.move, state.move)) {\r\n"
+                },
+                {
+                    "date": 1624440411350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -592,8 +592,9 @@\n         this.registerState();\r\n     }\r\n \r\n     onDisable() {\r\n+\r\n         this.relieveState();\r\n         cc.audioEngine.stopAll();\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1624440507188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -592,9 +592,9 @@\n         this.registerState();\r\n     }\r\n \r\n     onDisable() {\r\n-\r\n+        cc.tween.stop();\r\n         this.relieveState();\r\n         cc.audioEngine.stopAll();\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1624440530723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -592,9 +592,9 @@\n         this.registerState();\r\n     }\r\n \r\n     onDisable() {\r\n-        cc.tween.stop();\r\n+        cc.tween.start();\r\n         this.relieveState();\r\n         cc.audioEngine.stopAll();\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1624440539784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -592,9 +592,9 @@\n         this.registerState();\r\n     }\r\n \r\n     onDisable() {\r\n-        cc.tween.start();\r\n+        cc.tween().stop();\r\n         this.relieveState();\r\n         cc.audioEngine.stopAll();\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1624440559627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -592,9 +592,9 @@\n         this.registerState();\r\n     }\r\n \r\n     onDisable() {\r\n-        cc.tween().stop();\r\n+        cc.tween().stopAll\r\n         this.relieveState();\r\n         cc.audioEngine.stopAll();\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1624440578681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -592,9 +592,9 @@\n         this.registerState();\r\n     }\r\n \r\n     onDisable() {\r\n-        cc.tween().stopAll\r\n+        cc.tween(this).stop();\r\n         this.relieveState();\r\n         cc.audioEngine.stopAll();\r\n     }\r\n }\r\n"
                 }
             ],
             "date": 1623989407691,

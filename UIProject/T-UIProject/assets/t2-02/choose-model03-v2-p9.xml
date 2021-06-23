@@ -5,21 +5,6 @@
   <displayList>
     <image id="n39_ku3l" name="n39" src="ku3l4v" fileName="images/example3/001.png" xy="0,0"/>
     <image id="n40_ku3l" name="n40" src="ku3l4y" fileName="images/example3/004.png" xy="786,153"/>
-    <image id="n41_xeds" name="n41" src="ku3l51" fileName="images/example3/006.png" xy="119,177">
-      <gearDisplay controller="c2" pages="1"/>
-    </image>
-    <component id="n62_uqx5" name="n62" src="uqx55h" fileName="buttons/choose.xml" xy="269,340" size="158,130" group="n27_r375">
-      <Button icon="ui://733aoo45uqx55l"/>
-    </component>
-    <component id="n63_uqx5" name="n63" src="uqx55h" fileName="buttons/choose.xml" xy="432,337" size="144,150" group="n27_r375">
-      <Button icon="ui://733aoo45uqx55o"/>
-    </component>
-    <component id="n64_uqx5" name="n64" src="uqx55h" fileName="buttons/choose.xml" xy="578,344" size="128,122" group="n27_r375">
-      <Button icon="ui://733aoo45uqx55p"/>
-    </component>
-    <group id="n27_r375" name="pao" xy="190,262" size="452,150" advanced="true">
-      <gearDisplay controller="c2" pages="1"/>
-    </group>
     <component id="n56_uqx5" name="n56" src="uqx55h" fileName="buttons/choose.xml" xy="1622,482" size="282,232" group="n60_uqx5">
       <Button icon="ui://733aoo45uqx55q" sound="ui://733aoo45r3754k"/>
     </component>
@@ -46,5 +31,20 @@
     <loader id="n2_r375" name="titleTrigger" xy="73,39" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
+    <image id="n41_xeds" name="n41" src="ku3l51" fileName="images/example3/006.png" xy="119,177">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <component id="n62_uqx5" name="n62" src="uqx55h" fileName="buttons/choose.xml" xy="269,340" size="158,130" group="n27_r375">
+      <Button icon="ui://733aoo45uqx55l"/>
+    </component>
+    <component id="n63_uqx5" name="n63" src="uqx55h" fileName="buttons/choose.xml" xy="432,337" size="144,150" group="n27_r375">
+      <Button icon="ui://733aoo45uqx55o"/>
+    </component>
+    <component id="n64_uqx5" name="n64" src="uqx55h" fileName="buttons/choose.xml" xy="578,344" size="128,122" group="n27_r375">
+      <Button icon="ui://733aoo45uqx55p"/>
+    </component>
+    <group id="n27_r375" name="pao" xy="190,262" size="452,150" advanced="true">
+      <gearDisplay controller="c2" pages="1"/>
+    </group>
   </displayList>
 </component>

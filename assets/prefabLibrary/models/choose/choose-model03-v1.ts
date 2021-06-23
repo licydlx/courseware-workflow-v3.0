@@ -593,6 +593,7 @@ export default class choose_model03_v1 extends cc.Component {
     }
 
     onDisable() {
+        cc.tween(this).stop();
         this.relieveState();
         cc.audioEngine.stopAll();
     }

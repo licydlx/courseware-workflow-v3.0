@@ -478,6 +478,8 @@ export default class choose_model03_v3 extends cc.Component {
     }
 
     onDisable() {
+        cc.tween(this._box3D).stop();
+        cc.tween(this).stop();
         this.relieveState();
         cc.audioEngine.stopAll();
     }
