@@ -333,7 +333,6 @@ export default class choose_model03_v2 extends cc.Component {
                 }
             }
 
-
             if (!isOverlap) {
                 state.gameFoodData = tempData;
                 state.dropSpeed = this._dropSpeed;
