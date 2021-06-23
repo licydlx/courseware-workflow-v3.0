@@ -35,8 +35,6 @@ export default class choose_model03_v1 extends cc.Component {
 
     private _package: any;
 
-    private _maskOver: fgui.GGraph;
-
     private _labaguai: fgui.GButton;
 
     private _isAnimateShow: boolean = false;
@@ -54,6 +52,10 @@ export default class choose_model03_v1 extends cc.Component {
     private _laba2: fgui.GLoader3D;
 
     private _guideName: string;
+
+    private _overAnimShow: fgui.GGroup;
+    private _overPiano: fgui.GLoader3D;
+    private _overGu: fgui.GLoader3D;
 
     private submitType: any = cc.Enum({
 
@@ -93,9 +95,6 @@ export default class choose_model03_v1 extends cc.Component {
             this._c1.selectedIndex = 1;
             this._c1.selectedIndex = 0;
         }
-
-        this._maskOver = this._view.getChild("maskOver").asGraph;
-        this._maskOver.visible = false;
 
         this._submit = this._view.getChild("submit").asButton;
         if (this._submit) this._submit.on(fgui.Event.CLICK, this._clickSubmit, this);
@@ -162,7 +161,6 @@ export default class choose_model03_v1 extends cc.Component {
             move: false,
             lightSelect: tempLight,
             clickPlayName: '',
-            maskOver: false
         }
 
         // 临时 
@@ -211,6 +209,20 @@ export default class choose_model03_v1 extends cc.Component {
         item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754l');
         this._dragSound = await loadResource(item.file, cc.AudioClip);
 
+        if (this._isAnimateShow) {
+            this._overAnimShow = this._view.getChild("overAnimShow").asGroup;
+            this._overPiano = this._view.getChild("overPiano") as fgui.GLoader3D;
+            this._overGu = this._view.getChild("overGu") as fgui.GLoader3D;
+            this._overAnimShow.visible = false;
+
+            this._overPiano.animationName = this._animateName['piano'].idle;
+            this._overPiano.skinName = this._animateName['piano'].skin;
+            this._overPiano.url = "ui://733aoo45gzaz72";
+
+            this._overGu.animationName = this._animateName['gu'].idle;
+            this._overGu.skinName = this._animateName['gu'].skin;
+            this._overGu.url = "ui://733aoo45gzaz72";
+        }
         if (components) {
             for (const key in components) {
                 let componentPath: any = `${pathConfig.remoteUrl}${pathConfig.componentBundlePath}${components[key].bundleName}`;
@@ -270,6 +282,7 @@ export default class choose_model03_v1 extends cc.Component {
 
         let state: any = globalThis._.cloneDeep(this._state);
         state.laBaGuaiPlay = true;
+        state.clickPlayName = '';
         this.updateState(state);
     }
 
@@ -300,7 +313,6 @@ export default class choose_model03_v1 extends cc.Component {
             let right = this._rigthName.sort();
             if (JSON.stringify(submitNamesTemp) === JSON.stringify(right)) {
                 state.submit = this.submitType.RightFeed;
-                state.maskOver = true;
 
             } else {
                 state.submit = this.submitType.WrongFeed;
@@ -334,13 +346,14 @@ export default class choose_model03_v1 extends cc.Component {
                 this.answerFeedback(false);
             } else if (state.submit === this.submitType.RightFeed) {
 
-                this.answerFeedback(true);
+                if (this._isAnimateShow) {
+
+                    this.playOverShowAnimate();
+
+                } else {
+                    this.answerFeedback(true);
+                }
             }
-        }
-
-        if (!globalThis._.isEqual(oldState.maskOver, state.maskOver)) {
-
-            this._maskOver.visible = state.maskOver;
         }
 
         if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {
@@ -390,6 +403,33 @@ export default class choose_model03_v1 extends cc.Component {
         }
     }
 
+
+    async playOverShowAnimate() {
+
+        cc.audioEngine.stopAllEffects();
+        this._overAnimShow.visible = true;
+
+        let item1 = fgui.UIPackage.getItemByURL(this._soundFile['piano']);
+        let audio: cc.AudioClip = await loadResource(item1.file, cc.AudioClip);
+        let audioId = cc.audioEngine.play(audio, false, 1);
+
+        this._overPiano.animationName = this._animateName['piano'].play;
+        cc.audioEngine.setFinishCallback(audioId, () => {
+            this._overPiano.animationName = this._animateName['piano'].idle;
+            this._overAnimShow.visible = false;
+            this.answerFeedback(true);
+        });
+
+        let item2 = fgui.UIPackage.getItemByURL(this._soundFile['gu']);
+        let audio2: cc.AudioClip = await loadResource(item2.file, cc.AudioClip);
+        let audioId2 = cc.audioEngine.play(audio2, false, 1);
+
+        this._overGu.animationName = this._animateName['gu'].play;
+        cc.audioEngine.setFinishCallback(audioId2, () => {
+            this._overGu.animationName = this._animateName['gu'].idle;
+        });
+
+    }
 
     async playClickYueQi(name: string) {
 

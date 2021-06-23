@@ -55,5 +55,10 @@
     <image id="n42_gzaz" name="n42" src="gzaz7d" fileName="images/example2/0034.png" xy="980,418" group="n45_gzaz"/>
     <image id="n46_gzaz" name="n46" src="gzaz7b" fileName="images/example2/0032.png" xy="980,418" group="n45_gzaz"/>
     <group id="n45_gzaz" name="over" xy="980,418" size="793,226" advanced="true"/>
+    <image id="n47_hddi" name="n47" src="hddi84" fileName="images/example2/0036.png" xy="975,80" group="n51_hddi"/>
+    <image id="n48_hddi" name="n48" src="hddi83" fileName="images/example2/0035.png" xy="992,192" group="n51_hddi"/>
+    <text id="n49_hddi" name="top" xy="1059,116" size="84,49" group="n51_hddi" font="KaiTi" fontSize="32" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="--"/>
+    <text id="n50_hddi" name="cur" xy="1059,208" size="85,49" group="n51_hddi" font="KaiTi" fontSize="32" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="0"/>
+    <group id="n51_hddi" name="score" xy="975,80" size="207,186" advanced="true"/>
   </displayList>
 </component>

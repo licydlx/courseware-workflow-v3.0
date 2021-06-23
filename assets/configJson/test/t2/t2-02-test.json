@@ -65,7 +65,7 @@
                 "prefabName": "choose-model03-v1",
                 "config": {
 
-                    "soundFile": {"piano": "ui://733aoo45bl377s", "gu": "ui://733aoo45bl377p", "shachui": "ui://733aoo45bl377o", "dizi": "ui://733aoo45bl3781", "sanjiaotie": "ui://733aoo45bl377r" },
+                    "soundFile": {"piano": "ui://733aoo45bl377s", "gu": "ui://733aoo45bl377p", "shachui": "ui://733aoo45bl377o", "dizi": "ui://733aoo45hddi85", "sanjiaotie": "ui://733aoo45bl377r" },
                     "rightSoundFile": ["ui://733aoo45bl377s", "ui://733aoo45bl377p"],
 
                     "rightName": ["piano", "gu"],
@@ -121,6 +121,7 @@
                 "prefabName": "choose-model03-v2",
                 "config": {
                     "gameFood": ["ui://733aoo45r3754d", "ui://733aoo45r3754f", "ui://733aoo45r3754e", "ui://733aoo45r3754g"],
+                    "gameFoodSize":[{"w":117, "h":77}, {"w":88, "h":113}, {"w":77, "h":152}, {"w":94, "h":119}],
                     "rightIndexs": [0, 1],
                     "boySoundPath": "ui://733aoo45w2qd1c",
                     "girlSoundPath": "ui://733aoo45w2qd1d"
@@ -143,6 +144,7 @@
                 "prefabName": "choose-model03-v2",
                 "config": {
                     "gameFood": ["ui://733aoo45r3754i", "ui://733aoo45r3754j", "ui://733aoo45r3754h"],
+                    "gameFoodSize":[{"w":170, "h":90}, {"w":68, "h":112}, {"w":106, "h":96}],
                     "rightIndexs": [0],
                     "boySoundPath": "ui://733aoo45gzaz7e",
                     "girlSoundPath": "ui://733aoo45gzaz7f"
@@ -166,6 +168,7 @@
                 "config": {
 
                     "gameFood": ["ui://733aoo45r3754a", "ui://733aoo45r3754b", "ui://733aoo45r3754c"],
+                    "gameFoodSize":[{"w":128, "h":77}, {"w":145, "h":101}, {"w":70, "h":167}],
                     "rightIndexs": [1],
                     "boySoundPath": "ui://733aoo45gzaz7g",
                     "girlSoundPath": "ui://733aoo45gzaz7h"

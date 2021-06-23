@@ -11,7 +11,7 @@
     <image id="n21_w2qd" name="n21" src="w2qdz" fileName="images/008.png" xy="1130,536" group="n26_w2qd"/>
     <group id="n26_w2qd" name="n26" xy="5,-3" size="1920,1080"/>
     <component id="n4_w2qd" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1635,746" size="204,204">
-      <Button icon="ui://733aoo45w2qdp"/>
+      <Button icon="ui://733aoo45w2qdp" sound="ui://733aoo45r3754k"/>
     </component>
     <component id="n30_w2qd" name="piano" src="w2qd27" fileName="buttons/yueqi.xml" xy="840,446" size="288,152" group="n32_w2qd">
       <Button icon="ui://733aoo45w2qd2l"/>
@@ -42,7 +42,6 @@
       <Button icon="ui://733aoo45w2qdq"/>
     </component>
     <loader3D id="n44_bl37" name="laba2" xy="145,650" size="144,143" url="ui://733aoo45bl377l" animation="" skin="" loop="true"/>
-    <graph id="n43_w2qd" name="maskOver" xy="0,0" size="1920,1080" type="rect" fillColor="#00000000"/>
     <component id="n2_w2qd" name="title" src="w2qd12" fileName="buttons/title.xml" xy="875,92" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://733aoo45bl3780" sound="ui://733aoo45bl377x" volume="0"/>

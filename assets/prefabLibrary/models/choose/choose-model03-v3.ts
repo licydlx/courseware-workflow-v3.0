@@ -44,8 +44,6 @@ export default class choose_model03_v3 extends cc.Component {
 
     private _box3D: fgui.GLoader3D;
 
-    private _maskOver: fgui.GGraph;
-
     private submitType: any = cc.Enum({
 
         No: 0,
@@ -88,9 +86,6 @@ export default class choose_model03_v3 extends cc.Component {
             this._c1.selectedIndex = 1;
             this._c1.selectedIndex = 0;
         }
-
-        this._maskOver = this._view.getChild("maskOver").asGraph;
-        this._maskOver.visible = false;
 
         this._box3D = this._view.getChild("box") as fgui.GLoader3D;
         this._box3D.on(fgui.Event.CLICK, this._clickBox, this);
@@ -142,7 +137,6 @@ export default class choose_model03_v3 extends cc.Component {
             canChoose: false,
             chooseCach: this._chooseCach,
             submit: this.submitType.No,
-            maskOver: false
         }
     }
 
@@ -219,7 +213,6 @@ export default class choose_model03_v3 extends cc.Component {
                 if (state.chooseCach[i].selected && state.chooseCach[i].index === 0) {
 
                     state.submit = this.submitType.RightFeed;
-                    state.maskOver = true;
                     break;
                 }
             }
@@ -265,11 +258,6 @@ export default class choose_model03_v3 extends cc.Component {
                 this._box3D.animationName = 'sjq_idle';
                 this._c2.selectedIndex = 0;
             }
-        }
-
-        if (!globalThis._.isEqual(oldState.maskOver, state.maskOver)) {
-
-            this._maskOver.visible = state.maskOver;
         }
 
         if (!globalThis._.isEqual(oldState.chooseCach, state.chooseCach)) {
@@ -354,6 +342,10 @@ export default class choose_model03_v3 extends cc.Component {
 
     async playBoxSound() {
 
+        for (let i = 0; i < this._paoShow.length; i++) {
+            this._paoShow[i].alpha = 0;
+        }
+
         cc.tween(this)
             .delay(0.5)
             .call(() => {
@@ -367,14 +359,15 @@ export default class choose_model03_v3 extends cc.Component {
         cc.audioEngine.setFinishCallback(audioId, () => {
             this._box3D.animationName = 'sjq_idle';
             this.disableForbidHandle();
+            for (let i = 0; i < this._paoShow.length; i++) {
+                this._paoShow[i].alpha = 0;
+            }
             this._c2.selectedIndex = 0;
             let state: any = globalThis._.cloneDeep(this._state);
             state.boxPlay = false;
             state.canChoose = true;
             this.updateState(state);
-            for (let i = 0; i < this._paoShow.length; i++) {
-                this._paoShow[i].alpha = 0;
-            }
+
         });
     }
 

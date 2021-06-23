@@ -32,7 +32,6 @@
       <Button icon="ui://733aoo45w2qdq" sound="ui://733aoo45r3754k"/>
     </component>
     <loader3D id="n49_bl37" name="laba2" xy="145,650" size="144,143" url="ui://733aoo45bl377l" animation="" skin="" loop="true"/>
-    <graph id="n43_w2qd" name="maskOver" xy="0,0" size="1920,1080" type="rect" fillColor="#00000000"/>
     <component id="n2_w2qd" name="title" src="w2qd12" fileName="buttons/title.xml" xy="875,92" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://733aoo45w2qdy" sound="ui://733aoo45w2qd1b" volume="0"/>
@@ -40,5 +39,9 @@
     <loader id="n3_w2qd" name="titleTrigger" xy="72,36" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
+    <graph id="n50_hddi" name="overBg" xy="0,0" size="1920,1080" group="n54_hddi" type="rect" fillColor="#b2000000"/>
+    <loader3D id="n52_hddi" name="overPiano" xy="678,385" size="268,235" group="n54_hddi" url="ui://733aoo45gzaz72" animation="" skin="" loop="true"/>
+    <loader3D id="n53_hddi" name="overGu" xy="984,424" size="268,235" group="n54_hddi" url="ui://733aoo45gzaz72" animation="" skin="" loop="true"/>
+    <group id="n54_hddi" name="overAnimShow" xy="0,0" size="1920,1080" advanced="true"/>
   </displayList>
 </component>

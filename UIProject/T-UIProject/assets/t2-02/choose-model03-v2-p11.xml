@@ -39,7 +39,6 @@
     <group id="n49_uqx5" name="select" xy="843,315" size="901,283" advanced="true"/>
     <graph id="n50_uqx5" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#b2000000"/>
     <loader3D id="n68_gzaz" name="box" xy="275,510" size="421,435" url="ui://733aoo45gzaz75" animation="" skin="" loop="true"/>
-    <graph id="n69_bl37" name="maskOver" xy="0,0" size="1920,1080" type="rect" fillColor="#00000000"/>
     <component id="n1_r375" name="title" src="w2qd12" fileName="buttons/title.xml" xy="944,99" size="1368,135" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
       <Button icon="ui://733aoo45uqx56g" sound="ui://733aoo45w2qd24" volume="0"/>

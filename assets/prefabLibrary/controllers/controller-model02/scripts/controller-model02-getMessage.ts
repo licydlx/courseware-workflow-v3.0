@@ -11,7 +11,7 @@ export async function getMessage(data: any) {
     // console.log('getMessage')
     let message = globalThis._.cloneDeep(data);
     // console.log(message)
-    
+
     switch (data.method) {
         case "onJumpPage": {
             this.onJumpConfig(data.toPage);
@@ -25,14 +25,14 @@ export async function getMessage(data: any) {
 
             if (data.handleData.action == "EVENT_UPDATE_STATE") {
                 if (!window['GlobalData'].stateProxy) return;
-                let { name, userid, role, signalingModel, monitored , monitoredName } = window['GlobalData'].courseData;
+                let { name, userid, role, signalingModel, monitored, monitoredName } = window['GlobalData'].courseData;
                 let user = data.handleData.user;
                 let curState = data.handleData.handleData;
                 let prevState = globalThis._.cloneDeep(window['GlobalData'].stateProxy["state"]);
 
                 if (data.handleData.toUser) {
                     let toUser = data.handleData.toUser;
-                    
+
                     // 兼容
                     // 安卓ipad 部分账户 无法获取userid 用name替代
                     if (toUser.id == userid || encodeURIComponent(toUser.nickname) == userid) {
@@ -66,7 +66,7 @@ export async function getMessage(data: any) {
                                 panleState.snapshoot[user.userid] = curState;
                                 window['GlobalData'].stateProxy[this._panel.name] = "";
                                 window['GlobalData'].pubSub.emit(panleState, this._panel.name);
-                                
+
                                 // 临时 拓客云 sdk版本不同，账号不同，参数不同
                                 // 1.在直播间 通过url进入课件，课件身份唯一根据url的参数 userid role name 确定
                                 // 2.由于各种原因 如果url参数缺失，以name 当做userid
@@ -82,7 +82,7 @@ export async function getMessage(data: any) {
                                         }
                                     });
                                 }
-                                
+
                             }
                         }
                     }

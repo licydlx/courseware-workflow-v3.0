@@ -77,10 +77,10 @@
     <sound id="r3754n" name="ready.mp3" path="/audios/" exported="true"/>
     <sound id="r3754o" name="star.mp3" path="/audios/" exported="true"/>
     <sound id="r3754p" name="wrong.mp3" path="/audios/" exported="true"/>
-    <component id="nrfy4q" name="food_1.xml" path="/components/" exported="true"/>
-    <component id="nrfy4r" name="food_2.xml" path="/components/" exported="true"/>
-    <component id="nrfy4s" name="food_3.xml" path="/components/" exported="true"/>
-    <component id="nrfy4t" name="food_4.xml" path="/components/" exported="true"/>
+    <component id="nrfy4q" name="food_1.xml" path="/components/"/>
+    <component id="nrfy4r" name="food_2.xml" path="/components/"/>
+    <component id="nrfy4s" name="food_3.xml" path="/components/"/>
+    <component id="nrfy4t" name="food_4.xml" path="/components/"/>
     <image id="ku3l4v" name="001.png" path="/images/example3/"/>
     <image id="ku3l4x" name="003.png" path="/images/example3/"/>
     <image id="ku3l4y" name="004.png" path="/images/example3/"/>
@@ -134,9 +134,9 @@
     <component id="uqx56s" name="static-model01-v1-p12.xml" path="/" exported="true"/>
     <component id="uqx56t" name="choose-model03-v2-p5.xml" path="/" exported="true"/>
     <component id="uqx56u" name="choose-model03-v2-p7.xml" path="/" exported="true"/>
-    <component id="uqx56v" name="food_1_1.xml" path="/components/" exported="true"/>
-    <component id="uqx56w" name="food_2_1.xml" path="/components/" exported="true"/>
-    <component id="uqx56x" name="food_3_1.xml" path="/components/" exported="true"/>
+    <component id="uqx56v" name="food_1_1.xml" path="/components/"/>
+    <component id="uqx56w" name="food_2_1.xml" path="/components/"/>
+    <component id="uqx56x" name="food_3_1.xml" path="/components/"/>
     <misc id="gzaz6y" name="T2-02art1.atlas" path="/animations/T2-02art_export/" exported="true"/>
     <image id="gzaz70" name="T2-02art1.png" path="/animations/T2-02art_export/" exported="true"/>
     <spine id="gzaz6z" name="T2-02art1.json" path="/animations/T2-02art_export/" exported="true" width="294" height="451" require="gzaz6y,gzaz70" atlasNames="T2-02art1" anchor="139,314"/>
@@ -146,9 +146,9 @@
     <misc id="gzaz74" name="T2-02art3.atlas" path="/animations/T2-02art_export/" exported="true"/>
     <image id="gzaz76" name="T2-02art3.png" path="/animations/T2-02art_export/" exported="true"/>
     <spine id="gzaz75" name="T2-02art3.json" path="/animations/T2-02art_export/" exported="true" width="421" height="435" require="gzaz74,gzaz76" atlasNames="T2-02art3" anchor="160,347"/>
-    <component id="gzaz77" name="food_1_2.xml" path="/components/" exported="true"/>
-    <component id="gzaz78" name="food_2_2.xml" path="/components/" exported="true"/>
-    <component id="gzaz79" name="food_3_2.xml" path="/components/" exported="true"/>
+    <component id="gzaz77" name="food_1_2.xml" path="/components/"/>
+    <component id="gzaz78" name="food_2_2.xml" path="/components/"/>
+    <component id="gzaz79" name="food_3_2.xml" path="/components/"/>
     <image id="gzaz7a" name="0031.png" path="/images/example2/"/>
     <image id="gzaz7b" name="0032.png" path="/images/example2/"/>
     <image id="gzaz7c" name="0033.png" path="/images/example2/"/>
@@ -175,7 +175,9 @@
     <sound id="bl377y" name="wajueji.mp3" path="/audios/example1_2/" exported="true"/>
     <image id="bl377z" name="0026.png" path="/images/"/>
     <image id="bl3780" name="0027.png" path="/images/"/>
-    <sound id="bl3781" name="gou.wav" path="/audios/example1_1/"/>
+    <image id="hddi83" name="0035.png" path="/images/example2/"/>
+    <image id="hddi84" name="0036.png" path="/images/example2/"/>
+    <sound id="hddi85" name="gou.mp3" path="/audios/example1_1/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>
