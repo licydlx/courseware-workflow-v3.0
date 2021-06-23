@@ -79,7 +79,6 @@ export default class choose_model03_v2 extends cc.Component {
     private _showTotal: number = 0;
 
     private feedbackType: any = cc.Enum({
-
         No: 0,
         GuideShow: 1,
         WrongFeed: 2,
@@ -112,15 +111,12 @@ export default class choose_model03_v2 extends cc.Component {
         this._gameAllFoodData = {};
         this.myFoodPools = [];
 
-
         this._worldRoot = cc.find("Canvas").parent;
 
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;
 
         fgui.GRoot.inst.addChild(this._view);
-
-        this.myFoodPools = [];
 
         this._c1 = this._view.getController("c1");
         this._c2 = this._view.getController("c2");
@@ -133,7 +129,7 @@ export default class choose_model03_v2 extends cc.Component {
         }
 
         this._scoreGrop = this._view.getChild("score").asGroup;
-        this._scoreGrop.sortingOrder = 999;
+        this._scoreGrop.sortingOrder = 10;
 
         this._topText = this._view.getChild("top").asLabel;
         this._curScoreText = this._view.getChild("cur").asLabel;
@@ -170,6 +166,7 @@ export default class choose_model03_v2 extends cc.Component {
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
 
         this._title = this._view.getChild("title").asButton;
+        this._title.sortingOrder = 11;
 
         this._playBtn = this._view.getChild("play").asButton;
         if (this._playBtn) this._playBtn.on(fgui.Event.CLICK, this._clickStartPlay, this);
@@ -204,7 +201,6 @@ export default class choose_model03_v2 extends cc.Component {
             submitFeedback: this.feedbackType.No,
             gameTime: 0,
             clickFoodTag: -1,
-            gameFoodData: {},
             gameAllFoodData: {},
             dropSpeed: this._dropSpeed,
             interTimeLimit: this._interTimeLimit,
@@ -213,6 +209,7 @@ export default class choose_model03_v2 extends cc.Component {
             curScore: 0,
             topScore: 0,
             showTotal: this._showTotal,
+            isReplayShow: false,
         }
     }
 
@@ -264,8 +261,6 @@ export default class choose_model03_v2 extends cc.Component {
             return;
         }
         this._gameTime++;
-
-        console.log('=== updateAdd =====' + this._gameTime);
 
         this.timeText.text = parseInt(this._gameTime / 10 + '') + 's';
 
@@ -401,7 +396,6 @@ export default class choose_model03_v2 extends cc.Component {
                 let state1: any = globalThis._.cloneDeep(this._state);
                 state1.showTotal = this._showTotal;
                 this.updateState(state1);
-                console.log('==== 加的时候 ===' + this._showTotal);
                 break;
             }
         }
@@ -464,25 +458,39 @@ export default class choose_model03_v2 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
 
+        console.log('==== 更新ui层 ====');
+        console.log(state);
+
         if (!globalThis._.isEqual(oldState.elvesPlay, state.elvesPlay)) {
             if (state.elvesPlay) {
                 this.playElvesSpeak(state.elvesPlay, state.rightSoundFile);
             }
         }
 
+        if (!globalThis._.isEqual(oldState.isReplayShow, state.isReplayShow)) {
+
+            if (state.gameCanPlay) {
+
+                if (state.isReplayShow) {
+
+                    this._playBtn.visible = true;
+
+                } else {
+
+                    this._playBtn.visible = false;
+                }
+                this._readyGroup.visible = false;
+                this._ready.visible = false;
+                this._go.visible = false;
+            }
+        }
+
         if (!globalThis._.isEqual(oldState.gameStart, state.gameStart)) {
-            this._gameStart = state.gameStart;
             if (state.gameStart && !state.gameOver) {
                 let boy = this._view.getChild("boy").asButton;
                 let girl = this._view.getChild("girl").asButton;
                 boy.touchable = false;
                 girl.touchable = false;
-
-                for (let i = 0; i < this.myFoodPools.length; i++) {
-
-                    this.myFoodPools[i].removeFromParent();
-                }
-
                 cc.audioEngine.playMusic(this._gameMusic, true);
 
             } else {
@@ -492,6 +500,8 @@ export default class choose_model03_v2 extends cc.Component {
                 girl.touchable = true;
                 cc.audioEngine.stopMusic();
             }
+
+            this._gameStart = state.gameStart;
         }
 
         if (!globalThis._.isEqual(oldState.play, state.play)) {
@@ -500,6 +510,8 @@ export default class choose_model03_v2 extends cc.Component {
                 this._playBtn.visible = false;
                 this._readyGroup.visible = true;
                 this._ready.visible = true;
+                this._go.visible = false;
+
                 cc.tween(this)
                     .delay(0.7)
                     .call(() => {
@@ -514,34 +526,36 @@ export default class choose_model03_v2 extends cc.Component {
                     this._readyGroup.visible = false;
 
                     let state1: any = globalThis._.cloneDeep(this._state);
+                    state1.play = false;
+                    state1.isReplayShow = false;
                     state1.gameStart = true;
                     state1.dropSpeed = 3.0
                     state1.curScore = 0;
                     state1.gameTime = 0;
                     state1.interTime = 0;
                     state1.interTimeLimit = this._framesSecond * 1.0;
-                    state1.gameCanPlay = false;
                     state1.clickFoodTag = -1;
                     this._addAllFoodData(state1);
-                    this.myFoodPools = [];
                     this.updateState(state1);
                 });
 
-            } else {
-                this._readyGroup.visible = false;
-                this._playBtn.visible = true;
             }
         }
 
         if (!globalThis._.isEqual(oldState.gameOver, state.gameOver)) {
 
-            this._gameOver = state.gameOver;
             if (state.gameOver) {
+                for (let i = 0; i < this.myFoodPools.length; i++) {
+
+                    this.myFoodPools[i].removeFromParent();
+                }
+                this.myFoodPools = [];
                 this._over.visible = true;
             } else {
 
                 this._over.visible = false;
             }
+            this._gameOver = state.gameOver;
         }
 
         if (!globalThis._.isEqual(oldState.clickFoodTag, state.clickFoodTag)) {
@@ -611,11 +625,6 @@ export default class choose_model03_v2 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.gameCanPlay, state.gameCanPlay)) {
 
-            this._readyGroup.visible = false;
-            this._ready.visible = false;
-            this._go.visible = false;
-            this._over.visible = false;
-
             if (state.gameCanPlay) {
 
                 this._playBtn.enabled = true;
@@ -624,6 +633,10 @@ export default class choose_model03_v2 extends cc.Component {
 
                 this._playBtn.enabled = false;
             }
+            this._playBtn.visible = true;
+            this._readyGroup.visible = false;
+            this._ready.visible = false;
+            this._go.visible = false;
         }
 
         if (!globalThis._.isEqual(oldState.gameTime, state.gameTime)) {
@@ -668,17 +681,7 @@ export default class choose_model03_v2 extends cc.Component {
 
             }, 0.05);
 
-
         }
-
-        // if (!globalThis._.isEqual(oldState.gameFoodData, state.gameFoodData)) {
-
-        //     // 获取正确字母数组中的2个字母 可均衡获取0到length的随机整数。
-        //     // 1058 ----1693 Math.floor(Math.random()*(max-min+1)+min)
-        //     this.foodDropAnimate(state, state.gameFoodData);
-
-        //     this.timeText.text = parseInt(state.gameTime / this._framesSecond + '') + 's';
-        // }
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
@@ -807,8 +810,7 @@ export default class choose_model03_v2 extends cc.Component {
             let state: any = globalThis._.cloneDeep(this._state);
             state.submitFeedback = this.feedbackType.No;
             //游戏重新能玩
-            state.gameCanPlay = true;
-            state.play = false;
+            state.isReplayShow = true;
             state.gameOver = false;
             this.updateState(state);
         }, 2000);
@@ -891,6 +893,10 @@ export default class choose_model03_v2 extends cc.Component {
 
     onDisable() {
         console.log('===== 游戏 onDisable =====');
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.gameOver = false;
+        state.gameStart = false;
+        this.updateState(state);
         cc.tween(this).stop();
         this.unschedule(this.updateAdd);
         this.relieveState();
