@@ -2,7 +2,6 @@
 <component size="1920,1080">
   <controller name="c1" pages="0,,1," selected="0"/>
   <displayList>
-    <image id="n0_j79e" name="n0" src="j79e12" fileName="images/例题1.png" xy="-3,0"/>
     <image id="n1_j79e" name="n1" src="j79eb" fileName="images/example1/bg.png" xy="0,0"/>
     <component id="n2_j79e" name="title" src="j79e13" fileName="buttons/title.xml" xy="853,97" alpha="0" touchable="false">
       <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
@@ -20,9 +19,6 @@
     <image id="n11_j79e" name="n11" src="j79ez" fileName="images/example1/0019.png" xy="1585,252"/>
     <image id="n12_j79e" name="n12" src="j79ec" fileName="images/example1/dk.png" xy="291,616"/>
     <image id="n13_j79e" name="n13" src="j79ed" fileName="images/example1/jpd.png" xy="114,938"/>
-    <text id="n25_j79e" name="zhiText" xy="301,775" size="443,134" font="ui://dj5ft8zhjwhvbl" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text=""/>
-    <text id="n26_j79e" name="sheText" xy="761,775" size="443,134" font="ui://dj5ft8zhjwhvbl" fontSize="12" align="center" vAlign="middle" autoSize="none" text=""/>
-    <text id="n27_j79e" name="duanText" xy="1215,775" size="443,134" font="ui://dj5ft8zhjwhvbl" fontSize="30" align="center" vAlign="middle" autoSize="none" text=""/>
     <component id="n14_j79e" name="input0" src="j79e17" fileName="buttons/button1.xml" xy="163,940" size="124,120" group="n28_j79e">
       <Button icon="ui://mgpb39d5j79e1" sound="ui://mgpb39d5j79e18"/>
     </component>
@@ -53,12 +49,24 @@
     <component id="n23_j79e" name="input9" src="j79e17" fileName="buttons/button1.xml" xy="1496,940" size="124,120" group="n28_j79e">
       <Button icon="ui://mgpb39d5j79ea" sound="ui://mgpb39d5j79e18"/>
     </component>
-    <component id="n24_j79e" name="input10" src="j79e17" fileName="buttons/button1.xml" xy="1645,940" size="124,120" group="n28_j79e">
+    <component id="n24_j79e" name="inputx" src="j79e17" fileName="buttons/button1.xml" xy="1645,940" size="124,120" group="n28_j79e">
       <Button icon="ui://mgpb39d5j79eq" sound="ui://mgpb39d5j79e18"/>
     </component>
     <group id="n28_j79e" name="key" xy="163,940" size="1606,120" advanced="true"/>
     <component id="n29_j79e" name="submit" src="j79e17" fileName="buttons/button1.xml" xy="1687,691" size="194,187">
       <Button icon="ui://mgpb39d5j79e10" sound="ui://mgpb39d5j79e18"/>
     </component>
+    <image id="n30_j46a" name="select_kunag_1" src="j46a1b" fileName="images/example1/0020.png" xy="291,765" group="n33_j46a"/>
+    <image id="n31_j46a" name="select_kunag_2" src="j46a1b" fileName="images/example1/0020.png" xy="752,765" group="n33_j46a"/>
+    <image id="n32_j46a" name="select_kunag_3" src="j46a1b" fileName="images/example1/0020.png" xy="1204,765" group="n33_j46a"/>
+    <group id="n33_j46a" name="selectGroup" xy="291,765" size="1381,160" advanced="true"/>
+    <component id="n34_j46a" name="kuang1" src="j79e17" fileName="buttons/button1.xml" xy="304,621" size="450,291" group="n37_j46a"/>
+    <component id="n35_j46a" name="kuang2" src="j79e17" fileName="buttons/button1.xml" xy="755,624" size="450,291" group="n37_j46a"/>
+    <component id="n36_j46a" name="kuang3" src="j79e17" fileName="buttons/button1.xml" xy="1217,632" size="450,291" group="n37_j46a"/>
+    <group id="n37_j46a" name="kuangGroup" xy="304,621" size="1363,302" advanced="true"/>
+    <text id="n25_j79e" name="zhiText" xy="301,775" size="443,134" group="n38_j46a" font="ui://dj5ft8zhjwhvbl" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text=""/>
+    <text id="n26_j79e" name="sheText" xy="761,775" size="443,134" group="n38_j46a" font="ui://dj5ft8zhjwhvbl" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text=""/>
+    <text id="n27_j79e" name="duanText" xy="1215,775" size="443,134" group="n38_j46a" font="ui://dj5ft8zhjwhvbl" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text=""/>
+    <group id="n38_j46a" name="textGroup" xy="301,775" size="1357,134" advanced="true"/>
   </displayList>
 </component>

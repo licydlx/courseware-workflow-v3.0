@@ -192,6 +192,7 @@ export default class choose_model03_v3 extends cc.Component {
     }
 
     private _clickSubmit(evt: any) {
+
         let state: any = globalThis._.cloneDeep(this._state);
 
         let isHave = 0;

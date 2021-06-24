@@ -76,8 +76,6 @@ export default class choose_model03_v2 extends cc.Component {
 
     private _foodTag: number = 0;
 
-    private _showTotal: number = 0;
-
     private feedbackType: any = cc.Enum({
         No: 0,
         GuideShow: 1,
@@ -100,14 +98,13 @@ export default class choose_model03_v2 extends cc.Component {
         this.mergeState();
     }
 
-    async onLoad() {
+    onLoad() {
 
         this._framesSecond = 10;
         this._interTimeLimit = this._framesSecond * 1.0;
         this._dropSpeed = 3.0;
         this._interTime = this._interTimeLimit;
         this._foodTag = 0;
-        this._showTotal = 0;
         this._gameAllFoodData = {};
         this.myFoodPools = [];
 
@@ -134,7 +131,7 @@ export default class choose_model03_v2 extends cc.Component {
         this._topText = this._view.getChild("top").asLabel;
         this._curScoreText = this._view.getChild("cur").asLabel;
 
-        this._topText.text = '--';
+        this._topText.text = '0';
         this._curScoreText.text = '0';
 
         this.timeText = this._view.getChild("n32").asLabel;
@@ -208,9 +205,10 @@ export default class choose_model03_v2 extends cc.Component {
             foodTag: this._foodTag,
             curScore: 0,
             topScore: 0,
-            showTotal: this._showTotal,
             isReplayShow: false,
         }
+
+
     }
 
     async init(data: any) {
@@ -257,10 +255,17 @@ export default class choose_model03_v2 extends cc.Component {
 
         if (!this._gameStart || this._gameOver) {
 
+            for (let i = 0; i < this.myFoodPools.length; i++) {
+
+                this.myFoodPools[i].removeFromParent();
+            }
+            this.myFoodPools = [];
             this.unschedule(this.updateAdd);
             return;
         }
         this._gameTime++;
+
+        console.log('====  updateAdd _gameTime ====' + this._gameTime);
 
         this.timeText.text = parseInt(this._gameTime / 10 + '') + 's';
 
@@ -270,7 +275,18 @@ export default class choose_model03_v2 extends cc.Component {
 
             let state: any = globalThis._.cloneDeep(this._state);
 
-            if (state.curScore / state.showTotal < 0.5) {
+            let showTotal = 0;
+            // 增加正确显示的个数
+            for (let i = 0; i <= this._foodTag; i++) {
+
+                for (let j = 0; j < this._rightIndexs.length; j++) {
+                    if (this._rightIndexs[j] === state.gameAllFoodData[i].index) {
+                        showTotal++;
+                        break;
+                    }
+                }
+            }
+            if (state.curScore / showTotal < 0.5) {
 
                 state.submitFeedback = this.feedbackType.WrongFeed;
 
@@ -279,6 +295,8 @@ export default class choose_model03_v2 extends cc.Component {
                 state.submitFeedback = this.feedbackType.RightFeed;
 
             }
+            console.log('==== showTotal  ====' + showTotal);
+
             state.gameTime = this._gameTime;
             state.gameOver = true;
             state.gameStart = false;
@@ -309,12 +327,6 @@ export default class choose_model03_v2 extends cc.Component {
             this.updateAllSpeed();
         }
 
-        this._interTime++;
-        if (this._interTime >= this._interTimeLimit) {
-            this._interTime = 0;
-            this.foodDropUpdate();
-        }
-
         if (this._gameTime % 50 === 0) {
 
             let state: any = globalThis._.cloneDeep(this._state);
@@ -323,6 +335,13 @@ export default class choose_model03_v2 extends cc.Component {
             state.foodTag = this._foodTag;
             this.updateState(state);
         }
+
+        this._interTime++;
+        if (this._interTime >= this._interTimeLimit) {
+            this._interTime = 0;
+            this.foodDropUpdate();
+        }
+
     }
 
     private _addAllFoodData(state: any) {
@@ -335,7 +354,7 @@ export default class choose_model03_v2 extends cc.Component {
             let tempData = { index: randIndex, isShow: true, tag: i, x: randPosX, y: 70, speed: this._dropSpeed };
             state.gameAllFoodData[tempData.tag] = tempData;
         }
-        state.showTotal = 0;
+
     }
 
     private updateAllSpeed() {
@@ -348,6 +367,7 @@ export default class choose_model03_v2 extends cc.Component {
 
     private foodDropUpdate() {
 
+        console.log('====== foodDropUpdate ===== ' + this._foodTag);
         let foodData = this._gameAllFoodData[this._foodTag];
 
         // 判断是否重叠
@@ -388,17 +408,6 @@ export default class choose_model03_v2 extends cc.Component {
             this._view.addChild(food);
             this.myFoodPools.push(food);
         }
-
-        // 增加正确显示的个数
-        for (let i = 0; i < this._rightIndexs.length; i++) {
-            if (this._rightIndexs[i] === foodData.index) {
-                this._showTotal++;
-                let state1: any = globalThis._.cloneDeep(this._state);
-                state1.showTotal = this._showTotal;
-                this.updateState(state1);
-                break;
-            }
-        }
         this._foodTag++;
         if (this._foodTag >= Object.keys(this._gameAllFoodData).length) {
 
@@ -412,8 +421,20 @@ export default class choose_model03_v2 extends cc.Component {
         let obj: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         let btn = obj.asButton;
         state.clickFoodTag = btn.data.tag;
-        this.updateState(state);
 
+        // 是正确的
+        let isRight = false;
+        for (let i = 0; i < this._rightIndexs.length; i++) {
+            if (btn.data.index === this._rightIndexs[i]) {
+                isRight = true;
+                break;
+            }
+        }
+        if (isRight) {
+            //点击正确
+            state.curScore++;
+        }
+        this.updateState(state);
     }
 
     private _clickElves(evt: any) {
@@ -434,6 +455,7 @@ export default class choose_model03_v2 extends cc.Component {
     private _clickStartPlay(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
         state.play = true;
+        this._addAllFoodData(state);
         this.updateState(state);
     }
 
@@ -493,6 +515,8 @@ export default class choose_model03_v2 extends cc.Component {
                 girl.touchable = false;
                 cc.audioEngine.playMusic(this._gameMusic, true);
 
+                this.schedule(this.updateAdd, 0.1);
+
             } else {
                 let boy = this._view.getChild("boy").asButton;
                 let girl = this._view.getChild("girl").asButton;
@@ -535,7 +559,7 @@ export default class choose_model03_v2 extends cc.Component {
                     state1.interTime = 0;
                     state1.interTimeLimit = this._framesSecond * 1.0;
                     state1.clickFoodTag = -1;
-                    this._addAllFoodData(state1);
+                    state1.foodTag = 0;
                     this.updateState(state1);
                 });
 
@@ -580,34 +604,23 @@ export default class choose_model03_v2 extends cc.Component {
                     }
                 }
                 if (isRight) {
-
                     //点击正确
                     btn.clickChangeIcon();
                     cc.audioEngine.playEffect(this._rightSound, false);
-                    setTimeout(() => {
-
-                        let state2: any = globalThis._.cloneDeep(this._state);
-                        state2.clickFoodTag = '';
-                        state2.curScore++;
-                        this.updateState(state2);
-
-                    }, 0.02);
 
                 } else {
-
                     btn.clickWrongAnimate();
-                    setTimeout(() => {
-
-                        let state2: any = globalThis._.cloneDeep(this._state);
-                        state2.clickFoodTag = '';
-                        this.updateState(state2);
-
-                    }, 0.03);
-
                     //点击错误
                     cc.audioEngine.playEffect(this._wrongSound, false);
 
                 }
+                setTimeout(() => {
+
+                    let state2: any = globalThis._.cloneDeep(this._state);
+                    state2.clickFoodTag = '';
+                    this.updateState(state2);
+
+                }, 10);
             }
         }
 
@@ -649,10 +662,6 @@ export default class choose_model03_v2 extends cc.Component {
             this._interTime = state.interTime;
         }
 
-        if (!globalThis._.isEqual(oldState.showTotal, state.showTotal)) {
-
-            this._showTotal = state.showTotal;
-        }
 
         if (!globalThis._.isEqual(oldState.foodTag, state.foodTag)) {
 
@@ -674,13 +683,6 @@ export default class choose_model03_v2 extends cc.Component {
             // 获取正确字母数组中的2个字母 可均衡获取0到length的随机整数。
             // 1058 ----1693 Math.floor(Math.random()*(max-min+1)+min)
             this._gameAllFoodData = state.gameAllFoodData;
-
-            setTimeout(() => {
-
-                this.schedule(this.updateAdd, 0.1);
-
-            }, 0.05);
-
         }
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {
@@ -898,6 +900,14 @@ export default class choose_model03_v2 extends cc.Component {
         state.gameStart = false;
         this.updateState(state);
         cc.tween(this).stop();
+        for (let i = 0; i < this._boyFood.length; i++) {
+
+            cc.tween(this._boyFood[i]).stop();
+        }
+        for (let i = 0; i < this._girlFood.length; i++) {
+
+            cc.tween(this._girlFood[i]).stop();
+        }
         this.unschedule(this.updateAdd);
         this.relieveState();
         cc.audioEngine.stopAll();
@@ -976,9 +986,9 @@ class MyDropFood extends fgui.GButton {
         let tempY = this.y;
         let offset = 10;
         cc.tween(this._itemR)
-            .to(0.02, { x: tempX + (5 + offset), y: tempY + (offset + 7) })
-            .to(0.02, { x: tempX - (6 + offset), y: tempY + (offset + 7) })
-            .repeat(5)
+            .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset), y: tempY + (offset + 7) }),
+                cc.tween().to(0.02, { x: tempX - (6 + offset), y: tempY + (offset + 7) }))
+            .repeat(8)
             .call(() => {
 
                 this.x = tempX;

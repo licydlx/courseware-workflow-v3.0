@@ -1,0 +1,39 @@
+{
+    "name": "数理思维",
+    "courseName": "t4-05",
+    "env": "test",
+    "totalPages": 12,
+    "pathConfig": {
+        "remoteUrl": "",
+        "controllerBundlePath": "",
+        "controllerName": "controller-model02",
+        "resourceBundlePath": "",
+        "panelBundlePath": "",
+        "panelName": "formal-panle-model02",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "resourceName": "t4-05",
+        "packageName": "t4-05"
+    },
+    "chapters": [ 
+        
+        {
+            "model": {
+                "uiPath": "t4-05-model-p2",
+                "bundleName": "t4-05-model",
+                "prefabName": "t4-05-model-v1",
+                "config": {
+                   
+
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        }
+    ]
+}

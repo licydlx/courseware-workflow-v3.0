@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="mgpb39d5">
   <resources>
-    <component id="j79e0" name="t4-05-model-p2.xml" path="/"/>
+    <component id="j79e0" name="t4-05-model-p2.xml" path="/" exported="true"/>
     <image id="j79e1" name="0.png" path="/images/example1/"/>
     <image id="j79e2" name="1.png" path="/images/example1/"/>
     <image id="j79e3" name="2.png" path="/images/example1/"/>
@@ -35,6 +35,7 @@
     <component id="j79e17" name="button1.xml" path="/buttons/"/>
     <sound id="j79e18" name="click.mp3" path="/audios/"/>
     <sound id="j79e19" name="drag.mp3" path="/audios/"/>
+    <image id="j46a1b" name="0020.png" path="/images/example1/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

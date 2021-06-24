@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 51,
+            "activePatchIndex": 53,
             "patches": [
                 {
                     "date": 1623990191040,
@@ -212,6 +212,14 @@
                 {
                     "date": 1624351824819,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -167,9 +167,9 @@\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n \r\n                     \"gameFood\": [\"ui://733aoo45r3754a\", \"ui://733aoo45r3754b\", \"ui://733aoo45r3754c\"],\r\n-                    \"gameFoodSize\":[{\"w\":170, \"h\":90}, {\"w\":68, \"h\":112}, {\"w\":106, \"h\":96}],\r\n+                    \"gameFoodSize\":[{\"w\":128, \"h\":77}, {\"w\":145, \"h\":101}, {\"w\":70, \"h\":167}],\r\n                     \"rightIndexs\": [1],\r\n                     \"boySoundPath\": \"ui://733aoo45gzaz7g\",\r\n                     \"girlSoundPath\": \"ui://733aoo45gzaz7h\"\r\n                     \r\n"
+                },
+                {
+                    "date": 1624517131589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,31 @@\n     \"chapters\": [ \r\n         \r\n         {\r\n             \"model\": {\r\n+                \"uiPath\": \"choose-model03-v2-p5\",\r\n+                \"bundleName\": \"choose\",\r\n+                \"prefabName\": \"choose-model03-v2\",\r\n+                \"config\": {\r\n+                    \"gameFood\": [\"ui://733aoo45r3754d\", \"ui://733aoo45r3754f\", \"ui://733aoo45r3754e\", \"ui://733aoo45r3754g\"],\r\n+                    \"gameFoodSize\":[{\"w\":117, \"h\":77}, {\"w\":88, \"h\":113}, {\"w\":77, \"h\":152}, {\"w\":94, \"h\":119}],\r\n+                    \"rightIndexs\": [0, 1],\r\n+                    \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n+                    \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n+                    \r\n+                }\r\n+            }, \r\n+            \r\n+            \"components\": {\r\n+                \"feedback\": {\r\n+                    \"bundleName\": \"feedback\",\r\n+                    \"prefabName\": \"feedback-model01-v1\"\r\n+                }\r\n+            }\r\n+        },\r\n+        \r\n+        {\r\n+            \"model\": {\r\n               \"uiPath\": \"static-model01-v1-p1\",\r\n               \"bundleName\": \"static\",\r\n               \"prefabName\": \"static-model01-v1\"\r\n             }\r\n"
+                },
+                {
+                    "date": 1624529806569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,31 +18,8 @@\n     \"chapters\": [ \r\n         \r\n         {\r\n             \"model\": {\r\n-                \"uiPath\": \"choose-model03-v2-p5\",\r\n-                \"bundleName\": \"choose\",\r\n-                \"prefabName\": \"choose-model03-v2\",\r\n-                \"config\": {\r\n-                    \"gameFood\": [\"ui://733aoo45r3754d\", \"ui://733aoo45r3754f\", \"ui://733aoo45r3754e\", \"ui://733aoo45r3754g\"],\r\n-                    \"gameFoodSize\":[{\"w\":117, \"h\":77}, {\"w\":88, \"h\":113}, {\"w\":77, \"h\":152}, {\"w\":94, \"h\":119}],\r\n-                    \"rightIndexs\": [0, 1],\r\n-                    \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n-                    \"girlSoundPath\": \"ui://733aoo45w2qd1d\"\r\n-                    \r\n-                }\r\n-            }, \r\n-            \r\n-            \"components\": {\r\n-                \"feedback\": {\r\n-                    \"bundleName\": \"feedback\",\r\n-                    \"prefabName\": \"feedback-model01-v1\"\r\n-                }\r\n-            }\r\n-        },\r\n-        \r\n-        {\r\n-            \"model\": {\r\n               \"uiPath\": \"static-model01-v1-p1\",\r\n               \"bundleName\": \"static\",\r\n               \"prefabName\": \"static-model01-v1\"\r\n             }\r\n"
                 }
             ],
             "date": 1623990191040,
