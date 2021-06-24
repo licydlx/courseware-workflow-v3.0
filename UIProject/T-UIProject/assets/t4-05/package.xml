@@ -36,6 +36,7 @@
     <sound id="j79e18" name="click.mp3" path="/audios/"/>
     <sound id="j79e19" name="drag.mp3" path="/audios/"/>
     <image id="j46a1b" name="0020.png" path="/images/example1/"/>
+    <image id="spb01c" name="hand.png" path="/images/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

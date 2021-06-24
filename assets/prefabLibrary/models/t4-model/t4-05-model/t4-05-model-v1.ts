@@ -32,6 +32,8 @@ export default class t4_05_model_v1 extends cc.Component {
 
     private _kuangNameArr: any = [];
 
+    private _rightAnswer: any = { 'kuang1': '2', 'kuang2': '1', 'kuang3': '2' };
+
     private submitType: any = cc.Enum({
 
         No: 0,
@@ -56,6 +58,7 @@ export default class t4_05_model_v1 extends cc.Component {
     }
 
     async onLoad() {
+
         this._worldRoot = cc.find("Canvas").parent;
 
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
@@ -85,7 +88,6 @@ export default class t4_05_model_v1 extends cc.Component {
         for (let i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == kuangGroup) {
                 let btn = this._view.getChildAt(i).asButton;
-                console.log('=== name ===' + btn.name);
                 this._kuangNameArr.push(btn.name);
                 tempAnswerMap[btn.name] = '';
                 btn.on(fgui.Event.CLICK, this._clickKuang, this);
@@ -166,11 +168,23 @@ export default class t4_05_model_v1 extends cc.Component {
 
     private _clickKey(evt: any) {
 
+        let isHideAll = true;
+        for (let key in this._selectMap) {
+
+            if (this._selectMap[key].visible) {
+                isHideAll = false;
+                break;
+            }
+        }
+
+        if (isHideAll) {
+            this.handTips2(this._selectMap[this._kuangNameArr[0]]);
+            return;
+        }
         var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         let subName = btn.name.substring('input'.length);
-        console.log('==== subName ==' + subName);
         let state: any = globalThis._.cloneDeep(this._state);
-        state.keyNumber = subName;
+        state.keyNumber = subName + '';
         this.updateState(state);
     }
 
@@ -190,9 +204,39 @@ export default class t4_05_model_v1 extends cc.Component {
 
     private _clickSubmit(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
-        state.submit = this.submitType.GuideShow;
-        state.submit = this.submitType.WrongFeed;
-        state.submit = this.submitType.RightFeed;
+
+
+        let isAllKong = true;
+        for (let key in state.answerMap) {
+
+            if (state.answerMap[key] !== '') {
+
+                isAllKong = false;
+                break;
+            }
+
+        }
+
+        if (isAllKong) {
+            state.submit = this.submitType.GuideShow;
+        } else {
+            let isAllDeng = true;
+            for (let key in state.answerMap) {
+
+                console.log('== kkk ====' + this._rightAnswer[key]);
+
+                if (state.answerMap[key] !== this._rightAnswer[key]) {
+
+                    isAllDeng = false;
+                    break;
+                }
+            }
+            if (isAllDeng) {
+                state.submit = this.submitType.RightFeed;
+            } else {
+                state.submit = this.submitType.WrongFeed;
+            }
+        }
 
         this.updateState(state);
     }
@@ -230,27 +274,41 @@ export default class t4_05_model_v1 extends cc.Component {
 
             } else if (state.submit === this.submitType.GuideShow) {
 
+                let keyBtn = this._view.getChild('input1').asButton;
+                this.handTips2(keyBtn);
             }
         }
         if (!globalThis._.isEqual(oldState.keyNumber, state.keyNumber)) {
 
             if (state.keyNumber != '') {
 
-                if (oldState.selectKuangName != state.selectKuangName) {
+                let answerMapTemp = state.answerMap;
+                let curKuangName = state.selectKuangName;
+                let oldKuangName = oldState.selectKuangName;
+                if (oldKuangName != curKuangName) {
 
-                    if (state.keyNumber === 'x') {
+                    if (state.keyNumber === 'x' && answerMapTemp[curKuangName].length !== 0) {
 
-                    } else {
-                        state.answerMap[state.selectKuangName] = state.keyNumber;
+                        let str = answerMapTemp[curKuangName];
+                        let strJian = str.substring(0, str.length - 1);
+                        answerMapTemp[curKuangName] = strJian;
+
+                    } if (state.keyNumber !== 'x') {
+                        answerMapTemp[curKuangName] = state.keyNumber;
                     }
 
                 } else {
 
-                    if (state.keyNumber === 'x') {
+                    if (state.keyNumber === 'x' && answerMapTemp[curKuangName].length !== 0) {
 
-                    } else {
+                        let str = answerMapTemp[curKuangName];
+                        let strJian = str.substring(0, str.length - 1);
 
-                        state.answerMap[state.selectKuangName] += state.keyNumber;
+                        answerMapTemp[curKuangName] = strJian;
+
+                    } else if (state.keyNumber !== 'x') {
+
+                        answerMapTemp[curKuangName] += state.keyNumber;
                     }
 
                 }
@@ -259,10 +317,10 @@ export default class t4_05_model_v1 extends cc.Component {
 
                     let state2: any = globalThis._.cloneDeep(this._state);
                     state2.keyNumber = '';
-                    state2.answerMap = state.answerMap;
+                    state2.answerMap = answerMapTemp;
                     this.updateState(state2);
 
-                }, 0.02);
+                }, 10);
             }
         }
 
@@ -272,9 +330,7 @@ export default class t4_05_model_v1 extends cc.Component {
 
                 this._textMap[key].text = state.answerMap[key];
             }
-
         }
-
 
         if (!globalThis._.isEqual(oldState.selectKuangName, state.selectKuangName)) {
 

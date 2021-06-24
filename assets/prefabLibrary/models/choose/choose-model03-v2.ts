@@ -209,6 +209,7 @@ export default class choose_model03_v2 extends cc.Component {
         }
 
 
+
     }
 
     async init(data: any) {
@@ -249,6 +250,9 @@ export default class choose_model03_v2 extends cc.Component {
                 this[key] = componentPrefab;
             }
         }
+
+        let audio: cc.AudioClip = await loadResource(this._boySound, cc.AudioClip);
+        let audioId = cc.audioEngine.play(audio, false, 1);
     }
 
     protected updateAdd(dt: number): void {
