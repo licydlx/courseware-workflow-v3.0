@@ -222,9 +222,6 @@ export default class t4_05_model_v1 extends cc.Component {
         } else {
             let isAllDeng = true;
             for (let key in state.answerMap) {
-
-                console.log('== kkk ====' + this._rightAnswer[key]);
-
                 if (state.answerMap[key] !== this._rightAnswer[key]) {
 
                     isAllDeng = false;

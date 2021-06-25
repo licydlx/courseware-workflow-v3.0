@@ -44,6 +44,8 @@ export default class choose_model03_v3 extends cc.Component {
 
     private _box3D: fgui.GLoader3D;
 
+    private _boxSoundTime: number;
+
     private submitType: any = cc.Enum({
 
         No: 0,
@@ -138,6 +140,14 @@ export default class choose_model03_v3 extends cc.Component {
             chooseCach: this._chooseCach,
             submit: this.submitType.No,
         }
+
+        // 临时 
+        // 禁止操作期间 切页
+        this.disableForbidHandle();
+        // 销毁反馈
+        let feedback: any = this._worldRoot.getChildByName("feedback");
+        if (feedback) feedback.destroy();
+        cc.audioEngine.stopAll();
     }
 
     async init(data: any) {
@@ -145,7 +155,7 @@ export default class choose_model03_v3 extends cc.Component {
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
         let GComponent = model.uiPath;
-        let { boxSoundUrl, guidIndex } = model.config;
+        let { boxSoundUrl, guidIndex, boxSoundTime } = model.config;
         this._package = Package;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
@@ -154,6 +164,8 @@ export default class choose_model03_v3 extends cc.Component {
         this._boxSound = await loadResource(item.file, cc.AudioClip);
 
         if (guidIndex) this._guidIndex = guidIndex;
+
+        if (boxSoundTime) this._boxSoundTime = boxSoundTime;
 
         // 动效注册
         // for (let v in ae) {
@@ -356,20 +368,25 @@ export default class choose_model03_v3 extends cc.Component {
             })
             .start();
 
-        let audioId = cc.audioEngine.play(this._boxSound, false, 1);
-        cc.audioEngine.setFinishCallback(audioId, () => {
-            this._box3D.animationName = 'sjq_idle';
-            this.disableForbidHandle();
-            for (let i = 0; i < this._paoShow.length; i++) {
-                this._paoShow[i].alpha = 0;
-            }
-            this._c2.selectedIndex = 0;
-            let state: any = globalThis._.cloneDeep(this._state);
-            state.boxPlay = false;
-            state.canChoose = true;
-            this.updateState(state);
+        cc.audioEngine.play(this._boxSound, false, 1);
 
-        });
+        cc.tween(this)
+            .delay(this._boxSoundTime)
+            .call(() => {
+
+                this._box3D.animationName = 'sjq_idle';
+                this.disableForbidHandle();
+                for (let i = 0; i < this._paoShow.length; i++) {
+                    this._paoShow[i].alpha = 0;
+                }
+                this._c2.selectedIndex = 0;
+                let state: any = globalThis._.cloneDeep(this._state);
+                state.boxPlay = false;
+                state.canChoose = true;
+                this.updateState(state);
+
+            })
+            .start();
     }
 
     playPaoShowAnimate(index: number) {
@@ -377,6 +394,9 @@ export default class choose_model03_v3 extends cc.Component {
         cc.tween(this._paoShow[index])
             .to(1.0, { alpha: 1 })
             .call(() => {
+                if (!this._paoShow) {
+                    return;
+                }
                 index++;
                 if (index < this._paoShow.length) {
                     this.playPaoShowAnimate(index);
@@ -479,8 +499,8 @@ export default class choose_model03_v3 extends cc.Component {
     }
 
     onDisable() {
-        cc.tween(this._box3D).stop();
-        cc.tween(this).stop();
+
+        cc.Tween.stopAll();
         this.relieveState();
         cc.audioEngine.stopAll();
     }

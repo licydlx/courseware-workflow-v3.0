@@ -76,6 +76,10 @@ export default class choose_model03_v2 extends cc.Component {
 
     private _foodTag: number = 0;
 
+    private _boySoundTime: number;
+
+    private _girlSoundTime: number;
+
     private feedbackType: any = cc.Enum({
         No: 0,
         GuideShow: 1,
@@ -134,6 +138,8 @@ export default class choose_model03_v2 extends cc.Component {
         this._topText.text = '0';
         this._curScoreText.text = '0';
 
+        this._view.getChild("total").asLabel.text = 'total: 0';
+
         this.timeText = this._view.getChild("n32").asLabel;
         this.timeText.text = this._gameTime + '';
 
@@ -191,7 +197,7 @@ export default class choose_model03_v2 extends cc.Component {
         this._state = {
             title: false,
             elvesPlay: false,
-            rightSoundFile: [{ sex: 1, file: this._boySound }, { sex: 2, file: this._girlSound }],
+            rightSoundFile: [{ sex: 1, file: this._boySound, time: this._boySoundTime }, { sex: 2, file: this._girlSound, time: this._girlSoundTime }],
             gameCanPlay: false,
             gameOver: false,
             gameStart: false,
@@ -208,7 +214,13 @@ export default class choose_model03_v2 extends cc.Component {
             isReplayShow: false,
         }
 
-
+        // 临时 
+        // 禁止操作期间 切页
+        this.disableForbidHandle();
+        // 销毁反馈
+        let feedback: any = this._worldRoot.getChildByName("feedback");
+        if (feedback) feedback.destroy();
+        cc.audioEngine.stopAll();
 
     }
 
@@ -217,7 +229,7 @@ export default class choose_model03_v2 extends cc.Component {
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
         let GComponent = model.uiPath;
-        let { gameFood, gameFoodSize, rightIndexs, boySoundPath, girlSoundPath } = model.config;
+        let { gameFood, gameFoodSize, rightIndexs, boySoundPath, girlSoundPath, boySoundTime, girlSoundTime } = model.config;
         this._package = Package;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
@@ -225,6 +237,8 @@ export default class choose_model03_v2 extends cc.Component {
         if (gameFood) this._gameFood = gameFood;
         if (gameFoodSize) this._gameFoodSize = gameFoodSize;
         if (rightIndexs) this._rightIndexs = rightIndexs;
+        if (boySoundTime) this._boySoundTime = boySoundTime;
+        if (girlSoundTime) this._girlSoundTime = girlSoundTime;
 
         let item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754m');
         this._gameMusic = await loadResource(item.file, cc.AudioClip);
@@ -250,9 +264,6 @@ export default class choose_model03_v2 extends cc.Component {
                 this[key] = componentPrefab;
             }
         }
-
-        let audio: cc.AudioClip = await loadResource(this._boySound, cc.AudioClip);
-        let audioId = cc.audioEngine.play(audio, false, 1);
     }
 
     protected updateAdd(dt: number): void {
@@ -299,6 +310,8 @@ export default class choose_model03_v2 extends cc.Component {
                 state.submitFeedback = this.feedbackType.RightFeed;
 
             }
+
+            this._view.getChild("total").asLabel.text = 'total: ' + showTotal;
             console.log('==== showTotal  ====' + showTotal);
 
             state.gameTime = this._gameTime;
@@ -446,11 +459,11 @@ export default class choose_model03_v2 extends cc.Component {
         var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         if (btn.name === 'boy') {
 
-            state.rightSoundFile = [{ sex: 1, file: this._boySound }, { sex: 2, file: this._girlSound }];
+            state.rightSoundFile = [{ sex: 1, file: this._boySound, time: this._boySoundTime }, { sex: 2, file: this._girlSound, time: this._girlSoundTime }];
 
         } else {
 
-            state.rightSoundFile = [{ sex: 2, file: this._girlSound }, { sex: 1, file: this._boySound }];
+            state.rightSoundFile = [{ sex: 2, file: this._girlSound, time: this._girlSoundTime }, { sex: 1, file: this._boySound, time: this._boySoundTime }];
         }
         state.elvesPlay = true;
         this.updateState(state);
@@ -618,13 +631,14 @@ export default class choose_model03_v2 extends cc.Component {
                     cc.audioEngine.playEffect(this._wrongSound, false);
 
                 }
+
                 setTimeout(() => {
 
                     let state2: any = globalThis._.cloneDeep(this._state);
                     state2.clickFoodTag = '';
                     this.updateState(state2);
 
-                }, 10);
+                }, 100);
             }
         }
 
@@ -752,44 +766,51 @@ export default class choose_model03_v2 extends cc.Component {
             .start();
 
         let audio: cc.AudioClip = await loadResource(rightSoundFile[curIndex].file, cc.AudioClip);
-        let audioId = cc.audioEngine.play(audio, false, 1);
-        cc.audioEngine.setFinishCallback(audioId, () => {
+        cc.audioEngine.play(audio, false, 1);
 
-            if (rightSoundFile[curIndex].sex === 1) {
+        cc.tween(this)
+            .delay(rightSoundFile[curIndex].time)
+            .call(() => {
 
-                this._boy3D.animationName = 'b_idle';
+                if (rightSoundFile[curIndex].sex === 1) {
 
-            } else {
-                this._girl3D.animationName = 'g_idle';
-            }
+                    this._boy3D.animationName = 'b_idle';
 
-            if (curIndex >= rightSoundFile.length - 1) {
-                this.disableForbidHandle();
-                for (let i = 0; i < this._boyFood.length; i++) {
-                    this._boyFood[i].alpha = 0;
-                }
-                for (let i = 0; i < this._girlFood.length; i++) {
-                    this._girlFood[i].alpha = 0;
+                } else {
+                    this._girl3D.animationName = 'g_idle';
                 }
 
-                this._c2.selectedIndex = 0;
+                if (curIndex >= rightSoundFile.length - 1) {
+                    this.disableForbidHandle();
+                    for (let i = 0; i < this._boyFood.length; i++) {
+                        this._boyFood[i].alpha = 0;
+                    }
+                    for (let i = 0; i < this._girlFood.length; i++) {
+                        this._girlFood[i].alpha = 0;
+                    }
 
-                let state: any = globalThis._.cloneDeep(this._state);
-                state.elvesPlay = false;
-                state.gameCanPlay = true;
-                this.updateState(state);
+                    this._c2.selectedIndex = 0;
 
-            } else {
+                    let state: any = globalThis._.cloneDeep(this._state);
+                    state.elvesPlay = false;
+                    state.gameCanPlay = true;
+                    this.updateState(state);
 
-                curIndex++;
-                this.playRightSound(curIndex, rightSoundFile);
-            }
+                } else {
 
-        });
+                    curIndex++;
+                    this.playRightSound(curIndex, rightSoundFile);
+                }
+
+            })
+            .start();
     }
 
     playFoodShowAnimate(index: number, foodArr: any) {
 
+        if (!foodArr[index]) {
+            return;
+        }
         cc.tween(foodArr[index])
             .to(1.0, { alpha: 1 })
             .call(() => {
@@ -903,15 +924,7 @@ export default class choose_model03_v2 extends cc.Component {
         state.gameOver = false;
         state.gameStart = false;
         this.updateState(state);
-        cc.tween(this).stop();
-        for (let i = 0; i < this._boyFood.length; i++) {
-
-            cc.tween(this._boyFood[i]).stop();
-        }
-        for (let i = 0; i < this._girlFood.length; i++) {
-
-            cc.tween(this._girlFood[i]).stop();
-        }
+        cc.Tween.stopAll();
         this.unschedule(this.updateAdd);
         this.relieveState();
         cc.audioEngine.stopAll();
@@ -933,8 +946,6 @@ class MyDropFood extends fgui.GButton {
 
     private _itemR: any;
 
-    private _isDou: boolean;
-
     private _speed: number;
 
     private _MaxY: number;
@@ -942,8 +953,6 @@ class MyDropFood extends fgui.GButton {
     constructor(url: string, foodData: any) {
 
         let _item = super();
-
-        this._isDou = false;
 
         this._itemR = _item;
         this._iconLoader = new fgui.GLoader();
@@ -955,7 +964,9 @@ class MyDropFood extends fgui.GButton {
         this._url = url;
 
         this._MaxY = 1000 - this._iconLoader.height;
+        foodData['isDou'] = false;
         this._speed = foodData.speed;
+
 
         this.data = foodData;
 
@@ -984,24 +995,25 @@ class MyDropFood extends fgui.GButton {
 
     protected clickWrongAnimate(): void {
 
-        this._isDou = true;
+        this.data.isDou = true;
 
         let tempX = this.x;
         let tempY = this.y;
         let offset = 10;
         cc.tween(this._itemR)
-            .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset), y: tempY + (offset + 7) }),
-                cc.tween().to(0.02, { x: tempX - (6 + offset), y: tempY + (offset + 7) }))
+            .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset), y: tempY }),
+                cc.tween().to(0.02, { x: tempX - (6 + offset), y: tempY }))
             .repeat(8)
             .call(() => {
 
                 this.x = tempX;
                 this.y = tempY;
 
-                this._isDou = false;
+                this.data.isDou = false;
 
             })
             .start();
+
     }
 
     protected clickChangeIcon(): void {
@@ -1028,7 +1040,7 @@ class MyDropFood extends fgui.GButton {
             return;
         }
 
-        if (this._isDou) {
+        if (this.data.isDou) {
             return;
         }
 
@@ -1041,8 +1053,7 @@ class MyDropFood extends fgui.GButton {
     }
 
     protected onDestroy() {
-        cc.tween(this._itemR).stop();
-        cc.tween(this).stop();
+        cc.Tween.stopAll();
     }
 
 

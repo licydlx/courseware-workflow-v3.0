@@ -57,6 +57,10 @@ export default class choose_model03_v1 extends cc.Component {
     private _overPiano: fgui.GLoader3D;
     private _overGu: fgui.GLoader3D;
 
+    private _scheduleTime = 0.3;
+    private _dragging = false;
+    private _cachDragPos = { x: 0, y: 0 }
+
     private submitType: any = cc.Enum({
 
         No: 0,
@@ -146,6 +150,8 @@ export default class choose_model03_v1 extends cc.Component {
 
         this._magicPen = this._view.getChild("magicPen").asButton;
         this._magicPen.draggable = true;
+        this._cachDragPos.x = this._magicPen.x;
+        this._cachDragPos.y = this._magicPen.y;
 
         this._magicPenData = [{ icon: this._magicPen.icon, x: 1743, y: 466 }, { icon: this._magicPen.selectedIcon, x: 1743, y: 466 }];
 
@@ -161,6 +167,8 @@ export default class choose_model03_v1 extends cc.Component {
             move: false,
             lightSelect: tempLight,
             clickPlayName: '',
+            magicDragPen: this._cachDragPos,
+            drag: "end",
         }
 
         // 临时 
@@ -169,6 +177,7 @@ export default class choose_model03_v1 extends cc.Component {
         // 销毁反馈
         let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
+        cc.audioEngine.stopAll();
     }
 
     async init(data: any) {
@@ -186,12 +195,14 @@ export default class choose_model03_v1 extends cc.Component {
         if (rightSoundFile) {
 
             for (let i = 0; i < rightSoundFile.length; i++) {
-                let item = fgui.UIPackage.getItemByURL(rightSoundFile[i]);
-                this._rightSoundFile.push(item);
+                let item = fgui.UIPackage.getItemByURL(rightSoundFile[i].path);
+                let tempMap = { 'path': item, 'time': rightSoundFile[i].time };
+                this._rightSoundFile.push(tempMap);
             }
         }
         if (animateName) this._animateName = animateName;
         if (rightName) this._rigthName = rightName;
+
         if (optionsRect) {
 
             for (var key in optionsRect) {
@@ -240,18 +251,20 @@ export default class choose_model03_v1 extends cc.Component {
         evt.captureTouch();
         let state: any = globalThis._.cloneDeep(this._state);
         state.move = true;
-
+        state.drag = 'start';
         this.updateState(state);
 
     }
 
     private _onDragMove(evt: fgui.Event): void {
 
-
+        this._dragging = true;
 
     }
 
     private _onDragEnd(evt: fgui.Event): void {
+        this._dragging = false;
+
         cc.audioEngine.playEffect(this._dragSound, false);
 
         var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
@@ -259,6 +272,7 @@ export default class choose_model03_v1 extends cc.Component {
 
         let state: any = globalThis._.cloneDeep(this._state);
         state.move = false;
+        state.drag = 'end';
         for (var key in this._optionsRect) {
 
             let rect = this._optionsRect[key];
@@ -321,6 +335,20 @@ export default class choose_model03_v1 extends cc.Component {
         this.updateState(state);
     }
 
+    // 临时
+    // 拖拽定时器
+    dragSchedule() {
+        if (this._dragging) {
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.drag = "move";
+            state.dragBtn = {
+                x: this._magicPen.x,
+                y: this._magicPen.y,
+            };
+            this.updateState(state);
+        }
+    }
+
     // 获取状态
     getState(data: any) {
         this.updateState(data);
@@ -334,6 +362,17 @@ export default class choose_model03_v1 extends cc.Component {
 
     // 更新ui层
     updateUi(oldState: any, state: any) {
+
+        if (state.drag == "move") {
+            this._magicPen.x = state.magicDragPen.x;
+            this._magicPen.y = state.magicDragPen.y;
+        }
+
+        if (state.drag == "end") {
+
+            this._magicPen.x = this._cachDragPos.x;
+            this._magicPen.y = this._cachDragPos.y;
+        }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
 
@@ -493,28 +532,31 @@ export default class choose_model03_v1 extends cc.Component {
 
     async playRightSound(curIndex: number) {
 
-        let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].file, cc.AudioClip);
-        let audioId = cc.audioEngine.play(audio, false, 1);
-        cc.audioEngine.setFinishCallback(audioId, () => {
-            if (curIndex >= this._rightSoundFile.length - 1) {
+        let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);
+        cc.audioEngine.play(audio, false, 1);
 
-                this._laba2.animationName = 'idle';
-                let state: any = globalThis._.cloneDeep(this._state);
-                state.laBaGuaiPlay = false;
-                this.updateState(state);
+        cc.tween(this)
+            .delay(this._rightSoundFile[curIndex].time)
+            .call(() => {
 
-            } else {
-                curIndex++;
-                this.playRightSound(curIndex);
-            }
+                if (curIndex >= this._rightSoundFile.length - 1) {
 
-        });
+                    this._laba2.animationName = 'idle';
+                    let state: any = globalThis._.cloneDeep(this._state);
+                    state.laBaGuaiPlay = false;
+                    this.updateState(state);
 
+                } else {
+                    curIndex++;
+                    this.playRightSound(curIndex);
+                }
+
+            })
+            .start();
     }
 
     answerFeedback(bool: boolean) {
         if (!this.feedback) return;
-        let state: any = globalThis._.cloneDeep(this._state);
         let feedback: any = cc.instantiate(this.feedback);
         feedback.x = 960;
         feedback.y = 540;
@@ -590,10 +632,11 @@ export default class choose_model03_v1 extends cc.Component {
 
     onEnable() {
         this.registerState();
+        this.schedule(this.dragSchedule, this._scheduleTime);
     }
 
     onDisable() {
-        cc.tween(this).stop();
+        cc.Tween.stopAll();
         this.relieveState();
         cc.audioEngine.stopAll();
     }

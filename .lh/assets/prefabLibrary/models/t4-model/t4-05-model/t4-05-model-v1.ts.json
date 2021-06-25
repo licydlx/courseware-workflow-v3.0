@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 313,
+            "activePatchIndex": 314,
             "patches": [
                 {
                     "date": 1624502666702,
@@ -1260,6 +1260,10 @@
                 {
                     "date": 1624542025541,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,12 +58,8 @@\n     }\r\n \r\n     async onLoad() {\r\n \r\n-        this._rightAnswer['kuang1'] = '2';\r\n-        this._rightAnswer['kuang2'] = '1';\r\n-        this._rightAnswer['kuang3'] = '3';\r\n-\r\n         this._worldRoot = cc.find(\"Canvas\").parent;\r\n \r\n         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;\r\n         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n"
+                },
+                {
+                    "date": 1624593768239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,11 +221,8 @@\n             state.submit = this.submitType.GuideShow;\r\n         } else {\r\n             let isAllDeng = true;\r\n             for (let key in state.answerMap) {\r\n-\r\n-                console.log('== kkk ====' + this._rightAnswer[key]);\r\n-\r\n                 if (state.answerMap[key] !== this._rightAnswer[key]) {\r\n \r\n                     isAllDeng = false;\r\n                     break;\r\n"
                 }
             ],
             "date": 1624502666702,
