@@ -13,21 +13,21 @@
     <component id="n4_w2qd" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1635,746" size="204,204">
       <Button icon="ui://733aoo45w2qdp" sound="ui://733aoo45r3754k"/>
     </component>
-    <loader3D id="n44_rx0n" name="piano" xy="1223,656" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
-    <loader3D id="n45_rx0n" name="gu" xy="478,224" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
-    <loader3D id="n46_rx0n" name="shachui" xy="1193,211" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
+    <loader3D id="n44_rx0n" name="piano" xy="1200,656" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
+    <loader3D id="n45_rx0n" name="gu" xy="478,241" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
+    <loader3D id="n46_rx0n" name="shachui" xy="1191,229" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
     <loader3D id="n47_rx0n" name="dizi" xy="835,440" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
     <loader3D id="n48_rx0n" name="sanjiaotie" xy="513,691" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
-    <group id="n32_w2qd" name="optionBox" xy="478,211" size="1013,715" advanced="true"/>
+    <group id="n32_w2qd" name="optionBox" xy="478,229" size="990,697" advanced="true"/>
     <component id="n6_w2qd" name="magicPen" src="w2qd26" fileName="buttons/magicPen.xml" xy="1745,466" pivot="0.5,0.5" anchor="true" size="218,394">
       <Button icon="ui://733aoo45w2qds" selectedIcon="ui://733aoo45w2qd28"/>
     </component>
-    <image id="n37_w2qd" name="piano_s" src="w2qd2b" fileName="images/008_2.png" xy="1131,540" group="n42_w2qd"/>
-    <image id="n38_w2qd" name="gu_s" src="w2qd2b" fileName="images/008_2.png" xy="395,91" group="n42_w2qd"/>
-    <image id="n39_w2qd" name="shachui_s" src="w2qd2b" fileName="images/008_2.png" xy="1104,74" group="n42_w2qd"/>
-    <image id="n40_w2qd" name="dizi_s" src="w2qd2b" fileName="images/008_2.png" xy="756,323" group="n42_w2qd"/>
-    <image id="n41_w2qd" name="sanjiaotie_s" src="w2qd2b" fileName="images/008_2.png" xy="426,588" group="n42_w2qd"/>
-    <group id="n42_w2qd" name="selectLight" xy="395,74" size="1181,944" advanced="true"/>
+    <image id="n37_w2qd" name="piano_s" src="w2qd2b" fileName="images/008_2.png" xy="1130,538" group="n42_w2qd"/>
+    <image id="n38_w2qd" name="gu_s" src="w2qd2b" fileName="images/008_2.png" xy="397,93" group="n42_w2qd"/>
+    <image id="n39_w2qd" name="shachui_s" src="w2qd2b" fileName="images/008_2.png" xy="1103,74" group="n42_w2qd"/>
+    <image id="n40_w2qd" name="dizi_s" src="w2qd2b" fileName="images/008_2.png" xy="756,324" group="n42_w2qd"/>
+    <image id="n41_w2qd" name="sanjiaotie_s" src="w2qd2b" fileName="images/008_2.png" xy="426,584" group="n42_w2qd"/>
+    <group id="n42_w2qd" name="selectLight" xy="397,74" size="1178,940" advanced="true"/>
     <component id="n33_w2qd" name="labaguai" src="w2qd26" fileName="buttons/magicPen.xml" xy="113,328" size="218,395">
       <Button icon="ui://733aoo45w2qdq" sound="ui://733aoo45r3754k"/>
     </component>

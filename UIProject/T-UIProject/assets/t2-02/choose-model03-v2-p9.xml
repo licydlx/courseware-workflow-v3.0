@@ -5,23 +5,23 @@
   <displayList>
     <image id="n39_ku3l" name="n39" src="ku3l4v" fileName="images/example3/001.png" xy="0,0"/>
     <image id="n40_ku3l" name="n40" src="ku3l4y" fileName="images/example3/004.png" xy="786,153"/>
-    <component id="n56_uqx5" name="n56" src="uqx55h" fileName="buttons/choose.xml" xy="1622,482" size="282,232" group="n60_uqx5">
+    <component id="n56_uqx5" name="n56" src="uqx55h" fileName="buttons/choose.xml" xy="1598,483" size="282,232" group="n60_uqx5">
       <Button icon="ui://733aoo45uqx55q" sound="ui://733aoo45r3754k"/>
     </component>
-    <component id="n57_uqx5" name="n57" src="uqx55h" fileName="buttons/choose.xml" xy="1294,449" size="258,322" group="n60_uqx5">
+    <component id="n57_uqx5" name="n57" src="uqx55h" fileName="buttons/choose.xml" xy="1270,450" size="258,322" group="n60_uqx5">
       <Button icon="ui://733aoo45uqx55j" sound="ui://733aoo45r3754k"/>
     </component>
-    <component id="n61_uqx5" name="n61" src="uqx55h" fileName="buttons/choose.xml" xy="1014,454" size="178,344" group="n60_uqx5">
+    <component id="n61_uqx5" name="n61" src="uqx55h" fileName="buttons/choose.xml" xy="990,455" size="178,344" group="n60_uqx5">
       <Button icon="ui://733aoo45uqx55m" sound="ui://733aoo45r3754k"/>
     </component>
-    <group id="n60_uqx5" name="choose" xy="925,282" size="838,344" advanced="true"/>
+    <group id="n60_uqx5" name="choose" xy="901,283" size="838,344" advanced="true"/>
     <component id="n12_r375" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1253,789" size="205,192">
       <Button icon="ui://733aoo45w2qdp" sound="ui://733aoo45r3754k"/>
     </component>
-    <image id="n68_uqx5" name="n68" src="uqx55r" fileName="images/example3/0016_2.png" xy="1478,367" group="n49_uqx5"/>
-    <image id="n66_uqx5" name="n66" src="uqx55k" fileName="images/example3/0011_2.png" xy="1164,291" group="n49_uqx5"/>
-    <image id="n67_uqx5" name="n67" src="uqx55n" fileName="images/example3/0013_2.png" xy="926,283" group="n49_uqx5"/>
-    <group id="n49_uqx5" name="select" xy="926,283" size="873,377" advanced="true"/>
+    <image id="n68_uqx5" name="n68" src="uqx55r" fileName="images/example3/0016_2.png" xy="1453,367" group="n49_uqx5"/>
+    <image id="n66_uqx5" name="n66" src="uqx55k" fileName="images/example3/0011_2.png" xy="1139,291" group="n49_uqx5"/>
+    <image id="n67_uqx5" name="n67" src="uqx55n" fileName="images/example3/0013_2.png" xy="901,283" group="n49_uqx5"/>
+    <group id="n49_uqx5" name="select" xy="901,283" size="873,377" advanced="true"/>
     <graph id="n50_uqx5" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#b2000000"/>
     <loader3D id="n69_gzaz" name="box" xy="275,510" size="421,435" url="ui://733aoo45gzaz75" animation="" skin="" loop="true"/>
     <component id="n1_r375" name="title" src="w2qd12" fileName="buttons/title.xml" xy="876,106" alpha="0" touchable="false">

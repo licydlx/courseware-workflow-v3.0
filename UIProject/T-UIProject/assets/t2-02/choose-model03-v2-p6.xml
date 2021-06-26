@@ -54,6 +54,6 @@
     <text id="n44_hddi" name="top" xy="1059,116" size="84,49" group="n46_hddi" font="KaiTi" fontSize="32" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="--"/>
     <text id="n45_hddi" name="cur" xy="1059,208" size="85,49" group="n46_hddi" font="KaiTi" fontSize="32" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="0"/>
     <group id="n46_hddi" name="score" xy="975,80" size="207,186" advanced="true"/>
-    <text id="n47_k2v4" name="total" xy="362,63" size="238,102" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="100"/>
+    <text id="n47_k2v4" name="total" xy="632,195" size="238,102" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="100"/>
   </displayList>
 </component>

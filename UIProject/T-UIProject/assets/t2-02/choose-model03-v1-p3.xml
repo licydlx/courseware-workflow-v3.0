@@ -32,12 +32,12 @@
     <component id="n6_w2qd" name="magicPen" src="w2qd26" fileName="buttons/magicPen.xml" xy="1745,466" pivot="0.5,0.5" anchor="true" size="218,394">
       <Button icon="ui://733aoo45w2qds" selectedIcon="ui://733aoo45w2qd28"/>
     </component>
-    <image id="n37_w2qd" name="piano_s" src="w2qd2b" fileName="images/008_2.png" xy="1100,76" group="n42_w2qd"/>
-    <image id="n38_w2qd" name="gu_s" src="w2qd2b" fileName="images/008_2.png" xy="757,324" group="n42_w2qd"/>
-    <image id="n39_w2qd" name="shachui_s" src="w2qd2b" fileName="images/008_2.png" xy="425,583" group="n42_w2qd"/>
-    <image id="n40_w2qd" name="dizi_s" src="w2qd2b" fileName="images/008_2.png" xy="1132,538" group="n42_w2qd"/>
-    <image id="n41_w2qd" name="sanjiaotie_s" src="w2qd2b" fileName="images/008_2.png" xy="395,92" group="n42_w2qd"/>
-    <group id="n42_w2qd" name="selectLight" xy="395,76" size="1182,937" advanced="true"/>
+    <image id="n37_w2qd" name="piano_s" src="w2qd2b" fileName="images/008_2.png" xy="1102,77" group="n42_w2qd"/>
+    <image id="n38_w2qd" name="gu_s" src="w2qd2b" fileName="images/008_2.png" xy="756,326" group="n42_w2qd"/>
+    <image id="n39_w2qd" name="shachui_s" src="w2qd2b" fileName="images/008_2.png" xy="426,584" group="n42_w2qd"/>
+    <image id="n40_w2qd" name="dizi_s" src="w2qd2b" fileName="images/008_2.png" xy="1130,538" group="n42_w2qd"/>
+    <image id="n41_w2qd" name="sanjiaotie_s" src="w2qd2b" fileName="images/008_2.png" xy="397,93" group="n42_w2qd"/>
+    <group id="n42_w2qd" name="selectLight" xy="397,77" size="1178,937" advanced="true"/>
     <component id="n33_w2qd" name="labaguai" src="w2qd26" fileName="buttons/magicPen.xml" xy="113,328" size="218,395">
       <Button icon="ui://733aoo45w2qdq"/>
     </component>
