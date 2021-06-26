@@ -107,13 +107,13 @@ export default class dragAnswer_model01_v2 extends cc.Component {
             submit: false,
             answer: false
         }
-        
+
 
         // 临时 
         // 禁止操作期间 切页
         this.disableForbidHandle();
         // 销毁反馈
-        let feedback:any = this._worldRoot.getChildByName("feedback");
+        let feedback: any = this._worldRoot.getChildByName("feedback");
         if (feedback) feedback.destroy();
     }
 
@@ -225,7 +225,7 @@ export default class dragAnswer_model01_v2 extends cc.Component {
         // if (answerBool) {
         //     state.submit = true;
         // }
-        
+
         state.submit = false;
         state.drag = "end";
         state.colliderIndex = colliderIndex;
@@ -302,7 +302,7 @@ export default class dragAnswer_model01_v2 extends cc.Component {
     }
 
     // 播放 放置声效
-    async playPlace(){
+    async playPlace() {
         cc.audioEngine.stopAll();
         let place = this._view.getChild("place").asButton;
         if (place) {

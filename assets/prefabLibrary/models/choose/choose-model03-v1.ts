@@ -164,7 +164,6 @@ export default class choose_model03_v1 extends cc.Component {
             title: false,
             laBaGuaiPlay: false,
             submit: false,
-            move: false,
             lightSelect: tempLight,
             clickPlayName: '',
             magicDragPen: this._cachDragPos,
@@ -250,7 +249,6 @@ export default class choose_model03_v1 extends cc.Component {
 
         evt.captureTouch();
         let state: any = globalThis._.cloneDeep(this._state);
-        state.move = true;
         state.drag = 'start';
         this.updateState(state);
 
@@ -271,7 +269,6 @@ export default class choose_model03_v1 extends cc.Component {
         let btnRect = new cc.Rect(btn.x - btn.width / 2, btn.y - btn.height / 2, btn.width, btn.height);
 
         let state: any = globalThis._.cloneDeep(this._state);
-        state.move = false;
         state.drag = 'end';
         for (var key in this._optionsRect) {
 
@@ -403,18 +400,10 @@ export default class choose_model03_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {
 
-            if (oldState.clickPlayName != '' && this._isAnimateShow) {
-
-                let btn = this._options[oldState.clickPlayName];
-                let btnTemp = btn as fgui.GLoader3D;
-                btnTemp.animationName = this._animateName[btn.name].idle;
-            }
-
             if (state.clickPlayName != '') {
 
                 this.playClickYueQi(state.clickPlayName);
             }
-
         }
 
         if (!globalThis._.isEqual(oldState.laBaGuaiPlay, state.laBaGuaiPlay)) {
@@ -440,54 +429,79 @@ export default class choose_model03_v1 extends cc.Component {
         cc.audioEngine.stopAllEffects();
         this._overAnimShow.visible = true;
 
-        let item1 = fgui.UIPackage.getItemByURL(this._soundFile['piano']);
+        let item1 = fgui.UIPackage.getItemByURL(this._soundFile['piano'].path);
         let audio: cc.AudioClip = await loadResource(item1.file, cc.AudioClip);
-        let audioId = cc.audioEngine.play(audio, false, 1);
+        cc.audioEngine.play(audio, false, 1);
 
         this._overPiano.animationName = this._animateName['piano'].play;
-        cc.audioEngine.setFinishCallback(audioId, () => {
-            this._overPiano.animationName = this._animateName['piano'].idle;
-            this._overAnimShow.visible = false;
-            this.answerFeedback(true);
-        });
 
-        let item2 = fgui.UIPackage.getItemByURL(this._soundFile['gu']);
+        cc.tween(this._overPiano)
+            .delay(this._soundFile['piano'].time)
+            .call(() => {
+
+                this._overPiano.animationName = this._animateName['piano'].idle;
+                this._overAnimShow.visible = false;
+                this.answerFeedback(true);
+
+            })
+            .start();
+
+        let item2 = fgui.UIPackage.getItemByURL(this._soundFile['gu'].path);
         let audio2: cc.AudioClip = await loadResource(item2.file, cc.AudioClip);
-        let audioId2 = cc.audioEngine.play(audio2, false, 1);
+        cc.audioEngine.play(audio2, false, 1);
 
         this._overGu.animationName = this._animateName['gu'].play;
-        cc.audioEngine.setFinishCallback(audioId2, () => {
-            this._overGu.animationName = this._animateName['gu'].idle;
-        });
 
+        cc.tween(this._overGu)
+            .delay(this._soundFile['gu'].time)
+            .call(() => {
+
+                this._overGu.animationName = this._animateName['gu'].idle;
+
+            })
+            .start();
     }
 
     async playClickYueQi(name: string) {
 
         cc.audioEngine.stopAllEffects();
+        if (this._isAnimateShow) {
+            for (let key in this._options) {
+
+                let btn1 = this._options[key];
+                let btnTemp1 = btn1 as fgui.GLoader3D;
+                btnTemp1.animationName = this._animateName[btn1.name].idle;
+            }
+        }
+
         let btn = this._options[name];
         let item = null;
-        item = fgui.UIPackage.getItemByURL(this._soundFile[name]);
+        item = fgui.UIPackage.getItemByURL(this._soundFile[name].path);
         let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
-        let audioId = cc.audioEngine.play(audio, false, 1);
+        cc.audioEngine.play(audio, false, 1);
         if (this._isAnimateShow) {
 
             let btnTemp = btn as fgui.GLoader3D;
             btnTemp.animationName = this._animateName[btn.name].play;
         }
 
-        cc.audioEngine.setFinishCallback(audioId, () => {
+        cc.tween(this)
+            .delay(this._soundFile[name].time)
+            .call(() => {
 
-            if (this._isAnimateShow) {
+                if (this._isAnimateShow) {
 
-                let btnTemp = btn as fgui.GLoader3D;
-                btnTemp.animationName = this._animateName[btn.name].idle;
-            }
+                    let btnTemp = btn as fgui.GLoader3D;
+                    btnTemp.animationName = this._animateName[btn.name].idle;
+                }
 
-            let state: any = globalThis._.cloneDeep(this._state);
-            state.clickPlayName = '';
-            this.updateState(state);
-        });
+                let state: any = globalThis._.cloneDeep(this._state);
+                state.clickPlayName = '';
+                this.updateState(state);
+
+            })
+            .start();
+
 
     }
 
