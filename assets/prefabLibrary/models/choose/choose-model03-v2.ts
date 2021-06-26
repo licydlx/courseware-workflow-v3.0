@@ -500,12 +500,27 @@ export default class choose_model03_v2 extends cc.Component {
         console.log('==== 更新ui层 ====');
         console.log(state);
 
-        if (!globalThis._.isEqual(oldState.elvesPlay, state.elvesPlay)) {
-            if (state.elvesPlay) {
-                this.playElvesSpeak(state.elvesPlay, state.rightSoundFile);
-            }
+        if (state.elvesPlay) {
+            this.playElvesSpeak(state.elvesPlay, state.rightSoundFile);
         }
 
+        if (!globalThis._.isEqual(oldState.gameCanPlay, state.gameCanPlay)) {
+
+            if (state.gameCanPlay) {
+
+                this._playBtn.enabled = true;
+
+            } else {
+
+                this._playBtn.enabled = false;
+            }
+            this._playBtn.visible = true;
+            this._readyGroup.visible = false;
+            this._ready.visible = false;
+            this._go.visible = false;
+        }
+
+        // 播放过精灵对话后游戏能玩，并且玩过游戏后能否重玩
         if (!globalThis._.isEqual(oldState.isReplayShow, state.isReplayShow)) {
 
             if (state.gameCanPlay) {
@@ -520,12 +535,17 @@ export default class choose_model03_v2 extends cc.Component {
                 }
                 this._readyGroup.visible = false;
                 this._ready.visible = false;
+                this._over.visible = false;
                 this._go.visible = false;
             }
+
         }
 
         if (!globalThis._.isEqual(oldState.gameStart, state.gameStart)) {
-            if (state.gameStart && !state.gameOver) {
+
+            this._gameStart = state.gameStart;
+
+            if (state.gameStart) {
                 let boy = this._view.getChild("boy").asButton;
                 let girl = this._view.getChild("girl").asButton;
                 boy.touchable = false;
@@ -541,49 +561,11 @@ export default class choose_model03_v2 extends cc.Component {
                 girl.touchable = true;
                 cc.audioEngine.stopMusic();
             }
-
-            this._gameStart = state.gameStart;
-        }
-
-        if (!globalThis._.isEqual(oldState.play, state.play)) {
-
-            if (state.play) {
-                this._playBtn.visible = false;
-                this._readyGroup.visible = true;
-                this._ready.visible = true;
-                this._go.visible = false;
-
-                cc.tween(this)
-                    .delay(0.7)
-                    .call(() => {
-                        this._go.visible = true;
-                        this._ready.visible = false;
-                    })
-                    .start();
-
-                let audioId = cc.audioEngine.play(this._readySound, false, 1);
-                cc.audioEngine.setFinishCallback(audioId, () => {
-
-                    this._readyGroup.visible = false;
-
-                    let state1: any = globalThis._.cloneDeep(this._state);
-                    state1.play = false;
-                    state1.isReplayShow = false;
-                    state1.gameStart = true;
-                    state1.dropSpeed = 3.0
-                    state1.curScore = 0;
-                    state1.gameTime = 0;
-                    state1.interTime = 0;
-                    state1.interTimeLimit = this._framesSecond * 1.0;
-                    state1.clickFoodTag = -1;
-                    state1.foodTag = 0;
-                    this.updateState(state1);
-                });
-
-            }
         }
 
         if (!globalThis._.isEqual(oldState.gameOver, state.gameOver)) {
+
+            this._gameOver = state.gameOver;
 
             if (state.gameOver) {
                 for (let i = 0; i < this.myFoodPools.length; i++) {
@@ -596,7 +578,49 @@ export default class choose_model03_v2 extends cc.Component {
 
                 this._over.visible = false;
             }
-            this._gameOver = state.gameOver;
+
+        }
+
+        if (!globalThis._.isEqual(oldState.play, state.play)) {
+
+            if (state.play) {
+
+                cc.audioEngine.play(this._readySound, false, 1);
+
+                this._playBtn.visible = false;
+                this._readyGroup.visible = true;
+                this._ready.visible = true;
+                this._go.visible = false;
+
+                cc.tween(this)
+                    .delay(0.7)
+                    .call(() => {
+                        this._go.visible = true;
+                        this._ready.visible = false;
+                    })
+                    .delay(1.0)
+                    .call(() => {
+
+                        this._readyGroup.visible = false;
+
+                        let state1: any = globalThis._.cloneDeep(this._state);
+                        state1.play = false;
+                        state1.isReplayShow = false;
+                        state1.gameStart = true;
+                        state1.dropSpeed = 3.0
+                        state1.curScore = 0;
+                        state1.gameTime = 0;
+                        state1.interTime = 0;
+                        state1.interTimeLimit = this._framesSecond * 1.0;
+                        state1.clickFoodTag = -1;
+                        state1.foodTag = 0;
+                        this.updateState(state1);
+
+                    })
+                    .start();
+
+
+            }
         }
 
         if (!globalThis._.isEqual(oldState.clickFoodTag, state.clickFoodTag)) {
@@ -652,22 +676,6 @@ export default class choose_model03_v2 extends cc.Component {
 
                 this.answerFeedback(false);
             }
-        }
-
-        if (!globalThis._.isEqual(oldState.gameCanPlay, state.gameCanPlay)) {
-
-            if (state.gameCanPlay) {
-
-                this._playBtn.enabled = true;
-
-            } else {
-
-                this._playBtn.enabled = false;
-            }
-            this._playBtn.visible = true;
-            this._readyGroup.visible = false;
-            this._ready.visible = false;
-            this._go.visible = false;
         }
 
         if (!globalThis._.isEqual(oldState.gameTime, state.gameTime)) {
@@ -793,7 +801,9 @@ export default class choose_model03_v2 extends cc.Component {
 
                     let state: any = globalThis._.cloneDeep(this._state);
                     state.elvesPlay = false;
-                    state.gameCanPlay = true;
+                    if (!state.gameCanPlay) {
+                        state.gameCanPlay = true;
+                    }
                     this.updateState(state);
 
                 } else {
@@ -997,17 +1007,15 @@ class MyDropFood extends fgui.GButton {
 
         this.data.isDou = true;
 
-        let tempX = this.x;
-        let tempY = this.y;
+        let tempX = this.data.x;
         let offset = 10;
         cc.tween(this._itemR)
-            .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset), y: tempY }),
-                cc.tween().to(0.02, { x: tempX - (6 + offset), y: tempY }))
+            .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),
+                cc.tween().to(0.02, { x: tempX - (6 + offset) }))
             .repeat(8)
             .call(() => {
 
                 this.x = tempX;
-                this.y = tempY;
 
                 this.data.isDou = false;
 
@@ -1040,12 +1048,7 @@ class MyDropFood extends fgui.GButton {
             return;
         }
 
-        if (this.data.isDou) {
-            return;
-        }
-
         this.y += this._speed;
-
         if (this.y >= this._MaxY) {
 
             this.data.isShow = false;

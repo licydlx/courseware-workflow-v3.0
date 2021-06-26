@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 185,
+            "activePatchIndex": 193,
             "patches": [
                 {
                     "date": 1623989407691,
@@ -748,6 +748,38 @@
                 {
                     "date": 1624692109942,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -420,10 +420,8 @@\n         if (!globalThis._.isEqual(oldState.laBaGuaiPlay, state.laBaGuaiPlay)) {\r\n             this.playLaBaGuai(state.laBaGuaiPlay);\r\n         }\r\n \r\n-\r\n-\r\n         if (!globalThis._.isEqual(oldState.lightSelect, state.lightSelect)) {\r\n \r\n             for (var key in state.lightSelect) {\r\n \r\n"
+                },
+                {
+                    "date": 1624693379773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -526,9 +526,9 @@\n \r\n         let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n-        cc.tween(this)\r\n+        cc.tween(this._laba2)\r\n             .delay(this._rightSoundFile[curIndex].time)\r\n             .call(() => {\r\n \r\n                 if (curIndex >= this._rightSoundFile.length - 1) {\r\n"
+                },
+                {
+                    "date": 1624693467840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -527,8 +527,9 @@\n         let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n         cc.tween(this._laba2)\r\n+        cc.tween(this._laba2)\r\n             .delay(this._rightSoundFile[curIndex].time)\r\n             .call(() => {\r\n \r\n                 if (curIndex >= this._rightSoundFile.length - 1) {\r\n"
+                },
+                {
+                    "date": 1624693473526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -526,10 +526,10 @@\n \r\n         let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n+        cc.tween(this._laba2).stop();\r\n         cc.tween(this._laba2)\r\n-        cc.tween(this._laba2)\r\n             .delay(this._rightSoundFile[curIndex].time)\r\n             .call(() => {\r\n \r\n                 if (curIndex >= this._rightSoundFile.length - 1) {\r\n"
+                },
+                {
+                    "date": 1624693575510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -526,10 +526,10 @@\n \r\n         let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n-        cc.tween(this._laba2).stop();\r\n-        cc.tween(this._laba2)\r\n+        cc.tween(this._labaguai).stop();\r\n+        cc.tween(this._labaguai)\r\n             .delay(this._rightSoundFile[curIndex].time)\r\n             .call(() => {\r\n \r\n                 if (curIndex >= this._rightSoundFile.length - 1) {\r\n"
+                },
+                {
+                    "date": 1624693648621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -526,9 +526,9 @@\n \r\n         let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n-        cc.tween(this._labaguai).stop();\r\n+        console.log('==== ===');\r\n         cc.tween(this._labaguai)\r\n             .delay(this._rightSoundFile[curIndex].time)\r\n             .call(() => {\r\n \r\n"
+                },
+                {
+                    "date": 1624693657594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -526,9 +526,9 @@\n \r\n         let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n-        console.log('==== ===');\r\n+        console.log('==== ====' + this._rightSoundFile[curIndex].time);\r\n         cc.tween(this._labaguai)\r\n             .delay(this._rightSoundFile[curIndex].time)\r\n             .call(() => {\r\n \r\n"
+                },
+                {
+                    "date": 1624693663285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -526,9 +526,9 @@\n \r\n         let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n-        console.log('==== ====' + this._rightSoundFile[curIndex].time);\r\n+        console.log('==== time ====' + this._rightSoundFile[curIndex].time);\r\n         cc.tween(this._labaguai)\r\n             .delay(this._rightSoundFile[curIndex].time)\r\n             .call(() => {\r\n \r\n"
+                },
+                {
+                    "date": 1624693801950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -526,9 +526,8 @@\n \r\n         let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n-        console.log('==== time ====' + this._rightSoundFile[curIndex].time);\r\n         cc.tween(this._labaguai)\r\n             .delay(this._rightSoundFile[curIndex].time)\r\n             .call(() => {\r\n \r\n"
                 }
             ],
             "date": 1623989407691,

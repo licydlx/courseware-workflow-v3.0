@@ -33,7 +33,7 @@
                 "config": {
                     "isAnimateShow": true,
                     "soundFile": {"piano": "ui://733aoo45w2qd18", "gu": "ui://733aoo45w2qd16", "shachui": "ui://733aoo45w2qd1a", "dizi": "ui://733aoo45w2qd17", "sanjiaotie": "ui://733aoo45w2qd19" },
-                    "rightSoundFile": [{"path": "ui://733aoo45w2qd18", "time": 19000} , {"path": "ui://733aoo45w2qd16", "time": 1000}],
+                    "rightSoundFile": [{"path": "ui://733aoo45w2qd18", "time": 19} , {"path": "ui://733aoo45w2qd16", "time": 1}],
                     "animateName":{"piano": {"idle": "05gangqin_idle", "play": "05gangqin_play", "skin": "05gangqin"},"gu": {"idle": "01gu_idle", "play": "01gu_play", "skin": "01gu"},"shachui": {"idle": "02shacui_idle", "play": "02shacui_play", "skin": "02shacui"},
                     "dizi": {"idle": "03dizi_idle", "play": "03dizi_play", "skin": "03dizi"},
                     "sanjiaotie": {"idle": "04qiaojibang_idle", "play": "04qiaojibang_play", "skin": "04qiaojibang"}},
@@ -66,7 +66,7 @@
                 "config": {
 
                     "soundFile": {"piano": "ui://733aoo45bl377s", "gu": "ui://733aoo45bl377p", "shachui": "ui://733aoo45bl377o", "dizi": "ui://733aoo45hddi85", "sanjiaotie": "ui://733aoo45bl377r" },
-                    "rightSoundFile": [{"path": "ui://733aoo45bl377s", "time": 8000}, {"path": "ui://733aoo45bl377p", "time": 6000}],
+                    "rightSoundFile": [{"path": "ui://733aoo45bl377s", "time": 8}, {"path": "ui://733aoo45bl377p", "time": 6}],
                     "rightName": ["piano", "gu"],
 
                     "optionsRect": {"piano": {"x": 1205, "y": 190, "width":260, "height": 220},
@@ -93,7 +93,7 @@
                 "prefabName": "choose-model03-v1",
                 "config": {
                     "soundFile": {"piano": "ui://733aoo45bl377u", "gu": "ui://733aoo45bl377v", "shachui": "ui://733aoo45bl377t", "dizi": "ui://733aoo45bl377w", "sanjiaotie": "ui://733aoo45bl377y" },
-                    "rightSoundFile": [{"path": "ui://733aoo45bl377u", "time": 2000}, {"path": "ui://733aoo45bl377v", "time": 6000}],
+                    "rightSoundFile": [{"path": "ui://733aoo45bl377u", "time": 2}, {"path": "ui://733aoo45bl377v", "time": 6}],
                     "rightName": ["piano", "gu"],
                     "optionsRect": {"piano": {"x": 850, "y": 440, "width":260, "height": 220}, 
                      "gu": {"x": 520, "y": 695, "width":260, "height": 220},
@@ -124,8 +124,8 @@
                     "rightIndexs": [0, 1],
                     "boySoundPath": "ui://733aoo45w2qd1c",
                     "girlSoundPath": "ui://733aoo45w2qd1d",
-                    "boySoundTime": 2870,
-                    "girlSoundTime": 2870
+                    "boySoundTime": 2.87,
+                    "girlSoundTime": 2.87
                     
                 }
             }, 
@@ -149,8 +149,8 @@
                     "rightIndexs": [0],
                     "boySoundPath": "ui://733aoo45gzaz7e",
                     "girlSoundPath": "ui://733aoo45gzaz7f",
-                    "boySoundTime": 2150,
-                    "girlSoundTime": 2150
+                    "boySoundTime": 2.15,
+                    "girlSoundTime": 2.15
 
                     
                 }
@@ -176,8 +176,8 @@
                     "rightIndexs": [1],
                     "boySoundPath": "ui://733aoo45gzaz7g",
                     "girlSoundPath": "ui://733aoo45gzaz7h",
-                    "boySoundTime": 2250,
-                    "girlSoundTime": 2250
+                    "boySoundTime": 2.25,
+                    "girlSoundTime": 2.25
                     
                 }
             }, 
@@ -199,7 +199,7 @@
 
                     "boxSoundUrl": "ui://733aoo45w2qd1f",
                     "guidIndex": 2,
-                    "boxSoundTime": 3100
+                    "boxSoundTime": 3.1
                     
                 }
             }, 
@@ -222,7 +222,7 @@
 
                     "boxSoundUrl": "ui://733aoo45gzaz7i",
                     "guidIndex": 2,
-                    "boxSoundTime": 3100
+                    "boxSoundTime": 3.1
                     
                 }
             }, 
@@ -245,7 +245,7 @@
                     "boxSoundUrl": "ui://733aoo45gzaz7j",
 
                     "guidIndex": 0,
-                    "boxSoundTime": 3100
+                    "boxSoundTime": 3.1
                     
                 }
             }, 
@@ -269,7 +269,7 @@
                     "boxSoundUrl": "ui://733aoo45w2qd23",
 
                     "guidIndex": 1,
-                    "boxSoundTime": 3250
+                    "boxSoundTime": 3.25
                     
                 }
             }, 

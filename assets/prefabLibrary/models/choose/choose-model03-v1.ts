@@ -527,7 +527,7 @@ export default class choose_model03_v1 extends cc.Component {
         let audio: cc.AudioClip = await loadResource(this._rightSoundFile[curIndex].path.file, cc.AudioClip);
         cc.audioEngine.play(audio, false, 1);
 
-        cc.tween(this)
+        cc.tween(this._labaguai)
             .delay(this._rightSoundFile[curIndex].time)
             .call(() => {
 
