@@ -341,7 +341,7 @@ export default class choose_model03_v1 extends cc.Component {
         if (this._dragging) {
             let state: any = globalThis._.cloneDeep(this._state);
             state.drag = "move";
-            state.dragBtn = {
+            state.magicDragPen = {
                 x: this._magicPen.x,
                 y: this._magicPen.y,
             };
@@ -364,14 +364,20 @@ export default class choose_model03_v1 extends cc.Component {
     updateUi(oldState: any, state: any) {
 
         if (state.drag == "move") {
+
             this._magicPen.x = state.magicDragPen.x;
             this._magicPen.y = state.magicDragPen.y;
-        }
 
-        if (state.drag == "end") {
+        } else if (state.drag == "start") {
+
+            this._magicPen.icon = this._magicPenData[1].icon;
+
+        } else if (state.drag == "end") {
 
             this._magicPen.x = this._cachDragPos.x;
             this._magicPen.y = this._cachDragPos.y;
+
+            this._magicPen.icon = this._magicPenData[0].icon;
         }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
@@ -413,20 +419,6 @@ export default class choose_model03_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.laBaGuaiPlay, state.laBaGuaiPlay)) {
             this.playLaBaGuai(state.laBaGuaiPlay);
-        }
-
-        if (!globalThis._.isEqual(oldState.move, state.move)) {
-
-            if (state.move) {
-
-                this._magicPen.icon = this._magicPenData[1].icon;
-
-            } else {
-
-                this._magicPen.icon = this._magicPenData[0].icon;
-                this._magicPen.x = this._magicPenData[0].x;
-                this._magicPen.y = this._magicPenData[0].y;
-            }
         }
 
         if (!globalThis._.isEqual(oldState.lightSelect, state.lightSelect)) {

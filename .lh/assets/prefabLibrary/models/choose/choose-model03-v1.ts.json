@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 175,
+            "activePatchIndex": 185,
             "patches": [
                 {
                     "date": 1623989407691,
@@ -708,6 +708,46 @@
                 {
                     "date": 1624624388771,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -369,10 +369,10 @@\n         }\r\n \r\n         if (state.drag == \"end\") {\r\n \r\n-            this._magicPen.x = this._cache[\"dragOrigin\"].x;\r\n-            this._magicPen.y = this._cache[\"dragOrigin\"].y;\r\n+            this._magicPen.x = this._cachDragPos.x;\r\n+            this._magicPen.y = this._cachDragPos.y;\r\n         }\r\n \r\n         if (!globalThis._.isEqual(oldState.submit, state.submit)) {\r\n \r\n"
+                },
+                {
+                    "date": 1624691822796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -340,9 +340,9 @@\n     dragSchedule() {\r\n         if (this._dragging) {\r\n             let state: any = globalThis._.cloneDeep(this._state);\r\n             state.drag = \"move\";\r\n-            state.dragBtn = {\r\n+            state.magicDragPen = {\r\n                 x: this._magicPen.x,\r\n                 y: this._magicPen.y,\r\n             };\r\n             this.updateState(state);\r\n"
+                },
+                {
+                    "date": 1624691930393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -373,8 +373,22 @@\n             this._magicPen.x = this._cachDragPos.x;\r\n             this._magicPen.y = this._cachDragPos.y;\r\n         }\r\n \r\n+        if (!globalThis._.isEqual(oldState.move, state.move)) {\r\n+\r\n+            if (state.move) {\r\n+\r\n+                this._magicPen.icon = this._magicPenData[1].icon;\r\n+\r\n+            } else {\r\n+\r\n+                this._magicPen.icon = this._magicPenData[0].icon;\r\n+                this._magicPen.x = this._magicPenData[0].x;\r\n+                this._magicPen.y = this._magicPenData[0].y;\r\n+            }\r\n+        }\r\n+\r\n         if (!globalThis._.isEqual(oldState.submit, state.submit)) {\r\n \r\n             // 控制反馈动画和指引动画\r\n             if (state.submit === this.submitType.GuideShow) {\r\n@@ -414,22 +428,10 @@\n         if (!globalThis._.isEqual(oldState.laBaGuaiPlay, state.laBaGuaiPlay)) {\r\n             this.playLaBaGuai(state.laBaGuaiPlay);\r\n         }\r\n \r\n-        if (!globalThis._.isEqual(oldState.move, state.move)) {\r\n \r\n-            if (state.move) {\r\n \r\n-                this._magicPen.icon = this._magicPenData[1].icon;\r\n-\r\n-            } else {\r\n-\r\n-                this._magicPen.icon = this._magicPenData[0].icon;\r\n-                this._magicPen.x = this._magicPenData[0].x;\r\n-                this._magicPen.y = this._magicPenData[0].y;\r\n-            }\r\n-        }\r\n-\r\n         if (!globalThis._.isEqual(oldState.lightSelect, state.lightSelect)) {\r\n \r\n             for (var key in state.lightSelect) {\r\n \r\n"
+                },
+                {
+                    "date": 1624692018758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -365,10 +365,11 @@\n \r\n         if (state.drag == \"move\") {\r\n             this._magicPen.x = state.magicDragPen.x;\r\n             this._magicPen.y = state.magicDragPen.y;\r\n+        } else if (state.drag == \"start\") {\r\n+\r\n         }\r\n-\r\n         if (state.drag == \"end\") {\r\n \r\n             this._magicPen.x = this._cachDragPos.x;\r\n             this._magicPen.y = this._cachDragPos.y;\r\n"
+                },
+                {
+                    "date": 1624692026252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -367,10 +367,9 @@\n             this._magicPen.x = state.magicDragPen.x;\r\n             this._magicPen.y = state.magicDragPen.y;\r\n         } else if (state.drag == \"start\") {\r\n \r\n-        }\r\n-        if (state.drag == \"end\") {\r\n+        } else if (state.drag == \"end\") {\r\n \r\n             this._magicPen.x = this._cachDragPos.x;\r\n             this._magicPen.y = this._cachDragPos.y;\r\n         }\r\n"
+                },
+                {
+                    "date": 1624692034481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -363,10 +363,12 @@\n     // 更新ui层\r\n     updateUi(oldState: any, state: any) {\r\n \r\n         if (state.drag == \"move\") {\r\n+\r\n             this._magicPen.x = state.magicDragPen.x;\r\n             this._magicPen.y = state.magicDragPen.y;\r\n+\r\n         } else if (state.drag == \"start\") {\r\n \r\n         } else if (state.drag == \"end\") {\r\n \r\n"
+                },
+                {
+                    "date": 1624692064776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -369,8 +369,10 @@\n             this._magicPen.y = state.magicDragPen.y;\r\n \r\n         } else if (state.drag == \"start\") {\r\n \r\n+            this._magicPen.icon = this._magicPenData[1].icon;\r\n+\r\n         } else if (state.drag == \"end\") {\r\n \r\n             this._magicPen.x = this._cachDragPos.x;\r\n             this._magicPen.y = this._cachDragPos.y;\r\n@@ -379,10 +381,10 @@\n         if (!globalThis._.isEqual(oldState.move, state.move)) {\r\n \r\n             if (state.move) {\r\n \r\n-                this._magicPen.icon = this._magicPenData[1].icon;\r\n \r\n+\r\n             } else {\r\n \r\n                 this._magicPen.icon = this._magicPenData[0].icon;\r\n                 this._magicPen.x = this._magicPenData[0].x;\r\n"
+                },
+                {
+                    "date": 1624692071866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -375,8 +375,12 @@\n         } else if (state.drag == \"end\") {\r\n \r\n             this._magicPen.x = this._cachDragPos.x;\r\n             this._magicPen.y = this._cachDragPos.y;\r\n+\r\n+            this._magicPen.icon = this._magicPenData[0].icon;\r\n+            this._magicPen.x = this._magicPenData[0].x;\r\n+            this._magicPen.y = this._magicPenData[0].y;\r\n         }\r\n \r\n         if (!globalThis._.isEqual(oldState.move, state.move)) {\r\n \r\n@@ -385,11 +389,9 @@\n \r\n \r\n             } else {\r\n \r\n-                this._magicPen.icon = this._magicPenData[0].icon;\r\n-                this._magicPen.x = this._magicPenData[0].x;\r\n-                this._magicPen.y = this._magicPenData[0].y;\r\n+\r\n             }\r\n         }\r\n \r\n         if (!globalThis._.isEqual(oldState.submit, state.submit)) {\r\n"
+                },
+                {
+                    "date": 1624692097387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -377,10 +377,8 @@\n             this._magicPen.x = this._cachDragPos.x;\r\n             this._magicPen.y = this._cachDragPos.y;\r\n \r\n             this._magicPen.icon = this._magicPenData[0].icon;\r\n-            this._magicPen.x = this._magicPenData[0].x;\r\n-            this._magicPen.y = this._magicPenData[0].y;\r\n         }\r\n \r\n         if (!globalThis._.isEqual(oldState.move, state.move)) {\r\n \r\n"
+                },
+                {
+                    "date": 1624692103565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -379,20 +379,8 @@\n \r\n             this._magicPen.icon = this._magicPenData[0].icon;\r\n         }\r\n \r\n-        if (!globalThis._.isEqual(oldState.move, state.move)) {\r\n-\r\n-            if (state.move) {\r\n-\r\n-\r\n-\r\n-            } else {\r\n-\r\n-\r\n-            }\r\n-        }\r\n-\r\n         if (!globalThis._.isEqual(oldState.submit, state.submit)) {\r\n \r\n             // 控制反馈动画和指引动画\r\n             if (state.submit === this.submitType.GuideShow) {\r\n"
+                },
+                {
+                    "date": 1624692109942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -420,10 +420,8 @@\n         if (!globalThis._.isEqual(oldState.laBaGuaiPlay, state.laBaGuaiPlay)) {\r\n             this.playLaBaGuai(state.laBaGuaiPlay);\r\n         }\r\n \r\n-\r\n-\r\n         if (!globalThis._.isEqual(oldState.lightSelect, state.lightSelect)) {\r\n \r\n             for (var key in state.lightSelect) {\r\n \r\n"
                 }
             ],
             "date": 1623989407691,
