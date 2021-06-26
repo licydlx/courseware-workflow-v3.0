@@ -960,10 +960,15 @@ class MyDropFood extends fgui.GButton {
 
     private _MaxY: number;
 
+    private _shouX: number;
+    private _shouY: number;
+
     constructor(url: string, foodData: any) {
 
         let _item = super();
 
+        this._shouX = 996;
+        this._shouY = 203;
         this._itemR = _item;
         this._iconLoader = new fgui.GLoader();
         this._iconLoader.name = 'icon';
@@ -974,7 +979,7 @@ class MyDropFood extends fgui.GButton {
         this._url = url;
 
         this._MaxY = 1000 - this._iconLoader.height;
-        foodData['isDou'] = false;
+        foodData['isShou'] = false;
         this._speed = foodData.speed;
 
 
@@ -1005,8 +1010,6 @@ class MyDropFood extends fgui.GButton {
 
     protected clickWrongAnimate(): void {
 
-        this.data.isDou = true;
-
         let tempX = this.data.x;
         let offset = 10;
         cc.tween(this._itemR)
@@ -1017,7 +1020,7 @@ class MyDropFood extends fgui.GButton {
 
                 this.x = tempX;
 
-                this.data.isDou = false;
+                this.data.isShou = false;
 
             })
             .start();
@@ -1026,14 +1029,21 @@ class MyDropFood extends fgui.GButton {
 
     protected clickChangeIcon(): void {
 
+        this.data.isShou = true;
         this._iconLoader.url = 'ui://733aoo45r3753l';
-        cc.tween(this)
-            .delay(0.06)
+        cc.tween(this._itemR)
+            .to(0.2, { x: this._shouX, y: this._shouY })
+            .to(0.2, { scaleX: 0.45, scaleY: 0.45 })
+            .to(0.2, { alpha: 0 })
             .call(() => {
 
+                this.scaleX = 1;
+                this.scaleY = 1;
+                this.alpha = 1;
                 this.data.isShow = false;
                 this.visible = false;
                 this._iconLoader.url = this._url;
+                this.data.isShou = false;
             })
             .start();
     }
@@ -1048,6 +1058,10 @@ class MyDropFood extends fgui.GButton {
             return;
         }
 
+        if (this.data.isShou) {
+
+            return;
+        }
         this.y += this._speed;
         if (this.y >= this._MaxY) {
 
