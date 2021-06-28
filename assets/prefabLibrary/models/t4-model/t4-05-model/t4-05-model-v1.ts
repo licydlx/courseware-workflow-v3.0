@@ -460,7 +460,7 @@ export default class t4_05_model_v1 extends cc.Component {
     }
 
     onDisable() {
-        cc.tween(this).stop();
+        cc.Tween.stopAll();
         this.relieveState();
         cc.audioEngine.stopAll();
     }

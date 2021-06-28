@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n39_jjln" name="n39" src="jjln1q" fileName="images/example2/001.png" xy="0,0"/>
+    <component id="n2_j79e" name="title" src="j79e13" fileName="buttons/title.xml" xy="853,97" alpha="0" touchable="false">
+      <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
+      <Button icon="ui://mgpb39d5jjln1w" sound="ui://mgpb39d5j79e15" volume="0"/>
+    </component>
+    <loader id="n3_j79e" name="titleTrigger" xy="50,41" size="228,171" scale="0.8,0.8" url="ui://mgpb39d5j79e16" autoSize="true" playing="false">
+      <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
+    </loader>
+    <component id="n29_j79e" name="submit" src="j79e17" fileName="buttons/button1.xml" xy="1689,774" size="194,187">
+      <Button icon="ui://mgpb39d5j79e10" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <image id="n41_jjln" name="n41" src="jjln1v" fileName="images/example2/005.png" xy="-5,199"/>
+    <image id="n44_jjln" name="n44" src="jjln1r" fileName="images/example2/0010.png" xy="19,242"/>
+    <image id="n45_jjln" name="n45" src="jjln1y" fileName="images/example2/008.png" xy="38,294"/>
+    <image id="n46_jjln" name="n46" src="jjln1z" fileName="images/example2/009.png" xy="41,396"/>
+    <text id="n47_jjln" name="jindu" xy="182,454" size="164,68" fontSize="50" color="#ffffff" align="center" vAlign="middle" autoSize="none" bold="true" text="0/3"/>
+    <component id="n42_jjln" name="start" src="j79e17" fileName="buttons/button1.xml" xy="798,727" size="385,171">
+      <Button icon="ui://mgpb39d5jjln1s"/>
+    </component>
+    <image id="n48_jjln" name="player" src="jjln1x" fileName="images/example2/007.png" xy="1385,504"/>
+    <component id="n54_jjln" name="lan" src="jjln22" fileName="buttons/button_mid_anchive.xml" xy="711,624" size="102,86">
+      <Button icon="ui://mgpb39d5jjln1u"/>
+    </component>
+    <component id="n55_jjln" name="hong" src="jjln22" fileName="buttons/button_mid_anchive.xml" xy="1178,625" size="100,86">
+      <Button icon="ui://mgpb39d5jjln1t"/>
+    </component>
+  </displayList>
+</component>

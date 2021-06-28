@@ -29,7 +29,6 @@
     <image id="j79e11" name="002.png" path="/images/"/>
     <image id="j79e12" name="例题1.png" path="/images/"/>
     <component id="j79e13" name="title.xml" path="/buttons/"/>
-    <image id="j79e14" name="007.png" path="/images/"/>
     <sound id="j79e15" name="timu.mp3" path="/audios/example1/"/>
     <movieclip id="j79e16" name="laba.jta" path="/animations/laba/"/>
     <component id="j79e17" name="button1.xml" path="/buttons/"/>
@@ -37,6 +36,22 @@
     <sound id="j79e19" name="drag.mp3" path="/audios/"/>
     <image id="j46a1b" name="0020.png" path="/images/example1/"/>
     <image id="spb01c" name="hand.png" path="/images/" exported="true"/>
+    <component id="jjln1d" name="t4-05-model-p6.xml" path="/" exported="true"/>
+    <image id="jjln1e" name="例题2-开始.png" path="/images/"/>
+    <image id="jjln1f" name="例题2.png" path="/images/"/>
+    <image id="jjln1q" name="001.png" path="/images/example2/"/>
+    <image id="jjln1r" name="0010.png" path="/images/example2/"/>
+    <image id="jjln1s" name="002.png" path="/images/example2/"/>
+    <image id="jjln1t" name="003.png" path="/images/example2/"/>
+    <image id="jjln1u" name="004.png" path="/images/example2/"/>
+    <image id="jjln1v" name="005.png" path="/images/example2/"/>
+    <image id="jjln1w" name="006.png" path="/images/example2/"/>
+    <image id="jjln1x" name="007.png" path="/images/example2/"/>
+    <image id="jjln1y" name="008.png" path="/images/example2/"/>
+    <image id="jjln1z" name="009.png" path="/images/example2/"/>
+    <component id="jjln22" name="button_mid_anchive.xml" path="/buttons/"/>
+    <component id="jjln23" name="t4-05-model-p3.xml" path="/" exported="true"/>
+    <component id="jjln25" name="t4-05-model-p4.xml" path="/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

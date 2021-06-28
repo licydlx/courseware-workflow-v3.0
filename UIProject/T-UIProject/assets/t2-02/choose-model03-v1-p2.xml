@@ -11,7 +11,7 @@
     <image id="n21_w2qd" name="n21" src="w2qdz" fileName="images/008.png" xy="1130,538" group="n26_w2qd"/>
     <group id="n26_w2qd" name="n26" xy="5,-3" size="1920,1080"/>
     <component id="n4_w2qd" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1635,746" size="204,204">
-      <Button icon="ui://733aoo45w2qdp" sound="ui://733aoo45r3754k"/>
+      <Button icon="ui://733aoo45w2qdp"/>
     </component>
     <loader3D id="n44_rx0n" name="piano" xy="1200,656" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>
     <loader3D id="n45_rx0n" name="gu" xy="478,241" size="268,235" group="n32_w2qd" url="ui://733aoo45rx0n75" animation="" skin="" loop="true"/>

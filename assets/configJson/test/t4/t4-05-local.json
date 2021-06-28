@@ -34,6 +34,25 @@
                     "prefabName": "feedback-model01-v1"
                 }
             }
+        },
+
+        {
+            "model": {
+                "uiPath": "t4-05-model-p6",
+                "bundleName": "t4-05-model",
+                "prefabName": "t4-05-model-v2",
+                "config": {
+                   
+
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
         }
     ]
 }

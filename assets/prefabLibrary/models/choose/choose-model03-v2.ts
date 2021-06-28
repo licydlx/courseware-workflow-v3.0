@@ -1,3 +1,4 @@
+import t3_courseware from '../../../entrances/javascripts/courseware';
 
 /*
  * @Descripttion: 
@@ -79,6 +80,10 @@ export default class choose_model03_v2 extends cc.Component {
     private _boySoundTime: number;
 
     private _girlSoundTime: number;
+
+    private _isCanSendUpdate: boolean = true;
+
+    private _signalingModel: number;
 
     private feedbackType: any = cc.Enum({
         No: 0,
@@ -268,7 +273,7 @@ export default class choose_model03_v2 extends cc.Component {
 
     protected updateAdd(dt: number): void {
 
-        if (!this._gameStart || this._gameOver) {
+        if (!this._gameStart || this._gameOver || this._signalingModel === 3) {
 
             for (let i = 0; i < this.myFoodPools.length; i++) {
 
@@ -278,7 +283,10 @@ export default class choose_model03_v2 extends cc.Component {
             this.unschedule(this.updateAdd);
             return;
         }
+
         this._gameTime++;
+
+        console.log('====  _signalingModel ====' + this._signalingModel);
 
         console.log('====  updateAdd _gameTime ====' + this._gameTime);
 
@@ -344,7 +352,13 @@ export default class choose_model03_v2 extends cc.Component {
             this.updateAllSpeed();
         }
 
-        if (this._gameTime % 50 === 0) {
+        this._interTime++;
+        if (this._interTime >= this._interTimeLimit) {
+            this._interTime = 0;
+            this.foodDropUpdate();
+        }
+
+        if (this._gameTime % 50 === 0 && this._isCanSendUpdate) {
 
             let state: any = globalThis._.cloneDeep(this._state);
             state.gameTime = this._gameTime;
@@ -352,13 +366,6 @@ export default class choose_model03_v2 extends cc.Component {
             state.foodTag = this._foodTag;
             this.updateState(state);
         }
-
-        this._interTime++;
-        if (this._interTime >= this._interTimeLimit) {
-            this._interTime = 0;
-            this.foodDropUpdate();
-        }
-
     }
 
     private _addAllFoodData(state: any) {
@@ -433,10 +440,12 @@ export default class choose_model03_v2 extends cc.Component {
     }
 
     private _clickDropFood(evt: any) {
+
         let state: any = globalThis._.cloneDeep(this._state);
 
         let obj: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         let btn = obj.asButton;
+        btn.touchable = false;
         state.clickFoodTag = btn.data.tag;
 
         // 是正确的
@@ -497,8 +506,11 @@ export default class choose_model03_v2 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
 
-        console.log('==== 更新ui层 ====');
+        console.log('==== 更新ui层 signalingModel ====');
         console.log(state);
+
+        //signalingModel 1: 演示 2 答题 3投放
+        //role 0：教师 2学生
 
         if (state.elvesPlay) {
             this.playElvesSpeak(state.elvesPlay, state.rightSoundFile);
@@ -546,6 +558,14 @@ export default class choose_model03_v2 extends cc.Component {
             this._gameStart = state.gameStart;
 
             if (state.gameStart) {
+
+                let { role, signalingModel } = window['GlobalData'].courseData; // 危险的做法。。。
+                if (signalingModel === 1 && role === 2) {
+
+                    this._isCanSendUpdate = false;
+                }
+                this._signalingModel = signalingModel;
+
                 let boy = this._view.getChild("boy").asButton;
                 let girl = this._view.getChild("girl").asButton;
                 boy.touchable = false;
@@ -553,6 +573,7 @@ export default class choose_model03_v2 extends cc.Component {
                 cc.audioEngine.playMusic(this._gameMusic, true);
 
                 this.schedule(this.updateAdd, 0.1);
+
 
             } else {
                 let boy = this._view.getChild("boy").asButton;
@@ -658,6 +679,7 @@ export default class choose_model03_v2 extends cc.Component {
 
                 setTimeout(() => {
 
+                    btn.touchable = true;
                     let state2: any = globalThis._.cloneDeep(this._state);
                     state2.clickFoodTag = '';
                     this.updateState(state2);
@@ -691,7 +713,15 @@ export default class choose_model03_v2 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.foodTag, state.foodTag)) {
 
-            this._foodTag = state.foodTag;
+            console.log('======  111 _foodTag =====' + this._foodTag);
+            console.log('======  111 state.foodTag =====' + state.foodTag);
+
+            let cha = Math.abs(state.foodTag - this._foodTag);
+            if (cha > 2) {
+                this._foodTag = state.foodTag;
+            }
+            console.log('======  111 cha =====' + cha);
+
         }
 
         if (!globalThis._.isEqual(oldState.curScore, state.curScore)) {

@@ -245,8 +245,6 @@ export default class choose_model03_v1 extends cc.Component {
 
     private _onDragStart(evt: fgui.Event): void {
 
-        cc.audioEngine.playEffect(this._clickSound, false);
-
         evt.captureTouch();
         let state: any = globalThis._.cloneDeep(this._state);
         state.drag = 'start';
@@ -262,8 +260,6 @@ export default class choose_model03_v1 extends cc.Component {
 
     private _onDragEnd(evt: fgui.Event): void {
         this._dragging = false;
-
-        cc.audioEngine.playEffect(this._dragSound, false);
 
         var btn: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
         let btnRect = new cc.Rect(btn.x - btn.width / 2, btn.y - btn.height / 2, btn.width, btn.height);
@@ -367,9 +363,12 @@ export default class choose_model03_v1 extends cc.Component {
 
         } else if (state.drag == "start") {
 
+            cc.audioEngine.playEffect(this._clickSound, false);
             this._magicPen.icon = this._magicPenData[1].icon;
 
         } else if (state.drag == "end") {
+
+            cc.audioEngine.playEffect(this._dragSound, false);
 
             this._magicPen.x = this._cachDragPos.x;
             this._magicPen.y = this._cachDragPos.y;
@@ -379,8 +378,13 @@ export default class choose_model03_v1 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
 
+            if (state.submit !== this.submitType.No) {
+                cc.audioEngine.playEffect(this._clickSound, false);
+            }
+
             // 控制反馈动画和指引动画
             if (state.submit === this.submitType.GuideShow) {
+
 
                 this.handTips1(this._magicPen, this._options[this._guideName]);
 

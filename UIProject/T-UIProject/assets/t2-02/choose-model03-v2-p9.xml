@@ -6,17 +6,17 @@
     <image id="n39_ku3l" name="n39" src="ku3l4v" fileName="images/example3/001.png" xy="0,0"/>
     <image id="n40_ku3l" name="n40" src="ku3l4y" fileName="images/example3/004.png" xy="786,153"/>
     <component id="n56_uqx5" name="n56" src="uqx55h" fileName="buttons/choose.xml" xy="1598,483" size="282,232" group="n60_uqx5">
-      <Button icon="ui://733aoo45uqx55q" sound="ui://733aoo45r3754k"/>
+      <Button icon="ui://733aoo45uqx55q"/>
     </component>
     <component id="n57_uqx5" name="n57" src="uqx55h" fileName="buttons/choose.xml" xy="1270,450" size="258,322" group="n60_uqx5">
-      <Button icon="ui://733aoo45uqx55j" sound="ui://733aoo45r3754k"/>
+      <Button icon="ui://733aoo45uqx55j"/>
     </component>
     <component id="n61_uqx5" name="n61" src="uqx55h" fileName="buttons/choose.xml" xy="990,455" size="178,344" group="n60_uqx5">
-      <Button icon="ui://733aoo45uqx55m" sound="ui://733aoo45r3754k"/>
+      <Button icon="ui://733aoo45uqx55m"/>
     </component>
     <group id="n60_uqx5" name="choose" xy="901,283" size="838,344" advanced="true"/>
     <component id="n12_r375" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1253,789" size="205,192">
-      <Button icon="ui://733aoo45w2qdp" sound="ui://733aoo45r3754k"/>
+      <Button icon="ui://733aoo45w2qdp"/>
     </component>
     <image id="n68_uqx5" name="n68" src="uqx55r" fileName="images/example3/0016_2.png" xy="1453,367" group="n49_uqx5"/>
     <image id="n66_uqx5" name="n66" src="uqx55k" fileName="images/example3/0011_2.png" xy="1139,291" group="n49_uqx5"/>

@@ -11,22 +11,12 @@ const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class choose_model03_v3 extends cc.Component {
+export default class t4_05_model_v2 extends cc.Component {
     private _worldRoot: cc.Node;
 
     private _view: fgui.GComponent;
 
     private _c1: fgui.Controller;
-
-    private _c2: fgui.Controller;
-
-    private _paoShow: any = [];
-
-    private _chooseBtn: any = [];
-
-    private _selectIcons: any = [];
-
-    private _chooseCach: any = [];
 
     private _title: fgui.GButton;
 
@@ -36,17 +26,9 @@ export default class choose_model03_v3 extends cc.Component {
 
     private _package: any;
 
-    private _boxSound: cc.AudioClip;
+    private touches: cc.Vec2[] = [];
 
-    private _mask: fgui.GGraph;
-
-    private _guidIndex: number = 0;
-
-    private _box3D: fgui.GLoader3D;
-
-    private _boxSoundTime: number;
-
-    private _clickSound: cc.AudioClip;
+    private graphics: cc.Graphics = null;
 
     private submitType: any = cc.Enum({
 
@@ -72,6 +54,7 @@ export default class choose_model03_v3 extends cc.Component {
     }
 
     async onLoad() {
+
         this._worldRoot = cc.find("Canvas").parent;
 
         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;
@@ -79,10 +62,7 @@ export default class choose_model03_v3 extends cc.Component {
 
         fgui.GRoot.inst.addChild(this._view);
 
-
-        this._mask = this._view.getChild('maskBg').asGraph;
         this._c1 = this._view.getController("c1");
-        this._c2 = this._view.getController("c2");
 
         // 臨時
         // bug 初始设置不播放不生效
@@ -90,11 +70,6 @@ export default class choose_model03_v3 extends cc.Component {
             this._c1.selectedIndex = 1;
             this._c1.selectedIndex = 0;
         }
-
-        this._box3D = this._view.getChild("box") as fgui.GLoader3D;
-        this._box3D.on(fgui.Event.CLICK, this._clickBox, this);
-        this._box3D.url = "ui://733aoo45gzaz75";
-        this._box3D.animationName = 'sjq_idle';
 
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
@@ -104,52 +79,24 @@ export default class choose_model03_v3 extends cc.Component {
         this._submitBtn = this._view.getChild("submit").asButton;
         if (this._submitBtn) this._submitBtn.on(fgui.Event.CLICK, this._clickSubmit, this);
 
-        let paoGroup = this._view.getChild("pao").asGroup;
-        for (let i = 0; i < this._view.numChildren; i++) {
-            if (this._view.getChildAt(i).group == paoGroup) {
-                let btn: fgui.GButton = this._view.getChildAt(i).asButton;
-                btn.alpha = 0;
-                this._paoShow.push(btn);
-            }
-        }
+        let startBtn = this._view.getChild("start").asButton;
+        startBtn.visible = false;
 
-        let chooseGroup = this._view.getChild("choose").asGroup;
-        for (let i = 0; i < this._view.numChildren; i++) {
-            if (this._view.getChildAt(i).group == chooseGroup) {
-                let btn: fgui.GButton = this._view.getChildAt(i).asButton;
-                btn.data = { index: this._chooseCach.length };
-                let temp = { index: this._chooseCach.length, selected: false };
-                this._chooseCach.push(temp);
-                this._chooseBtn.push(btn);
-                btn.on(fgui.Event.CLICK, this._clickChoose, this);
-            }
-        }
+        this.graphics = this.addComponent(cc.Graphics);
+        this.graphics.lineWidth = 20;
+        this.graphics.lineJoin = cc.Graphics.LineJoin.ROUND;
+        this.graphics.strokeColor = cc.color(255, 0, 0);
+        this.graphics.fillColor = cc.color(255, 0, 0);
 
-        let selectedGroup = this._view.getChild("select").asGroup;
-        for (let i = 0; i < this._view.numChildren; i++) {
-            if (this._view.getChildAt(i).group == selectedGroup) {
-                let icon: fgui.GImage = this._view.getChildAt(i).asImage;
-                icon.visible = false;
-                this._selectIcons.push(icon);
-            }
-        }
+        this._view.on(cc.Node.EventType.TOUCH_START, this._onDrawStart, this);
+        this._view.on(cc.Node.EventType.TOUCH_MOVE, this._onDrawMove, this);
+        this._view.on(cc.Node.EventType.TOUCH_END, this._onDrawEnd, this);
 
         // 初始化state
         this._state = {
             title: false,
-            boxPlay: false,
-            canChoose: false,
-            chooseCach: this._chooseCach,
-            submit: this.submitType.No,
+            submit: this.submitType.No
         }
-
-        // 临时 
-        // 禁止操作期间 切页
-        this.disableForbidHandle();
-        // 销毁反馈
-        let feedback: any = this._worldRoot.getChildByName("feedback");
-        if (feedback) feedback.destroy();
-        cc.audioEngine.stopAll();
     }
 
     async init(data: any) {
@@ -157,20 +104,10 @@ export default class choose_model03_v3 extends cc.Component {
         let { pathConfig, model, components } = data;
         let Package = pathConfig.packageName;
         let GComponent = model.uiPath;
-        let { boxSoundUrl, guidIndex, boxSoundTime } = model.config;
+        let { boxSoundUrl, guidIndex } = model.config;
         this._package = Package;
 
         this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;
-
-        let item = fgui.UIPackage.getItemByURL(boxSoundUrl);
-        this._boxSound = await loadResource(item.file, cc.AudioClip);
-
-        if (guidIndex) this._guidIndex = guidIndex;
-
-        if (boxSoundTime) this._boxSoundTime = boxSoundTime;
-
-        item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754k');
-        this._clickSound = await loadResource(item.file, cc.AudioClip);
 
         // 动效注册
         // for (let v in ae) {
@@ -191,60 +128,38 @@ export default class choose_model03_v3 extends cc.Component {
         }
     }
 
-    private _clickChoose(evt: any) {
-        let state: any = globalThis._.cloneDeep(this._state);
-        let obj: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
-        let btn: fgui.GButton = obj.asButton;
+    _onDrawStart(event) {
+        console.log('===== start 111 ====');
+        this.touches.length = 0;
+        this.touches.push(event.touch.getLocation());
+    }
 
-        for (let i = 0; i < state.chooseCach.length; i++) {
-            state.chooseCach[i].selected = false;
-        }
-        for (let i = 0; i < state.chooseCach.length; i++) {
-            if (state.chooseCach[i].index === btn.data.index) {
-                state.chooseCach[i].selected = true;
-                break;
+    _onDrawMove(event) {
+        let touches = this.touches;
+        touches.push(event.touch.getLocation());
+
+        const MIN_POINT_DISTANCE = 2;
+
+        this.graphics.clear();
+        let worldPos = this.node.convertToWorldSpaceAR(cc.v2());
+        this.graphics.moveTo(touches[0].x - worldPos.x, touches[0].y - worldPos.y);
+        let lastIndex = 0;
+        for (let i = 1, l = touches.length; i < l; i++) {
+            if (touches[i].sub(touches[lastIndex]).mag() < MIN_POINT_DISTANCE) {
+                continue;
             }
+            lastIndex = i;
+            this.graphics.lineTo(touches[i].x - worldPos.x, touches[i].y - worldPos.y);
         }
-        this.updateState(state);
+        this.graphics.stroke();
+    }
+
+    _onDrawEnd(event) {
+
     }
 
     private _clickSubmit(evt: any) {
-
         let state: any = globalThis._.cloneDeep(this._state);
-
-        let isHave = 0;
-        for (let i = 0; i < state.chooseCach.length; i++) {
-
-            if (state.chooseCach[i].selected) {
-                isHave++;
-            }
-        }
-
-        if (isHave === 0) {
-            state.submit = this.submitType.GuideShow;
-        } else if (isHave === 1) {
-
-            state.submit = this.submitType.WrongFeed;
-
-            for (let i = 0; i < state.chooseCach.length; i++) {
-
-                if (state.chooseCach[i].selected && state.chooseCach[i].index === 0) {
-
-                    state.submit = this.submitType.RightFeed;
-                    break;
-                }
-            }
-
-        } else {
-            state.submit = this.submitType.WrongFeed;
-        }
-
-        this.updateState(state);
-    }
-
-    private _clickBox(evt: any) {
-        let state: any = globalThis._.cloneDeep(this._state);
-        state.boxPlay = true;
         this.updateState(state);
     }
 
@@ -269,35 +184,7 @@ export default class choose_model03_v3 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
 
-        if (!globalThis._.isEqual(oldState.boxPlay, state.boxPlay)) {
-            if (state.boxPlay) {
-                this.playBoxSpeak(state.boxPlay);
-            } else {
-                this._box3D.animationName = 'sjq_idle';
-                this._c2.selectedIndex = 0;
-            }
-        }
-
-        if (!globalThis._.isEqual(oldState.chooseCach, state.chooseCach)) {
-
-            cc.audioEngine.playEffect(this._clickSound, false);
-
-            for (let i = 0; i < state.chooseCach.length; i++) {
-
-                for (let j = 0; j < this._selectIcons.length; j++) {
-                    if (state.chooseCach[i].index === j) {
-                        this._selectIcons[j].visible = state.chooseCach[i].selected;
-                        break;
-                    }
-                }
-            }
-        }
-
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
-
-            if (state.submit !== this.submitType.No) {
-                cc.audioEngine.playEffect(this._clickSound, false);
-            }
 
             if (state.submit === this.submitType.RightFeed) {
 
@@ -309,18 +196,14 @@ export default class choose_model03_v3 extends cc.Component {
 
             } else if (state.submit === this.submitType.GuideShow) {
 
-                this.handTips2(this._chooseBtn[this._guidIndex]);
+                let keyBtn = this._view.getChild('input1').asButton;
+                this.handTips2(keyBtn);
             }
         }
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
         }
-
-        if (!globalThis._.isEqual(oldState.canChoose, state.canChoose)) {
-            this._mask.visible = !state.canChoose;
-        }
-
     }
 
 
@@ -340,81 +223,6 @@ export default class choose_model03_v3 extends cc.Component {
         } else {
             this.disableForbidHandle();
         }
-    }
-
-    playBoxSpeak(bool: boolean) {
-        if (bool) {
-
-            this._box3D.animationName = 'sjq_idle1to2';
-
-            cc.tween(this._box3D)
-                .delay(0.3)
-                .call(() => {
-                    this._box3D.animationName = 'sjq_idle2';
-                })
-                .start()
-
-            cc.audioEngine.stopAll();
-            this.forbidHandle();
-            this.playBoxSound();
-
-        } else {
-            this._c2.selectedIndex = 0;
-            this.disableForbidHandle();
-        }
-    }
-
-    async playBoxSound() {
-
-        for (let i = 0; i < this._paoShow.length; i++) {
-            this._paoShow[i].alpha = 0;
-        }
-
-        cc.tween(this)
-            .delay(0.5)
-            .call(() => {
-
-                this._c2.selectedIndex = 1;
-                this.playPaoShowAnimate(0);
-            })
-            .start();
-
-        cc.audioEngine.play(this._boxSound, false, 1);
-
-        cc.tween(this)
-            .delay(this._boxSoundTime)
-            .call(() => {
-
-                this._box3D.animationName = 'sjq_idle';
-                this.disableForbidHandle();
-                for (let i = 0; i < this._paoShow.length; i++) {
-                    this._paoShow[i].alpha = 0;
-                }
-                this._c2.selectedIndex = 0;
-                let state: any = globalThis._.cloneDeep(this._state);
-                state.boxPlay = false;
-                state.canChoose = true;
-                this.updateState(state);
-
-            })
-            .start();
-    }
-
-    playPaoShowAnimate(index: number) {
-
-        cc.tween(this._paoShow[index])
-            .to(1.0, { alpha: 1 })
-            .call(() => {
-                if (!this._paoShow) {
-                    return;
-                }
-                index++;
-                if (index < this._paoShow.length) {
-                    this.playPaoShowAnimate(index);
-                }
-            })
-            .start()
-
     }
 
     answerFeedback(bool: boolean) {
@@ -510,8 +318,6 @@ export default class choose_model03_v3 extends cc.Component {
     }
 
     onDisable() {
-
-        cc.Tween.stopAll();
         this.relieveState();
         cc.audioEngine.stopAll();
     }
