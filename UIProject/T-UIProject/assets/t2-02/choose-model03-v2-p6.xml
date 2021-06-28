@@ -21,6 +21,9 @@
     <component id="n12_r375" name="play" src="w2qd25" fileName="buttons/submit.xml" xy="1197,459" size="368,159">
       <Button icon="ui://733aoo45r3753d" selectedIcon="ui://733aoo45r3753o" sound="ui://733aoo45r3754n"/>
     </component>
+    <component id="n48_sp6v" name="replay" src="w2qd25" fileName="buttons/submit.xml" xy="1197,459" size="368,159">
+      <Button icon="ui://733aoo45r3753d" selectedIcon="ui://733aoo45r3753o"/>
+    </component>
     <component id="n24_r375" name="n24" src="w2qd27" fileName="buttons/yueqi.xml" xy="63,267" size="181,100" group="n27_r375">
       <Button icon="ui://733aoo45r37541"/>
     </component>

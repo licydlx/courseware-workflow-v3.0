@@ -38,6 +38,8 @@ export default class choose_model03_v2 extends cc.Component {
 
     private _playBtn: fgui.GButton;
 
+    private _replayBtn: fgui.GButton;
+
     private _package: any;
 
     private timeText: fgui.GLabel;
@@ -90,6 +92,12 @@ export default class choose_model03_v2 extends cc.Component {
         GuideShow: 1,
         WrongFeed: 2,
         RightFeed: 3
+    });
+
+    private canPlayType: any = cc.Enum({
+        UnEnable: 0,
+        Show: 1,
+        Hide: 2,
     });
 
     // 远程动态组件
@@ -180,6 +188,10 @@ export default class choose_model03_v2 extends cc.Component {
         if (this._playBtn) this._playBtn.on(fgui.Event.CLICK, this._clickStartPlay, this);
         this._playBtn.enabled = false;
 
+        this._replayBtn = this._view.getChild("replay").asButton;
+        if (this._replayBtn) this._replayBtn.on(fgui.Event.CLICK, this._clickStartPlay, this);
+        this._replayBtn.visible = false;
+
         let boyFoodGroup = this._view.getChild("boyFood").asGroup;
         for (let i = 0; i < this._view.numChildren; i++) {
             if (this._view.getChildAt(i).group == boyFoodGroup) {
@@ -203,7 +215,7 @@ export default class choose_model03_v2 extends cc.Component {
             title: false,
             elvesPlay: false,
             rightSoundFile: [{ sex: 1, file: this._boySound, time: this._boySoundTime }, { sex: 2, file: this._girlSound, time: this._girlSoundTime }],
-            gameCanPlay: false,
+            gameCanPlay: this.canPlayType.UnEnable,
             gameOver: false,
             gameStart: false,
             submitFeedback: this.feedbackType.No,
@@ -319,7 +331,6 @@ export default class choose_model03_v2 extends cc.Component {
 
             }
 
-            this._view.getChild("total").asLabel.text = 'total: ' + showTotal;
             console.log('==== showTotal  ====' + showTotal);
 
             state.gameTime = this._gameTime;
@@ -355,6 +366,7 @@ export default class choose_model03_v2 extends cc.Component {
         this._interTime++;
         if (this._interTime >= this._interTimeLimit) {
             this._interTime = 0;
+            this._view.getChild("total").asLabel.text = 's: ' + this._dropSpeed;
             this.foodDropUpdate();
         }
 
@@ -506,7 +518,7 @@ export default class choose_model03_v2 extends cc.Component {
     // 更新ui层
     updateUi(oldState: any, state: any) {
 
-        console.log('==== 更新ui层 signalingModel ====');
+        console.log('==== 更新ui层 ====');
         console.log(state);
 
         //signalingModel 1: 演示 2 答题 3投放
@@ -516,41 +528,47 @@ export default class choose_model03_v2 extends cc.Component {
             this.playElvesSpeak(state.elvesPlay, state.rightSoundFile);
         }
 
-        if (!globalThis._.isEqual(oldState.gameCanPlay, state.gameCanPlay)) {
-
-            if (state.gameCanPlay) {
-
-                this._playBtn.enabled = true;
-
-            } else {
-
-                this._playBtn.enabled = false;
-            }
-            this._playBtn.visible = true;
-            this._readyGroup.visible = false;
-            this._ready.visible = false;
-            this._go.visible = false;
-        }
-
         // 播放过精灵对话后游戏能玩，并且玩过游戏后能否重玩
         if (!globalThis._.isEqual(oldState.isReplayShow, state.isReplayShow)) {
 
-            if (state.gameCanPlay) {
+            if (state.isReplayShow) {
 
-                if (state.isReplayShow) {
+                this._replayBtn.visible = true;
 
-                    this._playBtn.visible = true;
+            } else {
 
-                } else {
-
-                    this._playBtn.visible = false;
-                }
-                this._readyGroup.visible = false;
-                this._ready.visible = false;
-                this._over.visible = false;
-                this._go.visible = false;
+                this._replayBtn.visible = false;
             }
 
+            this._readyGroup.visible = false;
+            this._ready.visible = false;
+            this._over.visible = false;
+            this._go.visible = false;
+        }
+
+        if (!globalThis._.isEqual(oldState.gameCanPlay, state.gameCanPlay)) {
+
+            if (state.gameCanPlay === this.canPlayType.UnEnable) {
+
+                this._playBtn.enabled = false;
+                this._playBtn.visible = true;
+
+            } else if (state.gameCanPlay === this.canPlayType.Show) {
+
+                console.log('========  this.canPlayType.Show ======');
+                this._playBtn.enabled = true;
+                this._playBtn.visible = true;
+
+            } else if (state.gameCanPlay === this.canPlayType.Hide) {
+
+                console.log('========  this.canPlayType.Hide ======');
+
+                this._playBtn.visible = false;
+            }
+            this._readyGroup.visible = false;
+            this._ready.visible = false;
+            this._over.visible = false;
+            this._go.visible = false;
         }
 
         if (!globalThis._.isEqual(oldState.gameStart, state.gameStart)) {
@@ -570,10 +588,18 @@ export default class choose_model03_v2 extends cc.Component {
                 let girl = this._view.getChild("girl").asButton;
                 boy.touchable = false;
                 girl.touchable = false;
-                cc.audioEngine.playMusic(this._gameMusic, true);
 
-                this.schedule(this.updateAdd, 0.1);
+                cc.audioEngine.stopMusic();
 
+                if (this._signalingModel !== 3) {
+
+                    this._view.getChild("total").asLabel.text = 's: ' + this._dropSpeed;
+
+                    cc.audioEngine.playMusic(this._gameMusic, true);
+
+                    this.unschedule(this.updateAdd);
+                    this.schedule(this.updateAdd, 0.1);
+                }
 
             } else {
                 let boy = this._view.getChild("boy").asButton;
@@ -608,6 +634,7 @@ export default class choose_model03_v2 extends cc.Component {
 
                 cc.audioEngine.play(this._readySound, false, 1);
 
+                this._replayBtn.visible = false;
                 this._playBtn.visible = false;
                 this._readyGroup.visible = true;
                 this._ready.visible = true;
@@ -627,6 +654,7 @@ export default class choose_model03_v2 extends cc.Component {
                         let state1: any = globalThis._.cloneDeep(this._state);
                         state1.play = false;
                         state1.isReplayShow = false;
+                        state1.gameCanPlay = this.canPlayType.Hide;
                         state1.gameStart = true;
                         state1.dropSpeed = 3.0
                         state1.curScore = 0;
@@ -713,15 +741,10 @@ export default class choose_model03_v2 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.foodTag, state.foodTag)) {
 
-            console.log('======  111 _foodTag =====' + this._foodTag);
-            console.log('======  111 state.foodTag =====' + state.foodTag);
-
             let cha = Math.abs(state.foodTag - this._foodTag);
             if (cha > 2) {
                 this._foodTag = state.foodTag;
             }
-            console.log('======  111 cha =====' + cha);
-
         }
 
         if (!globalThis._.isEqual(oldState.curScore, state.curScore)) {
@@ -731,7 +754,7 @@ export default class choose_model03_v2 extends cc.Component {
 
         if (!globalThis._.isEqual(oldState.topScore, state.topScore)) {
 
-            this._topText.text = state.curScore + '';
+            this._topText.text = state.topScore + '';
         }
 
         if (!globalThis._.isEqual(oldState.gameAllFoodData, state.gameAllFoodData)) {
@@ -831,9 +854,7 @@ export default class choose_model03_v2 extends cc.Component {
 
                     let state: any = globalThis._.cloneDeep(this._state);
                     state.elvesPlay = false;
-                    if (!state.gameCanPlay) {
-                        state.gameCanPlay = true;
-                    }
+                    state.gameCanPlay = this.canPlayType.Show;
                     this.updateState(state);
 
                 } else {

@@ -64,6 +64,7 @@ export default class t4_05_model_v2 extends cc.Component {
 
         this._c1 = this._view.getController("c1");
 
+
         // 臨時
         // bug 初始设置不播放不生效
         if (this._c1) {
@@ -82,11 +83,16 @@ export default class t4_05_model_v2 extends cc.Component {
         let startBtn = this._view.getChild("start").asButton;
         startBtn.visible = false;
 
-        this.graphics = this.addComponent(cc.Graphics);
+        let huiNode = new cc.Node('huiNode');
+        huiNode.parent = this._worldRoot;
+
+        huiNode.addComponent(cc.Graphics);
         this.graphics.lineWidth = 20;
         this.graphics.lineJoin = cc.Graphics.LineJoin.ROUND;
         this.graphics.strokeColor = cc.color(255, 0, 0);
         this.graphics.fillColor = cc.color(255, 0, 0);
+        this.graphics.lineTo(200, 200);
+        this.graphics.stroke();
 
         this._view.on(cc.Node.EventType.TOUCH_START, this._onDrawStart, this);
         this._view.on(cc.Node.EventType.TOUCH_MOVE, this._onDrawMove, this);
@@ -129,14 +135,17 @@ export default class t4_05_model_v2 extends cc.Component {
     }
 
     _onDrawStart(event) {
-        console.log('===== start 111 ====');
+        console.log('===== start 111 ====' + event.touch.getLocation());
         this.touches.length = 0;
         this.touches.push(event.touch.getLocation());
     }
 
     _onDrawMove(event) {
+
         let touches = this.touches;
         touches.push(event.touch.getLocation());
+
+        console.log('===== move 222 ====' + event.touch.getLocation());
 
         const MIN_POINT_DISTANCE = 2;
 
