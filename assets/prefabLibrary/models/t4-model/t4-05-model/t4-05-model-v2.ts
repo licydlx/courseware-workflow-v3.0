@@ -86,13 +86,11 @@ export default class t4_05_model_v2 extends cc.Component {
         let huiNode = new cc.Node('huiNode');
         huiNode.parent = this._worldRoot;
 
-        huiNode.addComponent(cc.Graphics);
+        this.graphics = huiNode.addComponent(cc.Graphics);
         this.graphics.lineWidth = 20;
         this.graphics.lineJoin = cc.Graphics.LineJoin.ROUND;
         this.graphics.strokeColor = cc.color(255, 0, 0);
         this.graphics.fillColor = cc.color(255, 0, 0);
-        this.graphics.lineTo(200, 200);
-        this.graphics.stroke();
 
         this._view.on(cc.Node.EventType.TOUCH_START, this._onDrawStart, this);
         this._view.on(cc.Node.EventType.TOUCH_MOVE, this._onDrawMove, this);
@@ -136,6 +134,7 @@ export default class t4_05_model_v2 extends cc.Component {
 
     _onDrawStart(event) {
         console.log('===== start 111 ====' + event.touch.getLocation());
+        this.graphics.clear();
         this.touches.length = 0;
         this.touches.push(event.touch.getLocation());
     }
@@ -145,12 +144,9 @@ export default class t4_05_model_v2 extends cc.Component {
         let touches = this.touches;
         touches.push(event.touch.getLocation());
 
-        console.log('===== move 222 ====' + event.touch.getLocation());
+        const MIN_POINT_DISTANCE = 4;
 
-        const MIN_POINT_DISTANCE = 2;
-
-        this.graphics.clear();
-        let worldPos = this.node.convertToWorldSpaceAR(cc.v2());
+        let worldPos = this.node.convertToWorldSpaceAR(cc.v2(0, 0));
         this.graphics.moveTo(touches[0].x - worldPos.x, touches[0].y - worldPos.y);
         let lastIndex = 0;
         for (let i = 1, l = touches.length; i < l; i++) {
@@ -161,6 +157,7 @@ export default class t4_05_model_v2 extends cc.Component {
             this.graphics.lineTo(touches[i].x - worldPos.x, touches[i].y - worldPos.y);
         }
         this.graphics.stroke();
+
     }
 
     _onDrawEnd(event) {

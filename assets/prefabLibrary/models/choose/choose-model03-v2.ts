@@ -555,13 +555,10 @@ export default class choose_model03_v2 extends cc.Component {
 
             } else if (state.gameCanPlay === this.canPlayType.Show) {
 
-                console.log('========  this.canPlayType.Show ======');
                 this._playBtn.enabled = true;
                 this._playBtn.visible = true;
 
             } else if (state.gameCanPlay === this.canPlayType.Hide) {
-
-                console.log('========  this.canPlayType.Hide ======');
 
                 this._playBtn.visible = false;
             }
