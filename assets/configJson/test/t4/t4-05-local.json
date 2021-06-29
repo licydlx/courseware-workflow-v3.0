@@ -19,9 +19,9 @@
         
         {
             "model": {
-                "uiPath": "t4-05-model-p2",
+                "uiPath": "t4-05-model-p6",
                 "bundleName": "t4-05-model",
-                "prefabName": "t4-05-model-v1",
+                "prefabName": "t4-05-model-v2",
                 "config": {
                    
 
@@ -35,12 +35,12 @@
                 }
             }
         },
-
+        
         {
             "model": {
-                "uiPath": "t4-05-model-p6",
+                "uiPath": "t4-05-model-p2",
                 "bundleName": "t4-05-model",
-                "prefabName": "t4-05-model-v2",
+                "prefabName": "t4-05-model-v1",
                 "config": {
                    
 

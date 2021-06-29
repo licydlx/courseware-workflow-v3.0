@@ -382,13 +382,47 @@ export default class choose_model03_v2 extends cc.Component {
     private _addAllFoodData(state: any) {
 
         state.gameAllFoodData = {};
+        let arrWrongIndex = [];
+        let rightNums = 0;
+        let rightNumMin = 8;
         for (let i = 0; i < 40; i++) {
             let randIndex: number = Math.floor(Math.random() * this._gameFood.length);
             let max = 1775 - this._gameFoodSize[randIndex].w;
             let randPosX: number = Math.floor(Math.random() * (max - 1000 + 1) + 1000);
             let tempData = { index: randIndex, isShow: true, tag: i, x: randPosX, y: 70, speed: this._dropSpeed };
             state.gameAllFoodData[tempData.tag] = tempData;
+            if (i < 15) {
+                let isWrongIndex = true;
+                for (let j = 0; j < this._rightIndexs.length; j++) {
+
+                    if (randIndex === this._rightIndexs[j]) {
+                        isWrongIndex = false;
+                        break;
+                    }
+                }
+                if (isWrongIndex) {
+                    arrWrongIndex.push(i);
+
+                } else {
+                    rightNums++;
+                }
+
+            }
         }
+
+        if (rightNums < rightNumMin) {
+
+            for (let i = 0; i < rightNumMin - rightNums; i++) {
+                let randRightIndex: number = Math.floor(Math.random() * this._rightIndexs.length);
+                let tiHuanIndex: number = Math.floor(Math.random() * arrWrongIndex.length);
+                let max = 1775 - this._gameFoodSize[this._rightIndexs[randRightIndex]].w;
+                let randPosX: number = Math.floor(Math.random() * (max - 1000 + 1) + 1000);
+                state.gameAllFoodData[arrWrongIndex[tiHuanIndex]].index = this._rightIndexs[randRightIndex];
+                state.gameAllFoodData[arrWrongIndex[tiHuanIndex]].x = randPosX;
+            }
+        }
+
+
 
     }
 

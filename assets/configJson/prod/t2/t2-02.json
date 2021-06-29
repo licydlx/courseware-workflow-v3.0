@@ -32,13 +32,13 @@
                 "prefabName": "choose-model03-v1",
                 "config": {
                     "isAnimateShow": true,
-                    "soundFile": {"piano":{"path":"ui://733aoo45w2qd18", "time": 19},
+                    "soundFile": {"piano":{"path":"ui://733aoo45w2qd18", "time": 7},
                                   "gu": {"path": "ui://733aoo45w2qd16", "time": 1},
                                   "shachui":{"path": "ui://733aoo45w2qd1a", "time": 5 },
                                    "dizi":{"path": "ui://733aoo45w2qd17", "time": 3},
                                    "sanjiaotie":{"path": "ui://733aoo45w2qd19", "time": 1}},
 
-                    "rightSoundFile": [{"path": "ui://733aoo45w2qd18", "time": 19} , {"path": "ui://733aoo45w2qd16", "time": 1}],
+                    "rightSoundFile": [{"path": "ui://733aoo45w2qd18", "time": 7} , {"path": "ui://733aoo45w2qd16", "time": 1}],
                     "animateName":{"piano": {"idle": "05gangqin_idle", "play": "05gangqin_play", "skin": "05gangqin"},"gu": {"idle": "01gu_idle", "play": "01gu_play", "skin": "01gu"},"shachui": {"idle": "02shacui_idle", "play": "02shacui_play", "skin": "02shacui"},
                     "dizi": {"idle": "03dizi_idle", "play": "03dizi_play", "skin": "03dizi"},
                     "sanjiaotie": {"idle": "04qiaojibang_idle", "play": "04qiaojibang_play", "skin": "04qiaojibang"}},
@@ -70,12 +70,12 @@
                 "prefabName": "choose-model03-v1",
                 "config": {
 
-                    "soundFile": {"piano": {"path": "ui://733aoo45bl377s", "time": 8}, 
+                    "soundFile": {"piano": {"path": "ui://733aoo45bl377s", "time": 1}, 
                                  "gu":{"path": "ui://733aoo45bl377p", "time": 6},
                                   "shachui":{"path": "ui://733aoo45bl377o", "time": 1},
                                    "dizi":{"path": "ui://733aoo45hddi85", "time": 1},
                                     "sanjiaotie":{"path": "ui://733aoo45bl377r", "time": 3} },
-                    "rightSoundFile": [{"path": "ui://733aoo45bl377s", "time": 8}, {"path": "ui://733aoo45bl377p", "time": 6}],
+                    "rightSoundFile": [{"path": "ui://733aoo45bl377s", "time": 1}, {"path": "ui://733aoo45bl377p", "time": 6}],
                     "rightName": ["piano", "gu"],
 
                     "optionsRect": {"piano": {"x": 1205, "y": 190, "width":260, "height": 220},
@@ -271,6 +271,7 @@
                 }
             }
         },
+
         
         {
             "model": {
@@ -302,6 +303,7 @@
               "prefabName": "static-model01-v1"
             }
           }
+
 
     ]
 }

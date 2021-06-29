@@ -47,11 +47,12 @@
     <image id="jjln1v" name="005.png" path="/images/example2/"/>
     <image id="jjln1w" name="006.png" path="/images/example2/"/>
     <image id="jjln1x" name="007.png" path="/images/example2/"/>
-    <image id="jjln1y" name="008.png" path="/images/example2/"/>
-    <image id="jjln1z" name="009.png" path="/images/example2/"/>
     <component id="jjln22" name="button_mid_anchive.xml" path="/buttons/"/>
     <component id="jjln23" name="t4-05-model-p3.xml" path="/" exported="true"/>
     <component id="jjln25" name="t4-05-model-p4.xml" path="/" exported="true"/>
+    <image id="xdox26" name="003_2.png" path="/images/example2/" exported="true"/>
+    <image id="xdox27" name="004_2.png" path="/images/example2/" exported="true"/>
+    <image id="xdox2a" name="008.png" path="/images/example2/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

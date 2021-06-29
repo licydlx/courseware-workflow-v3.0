@@ -14,19 +14,20 @@
       <Button icon="ui://mgpb39d5j79e10" sound="ui://mgpb39d5j79e18"/>
     </component>
     <image id="n41_jjln" name="n41" src="jjln1v" fileName="images/example2/005.png" xy="-5,199"/>
-    <image id="n44_jjln" name="n44" src="jjln1r" fileName="images/example2/0010.png" xy="19,242"/>
-    <image id="n45_jjln" name="n45" src="jjln1y" fileName="images/example2/008.png" xy="38,294"/>
-    <image id="n46_jjln" name="n46" src="jjln1z" fileName="images/example2/009.png" xy="41,396"/>
     <text id="n47_jjln" name="jindu" xy="182,454" size="164,68" fontSize="50" color="#ffffff" align="center" vAlign="middle" autoSize="none" bold="true" text="0/3"/>
     <component id="n42_jjln" name="start" src="j79e17" fileName="buttons/button1.xml" xy="798,727" size="385,171">
       <Button icon="ui://mgpb39d5jjln1s"/>
     </component>
     <image id="n48_jjln" name="player" src="jjln1x" fileName="images/example2/007.png" xy="1385,504"/>
-    <component id="n54_jjln" name="lan" src="jjln22" fileName="buttons/button_mid_anchive.xml" xy="711,624" size="102,86">
+    <component id="n54_jjln" name="lan" src="jjln22" fileName="buttons/button_mid_anchive.xml" xy="660,581" size="102,86" group="n56_xdox">
       <Button icon="ui://mgpb39d5jjln1u"/>
     </component>
-    <component id="n55_jjln" name="hong" src="jjln22" fileName="buttons/button_mid_anchive.xml" xy="1178,625" size="100,86">
+    <component id="n55_jjln" name="red" src="jjln22" fileName="buttons/button_mid_anchive.xml" xy="1128,582" size="100,86" group="n56_xdox">
       <Button icon="ui://mgpb39d5jjln1t"/>
     </component>
+    <group id="n56_xdox" name="drawLine" xy="660,581" size="568,87" advanced="true"/>
+    <image id="n57_xdox" name="n57" src="jjln1r" fileName="images/example2/0010.png" xy="25,245"/>
+    <image id="n58_xdox" name="n58" src="jjln1r" fileName="images/example2/0010.png" xy="25,335"/>
+    <image id="n59_xdox" name="n59" src="jjln1r" fileName="images/example2/0010.png" xy="25,425"/>
   </displayList>
 </component>
