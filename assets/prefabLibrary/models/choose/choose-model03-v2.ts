@@ -151,7 +151,7 @@ export default class choose_model03_v2 extends cc.Component {
         this._topText.text = '0';
         this._curScoreText.text = '0';
 
-        this._view.getChild("total").asLabel.text = 'total: 0';
+        this._view.getChild("total").asLabel.text = '';
 
         this.timeText = this._view.getChild("n32").asLabel;
         this.timeText.text = this._gameTime + '';
@@ -366,7 +366,6 @@ export default class choose_model03_v2 extends cc.Component {
         this._interTime++;
         if (this._interTime >= this._interTimeLimit) {
             this._interTime = 0;
-            this._view.getChild("total").asLabel.text = 's: ' + this._dropSpeed;
             this.foodDropUpdate();
         }
 
@@ -590,8 +589,6 @@ export default class choose_model03_v2 extends cc.Component {
 
                 if (this._signalingModel !== 3) {
 
-                    this._view.getChild("total").asLabel.text = 's: ' + this._dropSpeed;
-
                     cc.audioEngine.playMusic(this._gameMusic, true);
 
                     this.unschedule(this.updateAdd);
@@ -664,8 +661,6 @@ export default class choose_model03_v2 extends cc.Component {
 
                     })
                     .start();
-
-
             }
         }
 
@@ -1053,6 +1048,7 @@ class MyDropFood extends fgui.GButton {
         this.x = this.data.x;
         this.y = this.data.y;
         this.visible = this.data.isShow;
+
     }
 
 
@@ -1096,7 +1092,6 @@ class MyDropFood extends fgui.GButton {
             .start();
     }
 
-
     protected onUpdate() {
 
         if (this.data.isShow === false) {
@@ -1115,6 +1110,7 @@ class MyDropFood extends fgui.GButton {
 
             this.data.isShow = false;
         }
+
     }
 
     protected onDestroy() {
