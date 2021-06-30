@@ -2,14 +2,14 @@
 <component size="1920,1080" bgColorEnabled="true" bgColor="#000000">
   <controller name="c1" pages="0,,1," selected="0"/>
   <displayList>
-    <image id="n1_w2qd" name="n1" src="w2qdt" fileName="images/002.png" xy="5,-3" group="n26_w2qd"/>
+    <image id="n1_w2qd" name="n1" src="w2qdt" fileName="images/002.png" xy="0,0" group="n26_w2qd"/>
     <image id="n5_w2qd" name="n5" src="w2qdr" fileName="images/0011.png" xy="1596,206" group="n26_w2qd"/>
     <image id="n22_w2qd" name="n22" src="w2qdz" fileName="images/008.png" xy="399,94" group="n26_w2qd"/>
     <image id="n25_w2qd" name="n25" src="w2qdz" fileName="images/008.png" xy="1102,75" group="n26_w2qd"/>
     <image id="n24_w2qd" name="n24" src="w2qdz" fileName="images/008.png" xy="756,325" group="n26_w2qd"/>
     <image id="n23_w2qd" name="n23" src="w2qdz" fileName="images/008.png" xy="426,583" group="n26_w2qd"/>
     <image id="n21_w2qd" name="n21" src="w2qdz" fileName="images/008.png" xy="1130,536" group="n26_w2qd"/>
-    <group id="n26_w2qd" name="n26" xy="5,-3" size="1920,1080"/>
+    <group id="n26_w2qd" name="n26" xy="0,0" size="1920,1080"/>
     <component id="n4_w2qd" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1635,746" size="204,204">
       <Button icon="ui://733aoo45w2qdp"/>
     </component>

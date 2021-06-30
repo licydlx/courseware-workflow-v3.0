@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 255,
+            "activePatchIndex": 256,
             "patches": [
                 {
                     "date": 1623989407691,
@@ -1028,6 +1028,10 @@
                 {
                     "date": 1624868060418,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -381,9 +381,8 @@\n             if (state.submit !== this.submitType.No) {\r\n                 cc.audioEngine.playEffect(this._clickSound, false);\r\n             }\r\n \r\n-\r\n             // 控制反馈动画和指引动画\r\n             if (state.submit === this.submitType.GuideShow) {\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1625035658891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -384,9 +384,8 @@\n \r\n             // 控制反馈动画和指引动画\r\n             if (state.submit === this.submitType.GuideShow) {\r\n \r\n-\r\n                 this.handTips1(this._magicPen, this._options[this._guideName]);\r\n \r\n             } else if (state.submit === this.submitType.WrongFeed) {\r\n                 this.answerFeedback(false);\r\n"
                 }
             ],
             "date": 1623989407691,

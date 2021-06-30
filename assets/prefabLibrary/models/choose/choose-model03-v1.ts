@@ -385,7 +385,6 @@ export default class choose_model03_v1 extends cc.Component {
             // 控制反馈动画和指引动画
             if (state.submit === this.submitType.GuideShow) {
 
-
                 this.handTips1(this._magicPen, this._options[this._guideName]);
 
             } else if (state.submit === this.submitType.WrongFeed) {

@@ -421,9 +421,6 @@ export default class choose_model03_v2 extends cc.Component {
                 state.gameAllFoodData[arrWrongIndex[tiHuanIndex]].x = randPosX;
             }
         }
-
-
-
     }
 
     private updateAllSpeed() {
