@@ -1,0 +1,498 @@
+{
+    "sourceFile": "assets/prefabLibrary/models/static/static-model01-v2.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 120,
+            "patches": [
+                {
+                    "date": 1625136216278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1625136235388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n /*\r\n  * @Descripttion: \r\n  * @version: \r\n- * @Author: ydlx\r\n- * @Date: 2021-03-26 18:05:12\r\n+ * @Author: ruzhuan\r\n+ * @Date: 2021-07-01 18:05:12\r\n  * @LastEditors: Please set LastEditors\r\n  * @LastEditTime: 2021-05-17 15:25:51\r\n  */\r\n \r\n"
+                },
+                {
+                    "date": 1625136241235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n  * @version: \r\n  * @Author: ruzhuan\r\n  * @Date: 2021-07-01 18:05:12\r\n  * @LastEditors: Please set LastEditors\r\n- * @LastEditTime: 2021-05-17 15:25:51\r\n+ * @LastEditTime: 2021-07-01 18:05:12\r\n  */\r\n \r\n const { ccclass, property } = cc._decorator;\r\n \r\n"
+                },
+                {
+                    "date": 1625136258079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,10 @@\n     onLoad() {\r\n         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;\r\n         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n         fgui.GRoot.inst.addChild(this._view);\r\n+\r\n+\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625136333848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \r\n const { ccclass, property } = cc._decorator;\r\n \r\n @ccclass\r\n-export default class static_model01_v1 extends cc.Component {\r\n+export default class static_model01_v2 extends cc.Component {\r\n     private _view: fgui.GComponent;\r\n     private _state = {}\r\n \r\n     get state(): any {\r\n"
+                },
+                {
+                    "date": 1625136549597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,12 @@\n         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;\r\n         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n         fgui.GRoot.inst.addChild(this._view);\r\n \r\n+        this._box3D = this._view.getChild(\"box\") as fgui.GLoader3D;\r\n+        this._box3D.on(fgui.Event.CLICK, this._clickBox, this);\r\n+        this._box3D.url = \"ui://733aoo45gzaz75\";\r\n+        this._box3D.animationName = 'sjq_idle';\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625136555661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;\r\n         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n         fgui.GRoot.inst.addChild(this._view);\r\n \r\n-        this._box3D = this._view.getChild(\"box\") as fgui.GLoader3D;\r\n+        let box3D = this._view.getChild(\"box\") as fgui.GLoader3D;\r\n         this._box3D.on(fgui.Event.CLICK, this._clickBox, this);\r\n         this._box3D.url = \"ui://733aoo45gzaz75\";\r\n         this._box3D.animationName = 'sjq_idle';\r\n \r\n"
+                },
+                {
+                    "date": 1625136562979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,11 @@\n         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n         fgui.GRoot.inst.addChild(this._view);\r\n \r\n         let box3D = this._view.getChild(\"box\") as fgui.GLoader3D;\r\n-        this._box3D.on(fgui.Event.CLICK, this._clickBox, this);\r\n-        this._box3D.url = \"ui://733aoo45gzaz75\";\r\n-        this._box3D.animationName = 'sjq_idle';\r\n+        box3D.on(fgui.Event.CLICK, this._clickBox, this);\r\n+        box3D.url = \"ui://733aoo45gzaz75\";\r\n+        box3D.animationName = 'sjq_idle';\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625136568401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,8 @@\n         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n         fgui.GRoot.inst.addChild(this._view);\r\n \r\n         let box3D = this._view.getChild(\"box\") as fgui.GLoader3D;\r\n-        box3D.on(fgui.Event.CLICK, this._clickBox, this);\r\n         box3D.url = \"ui://733aoo45gzaz75\";\r\n         box3D.animationName = 'sjq_idle';\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1625136574460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;\r\n         this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n         fgui.GRoot.inst.addChild(this._view);\r\n \r\n-        let box3D = this._view.getChild(\"box\") as fgui.GLoader3D;\r\n+        let box3D = this._view.getChild(\"n18\") as fgui.GLoader3D;\r\n         box3D.url = \"ui://733aoo45gzaz75\";\r\n         box3D.animationName = 'sjq_idle';\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1625136633811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         fgui.GRoot.inst.addChild(this._view);\r\n \r\n         let box3D = this._view.getChild(\"n18\") as fgui.GLoader3D;\r\n         box3D.url = \"ui://733aoo45gzaz75\";\r\n-        box3D.animationName = 'sjq_idle';\r\n+        box3D.animationName = 'sjq_idle2';\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625136803410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,10 @@\n         let box3D = this._view.getChild(\"n18\") as fgui.GLoader3D;\r\n         box3D.url = \"ui://733aoo45gzaz75\";\r\n         box3D.animationName = 'sjq_idle2';\r\n \r\n+\r\n+\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625136847677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n         box3D.animationName = 'sjq_idle2';\r\n \r\n \r\n \r\n+\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625136913340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,10 +33,12 @@\n         box3D.url = \"ui://733aoo45gzaz75\";\r\n         box3D.animationName = 'sjq_idle2';\r\n \r\n \r\n+        let title = this._view.getChild(\"n4\").asImage;\r\n \r\n \r\n+\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625136973902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,12 +33,26 @@\n         box3D.url = \"ui://733aoo45gzaz75\";\r\n         box3D.animationName = 'sjq_idle2';\r\n \r\n \r\n+        cc.tween(this._itemR)\r\n+            .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n+                cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n+            .repeat(8)\r\n+            .call(() => {\r\n+\r\n+                this.x = tempX;\r\n+\r\n+                this.data.isShou = false;\r\n+\r\n+            })\r\n+            .start();\r\n+\r\n         let title = this._view.getChild(\"n4\").asImage;\r\n+        cc.tween(title)\r\n+            .to()\r\n \r\n \r\n-\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625136979407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,20 +33,20 @@\n         box3D.url = \"ui://733aoo45gzaz75\";\r\n         box3D.animationName = 'sjq_idle2';\r\n \r\n \r\n-        cc.tween(this._itemR)\r\n-            .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n-                cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n-            .repeat(8)\r\n-            .call(() => {\r\n+        // cc.tween(this._itemR)\r\n+        //     .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n+        //         cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n+        //     .repeat(8)\r\n+        //     .call(() => {\r\n \r\n-                this.x = tempX;\r\n+        //         this.x = tempX;\r\n \r\n-                this.data.isShou = false;\r\n+        //         this.data.isShou = false;\r\n \r\n-            })\r\n-            .start();\r\n+        //     })\r\n+        //     .start();\r\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n         cc.tween(title)\r\n             .to()\r\n"
+                },
+                {
+                    "date": 1625137087302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n         //     .start();\r\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n         cc.tween(title)\r\n-            .to()\r\n+            .sequence(cc.tween().to(0.03, { x: title.x - 10, y: }))\r\n \r\n \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625137228272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,10 +47,11 @@\n         //     })\r\n         //     .start();\r\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n+        let orgY = title.y;\r\n         cc.tween(title)\r\n-            .sequence(cc.tween().to(0.03, { x: title.x - 10, y: }))\r\n+            .sequence(cc.tween().to(0.03, { y: }))\r\n \r\n \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625137234713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n         let orgY = title.y;\r\n         cc.tween(title)\r\n-            .sequence(cc.tween().to(0.03, { y: }))\r\n+            .sequence(cc.tween().to(0.03, { y: orgY + 20 }))\r\n \r\n \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625137255540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n         let orgY = title.y;\r\n         cc.tween(title)\r\n-            .sequence(cc.tween().to(0.03, { y: orgY + 20 }))\r\n+            .sequence(cc.tween().to(0.03, { y: orgY + 20 }), cc.tween().to(0.03, { y: orgY - 16 }))\r\n \r\n \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625137283636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,10 @@\n         let title = this._view.getChild(\"n4\").asImage;\r\n         let orgY = title.y;\r\n         cc.tween(title)\r\n             .sequence(cc.tween().to(0.03, { y: orgY + 20 }), cc.tween().to(0.03, { y: orgY - 16 }))\r\n+            .repeatForever()\r\n+            .start();\r\n \r\n \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625137323863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n         let orgY = title.y;\r\n         cc.tween(title)\r\n-            .sequence(cc.tween().to(0.03, { y: orgY + 20 }), cc.tween().to(0.03, { y: orgY - 16 }))\r\n+            .sequence(cc.tween().to(1.0, { y: orgY + 20 }), cc.tween().to(0.8, { y: orgY - 16 }))\r\n             .repeatForever()\r\n             .start();\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1625137359975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n         let orgY = title.y;\r\n         cc.tween(title)\r\n-            .sequence(cc.tween().to(1.0, { y: orgY + 20 }), cc.tween().to(0.8, { y: orgY - 16 }))\r\n+            .sequence(cc.tween().to(1.0, { y: orgY + 25 }), cc.tween().to(0.8, { y: orgY - 18 }))\r\n             .repeatForever()\r\n             .start();\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1625137369366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,58 +48,58 @@\n         //     .start();\r\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n         let orgY = title.y;\r\n-        cc.tween(title)\r\n-            .sequence(cc.tween().to(1.0, { y: orgY + 25 }), cc.tween().to(0.8, { y: orgY - 18 }))\r\n+        cc.tween(title)2118\r\n+    }))\r\n             .repeatForever()\r\n             .start();\r\n \r\n \r\n-    }\r\n+}\r\n \r\n-    async init(data: any) {\r\n-        // 临时 model component json 配置加载\r\n-        let { pathConfig, model, components } = data;\r\n-        let Package = pathConfig.packageName;\r\n-        let GComponent = model.uiPath;\r\n-        this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;\r\n-    }\r\n+async init(data: any) {\r\n+    // 临时 model component json 配置加载\r\n+    let { pathConfig, model, components } = data;\r\n+    let Package = pathConfig.packageName;\r\n+    let GComponent = model.uiPath;\r\n+    this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;\r\n+}\r\n \r\n-    // 获取状态\r\n-    getState(data: any) {\r\n-        this.updateState(data);\r\n-    }\r\n+// 获取状态\r\n+getState(data: any) {\r\n+    this.updateState(data);\r\n+}\r\n \r\n-    // 更新状态层\r\n-    updateState(curState: any) {\r\n-        if (globalThis._.isEqual(this._state, curState)) return;\r\n-        this.state = curState;\r\n-    }\r\n+// 更新状态层\r\n+updateState(curState: any) {\r\n+    if (globalThis._.isEqual(this._state, curState)) return;\r\n+    this.state = curState;\r\n+}\r\n \r\n-    // 更新ui层\r\n-    updateUi(state: any) { }\r\n+// 更新ui层\r\n+updateUi(state: any) { }\r\n \r\n \r\n-    // 注册状态，及获取状态的方法\r\n-    registerState() {\r\n-        if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);\r\n-    }\r\n+// 注册状态，及获取状态的方法\r\n+registerState() {\r\n+    if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);\r\n+}\r\n \r\n-    // 解除状态，及获取状态的方法\r\n-    relieveState() {\r\n-        if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);\r\n-    }\r\n+// 解除状态，及获取状态的方法\r\n+relieveState() {\r\n+    if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);\r\n+}\r\n \r\n-    // 本组件状态合并到全局\r\n-    mergeState() {\r\n-        if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);\r\n-    }\r\n+// 本组件状态合并到全局\r\n+mergeState() {\r\n+    if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);\r\n+}\r\n \r\n-    onEnable() {\r\n-        this.registerState();\r\n-    }\r\n+onEnable() {\r\n+    this.registerState();\r\n+}\r\n \r\n-    onDisable() {\r\n-        this.relieveState();\r\n-    }\r\n+onDisable() {\r\n+    this.relieveState();\r\n }\r\n+}\r\n"
+                },
+                {
+                    "date": 1625137375458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,58 +48,58 @@\n         //     .start();\r\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n         let orgY = title.y;\r\n-        cc.tween(title)2118\r\n-    }))\r\n+        cc.tween(title)\r\n+            .sequence(cc.tween().to(1.0, { y: orgY + 25 }), cc.tween().to(0.8, { y: orgY - 21 }))\r\n             .repeatForever()\r\n             .start();\r\n \r\n \r\n-}\r\n+    }\r\n \r\n-async init(data: any) {\r\n-    // 临时 model component json 配置加载\r\n-    let { pathConfig, model, components } = data;\r\n-    let Package = pathConfig.packageName;\r\n-    let GComponent = model.uiPath;\r\n-    this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;\r\n-}\r\n+    async init(data: any) {\r\n+        // 临时 model component json 配置加载\r\n+        let { pathConfig, model, components } = data;\r\n+        let Package = pathConfig.packageName;\r\n+        let GComponent = model.uiPath;\r\n+        this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;\r\n+    }\r\n \r\n-// 获取状态\r\n-getState(data: any) {\r\n-    this.updateState(data);\r\n-}\r\n+    // 获取状态\r\n+    getState(data: any) {\r\n+        this.updateState(data);\r\n+    }\r\n \r\n-// 更新状态层\r\n-updateState(curState: any) {\r\n-    if (globalThis._.isEqual(this._state, curState)) return;\r\n-    this.state = curState;\r\n-}\r\n+    // 更新状态层\r\n+    updateState(curState: any) {\r\n+        if (globalThis._.isEqual(this._state, curState)) return;\r\n+        this.state = curState;\r\n+    }\r\n \r\n-// 更新ui层\r\n-updateUi(state: any) { }\r\n+    // 更新ui层\r\n+    updateUi(state: any) { }\r\n \r\n \r\n-// 注册状态，及获取状态的方法\r\n-registerState() {\r\n-    if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);\r\n-}\r\n+    // 注册状态，及获取状态的方法\r\n+    registerState() {\r\n+        if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);\r\n+    }\r\n \r\n-// 解除状态，及获取状态的方法\r\n-relieveState() {\r\n-    if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);\r\n-}\r\n+    // 解除状态，及获取状态的方法\r\n+    relieveState() {\r\n+        if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);\r\n+    }\r\n \r\n-// 本组件状态合并到全局\r\n-mergeState() {\r\n-    if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);\r\n-}\r\n+    // 本组件状态合并到全局\r\n+    mergeState() {\r\n+        if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);\r\n+    }\r\n \r\n-onEnable() {\r\n-    this.registerState();\r\n-}\r\n+    onEnable() {\r\n+        this.registerState();\r\n+    }\r\n \r\n-onDisable() {\r\n-    this.relieveState();\r\n+    onDisable() {\r\n+        this.relieveState();\r\n+    }\r\n }\r\n-}\r\n"
+                },
+                {
+                    "date": 1625137428409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,9 @@\n             .repeatForever()\r\n             .start();\r\n \r\n \r\n+\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625137605157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,16 @@\n             .repeatForever()\r\n             .start();\r\n \r\n \r\n+        let paoGroup = this._view.getChild(\"girlFood\").asGroup;\r\n+        for (let i = 0; i < this._view.numChildren; i++) {\r\n+            if (this._view.getChildAt(i).group == paoGroup) {\r\n+                let btn: fgui.GButton = this._view.getChildAt(i).asButton;\r\n+                btn.alpha = 0;\r\n+                this._girlFood.push(btn);\r\n+            }\r\n+        }\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625137610425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n             .repeatForever()\r\n             .start();\r\n \r\n \r\n-        let paoGroup = this._view.getChild(\"girlFood\").asGroup;\r\n+        let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let btn: fgui.GButton = this._view.getChildAt(i).asButton;\r\n                 btn.alpha = 0;\r\n"
+                },
+                {
+                    "date": 1625137626067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,9 @@\n             .repeatForever()\r\n             .start();\r\n \r\n \r\n+        let pao = [];\r\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let btn: fgui.GButton = this._view.getChildAt(i).asButton;\r\n"
+                },
+                {
+                    "date": 1625137631152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,15 +54,15 @@\n             .repeatForever()\r\n             .start();\r\n \r\n \r\n-        let pao = [];\r\n+        let paos = [];\r\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let btn: fgui.GButton = this._view.getChildAt(i).asButton;\r\n                 btn.alpha = 0;\r\n-                this._girlFood.push(btn);\r\n+                this.paos.push(btn);\r\n             }\r\n         }\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1625137645684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,10 +58,10 @@\n         let paos = [];\r\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n-                let btn: fgui.GButton = this._view.getChildAt(i).asButton;\r\n-                btn.alpha = 0;\r\n+                let obj: fgui.GButton = this._view.getChildAt(i).asButton;\r\n+                obj\r\n                 this.paos.push(btn);\r\n             }\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1625137661964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,10 @@\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let obj: fgui.GButton = this._view.getChildAt(i).asButton;\r\n-                obj\r\n-                this.paos.push(btn);\r\n+\r\n+                this.paos.push(obj);\r\n             }\r\n         }\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1625137668172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,9 @@\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let obj: fgui.GButton = this._view.getChildAt(i).asButton;\r\n-\r\n-                this.paos.push(obj);\r\n+                paos.push(obj);\r\n             }\r\n         }\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1625137676916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n         let paos = [];\r\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n-                let obj: fgui.GButton = this._view.getChildAt(i).asButton;\r\n+                let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n                 paos.push(obj);\r\n             }\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1625137702581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,10 +63,15 @@\n                 paos.push(obj);\r\n             }\r\n         }\r\n \r\n+\r\n     }\r\n \r\n+    paoAnimate() {\r\n+\r\n+    }\r\n+\r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n         let { pathConfig, model, components } = data;\r\n         let Package = pathConfig.packageName;\r\n"
+                },
+                {
+                    "date": 1625137722130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,8 +63,9 @@\n                 paos.push(obj);\r\n             }\r\n         }\r\n \r\n+        this.paoAnimate();\r\n \r\n     }\r\n \r\n     paoAnimate() {\r\n"
+                },
+                {
+                    "date": 1625137728445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,8 @@\n             }\r\n         }\r\n \r\n         this.paoAnimate();\r\n-\r\n     }\r\n \r\n     paoAnimate() {\r\n \r\n"
+                },
+                {
+                    "date": 1625137773369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n export default class static_model01_v2 extends cc.Component {\r\n     private _view: fgui.GComponent;\r\n     private _state = {}\r\n \r\n+    private paos = [];\r\n+\r\n     get state(): any {\r\n         return this._state;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625137794079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n export default class static_model01_v2 extends cc.Component {\r\n     private _view: fgui.GComponent;\r\n     private _state = {}\r\n \r\n-    private paos = [];\r\n+    private _paos: any[];\r\n \r\n     get state(): any {\r\n         return this._state;\r\n     }\r\n"
+                },
+                {
+                    "date": 1625137822213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n export default class static_model01_v2 extends cc.Component {\r\n     private _view: fgui.GComponent;\r\n     private _state = {}\r\n \r\n-    private _paos: any[];\r\n+    private _paos: any = [];\r\n \r\n     get state(): any {\r\n         return this._state;\r\n     }\r\n@@ -55,15 +55,13 @@\n             .sequence(cc.tween().to(1.0, { y: orgY + 25 }), cc.tween().to(0.8, { y: orgY - 21 }))\r\n             .repeatForever()\r\n             .start();\r\n \r\n-\r\n-        let paos = [];\r\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n-                paos.push(obj);\r\n+                this._paos.push(obj);\r\n             }\r\n         }\r\n \r\n         this.paoAnimate();\r\n"
+                },
+                {
+                    "date": 1625137863211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,13 +63,14 @@\n                 this._paos.push(obj);\r\n             }\r\n         }\r\n \r\n-        this.paoAnimate();\r\n+        this.paoAnimate(0);\r\n     }\r\n \r\n-    paoAnimate() {\r\n+    paoAnimate(index: number) {\r\n \r\n+\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625137968722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,10 @@\n     }\r\n \r\n     paoAnimate(index: number) {\r\n \r\n+        cc.tween(this._paos[index])\r\n+            .sequence(cc.tween().to(0.5, { x: }))\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625138032053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n \r\n     paoAnimate(index: number) {\r\n \r\n         cc.tween(this._paos[index])\r\n-            .sequence(cc.tween().to(0.5, { x: }))\r\n+            .sequence(cc.tween().to(0.5, { y: 0 }))\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625138267350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n \r\n     paoAnimate(index: number) {\r\n \r\n         cc.tween(this._paos[index])\r\n-            .sequence(cc.tween().to(0.5, { y: 0 }))\r\n+            .parallel(cc.tween().to(0.5, { y: 0 }),)\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625138274639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n \r\n     paoAnimate(index: number) {\r\n \r\n         cc.tween(this._paos[index])\r\n-            .parallel(cc.tween().to(0.5, { y: 0 }),)\r\n+            .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { y: 0 }))\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625138322410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n \r\n     paoAnimate(index: number) {\r\n \r\n         cc.tween(this._paos[index])\r\n-            .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { y: 0 }))\r\n+            .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha:  }))\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625138327493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n \r\n     paoAnimate(index: number) {\r\n \r\n         cc.tween(this._paos[index])\r\n-            .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha:  }))\r\n+            .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n \r\n     }\r\n \r\n     async init(data: any) {\r\n"
+                },
+                {
+                    "date": 1625138354855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,12 @@\n     paoAnimate(index: number) {\r\n \r\n         cc.tween(this._paos[index])\r\n             .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n+            .call(() => {\r\n \r\n+            })\r\n+\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625138365442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \r\n         cc.tween(this._paos[index])\r\n             .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n             .call(() => {\r\n-\r\n+                this._paos[index]\r\n             })\r\n \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625138391413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,19 +63,19 @@\n                 this._paos.push(obj);\r\n             }\r\n         }\r\n \r\n-        this.paoAnimate(0);\r\n-    }\r\n-\r\n-    paoAnimate(index: number) {\r\n-\r\n         cc.tween(this._paos[index])\r\n             .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n             .call(() => {\r\n                 this._paos[index]\r\n             })\r\n+    }\r\n \r\n+    paoAnimate(index: number) {\r\n+\r\n+\r\n+\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625138403040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,12 +63,12 @@\n                 this._paos.push(obj);\r\n             }\r\n         }\r\n \r\n-        cc.tween(this._paos[index])\r\n+        cc.tween(this._paos[0])\r\n             .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n             .call(() => {\r\n-                this._paos[index]\r\n+                this._paos[0]\r\n             })\r\n     }\r\n \r\n     paoAnimate(index: number) {\r\n"
+                },
+                {
+                    "date": 1625138434028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,10 @@\n \r\n         cc.tween(this._paos[0])\r\n             .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n             .call(() => {\r\n-                this._paos[0]\r\n+                this._paos[0].y = this._view.height;\r\n+                this._paos[0].alpha = 1;\r\n             })\r\n     }\r\n \r\n     paoAnimate(index: number) {\r\n"
+                },
+                {
+                    "date": 1625138451040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,10 @@\n             .call(() => {\r\n                 this._paos[0].y = this._view.height;\r\n                 this._paos[0].alpha = 1;\r\n             })\r\n+            .repeatForever()\r\n+            .start();\r\n     }\r\n \r\n     paoAnimate(index: number) {\r\n \r\n"
+                },
+                {
+                    "date": 1625138467978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,12 +73,19 @@\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n-    paoAnimate(index: number) {\r\n+    paoAnimate(obj) {\r\n \r\n+        cc.tween(obj)\r\n+            .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n+            .call(() => {\r\n+                this._paos[0].y = this._view.height;\r\n+                this._paos[0].alpha = 1;\r\n+            })\r\n+            .repeatForever()\r\n+            .start();\r\n \r\n-\r\n     }\r\n \r\n     async init(data: any) {\r\n         // 临时 model component json 配置加载\r\n"
+                },
+                {
+                    "date": 1625138473686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,16 +63,9 @@\n                 this._paos.push(obj);\r\n             }\r\n         }\r\n \r\n-        cc.tween(this._paos[0])\r\n-            .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n-            .call(() => {\r\n-                this._paos[0].y = this._view.height;\r\n-                this._paos[0].alpha = 1;\r\n-            })\r\n-            .repeatForever()\r\n-            .start();\r\n+\r\n     }\r\n \r\n     paoAnimate(obj) {\r\n \r\n"
+                },
+                {
+                    "date": 1625138485108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n \r\n         cc.tween(obj)\r\n             .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n             .call(() => {\r\n-                this._paos[0].y = this._view.height;\r\n-                this._paos[0].alpha = 1;\r\n+                obj.y = this._view.height;\r\n+                obj.alpha = 1;\r\n             })\r\n             .repeatForever()\r\n             .start();\r\n \r\n"
+                },
+                {
+                    "date": 1625138496357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,8 +60,9 @@\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n                 this._paos.push(obj);\r\n+                this.paoAnimate();\r\n             }\r\n         }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1625138502570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,10 @@\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n-                this._paos.push(obj);\r\n-                this.paoAnimate();\r\n+                // this._paos.push(obj);\r\n+                this.paoAnimate(obj);\r\n             }\r\n         }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1625138508852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,8 @@\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n-                // this._paos.push(obj);\r\n                 this.paoAnimate(obj);\r\n             }\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1625138590862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,13 +59,16 @@\n         let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n-                this.paoAnimate(obj);\r\n+                this._paos.push(obj);\r\n             }\r\n         }\r\n \r\n-\r\n+        this.paoAnimate(this._paos[0]);\r\n+        this.paoAnimate(this._paos[1]);\r\n+        this.paoAnimate(this._paos[2]);\r\n+        this.paoAnimate(this._paos[3]);\r\n     }\r\n \r\n     paoAnimate(obj) {\r\n \r\n"
+                },
+                {
+                    "date": 1625138652751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n \r\n     paoAnimate(obj) {\r\n \r\n         cc.tween(obj)\r\n-            .parallel(cc.tween().to(0.5, { y: 0 }), cc.tween().to(0.5, { alpha: 0 }))\r\n+            .parallel(cc.tween().to(3.0, { y: 0 }), cc.tween().to(3.0, { alpha: 0 }))\r\n             .call(() => {\r\n                 obj.y = this._view.height;\r\n                 obj.alpha = 1;\r\n             })\r\n"
+                },
+                {
+                    "date": 1625138847454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,10 @@\n \r\n     paoAnimate(obj) {\r\n \r\n         cc.tween(obj)\r\n-            .parallel(cc.tween().to(3.0, { y: 0 }), cc.tween().to(3.0, { alpha: 0 }))\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.0, { y: 0 }), cc.tween().to(3.0, { alpha: 0 })))\r\n+            .parallel()\r\n             .call(() => {\r\n                 obj.y = this._view.height;\r\n                 obj.alpha = 1;\r\n             })\r\n"
+                },
+                {
+                    "date": 1625138852823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,8 @@\n     paoAnimate(obj) {\r\n \r\n         cc.tween(obj)\r\n             .sequence(cc.tween().parallel(cc.tween().to(3.0, { y: 0 }), cc.tween().to(3.0, { alpha: 0 })))\r\n-            .parallel()\r\n             .call(() => {\r\n                 obj.y = this._view.height;\r\n                 obj.alpha = 1;\r\n             })\r\n"
+                },
+                {
+                    "date": 1625138901614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,13 +72,15 @@\n \r\n     paoAnimate(obj) {\r\n \r\n         cc.tween(obj)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(3.0, { y: 0 }), cc.tween().to(3.0, { alpha: 0 })))\r\n-            .call(() => {\r\n-                obj.y = this._view.height;\r\n-                obj.alpha = 1;\r\n-            })\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.0, { y: 0 }),\r\n+                cc.tween().to(3.0, { alpha: 0 })),\r\n+                cc.tween().call(() => {\r\n+                    obj.y = this._view.height;\r\n+                    obj.alpha = 1;\r\n+                }))\r\n+            .call()\r\n             .repeatForever()\r\n             .start();\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1625138907326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,8 @@\n                 cc.tween().call(() => {\r\n                     obj.y = this._view.height;\r\n                     obj.alpha = 1;\r\n                 }))\r\n-            .call()\r\n             .repeatForever()\r\n             .start();\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1625138954764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,9 @@\n                 cc.tween().to(3.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     obj.y = this._view.height;\r\n                     obj.alpha = 1;\r\n+\r\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n \r\n"
+                },
+                {
+                    "date": 1625138989443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,9 @@\n                 cc.tween().to(3.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     obj.y = this._view.height;\r\n                     obj.alpha = 1;\r\n+                    let randPosX: number = Math.floor(Math.random() * (max - 1000 + 1) + 1000);\r\n \r\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n"
+                },
+                {
+                    "date": 1625139036924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,13 +71,16 @@\n     }\r\n \r\n     paoAnimate(obj) {\r\n \r\n+        let winH = this._view.height;\r\n+        let winW = this._view.width;\r\n+\r\n         cc.tween(obj)\r\n             .sequence(cc.tween().parallel(cc.tween().to(3.0, { y: 0 }),\r\n                 cc.tween().to(3.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n-                    obj.y = this._view.height;\r\n+                    obj.y = ;\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (max - 1000 + 1) + 1000);\r\n \r\n                 }))\r\n"
+                },
+                {
+                    "date": 1625139042822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n         cc.tween(obj)\r\n             .sequence(cc.tween().parallel(cc.tween().to(3.0, { y: 0 }),\r\n                 cc.tween().to(3.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n-                    obj.y = ;\r\n+                    obj.y = winH;\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (max - 1000 + 1) + 1000);\r\n \r\n                 }))\r\n"
+                },
+                {
+                    "date": 1625139050829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n                 cc.tween().to(3.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     obj.y = winH;\r\n                     obj.alpha = 1;\r\n-                    let randPosX: number = Math.floor(Math.random() * (max - 1000 + 1) + 1000);\r\n+                    let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n \r\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n"
+                },
+                {
+                    "date": 1625139058814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,8 +81,9 @@\n                 cc.tween().call(() => {\r\n                     obj.y = winH;\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n+                    obj.y\r\n \r\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n"
+                },
+                {
+                    "date": 1625139064660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n                 cc.tween().call(() => {\r\n                     obj.y = winH;\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n-                    obj.y\r\n+                    obj.x = randPosX;\r\n \r\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n"
+                },
+                {
+                    "date": 1625139104245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,8 +81,9 @@\n                 cc.tween().call(() => {\r\n                     obj.y = winH;\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n+                    let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n                     obj.x = randPosX;\r\n \r\n                 }))\r\n             .repeatForever()\r\n"
+                },
+                {
+                    "date": 1625139170070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n                 cc.tween().call(() => {\r\n                     obj.y = winH;\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n-                    let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n+                    let randPosY: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n                     obj.x = randPosX;\r\n \r\n                 }))\r\n             .repeatForever()\r\n"
+                },
+                {
+                    "date": 1625139181857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n                 cc.tween().call(() => {\r\n                     obj.y = winH;\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n-                    let randPosY: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n+                    let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n                     obj.x = randPosX;\r\n \r\n                 }))\r\n             .repeatForever()\r\n"
+                },
+                {
+                    "date": 1625139195859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,12 +78,12 @@\n         cc.tween(obj)\r\n             .sequence(cc.tween().parallel(cc.tween().to(3.0, { y: 0 }),\r\n                 cc.tween().to(3.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n-                    obj.y = winH;\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n                     let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n+                    obj.y = winH;\r\n                     obj.x = randPosX;\r\n \r\n                 }))\r\n             .repeatForever()\r\n"
+                },
+                {
+                    "date": 1625139202478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n                 cc.tween().call(() => {\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n                     let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n-                    obj.y = winH;\r\n+                    obj.y = randPosY;\r\n                     obj.x = randPosX;\r\n \r\n                 }))\r\n             .repeatForever()\r\n"
+                },
+                {
+                    "date": 1625139260855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,12 +60,13 @@\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n                 this._paos.push(obj);\r\n+                this.paoAnimate(this._paos[0]);\r\n             }\r\n         }\r\n \r\n-        this.paoAnimate(this._paos[0]);\r\n+\r\n         this.paoAnimate(this._paos[1]);\r\n         this.paoAnimate(this._paos[2]);\r\n         this.paoAnimate(this._paos[3]);\r\n     }\r\n"
+                },
+                {
+                    "date": 1625139265996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n         for (let i = 0; i < this._view.numChildren; i++) {\r\n             if (this._view.getChildAt(i).group == paoGroup) {\r\n                 let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n                 this._paos.push(obj);\r\n-                this.paoAnimate(this._paos[0]);\r\n+                this.paoAnimate(obj);\r\n             }\r\n         }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1625139306543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,23 +63,18 @@\n                 this._paos.push(obj);\r\n                 this.paoAnimate(obj);\r\n             }\r\n         }\r\n-\r\n-\r\n-        this.paoAnimate(this._paos[1]);\r\n-        this.paoAnimate(this._paos[2]);\r\n-        this.paoAnimate(this._paos[3]);\r\n     }\r\n \r\n     paoAnimate(obj) {\r\n \r\n         let winH = this._view.height;\r\n         let winW = this._view.width;\r\n \r\n         cc.tween(obj)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(3.0, { y: 0 }),\r\n-                cc.tween().to(3.0, { alpha: 0 })),\r\n+            .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n+                cc.tween().to(5.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     obj.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n                     let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n"
+                },
+                {
+                    "date": 1625139432751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,22 +34,8 @@\n         let box3D = this._view.getChild(\"n18\") as fgui.GLoader3D;\r\n         box3D.url = \"ui://733aoo45gzaz75\";\r\n         box3D.animationName = 'sjq_idle2';\r\n \r\n-\r\n-        // cc.tween(this._itemR)\r\n-        //     .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n-        //         cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n-        //     .repeat(8)\r\n-        //     .call(() => {\r\n-\r\n-        //         this.x = tempX;\r\n-\r\n-        //         this.data.isShou = false;\r\n-\r\n-        //     })\r\n-        //     .start();\r\n-\r\n         let title = this._view.getChild(\"n4\").asImage;\r\n         let orgY = title.y;\r\n         cc.tween(title)\r\n             .sequence(cc.tween().to(1.0, { y: orgY + 25 }), cc.tween().to(0.8, { y: orgY - 21 }))\r\n@@ -129,7 +115,8 @@\n         this.registerState();\r\n     }\r\n \r\n     onDisable() {\r\n+        cc.Tween.stopAll();\r\n         this.relieveState();\r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1625139472665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,23 @@\n                 this._paos.push(obj);\r\n                 this.paoAnimate(obj);\r\n             }\r\n         }\r\n+\r\n+        let title = this._view.getChild(\"n4\").asImage;\r\n+        cc.tween(obj)\r\n+            .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n+                cc.tween().to(5.0, { alpha: 0 })),\r\n+                cc.tween().call(() => {\r\n+                    obj.alpha = 1;\r\n+                    let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n+                    let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n+                    obj.y = randPosY;\r\n+                    obj.x = randPosX;\r\n+\r\n+                }))\r\n+            .repeatForever()\r\n+            .start();\r\n     }\r\n \r\n     paoAnimate(obj) {\r\n \r\n"
+                },
+                {
+                    "date": 1625139473400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n             }\r\n         }\r\n \r\n         let title = this._view.getChild(\"n4\").asImage;\r\n+\r\n         cc.tween(obj)\r\n             .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n                 cc.tween().to(5.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n"
+                },
+                {
+                    "date": 1625139485469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,19 +50,19 @@\n                 this.paoAnimate(obj);\r\n             }\r\n         }\r\n \r\n-        let title = this._view.getChild(\"n4\").asImage;\r\n+        let yinfu1 = this._view.getChild(\"n4\").asImage;\r\n \r\n-        cc.tween(obj)\r\n+        cc.tween(yinfu1)\r\n             .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n                 cc.tween().to(5.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n-                    obj.alpha = 1;\r\n+                    yinfu1.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n                     let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n-                    obj.y = randPosY;\r\n-                    obj.x = randPosX;\r\n+                    yinfu1.y = randPosY;\r\n+                    yinfu1.x = randPosX;\r\n \r\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n"
+                },
+                {
+                    "date": 1625139524017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,10 @@\n             }\r\n         }\r\n \r\n         let yinfu1 = this._view.getChild(\"n4\").asImage;\r\n-\r\n+        let yinfu1X = yinfu1.x;\r\n+        let yinfu1Y = yinfu1.y;\r\n         cc.tween(yinfu1)\r\n             .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n                 cc.tween().to(5.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n"
+                },
+                {
+                    "date": 1625139547408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,17 +53,18 @@\n \r\n         let yinfu1 = this._view.getChild(\"n4\").asImage;\r\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n+\r\n         cc.tween(yinfu1)\r\n             .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n                 cc.tween().to(5.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n                     let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n-                    yinfu1.y = randPosY;\r\n-                    yinfu1.x = randPosX;\r\n+                    yinfu1.y = yinfu1Y;\r\n+                    yinfu1.x = yinfu1X;\r\n \r\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n"
+                },
+                {
+                    "date": 1625139552688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,8 @@\n             .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n                 cc.tween().to(5.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n-                    let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n-                    let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n                     yinfu1.y = yinfu1Y;\r\n                     yinfu1.x = yinfu1X;\r\n \r\n                 }))\r\n"
+                },
+                {
+                    "date": 1625139559501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.5, { y: 0 }),\r\n                 cc.tween().to(5.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n"
+                },
+                {
+                    "date": 1625139565384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n             .sequence(cc.tween().parallel(cc.tween().to(3.5, { y: 0 }),\r\n-                cc.tween().to(5.0, { alpha: 0 })),\r\n+                cc.tween().to(3.5, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n                     yinfu1.x = yinfu1X;\r\n"
+                },
+                {
+                    "date": 1625139579121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(3.5, { y: 0 }),\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x:, y: 0 }),\r\n                 cc.tween().to(3.5, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n"
+                },
+                {
+                    "date": 1625139590855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x:, y: 0 }),\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 300, y: 0 }),\r\n                 cc.tween().to(3.5, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n"
+                },
+                {
+                    "date": 1625139602166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 300, y: 0 }),\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 300, y: yinfu1Y - 300 }),\r\n                 cc.tween().to(3.5, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n"
+                },
+                {
+                    "date": 1625139632896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n                 this.paoAnimate(obj);\r\n             }\r\n         }\r\n \r\n-        let yinfu1 = this._view.getChild(\"n4\").asImage;\r\n+        let yinfu1 = this._view.getChild(\"n3\").asImage;\r\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n"
+                },
+                {
+                    "date": 1625139660118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,10 +55,10 @@\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 300, y: yinfu1Y - 300 }),\r\n-                cc.tween().to(3.5, { alpha: 0 })),\r\n+            .sequence(cc.tween().parallel(cc.tween().to(2.0, { x: yinfu1X + 150, y: yinfu1Y - 150 }),\r\n+                cc.tween().to(2.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n                     yinfu1.x = yinfu1X;\r\n"
+                },
+                {
+                    "date": 1625139838530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(2.0, { x: yinfu1X + 150, y: yinfu1Y - 150 }),\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 200, y: yinfu1Y - 200 }),\r\n                 cc.tween().to(2.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n"
+                },
+                {
+                    "date": 1625139864795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 200, y: yinfu1Y - 200 }),\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 250, y: yinfu1Y - 250 }),\r\n                 cc.tween().to(2.0, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n"
+                },
+                {
+                    "date": 1625139872937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n             .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 250, y: yinfu1Y - 250 }),\r\n-                cc.tween().to(2.0, { alpha: 0 })),\r\n+                cc.tween().to(3.5, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n                     yinfu1.x = yinfu1X;\r\n"
+                },
+                {
+                    "date": 1625139888233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         let yinfu1X = yinfu1.x;\r\n         let yinfu1Y = yinfu1.y;\r\n \r\n         cc.tween(yinfu1)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 250, y: yinfu1Y - 250 }),\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 200, y: yinfu1Y - 200 }),\r\n                 cc.tween().to(3.5, { alpha: 0 })),\r\n                 cc.tween().call(() => {\r\n                     yinfu1.alpha = 1;\r\n                     yinfu1.y = yinfu1Y;\r\n"
+                },
+                {
+                    "date": 1625139967236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,21 @@\n \r\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n+\r\n+        cc.tween(this._itemR)\r\n+            .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n+                cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n+            .repeat(8)\r\n+            .call(() => {\r\n+\r\n+                this.x = tempX;\r\n+\r\n+                this.data.isShou = false;\r\n+\r\n+            })\r\n+            .start();\r\n     }\r\n \r\n     paoAnimate(obj) {\r\n \r\n"
+                },
+                {
+                    "date": 1625139972627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,8 +66,10 @@\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n \r\n+        let yinfu1 = this._view.getChild(\"n3\").asImage;\r\n+\r\n         cc.tween(this._itemR)\r\n             .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n                 cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n             .repeat(8)\r\n"
+                },
+                {
+                    "date": 1625139979577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n \r\n-        let yinfu1 = this._view.getChild(\"n3\").asImage;\r\n+        let yinfu2 = this._view.getChild(\"n3\").asImage;\r\n \r\n         cc.tween(this._itemR)\r\n             .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n                 cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n"
+                },
+                {
+                    "date": 1625139988296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                 }))\r\n             .repeatForever()\r\n             .start();\r\n \r\n-        let yinfu2 = this._view.getChild(\"n3\").asImage;\r\n+        let yinfu2 = this._view.getChild(\"n5\").asImage;\r\n \r\n         cc.tween(this._itemR)\r\n             .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n                 cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n"
+                },
+                {
+                    "date": 1625139993952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n             .start();\r\n \r\n         let yinfu2 = this._view.getChild(\"n5\").asImage;\r\n \r\n-        cc.tween(this._itemR)\r\n+        cc.tween(yinfu2)\r\n             .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n                 cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n             .repeat(8)\r\n             .call(() => {\r\n"
+                },
+                {
+                    "date": 1625140001722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,15 +72,8 @@\n         cc.tween(yinfu2)\r\n             .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n                 cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n             .repeat(8)\r\n-            .call(() => {\r\n-\r\n-                this.x = tempX;\r\n-\r\n-                this.data.isShou = false;\r\n-\r\n-            })\r\n             .start();\r\n     }\r\n \r\n     paoAnimate(obj) {\r\n"
+                },
+                {
+                    "date": 1625140009721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \r\n         cc.tween(yinfu2)\r\n             .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n                 cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n-            .repeat(8)\r\n+            .repeatForever()\r\n             .start();\r\n     }\r\n \r\n     paoAnimate(obj) {\r\n"
+                },
+                {
+                    "date": 1625140037362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,8 +67,10 @@\n             .repeatForever()\r\n             .start();\r\n \r\n         let yinfu2 = this._view.getChild(\"n5\").asImage;\r\n+        let yinfu2X = yinfu2.x;\r\n+        let yinfu2Y = yinfu2.y;\r\n \r\n         cc.tween(yinfu2)\r\n             .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n                 cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n"
+                },
+                {
+                    "date": 1625140055703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,12 +69,12 @@\n \r\n         let yinfu2 = this._view.getChild(\"n5\").asImage;\r\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n-\r\n+        let offset = 10;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(0.02, { x: tempX + (5 + offset) }),\r\n-                cc.tween().to(0.02, { x: tempX - (6 + offset) }))\r\n+            .sequence(cc.tween().to(0.02, { x: yinfu2X + (5 + offset) }),\r\n+                cc.tween().to(0.02, { x: yinfu2X - (6 + offset) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140064555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 10;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(0.02, { x: yinfu2X + (5 + offset) }),\r\n-                cc.tween().to(0.02, { x: yinfu2X - (6 + offset) }))\r\n+            .sequence(cc.tween().to(0.05, { x: yinfu2X + (5 + offset) }),\r\n+                cc.tween().to(0.05, { x: yinfu2X - (6 + offset) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140094456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 10;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(0.05, { x: yinfu2X + (5 + offset) }),\r\n-                cc.tween().to(0.05, { x: yinfu2X - (6 + offset) }))\r\n+            .sequence(cc.tween().to(4.0, { x: yinfu2X + (5 + offset) }),\r\n+                cc.tween().to(4.0, { x: yinfu2X - (6 + offset) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140109265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 10;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(4.0, { x: yinfu2X + (5 + offset) }),\r\n-                cc.tween().to(4.0, { x: yinfu2X - (6 + offset) }))\r\n+            .sequence(cc.tween().to(2.0, { x: yinfu2X + (5 + offset) }),\r\n+                cc.tween().to(2.0, { x: yinfu2X - (6 + offset) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140126416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 10;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(2.0, { x: yinfu2X + (5 + offset) }),\r\n-                cc.tween().to(2.0, { x: yinfu2X - (6 + offset) }))\r\n+            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset) }),\r\n+                cc.tween().to(0.5, { x: yinfu2X - (6 + offset) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140178752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 10;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset) }),\r\n-                cc.tween().to(0.5, { x: yinfu2X - (6 + offset) }))\r\n+            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + 10) }),\r\n+                cc.tween().to(0.5, { x: yinfu2X - (2 + 2) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140204896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 10;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + 10) }),\r\n-                cc.tween().to(0.5, { x: yinfu2X - (2 + 2) }))\r\n+            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset) }),\r\n+                cc.tween().to(0.5, { x: yinfu2X - (6 + offset) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140210794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n \r\n         let yinfu2 = this._view.getChild(\"n5\").asImage;\r\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n-        let offset = 10;\r\n+        let offset = 5;\r\n         cc.tween(yinfu2)\r\n             .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset) }),\r\n                 cc.tween().to(0.5, { x: yinfu2X - (6 + offset) }))\r\n             .repeatForever()\r\n"
+                },
+                {
+                    "date": 1625140220288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 5;\r\n         cc.tween(yinfu2)\r\n             .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset) }),\r\n-                cc.tween().to(0.5, { x: yinfu2X - (6 + offset) }))\r\n+                cc.tween().to(0.5, { x: yinfu2X - (4 + offset) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140291336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 5;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset) }),\r\n-                cc.tween().to(0.5, { x: yinfu2X - (4 + offset) }))\r\n+            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset), y: y + (offset + 7) }),\r\n+                cc.tween().to(0.5, { x: yinfu2X - (4 + offset), y: y + (offset + 7) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140297336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 5;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset), y: y + (offset + 7) }),\r\n-                cc.tween().to(0.5, { x: yinfu2X - (4 + offset), y: y + (offset + 7) }))\r\n+            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset), y: yinfu2Y + (offset + 7) }),\r\n+                cc.tween().to(0.5, { x: yinfu2X - (4 + offset), y: yinfu2Y + (offset + 7) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140410753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 5;\r\n         cc.tween(yinfu2)\r\n             .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset), y: yinfu2Y + (offset + 7) }),\r\n-                cc.tween().to(0.5, { x: yinfu2X - (4 + offset), y: yinfu2Y + (offset + 7) }))\r\n+                cc.tween().to(0.5, { x: yinfu2X - (4 + offset), y: yinfu2Y - (offset + 7) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625140445326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,10 @@\n         let yinfu2X = yinfu2.x;\r\n         let yinfu2Y = yinfu2.y;\r\n         let offset = 5;\r\n         cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(0.5, { x: yinfu2X + (5 + offset), y: yinfu2Y + (offset + 7) }),\r\n-                cc.tween().to(0.5, { x: yinfu2X - (4 + offset), y: yinfu2Y - (offset + 7) }))\r\n+            .sequence(cc.tween().to(0.8, { x: yinfu2X + (5 + offset), y: yinfu2Y + (offset + 7) }),\r\n+                cc.tween().to(0.8, { x: yinfu2X - (4 + offset), y: yinfu2Y - (offset + 7) }))\r\n             .repeatForever()\r\n             .start();\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1625141153381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,148 @@\n+/*\r\n+ * @Descripttion: \r\n+ * @version: \r\n+ * @Author: ruzhuan\r\n+ * @Date: 2021-07-01 18:05:12\r\n+ * @LastEditors: Please set LastEditors\r\n+ * @LastEditTime: 2021-07-01 18:05:12\r\n+ */\r\n+\r\n+const { ccclass, property } = cc._decorator;\r\n+\r\n+@ccclass\r\n+export default class static_model01_v2 extends cc.Component {\r\n+    private _view: fgui.GComponent;\r\n+    private _state = {}\r\n+\r\n+    private _paos: any = [];\r\n+\r\n+    get state(): any {\r\n+        return this._state;\r\n+    }\r\n+\r\n+    set state(v: any) {\r\n+        this._state = v;\r\n+        this.updateUi(this._state);\r\n+        this.mergeState();\r\n+    }\r\n+\r\n+    onLoad() {\r\n+        this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;\r\n+        this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n+        fgui.GRoot.inst.addChild(this._view);\r\n+\r\n+        let box3D = this._view.getChild(\"n18\") as fgui.GLoader3D;\r\n+        box3D.url = \"ui://733aoo45gzaz75\";\r\n+        box3D.animationName = 'sjq_idle2';\r\n+\r\n+        let title = this._view.getChild(\"n4\").asImage;\r\n+        let orgY = title.y;\r\n+        cc.tween(title)\r\n+            .sequence(cc.tween().to(1.0, { y: orgY + 25 }), cc.tween().to(0.8, { y: orgY - 21 }))\r\n+            .repeatForever()\r\n+            .start();\r\n+\r\n+        let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n+        for (let i = 0; i < this._view.numChildren; i++) {\r\n+            if (this._view.getChildAt(i).group == paoGroup) {\r\n+                let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n+                this._paos.push(obj);\r\n+                this.paoAnimate(obj);\r\n+            }\r\n+        }\r\n+\r\n+        let yinfu1 = this._view.getChild(\"n3\").asImage;\r\n+        let yinfu1X = yinfu1.x;\r\n+        let yinfu1Y = yinfu1.y;\r\n+\r\n+        cc.tween(yinfu1)\r\n+            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 200, y: yinfu1Y - 200 }),\r\n+                cc.tween().to(3.5, { alpha: 0 })),\r\n+                cc.tween().call(() => {\r\n+                    yinfu1.alpha = 1;\r\n+                    yinfu1.y = yinfu1Y;\r\n+                    yinfu1.x = yinfu1X;\r\n+\r\n+                }))\r\n+            .repeatForever()\r\n+            .start();\r\n+\r\n+        let yinfu2 = this._view.getChild(\"n5\").asImage;\r\n+        let yinfu2X = yinfu2.x;\r\n+        let yinfu2Y = yinfu2.y;\r\n+        let offset = 5;\r\n+        cc.tween(yinfu2)\r\n+            .sequence(cc.tween().to(0.8, { x: yinfu2X + (5 + offset), y: yinfu2Y + (offset + 7) }),\r\n+                cc.tween().to(0.8, { x: yinfu2X - (4 + offset), y: yinfu2Y - (offset + 7) }))\r\n+            .repeatForever()\r\n+            .start();\r\n+    }\r\n+\r\n+    paoAnimate(obj) {\r\n+\r\n+        let winH = this._view.height;\r\n+        let winW = this._view.width;\r\n+\r\n+        cc.tween(obj)\r\n+            .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n+                cc.tween().to(5.0, { alpha: 0 })),\r\n+                cc.tween().call(() => {\r\n+                    obj.alpha = 1;\r\n+                    let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n+                    let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n+                    obj.y = randPosY;\r\n+                    obj.x = randPosX;\r\n+\r\n+                }))\r\n+            .repeatForever()\r\n+            .start();\r\n+\r\n+    }\r\n+\r\n+    async init(data: any) {\r\n+        // 临时 model component json 配置加载\r\n+        let { pathConfig, model, components } = data;\r\n+        let Package = pathConfig.packageName;\r\n+        let GComponent = model.uiPath;\r\n+        this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;\r\n+    }\r\n+\r\n+    // 获取状态\r\n+    getState(data: any) {\r\n+        this.updateState(data);\r\n+    }\r\n+\r\n+    // 更新状态层\r\n+    updateState(curState: any) {\r\n+        if (globalThis._.isEqual(this._state, curState)) return;\r\n+        this.state = curState;\r\n+    }\r\n+\r\n+    // 更新ui层\r\n+    updateUi(state: any) { }\r\n+\r\n+\r\n+    // 注册状态，及获取状态的方法\r\n+    registerState() {\r\n+        if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);\r\n+    }\r\n+\r\n+    // 解除状态，及获取状态的方法\r\n+    relieveState() {\r\n+        if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);\r\n+    }\r\n+\r\n+    // 本组件状态合并到全局\r\n+    mergeState() {\r\n+        if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);\r\n+    }\r\n+\r\n+    onEnable() {\r\n+        this.registerState();\r\n+    }\r\n+\r\n+    onDisable() {\r\n+        cc.Tween.stopAll();\r\n+        this.relieveState();\r\n+    }\r\n+}\r\n"
+                },
+                {
+                    "date": 1625141173956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,152 +145,4 @@\n         cc.Tween.stopAll();\r\n         this.relieveState();\r\n     }\r\n }\r\n-/*\r\n- * @Descripttion: \r\n- * @version: \r\n- * @Author: ruzhuan\r\n- * @Date: 2021-07-01 18:05:12\r\n- * @LastEditors: Please set LastEditors\r\n- * @LastEditTime: 2021-07-01 18:05:12\r\n- */\r\n-\r\n-const { ccclass, property } = cc._decorator;\r\n-\r\n-@ccclass\r\n-export default class static_model01_v2 extends cc.Component {\r\n-    private _view: fgui.GComponent;\r\n-    private _state = {}\r\n-\r\n-    private _paos: any = [];\r\n-\r\n-    get state(): any {\r\n-        return this._state;\r\n-    }\r\n-\r\n-    set state(v: any) {\r\n-        this._state = v;\r\n-        this.updateUi(this._state);\r\n-        this.mergeState();\r\n-    }\r\n-\r\n-    onLoad() {\r\n-        this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;\r\n-        this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n-        fgui.GRoot.inst.addChild(this._view);\r\n-\r\n-        let box3D = this._view.getChild(\"n18\") as fgui.GLoader3D;\r\n-        box3D.url = \"ui://733aoo45gzaz75\";\r\n-        box3D.animationName = 'sjq_idle2';\r\n-\r\n-        let title = this._view.getChild(\"n4\").asImage;\r\n-        let orgY = title.y;\r\n-        cc.tween(title)\r\n-            .sequence(cc.tween().to(1.0, { y: orgY + 25 }), cc.tween().to(0.8, { y: orgY - 21 }))\r\n-            .repeatForever()\r\n-            .start();\r\n-\r\n-        let paoGroup = this._view.getChild(\"pao\").asGroup;\r\n-        for (let i = 0; i < this._view.numChildren; i++) {\r\n-            if (this._view.getChildAt(i).group == paoGroup) {\r\n-                let obj: fgui.GImage = this._view.getChildAt(i).asImage;\r\n-                this._paos.push(obj);\r\n-                this.paoAnimate(obj);\r\n-            }\r\n-        }\r\n-\r\n-        let yinfu1 = this._view.getChild(\"n3\").asImage;\r\n-        let yinfu1X = yinfu1.x;\r\n-        let yinfu1Y = yinfu1.y;\r\n-\r\n-        cc.tween(yinfu1)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(3.5, { x: yinfu1X + 200, y: yinfu1Y - 200 }),\r\n-                cc.tween().to(3.5, { alpha: 0 })),\r\n-                cc.tween().call(() => {\r\n-                    yinfu1.alpha = 1;\r\n-                    yinfu1.y = yinfu1Y;\r\n-                    yinfu1.x = yinfu1X;\r\n-\r\n-                }))\r\n-            .repeatForever()\r\n-            .start();\r\n-\r\n-        let yinfu2 = this._view.getChild(\"n5\").asImage;\r\n-        let yinfu2X = yinfu2.x;\r\n-        let yinfu2Y = yinfu2.y;\r\n-        let offset = 5;\r\n-        cc.tween(yinfu2)\r\n-            .sequence(cc.tween().to(0.8, { x: yinfu2X + (5 + offset), y: yinfu2Y + (offset + 7) }),\r\n-                cc.tween().to(0.8, { x: yinfu2X - (4 + offset), y: yinfu2Y - (offset + 7) }))\r\n-            .repeatForever()\r\n-            .start();\r\n-    }\r\n-\r\n-    paoAnimate(obj) {\r\n-\r\n-        let winH = this._view.height;\r\n-        let winW = this._view.width;\r\n-\r\n-        cc.tween(obj)\r\n-            .sequence(cc.tween().parallel(cc.tween().to(5.0, { y: 0 }),\r\n-                cc.tween().to(5.0, { alpha: 0 })),\r\n-                cc.tween().call(() => {\r\n-                    obj.alpha = 1;\r\n-                    let randPosX: number = Math.floor(Math.random() * (winW - 0 + 1) + 0);\r\n-                    let randPosY: number = Math.floor(Math.random() * (winH - 0 + 1) + 0);\r\n-                    obj.y = randPosY;\r\n-                    obj.x = randPosX;\r\n-\r\n-                }))\r\n-            .repeatForever()\r\n-            .start();\r\n-\r\n-    }\r\n-\r\n-    async init(data: any) {\r\n-        // 临时 model component json 配置加载\r\n-        let { pathConfig, model, components } = data;\r\n-        let Package = pathConfig.packageName;\r\n-        let GComponent = model.uiPath;\r\n-        this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;\r\n-    }\r\n-\r\n-    // 获取状态\r\n-    getState(data: any) {\r\n-        this.updateState(data);\r\n-    }\r\n-\r\n-    // 更新状态层\r\n-    updateState(curState: any) {\r\n-        if (globalThis._.isEqual(this._state, curState)) return;\r\n-        this.state = curState;\r\n-    }\r\n-\r\n-    // 更新ui层\r\n-    updateUi(state: any) { }\r\n-\r\n-\r\n-    // 注册状态，及获取状态的方法\r\n-    registerState() {\r\n-        if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);\r\n-    }\r\n-\r\n-    // 解除状态，及获取状态的方法\r\n-    relieveState() {\r\n-        if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);\r\n-    }\r\n-\r\n-    // 本组件状态合并到全局\r\n-    mergeState() {\r\n-        if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);\r\n-    }\r\n-\r\n-    onEnable() {\r\n-        this.registerState();\r\n-    }\r\n-\r\n-    onDisable() {\r\n-        cc.Tween.stopAll();\r\n-        this.relieveState();\r\n-    }\r\n-}\r\n"
+                }
+            ],
+            "date": 1625136216278,
+            "name": "Commit-0",
+            "content": "/*\r\n * @Descripttion: \r\n * @version: \r\n * @Author: ydlx\r\n * @Date: 2021-03-26 18:05:12\r\n * @LastEditors: Please set LastEditors\r\n * @LastEditTime: 2021-05-17 15:25:51\r\n */\r\n\r\nconst { ccclass, property } = cc._decorator;\r\n\r\n@ccclass\r\nexport default class static_model01_v1 extends cc.Component {\r\n    private _view: fgui.GComponent;\r\n    private _state = {}\r\n\r\n    get state(): any {\r\n        return this._state;\r\n    }\r\n\r\n    set state(v: any) {\r\n        this._state = v;\r\n        this.updateUi(this._state);\r\n        this.mergeState();\r\n    }\r\n\r\n    onLoad() {\r\n        this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;\r\n        this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n        fgui.GRoot.inst.addChild(this._view);\r\n    }\r\n\r\n    async init(data: any) {\r\n        // 临时 model component json 配置加载\r\n        let { pathConfig, model, components } = data;\r\n        let Package = pathConfig.packageName;\r\n        let GComponent = model.uiPath;\r\n        this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;\r\n    }\r\n\r\n    // 获取状态\r\n    getState(data: any) {\r\n        this.updateState(data);\r\n    }\r\n\r\n    // 更新状态层\r\n    updateState(curState: any) {\r\n        if (globalThis._.isEqual(this._state, curState)) return;\r\n        this.state = curState;\r\n    }\r\n\r\n    // 更新ui层\r\n    updateUi(state: any) { }\r\n\r\n\r\n    // 注册状态，及获取状态的方法\r\n    registerState() {\r\n        if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);\r\n    }\r\n\r\n    // 解除状态，及获取状态的方法\r\n    relieveState() {\r\n        if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);\r\n    }\r\n\r\n    // 本组件状态合并到全局\r\n    mergeState() {\r\n        if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);\r\n    }\r\n\r\n    onEnable() {\r\n        this.registerState();\r\n    }\r\n\r\n    onDisable() {\r\n        this.relieveState();\r\n    }\r\n}\r\n"
+        }
+    ]
+}

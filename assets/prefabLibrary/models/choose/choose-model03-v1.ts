@@ -54,8 +54,7 @@ export default class choose_model03_v1 extends cc.Component {
     private _guideName: string;
 
     private _overAnimShow: fgui.GGroup;
-    private _overPiano: fgui.GLoader3D;
-    private _overGu: fgui.GLoader3D;
+    private _overObjs = {};
 
     private _scheduleTime = 0.3;
     private _dragging = false;
@@ -167,7 +166,8 @@ export default class choose_model03_v1 extends cc.Component {
             lightSelect: tempLight,
             clickPlayName: '',
             magicDragPen: this._cachDragPos,
-            drag: "end",
+            drag: 'no',
+            isLabaguaiHaveClick: false,
         }
 
         // 临时 
@@ -219,20 +219,25 @@ export default class choose_model03_v1 extends cc.Component {
         item = fgui.UIPackage.getItemByURL('ui://733aoo45r3754l');
         this._dragSound = await loadResource(item.file, cc.AudioClip);
 
-        if (this._isAnimateShow) {
-            this._overAnimShow = this._view.getChild("overAnimShow").asGroup;
-            this._overPiano = this._view.getChild("overPiano") as fgui.GLoader3D;
-            this._overGu = this._view.getChild("overGu") as fgui.GLoader3D;
-            this._overAnimShow.visible = false;
+        this._overAnimShow = this._view.getChild("overAnimShow").asGroup;
+        this._overAnimShow.visible = false;
 
-            this._overPiano.animationName = this._animateName['piano'].idle;
-            this._overPiano.skinName = this._animateName['piano'].skin;
-            this._overPiano.url = "ui://733aoo45gzaz72";
-
-            this._overGu.animationName = this._animateName['gu'].idle;
-            this._overGu.skinName = this._animateName['gu'].skin;
-            this._overGu.url = "ui://733aoo45gzaz72";
+        let len = 0;
+        for (let i = 0; i < this._view.numChildren; i++) {
+            if (this._view.getChildAt(i).group == this._overAnimShow) {
+                let btn = this._view.getChildAt(i) as fgui.GLoader3D;
+                if (btn.name === 'overBg') {
+                    continue;
+                }
+                btn.name = this._rigthName[len];
+                btn.animationName = this._animateName[btn.name].idle;
+                btn.skinName = this._animateName[btn.name].skin;
+                btn.url = "ui://733aoo45gzaz72";
+                this._overObjs[btn.name] = btn;
+                len++;
+            }
         }
+
         if (components) {
             for (const key in components) {
                 let componentPath: any = `${pathConfig.remoteUrl}${pathConfig.componentBundlePath}${components[key].bundleName}`;
@@ -290,6 +295,9 @@ export default class choose_model03_v1 extends cc.Component {
         let state: any = globalThis._.cloneDeep(this._state);
         state.laBaGuaiPlay = true;
         state.clickPlayName = '';
+        if (!state.isLabaguaiHaveClick) {
+            state.isLabaguaiHaveClick = true;
+        }
         this.updateState(state);
     }
 
@@ -374,6 +382,34 @@ export default class choose_model03_v1 extends cc.Component {
             this._magicPen.y = this._cachDragPos.y;
 
             this._magicPen.icon = this._magicPenData[0].icon;
+
+            setTimeout(() => {
+                let state2: any = globalThis._.cloneDeep(this._state);
+                state2.drag = 'no';
+                this.updateState(state2);
+
+            }, 50);
+        }
+
+        if (!globalThis._.isEqual(oldState.isLabaguaiHaveClick, state.isLabaguaiHaveClick)) {
+
+            if (state.isLabaguaiHaveClick) {
+
+                for (let key in this._options) {
+
+                    let btn = this._options[key];
+                    btn.touchable = false;
+                }
+
+            } else {
+
+                for (let key in this._options) {
+
+                    let btn = this._options[key];
+                    btn.touchable = true;
+                }
+            }
+
         }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
@@ -391,13 +427,7 @@ export default class choose_model03_v1 extends cc.Component {
                 this.answerFeedback(false);
             } else if (state.submit === this.submitType.RightFeed) {
 
-                if (this._isAnimateShow) {
-
-                    this.playOverShowAnimate();
-
-                } else {
-                    this.answerFeedback(true);
-                }
+                this.playOverShowAnimate();
             }
         }
 
@@ -432,35 +462,46 @@ export default class choose_model03_v1 extends cc.Component {
         cc.audioEngine.stopAllEffects();
         this._overAnimShow.visible = true;
 
-        let item1 = fgui.UIPackage.getItemByURL(this._soundFile['piano'].path);
+        let item1 = fgui.UIPackage.getItemByURL(this._soundFile[this._rigthName[0]].path);
         let audio: cc.AudioClip = await loadResource(item1.file, cc.AudioClip);
         cc.audioEngine.play(audio, false, 1);
 
-        this._overPiano.animationName = this._animateName['piano'].play;
 
-        cc.tween(this._overPiano)
-            .delay(this._soundFile['piano'].time)
+        console.log(this._overObjs[this._rigthName[0]]);
+
+        this._overObjs[this._rigthName[0]].animationName = this._animateName[this._rigthName[0]].play;
+
+        cc.tween(this._overObjs[this._rigthName[0]])
+            .delay(this._soundFile[this._rigthName[0]].time)
             .call(() => {
 
-                this._overPiano.animationName = this._animateName['piano'].idle;
-                this._overAnimShow.visible = false;
-                this.answerFeedback(true);
+                this._overObjs[this._rigthName[0]].animationName = this._animateName[this._rigthName[0]].idle;
+
+                if (this._soundFile[this._rigthName[0]].time >= this._soundFile[this._rigthName[1]].time) {
+
+                    this._overAnimShow.visible = false;
+                    this.answerFeedback(true);
+                }
 
             })
             .start();
 
-        let item2 = fgui.UIPackage.getItemByURL(this._soundFile['gu'].path);
+        let item2 = fgui.UIPackage.getItemByURL(this._soundFile[this._rigthName[1]].path);
         let audio2: cc.AudioClip = await loadResource(item2.file, cc.AudioClip);
         cc.audioEngine.play(audio2, false, 1);
 
-        this._overGu.animationName = this._animateName['gu'].play;
+        this._overObjs[this._rigthName[1]].animationName = this._animateName[this._rigthName[1]].play;
 
-        cc.tween(this._overGu)
-            .delay(this._soundFile['gu'].time)
+        cc.tween(this._overObjs[this._rigthName[1]])
+            .delay(this._soundFile[this._rigthName[1]].time)
             .call(() => {
 
-                this._overGu.animationName = this._animateName['gu'].idle;
+                this._overObjs[this._rigthName[1]].animationName = this._animateName[this._rigthName[1]].idle;
+                if (this._soundFile[this._rigthName[1]].time > this._soundFile[this._rigthName[0]].time) {
 
+                    this._overAnimShow.visible = false;
+                    this.answerFeedback(true);
+                }
             })
             .start();
     }
@@ -556,8 +597,15 @@ export default class choose_model03_v1 extends cc.Component {
                     this.updateState(state);
 
                 } else {
-                    curIndex++;
-                    this.playRightSound(curIndex);
+
+                    cc.tween(this)
+                        .delay(1.0)
+                        .call(() => {
+                            curIndex++;
+                            this.playRightSound(curIndex);
+
+                        })
+                        .start()
                 }
 
             })

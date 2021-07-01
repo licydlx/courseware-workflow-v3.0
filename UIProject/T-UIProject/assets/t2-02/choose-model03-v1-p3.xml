@@ -49,5 +49,9 @@
     <loader id="n3_w2qd" name="titleTrigger" xy="72,36" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
+    <graph id="n45_m3sh" name="overBg" xy="0,0" size="1920,1080" group="n48_m3sh" type="rect" fillColor="#b2000000"/>
+    <loader3D id="n46_m3sh" name="over1" xy="678,385" size="268,235" group="n48_m3sh" url="ui://733aoo45gzaz72" animation="" skin="" loop="true"/>
+    <loader3D id="n47_m3sh" name="over2" xy="984,385" size="268,235" group="n48_m3sh" url="ui://733aoo45gzaz72" animation="" skin="" loop="true"/>
+    <group id="n48_m3sh" name="overAnimShow" xy="0,0" size="1920,1080" advanced="true"/>
   </displayList>
 </component>

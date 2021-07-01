@@ -882,8 +882,13 @@ export default class choose_model03_v2 extends cc.Component {
 
                 } else {
 
-                    curIndex++;
-                    this.playRightSound(curIndex, rightSoundFile);
+                    cc.tween(this)
+                        .delay(1.0)
+                        .call(() => {
+                            curIndex++;
+                            this.playRightSound(curIndex, rightSoundFile);
+                        })
+                        .start();
                 }
 
             })
@@ -1010,8 +1015,8 @@ export default class choose_model03_v2 extends cc.Component {
         this.updateState(state);
         cc.Tween.stopAll();
         this.unschedule(this.updateAdd);
-        this.relieveState();
         cc.audioEngine.stopAll();
+        this.relieveState();
     }
 
     protected onDestroy(): void {

@@ -42,7 +42,7 @@ export default class static_model01_v1 extends cc.Component {
     getState(data: any) {
         this.updateState(data);
     }
-    
+
     // 更新状态层
     updateState(curState: any) {
         if (globalThis._.isEqual(this._state, curState)) return;
