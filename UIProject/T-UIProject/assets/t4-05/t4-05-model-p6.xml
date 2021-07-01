@@ -3,7 +3,7 @@
   <controller name="c1" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n39_jjln" name="n39" src="jjln1q" fileName="images/example2/001.png" xy="0,0"/>
-    <image id="n41_jjln" name="n41" src="jjln1v" fileName="images/example2/005.png" xy="-5,199"/>
+    <image id="n41_jjln" name="n41" src="jjln1v" fileName="images/example2/005.png" xy="0,199"/>
     <component id="n29_j79e" name="submit" src="j79e17" fileName="buttons/button1.xml" xy="1689,774" size="194,187">
       <Button icon="ui://mgpb39d5j79e10" sound="ui://mgpb39d5j79e18"/>
     </component>

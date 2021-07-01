@@ -65,7 +65,7 @@ export default class t4_05_model_v2 extends cc.Component {
 
     private _dragging = false;
 
-    private _scheduleTime = 0.05;
+    private _scheduleTime = 0.01;
 
     private _showPosArr: any = [
         { 'line': { x: 25, y: 250 }, 'lan': { x: 16, y: 218 }, 'red': { x: 472, y: 218 } },
@@ -229,6 +229,20 @@ export default class t4_05_model_v2 extends cc.Component {
 
         this._dragging = true;
         this._touchesPos.push(event.touch.getLocation());
+
+        const MIN_POINT_DISTANCE = 4;
+
+        let worldPos = this.node.convertToWorldSpaceAR(cc.v2(0, 0));
+        this.graphics.moveTo(this._touchesPos[0].x - worldPos.x, this._touchesPos[0].y - worldPos.y);
+        let lastIndex = 0;
+        for (let i = 1, l = this._touchesPos.length; i < l; i++) {
+            if (this._touchesPos[i].sub(this._touchesPos[lastIndex]).mag() < MIN_POINT_DISTANCE) {
+                continue;
+            }
+            lastIndex = i;
+            this.graphics.lineTo(this._touchesPos[i].x - worldPos.x, this._touchesPos[i].y - worldPos.y);
+        }
+        this.graphics.stroke();
     }
 
     _onDrawEnd(event) {
@@ -242,6 +256,7 @@ export default class t4_05_model_v2 extends cc.Component {
 
     updatePlayerMove(dt) {
 
+        // this.dragSchedule();
         this._gameTime++;
         console.log(this._gameTime);
         if (this._gameTime >= this._framesSecond * 9) {
@@ -255,8 +270,7 @@ export default class t4_05_model_v2 extends cc.Component {
                     this._gameTime = 0;
                     this.unschedule(this.updatePlayerMove);
                     let state: any = globalThis._.cloneDeep(this._state);
-                    state.gameStart = false;
-                    state.gameOver = true;
+                    state.gameOver = this.gameResult.Success;
                     this.updateState(state);
                 }
 
@@ -273,17 +287,12 @@ export default class t4_05_model_v2 extends cc.Component {
 
                     this._gameTime = 0;
                     this.unschedule(this.updatePlayerMove);
-                    //游戏结束
-                    cc.tween(this._player)
-                        .to(0.03, { y: this._player.y + 400 })
-                        .call(() => {
-                            let state: any = globalThis._.cloneDeep(this._state);
-                            state.gameStart = false;
-                            state.gameOver = true;
-                            this.updateState(state);
 
-                        })
-                        .start()
+                    //游戏结束
+                    let state: any = globalThis._.cloneDeep(this._state);
+                    state.gameOver = this.gameResult.Fail;
+                    this.updateState(state);
+
                     return;
 
                 } else if (this._player.x <= this._touchXMin && this._player.x <= this._moveMinX) {
@@ -292,8 +301,7 @@ export default class t4_05_model_v2 extends cc.Component {
                     this.unschedule(this.updatePlayerMove);
 
                     let state: any = globalThis._.cloneDeep(this._state);
-                    state.gameStart = false;
-                    state.gameOver = true;
+                    state.gameOver = this.gameResult.Success;
                     this.updateState(state);
                     return;
 
@@ -338,9 +346,12 @@ export default class t4_05_model_v2 extends cc.Component {
     // 拖拽定时器
     dragSchedule() {
         if (this._dragging) {
+
+            console.log('==== 3333333 拖拽定时器 ======');
+
             let state: any = globalThis._.cloneDeep(this._state);
-            state.touch = "move";
             state.touchesPos = this._touchesPos;
+            state.touch = "move";
             this.updateState(state);
         }
     }
@@ -361,175 +372,82 @@ export default class t4_05_model_v2 extends cc.Component {
 
         if (state.touch == "start") {
 
+            this._touchesPos = state.touchesPos;
             this.graphics.clear();
             this._zhiLine.visible = false;
             this._touchesPos.length = 0;
 
         } else if (state.touch == "move") {
 
-            const MIN_POINT_DISTANCE = 4;
-
-            let worldPos = this.node.convertToWorldSpaceAR(cc.v2(0, 0));
-            this.graphics.moveTo(this._touchesPos[0].x - worldPos.x, this._touchesPos[0].y - worldPos.y);
-            let lastIndex = 0;
-            for (let i = 1, l = this._touchesPos.length; i < l; i++) {
-                if (this._touchesPos[i].sub(this._touchesPos[lastIndex]).mag() < MIN_POINT_DISTANCE) {
-                    continue;
-                }
-                lastIndex = i;
-                this.graphics.lineTo(this._touchesPos[i].x - worldPos.x, this._touchesPos[i].y - worldPos.y);
-            }
-            this.graphics.stroke();
+            this._touchesPos = state.touchesPos;
 
         } else if (state.touch == "end") {
 
             this.graphics.clear();
 
-            this._zhiLine.visible = true;
-            this._zhiLine.width = this._touchesPos[this._touchesPos.length - 1].x - this._touchesPos[0].x;
-            this._zhiLine.x = this._touchesPos[0].x;
-            this._zhiLine.y = this._view.height - this._touchesPos[0].y;
-            //this._zhiLine.y = 635;
-            this._zhiLine.sortingOrder = 0;
-            this._drawLan.sortingOrder = 1;
-            this._drawRed.sortingOrder = 1;
-            this._drawLineRect.y = this._zhiLine.y;
-            this._drawLineRect.width = this._zhiLine.width;
+            if (this._touchesPos.length > 0) {
 
-            let len = this._showLinesObj.length;
+                this._zhiLine.visible = true;
+                this._zhiLine.width = this._touchesPos[this._touchesPos.length - 1].x - this._touchesPos[0].x;
+                this._zhiLine.x = this._touchesPos[0].x;
+                this._zhiLine.y = this._view.height - this._touchesPos[0].y;
+                //this._zhiLine.y = 635;
+                this._zhiLine.sortingOrder = 0;
+                this._drawLan.sortingOrder = 1;
+                this._drawRed.sortingOrder = 1;
+                this._drawLineRect.y = this._zhiLine.y;
+                this._drawLineRect.width = this._zhiLine.width;
 
-            if (len >= 3) {
+                // 直线 线段 左蓝射线 右红射线
 
-                return;
+                this._touchesPos.sort(this.comparePos());
 
-            }
-            // 直线 线段 左蓝射线 右红射线
+                let tempPos0 = new cc.Vec2(this._touchesPos[0].x, this._view.height - this._touchesPos[0].y);
+                let tempPos1 = new cc.Vec2(this._touchesPos[this._touchesPos.length - 1].x, this._view.height - this._touchesPos[this._touchesPos.length - 1].y);
 
-            this._touchesPos.sort(this.comparePos());
+                if (this._lanRect.contains(tempPos0)) {
+                    console.log('==== 333 ====');
+                    this._touchesPos[0].x = this._defaultMinX;
+                }
+                if (this._redRect.contains(tempPos1)) {
+                    console.log('==== 444 ====');
+                    this._touchesPos[this._touchesPos.length - 1].x = this._defaultMaxX;
+                }
 
-            let tempPos0 = new cc.Vec2(this._touchesPos[0].x, this._view.height - this._touchesPos[0].y);
-            let tempPos1 = new cc.Vec2(this._touchesPos[this._touchesPos.length - 1].x, this._view.height - this._touchesPos[this._touchesPos.length - 1].y);
+                this._touchXMax = this._touchesPos[this._touchesPos.length - 1].x;
+                this._touchXMin = this._touchesPos[0].x;
 
-            if (this._lanRect.contains(tempPos0)) {
-                console.log('==== 333 ====');
-                this._touchesPos[0].x = this._defaultMinX;
-            }
-            if (this._redRect.contains(tempPos1)) {
-                console.log('==== 444 ====');
-                this._touchesPos[this._touchesPos.length - 1].x = this._defaultMaxX;
-            }
-
-            this._touchXMax = this._touchesPos[this._touchesPos.length - 1].x;
-            this._touchXMin = this._touchesPos[0].x;
-
-            this._drawLineRect.x = this._touchesPos[0].x;
-            this._drawLineRect.width = this._touchesPos[this._touchesPos.length - 1].x - this._touchesPos[0].x;
-
-            return;
-
-            let dianLeftMin = this._drawLan.x;
-            let dianLeftMax = this._drawLan.x + this._drawLan.width;
-
-            let dianRightMax = this._drawRed.x + this._drawRed.width;
-            let dianRightMin = this._drawRed.x;
-
-            let cha = 5;
-
-            console.log('==== touches 0 ===' + this.touches[0]);
-            console.log('==== _drawLan X ===' + this._drawLan.x);
-            console.log('==== _drawLan width ===' + this._drawLan.width);
-
-            let tempLineData = {};
-
-            // 1、直线
-            if ((this.touches[0].x - dianLeftMin) < -cha && (this.touches[this.touches.length - 1].x - dianRightMax) > cha) {
-
-                // 直线
-                tempLineData['type'] = this.lineType.StraightLine
-
-            } else if (this.touches[0].x >= dianLeftMin &&
-                this.touches[0].x <= dianLeftMax && this.touches[this.touches.length - 1].x >= dianRightMin && this.touches[this.touches.length - 1].x <= dianRightMax) {
-
-                //线段
-                tempLineData['type'] = this.lineType.LineSegment;
-
-            } else if (this.touches[0].x >= dianLeftMin &&
-                this.touches[0].x <= dianLeftMax && (this.touches[this.touches.length - 1].x - dianRightMax) > cha) {
-
-                // 左蓝射线
-                tempLineData['type'] = this.lineType.LeftLanRays;
-
-            } else if (this.touches[this.touches.length - 1].x >= dianRightMin &&
-                this.touches[this.touches.length - 1].x <= dianRightMax && (this.touches[0].x - dianLeftMin) < -cha) {
-
-                // 右红射线
-                tempLineData['type'] = this.lineType.RightRedRays;
+                this._drawLineRect.x = this._touchesPos[0].x;
+                this._drawLineRect.width = this._touchesPos[this._touchesPos.length - 1].x - this._touchesPos[0].x;
 
             }
-
-            this._showLines.push(tempLineData);
-
-            console.log('==== type 111 ====' + tempLineData['type']);
-
-            let lineW = Math.abs(this.touches[this.touches.length - 1].x - this.touches[0].x);
-
-            let leftLan = null;
-            let rightRed = null;
-
-            let lineObj = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox2a');
-            this._view.addChild(lineObj);
-            lineObj.width = lineW;
-            lineObj.x = this.touches[0].x;
-            lineObj.y = this.touches[0].y;
-
-            if (tempLineData['type'] === this.lineType.LineSegment) {
-
-                leftLan = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox27');
-                this._view.addChild(leftLan);
-                leftLan.x = this.touches[0].x;
-                leftLan.y = this._drawLan.y;
-
-                rightRed = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox26');
-                this._view.addChild(rightRed);
-                rightRed.x = this.touches[this.touches.length - 1].x;
-                rightRed.y = this._drawRed.y;
-
-            } else if (tempLineData['type'] === this.lineType.LeftLanRays) {
-
-                leftLan = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox27');
-                this._view.addChild(leftLan);
-                leftLan.x = this.touches[0].x;
-                leftLan.y = this._drawLan.y;
-
-            } else if (tempLineData['type'] === this.lineType.RightRedRays) {
-
-                rightRed = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox26');
-                this._view.addChild(rightRed);
-                rightRed.x = this.touches[this.touches.length - 1].x;
-                rightRed.y = this._drawRed.y;
-            }
-
-            cc.tween(lineObj)
-                .to(0.15, { x: this._showPosArr[len].line.x, y: this._showPosArr[len].line.y })
-                .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
-                .call(() => {
-                    lineObj.width = 710;
-                    this._showLinesObj.push(lineObj);
-                })
-                .start()
-
-            cc.tween(leftLan)
-                .to(0.15, { x: this._showPosArr[len].lan.x, y: this._showPosArr[len].lan.y })
-                .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
-                .start()
-
-            cc.tween(rightRed)
-                .to(0.15, { x: this._showPosArr[len].red.x, y: this._showPosArr[len].red.y })
-                .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
-                .start()
 
         }
 
+
+        if (!globalThis._.isEqual(oldState.gameOver, state.gameOver)) {
+
+            if (state.gameOver === this.gameResult.Success) {
+
+                this.unschedule(this.updatePlayerMove);
+                this.rightLineFly();
+
+            } else if (state.gameOver === this.gameResult.Fail) {
+
+                this.unschedule(this.updatePlayerMove);
+                //重新开始
+                cc.tween(this._player)
+                    .to(0.03, { y: this._player.y + 400 })
+                    .call(() => {
+                        let state: any = globalThis._.cloneDeep(this._state);
+                        state.gameStart = false;
+                        state.gameOver = this.gameResult.No;
+                        this.updateState(state);
+
+                    })
+                    .start()
+            }
+        }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
 
@@ -581,6 +499,7 @@ export default class t4_05_model_v2 extends cc.Component {
                 this.graphics.enabled = false;
 
                 this._zhiLine.visible = false;
+                this._zhiLine.width = 0;
                 this.graphics.clear();
                 this._touchesPos.length = 0;
 
@@ -593,6 +512,127 @@ export default class t4_05_model_v2 extends cc.Component {
         }
     }
 
+    rightLineFly() {
+
+        let len = this._showLinesObj.length;
+
+        if (len >= 3) {
+
+            return;
+
+        }
+
+        this._zhiLine.visible = false;
+        this._drawLan.visible = false;
+        this._drawRed.visible = false;
+
+        let dianLeftMin = this._drawLan.x;
+        let dianLeftMax = this._drawLan.x + this._drawLan.width;
+
+        let dianRightMax = this._drawRed.x + this._drawRed.width;
+        let dianRightMin = this._drawRed.x;
+
+        let cha = 5;
+        let tempLineData = {};
+
+        // 1、直线
+        if ((this._touchesPos[0].x - dianLeftMin) < -cha && (this._touchesPos[this._touchesPos.length - 1].x - dianRightMax) > cha) {
+
+            // 直线
+            tempLineData['type'] = this.lineType.StraightLine
+
+        } else if (this._touchesPos[0].x >= dianLeftMin &&
+            this._touchesPos[0].x <= dianLeftMax && this._touchesPos[this._touchesPos.length - 1].x >= dianRightMin && this._touchesPos[this._touchesPos.length - 1].x <= dianRightMax) {
+
+            //线段
+            tempLineData['type'] = this.lineType.LineSegment;
+
+        } else if (this._touchesPos[0].x >= dianLeftMin &&
+            this._touchesPos[0].x <= dianLeftMax && (this._touchesPos[this._touchesPos.length - 1].x - dianRightMax) > cha) {
+
+            // 左蓝射线
+            tempLineData['type'] = this.lineType.LeftLanRays;
+
+        } else if (this._touchesPos[this._touchesPos.length - 1].x >= dianRightMin &&
+            this._touchesPos[this._touchesPos.length - 1].x <= dianRightMax && (this._touchesPos[0].x - dianLeftMin) < -cha) {
+
+            // 右红射线
+            tempLineData['type'] = this.lineType.RightRedRays;
+
+        }
+
+        this._showLines.push(tempLineData);
+
+        console.log('==== type 111 ====' + tempLineData['type']);
+
+        let lineW = Math.abs(this._touchesPos[this._touchesPos.length - 1].x - this._touchesPos[0].x);
+
+        let leftLan = null;
+        let rightRed = null;
+
+        let lineObj = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox2a');
+        this._view.addChild(lineObj);
+        lineObj.width = lineW;
+        lineObj.x = this._touchesPos[0].x;
+        lineObj.y = this._touchesPos[0].y;
+
+        if (tempLineData['type'] === this.lineType.LineSegment) {
+
+            leftLan = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox27');
+            this._view.addChild(leftLan);
+            leftLan.x = this._touchesPos[0].x;
+            leftLan.y = this._drawLan.y;
+
+            rightRed = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox26');
+            this._view.addChild(rightRed);
+            rightRed.x = this._touchesPos[this._touchesPos.length - 1].x;
+            rightRed.y = this._drawRed.y;
+
+        } else if (tempLineData['type'] === this.lineType.LeftLanRays) {
+
+            leftLan = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox27');
+            this._view.addChild(leftLan);
+            leftLan.x = this._touchesPos[0].x;
+            leftLan.y = this._drawLan.y;
+
+        } else if (tempLineData['type'] === this.lineType.RightRedRays) {
+
+            rightRed = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox26');
+            this._view.addChild(rightRed);
+            rightRed.x = this._touchesPos[this._touchesPos.length - 1].x;
+            rightRed.y = this._drawRed.y;
+        }
+
+        cc.tween(lineObj)
+            .to(0.15, { x: this._showPosArr[len].line.x, y: this._showPosArr[len].line.y })
+            .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
+            .call(() => {
+                let state: any = globalThis._.cloneDeep(this._state);
+                state.gameStart = false;
+                state.gameOver = this.gameResult.No;
+                this.updateState(state);
+
+                lineObj.width = 710;
+                this._showLinesObj.push(lineObj);
+                this._zhiLine.visible = true;
+                this._drawLan.visible = true;
+                this._drawRed.visible = true;
+                this._zhiLine.width = 0;
+            })
+            .start()
+
+        cc.tween(leftLan)
+            .to(0.15, { x: this._showPosArr[len].lan.x, y: this._showPosArr[len].lan.y })
+            .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
+            .start()
+
+        cc.tween(rightRed)
+            .to(0.15, { x: this._showPosArr[len].red.x, y: this._showPosArr[len].red.y })
+            .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
+            .start()
+
+
+    }
 
     async playTitle(bool: boolean) {
         this._c1.selectedIndex = bool ? 1 : 0;
@@ -702,7 +742,7 @@ export default class t4_05_model_v2 extends cc.Component {
 
     onEnable() {
         this.registerState();
-        this.schedule(this.dragSchedule, this._scheduleTime);
+        // this.schedule(this.dragSchedule, this._scheduleTime);
     }
 
     onDisable() {
