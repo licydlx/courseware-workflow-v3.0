@@ -160,9 +160,6 @@
     <image id="hddi84" name="0036.png" path="/images/example2/"/>
     <sound id="hddi85" name="gou.mp3" path="/audios/example1_1/" exported="true"/>
     <image id="m3sh86" name="001.png" path="/images/first/"/>
-    <image id="m3sh87" name="0010.png" path="/images/first/"/>
-    <image id="m3sh88" name="0011.png" path="/images/first/"/>
-    <image id="m3sh89" name="002.png" path="/images/first/"/>
     <image id="m3sh8a" name="003.png" path="/images/first/"/>
     <image id="m3sh8b" name="004.png" path="/images/first/"/>
     <image id="m3sh8c" name="006.png" path="/images/first/"/>

@@ -19,9 +19,9 @@
         
         {
             "model": {
-              "uiPath": "static-model01-v1-p1",
+              "uiPath": "static-model01-v2-p1",
               "bundleName": "static",
-              "prefabName": "static-model01-v1"
+              "prefabName": "static-model01-v2"
             }
         },
 
@@ -314,6 +314,7 @@
               "prefabName": "static-model01-v1"
             }
           }
+
 
 
     ]
