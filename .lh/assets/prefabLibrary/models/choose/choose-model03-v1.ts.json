@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 345,
+            "activePatchIndex": 350,
             "patches": [
                 {
                     "date": 1623989407691,
@@ -1388,6 +1388,26 @@
                 {
                     "date": 1625132111931,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -426,15 +426,9 @@\n             } else if (state.submit === this.submitType.WrongFeed) {\r\n                 this.answerFeedback(false);\r\n             } else if (state.submit === this.submitType.RightFeed) {\r\n \r\n-                if (this._isAnimateShow) {\r\n-\r\n-                    this.playOverShowAnimate();\r\n-\r\n-                } else {\r\n-                    this.answerFeedback(true);\r\n-                }\r\n+                this.playOverShowAnimate();\r\n             }\r\n         }\r\n \r\n         if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {\r\n"
+                },
+                {
+                    "date": 1625198250914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -465,9 +465,9 @@\n         let item1 = fgui.UIPackage.getItemByURL(this._soundFile[this._rigthName[0]].path);\r\n         let audio: cc.AudioClip = await loadResource(item1.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n-\r\n+        console.log('==== ====');\r\n         console.log(this._overObjs[this._rigthName[0]]);\r\n \r\n         this._overObjs[this._rigthName[0]].animationName = this._animateName[this._rigthName[0]].play;\r\n \r\n"
+                },
+                {
+                    "date": 1625198257620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -465,9 +465,9 @@\n         let item1 = fgui.UIPackage.getItemByURL(this._soundFile[this._rigthName[0]].path);\r\n         let audio: cc.AudioClip = await loadResource(item1.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n-        console.log('==== ====');\r\n+        console.log('==== 结束动画展示 ====');\r\n         console.log(this._overObjs[this._rigthName[0]]);\r\n \r\n         this._overObjs[this._rigthName[0]].animationName = this._animateName[this._rigthName[0]].play;\r\n \r\n"
+                },
+                {
+                    "date": 1625198357484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -466,9 +466,8 @@\n         let audio: cc.AudioClip = await loadResource(item1.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n         console.log('==== 结束动画展示 ====');\r\n-        console.log(this._overObjs[this._rigthName[0]]);\r\n \r\n         this._overObjs[this._rigthName[0]].animationName = this._animateName[this._rigthName[0]].play;\r\n \r\n         cc.tween(this._overObjs[this._rigthName[0]])\r\n"
+                },
+                {
+                    "date": 1625198593536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -465,10 +465,8 @@\n         let item1 = fgui.UIPackage.getItemByURL(this._soundFile[this._rigthName[0]].path);\r\n         let audio: cc.AudioClip = await loadResource(item1.file, cc.AudioClip);\r\n         cc.audioEngine.play(audio, false, 1);\r\n \r\n-        console.log('==== 结束动画展示 ====');\r\n-\r\n         this._overObjs[this._rigthName[0]].animationName = this._animateName[this._rigthName[0]].play;\r\n \r\n         cc.tween(this._overObjs[this._rigthName[0]])\r\n             .delay(this._soundFile[this._rigthName[0]].time)\r\n"
+                },
+                {
+                    "date": 1625198636312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -626,12 +626,12 @@\n         }, 2000);\r\n     }\r\n \r\n     /**\r\n-         * 拖动指引\r\n-         * @param fromObj start\r\n-         * @param toObj end\r\n-         */\r\n+    * 拖动指引\r\n+    * @param fromObj start\r\n+    * @param toObj end\r\n+    */\r\n     handTips1(fromObj: fgui.GObject, toObj: fgui.GObject) {\r\n         let hand = fgui.UIPackage.createObject(this._package, 'hand');\r\n         this._view.addChild(hand);\r\n         hand.x = fromObj.x;\r\n"
                 }
             ],
             "date": 1623989407691,

@@ -466,9 +466,6 @@ export default class choose_model03_v1 extends cc.Component {
         let audio: cc.AudioClip = await loadResource(item1.file, cc.AudioClip);
         cc.audioEngine.play(audio, false, 1);
 
-
-        console.log(this._overObjs[this._rigthName[0]]);
-
         this._overObjs[this._rigthName[0]].animationName = this._animateName[this._rigthName[0]].play;
 
         cc.tween(this._overObjs[this._rigthName[0]])
@@ -630,10 +627,10 @@ export default class choose_model03_v1 extends cc.Component {
     }
 
     /**
-         * 拖动指引
-         * @param fromObj start
-         * @param toObj end
-         */
+    * 拖动指引
+    * @param fromObj start
+    * @param toObj end
+    */
     handTips1(fromObj: fgui.GObject, toObj: fgui.GObject) {
         let hand = fgui.UIPackage.createObject(this._package, 'hand');
         this._view.addChild(hand);

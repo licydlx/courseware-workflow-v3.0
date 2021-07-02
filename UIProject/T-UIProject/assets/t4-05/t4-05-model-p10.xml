@@ -21,6 +21,6 @@
     <image id="n82_l0an" name="black2" src="l0an2c" fileName="images/example3/001.png" xy="1206,241" group="n84_l0an"/>
     <image id="n83_l0an" name="black3" src="l0an2c" fileName="images/example3/001.png" xy="1204,611" group="n84_l0an"/>
     <group id="n84_l0an" name="n84" xy="611,241" size="677,454"/>
-    <image id="n85_l0an" name="n85" src="jjln1r" fileName="images/example2/0010.png" xy="647,650" size="800,12" skew="-120,-120"/>
+    <image id="n85_l0an" name="n85" src="jjln1r" fileName="images/example2/0010.png" xy="589,686" size="800,14" skew="-32,-32"/>
   </displayList>
 </component>

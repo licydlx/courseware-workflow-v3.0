@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 75,
+            "activePatchIndex": 76,
             "patches": [
                 {
                     "date": 1623994460686,
@@ -308,6 +308,10 @@
                 {
                     "date": 1625141781426,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,11 @@\n     \"chapters\": [ \r\n         \r\n         {\r\n             \"model\": {\r\n-              \"uiPath\": \"static-model01-v1-p1\",\r\n+              \"uiPath\": \"static-model01-v2-p1\",\r\n               \"bundleName\": \"static\",\r\n-              \"prefabName\": \"static-model01-v1\"\r\n+              \"prefabName\": \"static-model01-v2\"\r\n             }\r\n         },\r\n \r\n         {\r\n@@ -315,6 +315,7 @@\n             }\r\n           }\r\n \r\n \r\n+\r\n     ]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1625197562334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -316,6 +316,7 @@\n           }\r\n \r\n \r\n \r\n+\r\n     ]\r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1623994460686,

@@ -1,3 +1,4 @@
+import chooseAnswer_model0403_v2 from '../../numberPatterns/chooseAnswer-model0403-v2';
 
 /*
  * @Descripttion: 
@@ -28,7 +29,7 @@ export default class t4_05_model_v3 extends cc.Component {
 
     private _package: any;
 
-    private _touchesPos: any = [];
+    private _curTouchesPos: any = [];
 
     private _moveCurPos: cc.Vec2;
 
@@ -38,12 +39,26 @@ export default class t4_05_model_v3 extends cc.Component {
 
     private _scheduleTime = 0.03;
 
+    private _selflLines = [];
+
+    private _allPointRect = [];
+
+    private _allPointData = [];
+
+    private _curDrawIndex: number = 0;
+
     private submitType: any = cc.Enum({
 
         No: 0,
         GuideShow: 1,
         WrongFeed: 2,
         RightFeed: 3
+    });
+
+    private lineType: any = cc.Enum({
+
+        StraightLine: 0,
+        LineSegment: 1
     });
 
     // 远程动态组件
@@ -79,6 +94,30 @@ export default class t4_05_model_v3 extends cc.Component {
             this._c1.selectedIndex = 0;
         }
 
+        this._allPointRect = [{
+            'rect': new cc.Rect(610, 614, 80, 80),
+            'isContains': false,
+            'minx': 610,
+            'maxx': 690,
+            'miny': 614,
+            'maxy': 694,
+            'limitMinx': false,
+            'limitMaxy': false,
+        },
+        {
+            'rect': new cc.Rect(1204, 610, 80, 80), 'isContains': false, 'minx': 1204, 'maxx': 1284, 'miny': 610, 'maxy': 690,
+            'limitMaxx': false,
+        },
+        {
+            'rect': new cc.Rect(1205, 240, 80, 80), 'isContains': false, 'minx': 1205, 'maxx': 1285, 'miny': 240, 'maxy': 320,
+            'limitMaxx': false,
+        },
+        {
+            'rect': new cc.Rect(610, 240, 80, 80), 'isContains': false, 'minx': 610, 'maxx': 690, 'miny': 240, 'maxy': 320,
+            'limitMiny': false,
+        }
+        ];
+
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
 
@@ -107,9 +146,10 @@ export default class t4_05_model_v3 extends cc.Component {
         this._state = {
             title: false,
             submit: this.submitType.No,
-            touch: "end",
+            touch: "no",
             reset: false,
-            touchesPos: [],
+            curTouchesPos: [],
+            allTouchLinesPos: []
         }
     }
 
@@ -137,10 +177,13 @@ export default class t4_05_model_v3 extends cc.Component {
         console.log('===== start 111 ====' + event.touch.getLocation());
 
         let state: any = globalThis._.cloneDeep(this._state);
-        state.touch = 'start';
-        let tempPos = new cc.Vec2(event.touch.getLocation().x, event.touch.getLocation().y);
-        state.touchesPos.push(tempPos);
-        this.updateState(state);
+        if (state.touch === 'no') {
+            state.touch = 'start';
+            state.curTouchesPos = [];
+            let tempPos = new cc.Vec2(event.touch.getLocation().x, event.touch.getLocation().y);
+            state.curTouchesPos.push(tempPos);
+            this.updateState(state);
+        }
     }
 
     _onDrawMove(event) {
@@ -160,10 +203,19 @@ export default class t4_05_model_v3 extends cc.Component {
 
 
     // 排序方法
-    comparePos() {
+    comparePosX() {
         return function (a, b) {
             var value1 = a.x;
             var value2 = b.x;
+            return value1 - value2;
+        }
+    }
+
+    // 排序方法
+    comparePosY() {
+        return function (a, b) {
+            var value1 = a.y;
+            var value2 = b.y;
             return value1 - value2;
         }
     }
@@ -176,7 +228,29 @@ export default class t4_05_model_v3 extends cc.Component {
     }
 
     private _clickSubmit(evt: any) {
+
         let state: any = globalThis._.cloneDeep(this._state);
+
+        if (this._allPointData.length === 0) {
+
+            state.submit = this.submitType.GuideShow;
+
+        } else {
+            let isAllRight = true;
+            for (let i = 0; i < this._allPointData.length; i++) {
+
+                if (!this._allPointData[i]) {
+                    isAllRight = false;
+                    break;
+                }
+            }
+            if (isAllRight) {
+                state.submit = this.submitType.RightFeed;
+            } else {
+                state.submit = this.submitType.WrongFeed;
+            }
+        }
+
         this.updateState(state);
     }
 
@@ -193,7 +267,7 @@ export default class t4_05_model_v3 extends cc.Component {
 
             console.log('==== 3333333 拖拽定时器 ======');
             let state: any = globalThis._.cloneDeep(this._state);
-            state.touchesPos.push(this._moveCurPos);
+            state.curTouchesPos.push(this._moveCurPos);
             state.touch = "move";
             this.updateState(state);
         }
@@ -215,53 +289,175 @@ export default class t4_05_model_v3 extends cc.Component {
 
         if (state.touch == "start") {
 
-            this._touchesPos = state.touchesPos;
+            this._curTouchesPos = state.curTouchesPos;
             this.graphics.clear();
-            this._touchesPos.length = 0;
+            this._curTouchesPos.length = 0;
 
         } else if (state.touch == "move") {
 
-            this._touchesPos = state.touchesPos;
+            this._curTouchesPos = state.curTouchesPos;
+
             const MIN_POINT_DISTANCE = 4;
 
             let worldPos = this.node.convertToWorldSpaceAR(cc.v2(0, 0));
-            this.graphics.moveTo(this._touchesPos[0].x - worldPos.x, this._touchesPos[0].y - worldPos.y);
+            this.graphics.moveTo(this._curTouchesPos[0].x - worldPos.x, this._curTouchesPos[0].y - worldPos.y);
             let lastIndex = 0;
-            for (let i = 1, l = this._touchesPos.length; i < l; i++) {
-                if (this._touchesPos[i].sub(this._touchesPos[lastIndex]).mag() < MIN_POINT_DISTANCE) {
+            for (let i = 1, l = this._curTouchesPos.length; i < l; i++) {
+                if (this._curTouchesPos[i].sub(this._curTouchesPos[lastIndex]).mag() < MIN_POINT_DISTANCE) {
                     continue;
                 }
                 lastIndex = i;
-                this.graphics.lineTo(this._touchesPos[i].x - worldPos.x, this._touchesPos[i].y - worldPos.y);
+                this.graphics.lineTo(this._curTouchesPos[i].x - worldPos.x, this._curTouchesPos[i].y - worldPos.y);
             }
             this.graphics.stroke();
 
         } else if (state.touch == "end") {
 
             this.graphics.clear();
+            if (this._curTouchesPos.length > 0) {
 
-            if (this._touchesPos.length > 0) {
+                for (let i = 0; i < this._curTouchesPos.length; i++) {
 
-                let angle = this.angle(this._touchesPos[0], this._touchesPos[this._touchesPos.length - 1]);
+                    this._curTouchesPos[i].y = this._view.height - this._curTouchesPos[i].y;
+                }
 
-                console.log('===== angle 999999 === ' + angle);
+                let tempArrX = [];
+                tempArrX = this._curTouchesPos;
+                tempArrX.sort(this.comparePosX());
 
-                let zhiLine = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox2a');
-                this._view.addChild(zhiLine);
-                zhiLine.width = this._touchesPos[this._touchesPos.length - 1].sub(this._touchesPos[0]).mag();
-                zhiLine.x = this._touchesPos[0].x;
-                zhiLine.y = this._view.height - this._touchesPos[0].y;
-                zhiLine.rotation = -angle;
+                let tempArrY = [];
+                tempArrY = this._curTouchesPos;
+                tempArrY.sort(this.comparePosY());
 
-                zhiLine.sortingOrder = 0;
+                var chaX = Math.abs(tempArrX[tempArrX.length - 1].x - tempArrX[0].x);
+                var chaY = Math.abs(tempArrY[tempArrY.length - 1].y - tempArrY[0].y);
+                let isSortY = false;
 
-                this._touchesPos.sort(this.comparePos());
+                let isValid = true;
+                if (chaX < 200 && chaY > 500) {
+                    isSortY = true;
+                    console.log('==== sort chaY ====');
+                    this._curTouchesPos.sort(this.comparePosY());
+                    console.log(this._curTouchesPos);
+
+                } else if (chaX > 500) {
+                    console.log('==== sort chaX ====');
+                    this._curTouchesPos.sort(this.comparePosX());
+                    console.log(this._curTouchesPos);
+                } else {
+                    isValid = false;
+                }
+
+                if (isValid) {
+
+                    for (let i = 0; i < this._allPointRect.length; i++) {
+
+                        this._allPointRect[i].isContains = false;
+                    }
+
+                    let pointNums = 0;
+                    for (let i = 0; i < this._curTouchesPos.length; i++) {
+
+                        for (let j = 0; j < this._allPointRect.length; j++) {
+
+                            if (this._allPointRect[j].rect.contains(this._curTouchesPos[i])) {
+                                this._allPointRect[j].isContains = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    for (let i = 0; i < this._allPointRect.length; i++) {
+
+                        if (this._allPointRect[i].isContains) {
+                            pointNums++;
+                        }
+                    }
 
 
+                    if (pointNums >= 2) {
+
+                        for (let i = 0; i < this._allPointRect.length; i++) {
+
+                            if (i === 0 && this._allPointRect[i].isContains) {
+
+                                if (this._curTouchesPos[0].x < this._allPointRect[i].minx) {
+
+                                    this._allPointRect[i].limitMinx = true;
+                                }
+
+                                if (this._curTouchesPos[this._curTouchesPos.length - 1].y > this._allPointRect[i].maxy) {
+
+                                    this._allPointRect[i].limitMaxy = true;
+                                }
+
+                            } else if ((i === 1 && this._allPointRect[i].isContains) || (i === 2 && this._allPointRect[i].isContains)) {
+
+                                if (this._curTouchesPos[this._curTouchesPos.length - 1].x > this._allPointRect[i].maxx) {
+
+                                    this._allPointRect[i].limitMaxx = true;
+                                }
+
+                            } else if (i === 3 && this._allPointRect[i].isContains) {
+
+                                if (this._curTouchesPos[0].y < this._allPointRect[i].miny) {
+
+                                    this._allPointRect[i].limitMiny = true;
+                                }
+                            }
+                        }
+
+                        if (this._allPointRect[0].isContains && this._allPointRect[1].isContains &&
+                            this._allPointRect[0].limitMinx && this._allPointRect[1].limitMaxx) {
+
+                            this._allPointData.push(true);
+
+                        } else if (this._allPointRect[0].isContains && this._allPointRect[2].isContains &&
+                            this._allPointRect[0].limitMinx && this._allPointRect[2].limitMaxx) {
+                            this._allPointData.push(true);
+                        } else if (this._allPointRect[0].isContains && this._allPointRect[3].isContains &&
+                            this._allPointRect[0].limitMaxy && this._allPointRect[3].limitMiny) {
+                            this._allPointData.push(true);
+                        } else {
+                            this._allPointData.push(false);
+                        }
+
+                        let temp = { 'pos': this._curTouchesPos, 'isSortY': isSortY };
+                        state.allTouchLinesPos.push(temp);
+                    }
+
+                }
+
+                setTimeout(() => {
+
+                    let state1: any = globalThis._.cloneDeep(this._state);
+                    state1.touch = 'no';
+                    state1.allTouchLinesPos = state.allTouchLinesPos;
+                    this.updateState(state1);
+                }, 50);
             }
-
         }
 
+        for (let i = this._curDrawIndex; i < state.allTouchLinesPos.length; i++) {
+
+            console.log('====== allTouchLinesPos 展示全部线 ====');
+            let tempPos = state.allTouchLinesPos[i].pos;
+            let angle = this.angle(tempPos[0], tempPos[tempPos.length - 1]);
+
+            let zhiLine = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox2a');
+            this._view.addChild(zhiLine);
+            zhiLine.width = tempPos[tempPos.length - 1].sub(tempPos[0]).mag();
+            if (!state.allTouchLinesPos[i].isSortY) {
+                zhiLine.x = tempPos[0].x;
+                zhiLine.y = tempPos[0].y;
+                zhiLine.rotation = angle;
+            } else {
+                zhiLine.x = tempPos[tempPos.length - 1].x;
+                zhiLine.y = tempPos[tempPos.length - 1].y;
+                zhiLine.rotation = -Math.abs(angle);
+            }
+            this._curDrawIndex++;
+        }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
 
@@ -275,11 +471,10 @@ export default class t4_05_model_v3 extends cc.Component {
 
             } else if (state.submit === this.submitType.GuideShow) {
 
-                let keyBtn = this._view.getChild('input1').asButton;
-                this.handTips2(keyBtn);
+                // let keyBtn = this._view.getChild('input1').asButton;
+                // this.handTips2(keyBtn);
             }
         }
-
 
         if (!globalThis._.isEqual(oldState.title, state.title)) {
             this.playTitle(state.title);
