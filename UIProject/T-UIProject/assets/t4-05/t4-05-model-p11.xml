@@ -2,7 +2,7 @@
 <component size="1920,1080">
   <controller name="c1" pages="0,,1," selected="0"/>
   <displayList>
-    <image id="n79_l0an" name="n79" src="l0an2g" fileName="images/example3/bg.png" xy="0,0"/>
+    <image id="n86_c0cx" name="n86" src="c0cx2j" fileName="images/example3/006.png" xy="0,0"/>
     <component id="n78_l0an" name="restart" src="j79e17" fileName="buttons/button1.xml" xy="1686,638" size="194,187">
       <Button icon="ui://mgpb39d5l0an2f" sound="ui://mgpb39d5j79e18"/>
     </component>
@@ -11,15 +11,14 @@
     </component>
     <component id="n2_j79e" name="title" src="j79e13" fileName="buttons/title.xml" xy="853,97" alpha="0" touchable="false">
       <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
-      <Button icon="ui://mgpb39d5l0an2e" sound="ui://mgpb39d5j79e15" volume="0"/>
+      <Button icon="ui://mgpb39d5c0cx2k" sound="ui://mgpb39d5j79e15" volume="0"/>
     </component>
     <loader id="n3_j79e" name="titleTrigger" xy="50,41" size="228,171" scale="0.8,0.8" url="ui://mgpb39d5j79e16" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
-    <image id="n80_l0an" name="red" src="l0an2d" fileName="images/example3/002.png" xy="615,612" group="n84_l0an"/>
-    <image id="n81_l0an" name="black1" src="l0an2c" fileName="images/example3/001.png" xy="615,240" group="n84_l0an"/>
-    <image id="n82_l0an" name="black2" src="l0an2c" fileName="images/example3/001.png" xy="1208,239" group="n84_l0an"/>
-    <image id="n83_l0an" name="black3" src="l0an2c" fileName="images/example3/001.png" xy="1208,612" group="n84_l0an"/>
-    <group id="n84_l0an" name="n84" xy="615,239" size="675,455"/>
+    <image id="n87_c0cx" name="black1" src="c0cx2i" fileName="images/example3/005.png" xy="799,625" pivot="0.5,0.5" anchor="true" group="n84_l0an"/>
+    <image id="n89_c0cx" name="black2" src="c0cx2i" fileName="images/example3/005.png" xy="1060,590" group="n84_l0an"/>
+    <image id="n88_c0cx" name="black3" src="c0cx2i" fileName="images/example3/005.png" xy="917,367" group="n84_l0an"/>
+    <group id="n84_l0an" name="n84" xy="764,367" size="367,293" advanced="true"/>
   </displayList>
 </component>

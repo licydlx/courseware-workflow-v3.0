@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1624504828561,
@@ -72,6 +72,14 @@
                 {
                     "date": 1625119359032,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,11 @@\n     \"chapters\": [ \r\n         \r\n         {\r\n             \"model\": {\r\n-                \"uiPath\": \"t4-05-model-p6\",\r\n+                \"uiPath\": \"t4-05-model-p10\",\r\n                 \"bundleName\": \"t4-05-model\",\r\n-                \"prefabName\": \"t4-05-model-v2\",\r\n+                \"prefabName\": \"t4-05-model-v3\",\r\n                 \"config\": {\r\n                    \r\n \r\n                 }\r\n@@ -35,9 +35,9 @@\n                 }\r\n             }\r\n         },\r\n         \r\n-        \r\n+\r\n         {\r\n             \"model\": {\r\n                 \"uiPath\": \"t4-05-model-p6\",\r\n                 \"bundleName\": \"t4-05-model\",\r\n"
+                },
+                {
+                    "date": 1625405613435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,28 @@\n                 }\r\n             }\r\n         },\r\n         \r\n+        {\r\n+            \"model\": {\r\n+                \"uiPath\": \"t4-05-model-p10\",\r\n+                \"bundleName\": \"t4-05-model\",\r\n+                \"prefabName\": \"t4-05-model-v3\",\r\n+                \"config\": {\r\n+                   \r\n \r\n+                }\r\n+            }, \r\n+            \r\n+            \"components\": {\r\n+                \"feedback\": {\r\n+                    \"bundleName\": \"feedback\",\r\n+                    \"prefabName\": \"feedback-model01-v1\"\r\n+                }\r\n+            }\r\n+        },\r\n+        \r\n+\r\n         {\r\n             \"model\": {\r\n                 \"uiPath\": \"t4-05-model-p6\",\r\n                 \"bundleName\": \"t4-05-model\",\r\n"
+                },
+                {
+                    "date": 1625405620642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,11 @@\n     \"chapters\": [ \r\n         \r\n         {\r\n             \"model\": {\r\n-                \"uiPath\": \"t4-05-model-p10\",\r\n+                \"uiPath\": \"t4-05-model-p11\",\r\n                 \"bundleName\": \"t4-05-model\",\r\n-                \"prefabName\": \"t4-05-model-v3\",\r\n+                \"prefabName\": \"t4-05-model-v4\",\r\n                 \"config\": {\r\n                    \r\n \r\n                 }\r\n@@ -34,9 +34,9 @@\n                     \"prefabName\": \"feedback-model01-v1\"\r\n                 }\r\n             }\r\n         },\r\n-        \r\n+\r\n         {\r\n             \"model\": {\r\n                 \"uiPath\": \"t4-05-model-p10\",\r\n                 \"bundleName\": \"t4-05-model\",\r\n"
                 }
             ],
             "date": 1624504828561,

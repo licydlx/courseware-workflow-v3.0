@@ -53,13 +53,16 @@
     <image id="xdox26" name="003_2.png" path="/images/example2/" exported="true"/>
     <image id="xdox27" name="004_2.png" path="/images/example2/" exported="true"/>
     <image id="xdox2a" name="008.png" path="/images/example2/" exported="true"/>
-    <image id="l0an2b" name="例题3 答案.png" path="/images/"/>
     <image id="l0an2c" name="001.png" path="/images/example3/"/>
     <image id="l0an2d" name="002.png" path="/images/example3/"/>
     <image id="l0an2e" name="003.png" path="/images/example3/"/>
     <image id="l0an2f" name="004.png" path="/images/example3/"/>
     <image id="l0an2g" name="bg.png" path="/images/example3/"/>
     <component id="l0an2h" name="t4-05-model-p10.xml" path="/" exported="true"/>
+    <image id="c0cx2i" name="005.png" path="/images/example3/"/>
+    <image id="c0cx2j" name="006.png" path="/images/example3/"/>
+    <image id="c0cx2k" name="007.png" path="/images/example3/"/>
+    <component id="c0cx2m" name="t4-05-model-p11.xml" path="/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

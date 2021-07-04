@@ -1,4 +1,3 @@
-import chooseAnswer_model0403_v2 from '../../numberPatterns/chooseAnswer-model0403-v2';
 
 /*
  * @Descripttion: 
@@ -37,15 +36,13 @@ export default class t4_05_model_v3 extends cc.Component {
 
     private _dragging = false;
 
-    private _scheduleTime = 0.03;
+    private _scheduleTime = 0.08;
 
-    private _selflLines = [];
+    private _allTouchLinesObj = {};
+
+    private _allOtherTouchLinesObj = {};
 
     private _allPointRect = [];
-
-    private _allPointData = [];
-
-    private _curDrawIndex: number = 0;
 
     private submitType: any = cc.Enum({
 
@@ -53,12 +50,6 @@ export default class t4_05_model_v3 extends cc.Component {
         GuideShow: 1,
         WrongFeed: 2,
         RightFeed: 3
-    });
-
-    private lineType: any = cc.Enum({
-
-        StraightLine: 0,
-        LineSegment: 1
     });
 
     // 远程动态组件
@@ -103,20 +94,28 @@ export default class t4_05_model_v3 extends cc.Component {
             'maxy': 694,
             'limitMinx': false,
             'limitMaxy': false,
+            'isPointInner': false,
         },
         {
             'rect': new cc.Rect(1204, 610, 80, 80), 'isContains': false, 'minx': 1204, 'maxx': 1284, 'miny': 610, 'maxy': 690,
             'limitMaxx': false,
+            'isPointInner': false,
         },
         {
             'rect': new cc.Rect(1205, 240, 80, 80), 'isContains': false, 'minx': 1205, 'maxx': 1285, 'miny': 240, 'maxy': 320,
             'limitMaxx': false,
+            'isPointInner': false,
         },
         {
-            'rect': new cc.Rect(610, 240, 80, 80), 'isContains': false, 'minx': 610, 'maxx': 690, 'miny': 240, 'maxy': 320,
+            'rect': new cc.Rect(611, 242, 80, 80), 'isContains': false, 'minx': 610, 'maxx': 690, 'miny': 240, 'maxy': 320,
             'limitMiny': false,
+            'isPointInner': false,
         }
         ];
+
+        // let tt1 = new cc.Vec2(1247, 282);
+        // let tt2 = new cc.Vec2(652, 655);
+        // console.log('=== mag DDDD ===' + tt1.sub(tt2).mag());
 
         this._titleTrigger = this._view.getChild("titleTrigger").asLoader;
         if (this._titleTrigger) this._titleTrigger.on(fgui.Event.CLICK, this._clickTitle, this);
@@ -148,8 +147,9 @@ export default class t4_05_model_v3 extends cc.Component {
             submit: this.submitType.No,
             touch: "no",
             reset: false,
-            curTouchesPos: [],
-            allTouchLinesPos: []
+            curTouchesPos: cc.Vec2,
+            allTouchLinesPos: {},
+            allOtherTouchLinesPos: [],
         }
     }
 
@@ -179,9 +179,8 @@ export default class t4_05_model_v3 extends cc.Component {
         let state: any = globalThis._.cloneDeep(this._state);
         if (state.touch === 'no') {
             state.touch = 'start';
-            state.curTouchesPos = [];
             let tempPos = new cc.Vec2(event.touch.getLocation().x, event.touch.getLocation().y);
-            state.curTouchesPos.push(tempPos);
+            state.curTouchesPos = tempPos;
             this.updateState(state);
         }
     }
@@ -196,7 +195,9 @@ export default class t4_05_model_v3 extends cc.Component {
 
         this._dragging = false;
 
+        let tempPos = new cc.Vec2(event.touch.getLocation().x, event.touch.getLocation().y);
         let state: any = globalThis._.cloneDeep(this._state);
+        state.curTouchesPos = tempPos;
         state.touch = 'end';
         this.updateState(state);
     }
@@ -231,15 +232,16 @@ export default class t4_05_model_v3 extends cc.Component {
 
         let state: any = globalThis._.cloneDeep(this._state);
 
-        if (this._allPointData.length === 0) {
+        if (Object.keys(state.allTouchLinesPos).length === 0) {
 
             state.submit = this.submitType.GuideShow;
 
         } else {
-            let isAllRight = true;
-            for (let i = 0; i < this._allPointData.length; i++) {
 
-                if (!this._allPointData[i]) {
+            let isAllRight = true;
+            for (let key in state.allTouchLinesPos) {
+
+                if (!state.allTouchLinesPos[key].result) {
                     isAllRight = false;
                     break;
                 }
@@ -267,7 +269,7 @@ export default class t4_05_model_v3 extends cc.Component {
 
             console.log('==== 3333333 拖拽定时器 ======');
             let state: any = globalThis._.cloneDeep(this._state);
-            state.curTouchesPos.push(this._moveCurPos);
+            state.curTouchesPos = this._moveCurPos;
             state.touch = "move";
             this.updateState(state);
         }
@@ -289,13 +291,13 @@ export default class t4_05_model_v3 extends cc.Component {
 
         if (state.touch == "start") {
 
-            this._curTouchesPos = state.curTouchesPos;
-            this.graphics.clear();
             this._curTouchesPos.length = 0;
+            this._curTouchesPos.push(state.curTouchesPos);
+            this.graphics.clear();
 
         } else if (state.touch == "move") {
 
-            this._curTouchesPos = state.curTouchesPos;
+            this._curTouchesPos.push(state.curTouchesPos);
 
             const MIN_POINT_DISTANCE = 4;
 
@@ -312,6 +314,8 @@ export default class t4_05_model_v3 extends cc.Component {
             this.graphics.stroke();
 
         } else if (state.touch == "end") {
+
+            this._curTouchesPos.push(state.curTouchesPos);
 
             this.graphics.clear();
             if (this._curTouchesPos.length > 0) {
@@ -334,19 +338,23 @@ export default class t4_05_model_v3 extends cc.Component {
                 let isSortY = false;
 
                 let isValid = true;
-                if (chaX < 200 && chaY > 500) {
+                if (chaX > 400) {
+
+                    console.log('==== sort chaX ====');
+                    this._curTouchesPos.sort(this.comparePosX());
+                    console.log(this._curTouchesPos);
+                } else if (chaX < 150 && chaY > 200) {
                     isSortY = true;
                     console.log('==== sort chaY ====');
                     this._curTouchesPos.sort(this.comparePosY());
                     console.log(this._curTouchesPos);
 
-                } else if (chaX > 500) {
-                    console.log('==== sort chaX ====');
-                    this._curTouchesPos.sort(this.comparePosX());
-                    console.log(this._curTouchesPos);
                 } else {
                     isValid = false;
                 }
+
+                console.log('====== chaX ======' + chaX);
+                console.log('====== chaY ======' + chaY);
 
                 if (isValid) {
 
@@ -362,22 +370,28 @@ export default class t4_05_model_v3 extends cc.Component {
 
                             if (this._allPointRect[j].rect.contains(this._curTouchesPos[i])) {
                                 this._allPointRect[j].isContains = true;
+
                                 break;
                             }
                         }
                     }
-
                     for (let i = 0; i < this._allPointRect.length; i++) {
 
                         if (this._allPointRect[i].isContains) {
                             pointNums++;
+                            continue;
                         }
                     }
-
+                    console.log('===== 5555 =====' + pointNums);
 
                     if (pointNums >= 2) {
 
                         for (let i = 0; i < this._allPointRect.length; i++) {
+
+                            if (this._allPointRect[i].rect.contains(this._curTouchesPos[0]) ||
+                                this._allPointRect[i].rect.contains(this._curTouchesPos[this._curTouchesPos.length - 1])) {
+                                this._allPointRect[i].isPointInner = true;
+                            }
 
                             if (i === 0 && this._allPointRect[i].isContains) {
 
@@ -385,7 +399,6 @@ export default class t4_05_model_v3 extends cc.Component {
 
                                     this._allPointRect[i].limitMinx = true;
                                 }
-
                                 if (this._curTouchesPos[this._curTouchesPos.length - 1].y > this._allPointRect[i].maxy) {
 
                                     this._allPointRect[i].limitMaxy = true;
@@ -407,25 +420,197 @@ export default class t4_05_model_v3 extends cc.Component {
                             }
                         }
 
-                        if (this._allPointRect[0].isContains && this._allPointRect[1].isContains &&
-                            this._allPointRect[0].limitMinx && this._allPointRect[1].limitMaxx) {
+                        let temp = { 'isSortY': isSortY };
+                        if (this._allPointRect[0].isContains && this._allPointRect[1].isContains) {
 
-                            this._allPointData.push(true);
+                            if (this._allPointRect[0].limitMinx && this._allPointRect[1].limitMaxx) {
 
-                        } else if (this._allPointRect[0].isContains && this._allPointRect[2].isContains &&
-                            this._allPointRect[0].limitMinx && this._allPointRect[2].limitMaxx) {
-                            this._allPointData.push(true);
-                        } else if (this._allPointRect[0].isContains && this._allPointRect[3].isContains &&
-                            this._allPointRect[0].limitMaxy && this._allPointRect[3].limitMiny) {
-                            this._allPointData.push(true);
+                                // 直线
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = 0;
+                                temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
+                                temp['chaoInterQiY'] = 0;
+                                temp['chang'] = this._curTouchesPos[this._curTouchesPos.length - 1].sub(this._curTouchesPos[0]).mag();
+                                temp['result'] = true;
+                                state.allTouchLinesPos['line1'] = temp;
+
+
+                            } else if (this._allPointRect[0].limitMinx && !this._allPointRect[1].limitMaxx) {
+
+                                // 左点超出射线
+                                let pointMidChang = 593;
+
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = 0;
+                                temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
+                                temp['chaoInterQiY'] = 0;
+                                temp['chang'] = pointMidChang + temp['chaoInterQiX'];
+                                temp['result'] = false;
+                                state.allTouchLinesPos['line1'] = temp;
+
+                            } else if (!this._allPointRect[0].limitMinx && this._allPointRect[1].limitMaxx) {
+
+                                // 右点超出的射线
+                                let pointMaxX = 1245;
+                                let pointMidChang = 593;
+
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = 0;
+                                temp['chaoInterQiX'] = 0;
+                                temp['chaoInterQiY'] = 0;
+                                temp['chang'] = pointMidChang + (this._curTouchesPos[this._curTouchesPos.length - 1].x - pointMaxX);
+                                temp['result'] = false;
+                                state.allTouchLinesPos['line1'] = temp;
+
+                            } else if (this._allPointRect[0].isPointInner && this._allPointRect[1].isPointInner) {
+
+                                //线段
+                                let pointMidChang = 593;
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = 0;
+                                temp['chaoInterQiX'] = 0;
+                                temp['chaoInterQiY'] = 0;
+                                temp['chang'] = pointMidChang;
+                                temp['result'] = false;
+                                state.allTouchLinesPos['line1'] = temp;
+                            }
+
+                        } else if (this._allPointRect[0].isContains && this._allPointRect[2].isContains) {
+
+                            if (this._allPointRect[0].limitMinx && this._allPointRect[2].limitMaxx) {
+
+                                // 直线
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = -32;
+                                temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
+                                temp['chaoInterQiY'] = Math.tan(-32) * (652 - this._curTouchesPos[0].x);
+                                temp['chang'] = this._curTouchesPos[this._curTouchesPos.length - 1].sub(this._curTouchesPos[0]).mag();
+                                temp['result'] = true;
+                                state.allTouchLinesPos['line2'] = temp;
+
+                            } else if (this._allPointRect[0].limitMinx && !this._allPointRect[2].limitMaxx) {
+
+                                // 左点超出射线
+                                let pointMidChang = 702;
+
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = -32;
+                                temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
+                                temp['chaoInterQiY'] = Math.tan(-32) * (652 - this._curTouchesPos[0].x);;
+                                temp['chang'] = pointMidChang + temp['chaoInterQiX'];
+                                temp['result'] = false;
+                                state.allTouchLinesPos['line2'] = temp;
+
+                            } else if (!this._allPointRect[0].limitMinx && this._allPointRect[2].limitMaxx) {
+
+                                // 右点超出的射线
+                                let pointMaxX = 1245;
+                                let pointMidChang = 702;
+
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = -32;
+                                temp['chaoInterQiX'] = 0;
+                                temp['chaoInterQiY'] = 0;
+                                temp['chang'] = pointMidChang + (this._curTouchesPos[this._curTouchesPos.length - 1].x - pointMaxX);
+                                temp['result'] = false;
+                                state.allTouchLinesPos['line2'] = temp;
+
+                            } else if (this._allPointRect[0].isPointInner && this._allPointRect[2].isPointInner) {
+
+                                //线段
+                                let pointMidChang = 702;
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = -32;
+                                temp['chaoInterQiX'] = 0;
+                                temp['chaoInterQiY'] = 0;
+                                temp['chang'] = pointMidChang;
+                                temp['result'] = false;
+                                state.allTouchLinesPos['line2'] = temp;
+                            }
+
+                        } else if (this._allPointRect[0].isContains && this._allPointRect[3].isContains) {
+
+                            if (this._allPointRect[0].limitMaxy && this._allPointRect[3].limitMiny) {
+
+                                // 直线
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = -90;
+                                temp['chaoInterQiX'] = 0;
+                                temp['chaoInterQiY'] = this._curTouchesPos[this._curTouchesPos.length - 1].y - temp['QiY'];
+                                temp['chang'] = this._curTouchesPos[this._curTouchesPos.length - 1].sub(this._curTouchesPos[0]).mag();
+                                temp['result'] = true;
+                                state.allTouchLinesPos['line3'] = temp;
+
+                            } else if (this._allPointRect[0].limitMaxy && !this._allPointRect[3].limitMiny) {
+
+                                // 下点超出射线
+                                let pointMidChang = 372;
+
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = -90;
+                                temp['chaoInterQiX'] = 0;
+                                temp['chaoInterQiY'] = this._curTouchesPos[this._curTouchesPos.length - 1].y - temp['QiY'];
+                                temp['chang'] = pointMidChang + temp['chaoInterQiY'];
+                                temp['result'] = false;
+                                state.allTouchLinesPos['line3'] = temp;
+
+                            } else if (!this._allPointRect[0].limitMaxy && this._allPointRect[3].limitMiny) {
+
+                                // 上点超出的射线
+                                let pointMinY = 283;
+                                let pointMidChang = 372;
+
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = -90;
+
+                                temp['chaoInterQiX'] = 0;
+                                temp['chaoInterQiY'] = 0;
+                                temp['chang'] = pointMidChang + (pointMinY - this._curTouchesPos[0].y);
+                                temp['result'] = false;
+                                state.allTouchLinesPos['line3'] = temp;
+
+                            } else if (this._allPointRect[0].isPointInner && this._allPointRect[3].isPointInner) {
+
+                                //线段
+                                let pointMidChang = 372;
+                                temp['QiX'] = 652;
+                                temp['QiY'] = 655;
+                                temp['angle'] = -90;
+
+                                temp['chaoInterQiX'] = 0;
+                                temp['chaoInterQiY'] = 0;
+                                temp['chang'] = pointMidChang;
+                                temp['result'] = false;
+                                state.allTouchLinesPos['line3'] = temp;
+                            }
                         } else {
-                            this._allPointData.push(false);
+
+                            temp['QiX'] = this._curTouchesPos[0].x;
+                            temp['QiY'] = this._curTouchesPos[0].y;
+                            if (isSortY) {
+                                temp['angle'] = -this.angle(this._curTouchesPos[0], this._curTouchesPos[this._curTouchesPos.length - 1]);
+                            } else {
+                                temp['angle'] = this.angle(this._curTouchesPos[0], this._curTouchesPos[this._curTouchesPos.length - 1]);
+                            }
+
+                            temp['chaoInterQiX'] = 0;
+                            temp['chaoInterQiY'] = 0;
+                            temp['chang'] = this._curTouchesPos[this._curTouchesPos.length - 1].sub(this._curTouchesPos[0]).mag();;
+                            temp['result'] = false;
+                            state.allOtherTouchLinesPos.push(temp);
                         }
-
-                        let temp = { 'pos': this._curTouchesPos, 'isSortY': isSortY };
-                        state.allTouchLinesPos.push(temp);
                     }
-
                 }
 
                 setTimeout(() => {
@@ -433,30 +618,98 @@ export default class t4_05_model_v3 extends cc.Component {
                     let state1: any = globalThis._.cloneDeep(this._state);
                     state1.touch = 'no';
                     state1.allTouchLinesPos = state.allTouchLinesPos;
+                    state1.allOtherTouchLinesPos = state.allOtherTouchLinesPos;
                     this.updateState(state1);
-                }, 50);
+
+                }, 20);
             }
         }
 
-        for (let i = this._curDrawIndex; i < state.allTouchLinesPos.length; i++) {
+        if (!globalThis._.isEqual(oldState.allOtherTouchLinesPos, state.allOtherTouchLinesPos)) {
 
-            console.log('====== allTouchLinesPos 展示全部线 ====');
-            let tempPos = state.allTouchLinesPos[i].pos;
-            let angle = this.angle(tempPos[0], tempPos[tempPos.length - 1]);
-
-            let zhiLine = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox2a');
-            this._view.addChild(zhiLine);
-            zhiLine.width = tempPos[tempPos.length - 1].sub(tempPos[0]).mag();
-            if (!state.allTouchLinesPos[i].isSortY) {
-                zhiLine.x = tempPos[0].x;
-                zhiLine.y = tempPos[0].y;
-                zhiLine.rotation = angle;
-            } else {
-                zhiLine.x = tempPos[tempPos.length - 1].x;
-                zhiLine.y = tempPos[tempPos.length - 1].y;
-                zhiLine.rotation = -Math.abs(angle);
+            for (let key in this._allOtherTouchLinesObj) {
+                this._allOtherTouchLinesObj[key].removeFromParent();
             }
-            this._curDrawIndex++;
+
+            for (let i = 0; i < state.allOtherTouchLinesPos.length; i++) {
+
+                let temp = state.allOtherTouchLinesPos[i];
+                let zhiLine = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox2a');
+                this._view.addChild(zhiLine);
+                zhiLine.width = temp['chang'];
+
+                zhiLine.x = temp.QiX - temp.chaoInterQiX;
+                if (temp.isSortY) {
+
+                    zhiLine.y = temp.QiY + temp.chaoInterQiY;
+
+                } else {
+
+                    zhiLine.y = temp.QiY - temp.chaoInterQiY;
+                }
+
+                zhiLine.rotation = temp.angle;
+                this._allOtherTouchLinesObj[i] = zhiLine;
+            }
+
+        }
+
+        if (!globalThis._.isEqual(oldState.allTouchLinesPos, state.allTouchLinesPos)) {
+
+            for (let key in this._allTouchLinesObj) {
+                this._allTouchLinesObj[key].removeFromParent();
+            }
+
+            for (let key in state.allTouchLinesPos) {
+
+                let temp = state.allTouchLinesPos[key];
+                let zhiLine = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox2a');
+                this._view.addChild(zhiLine);
+                zhiLine.width = temp['chang'];
+
+                zhiLine.x = temp.QiX - temp.chaoInterQiX;
+                if (temp.isSortY) {
+
+                    zhiLine.y = temp.QiY + temp.chaoInterQiY;
+
+                } else {
+
+                    zhiLine.y = temp.QiY - temp.chaoInterQiY;
+                }
+
+                zhiLine.rotation = temp.angle;
+                this._allTouchLinesObj[key] = zhiLine;
+            }
+        }
+
+        if (!globalThis._.isEqual(oldState.reset, state.reset)) {
+
+            if (state.reset) {
+
+                for (let key in state.allTouchLinesPos) {
+                    delete state.allTouchLinesPos[key];
+                }
+
+                for (let key in this._allTouchLinesObj) {
+                    this._allTouchLinesObj[key].removeFromParent();
+                }
+
+                for (let key in this._allOtherTouchLinesObj) {
+                    this._allOtherTouchLinesObj[key].removeFromParent();
+                }
+
+                setTimeout(() => {
+
+                    let state1: any = globalThis._.cloneDeep(this._state);
+                    state1.reset = false;
+                    state1.allTouchLinesPos = state.allTouchLinesPos;
+                    state1.allOtherTouchLinesPos = [];
+                    this.updateState(state1);
+
+                }, 10);
+
+            }
+
         }
 
         if (!globalThis._.isEqual(oldState.submit, state.submit)) {
