@@ -1,0 +1,18 @@
+{
+    "sourceFile": "settings/services.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1625540671288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1625540671288,
+            "name": "Commit-0",
+            "content": "{\r\n\t\"game\": {\r\n\t\t\"name\": \"时习之\",\r\n\t\t\"appid\": \"675857140\",\r\n\t\t\"cid\": \"12424\"\r\n\t},\r\n\t\"configs\": [\r\n\t\t{\r\n\t\t\t\"appid\": \"675857140\",\r\n\t\t\t\"services\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"service_id\": \"272\",\r\n\t\t\t\t\t\"enable\": true,\r\n\t\t\t\t\t\"params\": {\r\n\t\t\t\t\t\t\"env_id\": \"after-school-review-8cguaeaace9d\",\r\n\t\t\t\t\t\t\"plugin_version\": \"0.7.2_1.3.3\"\r\n\t\t\t\t\t}\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"service_id\": \"301\",\r\n\t\t\t\t\t\"enable\": false\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"appid\": \"UNKNOW\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"appid\": \"675857140\",\r\n\t\t\t\"services\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"service_id\": \"272\",\r\n\t\t\t\t\t\"enable\": true,\r\n\t\t\t\t\t\"params\": {\r\n\t\t\t\t\t\t\"env_id\": \"after-school-review-8cguaeaace9d\",\r\n\t\t\t\t\t\t\"plugin_version\": \"0.7.2_1.3.3\"\r\n\t\t\t\t\t}\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"service_id\": \"301\",\r\n\t\t\t\t\t\"enable\": false\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"appid\": \"UNKNOW\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"appid\": \"675857140\",\r\n\t\t\t\"services\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"service_id\": \"272\",\r\n\t\t\t\t\t\"enable\": true\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"service_id\": \"301\",\r\n\t\t\t\t\t\"enable\": false\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"needExecNative\": true\r\n}"
+        }
+    ]
+}

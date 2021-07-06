@@ -144,8 +144,8 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v2",
                 "config": {
-                    "gameFood": ["ui://733aoo45r3753h", "ui://733aoo45r3753j", "ui://733aoo45r3753i", "ui://733aoo45r3753k"],
-                    "gameFoodSize":[{"w":146, "h":98}, {"w":113, "h":139}, {"w":99, "h":184}, {"w":120, "h":148}],
+                    "gameFood": ["ui://733aoo45rqan8i", "ui://733aoo45rqan8k", "ui://733aoo45rqan8j", "ui://733aoo45rqan8l"],
+                    "gameFoodSize":[{"w":207, "h":135}, {"w":158, "h":197}, {"w":137, "h":264}, {"w":169, "h":210}],
                     "rightIndexs": [0, 1],
                     "boySoundPath": "ui://733aoo45w2qd1c",
                     "girlSoundPath": "ui://733aoo45w2qd1d",
@@ -169,8 +169,8 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v2",
                 "config": {
-                    "gameFood": ["ui://733aoo45r37541", "ui://733aoo45r37542", "ui://733aoo45r3753z"],
-                    "gameFoodSize":[{"w":209, "h":114}, {"w":98, "h":155}, {"w":147, "h":133}],
+                    "gameFood": ["ui://733aoo45rqan8m", "ui://733aoo45rqan8n", "ui://733aoo45r3754h"],
+                    "gameFoodSize":[{"w":270, "h":144}, {"w":120, "h":197}, {"w":185, "h":166}],
                     "rightIndexs": [0],
                     "boySoundPath": "ui://733aoo45gzaz7e",
                     "girlSoundPath": "ui://733aoo45gzaz7f",
@@ -196,8 +196,8 @@
                 "prefabName": "choose-model03-v2",
                 "config": {
 
-                    "gameFood": ["ui://733aoo45r3753e", "ui://733aoo45r3753f", "ui://733aoo45r3753g"],
-                    "gameFoodSize":[{"w":166, "h":103}, {"w":182, "h":130}, {"w":94, "h":205}],
+                    "gameFood": ["ui://733aoo45rqan8f", "ui://733aoo45rqan8g", "ui://733aoo45rqan8h"],
+                    "gameFoodSize":[{"w":219, "h":132}, {"w":239, "h":168}, {"w":118, "h":270}],
                     "rightIndexs": [1],
                     "boySoundPath": "ui://733aoo45gzaz7g",
                     "girlSoundPath": "ui://733aoo45gzaz7h",

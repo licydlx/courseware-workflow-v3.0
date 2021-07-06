@@ -63,6 +63,18 @@
     <image id="c0cx2j" name="006.png" path="/images/example3/"/>
     <image id="c0cx2k" name="007.png" path="/images/example3/"/>
     <component id="c0cx2m" name="t4-05-model-p11.xml" path="/" exported="true"/>
+    <image id="k2wv2n" name="练习3-2 答案.png" path="/images/"/>
+    <image id="k2wv2o" name="008.png" path="/images/example3/"/>
+    <image id="k2wv2p" name="009.png" path="/images/example3/"/>
+    <component id="k2wv2q" name="t4-05-model-p12.xml" path="/" exported="true"/>
+    <image id="k2wv2r" name="练习3-3.png" path="/images/"/>
+    <image id="k2wv2s" name="0010.png" path="/images/example3/"/>
+    <image id="k2wv2t" name="0011.png" path="/images/example3/"/>
+    <image id="k2wv2u" name="0012.png" path="/images/example3/"/>
+    <component id="k2wv2v" name="t4-05-model-p13.xml" path="/" exported="true"/>
+    <component id="k2wv2w" name="t4-05-model-p14.xml" path="/" exported="true"/>
+    <image id="k2wv2x" name="拓展提升.png" path="/images/"/>
+    <image id="k2wv2y" name="0013.png" path="/images/example3/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

@@ -1,0 +1,344 @@
+{
+    "name": "数理思维",
+    "courseName": "t3-class-01-review",
+    "env": "test",
+    "totalPages": 10,
+    "pathConfig": {
+      "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
+      "controllerBundlePath": "T-series/prefabLibrary/controllers/",
+      "controllerName": "controller-model01",
+      "resourceBundlePath": "T-series/fairyUis/t3/",
+      "panelBundlePath": "T-series/prefabLibrary/components/",
+      "panelName": "pageController-model01-v1",
+      "modelBundlePath": "T-series/prefabLibrary/models/",
+      "componentBundlePath": "T-series/prefabLibrary/components/",
+      "resourceName": "t3-class-01",
+      "packageName": "t3-class-01"
+    },
+    "chapters": [
+      
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v1-p2",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v1",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": 0,
+                  "y": 56
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+  
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v1-p3",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v1",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": 13,
+                  "y": 62
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+  
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v1-p4",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v1",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": 55,
+                  "y": 97
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+  
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v2-p5",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v2",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": 299,
+                  "y": 15
+                }
+              },
+  
+              "handleGuide2": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -122,
+                  "y": 85
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+  
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v2-p6",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v2",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": 287,
+                  "y": -12
+                }
+              },
+  
+              "handleGuide2": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -122,
+                  "y": 85
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+  
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v2-p7",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v2",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": 290,
+                  "y": -44
+                }
+              },
+  
+              "handleGuide2": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -122,
+                  "y": 85
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+  
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v3-p8",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v3",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": 31,
+                  "y": -28
+                }
+              },
+              "handleGuide2": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -55,
+                  "y": 66
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+  
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v3-p9",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v3",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": 64,
+                  "y": 28
+                }
+              },
+              "handleGuide2": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -55,
+                  "y": 66
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+  
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v3-p10",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v3",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": 17,
+                  "y": 12
+                }
+              },
+              "handleGuide2": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -55,
+                  "y": 66
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      },
+  
+      {
+        "model": {
+          "uiPath": "dragAnswer-model04-v4-p11",
+          "bundleName": "dragAnswer",
+          "prefabName": "dragAnswer-model04-v4",
+          "config": {
+            "answer": [],
+            "ae": {
+              "handleGuide": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -14,
+                  "y": 97
+                }
+              },
+  
+              "handleGuide2": {
+                "component": "handleGuide02",
+                "pos": {
+                  "x": -155,
+                  "y": 15
+                }
+              }
+            }
+          }
+        },
+  
+        "components": {
+          "feedback": {
+            "bundleName": "feedback",
+            "prefabName": "feedback-model01-v1"
+          }
+        }
+      }
+    ]
+  }
+  

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 350,
+            "activePatchIndex": 351,
             "patches": [
                 {
                     "date": 1623989407691,
@@ -1408,6 +1408,10 @@
                 {
                     "date": 1625198636312,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -626,12 +626,12 @@\n         }, 2000);\r\n     }\r\n \r\n     /**\r\n-         * 拖动指引\r\n-         * @param fromObj start\r\n-         * @param toObj end\r\n-         */\r\n+    * 拖动指引\r\n+    * @param fromObj start\r\n+    * @param toObj end\r\n+    */\r\n     handTips1(fromObj: fgui.GObject, toObj: fgui.GObject) {\r\n         let hand = fgui.UIPackage.createObject(this._package, 'hand');\r\n         this._view.addChild(hand);\r\n         hand.x = fromObj.x;\r\n"
+                },
+                {
+                    "date": 1625540727705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -327,8 +327,9 @@\n             let submitNamesTemp = submitNames.sort();\r\n             let right = this._rigthName.sort();\r\n             if (JSON.stringify(submitNamesTemp) === JSON.stringify(right)) {\r\n                 state.submit = this.submitType.RightFeed;\r\n+                state.maskOver = true;\r\n \r\n             } else {\r\n                 state.submit = this.submitType.WrongFeed;\r\n             }\r\n@@ -421,17 +422,21 @@\n             // 控制反馈动画和指引动画\r\n             if (state.submit === this.submitType.GuideShow) {\r\n \r\n                 this.handTips1(this._magicPen, this._options[this._guideName]);\r\n-\r\n             } else if (state.submit === this.submitType.WrongFeed) {\r\n                 this.answerFeedback(false);\r\n             } else if (state.submit === this.submitType.RightFeed) {\r\n \r\n                 this.playOverShowAnimate();\r\n             }\r\n         }\r\n \r\n+        if (!globalThis._.isEqual(oldState.maskOver, state.maskOver)) {\r\n+\r\n+            this._maskOver.visible = state.maskOver;\r\n+        }\r\n+\r\n         if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {\r\n \r\n             if (state.clickPlayName != '') {\r\n \r\n"
                 }
             ],
             "date": 1623989407691,

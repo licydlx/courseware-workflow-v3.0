@@ -8,6 +8,8 @@ import t3_courseware from '../../../entrances/javascripts/courseware';
  * @LastEditors: ruzhuan
  * @LastEditTime: 2021-06-08 18:00:00
  */
+
+
 const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
 
@@ -466,33 +468,44 @@ export default class choose_model03_v2 extends cc.Component {
                 break;
             }
         }
+        cc.tween(this)
+            .delay(0.01)
+            .call(() => {
 
-        if (!isHave) {
+                let state1: any = globalThis._.cloneDeep(this._state);
+                if (isUpdate) {
+                    state1.rigthTotal = state.rigthTotal;
+                }
+                console.log('=== 更新添加后的 ====');
+                state1.isAddFood = false;
+                this.updateState(state1);
 
-            food = new MyDropFood(this._gameFood[foodData.index], foodData);
-            food.on(fgui.Event.CLICK, this._clickDropFood, this);
-            this._view.addChild(food);
-            this.myFoodPools.push(food);
-        }
-        this._foodTag++;
-        if (this._foodTag >= Object.keys(this._gameAllFoodData).length) {
+                if (!isHave) {
 
-            this._foodTag = 0;
-        }
-    }
+                    food = new MyDropFood(this._gameFood[foodData.index], foodData);
+                    food.on(fgui.Event.CLICK, this._clickDropFood, this);
+                    this._view.addChild(food);
+                    this.myFoodPools.push(food);
+                }
+                this._foodTag++;
+                if (this._foodTag >= Object.keys(this._gameAllFoodData).length) {
+
+                    this._foodTag = 0;
+                }
+            }
 
     private _clickDropFood(evt: any) {
 
-        let state: any = globalThis._.cloneDeep(this._state);
+                let state: any = globalThis._.cloneDeep(this._state);
 
-        let obj: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
-        let btn = obj.asButton;
-        btn.touchable = false;
-        state.clickFoodTag = btn.data.tag;
+                let obj: fgui.GObject = fgui.GObject.cast(evt.currentTarget);
+                let btn = obj.asButton;
+                btn.touchable = false;
+                state.clickFoodTag = btn.data.tag;
 
-        // 是正确的
-        let isRight = false;
-        for (let i = 0; i < this._rightIndexs.length; i++) {
+                // 是正确的
+                let isRight = false;
+                for(let i = 0; i< this._rightIndexs.length; i++) {
             if (btn.data.index === this._rightIndexs[i]) {
                 isRight = true;
                 break;
@@ -517,6 +530,7 @@ export default class choose_model03_v2 extends cc.Component {
             state.rightSoundFile = [{ sex: 2, file: this._girlSound, time: this._girlSoundTime }, { sex: 1, file: this._boySound, time: this._boySoundTime }];
         }
         state.elvesPlay = true;
+        console.log('===== _clickElves BBB =====');
         this.updateState(state);
     }
 
@@ -530,6 +544,7 @@ export default class choose_model03_v2 extends cc.Component {
     private _clickTitle(evt: any) {
         let state: any = globalThis._.cloneDeep(this._state);
         state.title = true;
+        console.log('===== _clickTitle BBB =====');
         this.updateState(state);
     }
 
@@ -597,6 +612,7 @@ export default class choose_model03_v2 extends cc.Component {
             this._over.visible = false;
             this._go.visible = false;
         }
+
 
         if (!globalThis._.isEqual(oldState.gameStart, state.gameStart)) {
 
@@ -727,303 +743,305 @@ export default class choose_model03_v2 extends cc.Component {
                     cc.audioEngine.playEffect(this._wrongSound, false);
 
                 }
-
-                setTimeout(() => {
-
-                    btn.touchable = true;
-                    let state2: any = globalThis._.cloneDeep(this._state);
-                    state2.clickFoodTag = '';
-                    this.updateState(state2);
-
-                }, 100);
             }
-        }
 
-        if (!globalThis._.isEqual(oldState.submitFeedback, state.submitFeedback)) {
+            setTimeout(() => {
 
-            if (state.submitFeedback === this.feedbackType.RightFeed) {
+                btn.touchable = true;
+                let state2: any = globalThis._.cloneDeep(this._state);
+                state2.clickFoodTag = '';
+                this.updateState(state2);
 
-                this.answerFeedback(true);
-
-            } else if (state.submitFeedback === this.feedbackType.WrongFeed) {
-
-                this.answerFeedback(false);
-            }
-        }
-
-        if (!globalThis._.isEqual(oldState.gameTime, state.gameTime)) {
-
-            this._gameTime = state.gameTime;
-        }
-
-        if (!globalThis._.isEqual(oldState.interTime, state.interTime)) {
-
-            this._interTime = state.interTime;
-        }
-
-
-        if (!globalThis._.isEqual(oldState.foodTag, state.foodTag)) {
-
-            let cha = Math.abs(state.foodTag - this._foodTag);
-            if (cha > 2) {
-                this._foodTag = state.foodTag;
-            }
-        }
-
-        if (!globalThis._.isEqual(oldState.curScore, state.curScore)) {
-
-            this._curScoreText.text = state.curScore + '';
-        }
-
-        if (!globalThis._.isEqual(oldState.topScore, state.topScore)) {
-
-            this._topText.text = state.topScore + '';
-        }
-
-        if (!globalThis._.isEqual(oldState.gameAllFoodData, state.gameAllFoodData)) {
-
-            // 获取正确字母数组中的2个字母 可均衡获取0到length的随机整数。
-            // 1058 ----1693 Math.floor(Math.random()*(max-min+1)+min)
-            this._gameAllFoodData = state.gameAllFoodData;
-        }
-
-        if (!globalThis._.isEqual(oldState.title, state.title)) {
-            this.playTitle(state.title);
+            }, 100);
         }
     }
 
+    if(!globalThis._.isEqual(oldState.submitFeedback, state.submitFeedback)) {
 
-    async playTitle(bool: boolean) {
-        this._c1.selectedIndex = bool ? 1 : 0;
-        if (bool) {
-            cc.audioEngine.stopAll();
-            this.forbidHandle();
-            let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
-            let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
-            let audioId = cc.audioEngine.play(audio, false, 1);
-            cc.audioEngine.setFinishCallback(audioId, () => {
-                let state: any = globalThis._.cloneDeep(this._state);
-                state.title = false;
-                this.updateState(state);
-            });
-        } else {
-            this.disableForbidHandle();
-        }
+    if (state.submitFeedback === this.feedbackType.RightFeed) {
+
+        this.answerFeedback(true);
+
+    } else if (state.submitFeedback === this.feedbackType.WrongFeed) {
+
+        this.answerFeedback(false);
     }
+}
 
-    playElvesSpeak(bool: boolean, rightSoundFile: any) {
-        if (bool) {
-            cc.audioEngine.stopAll();
-            this.forbidHandle();
-            this.playRightSound(0, rightSoundFile);
+if (!globalThis._.isEqual(oldState.gameTime, state.gameTime)) {
 
-        } else {
-            this._c2.selectedIndex = 0;
-            this.disableForbidHandle();
-        }
+    this._gameTime = state.gameTime;
+}
+
+if (!globalThis._.isEqual(oldState.interTime, state.interTime)) {
+
+    this._interTime = state.interTime;
+}
+
+
+if (!globalThis._.isEqual(oldState.foodTag, state.foodTag)) {
+
+    let cha = Math.abs(state.foodTag - this._foodTag);
+    if (cha > 2) {
+        this._foodTag = state.foodTag;
     }
+}
 
-    async playRightSound(curIndex: number, rightSoundFile: any) {
+if (!globalThis._.isEqual(oldState.curScore, state.curScore)) {
 
-        let foodArr = [];
-        if (rightSoundFile[curIndex].sex === 1) {
+    this._curScoreText.text = state.curScore + '';
+}
 
-            foodArr = this._boyFood;
-            this._boy3D.animationName = 'b_speak';
+if (!globalThis._.isEqual(oldState.topScore, state.topScore)) {
 
-        } else {
-            foodArr = this._girlFood;
-            this._girl3D.animationName = 'g_speak';
-        }
+    this._topText.text = state.topScore + '';
+}
 
-        for (let i = 0; i < foodArr.length; i++) {
-            foodArr[i].alpha = 0;
-        }
+if (!globalThis._.isEqual(oldState.gameAllFoodData, state.gameAllFoodData)) {
 
-        cc.tween(this)
-            .delay(0.5)
-            .call(() => {
+    // 获取正确字母数组中的2个字母 可均衡获取0到length的随机整数。
+    // 1058 ----1693 Math.floor(Math.random()*(max-min+1)+min)
+    this._gameAllFoodData = state.gameAllFoodData;
+}
 
-                this._c2.selectedIndex = rightSoundFile[curIndex].sex;
-                this.playFoodShowAnimate(0, foodArr);
-            })
-            .start();
-
-        let audio: cc.AudioClip = await loadResource(rightSoundFile[curIndex].file, cc.AudioClip);
-        cc.audioEngine.play(audio, false, 1);
-
-        cc.tween(this)
-            .delay(rightSoundFile[curIndex].time)
-            .call(() => {
-
-                if (rightSoundFile[curIndex].sex === 1) {
-
-                    this._boy3D.animationName = 'b_idle';
-
-                } else {
-                    this._girl3D.animationName = 'g_idle';
-                }
-
-                if (curIndex >= rightSoundFile.length - 1) {
-                    this.disableForbidHandle();
-                    for (let i = 0; i < this._boyFood.length; i++) {
-                        this._boyFood[i].alpha = 0;
-                    }
-                    for (let i = 0; i < this._girlFood.length; i++) {
-                        this._girlFood[i].alpha = 0;
-                    }
-
-                    this._c2.selectedIndex = 0;
-
-                    let state: any = globalThis._.cloneDeep(this._state);
-                    state.elvesPlay = false;
-                    state.gameCanPlay = this.canPlayType.Show;
-                    this.updateState(state);
-
-                } else {
-
-                    cc.tween(this)
-                        .delay(1.0)
-                        .call(() => {
-                            curIndex++;
-                            this.playRightSound(curIndex, rightSoundFile);
-                        })
-                        .start();
-                }
-
-            })
-            .start();
-    }
-
-    playFoodShowAnimate(index: number, foodArr: any) {
-
-        if (!foodArr[index]) {
-            return;
-        }
-        cc.tween(foodArr[index])
-            .to(1.0, { alpha: 1 })
-            .call(() => {
-                index++;
-                if (index < foodArr.length) {
-                    this.playFoodShowAnimate(index, foodArr);
-                }
-            })
-            .start()
-
-    }
-
-    answerFeedback(bool: boolean) {
-        if (!this.feedback) return;
-        let feedback: any = cc.instantiate(this.feedback);
-        feedback.x = 960;
-        feedback.y = 540;
-        let feedbackJs: any = feedback.getComponent(cc.Component);
-        feedbackJs.init(bool);
-        feedback.parent = cc.find("Canvas").parent;
-
-        setTimeout(() => {
-            feedback.destroy();
-            let state: any = globalThis._.cloneDeep(this._state);
-            state.submitFeedback = this.feedbackType.No;
-            //游戏重新能玩
-            state.isReplayShow = true;
-            state.gameOver = false;
-            this.updateState(state);
-        }, 2000);
+if (!globalThis._.isEqual(oldState.title, state.title)) {
+    this.playTitle(state.title);
+}
     }
 
 
-    /**
-     * 点击指引
-     * @param obj 点击对象
-     */
-    handTips2(obj: fgui.GObject) {
-        let hand = fgui.UIPackage.createObject(this._package, 'hand');
-        this._view.addChild(hand);
-        let tempX = obj.x + obj.width / 2;
-        let tempY = obj.y + obj.height / 2;
-
-        hand.x = tempX;
-        hand.y = tempY;
-
-        cc.tween(hand).to(0.3, {
-            x: tempX - 30,
-            y: tempY - 30
-        }).to(0.3, {
-            x: tempX,
-            y: tempY
-        }).to(0.3, {
-            x: tempX - 30,
-            y: tempY - 30
-        }).to(0.3, {
-            x: tempX,
-            y: tempY
-        }).call(() => {
-            this._view.removeChild(hand);
-            hand = null;
-            let state: any = globalThis._.cloneDeep(this._state);
-            state.submit = this.feedbackType.No;
-            this.updateState(state)
-        }).start();
-    }
-
-    // 运行时 禁止操作
-    forbidHandle() {
-        console.log('===  运行时 禁止操作 =====');
-        let handleMask = this._worldRoot.getChildByName('handleMask');
-        if (!handleMask) {
-            let handleMask = new cc.Node('handleMask');
-            handleMask.addComponent(cc.BlockInputEvents);
-            handleMask.parent = this._worldRoot;
-            handleMask.width = 1920;
-            handleMask.height = 1080;
-            handleMask.x = 960;
-            handleMask.y = 540;
-        }
-    }
-
-    // 消除禁止
-    disableForbidHandle() {
-        let handleMask = this._worldRoot.getChildByName('handleMask');
-        if (handleMask) handleMask.destroy();
-    }
-
-    // 注册状态，及获取状态的方法
-    registerState() {
-        if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);
-    }
-
-    // 解除状态，及获取状态的方法
-    relieveState() {
-        if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);
-    }
-
-    // 本组件状态合并到全局
-    mergeState() {
-        if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);
-    }
-
-    onEnable() {
-        this.registerState();
-    }
-
-    onDisable() {
-        console.log('===== 游戏 onDisable =====');
-        let state: any = globalThis._.cloneDeep(this._state);
-        state.gameOver = false;
-        state.gameStart = false;
-        this.updateState(state);
-        cc.Tween.stopAll();
-        this.unschedule(this.updateAdd);
+async playTitle(bool: boolean) {
+    this._c1.selectedIndex = bool ? 1 : 0;
+    if (bool) {
         cc.audioEngine.stopAll();
-        this.relieveState();
+        this.forbidHandle();
+        let item = fgui.UIPackage.getItemByURL(this._title["_sound"]);
+        let audio: cc.AudioClip = await loadResource(item.file, cc.AudioClip);
+        let audioId = cc.audioEngine.play(audio, false, 1);
+        cc.audioEngine.setFinishCallback(audioId, () => {
+            let state: any = globalThis._.cloneDeep(this._state);
+            state.title = false;
+            console.log('===== playTitle BBB =====');
+            this.updateState(state);
+        });
+    } else {
+        this.disableForbidHandle();
     }
+}
+
+playElvesSpeak(bool: boolean, rightSoundFile: any) {
+    if (bool) {
+        cc.audioEngine.stopAll();
+        this.forbidHandle();
+        this.playRightSound(0, rightSoundFile);
+
+    } else {
+        this._c2.selectedIndex = 0;
+        this.disableForbidHandle();
+    }
+}
+
+async playRightSound(curIndex: number, rightSoundFile: any) {
+
+    let foodArr = [];
+    if (rightSoundFile[curIndex].sex === 1) {
+
+        foodArr = this._boyFood;
+        this._boy3D.animationName = 'b_speak';
+
+    } else {
+        foodArr = this._girlFood;
+        this._girl3D.animationName = 'g_speak';
+    }
+
+    for (let i = 0; i < foodArr.length; i++) {
+        foodArr[i].alpha = 0;
+    }
+
+    cc.tween(this)
+        .delay(0.5)
+        .call(() => {
+
+            this._c2.selectedIndex = rightSoundFile[curIndex].sex;
+            this.playFoodShowAnimate(0, foodArr);
+        })
+        .start();
+
+    let audio: cc.AudioClip = await loadResource(rightSoundFile[curIndex].file, cc.AudioClip);
+    cc.audioEngine.play(audio, false, 1);
+
+    cc.tween(this)
+        .delay(rightSoundFile[curIndex].time)
+        .call(() => {
+
+            if (rightSoundFile[curIndex].sex === 1) {
+
+                this._boy3D.animationName = 'b_idle';
+
+            } else {
+                this._girl3D.animationName = 'g_idle';
+            }
+
+            if (curIndex >= rightSoundFile.length - 1) {
+                this.disableForbidHandle();
+                for (let i = 0; i < this._boyFood.length; i++) {
+                    this._boyFood[i].alpha = 0;
+                }
+                for (let i = 0; i < this._girlFood.length; i++) {
+                    this._girlFood[i].alpha = 0;
+                }
+
+                this._c2.selectedIndex = 0;
+
+                let state: any = globalThis._.cloneDeep(this._state);
+                state.elvesPlay = false;
+                state.gameCanPlay = this.canPlayType.Show;
+                this.updateState(state);
+
+            } else {
+
+                cc.tween(this)
+                    .delay(1.0)
+                    .call(() => {
+                        curIndex++;
+                        this.playRightSound(curIndex, rightSoundFile);
+                    })
+                    .start();
+            }
+
+        })
+        .start();
+}
+
+playFoodShowAnimate(index: number, foodArr: any) {
+
+    if (!foodArr[index]) {
+        return;
+    }
+    cc.tween(foodArr[index])
+        .to(1.0, { alpha: 1 })
+        .call(() => {
+            index++;
+            if (index < foodArr.length) {
+                this.playFoodShowAnimate(index, foodArr);
+            }
+        })
+        .start()
+
+}
+
+answerFeedback(bool: boolean) {
+    if (!this.feedback) return;
+    let feedback: any = cc.instantiate(this.feedback);
+    feedback.x = 960;
+    feedback.y = 540;
+    let feedbackJs: any = feedback.getComponent(cc.Component);
+    feedbackJs.init(bool);
+    feedback.parent = cc.find("Canvas").parent;
+
+    setTimeout(() => {
+        feedback.destroy();
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.submitFeedback = this.feedbackType.No;
+        //游戏重新能玩
+        state.isReplayShow = true;
+        state.gameOver = false;
+        this.updateState(state);
+    }, 2000);
+}
+
+
+/**
+ * 点击指引
+ * @param obj 点击对象
+ */
+handTips2(obj: fgui.GObject) {
+    let hand = fgui.UIPackage.createObject(this._package, 'hand');
+    this._view.addChild(hand);
+    let tempX = obj.x + obj.width / 2;
+    let tempY = obj.y + obj.height / 2;
+
+    hand.x = tempX;
+    hand.y = tempY;
+
+    cc.tween(hand).to(0.3, {
+        x: tempX - 30,
+        y: tempY - 30
+    }).to(0.3, {
+        x: tempX,
+        y: tempY
+    }).to(0.3, {
+        x: tempX - 30,
+        y: tempY - 30
+    }).to(0.3, {
+        x: tempX,
+        y: tempY
+    }).call(() => {
+        this._view.removeChild(hand);
+        hand = null;
+        let state: any = globalThis._.cloneDeep(this._state);
+        state.submit = this.feedbackType.No;
+        this.updateState(state)
+    }).start();
+}
+
+// 运行时 禁止操作
+forbidHandle() {
+    console.log('===  运行时 禁止操作 =====');
+    let handleMask = this._worldRoot.getChildByName('handleMask');
+    if (!handleMask) {
+        let handleMask = new cc.Node('handleMask');
+        handleMask.addComponent(cc.BlockInputEvents);
+        handleMask.parent = this._worldRoot;
+        handleMask.width = 1920;
+        handleMask.height = 1080;
+        handleMask.x = 960;
+        handleMask.y = 540;
+    }
+}
+
+// 消除禁止
+disableForbidHandle() {
+    let handleMask = this._worldRoot.getChildByName('handleMask');
+    if (handleMask) handleMask.destroy();
+}
+
+// 注册状态，及获取状态的方法
+registerState() {
+    if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);
+}
+
+// 解除状态，及获取状态的方法
+relieveState() {
+    if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);
+}
+
+// 本组件状态合并到全局
+mergeState() {
+    if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);
+}
+
+onEnable() {
+    this.registerState();
+}
+
+onDisable() {
+    console.log('===== 游戏 onDisable =====');
+    let state: any = globalThis._.cloneDeep(this._state);
+    state.gameOver = false;
+    state.gameStart = false;
+    this.updateState(state);
+    cc.Tween.stopAll();
+    this.unschedule(this.updateAdd);
+    cc.audioEngine.stopAll();
+    this.relieveState();
+}
 
     protected onDestroy(): void {
 
-        console.log('===== 游戏 onDestroy =====');
+    console.log('===== 游戏 onDestroy =====');
 
-    }
+}
 }
 
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n94_k2wv" name="n94" src="k2wv2r" fileName="images/练习3-3.png" xy="0,0"/>
+    <image id="n95_k2wv" name="n95" src="k2wv2s" fileName="images/example3/0010.png" xy="0,0"/>
+    <component id="n78_l0an" name="restart" src="j79e17" fileName="buttons/button1.xml" xy="1686,638" size="194,187">
+      <Button icon="ui://mgpb39d5l0an2f" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n29_j79e" name="submit" src="j79e17" fileName="buttons/button1.xml" xy="1689,860" size="194,187">
+      <Button icon="ui://mgpb39d5j79e10" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n2_j79e" name="title" src="j79e13" fileName="buttons/title.xml" xy="893,93" alpha="0" touchable="false">
+      <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
+      <Button icon="ui://mgpb39d5k2wv2p" sound="ui://mgpb39d5j79e15" volume="0"/>
+    </component>
+    <loader id="n3_j79e" name="titleTrigger" xy="51,40" size="228,171" scale="0.8,0.8" url="ui://mgpb39d5j79e16" autoSize="true" playing="false">
+      <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
+    </loader>
+    <image id="n99_k2wv" name="n99" src="l0an2d" fileName="images/example3/002.png" xy="968,647" pivot="0.5,0.5" anchor="true" group="n101_k2wv"/>
+    <image id="n100_k2wv" name="n100" src="k2wv2t" fileName="images/example3/0011.png" xy="542,647" pivot="0.5,0.5" anchor="true" group="n101_k2wv"/>
+    <image id="n96_k2wv" name="n96" src="l0an2c" fileName="images/example3/001.png" xy="715,337" group="n101_k2wv"/>
+    <image id="n97_k2wv" name="n97" src="l0an2c" fileName="images/example3/001.png" xy="1143,337" group="n101_k2wv"/>
+    <image id="n98_k2wv" name="n98" src="l0an2c" fileName="images/example3/001.png" xy="1355,607" group="n101_k2wv"/>
+    <group id="n101_k2wv" name="n101" xy="501,337" size="935,352" advanced="true"/>
+  </displayList>
+</component>

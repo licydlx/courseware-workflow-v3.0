@@ -328,6 +328,7 @@ export default class choose_model03_v1 extends cc.Component {
             let right = this._rigthName.sort();
             if (JSON.stringify(submitNamesTemp) === JSON.stringify(right)) {
                 state.submit = this.submitType.RightFeed;
+                state.maskOver = true;
 
             } else {
                 state.submit = this.submitType.WrongFeed;
@@ -422,13 +423,17 @@ export default class choose_model03_v1 extends cc.Component {
             if (state.submit === this.submitType.GuideShow) {
 
                 this.handTips1(this._magicPen, this._options[this._guideName]);
-
             } else if (state.submit === this.submitType.WrongFeed) {
                 this.answerFeedback(false);
             } else if (state.submit === this.submitType.RightFeed) {
 
                 this.playOverShowAnimate();
             }
+        }
+
+        if (!globalThis._.isEqual(oldState.maskOver, state.maskOver)) {
+
+            this._maskOver.visible = state.maskOver;
         }
 
         if (!globalThis._.isEqual(oldState.clickPlayName, state.clickPlayName)) {
