@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n2_m3sh" name="n2" src="m3sh86" fileName="images/first/001.png" xy="0,0"/>
+    <image id="n3_m3sh" name="n3" src="m3sh8a" fileName="images/first/003.png" xy="408,332"/>
+    <image id="n20_m3sh" name="n20" src="m3sh8e" fileName="images/first/008.png" xy="496,686" size="89,88"/>
+    <loader3D id="n18_m3sh" name="n18" xy="105,256" size="253,289" animation="" skin="" loop="true"/>
+    <image id="n4_m3sh" name="n4" src="m3sh8c" fileName="images/first/006.png" xy="339,409"/>
+    <image id="n5_m3sh" name="n5" src="m3sh8b" fileName="images/first/004.png" xy="1675,439"/>
+    <image id="n12_m3sh" name="n12" src="m3sh8e" fileName="images/first/008.png" xy="1566,444" group="n17_m3sh" scale="0.35,0.35"/>
+    <image id="n13_m3sh" name="n13" src="m3sh8e" fileName="images/first/008.png" xy="1641,572" size="106,102" group="n17_m3sh"/>
+    <image id="n14_m3sh" name="n14" src="m3sh8e" fileName="images/first/008.png" xy="1526,617" group="n17_m3sh"/>
+    <image id="n15_m3sh" name="n15" src="m3sh8e" fileName="images/first/008.png" xy="574,682" size="139,137" group="n17_m3sh"/>
+    <image id="n19_m3sh" name="n19" src="m3sh8e" fileName="images/first/008.png" xy="327,706" size="88,84" group="n17_m3sh"/>
+    <image id="n21_m3sh" name="n21" src="m3sh8e" fileName="images/first/008.png" xy="1132,672" size="87,80" group="n17_m3sh"/>
+    <image id="n16_m3sh" name="n16" src="m3sh8e" fileName="images/first/008.png" xy="833,367" size="111,105" group="n17_m3sh"/>
+    <group id="n17_m3sh" name="pao" xy="327,367" size="1428,452" advanced="true"/>
+  </displayList>
+</component>

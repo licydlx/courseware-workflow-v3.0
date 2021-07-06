@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n103_k2wv" name="n103" src="c0cx2j" fileName="images/example3/006.png" xy="0,0"/>
+    <component id="n78_l0an" name="restart" src="j79e17" fileName="buttons/button1.xml" xy="1686,638" size="194,187">
+      <Button icon="ui://mgpb39d5l0an2f" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n29_j79e" name="submit" src="j79e17" fileName="buttons/button1.xml" xy="1689,860" size="194,187">
+      <Button icon="ui://mgpb39d5j79e10" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n2_j79e" name="title" src="j79e13" fileName="buttons/title.xml" xy="893,93" alpha="0" touchable="false">
+      <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
+      <Button icon="ui://mgpb39d5k2wv2y" sound="ui://mgpb39d5j79e15" volume="0"/>
+    </component>
+    <loader id="n3_j79e" name="titleTrigger" xy="51,40" size="228,171" scale="0.8,0.8" url="ui://mgpb39d5j79e16" autoSize="true" playing="false">
+      <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
+    </loader>
+    <image id="n105_k2wv" name="n105" src="c0cx2i" fileName="images/example3/005.png" xy="787,498" pivot="0.5,0.5" anchor="true" group="n108_k2wv"/>
+    <image id="n106_k2wv" name="n106" src="c0cx2i" fileName="images/example3/005.png" xy="942,654" pivot="0.5,0.5" anchor="true" group="n108_k2wv"/>
+    <image id="n107_k2wv" name="n107" src="c0cx2i" fileName="images/example3/005.png" xy="1093,498" pivot="0.5,0.5" anchor="true" group="n108_k2wv"/>
+    <image id="n104_k2wv" name="n104" src="c0cx2i" fileName="images/example3/005.png" xy="907,319" group="n108_k2wv"/>
+    <group id="n108_k2wv" name="point" xy="751,319" size="377,370" advanced="true"/>
+  </displayList>
+</component>

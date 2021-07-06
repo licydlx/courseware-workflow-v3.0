@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n1_j79e" name="n1" src="j79eb" fileName="images/example1/bg.png" xy="0,0"/>
+    <component id="n2_j79e" name="title" src="j79e13" fileName="buttons/title.xml" xy="853,97" alpha="0" touchable="false">
+      <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
+      <Button icon="ui://mgpb39d5j79er" sound="ui://mgpb39d5j79e15" volume="0"/>
+    </component>
+    <loader id="n3_j79e" name="titleTrigger" xy="50,41" size="228,171" scale="0.8,0.8" url="ui://mgpb39d5j79e16" autoSize="true" playing="false">
+      <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
+    </loader>
+    <image id="n5_j79e" name="n5" src="j79et" fileName="images/example1/0013.png" xy="99,257"/>
+    <image id="n6_j79e" name="n6" src="j79es" fileName="images/example1/0012.png" xy="354,109"/>
+    <image id="n7_j79e" name="n7" src="j79eu" fileName="images/example1/0014.png" xy="563,306"/>
+    <image id="n8_j79e" name="n8" src="j79ey" fileName="images/example1/0018.png" xy="784,127"/>
+    <image id="n9_j79e" name="n9" src="j79ex" fileName="images/example1/0017.png" xy="1090,218"/>
+    <image id="n10_j79e" name="n10" src="j79ev" fileName="images/example1/0015.png" xy="1360,392"/>
+    <image id="n11_j79e" name="n11" src="j79ez" fileName="images/example1/0019.png" xy="1585,252"/>
+    <image id="n12_j79e" name="n12" src="j79ec" fileName="images/example1/dk.png" xy="291,616"/>
+    <image id="n13_j79e" name="n13" src="j79ed" fileName="images/example1/jpd.png" xy="114,938"/>
+    <component id="n14_j79e" name="input0" src="j79e17" fileName="buttons/button1.xml" xy="225,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79e1" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n15_j79e" name="input1" src="j79e17" fileName="buttons/button1.xml" xy="376,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79e2" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n16_j79e" name="input2" src="j79e17" fileName="buttons/button1.xml" xy="523,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79e3" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n17_j79e" name="input3" src="j79e17" fileName="buttons/button1.xml" xy="677,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79e4" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n18_j79e" name="input4" src="j79e17" fileName="buttons/button1.xml" xy="822,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79e5" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n19_j79e" name="input5" src="j79e17" fileName="buttons/button1.xml" xy="968,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79e6" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n20_j79e" name="input6" src="j79e17" fileName="buttons/button1.xml" xy="1107,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79e7" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n21_j79e" name="input7" src="j79e17" fileName="buttons/button1.xml" xy="1264,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79e8" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n22_j79e" name="input8" src="j79e17" fileName="buttons/button1.xml" xy="1410,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79e9" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n23_j79e" name="input9" src="j79e17" fileName="buttons/button1.xml" xy="1558,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79ea" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n24_j79e" name="inputx" src="j79e17" fileName="buttons/button1.xml" xy="1707,1000" pivot="0.5,0.5" anchor="true" size="124,120" group="n28_j79e">
+      <Button icon="ui://mgpb39d5j79eq" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <group id="n28_j79e" name="key" xy="163,940" size="1606,120" advanced="true"/>
+    <component id="n29_j79e" name="submit" src="j79e17" fileName="buttons/button1.xml" xy="1687,691" size="194,187">
+      <Button icon="ui://mgpb39d5j79e10" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <image id="n30_j46a" name="select_kunag_1" src="j46a1b" fileName="images/example1/0020.png" xy="525,845" pivot="0.5,0.5" anchor="true" group="n33_j46a"/>
+    <image id="n31_j46a" name="select_kunag_2" src="j46a1b" fileName="images/example1/0020.png" xy="986,845" pivot="0.5,0.5" anchor="true" group="n33_j46a"/>
+    <image id="n32_j46a" name="select_kunag_3" src="j46a1b" fileName="images/example1/0020.png" xy="1438,845" pivot="0.5,0.5" anchor="true" group="n33_j46a"/>
+    <group id="n33_j46a" name="selectGroup" xy="291,765" size="1381,160" advanced="true"/>
+    <component id="n34_j46a" name="kuang1" src="j79e17" fileName="buttons/button1.xml" xy="304,621" size="450,291" group="n37_j46a">
+      <Button sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n35_j46a" name="kuang2" src="j79e17" fileName="buttons/button1.xml" xy="755,624" size="450,291" group="n37_j46a">
+      <Button sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <component id="n36_j46a" name="kuang3" src="j79e17" fileName="buttons/button1.xml" xy="1217,632" size="450,291" group="n37_j46a">
+      <Button sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <group id="n37_j46a" name="kuangGroup" xy="304,621" size="1363,302" advanced="true"/>
+    <text id="n25_j79e" name="zhiText" xy="301,775" size="443,134" group="n38_j46a" font="ui://dj5ft8zhjwhvbl" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text=""/>
+    <text id="n26_j79e" name="sheText" xy="761,775" size="443,134" group="n38_j46a" font="ui://dj5ft8zhjwhvbl" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text=""/>
+    <text id="n27_j79e" name="duanText" xy="1215,775" size="443,134" group="n38_j46a" font="ui://dj5ft8zhjwhvbl" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text=""/>
+    <group id="n38_j46a" name="textGroup" xy="301,775" size="1357,134" advanced="true"/>
+  </displayList>
+</component>

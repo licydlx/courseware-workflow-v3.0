@@ -1,0 +1,154 @@
+{
+    "name": "数理思维",
+    "courseName": "t4-05",
+    "env": "test",
+    "totalPages": 7,
+    "pathConfig": {
+        "remoteUrl": "",
+        "controllerBundlePath": "",
+        "controllerName": "controller-model02",
+        "resourceBundlePath": "",
+        "panelBundlePath": "",
+        "panelName": "formal-panle-model02",
+        "modelBundlePath": "",
+        "componentBundlePath": "",
+        "resourceName": "t4-05",
+        "packageName": "t4-05"
+    },
+    "chapters": [ 
+        
+        {
+            "model": {
+                "uiPath": "t4-05-model-p6",
+                "bundleName": "t4-05-model",
+                "prefabName": "t4-05-model-v2",
+                "config": {
+                   
+
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+        
+        {
+            "model": {
+                "uiPath": "t4-05-model-p2",
+                "bundleName": "t4-05-model",
+                "prefabName": "t4-05-model-v1",
+                "config": {
+                   
+
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "t4-05-model-p10",
+                "bundleName": "t4-05-model",
+                "prefabName": "t4-05-model-v3",
+                "config": {
+                   
+
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "t4-05-model-p11",
+                "bundleName": "t4-05-model",
+                "prefabName": "t4-05-model-v4",
+                "config": {
+                   
+
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "t4-05-model-p12",
+                "bundleName": "t4-05-model",
+                "prefabName": "t4-05-model-v5",
+                "config": {
+                   
+
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "t4-05-model-p13",
+                "bundleName": "t4-05-model",
+                "prefabName": "t4-05-model-v6",
+                "config": {
+                   
+
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        },
+
+        {
+            "model": {
+                "uiPath": "t4-05-model-p14",
+                "bundleName": "t4-05-model",
+                "prefabName": "t4-05-model-v7",
+                "config": {
+                   
+
+                }
+            }, 
+            
+            "components": {
+                "feedback": {
+                    "bundleName": "feedback",
+                    "prefabName": "feedback-model01-v1"
+                }
+            }
+        }
+
+    ]
+}

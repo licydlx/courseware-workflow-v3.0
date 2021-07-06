@@ -2,14 +2,14 @@
 <component size="1920,1080" bgColorEnabled="true" bgColor="#000000">
   <controller name="c1" pages="0,,1," selected="0"/>
   <displayList>
-    <image id="n1_w2qd" name="n1" src="w2qdt" fileName="images/002.png" xy="5,-3" group="n26_w2qd"/>
+    <image id="n1_w2qd" name="n1" src="w2qdt" fileName="images/002.png" xy="0,0" group="n26_w2qd"/>
     <image id="n5_w2qd" name="n5" src="w2qdr" fileName="images/0011.png" xy="1596,206" group="n26_w2qd"/>
     <image id="n22_w2qd" name="n22" src="w2qdz" fileName="images/008.png" xy="397,93" group="n26_w2qd"/>
     <image id="n25_w2qd" name="n25" src="w2qdz" fileName="images/008.png" xy="1102,77" group="n26_w2qd"/>
     <image id="n24_w2qd" name="n24" src="w2qdz" fileName="images/008.png" xy="756,326" group="n26_w2qd"/>
     <image id="n23_w2qd" name="n23" src="w2qdz" fileName="images/008.png" xy="426,584" group="n26_w2qd"/>
     <image id="n21_w2qd" name="n21" src="w2qdz" fileName="images/008.png" xy="1130,538" group="n26_w2qd"/>
-    <group id="n26_w2qd" name="n26" xy="5,-3" size="1920,1080"/>
+    <group id="n26_w2qd" name="n26" xy="0,0" size="1920,1080"/>
     <component id="n4_w2qd" name="submit" src="w2qd25" fileName="buttons/submit.xml" xy="1635,746" size="204,204">
       <Button icon="ui://733aoo45w2qdp"/>
     </component>
@@ -32,23 +32,26 @@
     <component id="n6_w2qd" name="magicPen" src="w2qd26" fileName="buttons/magicPen.xml" xy="1745,466" pivot="0.5,0.5" anchor="true" size="218,394">
       <Button icon="ui://733aoo45w2qds" selectedIcon="ui://733aoo45w2qd28"/>
     </component>
-    <image id="n37_w2qd" name="piano_s" src="w2qd2b" fileName="images/008_2.png" xy="1100,76" group="n42_w2qd"/>
-    <image id="n38_w2qd" name="gu_s" src="w2qd2b" fileName="images/008_2.png" xy="757,324" group="n42_w2qd"/>
-    <image id="n39_w2qd" name="shachui_s" src="w2qd2b" fileName="images/008_2.png" xy="425,583" group="n42_w2qd"/>
-    <image id="n40_w2qd" name="dizi_s" src="w2qd2b" fileName="images/008_2.png" xy="1132,538" group="n42_w2qd"/>
-    <image id="n41_w2qd" name="sanjiaotie_s" src="w2qd2b" fileName="images/008_2.png" xy="395,92" group="n42_w2qd"/>
-    <group id="n42_w2qd" name="selectLight" xy="395,76" size="1182,937" advanced="true"/>
+    <image id="n37_w2qd" name="piano_s" src="w2qd2b" fileName="images/008_2.png" xy="1102,77" group="n42_w2qd"/>
+    <image id="n38_w2qd" name="gu_s" src="w2qd2b" fileName="images/008_2.png" xy="756,326" group="n42_w2qd"/>
+    <image id="n39_w2qd" name="shachui_s" src="w2qd2b" fileName="images/008_2.png" xy="426,584" group="n42_w2qd"/>
+    <image id="n40_w2qd" name="dizi_s" src="w2qd2b" fileName="images/008_2.png" xy="1130,538" group="n42_w2qd"/>
+    <image id="n41_w2qd" name="sanjiaotie_s" src="w2qd2b" fileName="images/008_2.png" xy="397,93" group="n42_w2qd"/>
+    <group id="n42_w2qd" name="selectLight" xy="397,77" size="1178,937" advanced="true"/>
     <component id="n33_w2qd" name="labaguai" src="w2qd26" fileName="buttons/magicPen.xml" xy="113,328" size="218,395">
       <Button icon="ui://733aoo45w2qdq"/>
     </component>
-    <loader3D id="n44_e0ty" name="laba2" xy="140,650" size="144,143" url="ui://733aoo45e0ty80" animation="" skin="" loop="true"/>
-    <graph id="n43_w2qd" name="maskOver" xy="0,0" size="1920,1080" type="rect" fillColor="#00000000"/>
+    <loader3D id="n44_bl37" name="laba2" xy="145,650" size="144,143" url="ui://733aoo45bl377l" animation="" skin="" loop="true"/>
     <component id="n2_w2qd" name="title" src="w2qd12" fileName="buttons/title.xml" xy="875,92" alpha="0" touchable="false">
       <gearLook controller="c1" pages="0" values="0,0,0,0" default="1,0,0,0"/>
-      <Button icon="ui://733aoo45e0ty7x" sound="ui://733aoo45e0ty7n" volume="0"/>
+      <Button icon="ui://733aoo45bl377z" sound="ui://733aoo45bl377q" volume="0"/>
     </component>
     <loader id="n3_w2qd" name="titleTrigger" xy="72,36" size="228,171" scale="0.8,0.8" url="ui://733aoo45w2qd15" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
+    <graph id="n45_m3sh" name="overBg" xy="0,0" size="1920,1080" group="n48_m3sh" type="rect" fillColor="#b2000000"/>
+    <loader3D id="n46_m3sh" name="over1" xy="678,385" size="268,235" group="n48_m3sh" url="ui://733aoo45gzaz72" animation="" skin="" loop="true"/>
+    <loader3D id="n47_m3sh" name="over2" xy="984,385" size="268,235" group="n48_m3sh" url="ui://733aoo45gzaz72" animation="" skin="" loop="true"/>
+    <group id="n48_m3sh" name="overAnimShow" xy="0,0" size="1920,1080" advanced="true"/>
   </displayList>
 </component>

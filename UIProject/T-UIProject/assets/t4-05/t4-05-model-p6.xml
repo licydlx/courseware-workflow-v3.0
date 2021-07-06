@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n39_jjln" name="n39" src="jjln1q" fileName="images/example2/001.png" xy="0,0"/>
+    <image id="n41_jjln" name="n41" src="jjln1v" fileName="images/example2/005.png" xy="0,199"/>
+    <component id="n29_j79e" name="submit" src="j79e17" fileName="buttons/button1.xml" xy="1689,774" size="194,187">
+      <Button icon="ui://mgpb39d5j79e10" sound="ui://mgpb39d5j79e18"/>
+    </component>
+    <text id="n47_jjln" name="jindu" xy="182,460" size="164,68" fontSize="50" color="#ffffff" align="center" vAlign="middle" autoSize="none" bold="true" text="0/3"/>
+    <image id="n48_jjln" name="player" src="jjln1x" fileName="images/example2/007.png" xy="1922,635" pivot="0,1" anchor="true"/>
+    <graph id="n76_h8m9" name="maskBg" xy="0,0" size="1920,1080" type="rect" fillColor="#cc000000"/>
+    <component id="n42_jjln" name="start" src="j79e17" fileName="buttons/button1.xml" xy="771,806" size="385,171">
+      <Button icon="ui://mgpb39d5jjln1s"/>
+    </component>
+    <component id="n2_j79e" name="title" src="j79e13" fileName="buttons/title.xml" xy="853,97" alpha="0" touchable="false">
+      <gearLook controller="c1" pages="1" values="1,0,0,0" default="0,0,0,0"/>
+      <Button icon="ui://mgpb39d5jjln1w" sound="ui://mgpb39d5j79e15" volume="0"/>
+    </component>
+    <loader id="n3_j79e" name="titleTrigger" xy="50,41" size="228,171" scale="0.8,0.8" url="ui://mgpb39d5j79e16" autoSize="true" playing="false">
+      <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
+    </loader>
+    <image id="n61_h8m9" name="lan" src="jjln1u" fileName="images/example2/004.png" xy="639,600" size="89,98" group="n77_k2wv"/>
+    <image id="n60_h8m9" name="red" src="jjln1t" fileName="images/example2/003.png" xy="1199,600" group="n77_k2wv"/>
+    <group id="n77_k2wv" name="point" xy="639,600" size="649,101" advanced="true"/>
+  </displayList>
+</component>

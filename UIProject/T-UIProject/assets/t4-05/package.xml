@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="mgpb39d5">
+  <resources>
+    <component id="j79e0" name="t4-05-model-p2.xml" path="/" exported="true"/>
+    <image id="j79e1" name="0.png" path="/images/example1/"/>
+    <image id="j79e2" name="1.png" path="/images/example1/"/>
+    <image id="j79e3" name="2.png" path="/images/example1/"/>
+    <image id="j79e4" name="3.png" path="/images/example1/"/>
+    <image id="j79e5" name="4.png" path="/images/example1/"/>
+    <image id="j79e6" name="5.png" path="/images/example1/"/>
+    <image id="j79e7" name="6.png" path="/images/example1/"/>
+    <image id="j79e8" name="7.png" path="/images/example1/"/>
+    <image id="j79e9" name="8.png" path="/images/example1/"/>
+    <image id="j79ea" name="9.png" path="/images/example1/"/>
+    <image id="j79eb" name="bg.png" path="/images/example1/"/>
+    <image id="j79ec" name="dk.png" path="/images/example1/"/>
+    <image id="j79ed" name="jpd.png" path="/images/example1/"/>
+    <image id="j79eq" name="0010.png" path="/images/example1/"/>
+    <image id="j79er" name="0011.png" path="/images/example1/"/>
+    <image id="j79es" name="0012.png" path="/images/example1/"/>
+    <image id="j79et" name="0013.png" path="/images/example1/"/>
+    <image id="j79eu" name="0014.png" path="/images/example1/"/>
+    <image id="j79ev" name="0015.png" path="/images/example1/"/>
+    <image id="j79ew" name="0016.png" path="/images/example1/"/>
+    <image id="j79ex" name="0017.png" path="/images/example1/"/>
+    <image id="j79ey" name="0018.png" path="/images/example1/"/>
+    <image id="j79ez" name="0019.png" path="/images/example1/"/>
+    <image id="j79e10" name="001.png" path="/images/"/>
+    <image id="j79e11" name="002.png" path="/images/"/>
+    <image id="j79e12" name="例题1.png" path="/images/"/>
+    <component id="j79e13" name="title.xml" path="/buttons/"/>
+    <sound id="j79e15" name="timu.mp3" path="/audios/example1/"/>
+    <movieclip id="j79e16" name="laba.jta" path="/animations/laba/"/>
+    <component id="j79e17" name="button1.xml" path="/buttons/"/>
+    <sound id="j79e18" name="click.mp3" path="/audios/"/>
+    <sound id="j79e19" name="drag.mp3" path="/audios/"/>
+    <image id="j46a1b" name="0020.png" path="/images/example1/"/>
+    <image id="spb01c" name="hand.png" path="/images/" exported="true"/>
+    <component id="jjln1d" name="t4-05-model-p6.xml" path="/" exported="true"/>
+    <image id="jjln1e" name="例题2-开始.png" path="/images/"/>
+    <image id="jjln1f" name="例题2.png" path="/images/"/>
+    <image id="jjln1q" name="001.png" path="/images/example2/"/>
+    <image id="jjln1r" name="0010.png" path="/images/example2/"/>
+    <image id="jjln1s" name="002.png" path="/images/example2/"/>
+    <image id="jjln1t" name="003.png" path="/images/example2/"/>
+    <image id="jjln1u" name="004.png" path="/images/example2/"/>
+    <image id="jjln1v" name="005.png" path="/images/example2/"/>
+    <image id="jjln1w" name="006.png" path="/images/example2/"/>
+    <image id="jjln1x" name="007.png" path="/images/example2/"/>
+    <component id="jjln22" name="button_mid_anchive.xml" path="/buttons/"/>
+    <component id="jjln23" name="t4-05-model-p3.xml" path="/" exported="true"/>
+    <component id="jjln25" name="t4-05-model-p4.xml" path="/" exported="true"/>
+    <image id="xdox26" name="003_2.png" path="/images/example2/" exported="true"/>
+    <image id="xdox27" name="004_2.png" path="/images/example2/" exported="true"/>
+    <image id="xdox2a" name="008.png" path="/images/example2/" exported="true"/>
+    <image id="l0an2c" name="001.png" path="/images/example3/"/>
+    <image id="l0an2d" name="002.png" path="/images/example3/"/>
+    <image id="l0an2e" name="003.png" path="/images/example3/"/>
+    <image id="l0an2f" name="004.png" path="/images/example3/"/>
+    <image id="l0an2g" name="bg.png" path="/images/example3/"/>
+    <component id="l0an2h" name="t4-05-model-p10.xml" path="/" exported="true"/>
+    <image id="c0cx2i" name="005.png" path="/images/example3/"/>
+    <image id="c0cx2j" name="006.png" path="/images/example3/"/>
+    <image id="c0cx2k" name="007.png" path="/images/example3/"/>
+    <component id="c0cx2m" name="t4-05-model-p11.xml" path="/" exported="true"/>
+    <image id="k2wv2n" name="练习3-2 答案.png" path="/images/"/>
+    <image id="k2wv2o" name="008.png" path="/images/example3/"/>
+    <image id="k2wv2p" name="009.png" path="/images/example3/"/>
+    <component id="k2wv2q" name="t4-05-model-p12.xml" path="/" exported="true"/>
+    <image id="k2wv2r" name="练习3-3.png" path="/images/"/>
+    <image id="k2wv2s" name="0010.png" path="/images/example3/"/>
+    <image id="k2wv2t" name="0011.png" path="/images/example3/"/>
+    <image id="k2wv2u" name="0012.png" path="/images/example3/"/>
+    <component id="k2wv2v" name="t4-05-model-p13.xml" path="/" exported="true"/>
+    <component id="k2wv2w" name="t4-05-model-p14.xml" path="/" exported="true"/>
+    <image id="k2wv2x" name="拓展提升.png" path="/images/"/>
+    <image id="k2wv2y" name="0013.png" path="/images/example3/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

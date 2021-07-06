@@ -1,0 +1,18 @@
+{
+    "sourceFile": "assets/prefabLibrary/models/static/static-model01-v1.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1625139813730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1625139813730,
+            "name": "Commit-0",
+            "content": "/*\r\n * @Descripttion: \r\n * @version: \r\n * @Author: ydlx\r\n * @Date: 2021-03-26 18:05:12\r\n * @LastEditors: Please set LastEditors\r\n * @LastEditTime: 2021-05-17 15:25:51\r\n */\r\n\r\nconst { ccclass, property } = cc._decorator;\r\n\r\n@ccclass\r\nexport default class static_model01_v1 extends cc.Component {\r\n    private _view: fgui.GComponent;\r\n    private _state = {}\r\n\r\n    get state(): any {\r\n        return this._state;\r\n    }\r\n\r\n    set state(v: any) {\r\n        this._state = v;\r\n        this.updateUi(this._state);\r\n        this.mergeState();\r\n    }\r\n\r\n    onLoad() {\r\n        this._view.y = (fgui.GRoot.inst.height - this._view.height) / 2;\r\n        this._view.x = (fgui.GRoot.inst.width - this._view.width) / 2;\r\n        fgui.GRoot.inst.addChild(this._view);\r\n    }\r\n\r\n    async init(data: any) {\r\n        // 临时 model component json 配置加载\r\n        let { pathConfig, model, components } = data;\r\n        let Package = pathConfig.packageName;\r\n        let GComponent = model.uiPath;\r\n        this._view = fgui.UIPackage.createObject(Package, GComponent).asCom;\r\n    }\r\n\r\n    // 获取状态\r\n    getState(data: any) {\r\n        this.updateState(data);\r\n    }\r\n\r\n    // 更新状态层\r\n    updateState(curState: any) {\r\n        if (globalThis._.isEqual(this._state, curState)) return;\r\n        this.state = curState;\r\n    }\r\n\r\n    // 更新ui层\r\n    updateUi(state: any) { }\r\n\r\n\r\n    // 注册状态，及获取状态的方法\r\n    registerState() {\r\n        if (window['GlobalData'].sample.registerState) window['GlobalData'].sample.registerState.call(this);\r\n    }\r\n\r\n    // 解除状态，及获取状态的方法\r\n    relieveState() {\r\n        if (window['GlobalData'].sample.relieveState) window['GlobalData'].sample.relieveState.call(this);\r\n    }\r\n\r\n    // 本组件状态合并到全局\r\n    mergeState() {\r\n        if (window['GlobalData'].sample.mergeState) window['GlobalData'].sample.mergeState.call(this);\r\n    }\r\n\r\n    onEnable() {\r\n        this.registerState();\r\n    }\r\n\r\n    onDisable() {\r\n        this.relieveState();\r\n    }\r\n}\r\n"
+        }
+    ]
+}

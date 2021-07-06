@@ -3,7 +3,7 @@
     "courseName": "t2-02",
     "env": "test",
     "totalPages": 12,
-    "pathConfig": {
+    "pathConfig": { 
         "remoteUrl": "https://6166-after-school-review-8cguaeaace9d-1304725138.tcb.qcloud.la/",
         "controllerBundlePath": "T-series/prefabLibrary/controllers/",
         "controllerName": "controller-model02",
@@ -19,9 +19,9 @@
         
         {
             "model": {
-              "uiPath": "static-model01-v1-p1",
+              "uiPath": "static-model01-v2-p1",
               "bundleName": "static",
-              "prefabName": "static-model01-v1"
+              "prefabName": "static-model01-v2"
             }
         },
 
@@ -32,9 +32,16 @@
                 "prefabName": "choose-model03-v1",
                 "config": {
                     "isAnimateShow": true,
-                    "soundFile": {"piano": "ui://733aoo45w2qd18", "gu": "ui://733aoo45w2qd16", "shachui": "ui://733aoo45w2qd1a", "dizi": "ui://733aoo45w2qd17", "sanjiaotie": "ui://733aoo45w2qd19" },
-                    "rightSoundFile": ["ui://733aoo45w2qd18", "ui://733aoo45w2qd16"],
-                    "animateName":{"piano": {"idle": "05gangqin_idle", "play": "05gangqin_play", "skin": "05gangqin"},"gu": {"idle": "01gu_idle", "play": "01gu_play", "skin": "01gu"},"shachui": {"idle": "02shacui_idle", "play": "02shacui_play", "skin": "02shacui"},
+                    "soundFile": {"piano":{"path":"ui://733aoo45w2qd18", "time": 3.0},
+                                  "gu": {"path": "ui://733aoo45w2qd16", "time": 1},
+                                  "shachui":{"path": "ui://733aoo45w2qd1a", "time": 5 },
+                                   "dizi":{"path": "ui://733aoo45w2qd17", "time": 3},
+                                   "sanjiaotie":{"path": "ui://733aoo45w2qd19", "time": 1}},
+
+                    "rightSoundFile": [{"path": "ui://733aoo45w2qd18", "time": 3.0} , {"path": "ui://733aoo45w2qd16", "time": 1}],
+                    "animateName":{"piano": {"idle": "05gangqin_idle", "play": "05gangqin_play", "skin": "05gangqin"},
+                    "gu": {"idle": "01gu_idle", "play": "01gu_play", "skin": "01gu"},
+                    "shachui": {"idle": "02shacui_idle", "play": "02shacui_play", "skin": "02shacui"},
                     "dizi": {"idle": "03dizi_idle", "play": "03dizi_play", "skin": "03dizi"},
                     "sanjiaotie": {"idle": "04qiaojibang_idle", "play": "04qiaojibang_play", "skin": "04qiaojibang"}},
                     "rightName": ["piano", "gu"],
@@ -46,7 +53,7 @@
                       "sanjiaotie": {"x": 520, "y": 695, "width":260, "height": 220}
                     },
 
-                    "guideName": "gu"
+                    "guideName": "shachui"
                 }
             }, 
             
@@ -65,17 +72,24 @@
                 "prefabName": "choose-model03-v1",
                 "config": {
 
-                    "soundFile": {"piano": "ui://733aoo45e0ty7p", "gu": "ui://733aoo45e0ty7m", "shachui": "ui://733aoo45e0ty7l", "dizi": "ui://733aoo45e0ty7k", "sanjiaotie": "ui://733aoo45e0ty7o" },
-                    "rightSoundFile": ["ui://733aoo45e0ty7p", "ui://733aoo45e0ty7m"],
+                    "soundFile": {"piano": {"path": "ui://733aoo45bl377s", "time": 1}, 
+                                 "gu":{"path": "ui://733aoo45bl377p", "time": 2},
+                                  "shachui":{"path": "ui://733aoo45bl377o", "time": 1},
+                                   "dizi":{"path": "ui://733aoo45hddi85", "time": 1},
+                                    "sanjiaotie":{"path": "ui://733aoo45bl377r", "time": 1} },
+                    "rightSoundFile": [{"path": "ui://733aoo45bl377p", "time": 2}, {"path": "ui://733aoo45hddi85", "time": 1}],
+                    "rightName": ["gu", "dizi"],
 
-                    "rightName": ["piano", "gu"],
+                    "animateName":{
+                    "gu": {"idle": "07qingwa_idle", "play": "07qingwa_play", "skin": "07qingwa"},
+                    "dizi": {"idle": "06xiaogou_idle", "play": "06xiaogou_play", "skin": "06xiaogou"}},
 
                     "optionsRect": {"piano": {"x": 1205, "y": 190, "width":260, "height": 220},
                      "gu": {"x": 850, "y": 440, "width":260, "height": 220},
                       "shachui": {"x": 520, "y": 695, "width":260, "height": 220}, 
                       "dizi": {"x": 1237, "y": 653, "width":260, "height": 220}, 
                       "sanjiaotie": {"x": 495, "y": 200, "width":260, "height": 220}},
-                      "guideName": "sanjiaotie"
+                      "guideName": "piano"
                 }
             }, 
             
@@ -93,17 +107,25 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v1",
                 "config": {
-                    
-                    "soundFile": {"piano": "ui://733aoo45e0ty7r", "gu": "ui://733aoo45e0ty7s", "shachui": "ui://733aoo45e0ty7q", "dizi": "ui://733aoo45e0ty7t", "sanjiaotie": "ui://733aoo45e0ty7v" },
-                    "rightSoundFile": ["ui://733aoo45e0ty7r", "ui://733aoo45e0ty7s"],
+                    "soundFile": {"piano": {"path": "ui://733aoo45bl377u", "time": 2},
+                         "gu": {"path": "ui://733aoo45bl377v", "time": 2}, 
+                         "shachui": {"path": "ui://733aoo45bl377t", "time": 3},
+                          "dizi": {"path": "ui://733aoo45bl377w", "time": 2},
+                           "sanjiaotie": {"path": "ui://733aoo45bl377y", "time": 5} },
 
+                    "rightSoundFile": [{"path": "ui://733aoo45bl377u", "time": 2}, {"path": "ui://733aoo45bl377v", "time": 2}],
                     "rightName": ["piano", "gu"],
+
+                    "animateName":{
+                        "gu": {"idle": "09jiuhuche_idle", "play": "09jiuhuche_play", "skin": "09jiuhuche"},
+                        "piano": {"idle": "08jingche_idle", "play": "08jingche_play", "skin": "08jiingche"}},
+
                     "optionsRect": {"piano": {"x": 850, "y": 440, "width":260, "height": 220}, 
                      "gu": {"x": 520, "y": 695, "width":260, "height": 220},
                       "shachui": {"x": 495, "y": 200, "width":260, "height": 220}, 
                       "dizi": {"x": 1205, "y": 190, "width":260, "height": 220}, 
                       "sanjiaotie": {"x": 1237, "y": 653, "width":260, "height": 220}},
-                      "guideName": "shachui"
+                      "guideName": "dizi"
                 }
             }, 
             
@@ -115,16 +137,20 @@
             }
         },
 
+
         {
             "model": {
                 "uiPath": "choose-model03-v2-p5",
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v2",
                 "config": {
-                    "gameFood": ["food_1", "food_2", "food_3", "food_4"],
+                    "gameFood": ["ui://733aoo45rqan8i", "ui://733aoo45rqan8k", "ui://733aoo45rqan8j", "ui://733aoo45rqan8l"],
+                    "gameFoodSize":[{"w":207, "h":135}, {"w":158, "h":197}, {"w":137, "h":264}, {"w":169, "h":210}],
                     "rightIndexs": [0, 1],
                     "boySoundPath": "ui://733aoo45w2qd1c",
-                    "girlSoundPath": "ui://733aoo45w2qd1d"
+                    "girlSoundPath": "ui://733aoo45w2qd1d",
+                    "boySoundTime": 3.0,
+                    "girlSoundTime": 3.0
                     
                 }
             }, 
@@ -143,10 +169,14 @@
                 "bundleName": "choose",
                 "prefabName": "choose-model03-v2",
                 "config": {
-                    "gameFood": ["food_1_1", "food_2_1", "food_3_1"],
+                    "gameFood": ["ui://733aoo45rqan8m", "ui://733aoo45rqan8n", "ui://733aoo45r3754h"],
+                    "gameFoodSize":[{"w":270, "h":144}, {"w":120, "h":197}, {"w":185, "h":166}],
                     "rightIndexs": [0],
                     "boySoundPath": "ui://733aoo45gzaz7e",
-                    "girlSoundPath": "ui://733aoo45gzaz7f"
+                    "girlSoundPath": "ui://733aoo45gzaz7f",
+                    "boySoundTime": 2.0,
+                    "girlSoundTime": 2.0
+
                     
                 }
             }, 
@@ -166,10 +196,13 @@
                 "prefabName": "choose-model03-v2",
                 "config": {
 
-                    "gameFood": ["food_1_2", "food_2_2", "food_3_2"],
+                    "gameFood": ["ui://733aoo45rqan8f", "ui://733aoo45rqan8g", "ui://733aoo45rqan8h"],
+                    "gameFoodSize":[{"w":219, "h":132}, {"w":239, "h":168}, {"w":118, "h":270}],
                     "rightIndexs": [1],
                     "boySoundPath": "ui://733aoo45gzaz7g",
-                    "girlSoundPath": "ui://733aoo45gzaz7h"
+                    "girlSoundPath": "ui://733aoo45gzaz7h",
+                    "boySoundTime": 2.0,
+                    "girlSoundTime": 2.0
                     
                 }
             }, 
@@ -190,7 +223,8 @@
                 "config": {
 
                     "boxSoundUrl": "ui://733aoo45w2qd1f",
-                    "guidIndex": 2
+                    "guidIndex": 2,
+                    "boxSoundTime": 3.1
                     
                 }
             }, 
@@ -212,7 +246,8 @@
                 "config": {
 
                     "boxSoundUrl": "ui://733aoo45gzaz7i",
-                    "guidIndex": 2
+                    "guidIndex": 2,
+                    "boxSoundTime": 3.1
                     
                 }
             }, 
@@ -234,7 +269,8 @@
 
                     "boxSoundUrl": "ui://733aoo45gzaz7j",
 
-                    "guidIndex": 0
+                    "guidIndex": 0,
+                    "boxSoundTime": 3.1
                     
                 }
             }, 
@@ -257,7 +293,8 @@
 
                     "boxSoundUrl": "ui://733aoo45w2qd23",
 
-                    "guidIndex": 1
+                    "guidIndex": 1,
+                    "boxSoundTime": 3.25
                     
                 }
             }, 
