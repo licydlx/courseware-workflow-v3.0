@@ -54,7 +54,7 @@
     <group id="n41_gzaz" name="over" xy="980,418" size="793,226" advanced="true"/>
     <image id="n42_hddi" name="n42" src="hddi84" fileName="images/example2/0036.png" xy="975,80" group="n46_hddi"/>
     <image id="n43_hddi" name="n43" src="hddi83" fileName="images/example2/0035.png" xy="992,192" group="n46_hddi"/>
-    <text id="n44_hddi" name="top" xy="1059,116" size="84,49" group="n46_hddi" font="KaiTi" fontSize="32" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="--"/>
+    <text id="n44_hddi" name="top" xy="1059,116" size="84,49" group="n46_hddi" font="KaiTi" fontSize="32" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="0"/>
     <text id="n45_hddi" name="cur" xy="1059,208" size="85,49" group="n46_hddi" font="KaiTi" fontSize="32" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="0"/>
     <group id="n46_hddi" name="score" xy="975,80" size="207,186" advanced="true"/>
     <text id="n47_k2v4" name="total" xy="623,137" size="238,102" fontSize="40" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="100"/>

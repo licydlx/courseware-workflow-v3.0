@@ -11,7 +11,7 @@ const { loadBundle, loadPrefab, loadResource } = window['GlobalData'].sample;
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class t4_05_model_v3 extends cc.Component {
+export default class t4_05_model_v4 extends cc.Component {
     private _worldRoot: cc.Node;
 
     private _view: fgui.GComponent;
@@ -85,9 +85,9 @@ export default class t4_05_model_v3 extends cc.Component {
             this._c1.selectedIndex = 0;
         }
 
-        // let tt1 = new cc.Vec2(953, 403);
-        // let tt2 = new cc.Vec2(800, 626);
-        // console.log('=== mag DDDD ===' + tt1.sub(tt2).mag());
+        let tt1 = new cc.Vec2(953, 403);
+        let tt2 = new cc.Vec2(800, 626);
+        console.log('=== mag 44444 DDDD ===' + tt1.sub(tt2).mag());
 
         let pointGroup = this._view.getChild("n84").asGroup;
         for (let i = 0; i < this._view.numChildren; i++) {
@@ -97,12 +97,11 @@ export default class t4_05_model_v3 extends cc.Component {
                     'rect': new cc.Rect(img.x, img.y, img.width, img.height),
                     'isContains': false,
                     'minx': img.x,
-                    'maxx': img.y + img.width,
+                    'maxx': img.x + img.width,
                     'miny': img.y,
                     'maxy': img.y + img.height,
-                    'limitMinx': false,
-                    'limitMaxx': false,
-                    'limitMaxy': false,
+                    'limitQiMinx': false,
+                    'limitEndMaxx': false,
                     'isPointInner': false
                 };
                 this._allPointRect.push(temp);
@@ -349,37 +348,37 @@ export default class t4_05_model_v3 extends cc.Component {
 
                     for (let i = 0; i < this._allPointRect.length; i++) {
 
+                        this._allPointRect[i].limitQiMinx = false;
+                        this._allPointRect[i].limitEndMaxx = false;
+
                         if (this._allPointRect[i].rect.contains(this._curTouchesPos[0]) ||
                             this._allPointRect[i].rect.contains(this._curTouchesPos[this._curTouchesPos.length - 1])) {
                             this._allPointRect[i].isPointInner = true;
                         }
 
-                        if (i === 0 && this._allPointRect[i].isContains) {
+                        if (this._allPointRect[i].isContains) {
 
                             if (this._curTouchesPos[0].x < this._allPointRect[i].minx) {
 
-                                this._allPointRect[i].limitMinx = true;
+                                this._allPointRect[i].limitQiMinx = true;
                             }
-
-                        } else if ((i === 1 && this._allPointRect[i].isContains) || (i === 2 && this._allPointRect[i].isContains)) {
-
                             if (this._curTouchesPos[this._curTouchesPos.length - 1].x > this._allPointRect[i].maxx) {
 
-                                this._allPointRect[i].limitMaxx = true;
+                                this._allPointRect[i].limitEndMaxx = true;
                             }
-                            if (this._curTouchesPos[0].x < this._allPointRect[i].minx) {
-
-                                this._allPointRect[i].limitMinx = true;
-                            }
-
                         }
                     }
+
+                    console.log('===== allPointRect ====');
+                    console.log(this._allPointRect);
+                    console.log(this._curTouchesPos);
 
                     let temp = {};
                     if (this._allPointRect[0].isContains && this._allPointRect[1].isContains) {
 
-                        if (this._allPointRect[0].limitMinx && this._allPointRect[1].limitMaxx) {
+                        if (this._allPointRect[0].limitQiMinx && this._allPointRect[1].limitEndMaxx) {
 
+                            console.log('===== 直线 =====');
                             // 直线
                             temp['QiX'] = 799;
                             temp['QiY'] = 626;
@@ -391,8 +390,9 @@ export default class t4_05_model_v3 extends cc.Component {
                             state.allTouchLinesPos['line1'] = temp;
 
 
-                        } else if (this._allPointRect[0].limitMinx && !this._allPointRect[1].limitMaxx) {
+                        } else if (this._allPointRect[0].limitQiMinx && !this._allPointRect[1].limitEndMaxx) {
 
+                            console.log('===== 左点超出射线 =====');
                             // 左点超出射线
                             let pointMidChang = 297;
 
@@ -405,8 +405,9 @@ export default class t4_05_model_v3 extends cc.Component {
                             temp['result'] = false;
                             state.allTouchLinesPos['line1'] = temp;
 
-                        } else if (!this._allPointRect[0].limitMinx && this._allPointRect[1].limitMaxx) {
+                        } else if (!this._allPointRect[0].limitQiMinx && this._allPointRect[1].limitEndMaxx) {
 
+                            console.log('===== 右点超出的射线 =====');
                             // 右点超出的射线
                             let pointMaxX = 1096;
                             let pointMidChang = 297;
@@ -422,6 +423,7 @@ export default class t4_05_model_v3 extends cc.Component {
 
                         } else if (this._allPointRect[0].isPointInner && this._allPointRect[1].isPointInner) {
 
+                            console.log('===== 线段 =====');
                             //线段
                             let pointMidChang = 297;
                             temp['QiX'] = 799;
@@ -436,25 +438,22 @@ export default class t4_05_model_v3 extends cc.Component {
 
                     } else if (this._allPointRect[0].isContains && this._allPointRect[2].isContains) {
 
-                        if (this._allPointRect[0].limitMinx && this._allPointRect[2].limitMaxx) {
+                        if (this._allPointRect[0].limitQiMinx && this._allPointRect[2].limitEndMaxx) {
 
-
+                            console.log('===== 直线 =====');
                             // 直线
                             temp['QiX'] = 800;
                             temp['QiY'] = 626;
                             temp['angle'] = -57;
                             temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
-                            temp['chaoInterQiY'] = Math.tan(temp['angle']) * temp['chaoInterQiX'];
+                            temp['chaoInterQiY'] = Math.tan(temp['angle'] * 3.14 / 180) * temp['chaoInterQiX'];
                             temp['chang'] = this._curTouchesPos[this._curTouchesPos.length - 1].sub(this._curTouchesPos[0]).mag();
                             temp['result'] = true;
                             state.allTouchLinesPos['line2'] = temp;
 
-                            console.log('==== tan ===' + Math.tan(-57));
-                            console.log('==== chaoInterQiX ===' + temp['chaoInterQiX']);
-                            console.log('==== chaoInterQiy ===' + temp['chaoInterQiY']);
+                        } else if (this._allPointRect[0].limitQiMinx && !this._allPointRect[2].limitEndMaxx) {
 
-                        } else if (this._allPointRect[0].limitMinx && !this._allPointRect[2].limitMaxx) {
-
+                            console.log('===== 左点超出射线 =====');
                             // 左点超出射线
                             let pointMidChang = 280;
 
@@ -462,14 +461,15 @@ export default class t4_05_model_v3 extends cc.Component {
                             temp['QiY'] = 626;
                             temp['angle'] = -57;
                             temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
-                            temp['chaoInterQiY'] = Math.tan(temp['angle']) * temp['chaoInterQiX'];
+                            temp['chaoInterQiY'] = Math.tan(temp['angle'] * 3.14 / 180) * temp['chaoInterQiX'];
                             temp['chang'] = pointMidChang + temp['chaoInterQiX'];
                             temp['result'] = false;
                             state.allTouchLinesPos['line2'] = temp;
 
 
-                        } else if (!this._allPointRect[0].limitMinx && this._allPointRect[2].limitMaxx) {
+                        } else if (!this._allPointRect[0].limitQiMinx && this._allPointRect[2].limitEndMaxx) {
 
+                            console.log('===== 右点超出的射线 =====');
                             // 右点超出的射线
                             let pointMaxY = 385;
                             let pointMidChang = 280;
@@ -485,6 +485,7 @@ export default class t4_05_model_v3 extends cc.Component {
 
                         } else if (this._allPointRect[0].isPointInner && this._allPointRect[2].isPointInner) {
 
+                            console.log('===== 线段 =====');
                             //线段
                             let pointMidChang = 280;
                             temp['QiX'] = 800;
@@ -499,40 +500,45 @@ export default class t4_05_model_v3 extends cc.Component {
 
                     } else if (this._allPointRect[1].isContains && this._allPointRect[2].isContains) {
 
-                        if (this._allPointRect[1].limitMaxx && this._allPointRect[2].limitMinx) {
+                        if (this._allPointRect[2].limitQiMinx && this._allPointRect[1].limitEndMaxx) {
+
+                            console.log('===== 直线 =====');
 
                             // 直线
-                            temp['QiX'] = 953;
-                            temp['QiY'] = 403;
+                            temp['QiX'] = 956;
+                            temp['QiY'] = 397;
                             temp['angle'] = 57;
                             temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
-                            temp['chaoInterQiY'] = 0;
+                            temp['chaoInterQiY'] = Math.tan(temp['angle'] * 3.14 / 180) * temp['chaoInterQiX'];
                             temp['chang'] = this._curTouchesPos[this._curTouchesPos.length - 1].sub(this._curTouchesPos[0]).mag();
                             temp['result'] = true;
                             state.allTouchLinesPos['line3'] = temp;
 
-                        } else if (!this._allPointRect[1].limitMaxx && this._allPointRect[2].limitMinx) {
+                        } else if (this._allPointRect[2].limitQiMinx && !this._allPointRect[1].limitEndMaxx) {
 
+                            console.log('===== 左点超出射线 =====');
                             // 左点超出射线
                             let pointMidChang = 280;
 
-                            temp['QiX'] = 953;
-                            temp['QiY'] = 403;
+                            temp['QiX'] = 956;
+                            temp['QiY'] = 397;
                             temp['angle'] = 57;
                             temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
-                            temp['chaoInterQiY'] = Math.tan(57) * (temp['QiX'] - this._curTouchesPos[0].x);
-                            temp['chang'] = pointMidChang + temp['chaoInterQiX'];
+                            temp['chaoInterQiY'] = Math.tan(temp['angle'] * 3.14 / 180) * temp['chaoInterQiX'];
+                            temp['chang'] = pointMidChang + temp['chaoInterQiX'] + 40;
                             temp['result'] = false;
                             state.allTouchLinesPos['line3'] = temp;
 
-                        } else if (this._allPointRect[1].limitMaxx && !this._allPointRect[2].limitMinx) {
+                        } else if (!this._allPointRect[2].limitQiMinx && this._allPointRect[1].limitEndMaxx) {
+
+                            console.log('===== 右点超出的射线 =====');
 
                             // 右点超出的射线
                             let pointMaxY = 660;
                             let pointMidChang = 280;
 
-                            temp['QiX'] = 953;
-                            temp['QiY'] = 403;
+                            temp['QiX'] = 956;
+                            temp['QiY'] = 397;
                             temp['angle'] = 57;
                             temp['chaoInterQiX'] = 0;
                             temp['chaoInterQiY'] = 0;
@@ -542,10 +548,11 @@ export default class t4_05_model_v3 extends cc.Component {
 
                         } else if (this._allPointRect[1].isPointInner && this._allPointRect[2].isPointInner) {
 
+                            console.log('===== 线段 =====');
                             //线段
                             let pointMidChang = 280;
-                            temp['QiX'] = 953;
-                            temp['QiY'] = 403;
+                            temp['QiX'] = 956;
+                            temp['QiY'] = 397;
                             temp['angle'] = 57;
                             temp['chaoInterQiX'] = 0;
                             temp['chaoInterQiY'] = 0;

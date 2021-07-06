@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 76,
+            "activePatchIndex": 77,
             "patches": [
                 {
                     "date": 1623994460686,
@@ -312,6 +312,10 @@
                 {
                     "date": 1625197562334,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -316,6 +316,7 @@\n           }\r\n \r\n \r\n \r\n+\r\n     ]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1625539498369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -143,10 +143,10 @@\n                 \"uiPath\": \"choose-model03-v2-p5\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"ui://733aoo45r3753h\", \"ui://733aoo45r3753j\", \"ui://733aoo45r3753i\", \"ui://733aoo45r3753k\"],\r\n-                    \"gameFoodSize\":[{\"w\":146, \"h\":98}, {\"w\":113, \"h\":139}, {\"w\":99, \"h\":184}, {\"w\":120, \"h\":148}],\r\n+                    \"gameFood\": [\"ui://733aoo45rqan8i\", \"ui://733aoo45rqan8k\", \"ui://733aoo45rqan8j\", \"ui://733aoo45rqan8l\"],\r\n+                    \"gameFoodSize\":[{\"w\":207, \"h\":135}, {\"w\":158, \"h\":197}, {\"w\":137, \"h\":264}, {\"w\":169, \"h\":210}],\r\n                     \"rightIndexs\": [0, 1],\r\n                     \"boySoundPath\": \"ui://733aoo45w2qd1c\",\r\n                     \"girlSoundPath\": \"ui://733aoo45w2qd1d\",\r\n                     \"boySoundTime\": 3.0,\r\n@@ -168,10 +168,10 @@\n                 \"uiPath\": \"choose-model03-v2-p6\",\r\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n-                    \"gameFood\": [\"ui://733aoo45r37541\", \"ui://733aoo45r37542\", \"ui://733aoo45r3753z\"],\r\n-                    \"gameFoodSize\":[{\"w\":209, \"h\":114}, {\"w\":98, \"h\":155}, {\"w\":147, \"h\":133}],\r\n+                    \"gameFood\": [\"ui://733aoo45rqan8m\", \"ui://733aoo45rqan8n\", \"ui://733aoo45r3754h\"],\r\n+                    \"gameFoodSize\":[{\"w\":270, \"h\":144}, {\"w\":120, \"h\":197}, {\"w\":185, \"h\":166}],\r\n                     \"rightIndexs\": [0],\r\n                     \"boySoundPath\": \"ui://733aoo45gzaz7e\",\r\n                     \"girlSoundPath\": \"ui://733aoo45gzaz7f\",\r\n                     \"boySoundTime\": 2.0,\r\n@@ -195,10 +195,10 @@\n                 \"bundleName\": \"choose\",\r\n                 \"prefabName\": \"choose-model03-v2\",\r\n                 \"config\": {\r\n \r\n-                    \"gameFood\": [\"ui://733aoo45r3753e\", \"ui://733aoo45r3753f\", \"ui://733aoo45r3753g\"],\r\n-                    \"gameFoodSize\":[{\"w\":166, \"h\":103}, {\"w\":182, \"h\":130}, {\"w\":94, \"h\":205}],\r\n+                    \"gameFood\": [\"ui://733aoo45rqan8f\", \"ui://733aoo45rqan8g\", \"ui://733aoo45rqan8h\"],\r\n+                    \"gameFoodSize\":[{\"w\":219, \"h\":132}, {\"w\":239, \"h\":168}, {\"w\":118, \"h\":270}],\r\n                     \"rightIndexs\": [1],\r\n                     \"boySoundPath\": \"ui://733aoo45gzaz7g\",\r\n                     \"girlSoundPath\": \"ui://733aoo45gzaz7h\",\r\n                     \"boySoundTime\": 2.0,\r\n@@ -314,9 +314,6 @@\n               \"prefabName\": \"static-model01-v1\"\r\n             }\r\n           }\r\n \r\n-\r\n-\r\n-\r\n     ]\r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1623994460686,

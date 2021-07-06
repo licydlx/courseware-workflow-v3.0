@@ -16,9 +16,9 @@
     <loader id="n3_j79e" name="titleTrigger" xy="50,41" size="228,171" scale="0.8,0.8" url="ui://mgpb39d5j79e16" autoSize="true" playing="false">
       <gearAni controller="c1" pages="1" values="12,p" default="0,s"/>
     </loader>
-    <image id="n87_c0cx" name="black1" src="c0cx2i" fileName="images/example3/005.png" xy="799,625" pivot="0.5,0.5" anchor="true" group="n84_l0an"/>
+    <image id="n87_c0cx" name="black1" src="c0cx2i" fileName="images/example3/005.png" xy="763,589" group="n84_l0an"/>
     <image id="n89_c0cx" name="black2" src="c0cx2i" fileName="images/example3/005.png" xy="1060,590" group="n84_l0an"/>
     <image id="n88_c0cx" name="black3" src="c0cx2i" fileName="images/example3/005.png" xy="917,367" group="n84_l0an"/>
-    <group id="n84_l0an" name="n84" xy="764,367" size="367,293" advanced="true"/>
+    <group id="n84_l0an" name="n84" xy="763,367" size="367,294" advanced="true"/>
   </displayList>
 </component>

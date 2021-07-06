@@ -26,8 +26,6 @@ export default class t4_05_model_v2 extends cc.Component {
 
     private _package: any;
 
-    private _touchesPos: cc.Vec2[] = [];
-
     private _touchXMax: number = 0;
 
     private _touchXMin: number = 0;
@@ -66,6 +64,12 @@ export default class t4_05_model_v2 extends cc.Component {
     private _dragging = false;
 
     private _scheduleTime = 0.01;
+
+    private _moveCurPos: cc.Vec2;
+
+    private _curTouchesPos: any = [];
+
+    private _allPointRect = [];
 
     private _showPosArr: any = [
         { 'line': { x: 25, y: 250 }, 'lan': { x: 16, y: 218 }, 'red': { x: 472, y: 218 } },
@@ -130,8 +134,25 @@ export default class t4_05_model_v2 extends cc.Component {
         this._drawLan = this._view.getChild('lan').asImage;
         this._drawRed = this._view.getChild('red').asImage;
 
-        this._lanRect = new cc.Rect(this._drawLan.x, this._drawLan.y, this._drawLan.width, this._drawLan.height);
-        this._redRect = new cc.Rect(this._drawRed.x, this._drawRed.y, this._drawRed.width, this._drawRed.height);
+        let temp = {
+            'rect': new cc.Rect(this._drawLan.x, this._drawLan.y, this._drawLan.width, this._drawLan.height),
+            'isContains': false,
+            'minx': this._drawLan.x,
+            'maxx': this._drawLan.x + this._drawLan.width,
+            'limitQiMinx': false,
+            'limitEndMaxx': false,
+            'isPointInner': false
+        };
+        this._allPointRect.push(temp);
+        temp = {
+            'rect': new cc.Rect(this._drawRed.x, this._drawRed.y, this._drawRed.width, this._drawRed.height),
+            'isContains': false,
+            'minx': this._drawRed.x,
+            'maxx': this._drawRed.x + this._drawRed.width,
+            'limitQiMinx': false,
+            'limitEndMaxx': false,
+            'isPointInner': false
+        };
 
         // 臨時
         // bug 初始设置不播放不生效
@@ -179,7 +200,9 @@ export default class t4_05_model_v2 extends cc.Component {
             gameStart: false,
             gameOver: this.gameResult.No,
             touch: "end",
-            touchesPos: []
+            touchesPos: [],
+            curTouchesPos: [],
+            showLines: []
         }
     }
 
@@ -220,43 +243,43 @@ export default class t4_05_model_v2 extends cc.Component {
         console.log('===== start 111 ====' + event.touch.getLocation());
 
         let state: any = globalThis._.cloneDeep(this._state);
-        state.touch = 'start';
-        state.touchesPos.push(event.touch.getLocation());
-        this.updateState(state);
+        if (state.touch === 'no') {
+            state.touch = 'start';
+            let tempPos = new cc.Vec2(event.touch.getLocation().x, event.touch.getLocation().y);
+            state.curTouchesPos.push(tempPos);
+            this.updateState(state);
+        }
     }
 
     _onDrawMove(event) {
 
         this._dragging = true;
-        this._touchesPos.push(event.touch.getLocation());
-
-        const MIN_POINT_DISTANCE = 4;
-
-        let worldPos = this.node.convertToWorldSpaceAR(cc.v2(0, 0));
-        this.graphics.moveTo(this._touchesPos[0].x - worldPos.x, this._touchesPos[0].y - worldPos.y);
-        let lastIndex = 0;
-        for (let i = 1, l = this._touchesPos.length; i < l; i++) {
-            if (this._touchesPos[i].sub(this._touchesPos[lastIndex]).mag() < MIN_POINT_DISTANCE) {
-                continue;
-            }
-            lastIndex = i;
-            this.graphics.lineTo(this._touchesPos[i].x - worldPos.x, this._touchesPos[i].y - worldPos.y);
-        }
-        this.graphics.stroke();
+        this._moveCurPos = new cc.Vec2(event.touch.getLocation().x, event.touch.getLocation().y);
     }
 
     _onDrawEnd(event) {
 
         this._dragging = false;
 
+        let tempPos = new cc.Vec2(event.touch.getLocation().x, event.touch.getLocation().y);
         let state: any = globalThis._.cloneDeep(this._state);
+        state.curTouchesPos.push(tempPos);
         state.touch = 'end';
         this.updateState(state);
     }
 
+    // 排序方法
+    comparePosX() {
+        return function (a, b) {
+            var value1 = a.x;
+            var value2 = b.x;
+            return value1 - value2;
+        }
+    }
+
     updatePlayerMove(dt) {
 
-        // this.dragSchedule();
+        //this.dragSchedule();
         this._gameTime++;
         console.log(this._gameTime);
         if (this._gameTime >= this._framesSecond * 9) {
@@ -350,7 +373,7 @@ export default class t4_05_model_v2 extends cc.Component {
             console.log('==== 3333333 拖拽定时器 ======');
 
             let state: any = globalThis._.cloneDeep(this._state);
-            state.touchesPos = this._touchesPos;
+            state.curTouchesPos.push(this._moveCurPos);
             state.touch = "move";
             this.updateState(state);
         }
@@ -372,55 +395,159 @@ export default class t4_05_model_v2 extends cc.Component {
 
         if (state.touch == "start") {
 
-            this._touchesPos = state.touchesPos;
+            this._curTouchesPos.length = 0;
+            this._curTouchesPos = state.curTouchesPos;
             this.graphics.clear();
             this._zhiLine.visible = false;
-            this._touchesPos.length = 0;
 
         } else if (state.touch == "move") {
 
-            this._touchesPos = state.touchesPos;
+            this._curTouchesPos = state.curTouchesPos;
+
+            const MIN_POINT_DISTANCE = 4;
+
+            let worldPos = this.node.convertToWorldSpaceAR(cc.v2(0, 0));
+            this.graphics.moveTo(this._curTouchesPos[0].x - worldPos.x, this._curTouchesPos[0].y - worldPos.y);
+            let lastIndex = 0;
+            for (let i = 1, l = this._curTouchesPos.length; i < l; i++) {
+                if (this._curTouchesPos[i].sub(this._curTouchesPos[lastIndex]).mag() < MIN_POINT_DISTANCE) {
+                    continue;
+                }
+                lastIndex = i;
+                this.graphics.lineTo(this._curTouchesPos[i].x - worldPos.x, this._curTouchesPos[i].y - worldPos.y);
+            }
+            this.graphics.stroke();
 
         } else if (state.touch == "end") {
 
             this.graphics.clear();
 
-            if (this._touchesPos.length > 0) {
+            if (this._curTouchesPos.length > 0) {
 
-                this._zhiLine.visible = true;
-                this._zhiLine.width = this._touchesPos[this._touchesPos.length - 1].x - this._touchesPos[0].x;
-                this._zhiLine.x = this._touchesPos[0].x;
-                this._zhiLine.y = this._view.height - this._touchesPos[0].y;
-                //this._zhiLine.y = 635;
-                this._zhiLine.sortingOrder = 0;
-                this._drawLan.sortingOrder = 1;
-                this._drawRed.sortingOrder = 1;
-                this._drawLineRect.y = this._zhiLine.y;
-                this._drawLineRect.width = this._zhiLine.width;
+                this._curTouchesPos.sort(this.comparePosX());
 
-                // 直线 线段 左蓝射线 右红射线
+                for (let i = 0; i < this._curTouchesPos.length; i++) {
 
-                this._touchesPos.sort(this.comparePos());
-
-                let tempPos0 = new cc.Vec2(this._touchesPos[0].x, this._view.height - this._touchesPos[0].y);
-                let tempPos1 = new cc.Vec2(this._touchesPos[this._touchesPos.length - 1].x, this._view.height - this._touchesPos[this._touchesPos.length - 1].y);
-
-                if (this._lanRect.contains(tempPos0)) {
-                    console.log('==== 333 ====');
-                    this._touchesPos[0].x = this._defaultMinX;
-                }
-                if (this._redRect.contains(tempPos1)) {
-                    console.log('==== 444 ====');
-                    this._touchesPos[this._touchesPos.length - 1].x = this._defaultMaxX;
+                    this._curTouchesPos[i].y = this._view.height - this._curTouchesPos[i].y;
                 }
 
-                this._touchXMax = this._touchesPos[this._touchesPos.length - 1].x;
-                this._touchXMin = this._touchesPos[0].x;
+                for (let i = 0; i < this._allPointRect.length; i++) {
 
-                this._drawLineRect.x = this._touchesPos[0].x;
-                this._drawLineRect.width = this._touchesPos[this._touchesPos.length - 1].x - this._touchesPos[0].x;
+                    this._allPointRect[i].isContains = false;
+                    this._allPointRect[i].limitQiMinx = false;
+                    this._allPointRect[i].limitEndMaxx = false;
+                    this._allPointRect[i].isPointInner = false;
+                }
 
+                let pointNums = 0;
+                for (let i = 0; i < this._curTouchesPos.length; i++) {
+
+                    for (let j = 0; j < this._allPointRect.length; j++) {
+
+                        if (this._allPointRect[j].rect.contains(this._curTouchesPos[i])) {
+                            this._allPointRect[j].isContains = true;
+                            break;
+                        }
+                    }
+                }
+                for (let i = 0; i < this._allPointRect.length; i++) {
+
+                    if (this._allPointRect[i].isContains) {
+                        pointNums++;
+                        continue;
+                    }
+                }
+                console.log('===== 5555 =====' + pointNums);
+
+                if (pointNums >= 2) {
+
+                    for (let i = 0; i < this._allPointRect.length; i++) {
+
+                        if (this._allPointRect[i].rect.contains(this._curTouchesPos[0]) ||
+                            this._allPointRect[i].rect.contains(this._curTouchesPos[this._curTouchesPos.length - 1])) {
+                            this._allPointRect[i].isPointInner = true;
+                        }
+
+                        if (this._allPointRect[i].isContains) {
+
+                            if (this._curTouchesPos[0].x < this._allPointRect[i].minx) {
+
+                                this._allPointRect[i].limitQiMinx = true;
+                            }
+                            if (this._curTouchesPos[this._curTouchesPos.length - 1].x > this._allPointRect[i].maxx) {
+
+                                this._allPointRect[i].limitEndMaxx = true;
+                            }
+                        }
+                    }
+                    console.log('===== allPointRect ====');
+                    console.log(this._allPointRect);
+                    console.log(this._curTouchesPos);
+
+                    let temp = {};
+                    if (this._allPointRect[0].isContains && this._allPointRect[1].isContains) {
+
+                        if (this._allPointRect[0].isPointInner && this._allPointRect[1].isPointInner) {
+
+                            console.log('===== 线段 =====');
+                            //线段
+                            let pointMidChang = 568;
+                            temp['QiX'] = 678;
+                            temp['QiY'] = 636;
+                            temp['chaoInterQiX'] = 0;
+                            temp['chang'] = pointMidChang;
+                            temp['type'] = this.lineType.LineSegment;
+
+
+                        } else if (this._allPointRect[0].limitQiMinx && this._allPointRect[1].limitEndMaxx) {
+
+                            console.log('===== 直线 =====');
+                            // 直线
+                            temp['QiX'] = 678;
+                            temp['QiY'] = 636;
+                            temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
+                            temp['chang'] = this._curTouchesPos[this._curTouchesPos.length - 1].sub(this._curTouchesPos[0]).mag();
+                            temp['type'] = this.lineType.StraightLine;
+
+                        } else if (this._allPointRect[0].limitQiMinx && !this._allPointRect[1].limitEndMaxx) {
+
+                            console.log('===== 左点超出射线 =====')
+
+                            temp['QiX'] = 678;
+                            temp['QiY'] = 636;
+                            temp['chaoInterQiX'] = temp['QiX'] - this._curTouchesPos[0].x;
+                            temp['chang'] = this._curTouchesPos[this._curTouchesPos.length - 1].sub(this._curTouchesPos[0]).mag();
+                            temp['type'] = this.lineType.LeftLanRays;
+
+                        } else if (!this._allPointRect[0].limitQiMinx && this._allPointRect[1].limitEndMaxx) {
+
+                            console.log('===== 右点超出的射线 =====');
+                            // 右点超出的射线
+
+                            temp['QiX'] = 678;
+                            temp['QiY'] = 636;
+                            temp['chaoInterQiX'] = 0;
+                            temp['chang'] = this._curTouchesPos[this._curTouchesPos.length - 1].sub(this._curTouchesPos[0]).mag();
+                            temp['type'] = this.lineType.RightRedRays;
+                        }
+                        state.showLines.push(temp);
+                    }
+
+                    this._zhiLine.visible = true;
+                    this._zhiLine.width = temp['chang'];
+                    this._zhiLine.x = temp['QiX'] - temp['chaoInterQiX'];
+                    this._zhiLine.y = 636;
+                }
             }
+
+            setTimeout(() => {
+
+                let state1: any = globalThis._.cloneDeep(this._state);
+                state1.touch = 'no';
+                state1.showLines = state.showLines;
+                this.updateState(state1);
+
+            }, 20);
 
         }
 
@@ -430,7 +557,7 @@ export default class t4_05_model_v2 extends cc.Component {
             if (state.gameOver === this.gameResult.Success) {
 
                 this.unschedule(this.updatePlayerMove);
-                this.rightLineFly();
+                // this.rightLineFly();
 
             } else if (state.gameOver === this.gameResult.Fail) {
 
@@ -473,7 +600,6 @@ export default class t4_05_model_v2 extends cc.Component {
                 // 游戏开始
                 this._zhiLine.visible = false;
                 this.graphics.clear();
-                this._touchesPos.length = 0;
                 this._player.x = this._view.width;
                 this._player.y = 635;
                 this._moveSpeed = 1;
@@ -501,8 +627,6 @@ export default class t4_05_model_v2 extends cc.Component {
                 this._zhiLine.visible = false;
                 this._zhiLine.width = 0;
                 this.graphics.clear();
-                this._touchesPos.length = 0;
-
                 this.unschedule(this.updatePlayerMove);
             }
         }
@@ -512,127 +636,126 @@ export default class t4_05_model_v2 extends cc.Component {
         }
     }
 
-    rightLineFly() {
+    // rightLineFly() {
 
-        let len = this._showLinesObj.length;
+    //     let len = this._showLinesObj.length;
 
-        if (len >= 3) {
+    //     if (len >= 3) {
 
-            return;
+    //         return;
+    //     }
 
-        }
+    //     this._zhiLine.visible = false;
+    //     this._drawLan.visible = false;
+    //     this._drawRed.visible = false;
 
-        this._zhiLine.visible = false;
-        this._drawLan.visible = false;
-        this._drawRed.visible = false;
+    //     let dianLeftMin = this._drawLan.x;
+    //     let dianLeftMax = this._drawLan.x + this._drawLan.width;
 
-        let dianLeftMin = this._drawLan.x;
-        let dianLeftMax = this._drawLan.x + this._drawLan.width;
+    //     let dianRightMax = this._drawRed.x + this._drawRed.width;
+    //     let dianRightMin = this._drawRed.x;
 
-        let dianRightMax = this._drawRed.x + this._drawRed.width;
-        let dianRightMin = this._drawRed.x;
+    //     let cha = 5;
+    //     let tempLineData = {};
 
-        let cha = 5;
-        let tempLineData = {};
+    //     // 1、直线
+    //     if ((this._touchesPos[0].x - dianLeftMin) < -cha && (this._touchesPos[this._touchesPos.length - 1].x - dianRightMax) > cha) {
 
-        // 1、直线
-        if ((this._touchesPos[0].x - dianLeftMin) < -cha && (this._touchesPos[this._touchesPos.length - 1].x - dianRightMax) > cha) {
+    //         // 直线
+    //         tempLineData['type'] = this.lineType.StraightLine
 
-            // 直线
-            tempLineData['type'] = this.lineType.StraightLine
+    //     } else if (this._touchesPos[0].x >= dianLeftMin &&
+    //         this._touchesPos[0].x <= dianLeftMax && this._touchesPos[this._touchesPos.length - 1].x >= dianRightMin && this._touchesPos[this._touchesPos.length - 1].x <= dianRightMax) {
 
-        } else if (this._touchesPos[0].x >= dianLeftMin &&
-            this._touchesPos[0].x <= dianLeftMax && this._touchesPos[this._touchesPos.length - 1].x >= dianRightMin && this._touchesPos[this._touchesPos.length - 1].x <= dianRightMax) {
+    //         //线段
+    //         tempLineData['type'] = this.lineType.LineSegment;
 
-            //线段
-            tempLineData['type'] = this.lineType.LineSegment;
+    //     } else if (this._touchesPos[0].x >= dianLeftMin &&
+    //         this._touchesPos[0].x <= dianLeftMax && (this._touchesPos[this._touchesPos.length - 1].x - dianRightMax) > cha) {
 
-        } else if (this._touchesPos[0].x >= dianLeftMin &&
-            this._touchesPos[0].x <= dianLeftMax && (this._touchesPos[this._touchesPos.length - 1].x - dianRightMax) > cha) {
+    //         // 左蓝射线
+    //         tempLineData['type'] = this.lineType.LeftLanRays;
 
-            // 左蓝射线
-            tempLineData['type'] = this.lineType.LeftLanRays;
+    //     } else if (this._touchesPos[this._touchesPos.length - 1].x >= dianRightMin &&
+    //         this._touchesPos[this._touchesPos.length - 1].x <= dianRightMax && (this._touchesPos[0].x - dianLeftMin) < -cha) {
 
-        } else if (this._touchesPos[this._touchesPos.length - 1].x >= dianRightMin &&
-            this._touchesPos[this._touchesPos.length - 1].x <= dianRightMax && (this._touchesPos[0].x - dianLeftMin) < -cha) {
+    //         // 右红射线
+    //         tempLineData['type'] = this.lineType.RightRedRays;
 
-            // 右红射线
-            tempLineData['type'] = this.lineType.RightRedRays;
+    //     }
 
-        }
+    //     this._showLines.push(tempLineData);
 
-        this._showLines.push(tempLineData);
+    //     console.log('==== type 111 ====' + tempLineData['type']);
 
-        console.log('==== type 111 ====' + tempLineData['type']);
+    //     let lineW = Math.abs(this._touchesPos[this._touchesPos.length - 1].x - this._touchesPos[0].x);
 
-        let lineW = Math.abs(this._touchesPos[this._touchesPos.length - 1].x - this._touchesPos[0].x);
+    //     let leftLan = null;
+    //     let rightRed = null;
 
-        let leftLan = null;
-        let rightRed = null;
+    //     let lineObj = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox2a');
+    //     this._view.addChild(lineObj);
+    //     lineObj.width = lineW;
+    //     lineObj.x = this._touchesPos[0].x;
+    //     lineObj.y = this._touchesPos[0].y;
 
-        let lineObj = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox2a');
-        this._view.addChild(lineObj);
-        lineObj.width = lineW;
-        lineObj.x = this._touchesPos[0].x;
-        lineObj.y = this._touchesPos[0].y;
+    //     if (tempLineData['type'] === this.lineType.LineSegment) {
 
-        if (tempLineData['type'] === this.lineType.LineSegment) {
+    //         leftLan = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox27');
+    //         this._view.addChild(leftLan);
+    //         leftLan.x = this._touchesPos[0].x;
+    //         leftLan.y = this._drawLan.y;
 
-            leftLan = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox27');
-            this._view.addChild(leftLan);
-            leftLan.x = this._touchesPos[0].x;
-            leftLan.y = this._drawLan.y;
+    //         rightRed = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox26');
+    //         this._view.addChild(rightRed);
+    //         rightRed.x = this._touchesPos[this._touchesPos.length - 1].x;
+    //         rightRed.y = this._drawRed.y;
 
-            rightRed = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox26');
-            this._view.addChild(rightRed);
-            rightRed.x = this._touchesPos[this._touchesPos.length - 1].x;
-            rightRed.y = this._drawRed.y;
+    //     } else if (tempLineData['type'] === this.lineType.LeftLanRays) {
 
-        } else if (tempLineData['type'] === this.lineType.LeftLanRays) {
+    //         leftLan = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox27');
+    //         this._view.addChild(leftLan);
+    //         leftLan.x = this._touchesPos[0].x;
+    //         leftLan.y = this._drawLan.y;
 
-            leftLan = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox27');
-            this._view.addChild(leftLan);
-            leftLan.x = this._touchesPos[0].x;
-            leftLan.y = this._drawLan.y;
+    //     } else if (tempLineData['type'] === this.lineType.RightRedRays) {
 
-        } else if (tempLineData['type'] === this.lineType.RightRedRays) {
+    //         rightRed = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox26');
+    //         this._view.addChild(rightRed);
+    //         rightRed.x = this._touchesPos[this._touchesPos.length - 1].x;
+    //         rightRed.y = this._drawRed.y;
+    //     }
 
-            rightRed = fgui.UIPackage.createObjectFromURL('ui://mgpb39d5xdox26');
-            this._view.addChild(rightRed);
-            rightRed.x = this._touchesPos[this._touchesPos.length - 1].x;
-            rightRed.y = this._drawRed.y;
-        }
+    //     cc.tween(lineObj)
+    //         .to(0.15, { x: this._showPosArr[len].line.x, y: this._showPosArr[len].line.y })
+    //         .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
+    //         .call(() => {
+    //             let state: any = globalThis._.cloneDeep(this._state);
+    //             state.gameStart = false;
+    //             state.gameOver = this.gameResult.No;
+    //             this.updateState(state);
 
-        cc.tween(lineObj)
-            .to(0.15, { x: this._showPosArr[len].line.x, y: this._showPosArr[len].line.y })
-            .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
-            .call(() => {
-                let state: any = globalThis._.cloneDeep(this._state);
-                state.gameStart = false;
-                state.gameOver = this.gameResult.No;
-                this.updateState(state);
+    //             lineObj.width = 710;
+    //             this._showLinesObj.push(lineObj);
+    //             this._zhiLine.visible = true;
+    //             this._drawLan.visible = true;
+    //             this._drawRed.visible = true;
+    //             this._zhiLine.width = 0;
+    //         })
+    //         .start()
 
-                lineObj.width = 710;
-                this._showLinesObj.push(lineObj);
-                this._zhiLine.visible = true;
-                this._drawLan.visible = true;
-                this._drawRed.visible = true;
-                this._zhiLine.width = 0;
-            })
-            .start()
+    //     cc.tween(leftLan)
+    //         .to(0.15, { x: this._showPosArr[len].lan.x, y: this._showPosArr[len].lan.y })
+    //         .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
+    //         .start()
 
-        cc.tween(leftLan)
-            .to(0.15, { x: this._showPosArr[len].lan.x, y: this._showPosArr[len].lan.y })
-            .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
-            .start()
-
-        cc.tween(rightRed)
-            .to(0.15, { x: this._showPosArr[len].red.x, y: this._showPosArr[len].red.y })
-            .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
-            .start()
+    //     cc.tween(rightRed)
+    //         .to(0.15, { x: this._showPosArr[len].red.x, y: this._showPosArr[len].red.y })
+    //         .to(0.15, { scaleX: 0.7, scaleY: 0.7 })
+    //         .start()
 
 
-    }
+    // }
 
     async playTitle(bool: boolean) {
         this._c1.selectedIndex = bool ? 1 : 0;

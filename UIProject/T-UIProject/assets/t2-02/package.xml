@@ -44,20 +44,20 @@
     <image id="w2qd2n" name="0022.png" path="/images/"/>
     <image id="w2qd2o" name="0023.png" path="/images/"/>
     <image id="r3753d" name="001.png" path="/images/example2/"/>
-    <image id="r3753e" name="0010.png" path="/images/example2/" exported="true"/>
-    <image id="r3753f" name="0011.png" path="/images/example2/" exported="true"/>
-    <image id="r3753g" name="0012.png" path="/images/example2/" exported="true"/>
-    <image id="r3753h" name="0013.png" path="/images/example2/" exported="true"/>
-    <image id="r3753i" name="0014.png" path="/images/example2/" exported="true"/>
-    <image id="r3753j" name="0015.png" path="/images/example2/" exported="true"/>
-    <image id="r3753k" name="0016.png" path="/images/example2/" exported="true"/>
+    <image id="r3753e" name="0010.png" path="/images/example2/"/>
+    <image id="r3753f" name="0011.png" path="/images/example2/"/>
+    <image id="r3753g" name="0012.png" path="/images/example2/"/>
+    <image id="r3753h" name="0013.png" path="/images/example2/"/>
+    <image id="r3753i" name="0014.png" path="/images/example2/"/>
+    <image id="r3753j" name="0015.png" path="/images/example2/"/>
+    <image id="r3753k" name="0016.png" path="/images/example2/"/>
     <image id="r3753l" name="0017.png" path="/images/example2/" exported="true"/>
     <image id="r3753o" name="002.png" path="/images/example2/"/>
     <image id="r3753x" name="0028.png" path="/images/example2/"/>
-    <image id="r3753z" name="003.png" path="/images/example2/" exported="true"/>
+    <image id="r3753z" name="003.png" path="/images/example2/"/>
     <image id="r37540" name="0030.png" path="/images/example2/"/>
-    <image id="r37541" name="004.png" path="/images/example2/" exported="true"/>
-    <image id="r37542" name="005.png" path="/images/example2/" exported="true"/>
+    <image id="r37541" name="004.png" path="/images/example2/"/>
+    <image id="r37542" name="005.png" path="/images/example2/"/>
     <image id="r37545" name="008.png" path="/images/example2/"/>
     <image id="r37546" name="009.png" path="/images/example2/"/>
     <component id="r37547" name="choose-model03-v2-p6.xml" path="/" exported="true"/>
@@ -165,6 +165,15 @@
     <image id="m3sh8c" name="006.png" path="/images/first/"/>
     <image id="m3sh8d" name="007.png" path="/images/first/"/>
     <image id="m3sh8e" name="008.png" path="/images/first/"/>
+    <image id="rqan8f" name="0010_2.png" path="/images/example2/" exported="true"/>
+    <image id="rqan8g" name="0011_2.png" path="/images/example2/" exported="true"/>
+    <image id="rqan8h" name="0012_2.png" path="/images/example2/" exported="true"/>
+    <image id="rqan8i" name="0013_2.png" path="/images/example2/" exported="true"/>
+    <image id="rqan8j" name="0014_2.png" path="/images/example2/" exported="true"/>
+    <image id="rqan8k" name="0015_2.png" path="/images/example2/" exported="true"/>
+    <image id="rqan8l" name="0016_2.png" path="/images/example2/" exported="true"/>
+    <image id="rqan8m" name="004_2.png" path="/images/example2/" exported="true"/>
+    <image id="rqan8n" name="005_2.png" path="/images/example2/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>
